@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This feature involves creating an MCP-enabled application that allows foundation models to search restaurant data stored in S3 by district and meal type. The application will use AWS Bedrock AgentCore, boto3, and Python to provide a comprehensive restaurant search service. The system will be containerized using Docker and serve requests through MCP (Model Context Protocol) tools, enabling AI models to query restaurant information based on district names and meal time analysis of operating hours.
+This feature involves creating an MCP-enabled application that allows foundation models to search restaurant data stored in S3 by district and meal time. The application will use AWS Bedrock AgentCore, boto3, and Python to provide a comprehensive restaurant search service. The system will be containerized using Docker and serve requests through MCP (Model Context Protocol) tools, enabling AI models to query restaurant information based on district names and meal time analysis of operating hours.
 
 The restaurant data is organized hierarchically with regions (Hong Kong Island, Kowloon, New Territories, Lantau) containing multiple districts, with each district having its own JSON file containing restaurant data. The system will read district configuration locally from master-config.json and regional config files, while restaurant data will be retrieved from S3 bucket restaurant-data-209803798463-us-east-1/restaurants/.
 
@@ -22,16 +22,16 @@ The restaurant data is organized hierarchically with regions (Hong Kong Island, 
 
 ### Requirement 2
 
-**User Story:** As a foundation model, I want to search for restaurants by meal type (breakfast, lunch, dinner), so that I can recommend restaurants that are open during specific meal times by examining their operating hours.
+**User Story:** As a foundation model, I want to search for restaurants by meal time (breakfast, lunch, dinner), so that I can recommend restaurants that are open during specific meal times by examining their operating hours.
 
 #### Acceptance Criteria
 
-1. WHEN a breakfast search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants open between 07:00 - 11:29
-2. WHEN a lunch search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants open between 11:30 - 17:29
-3. WHEN a dinner search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants open between 17:30 - 22:30
+1. WHEN a breakfast search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants if any operating hours fall within 07:00 - 11:29
+2. WHEN a lunch search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants if any operating hours fall within 11:30 - 17:29
+3. WHEN a dinner search is requested THEN the system SHALL examine restaurant operatingHours and return restaurants if any operating hours fall within 17:30 - 22:30
 4. WHEN examining operating hours THEN the system SHALL check "Mon - Fri", "Sat - Sun", and "Public Holiday" time ranges
-5. WHEN operating hours contain multiple time ranges (e.g., ["11:30 - 15:30", "18:00 - 22:30"]) THEN the system SHALL check if any range overlaps with the meal time
-6. IF a restaurant's operating hours span multiple meal periods THEN the system SHALL include it in results for all applicable meal types
+5. WHEN operating hours contain multiple time ranges (e.g., ["11:30 - 15:30", "18:00 - 22:30"]) THEN the system SHALL return the restaurant if any time range overlaps with the meal time
+6. IF any of a restaurant's operating hours fall within multiple meal periods THEN the system SHALL include it in results for all applicable meal times
 7. IF operating hours data is missing or invalid THEN the system SHALL exclude the restaurant from meal-based searches
 
 ### Requirement 3
@@ -69,13 +69,13 @@ The restaurant data is organized hierarchically with regions (Hong Kong Island, 
 
 ### Requirement 6
 
-**User Story:** As a foundation model, I want to search restaurants using only district and meal type criteria, so that I can provide focused restaurant recommendations based on location and dining time.
+**User Story:** As a foundation model, I want to search restaurants using only district and meal time criteria, so that I can provide focused restaurant recommendations based on location and dining time.
 
 #### Acceptance Criteria
 
-1. WHEN both district and meal type are specified THEN the system SHALL return restaurants that match both criteria
-2. WHEN only district is specified THEN the system SHALL return all restaurants in that district regardless of meal type
-3. WHEN only meal type is specified THEN the system SHALL examine operating hours and return restaurants from all districts that serve the specified meal
+1. WHEN both district and meal time are specified THEN the system SHALL return restaurants that match both criteria
+2. WHEN only district is specified THEN the system SHALL return all restaurants in that district regardless of meal time
+3. WHEN only meal time is specified THEN the system SHALL examine operating hours and return restaurants from all districts that serve the specified meal
 4. WHEN no restaurants match the specified criteria THEN the system SHALL return an empty result set with appropriate messaging
 
 ### Requirement 7
