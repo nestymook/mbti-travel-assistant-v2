@@ -186,15 +186,24 @@
     - Add edge case test data for error handling validation
     - _Requirements: 1.1, 1.2, 2.1, 2.2, 9.1_
 
-- [ ] 9. Implement authentication setup using Amazon Cognito
-  - [ ] 9.1 Create Cognito user pool configuration
+- [x] 9. Implement authentication setup using Amazon Cognito
+
+
+
+
+
+  - [x] 9.1 Create Cognito user pool configuration
+
+
     - Write setup_cognito.py script using bedrock-agentcore-starter-toolkit utilities
     - Configure Cognito user pool with app client for JWT authentication
     - Create test user for authentication testing
     - Store Cognito configuration for AgentCore Runtime setup
     - _Requirements: 8.3, 8.4_
 
-  - [ ] 9.2 Write remote MCP client with authentication
+  - [x] 9.2 Write remote MCP client with authentication
+
+
     - Create tests/test_remote_client.py with JWT token authentication
     - Implement bearer token retrieval from Cognito using boto3
     - Add AgentCore Runtime URL construction and connection logic
