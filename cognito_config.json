@@ -1,0 +1,20 @@
+{
+  "region": "us-east-1",
+  "user_pool": {
+    "user_pool_id": "us-east-1_DEMO123456",
+    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_DEMO123456",
+    "creation_date": "2024-01-01T00:00:00.000000"
+  },
+  "app_client": {
+    "client_id": "demo123456789abcdef",
+    "client_name": "restaurant-search-mcp-client"
+  },
+  "test_user": {
+    "username": "test@example.com",
+    "email": "test@example.com",
+    "status": "CONFIRMED"
+  },
+  "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DEMO123456/.well-known/openid_configuration",
+  "setup_timestamp": "us-east-1",
+  "note": "This is a demo configuration created for deployment testing. In production, run setup_cognito.py with proper IAM permissions."
+}
