@@ -1,0 +1,259 @@
+{
+  "name": "Island",
+  "category": "Islands",
+  "priority": 4,
+  "districts": [
+    {
+      "name": "Lantau Island",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4001",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4001",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4001",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4001"
+      ],
+      "districtId": 4001
+    },
+    {
+      "name": "Chek Lap Kok",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4002",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4002",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4002",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4002"
+      ],
+      "districtId": 4002
+    },
+    {
+      "name": "Peng Chau",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4003",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4003",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4003",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4003"
+      ],
+      "districtId": 4003
+    },
+    {
+      "name": "Cheung Chau",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4004",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4004",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4004",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4004"
+      ],
+      "districtId": 4004
+    },
+    {
+      "name": "Lamma Island",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4005",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4005",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4005",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4005"
+      ],
+      "districtId": 4005
+    },
+    {
+      "name": "Discovery Bay",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4006",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4006",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4006",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4006"
+      ],
+      "districtId": 4006
+    },
+    {
+      "name": "Tung Chung",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4009",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4009",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4009",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4009"
+      ],
+      "districtId": 4009
+    },
+    {
+      "name": "Tai O",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4010",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4010",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4010",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4010"
+      ],
+      "districtId": 4010
+    },
+    {
+      "name": "Po Toi",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "openriceUrls": [
+        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=4011",
+        "https://www.openrice.com/en/hongkong/restaurants/district/4011",
+        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=4011",
+        "https://www.openrice.com/zh/hongkong/restaurants/district/4011"
+      ],
+      "districtId": 4011
+    }
+  ]
+}

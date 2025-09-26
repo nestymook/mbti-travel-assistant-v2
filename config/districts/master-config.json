@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-10T00:00:00Z",
+  "crawlingStrategy": {
+    "priorityBased": true,
+    "respectCrawlingHours": true,
+    "enableCheckpoints": true,
+    "globalRateLimit": {
+      "maxConcurrentDistricts": 3,
+      "globalRequestsPerMinute": 100,
+      "cooldownBetweenDistricts": 300
+    }
+  },
+  "regions": [
+    {
+      "configFile": "hong-kong-island.json",
+      "enabled": true,
+      "schedulingWeight": 40
+    },
+    {
+      "configFile": "kowloon.json",
+      "enabled": true,
+      "schedulingWeight": 35
+    },
+    {
+      "configFile": "new-territories.json",
+      "enabled": true,
+      "schedulingWeight": 20
+    },
+    {
+      "configFile": "lantau.json",
+      "enabled": true,
+      "schedulingWeight": 5
+    }
+  ],
+  "checkpointSettings": {
+    "storageLocation": "s3://openrice-crawler-checkpoints/",
+    "retentionDays": 30,
+    "compressionEnabled": true,
+    "encryptionEnabled": true
+  },
+  "monitoring": {
+    "progressReportingInterval": 300,
+    "alertThresholds": {
+      "errorRatePercent": 5,
+      "stalledMinutes": 30,
+      "lowSuccessRatePercent": 80
+    }
+  }
+}

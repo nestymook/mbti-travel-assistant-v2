@@ -1,0 +1,2123 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T19:38:59.389Z",
+    "version": "1.0.0",
+    "district": "Tin Hau",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.716Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "afb68387-051c-4bba-9bad-bf4fde5a0b9d",
+      "name": "特上牛小排",
+      "address": "Shop A, 8/F, Tsing Fung Building, 10 Tsing Fung Street",
+      "mealType": [
+        "Korean",
+        "tin hau",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 231,
+        "dislikes": 10,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "63b6d1df-258e-4030-8b89-17c5e538d4c3",
+      "name": "雞釜飯 area HOF",
+      "address": "14/F, SL GINZA, 68 Electric Road",
+      "mealType": [
+        "Guangdong",
+        "hong kong style",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 668,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "93a029f1-4c9c-4c86-aade-336a94d54bba",
+      "name": "Shoppe",
+      "address": "Shop D, 7/F, 3 Jupiter Street",
+      "mealType": [
+        "Seafood",
+        "Spanish",
+        "Mediterranean"
+      ],
+      "sentiment": {
+        "likes": 786,
+        "dislikes": 23,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24204860-d69d-45e2-a293-9f6e80bd654c",
+      "name": "Tou LAB",
+      "address": "Shop 17, G/F, Mayson Garden Building, 1A-1B Tsing Fung Street",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 252,
+        "dislikes": 6,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04d0fcfa-ab3a-4832-9fb6-9267463283f1",
+      "name": "Culture conservatory",
+      "address": "Shop 19, 2/F, Supernova Stand, 28 Mercury Street",
+      "mealType": [
+        "Seafood",
+        "Oyster Bar",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 438,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "907ad2df-cd62-4c5e-b4be-f24b16846fb7",
+      "name": "泰式蝦炒金邊粉 黑椒和牛酥 避風塘炒辣蟹",
+      "address": "44/F, CAI Tower, 54 Electric Road",
+      "mealType": [
+        "tin hau",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 172,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "434a6fee-cf8c-49b7-bf32-1bf68ed6e9bf",
+      "name": "姬松茸雪梨養生湯",
+      "address": "Shop KL-4, 4/F, Mayson Garden Building, 1A-1B Tsing Fung Street",
+      "mealType": [
+        "tin hau",
+        "Pet Friendly",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 121,
+        "dislikes": 6,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "964230b6-d03f-4974-bd61-2dfd92e7fb28",
+      "name": "Panna Cotta sell Confit",
+      "address": "Shop 13, 1/F, Golden Court, 22-52 Electric Road",
+      "mealType": [
+        "tin hau",
+        "bakery",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 111,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "775af00d-c012-4787-8434-92ab29326da9",
+      "name": "芝麻雞 蔥油雞三文治",
+      "address": "4/F, 61 Electric Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 323,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "624fcabe-06ae-4120-afcc-acebf400f153",
+      "name": "廈門沙茶麵 自家製酸種菠蘿包",
+      "address": "5/F, 27 Wing Hing Street",
+      "mealType": [
+        "Seafood",
+        "Hot Pot",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 134,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a970b547-4646-4b26-a776-137e8336a680",
+      "name": "Kuri's Fuji",
+      "address": "Shop A0, G/F, 96 Electric Road",
+      "mealType": [
+        "tin hau",
+        "Takeaway",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 145,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "437f2eca-2bd1-4846-bb55-6abf900311a3",
+      "name": "Yang",
+      "address": "G/F & 5/F, 7 Wing Hing Street",
+      "mealType": [
+        "tin hau",
+        "Upper floor Cafe",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 145,
+        "dislikes": 1,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3bfc07f0-8965-4a1e-b049-2bc48762fa98",
+      "name": "Khao Marukyu-Koyamaen 芒果慕絲麻糬蛋糕",
+      "address": "Shop E, 1/F, Po Wing Building, 6-16 Shell Street, Fortress Hill",
+      "mealType": [
+        "ramen",
+        "tin hau",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 433,
+        "dislikes": 5,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dd4364dd-e209-44c8-823c-d9a9d1955321",
+      "name": "Broken spinach",
+      "address": "2/F, CAI Tower, 54 Electric Road",
+      "mealType": [
+        "Seafood",
+        "steam hotpot",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 159,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e617630f-0109-4038-a9fe-4a9397be5185",
+      "name": "dirty",
+      "address": "71/F, S L Ginza, 68 Electric Road",
+      "mealType": [
+        "tin hau",
+        "Seafood",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6f8eaf80-d33b-42e9-8891-5e6c50ebbc2b",
+      "name": "Saiwan",
+      "address": "6/F, 54 Ngan Mok Street",
+      "mealType": [
+        "robatayaki",
+        "Japanese",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 5,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ae19c461-80f9-4ec7-b8db-9f8d1a83f462",
+      "name": "Bird",
+      "address": "Shop L, 1/F, Triumph Court, 39 Electric Road",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 82,
+        "dislikes": 5,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8fe9a231-85ac-4a52-9a65-7872b804a165",
+      "name": "operated smoke parties",
+      "address": "3/F, Whitfield Mansion, 15-19 Whitfield Road",
+      "mealType": [
+        "Seafood",
+        "tin hau",
+        "chicken hot pot"
+      ],
+      "sentiment": {
+        "likes": 254,
+        "dislikes": 7,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a8a34e50-c873-4753-89e1-a9a1c604086f",
+      "name": "Okonomiyaki 自家製醬汁鮑魚",
+      "address": "1/F, Golden Court, 22-52 Electric Road",
+      "mealType": [
+        "Nostalgic",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 339,
+        "dislikes": 10,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e1480109-2ca8-4dc7-8c36-e2076895149f",
+      "name": "unlock",
+      "address": "Shop 3B, 6/F, Kam Tao Building, 2-10 Whitfield Road",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cf717db3-7b8b-40ea-bde1-70d2839a1cf2",
+      "name": "mixed Machiya Ship 蒜香辣椒蜆肉意大利粉配軟殼蟹",
+      "address": "Shop C, 4/F, Sing Kung Lau, 80-86 Electric Road",
+      "mealType": [
+        "hong kong style",
+        "tin hau",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 11,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9e2be248-784b-49ee-9ee3-78920c3accdb",
+      "name": "Kochieki 郊外油菜 法式鴿子千層批 Honmei",
+      "address": "10/F, 810 Hing Fat Street",
+      "mealType": [
+        "Japanese",
+        "tin hau",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0c1a7b54-82f4-4786-9489-32b991e27c4e",
+      "name": "Singapore's 蚵仔大腸麵線 Aha lighthearted",
+      "address": "Shop B, 8/F, Mayson Garden Building, 2A-2E Wing Hing Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 14,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fa520a59-97a7-4e35-a370-696cf05b0ec2",
+      "name": "recommendation 珍珠奶茶",
+      "address": "2/F, Wing Wah Building, 124 Electric Road",
+      "mealType": [
+        "noodles rice noodles",
+        "tin hau",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 107,
+        "dislikes": 8,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe7bd8ee-9b0a-4528-b656-10e992bc3585",
+      "name": "叉燒煎雙蛋飯",
+      "address": "Shop A, 3/F, San Ho Building, 17 Mercury Street",
+      "mealType": [
+        "udon",
+        "ramen",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "83066ebe-5a57-4b18-9650-6b959cdb0709",
+      "name": "002 Ippaiki",
+      "address": "9/F, 84 Tin Hau Temple Road",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 81,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04329b73-ef99-42f1-9d2e-750801acf11a",
+      "name": "sweeping early",
+      "address": "1/F, 85 Tsing Fung Street",
+      "mealType": [
+        "Western",
+        "tin hau",
+        "Celebrity Shop"
+      ],
+      "sentiment": {
+        "likes": 418,
+        "dislikes": 43,
+        "neutral": 73
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a9218f0b-2ad4-4ba8-8e38-78b6343af791",
+      "name": "YAKINIKUYA CARNE’S Creative",
+      "address": "11/F, 6 Tsing Fung Street",
+      "mealType": [
+        "skewer",
+        "wine",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d70680c2-423c-4760-9cca-01ed609809aa",
+      "name": "temperature Beauty 馬格利米酒",
+      "address": "13/F, 02 Electric Road",
+      "mealType": [
+        "tin hau",
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 6,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "25248378-0722-4f00-8248-2b4e9cb4e9ef",
+      "name": "Souffle wear",
+      "address": "10/F, 6 Whitfield Road",
+      "mealType": [
+        "Western",
+        "tin hau",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 61,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "669f2b5f-358f-4e43-a83c-0f0a88bd153f",
+      "name": "Chef 美式什扒 炙燒四色丼 ENISHIYA 半筋半肉麵",
+      "address": "2/F, SL GINZA, 68 Electric Road",
+      "mealType": [
+        "teppanyaki",
+        "tin hau",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b215e594-1ed0-4d65-9d62-31dba354c678",
+      "name": "poor measures",
+      "address": "Shop 3&4, 8/F, Jupiter Tower, 9 Jupiter Street",
+      "mealType": [
+        "Western",
+        "Oyster Bar",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ec2aee2a-5ee6-4f65-91d0-f53c0c70e1fe",
+      "name": "Corn Shark 美祿恐龍 Jan",
+      "address": "2/F, Twenty One Whitfield, 21 Whitfield Road",
+      "mealType": [
+        "tin hau",
+        "Oyster Bar",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "051a3c57-8bf5-4822-97db-7254afae16ce",
+      "name": "Carpaccio",
+      "address": "7/F, 5-3 Mercury Street",
+      "mealType": [
+        "hong kong style",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 45,
+        "dislikes": 7,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3b2cb3ff-2751-41c8-ac18-d0761f77df8f",
+      "name": "大頭蝦冬蔭公 Boils personal",
+      "address": "B9/F, Nina Hotel Causeway Bay, 18 King's Road",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 90,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0720bc07-d150-46cf-8e32-db060c8b9d3f",
+      "name": "慢煮豬軟骨烏冬 parchment Zab",
+      "address": "Shop A, 11/F, Fook Wah Mansion, 2 Tsing Fung Street",
+      "mealType": [
+        "shandong",
+        "wonton dumpling",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2a949eab-ec46-49c0-94c1-6e85b5410276",
+      "name": "There 小食拼盤 attracting",
+      "address": "Room 639, 6/F, Jupiter Tower, 9 Jupiter Street",
+      "mealType": [
+        "chiu chow",
+        "Private Kitchen",
+        "Chiu Chow"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5c9c3201-d1ab-4e2a-84c8-a25e3f057f77",
+      "name": "Lockhart 9-27 seat",
+      "address": "Shop B0&B8, 9/F, Parkview Mansion, 3 Lau Sin Street",
+      "mealType": [
+        "xinjiang",
+        "ramen",
+        "Xinjiang"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3914aab2-165d-4dde-85d0-4e944ff51bda",
+      "name": "Monaka breads",
+      "address": "Shop A, 7/F, Fat Cheong Building, 63-81 Electric Road",
+      "mealType": [
+        "meatless menu",
+        "tin hau",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 229,
+        "dislikes": 41,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ff9d913b-63a1-43c4-aaa0-90fea173ade1",
+      "name": "ensure",
+      "address": "11/F, 42 Tsing Fung Street",
+      "mealType": [
+        "Japanese",
+        "tin hau",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "899cdaac-02e5-452f-acaa-4d2e62d983ab",
+      "name": "燕窩莊 Cosha",
+      "address": "6/F, 34A Electric Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 354,
+        "dislikes": 80,
+        "neutral": 162
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c98e34fa-8253-4a9b-a9eb-1a7be8279688",
+      "name": "colourful",
+      "address": "15/F, CAI Tower, 54 Electric Road",
+      "mealType": [
+        "teppanyaki",
+        "Japanese",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8c396861-271d-44f0-8051-e1729a0c77bd",
+      "name": "pizze",
+      "address": "22/F, SL Ginza, 68 Electric Road",
+      "mealType": [
+        "tin hau",
+        "Japanese",
+        "teppanyaki"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ffa64862-16d5-4c90-ba5f-15732596552a",
+      "name": "茶館 Griddled 花生元貝皮蛋豬骨粥",
+      "address": "10/F, Fook Wah Mansion, 2 Tsing Fung Street",
+      "mealType": [
+        "Indian",
+        "tin hau",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b7eed622-4bbc-4ccb-ab01-a92d288aab66",
+      "name": "釜山豬肉湯飯 Tree week",
+      "address": "8/F, 15 Jupiter Street",
+      "mealType": [
+        "Hong Kong Style",
+        "tin hau",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f92a647-03b2-4d9c-b988-5f3d5a1cfae7",
+      "name": "Sadayama",
+      "address": "5/F, 65 Tsing Fung Street",
+      "mealType": [
+        "Stir Fry",
+        "jingchuanhu",
+        "Jingchuanhu"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d9426e4d-084d-4928-bd03-7313b9c90f2c",
+      "name": "XO醬海鮮小炒王 Kappo's Hand",
+      "address": "天后電氣道23號地舖",
+      "mealType": [
+        "skewer",
+        "Thai",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 94,
+        "dislikes": 25,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "39496aa4-e90b-4f66-a8b8-bd5687f2998f",
+      "name": "雪糕 香雞 33",
+      "address": "Shop B & C, 1/F, 14 Tin Hau Temple Road",
+      "mealType": [
+        "International",
+        "bakery",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abb1d72d-b280-4b30-ba7f-fb7a87938156",
+      "name": "八味豆腐粒",
+      "address": "6/F, 61 Jupiter Street",
+      "mealType": [
+        "Japanese",
+        "Yoshoku",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ffcae794-35ac-4d74-89c6-c70732a6d1ec",
+      "name": "Wanchai 葡萄牙白酒蒜蜆 咖啡館ใน",
+      "address": "11/F, 02 Tsing Fung Street",
+      "mealType": [
+        "Stir Fry",
+        "tin hau",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cc425f6f-d971-4486-b6f2-f048be2563d4",
+      "name": "Wah",
+      "address": "Shop 9485-1202, 12/F, Jupiter Tower, 9 Jupiter Street",
+      "mealType": [
+        "tin hau",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "02a00ac0-daa6-456f-8e77-61904300acae",
+      "name": "茶餐廳 家鄉雞蛋卷 四味五花肉",
+      "address": "Shop 6, 7/F, Hing Hon Building, 26-36 King's Road",
+      "mealType": [
+        "salad",
+        "cake",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 42,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "935d5d40-a03b-4470-8163-78b4cb5b76f7",
+      "name": "Zhen Taizhou smooth 柚香叉燒菜飯 Xiangshu",
+      "address": "5/F, 825 Electric Road",
+      "mealType": [
+        "tin hau",
+        "Indian",
+        "certified halal food"
+      ],
+      "sentiment": {
+        "likes": 129,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75ca2ec3-720f-4cf9-8094-5b388e5e4e3d",
+      "name": "Ways",
+      "address": "9/F, 68 Tsing Fung Street",
+      "mealType": [
+        "International",
+        "Bar",
+        "Brunch"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d54eaa60-7921-4c82-9282-34038d9726e0",
+      "name": "和牛卡爾 Ajillo manor",
+      "address": "9/F, Sea View Estate Block C, 8 Watson Road",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ddbe2863-d43e-43e8-b61a-761b4603e55a",
+      "name": "Beijing-style",
+      "address": "7/F, 50 Mercury Street",
+      "mealType": [
+        "tin hau",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed7d72a6-45c2-4b4b-8fc6-5c02e90af27f",
+      "name": "Presented Salon",
+      "address": "Shop B, 8/F, Hang Po Building, 6-8 Mercury Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "tin hau"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6d75f743-512e-41f5-8052-de95cd4fec17",
+      "name": "Moon",
+      "address": "4/F, 6A Lau Li Street",
+      "mealType": [
+        "Western",
+        "All Day Breakfast",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5576ae87-6305-4e53-aceb-c40c23c63a5a",
+      "name": "tranquillity bamboo 越式生蝦刺身 Barbecue",
+      "address": "8/F, Fu Fung Building, 5-7 Tsing Fung Street, Tin Hau",
+      "mealType": [
+        "hong kong style",
+        "Hot Pot",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 150,
+        "dislikes": 15,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8c8f77d-d61f-4d55-9a63-ce8e668eace5",
+      "name": "Toyosu",
+      "address": "6/F, 15-69 Wing Hing Street",
+      "mealType": [
+        "chicken hot pot",
+        "tin hau",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tin Hau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

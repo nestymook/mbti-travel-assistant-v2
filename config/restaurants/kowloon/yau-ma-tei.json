@@ -1,0 +1,2113 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T21:28:49.513Z",
+    "version": "1.0.0",
+    "district": "Yau Ma Tei",
+    "locationCategory": "Kowloon",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.481Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "2ef21975-81e6-481e-9130-74f5891b48a1",
+      "name": "香蒜蜜糖炸雞 蟹肉手捲義麵 worth",
+      "address": "1/F, M9 Hotel, 28 Portland Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 1065,
+        "dislikes": 21,
+        "neutral": 81
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "325b4472-99f3-4e86-9e8d-57cef15c97f8",
+      "name": "AYI",
+      "address": "34/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "Hot Pot",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 372,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24a712d1-2da4-4e64-8a7e-137fe2b36d8f",
+      "name": "everyone",
+      "address": "Shop B, 12/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "Western",
+        "dessert",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 707,
+        "dislikes": 44,
+        "neutral": 135
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "31215426-2849-4cb5-af77-1feafff7fb92",
+      "name": "Mì coffees \"Pizza",
+      "address": "1/F, Hung Hsing Building, 484 Nathan Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Dim Sum",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 274,
+        "dislikes": 7,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "88eeaef3-f611-4c8a-a5b3-f21ba883df56",
+      "name": "Shuen AberdeenThe 叉燒燒肉飯 EXPRESS's 白鱔排骨飯 Veg",
+      "address": "Shop D, 7/F, Man Hoo Court, 450 Nathan Road",
+      "mealType": [
+        "Yoshoku",
+        "Western",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 492,
+        "dislikes": 23,
+        "neutral": 75
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a1b64006-9237-40ca-bcf5-a09824910d5e",
+      "name": "popular 煙燻壺漬封門柳 GYU Ａrelaxed 自家製醬汁煮南非鮑魚 watch",
+      "address": "9/F, Sunbeam Commercial Building, 469 Nathan Road",
+      "mealType": [
+        "Hot Pot",
+        "yau ma tei",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 508,
+        "dislikes": 25,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e236d4dc-bd5d-4484-b65c-85eb5e8e263c",
+      "name": "making",
+      "address": "1/F, 739-085A Nathan Road",
+      "mealType": [
+        "noodles rice noodles",
+        "yau ma tei",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 211,
+        "dislikes": 13,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f5659834-5a2b-4b40-9356-6cf208d71e28",
+      "name": "自選天婦羅定食 赤貝 Flat",
+      "address": "Shop 8A, 8/F, Yee Fat Building, 10-16 Portland Street",
+      "mealType": [
+        "Stir Fry",
+        "Chiu Chow",
+        "chicken hot pot"
+      ],
+      "sentiment": {
+        "likes": 292,
+        "dislikes": 17,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "90b0f3ff-5522-4e02-84c1-03f1de78c844",
+      "name": "大西洋野生青口 masala burgers",
+      "address": "G/F, 76 Pitt Street",
+      "mealType": [
+        "yau ma tei",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 267,
+        "dislikes": 9,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4324d94d-8d64-4e75-97a0-845579f27a75",
+      "name": "Kwai 大閘蟹 L'Envol Lou",
+      "address": "Shop 18, G/F, 45 Pitt Street",
+      "mealType": [
+        "Hong Kong Style",
+        "yau ma tei",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 209,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "586f7578-9edd-4c47-8532-2297a083aa95",
+      "name": "安格斯西冷 Mongolian Oi",
+      "address": "Room A, 1/F, Ko's House, 577&577A Nathan Road",
+      "mealType": [
+        "Steak House",
+        "Western",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 218,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ab3909c1-9a67-47a3-b3d6-e6cf600dd348",
+      "name": "fabrics",
+      "address": "G/F, 14 Portland Street",
+      "mealType": [
+        "hong kong style",
+        "noodles rice noodles",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 632,
+        "dislikes": 61,
+        "neutral": 90
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c72d2f84-cc9e-4be4-8d03-e9bf90017b11",
+      "name": "Teppanyaki",
+      "address": "Shop 0, G/F, Sheung On House, 11-13 Man Ming Lane",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2affd120-d73c-4668-81da-a7300a84e020",
+      "name": "styles",
+      "address": "6/F, Bell House, 525-543A Nathan Road",
+      "mealType": [
+        "noodles rice noodles",
+        "yau ma tei",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 157,
+        "dislikes": 9,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47de99de-6f2b-489e-8e0e-5b38b343a238",
+      "name": "盎然春日下午茶",
+      "address": "Shop 1A, G/F, Honour House, 375-381 Nathan Road",
+      "mealType": [
+        "certified halal food",
+        "Turkish",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 196,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4cb9ae4-aba5-4325-822f-a986049d64ce",
+      "name": "乳鴿 Authentic peppered irori",
+      "address": "10/F, Wai Wah Commercial Building, 109-111 Portland Street",
+      "mealType": [
+        "yau ma tei",
+        "chiu chow",
+        "Chiu Chow"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f15b4c4a-112f-4ec8-8342-ffabaa91c897",
+      "name": "Farmhouse",
+      "address": "G/F, 803 Canton Road",
+      "mealType": [
+        "Hong Kong Style",
+        "yau ma tei",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 16,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6a6d9170-907c-42b6-b4dc-db59b6c9c7a7",
+      "name": "鮮磨合桃露 淨菜肉雲吞 Jardin makgeolli",
+      "address": "Shop A, 7/F, Bonds Mansion, 554-556 Nathan Road",
+      "mealType": [
+        "Vietnamese",
+        "noodles rice noodles",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "77a4f6ab-45cd-4113-ac14-915e06885991",
+      "name": "Inspired BEAR rare",
+      "address": "G/F, SCAA Tennis Centre, 6 Wylie Road",
+      "mealType": [
+        "Seafood",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "171f76d5-048e-46bd-86de-4b37c049e6d1",
+      "name": "Amitie Deluxe",
+      "address": "G/F, 5A Tung Fong Street",
+      "mealType": [
+        "yau ma tei",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b347a9e8-6bf9-4fa2-b2fd-dcc5be39605a",
+      "name": "CBC",
+      "address": "G/F, Cheong Yuen Lau, 1-3 Kennedy Street",
+      "mealType": [
+        "chiu chow",
+        "Chiu Chow",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bda6c18-4d4d-428b-96f3-6577849a79b6",
+      "name": "change Gram 海鮮媽媽麵",
+      "address": "60/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "wine",
+        "skewer",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "28f0a442-3844-45d6-a9aa-81807f32f9bf",
+      "name": "Dong's",
+      "address": "G/F, 608 Canton Road",
+      "mealType": [
+        "Turkish",
+        "turkish",
+        "Middle Eastern"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e22dcc9a-0355-4cb4-8e73-a1075815f594",
+      "name": "豚骨湯拉麵套餐",
+      "address": "G/F, 9B Waterloo Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Coffee Shop",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 45,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5ff8d904-d38c-4567-8165-71942dc50154",
+      "name": "雞皮仙貝 松露瑤柱蛋白炒飯 乾炒大蝦蒜香意粉 19th",
+      "address": "Shop 15, G/F, Winfield Building, 847-965 Canton Road",
+      "mealType": [
+        "Indian",
+        "yau ma tei",
+        "certified halal food"
+      ],
+      "sentiment": {
+        "likes": 227,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "10300131-3c83-445c-9b50-cef899d2e240",
+      "name": "Empire (差館上街) operated",
+      "address": "0/F & 8/F, Kowloon Building, 555 Nathan Road",
+      "mealType": [
+        "Hot Pot",
+        "yau ma tei",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 9,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c716a5fe-cbcf-4328-a269-81b25a7a42de",
+      "name": "19A Lollipops Kakigori",
+      "address": "13/F, Jolly Garden, 143-151 Reclamation Street",
+      "mealType": [
+        "udon",
+        "yau ma tei",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "86ba8111-41e6-4005-af4a-95b7f8debc15",
+      "name": "燒牛肉",
+      "address": "2/F, Lai To Building, 364-368 Shanghai Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed979e5a-c25d-462f-b748-3e71118e2017",
+      "name": "LANE",
+      "address": "G/F, 80-18 Temple Street",
+      "mealType": [
+        "Japanese",
+        "yau ma tei",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 0,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "247e247e-ce74-48c8-9a38-4475d1e6fe69",
+      "name": "tapioca",
+      "address": "G/F, 84 Pitt Street",
+      "mealType": [
+        "hong kong style",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 103,
+        "dislikes": 33,
+        "neutral": 85
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34802c51-d081-4cea-a463-f3c20dc340b4",
+      "name": "25-31",
+      "address": "G/F, Kamly Court, 61 Temple Street",
+      "mealType": [
+        "mongolia",
+        "noodles rice noodles",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3ad0d25-1185-4571-9192-4363b3b34a81",
+      "name": "杉玉薯仔沙律 Vache! grocery",
+      "address": "Shop B, 7/F, Jolly Garden, 151 Reclamation Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 226,
+        "dislikes": 6,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5423dc00-c802-4438-ab1c-78ea0a937d3a",
+      "name": "G10 鐵板牛骨髓五花肉配意粉 陳儀興牛什粉麵",
+      "address": "G/F, 90, 44, 35, 27, 59 Temple Street",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 114,
+        "dislikes": 97,
+        "neutral": 166
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abc2d358-a1ce-46c8-82fe-efcc5b59c34d",
+      "name": "聯發茶餐廳 乜蟹都有丼",
+      "address": "1/F, In’s Point, 530-538 Nathan Road",
+      "mealType": [
+        "International",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 3,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "82b5c555-1e59-49b9-9816-686341f1d702",
+      "name": "KAKURA it's",
+      "address": "Shop 80, 4/F, Alhambra Building, 385 Nathan Road",
+      "mealType": [
+        "shunde",
+        "Stir Fry",
+        "hakka"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 2,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a16b499d-5607-49e9-8829-dbd78ea55d16",
+      "name": "advance",
+      "address": "3/F, Kiu Kin Mansion, 566 Nathan Road",
+      "mealType": [
+        "Guangdong",
+        "Hong Kong Style",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d132933-7b3d-4fbf-9d04-ef8f6089e5ba",
+      "name": "Lantau provides",
+      "address": "Shop A, G/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "yau ma tei",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 8,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "011baf74-65f4-4110-950b-27e7e78318d7",
+      "name": "During",
+      "address": "Shop H1, G/F, Prosperous Garden, 3 Public Square Street",
+      "mealType": [
+        "hamburger",
+        "bakery",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 15,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a50d3bcf-8322-459c-b7b0-d5838e0b9a28",
+      "name": "DI redefining 25 Fan",
+      "address": "G/F, 157 Nathan Road",
+      "mealType": [
+        "Japanese",
+        "teppanyaki",
+        "bbq"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e6995cac-1ddc-4589-b574-eee5c2da8894",
+      "name": "Optimist",
+      "address": "Shop 22, G/F, Arts Mansion, 46-58 Arthur Street",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8f5068cf-548f-4e71-9a02-dd323b439e1c",
+      "name": "Ceviche suit",
+      "address": "Shop 17, G/F, Wing Kiu Building, 530 Nathan Road",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 18,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c7a5c795-65da-41d9-9573-ae550c1f9c11",
+      "name": "overall So Prawns",
+      "address": "G/F, 84 Pitt Street",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 4,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea931c21-bd3a-4d79-80e4-33d3dc635759",
+      "name": "CRAVINGS America 鹿兒島黑豚荔枝卷串燒",
+      "address": "G/F, 563 Portland Street",
+      "mealType": [
+        "Stir Fry",
+        "Chinese",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "220e8438-75f9-491b-a07c-6511ecde7514",
+      "name": "Pita",
+      "address": "Shop I & J, G/F, Backingham Building, 317-321 Nathan Road",
+      "mealType": [
+        "noodles rice noodles",
+        "yau ma tei",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e61b4365-bb46-4a01-b320-21cca5ca1763",
+      "name": "Chi 紫薯雞尾包 澄空cho~kuu's",
+      "address": "9/F, 798 Shanghai Street",
+      "mealType": [
+        "cake",
+        "yau ma tei",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 67,
+        "dislikes": 0,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a380cc6a-c1e5-4034-b526-f02615a929b8",
+      "name": "Cabbage 九份飽 港畔海鮮燴",
+      "address": "G/F, 8G-7H Wing Sing Lane",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "99c682ae-9235-4be6-8d21-49ec670cca59",
+      "name": "蒸蛋湯",
+      "address": "3/F, Man Yiu Building, 34 Man Yuen Street, Yau Ma Tei",
+      "mealType": [
+        "yau ma tei",
+        "steam hotpot",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f468596f-687a-43d0-a4db-c59eb99de7cc",
+      "name": "more Miso",
+      "address": "0/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "yau ma tei",
+        "Family Friendly",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 10,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f40ae668-6c08-4081-881e-13c7187df5f3",
+      "name": "北海道牛奶芝士蛋糕",
+      "address": "Shop 401, 4/F, 888 Canton Road",
+      "mealType": [
+        "Snack Shop & Deli",
+        "yau ma tei",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e89be25-2434-422d-892a-e89dbfe653e8",
+      "name": "box”",
+      "address": "8/F, Kam Wah Building, 831L Canton Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "cake"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a361614d-b6a9-49ac-9033-e3c6181b4d0d",
+      "name": "yoshoku 黯然銷魂安格斯滷肉飯",
+      "address": "2/F, Tak Yue Mansion, 378A Shanghai Street",
+      "mealType": [
+        "Hong Kong Style",
+        "chinese bbq",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2956e756-27d0-423a-9b8b-6b5891ab37f7",
+      "name": "頂級安格斯牛肉船麵 豉椒炒聖子 Mint",
+      "address": "3/F, Grand Place, 560 Nathan Road",
+      "mealType": [
+        "bbq",
+        "yau ma tei",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2935390a-3338-4bb0-850d-87abc7635a2f",
+      "name": "Defi Weeds",
+      "address": "9/F, The Cityview, 23 Waterloo Road",
+      "mealType": [
+        "yau ma tei",
+        "Western",
+        "No Shark Fin"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 11,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1a255ca4-a335-49be-9a67-e4a783b498e1",
+      "name": "Farmhouse 美國安格斯牛肉眼扒 owners Shangri-La thai carte",
+      "address": "1/F, 267 Shanghai Street",
+      "mealType": [
+        "yau ma tei",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "535459e0-e881-417e-9c5e-97a4172e8195",
+      "name": "manor healing 雞頸肉 \"Tai 柚子胡椒豚肉烏冬 Tuna",
+      "address": "G/F, 54 Battery Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Curry",
+        "yau ma tei"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f2608a5a-cf4d-464e-b470-7fb9da3a9003",
+      "name": "product 配奶茶雪糕",
+      "address": "G/F, 12 Temple Street",
+      "mealType": [
+        "hong kong style",
+        "yau ma tei",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 130,
+        "neutral": 164
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7415a1f-412b-42b1-954c-44d900770f18",
+      "name": "金枕頭 PALKI",
+      "address": "5/F, 594 Nathan Road",
+      "mealType": [
+        "yau ma tei",
+        "chinese bbq",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 21,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c73e89bf-308c-43e6-be24-fdea2b0dd8e6",
+      "name": "Black 伯爵茶戚風蛋糕 烤牛肉紫菜飯捲 Suzie",
+      "address": "Shop 2&7, 7/F, Tak Hay Building, 1-9 Tak Cheong Lane",
+      "mealType": [
+        "All Day Breakfast",
+        "yau ma tei",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea98f5a6-47ee-47d1-a1bb-fb6d81aa73db",
+      "name": "龍蝦湯",
+      "address": "8/F, Tai Wo Commercial Building, 513 Nathan Road",
+      "mealType": [
+        "2 dishes Rice",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42e5d95d-9fb5-4e68-b2ad-e484c27bd8f1",
+      "name": "noc",
+      "address": "Shop B-C, 9/F, Mong Kok Building, 546 Nathan Road",
+      "mealType": [
+        "yau ma tei",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 10,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Yau Ma Tei",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

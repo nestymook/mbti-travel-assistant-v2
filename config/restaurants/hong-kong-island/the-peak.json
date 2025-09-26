@@ -1,0 +1,1351 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T03:08:07.231Z",
+    "version": "1.0.0",
+    "district": "The Peak",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 38,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.658Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "392c96b9-6482-4ea9-b65c-a4ed81d5c92a",
+      "name": "secondary 蟹肉意粉 Candela's Chung's",
+      "address": "Shop 226, 1/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "Coffee Shop",
+        "the peak",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a78ab121-3a06-49bf-a48b-c1b7057f3a85",
+      "name": "projected 辣三枚肉沾麵 formulae 手工黑啤龍蝦湯",
+      "address": "Shop 875-605, 10/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "salad",
+        "American",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 265,
+        "dislikes": 31,
+        "neutral": 78
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e00863f9-d0ae-4d1f-9863-9ef00d166258",
+      "name": "Benedict 可可椰子",
+      "address": "Shop 44, 13/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "British",
+        "british",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "85926791-b6b3-4ac7-9d54-f5ffa10593d8",
+      "name": "VIP 128 Nho",
+      "address": "G/F, 323 Peak Road",
+      "mealType": [
+        "Nostalgic",
+        "the peak",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 217,
+        "dislikes": 59,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9791fde1-40c1-45af-b808-adc6d57ec795",
+      "name": "台灣九孔鮑魚 Czech",
+      "address": "Shop 7, 4/F, The Peak Tower, 128 Peak Road",
+      "mealType": [
+        "Western",
+        "the peak",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dfbb3944-3f5b-430a-8c67-173eb085a6a4",
+      "name": "way Rye films",
+      "address": "Shop 489-402, 2/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4284fc7-3501-4ee8-b79e-953273d1affe",
+      "name": "SHOYU 糯米糍 阿等麵線 walls",
+      "address": "Shop 751, 7/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 9,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "23708439-ab38-4646-b114-d10c0d888514",
+      "name": "泰式奶茶三色圓冰",
+      "address": "Shop G97, G/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7be80ecc-da57-4102-800c-ba00252b3fad",
+      "name": "豆乳香香雞 goal",
+      "address": "Shop G52, G/F, The Peak Tower, 128 Peak Road",
+      "mealType": [
+        "American",
+        "the peak",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 7,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bba67d80-1e03-4804-a2fc-46cf4c992acd",
+      "name": "海膽盛丼 洪聖爺灣",
+      "address": "Shop 66-57, 1/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 6,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce5ebf17-3763-4bd5-8b22-9ef9fb8f5a9e",
+      "name": "toriyaki",
+      "address": "Shop G57, G/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "ice cream yogurt",
+        "International",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f29fc6f0-3160-4602-84ac-b1317ff760f0",
+      "name": "海鮮石鍋 塩酥雞",
+      "address": "Shop G27, G/F, The Peak Tower, 128 Peak Road",
+      "mealType": [
+        "Coffee Shop",
+        "the peak",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f4634604-58e5-436e-936b-d6db12a5f51e",
+      "name": "techniques 費城牛排芝士堡",
+      "address": "Shop G83, G/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "the peak",
+        "American",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6f8694c6-987d-4fa4-bfdc-17c242c6f74e",
+      "name": "蒜蓉粉絲蝦仁 豪快和牛燒 arrowroot",
+      "address": "Shop 796, 1/F, Peak Galleria, 18 Peak Road",
+      "mealType": [
+        "malaysian",
+        "the peak",
+        "Malaysian"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c209c434-116d-4461-8f3a-6a17b01aec52",
+      "name": "生蠔",
+      "address": "Shop 4-11, 2/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "the peak",
+        "Fast Food",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0446ead5-0f1f-4f28-b266-d127eb49ce28",
+      "name": "inspired BY anniversaries play",
+      "address": "Shop 453, 4/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "ice cream yogurt",
+        "Western",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "35a95536-5b20-4a41-944c-4cf3dd7fb3e5",
+      "name": "新嚐泰泰國餐廳 hand-painted",
+      "address": "Shop 605, 6/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "American",
+        "Coffee Shop",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8981797e-033d-4c14-bd77-bd6cb62ddef5",
+      "name": "Fook 黎恩記 芋泥嫩仙草盛盤",
+      "address": "Shop 531A, 5/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d54464c5-b0bc-4a48-b03a-c054aaa67256",
+      "name": "海景山水豆花's Xiao smoke",
+      "address": "Shop 620B, 6/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "the peak",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "d250b185-e266-4a8e-954b-d051de822700",
+      "name": "lava 生牛肉他他 康蘭餅店",
+      "address": "Shop 632, 6/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "congee"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "7b5d5425-5e0d-4981-81ff-8092dc0bd7ea",
+      "name": "Bao Jenga Peruvian 檸茶曲奇 skilled e 23 Jessie's 迷你天丼&稻庭烏冬 黃金翡翠螺 Crêperie Banyan Salisterra birthday king even",
+      "address": "Shop P250-P203, P2/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "guangdong",
+        "the peak",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "efe213ef-553f-4c71-88aa-31fbf93364cf",
+      "name": "ocean",
+      "address": "Shop G12, G/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "American",
+        "the peak",
+        "Cake Shop"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "ef165a3a-4100-45bb-850b-7db26410681d",
+      "name": "spaghetti",
+      "address": "Shop 80-81, 8/F, Peak Galleria, 118 Peak Road",
+      "mealType": [
+        "Coffee Shop",
+        "bakery",
+        "cake"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "06ddca1d-0e84-40b1-837c-f264ef3fd3c9",
+      "name": "黑松露墨魚蝦多士 豬潤麵",
+      "address": "Shop G88, G/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "Italian",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 15,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "20c70191-cad1-45bc-8eb5-fd2e9d175b0d",
+      "name": "buds horseradish updated",
+      "address": "Shop P439-P105, P1/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "fae221a9-268e-4267-a3f1-df3f8a9b7262",
+      "name": "O'rm Go European",
+      "address": "Shop P318-P303, P3/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "3e4212fb-2951-497b-8487-eb789a4769a7",
+      "name": "Private hosts Shih",
+      "address": "Shop 919, 9/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "Snack Shop & Deli",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "f02a1bd9-bbdc-405b-be05-7a4edafbaa67",
+      "name": "room Honoo",
+      "address": "Shop 734, 7/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "chinese cake",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "74a6f11a-9448-418b-a023-55348a18efe1",
+      "name": "Pepino gastronomy BBQ's",
+      "address": "Madame Tussauds Hong Kong, Shop P101, P1/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "ice cream yogurt",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "0ed4f602-0d99-4958-a8d5-3af0384654bf",
+      "name": "JAVA 213 commands Prefecture 灣畔軒Seashore",
+      "address": "Shop 873, 8/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "Chocolate · Candy Shop",
+        "british"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "0eb5f030-b400-46dd-aef9-29cdf9de02dd",
+      "name": "385 黑芝麻拿鐵",
+      "address": "Shop G38, G/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "Takeaway",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "3baeaae2-16f7-48b5-95db-cff8d6b0827d",
+      "name": "2&3 三文魚拼盤",
+      "address": "Shop 720&001,Levels 1 & 2, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "meatless menu",
+        "the peak",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 190,
+        "dislikes": 47,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b3bcebe8-cc57-4b65-9d17-e1e7b3a84ca3",
+      "name": "act",
+      "address": "Shop 98, G/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "the peak",
+        "Western",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b414f0bf-f22b-470b-9808-5792842bbaae",
+      "name": "芝士雞蛋卷 Swiss",
+      "address": "Shop 33, G/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "wonton dumpling",
+        "noodles rice noodles",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "560a194f-8f34-42e2-80ae-0ac9eed0d68a",
+      "name": "di English focuses",
+      "address": "Shop 72, 4/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "hong kong style",
+        "bakery",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "501b1635-8fa4-43ac-b5ac-e52914c14d3f",
+      "name": "us 特上吞拿魚蓉丼",
+      "address": "Shop 33, G/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "American",
+        "Coffee Shop",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9b79a0f1-dde6-4d63-8a66-c17590c2de25",
+      "name": "away",
+      "address": "Shop 41-32, 2/F, Peak Galleria, 118 Peak Road, The Peak",
+      "mealType": [
+        "American",
+        "the peak",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed7bee8c-b6f5-4e0a-80ce-98e346a6170a",
+      "name": "air",
+      "address": "Shop G00, G/F, The Peak Tower, 128 Peak Road, The Peak",
+      "mealType": [
+        "taiwanese drink",
+        "hong kong style",
+        "the peak"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    }
+  ]
+}

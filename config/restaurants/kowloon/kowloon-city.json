@@ -1,0 +1,2104 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T01:55:13.339Z",
+    "version": "1.0.0",
+    "district": "Kowloon City",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.230Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "bdd3e3a2-ca06-4a14-bfc7-7b1444f309d6",
+      "name": "Resbyne 醬漬封門柳",
+      "address": "G/F, 7-9 Lung Kong Road",
+      "mealType": [
+        "kowloon city",
+        "Hong Kong Style",
+        "steam hotpot"
+      ],
+      "sentiment": {
+        "likes": 672,
+        "dislikes": 25,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d2e60a4d-53e8-422f-ae0f-6e7f1fc6f6c5",
+      "name": "黑毛和牛西冷 et 鮮茄蟹肉扎肉湯檬",
+      "address": "9-8/F, Billionnaire Luxe, 39 Nga Tsin Wai Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Guangdong",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 469,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aedb0dc9-f020-4688-8b7b-dec007d30764",
+      "name": "津茶餐廳 餐包",
+      "address": "Shop A-B, 3/F, Full Sing Court, 82-84 Fuk Lo Tsun Road",
+      "mealType": [
+        "kowloon city",
+        "Seafood",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 407,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e7455c06-7e8d-4fab-af28-ca260550b51f",
+      "name": "焗火焰雪山 roasted Ink 燒牛舌 Sexy",
+      "address": "Shop 3-5, 5/F, The Prince Place, 398 Prince Edward Road West",
+      "mealType": [
+        "Seafood",
+        "kowloon city",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 1022,
+        "dislikes": 29,
+        "neutral": 75
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "50bf2ef1-e1d8-4722-bf9a-fc429a18a34f",
+      "name": "appearances 卡邦尼意粉 De envision",
+      "address": "G/F, 3-19 Nam Kok Road",
+      "mealType": [
+        "kowloon city",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 495,
+        "dislikes": 11,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dbcceab5-abcc-4883-8565-990c2d2dd58e",
+      "name": "沙拉唐揚炸雞 EGG Sandaime",
+      "address": "G/F, 07 South Wall Road",
+      "mealType": [
+        "skewer",
+        "Thai",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 760,
+        "dislikes": 25,
+        "neutral": 57
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5aa68cb3-4c54-41c8-90fb-c057ef3161db",
+      "name": "半炸雞 Yi watch",
+      "address": "Shop B222, B1/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "dessert",
+        "Japanese",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 224,
+        "dislikes": 13,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "79afc12f-dd08-4e39-8a5e-aa5fb97a4896",
+      "name": "plaster 解酒煎餃子",
+      "address": "G/F, 13 South Wall Road",
+      "mealType": [
+        "hong kong style",
+        "kowloon city",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 449,
+        "dislikes": 9,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e70bb5b4-d385-4838-8504-8790d360cbb2",
+      "name": "Fitfort",
+      "address": "Shop A, 7/F, 59 Fuk Lo Tsun Road",
+      "mealType": [
+        "Izakaya",
+        "kowloon city",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 750,
+        "dislikes": 34,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c81daf16-537e-4292-a8cf-344bf5be1b88",
+      "name": "婚宴",
+      "address": "Shop L234-L302, 3/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 286,
+        "dislikes": 10,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "728c7506-b686-4a1c-8523-66ed53763229",
+      "name": "龍鬚桂魚 thing",
+      "address": "Shop L646, 4/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "shanghai",
+        "Stir Fry",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 7,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60403186-d746-4af5-87d4-8d92e3f1b09b",
+      "name": "Ōmi",
+      "address": "Shop B, 2/F, 59 Fuk Lo Tsun Road",
+      "mealType": [
+        "kowloon city",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 294,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fa5fb25f-e47a-4bf2-a36c-f15978d5fc4e",
+      "name": "TANLO",
+      "address": "G/F, 61 Nga Tsin Long Road",
+      "mealType": [
+        "guangdong",
+        "Chinese",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 181,
+        "dislikes": 10,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2388ba0e-01a8-4d74-8a5c-e44607a4760a",
+      "name": "summer Cheek Issho",
+      "address": "G/F, 83A Nga Tsin Wai Road",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 19,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "90e7b67a-9add-4b41-94db-f4fd6a6e8879",
+      "name": "Sixes",
+      "address": "G/F, 423-430 Prince Edward Road West",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4bf5b50a-67af-445b-822c-e124852f2560",
+      "name": "MinSuiZen．Raku",
+      "address": "G/F, 85 Nam Kok Road",
+      "mealType": [
+        "Thai",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 373,
+        "dislikes": 8,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "96fb3cb7-9aa3-4136-8919-088311173694",
+      "name": "sq",
+      "address": "Shop 301, 1/F, 122 Nga Tsin Wai Road",
+      "mealType": [
+        "kowloon city",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 347,
+        "dislikes": 5,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5e9ddee8-dbd0-4329-a102-2db87b98c931",
+      "name": "經典早餐",
+      "address": "G/F, 883 Prince Edward Road West",
+      "mealType": [
+        "robatayaki",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 297,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f51ad15-b365-4f7c-be33-edb2c41be793",
+      "name": "restaurants 明太子海膽汁蟹肉意粉 雲龍軒炒飯",
+      "address": "Shop A, 4/F, 9 Hau Wong Road",
+      "mealType": [
+        "Thai",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 185,
+        "dislikes": 20,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bf0e5bc4-798d-43f2-8e6d-c5a6f66f6ca5",
+      "name": "Embracing Gaw",
+      "address": "Shop B479, B1/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 180,
+        "dislikes": 11,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7bddf22-649f-4a31-8179-589543168cf2",
+      "name": "skyline alley GUN",
+      "address": "Shop 594, 5/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 285,
+        "dislikes": 9,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c434be10-6519-402b-92a2-ca96aec5aa7a",
+      "name": "sourdough",
+      "address": "Shop L592, 6/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "International",
+        "kowloon city",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 216,
+        "dislikes": 10,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d30d63ab-3123-419a-a6d8-9c79de9c80e8",
+      "name": "Bochord 柚香叉燒菜飯 照燒雞扒溫泉蛋飯",
+      "address": "G/F, 9 Nam Kok Road",
+      "mealType": [
+        "kowloon city",
+        "Western",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0b672660-e077-4e50-992d-25ea40025f9c",
+      "name": "CHICKEN",
+      "address": "Shop 19, G/F, 2-4 Hau Wong Road",
+      "mealType": [
+        "kowloon city",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 347,
+        "dislikes": 56,
+        "neutral": 105
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "595d896d-6570-4390-bd9f-8ab1994f1905",
+      "name": "Honjo KUNO",
+      "address": "Shop 423, 4/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Japanese",
+        "kowloon city",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 137,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "504381c1-acae-4232-9aa0-f61fc53b552c",
+      "name": "豆腐蛋糕 焦糖鵝肝多士 floss",
+      "address": "Shop 735, 7/F, Kai Tak Mall 3, Kai Tak Sports Park, 38-39 Shing Kai Road, Kai Tak",
+      "mealType": [
+        "Western",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 178,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "da547d1a-2d1f-4212-8362-400dca59825f",
+      "name": "和牛丼 SEASONS 炸軟殼蟹",
+      "address": "G/F, 54 Nga Tsin Long Road",
+      "mealType": [
+        "kowloon city",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 296,
+        "dislikes": 29,
+        "neutral": 94
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "994b4143-b168-48e0-97e0-1efd61ce1eeb",
+      "name": "海南雞 Pudding abbreviated Mocha 麵包 butter",
+      "address": "G/F, 32 Tak Ku Ling Road",
+      "mealType": [
+        "sushi sashimi",
+        "skewer",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 350,
+        "dislikes": 10,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "79bea277-68f9-47ce-944f-f259671685c4",
+      "name": "迷你蛋撻",
+      "address": "G/F, 47 Tak Ku Ling Road",
+      "mealType": [
+        "kowloon city",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 586,
+        "dislikes": 7,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba367c52-fc0a-4aa5-964e-116e5d967814",
+      "name": "Barcelona",
+      "address": "G/F, 52 Fuk Lo Tsun Road",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 488,
+        "dislikes": 53,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9464f268-3cda-49f2-90c5-e0e5f73e6059",
+      "name": "青醬磨菇馬鈴薯丸子 Typhoon",
+      "address": "Shop B099, B1/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Singaporean",
+        "kowloon city",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 186,
+        "dislikes": 6,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1097667-2f96-45a5-a321-3eaa40fcb3e3",
+      "name": "Milan is",
+      "address": "Shop 19, G/F, 3 Nam Kok Road",
+      "mealType": [
+        "Western",
+        "Nostalgic",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 118,
+        "dislikes": 12,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04b586de-2fb2-4b4b-81a1-97b2b6f6c743",
+      "name": "和緣 特製背脂煮干沾麵 Beauty",
+      "address": "Shop L195, 6/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 202,
+        "dislikes": 18,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9a3532d6-8744-4007-beeb-a0fe1e3bb333",
+      "name": "Tradizionale Itsu 鹿兒島黑豚荔枝卷串燒",
+      "address": "G/F, 80 Nga Tsin Long Road",
+      "mealType": [
+        "Seafood",
+        "kowloon city",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 337,
+        "dislikes": 18,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "845cdc15-9cf9-4d13-8298-12f4d1df0a60",
+      "name": "jet-oysters OHANA 蠔仔粥",
+      "address": "Shop L298, 5/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Korean",
+        "kowloon city",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 260,
+        "dislikes": 16,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bf1f02c1-16c4-495d-aefe-9fc7c7209d4a",
+      "name": "龍蝦湯瑤柱燴海皇羮 歌樂山辣子雞 Mushroom 芝士蛋糕配雪糕",
+      "address": "G/F, 87 Fuk Lo Tsun Road",
+      "mealType": [
+        "Sweets",
+        "kowloon city",
+        "sweet soup"
+      ],
+      "sentiment": {
+        "likes": 293,
+        "dislikes": 28,
+        "neutral": 69
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c40070b-65a4-4446-a540-4373488a9771",
+      "name": "豉油皇煎大蝦",
+      "address": "G/F, 33 Nam Kok Road",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 4,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "16e67423-ffac-464b-a241-d47e9ef21b4e",
+      "name": "Steeped 大頭蝦冬蔭公",
+      "address": "Shop B272, B1/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Hong Kong Style",
+        "kowloon city",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 183,
+        "dislikes": 19,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "317b595c-029b-4eb6-b5e1-092be67ea66e",
+      "name": "MAZU すき家 how 米奇煎薄餅",
+      "address": "G/F, 07 Lung Kong Road",
+      "mealType": [
+        "bakery",
+        "International",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 75,
+        "dislikes": 1,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aaabcfa2-d165-422b-a49d-5a53bd5b31be",
+      "name": "51 Kuki These Wood per",
+      "address": "Shop L430, 2/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 6,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "396d86d1-c50d-43c3-9f0b-87e76fa062dc",
+      "name": "Expert 麻糬傳統班戟",
+      "address": "G/F, 91 Tak Ku Ling Road",
+      "mealType": [
+        "kowloon city",
+        "chicken hot pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 219,
+        "dislikes": 5,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "37c250e5-46ef-4e16-8066-56a118d4ca14",
+      "name": "Seabass 墨西哥玉米餅",
+      "address": "G/F, 32-55 Tak Ku Ling Road",
+      "mealType": [
+        "Chinese",
+        "kowloon city",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 88,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "07505091-7450-476e-a11e-52eb6f589df3",
+      "name": "Baccarat & 拔絲咕嚕肉",
+      "address": "Shop B, 3/F, Fuk Luen Building, 62-64 Fuk Lo Tsun Road",
+      "mealType": [
+        "guangdong",
+        "kowloon city",
+        "Chiu Chow"
+      ],
+      "sentiment": {
+        "likes": 132,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "00155a0c-251c-4fca-b5b8-c8e58a141784",
+      "name": "(Universal 黑醬油雞飯 banh",
+      "address": "G/F, 03 Fuk Lo Tsun Road",
+      "mealType": [
+        "kowloon city",
+        "French",
+        "cake"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 4,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e09fc8ac-80b6-4ba6-a8a1-bb78f7ac83da",
+      "name": "District Wong 清香麵家",
+      "address": "Shop 9898-1405, 14/F, Restaurant Park, SOGO Kai Tak Store, Tower I, The Twins, 12 Concorde Road, Kai Tak",
+      "mealType": [
+        "Curry",
+        "kowloon city",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 6,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "654452c9-0a7a-4de0-817b-3625c5d1ef6b",
+      "name": "西班牙燒乳豬 廚師烤意大利",
+      "address": "Shop 94, 1/F, K.Summit, 9 Muk Tai Street, Kai Tak",
+      "mealType": [
+        "All Day Breakfast",
+        "kowloon city",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 4,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e93080a-c894-4992-842c-7b89161053dc",
+      "name": "美國牛肉厚燒及薄燒",
+      "address": "Food Gala, Shop M1-209, M1-210, M1-211, M1-212, M1-213 & M1-214, 2/F, Kai Tak Mall 1, Kai Tak Sports Park, 38-39 Shing Kai Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Food Court",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c43bf023-b5f2-42ab-9e24-26a093d5147a",
+      "name": "咖啡廳 Chart",
+      "address": "Shop 103, 1/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "ramen",
+        "Japanese",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 122,
+        "dislikes": 14,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "74416394-ce73-4cf8-b2b5-405df8226b26",
+      "name": "Satay",
+      "address": "G/F, 46-61 Tak Ku Ling Road",
+      "mealType": [
+        "Xinjiang",
+        "xinjiang",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 194,
+        "dislikes": 13,
+        "neutral": 81
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42788c93-201b-4e6f-a94f-34a0306a41ef",
+      "name": "即炸魚片頭 南越",
+      "address": "G/F, 5 Nga Tsin Long Road",
+      "mealType": [
+        "All Day Breakfast",
+        "Coffee Shop",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 222,
+        "dislikes": 6,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0cfbb5dc-8e57-4409-b71d-a36ec7eddb36",
+      "name": "gee OSTRA 孜然燒蒜蓉茄子",
+      "address": "Shop 342, 3/F, Kai Tak Mall 3, Kai Tak Sports Park, 38-39 Shing Kai Road, Kai Tak",
+      "mealType": [
+        "Vietnamese",
+        "noodles rice noodles",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80a6572d-41ad-47c1-860d-8c689c59683c",
+      "name": "蒜蓉燒廣島蠔 Mui 滷水鴨舌 Pink",
+      "address": "11/F, Tung Sing Court, 8 South Wall Road",
+      "mealType": [
+        "Thai",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 7,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9127a2bd-969b-4e61-968d-be75574b6957",
+      "name": "hand-crafted 鹽酥雞肉燥乾拌麵",
+      "address": "Shop L623, 6/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Jingchuanhu",
+        "jingchuanhu",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 203,
+        "dislikes": 20,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f5535a3-7488-46ff-81ba-4ac1063bbd83",
+      "name": "Bich 火山",
+      "address": "Shop L159-L323, 3/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 6,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1a3937e5-d47e-4f7f-947f-63d72eddd365",
+      "name": "week",
+      "address": "G/F, 403 Prince Edward Road West",
+      "mealType": [
+        "Japanese",
+        "kowloon city",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 11,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1642a01c-7f1f-4dd4-b3b8-9a74f0638a0a",
+      "name": "bottled 腐皮蝦卷 566",
+      "address": "Shop M4-770, 3/F, Kai Tak Mall 2, Kai Tak Sports Park, 38-39 Shing Kai Road, Kai Tak",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "kowloon city"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 8,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d307f64b-9ea3-47a8-a9c1-ccdc4448d80c",
+      "name": "大閘蟹 combining dry Ocarina",
+      "address": "Shop L388, 5/F, AIRSIDE, 2 Concorde Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Thai",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5fb0bf16-2dd7-4d7e-b51c-16c0fa2dc393",
+      "name": "意粉 Terrine 澳洲M9和牛牛丸",
+      "address": "G/F, 53 South Wall Road",
+      "mealType": [
+        "kowloon city",
+        "Cooked Food Center",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5c20c2a9-04e1-49f8-8381-881f1494baf9",
+      "name": "香脆小酥肉 法式龍蝦湯 Hak 娘惹濃厚喇沙 Mexican",
+      "address": "B/F-4/F, Bel Shine Centre, 23 Tak Ku Ling Road",
+      "mealType": [
+        "kowloon city",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 243,
+        "dislikes": 20,
+        "neutral": 83
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a29791d9-48e1-4f63-82fe-ce79231200ed",
+      "name": "raised",
+      "address": "Shop 8526, 14/F, Restaurant Park, SOGO Kai Tak Store, Tower I, The Twins, 12 Concorde Road, Kai Tak",
+      "mealType": [
+        "kowloon city",
+        "Spanish",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 12,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Kowloon City",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

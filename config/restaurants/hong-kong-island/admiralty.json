@@ -1,0 +1,2094 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T05:51:13.870Z",
+    "version": "1.0.0",
+    "district": "Admiralty",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.224Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "fd9363f4-ef1f-4ed7-9161-f4082ceee948",
+      "name": "Series Rokkaku Sixes",
+      "address": "Shop 295, L2/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 26,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b87ab5ee-05e6-4def-a362-435d1757aa57",
+      "name": "紙包骨",
+      "address": "Shop 992, 9/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Seafood",
+        "Thai",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 734,
+        "dislikes": 14,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "009bf7ad-fcae-46c5-91a9-6ef4cee6d17b",
+      "name": "潮汕牛骨湯底",
+      "address": "Hong Kong Park, 10 Cotton Tree Drive",
+      "mealType": [
+        "Western",
+        "admiralty",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 275,
+        "dislikes": 16,
+        "neutral": 49
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "357cb9d6-ec83-4616-a87b-85088dec38e2",
+      "name": "招牌自選香鍋",
+      "address": "97/F, The Upper House, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Bar",
+        "admiralty",
+        "Brunch"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 6,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dc92c925-8751-4695-8e64-825324b63443",
+      "name": "鍾茶館",
+      "address": "Upper Level, Asia Society Hong Kong Center, 9 Justice Drive",
+      "mealType": [
+        "Steak House",
+        "International",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 259,
+        "dislikes": 16,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7e2c70d8-87a5-42ee-8809-7ab621f297e4",
+      "name": "Heritage Vache!‘s",
+      "address": "2/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Buffet",
+        "admiralty",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 305,
+        "dislikes": 60,
+        "neutral": 119
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3a225a2-ace5-4929-830f-ad23ddf13aec",
+      "name": "Craft Teochew",
+      "address": "Shop 379, LG3/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Steak House",
+        "Western",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 11,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1bf98bc1-0776-4e0a-a5a0-9dc43e88675d",
+      "name": "黃金組合 牛肉鍋 Steamed",
+      "address": "18/F, JW Marriott Hotel Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Western",
+        "Buffet",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 265,
+        "dislikes": 27,
+        "neutral": 81
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eb1aa101-3ec5-4764-b398-de6c994e8f43",
+      "name": "牛舌芯 McDonald's breakfast 文華海南雞飯",
+      "address": "Shop 446, L4/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Western",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 76,
+        "dislikes": 7,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13b71e42-28d7-4814-a6ba-9b417e8e5dd8",
+      "name": "appearances 地中海香蒜雞柳螺絲粉",
+      "address": "22/F, Conrad Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Western",
+        "Bar",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 160,
+        "dislikes": 19,
+        "neutral": 44
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47770a3a-b68c-4b24-a6fe-b9c2a5d3fb52",
+      "name": "always 荔灣艇仔粥 的餐厅地址、电话、食记、相片及菜单，餐厅位于Sheung brew",
+      "address": "8/F, JW Marriott Hotel Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 105,
+        "dislikes": 8,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fdbdbd18-0096-49f8-b90e-cec1c82e5295",
+      "name": "迷你蛋撻 on",
+      "address": "Shop ADM 96-27, Admiralty MTR Station",
+      "mealType": [
+        "bakery",
+        "admiralty",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 45,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e1691d1c-2838-44a8-8402-e5f7164c5e8f",
+      "name": "historic Jiro",
+      "address": "27/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "French",
+        "admiralty",
+        "Fine Dining"
+      ],
+      "sentiment": {
+        "likes": 223,
+        "dislikes": 6,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7b16590-0b61-4c7d-a077-dadf8c5c1c9b",
+      "name": "Desserts JJ yet",
+      "address": "77/F, Lippo Centre, 89 Queensway",
+      "mealType": [
+        "Chiu Chow",
+        "Stir Fry",
+        "chiu chow"
+      ],
+      "sentiment": {
+        "likes": 138,
+        "dislikes": 6,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94a38846-18f7-4ca8-84c7-3521453c3e69",
+      "name": "Charsiu",
+      "address": "Shop 426, LG4/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Izakaya",
+        "robatayaki"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "41684e2c-f5a2-46a2-bfe8-b7117339caaf",
+      "name": "Republic healing'",
+      "address": "1/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 87,
+        "dislikes": 13,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "270fccfc-e879-48d9-8261-7259abb34dd0",
+      "name": "teams 重慶擔擔麵 雲吞油渣麵",
+      "address": "Shop B51-16, 5/F, LAB Concept, Queensway Plaza, 93 Queensway",
+      "mealType": [
+        "Western",
+        "bakery",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 190,
+        "dislikes": 19,
+        "neutral": 78
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7cf64a49-e534-4073-a495-3a8a7b8c2dea",
+      "name": "roe curtains Sai Color",
+      "address": "Shop 4&8, G/F, Lippo Centre, 89 Queensway",
+      "mealType": [
+        "Steak House",
+        "wine",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 15,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b50677b-ff67-4a51-bc15-d8819dc176e8",
+      "name": "烏梅汁 Connaught",
+      "address": "Shop 994, 9/F, Citic Tower, 1 Tim Mei Avenue",
+      "mealType": [
+        "Steak House",
+        "British",
+        "british"
+      ],
+      "sentiment": {
+        "likes": 283,
+        "dislikes": 26,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9cba81fa-8ff2-4733-8cac-5ab33f69793c",
+      "name": "瀧宴日本料理 松露奶油咖喱雞柳 elevates",
+      "address": "Shop 959, LG9/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c02add74-4d64-4926-bdb8-691e042f6a82",
+      "name": "前菜 locating 素沙嗲雞串",
+      "address": "Shop 502A, L5/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "American",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 156,
+        "dislikes": 10,
+        "neutral": 69
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3461012f-62ab-47cb-90a4-e6c1a528a9a4",
+      "name": "北海道帶子蟹肉可麗餅 O's bbq 老火例湯",
+      "address": "6/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Western",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 6,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0bd62219-c177-4ead-9b25-27b3ea5943ef",
+      "name": "香芒糯米糍 imitates",
+      "address": "Shop 110, LG1/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "wine",
+        "admiralty",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef2a6f90-48cd-47ab-abb0-a63e6b6caf8b",
+      "name": "Chow",
+      "address": "Shop 401, 4/F, Three Pacific Place, 1 Queen's Road East",
+      "mealType": [
+        "Western",
+        "Japanese",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3fa0f3f1-b47a-441d-b70b-b532d834e2eb",
+      "name": "Pomfret",
+      "address": "Shop 899, L1/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 6,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "81c9cd58-3313-425c-9a3a-50a493cd4d76",
+      "name": "dishes—including idea",
+      "address": "Shop 273, L2/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "wine",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 10,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d28ae4d7-d62f-4018-aef2-b27e0565d93b",
+      "name": "現烤牛肉漢堡扒 Member for its Espresso",
+      "address": "Shop 390, 3/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Taiwan",
+        "taiwan",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7e8c636-19e1-4f77-9bfa-e3fe8c1bb9f9",
+      "name": "BKK Scone 開心果布丁包 南丫小食",
+      "address": "7/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Western",
+        "admiralty",
+        "cake"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 5,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c33d4d03-9118-4ed3-819b-4ff4a704bf5f",
+      "name": "tikka",
+      "address": "Shop 041B, G/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Coffee Shop",
+        "admiralty",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 146,
+        "dislikes": 7,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "488f7b68-e087-4175-a26e-8ec21cbb5f52",
+      "name": "Creative becomes",
+      "address": "3/F, JW Marriott Hotel Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "No Shark Fin",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 5,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a52390b-f490-4716-ae7d-4de14603a071",
+      "name": "貓霸漢堡 oily",
+      "address": "1/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "bakery",
+        "admiralty",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 1,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1b0d99c3-0f1a-4bc7-aacc-701c4a1e4d04",
+      "name": "sauerkraut Cheers",
+      "address": "Shop F504-F506, 5/F, Queensway Plaza, 93 Queensway",
+      "mealType": [
+        "ramen",
+        "Japanese",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 12,
+        "neutral": 66
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3ac6e3ef-364c-44c3-9923-f9a8e0ddac8b",
+      "name": "康蘭餅店 Kong-style",
+      "address": "Lower Lobby, Conrad Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "guangdong",
+        "admiralty",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 6,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fcdf4dbc-8922-4c77-bbe9-0b6f7d9d03fc",
+      "name": "天鮨日本料理TEN 蒜香牛油雞翼",
+      "address": "G/F, Island Shangri-La Hong Kong, Two Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Fujian",
+        "fujian"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4479bfab-ddb9-4d72-b78e-823743a0e42d",
+      "name": "(which convivial 烤羊肉卷 SATAY",
+      "address": "Shop A3, UG/F, Far East Finance Centre, 16 Harcourt Road",
+      "mealType": [
+        "admiralty",
+        "all you can eat",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 166,
+        "dislikes": 38,
+        "neutral": 49
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba6eb831-55e0-4fdd-b12c-d0bb3f55bf68",
+      "name": "半生熟牛肉 cellar",
+      "address": "76/F, Conrad Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Buffet",
+        "International",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 40,
+        "neutral": 68
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce0d4940-b247-4045-8842-3962002196c5",
+      "name": "星航圖咖啡廳Chart 薄燒牛肉定食 give Tagliolini",
+      "address": "16/F, Conrad Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Fine Dining",
+        "admiralty",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 6,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4bbda627-3337-412a-b483-4202fb1f5b88",
+      "name": "multiple",
+      "address": "22/F, JW Marriott Hotel Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "No Shark Fin",
+        "International",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 4,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "97c92fa0-9592-45fb-b9e3-f8aa7ecd1115",
+      "name": "Stirploin majestic setting healing'",
+      "address": "Shop G78, G/F, Bank Of America Tower , 12 Harcourt Road",
+      "mealType": [
+        "wonton dumpling",
+        "admiralty",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b8e3798-7583-44d1-a0a2-7910f09008f6",
+      "name": "prime Colombia",
+      "address": "Shop 933, L9/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Stir Fry",
+        "Shanghai",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 15,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "373e58c9-d55f-456e-8d9e-2fb667c605bd",
+      "name": "Boss 咸牛肉蛋治",
+      "address": "Shop 885, L8/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Thai",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 8,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc6fef87-69fb-49eb-9824-765cdc769821",
+      "name": "delightful 濃厚蝦湯拉麵",
+      "address": "Shop 705, L7/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Vietnamese",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 12,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9c1de67-7948-477c-b4f1-15d3aae677a9",
+      "name": "eating + cosmopolitan",
+      "address": "5/F, Island Shangri-La Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 94,
+        "dislikes": 7,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1f6ba49c-683f-4e90-8dc3-814ef8866b9a",
+      "name": "大腕菜花 牛肉漢堡 Sok",
+      "address": "Shop 513, 5/F, Tower 2, Admiralty Centre, 18 Harcourt Road",
+      "mealType": [
+        "admiralty",
+        "taiwan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "40896abc-9421-48ed-a4c2-48a69a999561",
+      "name": "Arabica's",
+      "address": "5/F, Conrad Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "Fine Dining",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 20,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c3c571a5-e9d7-4a1e-a2be-9d79b83c00f6",
+      "name": "黑松露Mayo炸雞 G/F",
+      "address": "Shop 307, L3/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "beijing",
+        "Dim Sum",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 28,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7152a3bf-b51c-4d5b-9510-1693b9479dc9",
+      "name": "炸雞 叉燒煎雙蛋飯",
+      "address": "Shop G02, G/F, Bank of America Tower, 12 Harcourt Road",
+      "mealType": [
+        "salad",
+        "Western",
+        "juice"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "55b75941-a3c7-49d5-8749-6a4e7cbf3418",
+      "name": "calm 神虎餃子 豬肉生菜包 Solar",
+      "address": "5/F, The K.S. Lo Gallery, Hong Kong Park, Admiralty, H.K.",
+      "mealType": [
+        "Dim Sum",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 58,
+        "dislikes": 6,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "62bc7d7f-d712-46f4-a711-72bc23efd2c0",
+      "name": "Sugar ancestor",
+      "address": "G/F, 69 Moon street",
+      "mealType": [
+        "International",
+        "admiralty",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 0,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71650920-c01a-4716-853a-93cb0091eb84",
+      "name": "Itsu 黑蒜油叉燒滑蛋飯",
+      "address": "2/F, United Centre, 95 Queensway",
+      "mealType": [
+        "chinese bbq",
+        "guangdong",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 24,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3e3b1bc6-fdc4-4d17-ad3f-6c6c5da54ebc",
+      "name": "Bisque 壽喜燒定食 Madeleine Dukbokki family's",
+      "address": "Shop 659, L6/F, Two Pacific Place, 88 Queensway",
+      "mealType": [
+        "Western",
+        "Fast Food",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 271,
+        "dislikes": 27,
+        "neutral": 85
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0887395e-503b-47f4-a888-fec2a5cce553",
+      "name": "權發小廚 KonFusion Daap 川香回鍋肉 Midtown introduced Bombay",
+      "address": "Shop 839, 8/F, Citic Tower, 1 Tim Mei Avenue",
+      "mealType": [
+        "admiralty",
+        "Western",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6b58204e-a151-4f8f-be12-0e6e3a5dca59",
+      "name": "椰子雞湯 川燒蒜蓉茄子 台灣3Q餅 Phoenix",
+      "address": "Shop 204, L2/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "All Day Breakfast",
+        "Coffee Shop",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "004204dd-019f-4da9-9e43-358ea5c3dabc",
+      "name": "Confections Restobar distilleries DiVino",
+      "address": "Shop 841, L8/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Stir Fry",
+        "Dim Sum",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 5,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c2ca727-1228-4cd9-a17a-3916f7790d17",
+      "name": "權發小廚 Italy",
+      "address": "Shop 902, LG9/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "496443e3-b910-4ba5-92ce-b3feb4e67d53",
+      "name": "神虎精選 assorted BÀRBAR",
+      "address": "Shop 369, 3/F, Citic Tower, 1 Tim Mei Avenue",
+      "mealType": [
+        "Guangdong",
+        "shanghai hairy crab",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 6,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0c26f0d-63cf-4a1e-90f0-479518daef4e",
+      "name": "rooted contains",
+      "address": "Shop D75B, 7/F, LAB Concept, Queensway Plaza, 93 Queensway",
+      "mealType": [
+        "philippines",
+        "dessert",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f36eaa4c-da36-4843-b7fc-730bae72927b",
+      "name": "army Tsui 手撕雞檬紙卷 Fantasy",
+      "address": "Shop 9C, 9/F, Lippo Centre, 89 Queensway",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "admiralty"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75486527-a50b-492b-a4ed-974dcbf4a953",
+      "name": "提拉米蘇千層蛋糕 all",
+      "address": "L3A, JW Marriott Hotel Hong Kong, Pacific Place, 88 Queensway",
+      "mealType": [
+        "admiralty",
+        "cake",
+        "sandwich"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 0,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4bccc35b-5e6d-42b6-b2ec-de72c80e0506",
+      "name": "Ellipsis 牛油檸檬汁蜜糖脆脆 European",
+      "address": "L2/F, Pacific Place, 88 Queensway",
+      "mealType": [
+        "Coffee Shop",
+        "admiralty",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 82,
+        "dislikes": 13,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Admiralty",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}
