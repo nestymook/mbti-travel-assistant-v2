@@ -210,15 +210,23 @@
     - Create authenticated tool invocation testing with proper headers
     - _Requirements: 4.1, 4.2, 4.3, 8.3, 8.4_
 
-- [ ] 10. Configure and deploy to Bedrock AgentCore Runtime
-  - [ ] 10.1 Set up AgentCore Runtime deployment configuration
+- [x] 10. Configure and deploy to Bedrock AgentCore Runtime
+
+
+
+
+
+  - [x] 10.1 Set up AgentCore Runtime deployment configuration
+
     - Create deploy_agentcore.py script using bedrock-agentcore-starter-toolkit Runtime class
     - Set up JWT authorizer configuration with Cognito integration
     - Configure auto-creation of execution role and ECR repository
     - Add proper protocol="MCP" and agent_name="restaurant_search_mcp" configuration
     - _Requirements: 5.1, 5.2, 5.3, 8.1, 8.2, 8.3_
 
-  - [ ] 10.2 Deploy MCP server to AgentCore Runtime
+  - [x] 10.2 Deploy MCP server to AgentCore Runtime
+
+
     - Execute agentcore_runtime.configure() with entrypoint="restaurant_mcp_server.py"
     - Launch deployment using agentcore_runtime.launch()
     - Monitor deployment status until READY state
