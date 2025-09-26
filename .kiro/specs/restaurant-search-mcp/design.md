@@ -35,6 +35,7 @@ graph TB
         end
         
         subgraph "Data Access Layer"
+            DAC[Data Access Client]
             S3C[S3 Client]
             FC[File Config Loader]
         end
@@ -61,7 +62,9 @@ graph TB
     RS --> DS
     RS --> TS
     DS --> FC
-    RS --> S3C
+    RS --> DAC
+    DAC --> S3C
+    DAC --> FC
     S3C --> S3
     FC --> MASTER
     FC --> REGIONS
@@ -77,9 +80,10 @@ The application follows the Bedrock AgentCore MCP server pattern with these key 
 3. **Restaurant Service**: Core business logic for restaurant search operations
 4. **District Service**: Manages district configuration and validation
 5. **Time Service**: Handles meal time calculations and operating hours analysis
-6. **S3 Client**: Manages AWS S3 data retrieval using boto3
-7. **Configuration Loader**: Loads and parses local district configuration files
-8. **Authentication**: JWT-based authentication via Amazon Cognito integration
+6. **Data Access Client**: Unified client for S3 restaurant data retrieval and local district configuration loading
+7. **S3 Client**: Manages AWS S3 data retrieval using boto3
+8. **Configuration Loader**: Loads and parses local district configuration files
+9. **Authentication**: JWT-based authentication via Amazon Cognito integration
 
 ## Components and Interfaces
 
@@ -141,7 +145,6 @@ class RestaurantService:
     def search_by_districts(self, districts: List[str]) -> List[Restaurant]
     def search_by_meal_types(self, meal_types: List[str]) -> List[Restaurant]
     def search_combined(self, districts: List[str] = None, meal_types: List[str] = None) -> List[Restaurant]
-    def get_restaurant_data_from_s3(self, region: str, district: str) -> RestaurantDataFile
 ```
 
 ### District Service Interface
@@ -163,6 +166,17 @@ class TimeService:
     def parse_time_range(self, time_range: str) -> Tuple[datetime.time, datetime.time]
     def check_time_overlap(self, range1: Tuple[datetime.time, datetime.time], 
                           range2: Tuple[datetime.time, datetime.time]) -> bool
+```
+
+### Data Access Client Interface
+
+```python
+class DataAccessClient:
+    def get_restaurant_data(self, region: str, district: str) -> Optional[RestaurantDataFile]
+    def get_multiple_restaurant_data(self, region_district_pairs: List[tuple]) -> Dict[str, RestaurantDataFile]
+    def load_district_config(self, config_path: str = "config/districts") -> Dict[str, Any]
+    def test_s3_connection(self) -> bool
+    def get_available_districts_from_s3(self) -> Dict[str, List[str]]
 ```
 
 ## Data Models

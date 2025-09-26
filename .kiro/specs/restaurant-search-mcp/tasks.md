@@ -79,19 +79,32 @@
     - Test multiple time range scenarios
     - _Requirements: 2.1, 2.2, 2.3, 2.5, 2.6_
 
-- [ ] 5. Implement data access layer for local restaurant files
-  - [ ] 5.1 Create local file data access client
-    - Write DataAccessClient class in services/data_access.py for local file operations
-    - Implement restaurant data retrieval from config/restaurants/ directory structure
-    - Add error handling for file access issues and missing files
-    - Create JSON parsing utilities for restaurant data files
+- [x] 5. Implement data access layer for S3 restaurant files
+
+
+
+
+
+  - [x] 5.1 Create S3-based data access client
+
+
+
+
+    - Write DataAccessClient class in services/data_access.py for S3 operations
+    - Implement restaurant data retrieval from S3 bucket restaurant-data-209803798463-us-east-1/restaurants/
+    - Add error handling for S3 access issues, authentication failures, and missing files
+    - Create JSON parsing utilities for restaurant data files from S3
+    - Implement local district configuration loading from config/districts/
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [ ] 5.2 Write unit tests for data access client
-    - Test local file access and data retrieval with existing config/restaurants/ files
-    - Test error handling for missing files and invalid JSON
-    - Test JSON parsing with actual restaurant data from config directory
-    - Test malformed data handling
+
+  - [x] 5.2 Write unit tests for data access client
+
+    - Test S3 data access and retrieval with mocked S3 responses
+    - Test error handling for S3 authentication failures, missing files, and invalid JSON
+    - Test JSON parsing with actual restaurant data structure from S3
+    - Test local district configuration loading from config/districts/
+    - Test malformed data handling for both S3 and local config
     - _Requirements: 3.1, 3.2, 3.3_
 
 - [ ] 6. Implement restaurant service business logic
