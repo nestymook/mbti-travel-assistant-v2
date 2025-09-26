@@ -324,6 +324,27 @@ class MasterConfig:
 
 ## Deployment and Configuration
 
+### Platform Architecture Requirements
+
+**Critical Requirement**: Amazon Bedrock AgentCore Runtime requires `linux/arm64` architecture containers.
+
+#### Architecture Compatibility
+- **Development Environment**: Can be x86/AMD64 (Windows, macOS, Linux)
+- **Runtime Environment**: Must be `linux/arm64` (managed by AgentCore Runtime)
+- **Build Process**: AWS CodeBuild automatically handles cross-platform building
+
+#### CodeBuild ARM64 Deployment Process
+1. **Source Upload**: Local source code is uploaded to S3
+2. **CodeBuild Project**: Creates ARM64-compatible build environment
+3. **Container Build**: Builds `linux/arm64` Docker image using cloud resources
+4. **ECR Push**: Pushes ARM64 image to Amazon ECR
+5. **AgentCore Deploy**: Deploys ARM64 container to AgentCore Runtime
+
+This approach eliminates the need for:
+- Local ARM64 Docker setup
+- Cross-platform compilation on development machines
+- Manual architecture management
+
 ### Bedrock AgentCore Runtime Deployment
 
 The application follows the Bedrock AgentCore Runtime deployment pattern:
@@ -364,10 +385,13 @@ launch_result = agentcore_runtime.launch()
 ### Docker Configuration
 
 The AgentCore Runtime automatically generates a Dockerfile with:
-- Python 3.11+ base image
+- **Platform Architecture**: `linux/arm64` (required by Bedrock AgentCore Runtime)
+- Python 3.11+ base image optimized for ARM64
 - Required dependencies from requirements.txt
 - FastMCP server configuration
 - Proper entrypoint setup
+
+**Important**: Bedrock AgentCore Runtime requires ARM64 containers. The deployment uses AWS CodeBuild to automatically build ARM64 containers in the cloud, eliminating the need for local ARM64 Docker setup on x86/AMD64 development machines.
 
 ### Requirements.txt
 

@@ -1,0 +1,36 @@
+{
+  "entrypoint": "restaurant_mcp_server.py",
+  "agent_name": "restaurant_search_mcp",
+  "requirements_file": "requirements.txt",
+  "region": "us-east-1",
+  "protocol": "MCP",
+  "auth_config": {
+    "customJWTAuthorizer": {
+      "allowedClients": [
+        "26k0pnja579pdpb1pt6savs27e"
+      ],
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration"
+    }
+  },
+  "cognito_config": {
+    "region": "us-east-1",
+    "user_pool": {
+      "user_pool_id": "us-east-1_wBAxW7yd4",
+      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_wBAxW7yd4",
+      "creation_date": "2025-09-27T07:48:31.750000+09:00"
+    },
+    "app_client": {
+      "client_id": "26k0pnja579pdpb1pt6savs27e",
+      "client_name": "restaurant-search-mcp-client"
+    },
+    "test_user": {
+      "username": "test@example.com",
+      "email": "test@example.com",
+      "status": "FORCE_CHANGE_PASSWORD"
+    },
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration",
+    "setup_timestamp": "us-east-1"
+  },
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
+  "configured_at": 1758929087.9673839
+}

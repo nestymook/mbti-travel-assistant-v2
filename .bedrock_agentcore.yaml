@@ -1,0 +1,64 @@
+default_agent: restaurant_search_mcp_no_auth
+agents:
+  restaurant_search_mcp:
+    name: restaurant_search_mcp
+    entrypoint: C:/MBTI_Travel_Assistant/restaurant_mcp_server.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-c34606a2ff
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_mcp
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-restaurant_search_mcp-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-c34606a2ff
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration
+    request_header_configuration: null
+    oauth_configuration: null
+  restaurant_search_mcp_no_auth:
+    name: restaurant_search_mcp_no_auth
+    entrypoint: C:/MBTI_Travel_Assistant/restaurant_mcp_server.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2b689ae017
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_mcp_no_auth
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: restaurant_search_mcp_no_auth-QkpwVXBnQD
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp_no_auth-QkpwVXBnQD
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-restaurant_search_mcp_no_auth-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-2b689ae017
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
