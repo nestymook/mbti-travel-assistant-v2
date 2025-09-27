@@ -305,17 +305,244 @@
     - Validate that users can interact using natural language like "Find breakfast places in Central district"
     - _Requirements: 12.1, 12.2, 13.1, 13.2_
 
-- [ ] 14. Create comprehensive README and usage examples
-  - [ ] 14.1 Write main project README.md
-    - Create comprehensive project overview and architecture description
-    - Document installation and setup instructions for both MCP server and conversational agent
-    - Add usage examples for both MCP tools and natural language queries
-    - Include troubleshooting section and links to detailed guides
-    - _Requirements: 4.1, 4.2, 4.3, 9.1, 11.1_
+- [x] 14. Implement JWT Token Management and Cognito Authentication
 
-  - [ ] 14.2 Create MCP tool usage examples and integration patterns
-    - Write example code for integrating MCP tools with different frameworks
-    - Document parameter formats and expected response structures for all tools
-    - Create sample queries and expected outputs for testing and validation
-    - Add examples of error handling and edge case management
-    - _Requirements: 4.1, 4.2, 4.3, 6.1, 6.2, 6.3_
+
+
+
+  - [x] 14.1 Create Cognito authentication service
+
+
+    - Implement CognitoAuthenticator class in services/auth_service.py with SRP authentication
+    - Create authenticate_user method using boto3 cognito-idp client with USER_SRP_AUTH flow
+    - Implement token refresh functionality using refresh tokens
+    - Add proper error handling for authentication failures and invalid credentials
+    - _Requirements: 14.1, 14.2, 15.1, 15.2_
+
+  - [x] 14.2 Implement JWT token validation service
+
+
+    - Create TokenValidator class with comprehensive JWT validation logic
+    - Implement JWKS key fetching and caching from Cognito discovery URL
+    - Add token signature verification using RS256 algorithm and Cognito public keys
+    - Create token claims extraction and validation (exp, iss, aud, client_id)
+    - _Requirements: 14.3, 14.4, 15.3, 15.4, 17.1, 17.2_
+
+  - [x] 14.3 Write unit tests for authentication services
+
+
+    - Test SRP authentication flow with mocked Cognito responses
+    - Test JWT token validation with sample tokens and JWKS keys
+    - Test error handling for expired tokens, invalid signatures, and malformed tokens
+    - Test JWKS key caching and refresh mechanisms
+    - _Requirements: 14.1, 14.2, 15.1, 15.2, 15.3_
+
+- [x] 15. Integrate Authentication Middleware with MCP Server
+
+
+
+
+
+  - [x] 15.1 Create FastMCP authentication middleware
+
+
+    - Implement AuthenticationMiddleware class for FastMCP server integration
+    - Add JWT token extraction from Authorization Bearer headers
+    - Create request authentication pipeline with token validation
+    - Add user context injection into request state for authenticated requests
+    - _Requirements: 14.4, 14.5, 16.4, 16.5, 17.3_
+
+  - [x] 15.2 Update MCP server with authentication integration
+
+
+    - Modify restaurant_mcp_server.py to include authentication middleware
+    - Add authentication bypass for health check endpoints (/health, /metrics)
+    - Implement proper error responses for authentication failures (401, 403)
+    - Add user context logging for audit and debugging purposes
+    - _Requirements: 14.1, 14.4, 16.4, 17.4, 18.1, 18.2_
+
+  - [x] 15.3 Write authentication integration tests
+
+
+    - Test MCP server with valid JWT tokens from Cognito
+    - Test authentication failure scenarios with invalid, expired, and malformed tokens
+    - Test middleware bypass for health check endpoints
+    - Test user context extraction and request processing with authenticated users
+    - _Requirements: 14.4, 15.5, 16.4, 17.1, 18.1_
+
+- [-] 16. Configure AgentCore Runtime with Cognito Authentication
+
+
+
+  - [x] 16.1 Update AgentCore deployment with JWT authorizer
+
+
+    - Modify deploy_agentcore.py to include customJWTAuthorizer configuration
+    - Configure allowedClients with Cognito app client ID
+    - Set discoveryUrl to Cognito User Pool OpenID Connect configuration endpoint
+    - Update AgentCore Runtime configuration to enforce JWT authentication
+    - _Requirements: 16.1, 16.2, 16.3, 16.6_
+
+  - [x] 16.2 Create authenticated test client for AgentCore
+
+
+    - Update tests/test_remote_client.py with Cognito authentication flow
+    - Implement JWT token retrieval using CognitoAuthenticator service
+    - Add Bearer token headers to all AgentCore Runtime requests
+    - Create test scenarios for authenticated MCP tool invocations
+    - _Requirements: 16.4, 16.5, 15.5, 15.6_
+
+  - [x] 16.3 Write end-to-end authentication tests
+
+
+
+
+
+
+
+
+
+    - Test complete authentication flow from Cognito login to MCP tool execution
+    - Validate JWT token propagation through AgentCore Runtime to MCP server
+    - Test authentication error handling at both AgentCore and MCP server levels
+    - Verify user context preservation throughout the request pipeline
+    - _Requirements: 16.1, 16.2, 16.4, 17.1, 18.1_
+
+- [x] 17. Implement Comprehensive Authentication Error Handling
+
+
+
+
+
+  - [x] 17.1 Create authentication error response system
+
+
+    - Implement AuthenticationErrorHandler class with standardized error responses
+    - Create specific error handlers for token expiration, invalid format, and unauthorized clients
+    - Add error codes and suggested actions for different authentication failure types
+    - Implement user-friendly error messages with troubleshooting guidance
+    - _Requirements: 18.1, 18.2, 18.3, 18.4, 18.5_
+
+  - [x] 17.2 Add security logging and monitoring
+
+
+    - Implement security event logging for authentication attempts and failures
+    - Add audit logging for user context and MCP tool invocations
+    - Create monitoring for suspicious authentication patterns
+    - Ensure sensitive information is not logged in error messages or audit trails
+    - _Requirements: 17.4, 17.5, 18.6_
+
+  - [x] 17.3 Write security and error handling tests
+
+
+    - Test all authentication error scenarios with appropriate error responses
+    - Test security logging functionality without exposing sensitive data
+    - Test error message clarity and troubleshooting guidance
+    - Validate that authentication failures are handled gracefully without system crashes
+    - _Requirements: 18.1, 18.2, 18.3, 18.4, 18.5, 18.6_
+
+- [x] 18. Create Authentication Documentation and Usage Examples
+
+
+
+
+
+
+  - [x] 18.1 Document Cognito setup and configuration
+
+
+    - Create detailed guide for setting up Cognito User Pool and app client
+    - Document JWT authorizer configuration for AgentCore Runtime
+    - Add step-by-step authentication flow documentation
+    - Include troubleshooting guide for common authentication issues
+    - _Requirements: 14.1, 15.1, 16.1, 16.2, 16.3_
+
+  - [x] 18.2 Create authentication usage examples
+
+
+    - Write example code for client authentication using SRP protocol
+    - Document JWT token usage patterns for MCP client integration
+    - Create sample authentication flows for different client types
+    - Add examples of error handling and token refresh scenarios
+    - _Requirements: 15.1, 15.2, 16.4, 18.1, 18.2_
+
+
+
+
+- [x] 19. Implement MCP EntryPoint Integration with BedrockAgentCoreApp
+
+
+
+
+  - [x] 19.1 Create BedrockAgentCoreApp entrypoint implementation
+
+
+    - Write main.py with BedrockAgentCoreApp and @app.entrypoint decorator
+    - Implement payload processing to extract user prompts from AgentCore Runtime requests
+    - Create Strands Agent integration with MCP tools configuration
+    - Add error handling for invalid payloads and agent processing failures
+    - _Requirements: 19.1, 19.2, 19.3, 19.6_
+
+  - [x] 19.2 Configure Strands Agent with MCP tools
+
+
+    - Set up Strands Agent with Claude 3.5 Sonnet model configuration
+    - Configure agent with restaurant search MCP tools (search_by_district, search_by_meal_type, search_combined)
+    - Add system prompts and tool descriptions for proper LLM tool selection
+    - Implement tool parameter schema definitions for automatic tool calling
+    - _Requirements: 19.4, 19.5, 19.10_
+
+  - [x] 19.3 Implement entrypoint response formatting
+
+
+    - Create response formatting utilities to ensure JSON-serializable outputs
+    - Add conversational response integration from Strands Agent results
+    - Implement error response formatting for user-friendly error messages
+    - Add logging and debugging capabilities for entrypoint processing
+    - _Requirements: 19.6, 19.8, 19.9_
+
+  - [x] 19.4 Write entrypoint integration tests
+
+
+    - Test payload processing with various AgentCore Runtime payload formats
+    - Test Strands Agent integration and automatic MCP tool selection
+    - Test response formatting and JSON serialization
+    - Test error handling scenarios and graceful failure modes
+    - _Requirements: 19.1, 19.2, 19.8, 19.9_
+
+  - [x] 19.5 Update deployment configuration for entrypoint
+
+
+    - Modify deploy_agentcore.py to use main.py as entrypoint instead of restaurant_mcp_server.py
+    - Update .bedrock_agentcore.yaml configuration for entrypoint deployment
+    - Add Strands Agent dependencies to requirements.txt
+    - Test complete deployment with entrypoint integration
+    - _Requirements: 19.7, 19.1_
+
+- [x] 20. Create comprehensive README and usage examples
+
+
+
+
+
+
+
+
+
+  - [x] 20.1 Write main project README.md
+
+
+    - Create comprehensive project overview and architecture description including authentication and entrypoint integration
+    - Document installation and setup instructions for BedrockAgentCoreApp entrypoint with Cognito authentication
+    - Add usage examples for both MCP tools and natural language queries through entrypoint with authentication
+    - Include troubleshooting section and links to detailed guides including authentication and entrypoint issues
+    - _Requirements: 4.1, 4.2, 4.3, 9.1, 11.1, 14.1, 16.1, 19.1_
+
+  - [x] 20.2 Create MCP tool usage examples and integration patterns
+
+
+    - Write example code for integrating MCP tools with BedrockAgentCoreApp entrypoint including authentication
+    - Document parameter formats and expected response structures for all tools through entrypoint
+    - Create sample queries and expected outputs for testing and validation with entrypoint integration
+    - Add examples of error handling and edge case management including authentication and entrypoint errors
+    - _Requirements: 4.1, 4.2, 4.3, 6.1, 6.2, 6.3, 18.1, 18.2, 19.1, 19.6_

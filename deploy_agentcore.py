@@ -90,12 +90,14 @@ class AgentCoreDeployment:
             }
         }
         
-        print(f"✓ Created JWT authorizer config with client ID: {client_id}")
+        print(f"✓ Created JWT authorizer config:")
+        print(f"  - Client ID: {client_id}")
+        print(f"  - Discovery URL: {discovery_url}")
         return auth_config
     
     def configure_agentcore_runtime(self, 
-                                   entrypoint: str = "restaurant_mcp_server.py",
-                                   agent_name: str = "restaurant_search_mcp",
+                                   entrypoint: str = "main.py",
+                                   agent_name: str = "restaurant_search_conversational_agent",
                                    requirements_file: str = "requirements.txt") -> Dict[str, Any]:
         """Configure AgentCore Runtime deployment.
         
@@ -362,10 +364,10 @@ def main():
     
     parser = argparse.ArgumentParser(description='Deploy Restaurant Search MCP to AgentCore Runtime')
     parser.add_argument('--region', default='us-east-1', help='AWS region (default: us-east-1)')
-    parser.add_argument('--entrypoint', default='restaurant_mcp_server.py', 
-                       help='MCP server entrypoint (default: restaurant_mcp_server.py)')
-    parser.add_argument('--agent-name', default='restaurant_search_mcp',
-                       help='Agent name (default: restaurant_search_mcp)')
+    parser.add_argument('--entrypoint', default='main.py', 
+                       help='BedrockAgentCoreApp entrypoint (default: main.py)')
+    parser.add_argument('--agent-name', default='restaurant_search_conversational_agent',
+                       help='Agent name (default: restaurant_search_conversational_agent)')
     parser.add_argument('--requirements', default='requirements.txt',
                        help='Requirements file (default: requirements.txt)')
     parser.add_argument('--configure-only', action='store_true',

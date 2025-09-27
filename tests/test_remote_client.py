@@ -21,9 +21,13 @@ from botocore.exceptions import ClientError
 from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
+# Import the enhanced CognitoAuthenticator from auth service
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from services.auth_service import CognitoAuthenticator, AuthenticationError, AuthenticationTokens
 
-class CognitoAuthenticator:
-    """Handle Cognito JWT token authentication."""
+
+class RemoteCognitoAuthenticator:
+    """Wrapper for CognitoAuthenticator with remote client specific functionality."""
     
     def __init__(self, config_file: str = "cognito_config.json"):
         """Initialize authenticator with Cognito configuration.
@@ -32,9 +36,10 @@ class CognitoAuthenticator:
             config_file: Path to Cognito configuration file.
         """
         self.config = self._load_config(config_file)
-        self.cognito_client = boto3.client(
-            'cognito-idp', 
-            region_name=self.config['region']
+        self.authenticator = CognitoAuthenticator(
+            user_pool_id=self.config['user_pool']['user_pool_id'],
+            client_id=self.config['app_client']['client_id'],
+            region=self.config['region']
         )
     
     def _load_config(self, config_file: str) -> Dict[str, Any]:
@@ -68,33 +73,27 @@ class CognitoAuthenticator:
             Dictionary containing authentication tokens.
         """
         try:
-            response = self.cognito_client.initiate_auth(
-                ClientId=self.config['app_client']['client_id'],
-                AuthFlow='USER_PASSWORD_AUTH',
-                AuthParameters={
-                    'USERNAME': username,
-                    'PASSWORD': password
-                }
-            )
-            
-            auth_result = response['AuthenticationResult']
+            tokens = self.authenticator.authenticate_user(username, password)
             
             return {
-                'access_token': auth_result['AccessToken'],
-                'id_token': auth_result['IdToken'],
-                'refresh_token': auth_result['RefreshToken'],
-                'token_type': auth_result['TokenType'],
-                'expires_in': auth_result['ExpiresIn']
+                'access_token': tokens.access_token,
+                'id_token': tokens.id_token,
+                'refresh_token': tokens.refresh_token,
+                'token_type': tokens.token_type,
+                'expires_in': tokens.expires_in
             }
             
-        except ClientError as e:
-            error_code = e.response['Error']['Code']
-            if error_code == 'NotAuthorizedException':
+        except AuthenticationError as e:
+            if e.error_code == 'NEW_PASSWORD_REQUIRED':
+                raise ValueError(
+                    "User must change password. Please use AWS Console or CLI to set a new password."
+                )
+            elif e.error_code == 'NotAuthorizedException':
                 raise ValueError("Invalid username or password")
-            elif error_code == 'UserNotConfirmedException':
+            elif e.error_code == 'UserNotConfirmedException':
                 raise ValueError("User account not confirmed")
             else:
-                raise ValueError(f"Authentication failed: {e}")
+                raise ValueError(f"Authentication failed: {e.message}")
     
     def get_test_user_credentials(self) -> tuple[str, str]:
         """Get test user credentials from configuration.
@@ -165,7 +164,7 @@ class RemoteMCPClient:
             region: AWS region.
             config_file: Path to Cognito configuration file.
         """
-        self.authenticator = CognitoAuthenticator(config_file)
+        self.authenticator = RemoteCognitoAuthenticator(config_file)
         self.runtime_client = AgentCoreRuntimeClient(agent_arn, region)
         self.bearer_token: Optional[str] = None
     

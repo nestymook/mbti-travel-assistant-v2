@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "restaurant-search-mcp": {
+      "command": "python",
+      "args": [
+        "./restaurant_mcp_server.py"
+      ],
+      "env": {
+        "REQUIRE_AUTHENTICATION": "false",
+        "PYTHONPATH": "."
+      },
+      "disabled": false,
+      "autoApprove": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ],
+      "disabledTools": []
+    }
+  }
+}

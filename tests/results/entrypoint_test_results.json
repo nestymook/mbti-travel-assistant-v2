@@ -1,0 +1,11 @@
+{
+  "test_suite": "entrypoint_integration",
+  "timestamp": "2025-09-27T23:07:58.092518",
+  "tests": [],
+  "total_tests": 0,
+  "passed": 0,
+  "failed": 1,
+  "errors": 1,
+  "exit_code": 4,
+  "error": "Could not generate test report"
+}

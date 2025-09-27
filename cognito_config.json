@@ -10,9 +10,15 @@
     "client_name": "restaurant-search-mcp-client"
   },
   "test_user": {
+    "username": "testing_user@test.com.hk",
+    "email": "testing_user@test.com.hk",
+    "status": "CONFIRMED",
+    "password_updated": true
+  },
+  "previous_test_user": {
     "username": "nestymook@gmail.com",
     "email": "nestymook@gmail.com",
-    "status": "FORCE_CHANGE_PASSWORD"
+    "note": "Previous test user, kept for reference"
   },
   "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
   "setup_timestamp": "us-east-1",

@@ -179,3 +179,85 @@ equirement 9
 4. WHEN operating hours are displayed THEN they SHALL be formatted in a user-friendly way (e.g., "Open for breakfast: Mon-Fri 7:00-11:30")
 5. WHEN no restaurants match the criteria THEN the response SHALL suggest alternative searches or nearby options
 6. WHEN errors occur THEN the error messages SHALL be user-friendly and provide guidance on how to refine the search
+
+### Requirement 14 - Cognito Authentication Integration
+
+**User Story:** As a system administrator, I want to integrate AWS Cognito authentication with the MCP server, so that only authenticated users can access restaurant search functionality through AgentCore.
+
+#### Acceptance Criteria
+
+1. WHEN the MCP server starts THEN it SHALL configure AWS Cognito User Pool integration for authentication
+2. WHEN AgentCore makes requests to the MCP server THEN it SHALL include valid JWT tokens from Cognito authentication
+3. WHEN JWT tokens are received THEN the system SHALL validate them against the Cognito User Pool's JWKS endpoint
+4. WHEN token validation fails THEN the system SHALL return HTTP 401 Unauthorized with appropriate error messages
+5. WHEN tokens are expired THEN the system SHALL reject requests and indicate token refresh is required
+6. IF Cognito configuration is invalid THEN the system SHALL fail to start with clear error messages
+
+### Requirement 15 - JWT Token Management
+
+**User Story:** As a system integrator, I want to handle JWT token creation and validation, so that the authentication flow works seamlessly with Bedrock AgentCore.
+
+#### Acceptance Criteria
+
+1. WHEN authenticating users THEN the system SHALL use AWS SDK to call Cognito's InitiateAuth API with SRP protocol
+2. WHEN authentication succeeds THEN Cognito SHALL return ID, access, and refresh tokens
+3. WHEN tokens are generated THEN they SHALL include appropriate claims for user identification and authorization
+4. WHEN validating JWT tokens THEN the system SHALL verify signature using Cognito's public keys from JWKS endpoint
+5. WHEN tokens expire THEN the system SHALL support refresh token flow to obtain new access tokens
+6. IF SRP authentication fails THEN the system SHALL return appropriate error messages for credential issues
+
+### Requirement 16 - AgentCore Authentication Configuration
+
+**User Story:** As a system administrator, I want to configure AgentCore with Cognito authentication, so that the complete system enforces proper access controls.
+
+#### Acceptance Criteria
+
+1. WHEN AgentCore is deployed THEN it SHALL be configured with customJWTAuthorizer pointing to Cognito User Pool
+2. WHEN the discovery URL is configured THEN it SHALL point to the Cognito User Pool's OpenID Connect configuration
+3. WHEN allowedClients are specified THEN only those client IDs SHALL be permitted to access the agent
+4. WHEN authentication is enabled THEN all requests to AgentCore SHALL require valid JWT tokens
+5. WHEN tokens are validated THEN AgentCore SHALL pass them through to the MCP server for additional validation
+6. IF authentication configuration is missing THEN AgentCore deployment SHALL fail with clear error messages
+
+### Requirement 17 - Security and Token Validation
+
+**User Story:** As a security administrator, I want robust JWT token validation, so that the system maintains proper security controls for restaurant data access.
+
+#### Acceptance Criteria
+
+1. WHEN validating JWT tokens THEN the system SHALL verify token signature, expiration, issuer, and audience claims
+2. WHEN tokens contain user information THEN the system SHALL extract and log user context for audit purposes
+3. WHEN token validation occurs THEN it SHALL use cached JWKS keys with appropriate refresh intervals
+4. WHEN suspicious authentication attempts are detected THEN the system SHALL log security events
+5. WHEN tokens are processed THEN sensitive information SHALL NOT be logged or exposed in error messages
+6. IF token validation libraries are unavailable THEN the system SHALL fail securely by rejecting all requests
+
+### Requirement 18 - Authentication Error Handling
+
+**User Story:** As a developer, I want clear authentication error responses, so that I can troubleshoot and resolve authentication issues effectively.
+
+#### Acceptance Criteria
+
+1. WHEN authentication fails THEN the system SHALL return specific error codes for different failure types
+2. WHEN tokens are malformed THEN the system SHALL return HTTP 400 with "Invalid token format" message
+3. WHEN tokens are expired THEN the system SHALL return HTTP 401 with "Token expired" message and refresh guidance
+4. WHEN Cognito services are unavailable THEN the system SHALL return HTTP 503 with "Authentication service unavailable"
+5. WHEN JWKS endpoint is unreachable THEN the system SHALL use cached keys if available or return appropriate errors
+6. IF authentication errors occur THEN they SHALL be logged with sufficient detail for debugging without exposing sensitive data
+
+### Requirement 19 - MCP EntryPoint Integration
+
+**User Story:** As a system integrator, I want to create an MCP entrypoint using BedrockAgentCoreApp, so that the system can receive payloads and trigger the LLM to choose and execute available MCP tools for restaurant search operations.
+
+#### Acceptance Criteria
+
+1. WHEN the application starts THEN it SHALL create a BedrockAgentCoreApp instance with an @app.entrypoint decorator
+2. WHEN a payload is received at the entrypoint THEN it SHALL extract the user prompt from the payload structure
+3. WHEN the entrypoint processes a request THEN it SHALL pass the user message to the Strands Agent for LLM processing
+4. WHEN the LLM processes the user message THEN it SHALL automatically select and call appropriate MCP tools based on the query intent
+5. WHEN MCP tools are executed THEN the results SHALL be integrated into the agent's response generation
+6. WHEN the agent generates a response THEN it SHALL return a JSON-serializable string containing the formatted results
+7. WHEN the application runs THEN it SHALL use app.run() to start the BedrockAgentCore runtime server
+8. IF payload structure is invalid THEN the entrypoint SHALL handle the error gracefully and return appropriate error messages
+9. IF the Strands Agent fails to process the message THEN the system SHALL return a fallback response with error details
+10. WHEN multiple MCP tool calls are needed THEN the agent SHALL orchestrate them appropriately to fulfill the user's request

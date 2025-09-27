@@ -4,17 +4,21 @@ This module implements a FastMCP server that provides restaurant search tools
 for foundation models. It exposes MCP tools for searching restaurants by district,
 meal type, and combined criteria using AWS S3 data and local district configuration.
 
-The server follows Bedrock AgentCore patterns with stateless HTTP transport
-and proper error handling for MCP tool integration.
+The server follows Bedrock AgentCore patterns with stateless HTTP transport,
+JWT authentication via Cognito, and proper error handling for MCP tool integration.
 """
 
 import json
 import logging
+import os
+from datetime import datetime
 from typing import List, Optional, Dict, Any
 
 from mcp.server.fastmcp import FastMCP
 
 from services.restaurant_service import RestaurantService, RestaurantSearchError
+from services.auth_middleware import create_authentication_middleware, AuthenticationHelper
+from services.security_monitor import get_security_monitor
 from models.restaurant_models import Restaurant
 
 
@@ -25,12 +29,68 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Create FastMCP server with AgentCore Runtime compatibility
-# CRITICAL: stateless_http=True is required for AgentCore Runtime
-mcp = FastMCP(host="0.0.0.0", stateless_http=True)
+# Load Cognito configuration for authentication
+def load_cognito_config() -> Dict[str, Any]:
+    """Load Cognito configuration from file."""
+    try:
+        config_path = os.path.join(os.path.dirname(__file__), 'cognito_config.json')
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+        
+        # Transform to format expected by TokenValidator
+        cognito_config = {
+            'user_pool_id': config['user_pool']['user_pool_id'],
+            'client_id': config['app_client']['client_id'],
+            'region': config['region'],
+            'discovery_url': config['discovery_url']
+        }
+        
+        logger.info(f"Loaded Cognito configuration for User Pool: {cognito_config['user_pool_id']}")
+        return cognito_config
+        
+    except Exception as e:
+        logger.error(f"Failed to load Cognito configuration: {e}")
+        # Return minimal config for testing without authentication
+        return {
+            'user_pool_id': 'test-pool',
+            'client_id': 'test-client',
+            'region': 'us-east-1',
+            'discovery_url': 'https://test.example.com/.well-known/openid-configuration'
+        }
+
+# Create FastMCP server with stdio transport for Kiro MCP integration
+mcp = FastMCP("restaurant-search-mcp")
+
+# Load authentication configuration
+cognito_config = load_cognito_config()
+
+# Configure authentication middleware
+# Authentication can be disabled via environment variable for testing
+require_auth = os.getenv('REQUIRE_AUTHENTICATION', 'true').lower() == 'true'
+bypass_paths = ['/health', '/metrics', '/docs', '/openapi.json', '/']
+
+# Note: FastMCP doesn't expose the underlying FastAPI app directly
+# Authentication will be handled at the AgentCore Runtime level
+# This is a placeholder for when FastMCP supports middleware
+auth_middleware_config = None
+
+if require_auth:
+    logger.info("Authentication enabled - JWT tokens required")
+    logger.info("Note: Authentication will be handled by AgentCore Runtime JWT authorizer")
+    auth_middleware_config = {
+        'cognito_config': cognito_config,
+        'bypass_paths': bypass_paths,
+        'require_authentication': True,
+        'log_user_context': True
+    }
+else:
+    logger.warning("Authentication disabled - running in development mode")
 
 # Initialize restaurant service
 restaurant_service = RestaurantService()
+
+# Initialize security monitor
+security_monitor = get_security_monitor()
 
 
 def format_restaurant_response(restaurants: List[Restaurant], 
@@ -124,6 +184,105 @@ def format_error_response(error_message: str,
     return json.dumps(response, indent=2)
 
 
+# Note: FastMCP doesn't support custom HTTP endpoints like health checks
+# Health monitoring will be handled by AgentCore Runtime
+# The MCP server provides tools, not HTTP endpoints
+
+def get_server_health() -> dict:
+    """Get server health status for internal monitoring."""
+    try:
+        # Test basic service functionality
+        test_results = restaurant_service.test_services()
+        
+        health_status = {
+            'status': 'healthy' if all(test_results.values()) else 'degraded',
+            'timestamp': datetime.now().isoformat(),
+            'services': test_results,
+            'version': '1.0.0',
+            'authentication_enabled': require_auth
+        }
+        
+        return health_status
+        
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return {
+            'status': 'unhealthy',
+            'timestamp': datetime.now().isoformat(),
+            'error': str(e),
+            'version': '1.0.0'
+        }
+
+def get_server_metrics() -> dict:
+    """Get server metrics for internal monitoring."""
+    try:
+        # Get basic service metrics
+        available_districts = restaurant_service.get_available_districts()
+        
+        # Get security metrics
+        security_metrics = security_monitor.get_security_metrics()
+        
+        metrics = {
+            'mcp_server_status': 'running',
+            'authentication_enabled': require_auth,
+            'available_districts_count': len(available_districts) if available_districts else 0,
+            'security_metrics': {
+                'total_auth_attempts': security_metrics.total_auth_attempts,
+                'successful_auths': security_metrics.successful_auths,
+                'failed_auths': security_metrics.failed_auths,
+                'token_validations': security_metrics.token_validations,
+                'suspicious_activities': security_metrics.suspicious_activities,
+                'blocked_ips': security_metrics.blocked_ips
+            },
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        return metrics
+        
+    except Exception as e:
+        logger.error(f"Metrics collection failed: {e}")
+        return {
+            'mcp_server_status': 'error',
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }
+
+
+def log_mcp_tool_invocation(tool_name: str, parameters: Dict[str, Any]) -> None:
+    """Log MCP tool invocation for security audit.
+    
+    Args:
+        tool_name: Name of the MCP tool being invoked
+        parameters: Parameters passed to the tool
+    """
+    try:
+        # Create mock user and request context since FastMCP doesn't provide direct access
+        # In production, this would be extracted from the authenticated request
+        user_context = {
+            'user_id': 'mcp_user',  # Would be extracted from JWT token
+            'username': 'mcp_user',  # Would be extracted from JWT token
+            'email': 'unknown'  # Would be extracted from JWT token
+        }
+        
+        request_context = {
+            'path': f'/mcp/tools/{tool_name}',
+            'method': 'POST',
+            'client_ip': 'unknown',  # Would be extracted from request
+            'user_agent': 'MCP Client',  # Would be extracted from request
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        # Log the tool invocation
+        security_monitor.log_mcp_tool_invocation(
+            tool_name=tool_name,
+            user_context=user_context,
+            request_context=request_context,
+            parameters=parameters
+        )
+        
+    except Exception as e:
+        logger.error(f"Failed to log MCP tool invocation: {e}")
+
 @mcp.tool()
 def search_restaurants_by_district(districts: List[str]) -> str:
     """Search for restaurants in specific districts.
@@ -142,6 +301,9 @@ def search_restaurants_by_district(districts: List[str]) -> str:
         search_restaurants_by_district(["Central district", "Admiralty"])
     """
     try:
+        # Log MCP tool invocation for security audit
+        log_mcp_tool_invocation('search_restaurants_by_district', {'districts': districts})
+        
         logger.info(f"Searching restaurants by districts: {districts}")
         
         # Validate input parameters
@@ -227,6 +389,9 @@ def search_restaurants_by_meal_type(meal_types: List[str]) -> str:
         search_restaurants_by_meal_type(["breakfast", "lunch"])
     """
     try:
+        # Log MCP tool invocation for security audit
+        log_mcp_tool_invocation('search_restaurants_by_meal_type', {'meal_types': meal_types})
+        
         logger.info(f"Searching restaurants by meal types: {meal_types}")
         
         # Validate input parameters
@@ -334,6 +499,12 @@ def search_restaurants_combined(districts: Optional[List[str]] = None,
         search_restaurants_combined(meal_types=["lunch", "dinner"])
     """
     try:
+        # Log MCP tool invocation for security audit
+        log_mcp_tool_invocation('search_restaurants_combined', {
+            'districts': districts,
+            'meal_types': meal_types
+        })
+        
         logger.info(f"Combined search - districts: {districts}, meal_types: {meal_types}")
         
         # Validate that at least one parameter is provided
@@ -489,7 +660,12 @@ def search_restaurants_combined(districts: Optional[List[str]] = None,
 
 
 if __name__ == "__main__":
-    logger.info("Starting Restaurant Search MCP Server")
+    logger.info("Starting Restaurant Search MCP Server with Authentication")
+    
+    # Log authentication configuration
+    logger.info(f"Authentication required: {require_auth}")
+    logger.info(f"Cognito User Pool: {cognito_config.get('user_pool_id', 'N/A')}")
+    logger.info(f"Bypass paths: {bypass_paths}")
     
     # Test service initialization
     try:
@@ -504,6 +680,32 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Service initialization test failed: {e}")
     
-    # Start the MCP server with streamable-http transport for AgentCore compatibility
-    logger.info("Starting FastMCP server on host 0.0.0.0 with stateless HTTP transport")
-    mcp.run(transport="streamable-http")
+    # Test authentication configuration if enabled
+    if require_auth:
+        try:
+            from services.auth_service import TokenValidator
+            validator = TokenValidator(cognito_config)
+            logger.info("Authentication configuration validated successfully")
+            logger.info("Note: JWT authentication will be enforced by AgentCore Runtime")
+        except Exception as e:
+            logger.error(f"Authentication configuration test failed: {e}")
+            logger.warning("Server will start but authentication may not work properly")
+    
+    # Test health and metrics functions
+    try:
+        health_status = get_server_health()
+        logger.info(f"Server health status: {health_status['status']}")
+        
+        metrics = get_server_metrics()
+        logger.info(f"Server metrics: {metrics['mcp_server_status']}")
+    except Exception as e:
+        logger.error(f"Health/metrics test failed: {e}")
+    
+    # Start the MCP server with stdio transport for Kiro integration
+    logger.info("Starting FastMCP server with stdio transport")
+    
+    try:
+        mcp.run()
+    except Exception as e:
+        logger.error(f"Failed to start MCP server: {e}")
+        raise

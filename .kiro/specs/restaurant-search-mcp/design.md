@@ -303,6 +303,37 @@ class AgentCoreIntegration:
     def update_system_prompts(self, prompts: Dict) -> bool
 ```
 
+### Authentication Service Interfaces
+
+```python
+class CognitoAuthenticator:
+    def __init__(self, user_pool_id: str, client_id: str, region: str)
+    async def authenticate_user(self, username: str, password: str) -> Dict
+    async def refresh_token(self, refresh_token: str) -> Dict
+    async def validate_user_session(self, access_token: str) -> Dict
+    def get_user_info(self, access_token: str) -> Dict
+
+class TokenValidator:
+    def __init__(self, cognito_config: Dict)
+    async def validate_jwt_token(self, token: str) -> Dict
+    async def get_signing_key(self, kid: str) -> str
+    def extract_claims(self, token: str) -> Dict
+    def is_token_expired(self, token: str) -> bool
+
+class AuthenticationMiddleware:
+    def __init__(self, token_validator: TokenValidator)
+    async def __call__(self, request: Request, call_next) -> Response
+    def extract_bearer_token(self, auth_header: str) -> str
+    def create_error_response(self, error_type: str, message: str) -> JSONResponse
+
+class JWKSManager:
+    def __init__(self, discovery_url: str, cache_ttl: int = 3600)
+    async def get_jwks_keys(self) -> Dict
+    async def refresh_jwks_cache(self) -> None
+    def get_signing_key_for_kid(self, kid: str) -> str
+    def is_cache_expired(self) -> bool
+```
+
 ### Natural Language Query Processing Interface
 
 ```python
@@ -390,6 +421,55 @@ class MasterConfig:
     version: str
     last_updated: str
     regions: List[Dict[str, Any]]
+
+### Authentication Data Models
+
+```python
+@dataclass
+class CognitoConfig:
+    user_pool_id: str
+    client_id: str
+    region: str
+    discovery_url: str
+    jwks_url: str
+    issuer_url: str
+
+@dataclass
+class JWTClaims:
+    user_id: str
+    username: str
+    email: str
+    client_id: str
+    token_use: str
+    exp: int
+    iat: int
+    iss: str
+    aud: str
+
+@dataclass
+class AuthenticationTokens:
+    id_token: str
+    access_token: str
+    refresh_token: str
+    expires_in: int
+    token_type: str = "Bearer"
+
+@dataclass
+class AuthenticationError:
+    error_type: str
+    error_code: str
+    message: str
+    details: str
+    suggested_action: str
+
+@dataclass
+class UserContext:
+    user_id: str
+    username: str
+    email: str
+    authenticated: bool
+    token_claims: JWTClaims
+    session_id: Optional[str] = None
 ```
 
 ## Natural Language Processing and User Experience
@@ -749,18 +829,330 @@ AgentCore Runtime manages these automatically:
 
 ### Authentication Configuration
 
-Uses Amazon Cognito for JWT-based authentication:
-- User pool with app client
-- JWT token validation
-- Bearer token authentication for MCP client connections
+The system implements comprehensive JWT-based authentication using Amazon Cognito:
+
+#### Cognito User Pool Setup
+```python
+# Cognito User Pool configuration
+cognito_config = {
+    "user_pool_name": "restaurant-search-mcp-users",
+    "client_name": "restaurant-search-client",
+    "domain_name": "restaurant-search-mcp",
+    "supported_identity_providers": ["COGNITO"],
+    "callback_urls": ["https://localhost:3000/callback"],
+    "logout_urls": ["https://localhost:3000/logout"],
+    "oauth_flows": ["authorization_code_grant"],
+    "oauth_scopes": ["openid", "profile", "email"]
+}
+```
+
+#### JWT Token Validation Pipeline
+```python
+class JWTValidator:
+    def __init__(self, cognito_config):
+        self.discovery_url = cognito_config['discovery_url']
+        self.allowed_clients = cognito_config['allowed_clients']
+        self.jwks_cache = {}
+        self.jwks_cache_ttl = 3600  # 1 hour
+    
+    async def validate_token(self, token: str) -> Dict:
+        """Validate JWT token against Cognito User Pool"""
+        # 1. Decode token header to get key ID
+        # 2. Fetch JWKS from Cognito if not cached
+        # 3. Verify token signature using public key
+        # 4. Validate token claims (exp, iss, aud, client_id)
+        # 5. Return validated claims or raise exception
+        
+    async def get_jwks_keys(self) -> Dict:
+        """Fetch and cache JWKS keys from Cognito"""
+        # Implementation for JWKS key retrieval and caching
+```
+
+#### AgentCore Authentication Integration
+```python
+# AgentCore Runtime authentication configuration
+auth_config = {
+    "customJWTAuthorizer": {
+        "allowedClients": [cognito_client_id],
+        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration"
+    }
+}
+
+# MCP Server authentication middleware
+@mcp.middleware()
+async def authenticate_request(request, call_next):
+    """Validate JWT token in MCP requests"""
+    auth_header = request.headers.get('Authorization')
+    if not auth_header or not auth_header.startswith('Bearer '):
+        raise HTTPException(401, "Missing or invalid authorization header")
+    
+    token = auth_header.split(' ')[1]
+    try:
+        claims = await jwt_validator.validate_token(token)
+        request.state.user_claims = claims
+        return await call_next(request)
+    except Exception as e:
+        raise HTTPException(401, f"Token validation failed: {str(e)}")
+```
+
+#### Authentication Flow Architecture
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Cognito as Amazon Cognito
+    participant AgentCore as AgentCore Runtime
+    participant MCP as MCP Server
+    
+    Client->>Cognito: InitiateAuth with credentials
+    Cognito->>Client: Return ID, Access, Refresh tokens
+    Client->>AgentCore: Request with Bearer token
+    AgentCore->>Cognito: Validate JWT against JWKS
+    Cognito->>AgentCore: Token validation result
+    AgentCore->>MCP: Forward request with validated context
+    MCP->>AgentCore: Return response
+    AgentCore->>Client: Return authenticated response
+```
+
+## Authentication Architecture
+
+### JWT Token Management System
+
+The authentication system implements a comprehensive JWT token management pipeline:
+
+#### Token Creation and SRP Authentication
+```python
+class CognitoAuthenticator:
+    def __init__(self, user_pool_id: str, client_id: str, region: str):
+        self.cognito_client = boto3.client('cognito-idp', region_name=region)
+        self.user_pool_id = user_pool_id
+        self.client_id = client_id
+    
+    async def authenticate_user(self, username: str, password: str) -> Dict:
+        """Authenticate user using SRP protocol"""
+        try:
+            # Use SRP authentication for security
+            response = self.cognito_client.initiate_auth(
+                ClientId=self.client_id,
+                AuthFlow='USER_SRP_AUTH',
+                AuthParameters={
+                    'USERNAME': username,
+                    'SRP_A': self._calculate_srp_a()
+                }
+            )
+            
+            # Handle SRP challenge response
+            if response['ChallengeName'] == 'PASSWORD_VERIFIER':
+                challenge_response = self._handle_srp_challenge(
+                    response['ChallengeParameters'], password
+                )
+                
+                final_response = self.cognito_client.respond_to_auth_challenge(
+                    ClientId=self.client_id,
+                    ChallengeName='PASSWORD_VERIFIER',
+                    ChallengeResponses=challenge_response
+                )
+                
+                return {
+                    'id_token': final_response['AuthenticationResult']['IdToken'],
+                    'access_token': final_response['AuthenticationResult']['AccessToken'],
+                    'refresh_token': final_response['AuthenticationResult']['RefreshToken'],
+                    'expires_in': final_response['AuthenticationResult']['ExpiresIn']
+                }
+                
+        except ClientError as e:
+            raise AuthenticationError(f"Authentication failed: {e.response['Error']['Message']}")
+```
+
+#### Token Validation and Claims Processing
+```python
+class TokenValidator:
+    def __init__(self, cognito_config: Dict):
+        self.discovery_url = cognito_config['discovery_url']
+        self.allowed_clients = cognito_config['allowed_clients']
+        self.jwks_cache = TTLCache(maxsize=100, ttl=3600)
+        
+    async def validate_jwt_token(self, token: str) -> Dict:
+        """Comprehensive JWT token validation"""
+        try:
+            # 1. Decode token header without verification
+            unverified_header = jwt.get_unverified_header(token)
+            kid = unverified_header['kid']
+            
+            # 2. Get signing key from JWKS
+            signing_key = await self._get_signing_key(kid)
+            
+            # 3. Verify and decode token
+            decoded_token = jwt.decode(
+                token,
+                signing_key,
+                algorithms=['RS256'],
+                audience=self.allowed_clients,
+                issuer=self._get_issuer_url(),
+                options={
+                    'verify_signature': True,
+                    'verify_exp': True,
+                    'verify_aud': True,
+                    'verify_iss': True
+                }
+            )
+            
+            # 4. Additional claim validation
+            self._validate_custom_claims(decoded_token)
+            
+            return {
+                'user_id': decoded_token.get('sub'),
+                'username': decoded_token.get('cognito:username'),
+                'email': decoded_token.get('email'),
+                'client_id': decoded_token.get('client_id'),
+                'token_use': decoded_token.get('token_use'),
+                'exp': decoded_token.get('exp'),
+                'iat': decoded_token.get('iat')
+            }
+            
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationError("Token has expired")
+        except jwt.InvalidTokenError as e:
+            raise AuthenticationError(f"Invalid token: {str(e)}")
+        except Exception as e:
+            raise AuthenticationError(f"Token validation failed: {str(e)}")
+    
+    async def _get_signing_key(self, kid: str) -> str:
+        """Get JWT signing key from JWKS endpoint with caching"""
+        if kid in self.jwks_cache:
+            return self.jwks_cache[kid]
+            
+        # Fetch JWKS from Cognito
+        jwks_url = f"{self.discovery_url.replace('/.well-known/openid_configuration', '')}/.well-known/jwks.json"
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.get(jwks_url) as response:
+                jwks = await response.json()
+                
+        # Find matching key
+        for key in jwks['keys']:
+            if key['kid'] == kid:
+                # Convert JWK to PEM format
+                signing_key = jwt.algorithms.RSAAlgorithm.from_jwk(json.dumps(key))
+                self.jwks_cache[kid] = signing_key
+                return signing_key
+                
+        raise AuthenticationError(f"Unable to find signing key for kid: {kid}")
+```
+
+#### Authentication Middleware Integration
+```python
+class AuthenticationMiddleware:
+    def __init__(self, token_validator: TokenValidator):
+        self.token_validator = token_validator
+        
+    async def __call__(self, request: Request, call_next):
+        """FastAPI middleware for JWT authentication"""
+        # Skip authentication for health checks
+        if request.url.path in ['/health', '/metrics']:
+            return await call_next(request)
+            
+        # Extract and validate JWT token
+        auth_header = request.headers.get('Authorization')
+        if not auth_header or not auth_header.startswith('Bearer '):
+            return JSONResponse(
+                status_code=401,
+                content={
+                    "error": "Missing or invalid authorization header",
+                    "error_type": "AuthenticationError",
+                    "details": "Request must include 'Authorization: Bearer <token>' header"
+                }
+            )
+        
+        token = auth_header.split(' ')[1]
+        
+        try:
+            # Validate token and extract claims
+            user_claims = await self.token_validator.validate_jwt_token(token)
+            
+            # Add user context to request
+            request.state.user_claims = user_claims
+            request.state.authenticated = True
+            
+            # Log authentication event
+            logger.info(f"Authenticated request from user: {user_claims['username']}")
+            
+            return await call_next(request)
+            
+        except AuthenticationError as e:
+            logger.warning(f"Authentication failed: {str(e)}")
+            return JSONResponse(
+                status_code=401,
+                content={
+                    "error": str(e),
+                    "error_type": "AuthenticationError",
+                    "details": "Please ensure you have a valid JWT token"
+                }
+            )
+        except Exception as e:
+            logger.error(f"Unexpected authentication error: {str(e)}")
+            return JSONResponse(
+                status_code=500,
+                content={
+                    "error": "Internal authentication error",
+                    "error_type": "InternalError"
+                }
+            )
+```
+
+### Authentication Error Handling
+
+#### Comprehensive Error Response System
+```python
+class AuthenticationErrorHandler:
+    @staticmethod
+    def handle_token_expired():
+        return {
+            "error": "Token has expired",
+            "error_type": "TokenExpiredError",
+            "error_code": "AUTH_001",
+            "details": "Your authentication token has expired. Please refresh your token or re-authenticate.",
+            "suggested_action": "Use refresh token to obtain new access token"
+        }
+    
+    @staticmethod
+    def handle_invalid_token():
+        return {
+            "error": "Invalid token format",
+            "error_type": "InvalidTokenError", 
+            "error_code": "AUTH_002",
+            "details": "The provided JWT token is malformed or invalid.",
+            "suggested_action": "Ensure token is properly formatted and not corrupted"
+        }
+    
+    @staticmethod
+    def handle_unauthorized_client():
+        return {
+            "error": "Unauthorized client",
+            "error_type": "UnauthorizedClientError",
+            "error_code": "AUTH_003", 
+            "details": "Client ID in token is not authorized for this service.",
+            "suggested_action": "Contact administrator to verify client permissions"
+        }
+    
+    @staticmethod
+    def handle_cognito_service_error():
+        return {
+            "error": "Authentication service unavailable",
+            "error_type": "ServiceUnavailableError",
+            "error_code": "AUTH_004",
+            "details": "Unable to validate token due to authentication service issues.",
+            "suggested_action": "Please try again later or contact support"
+        }
+```
 
 ## Security Considerations
 
 ### Bedrock AgentCore Security
-- JWT-based authentication via Amazon Cognito
+- JWT-based authentication via Amazon Cognito with SRP protocol
 - Automatic IAM role management by AgentCore Runtime
 - Secure MCP protocol communication over HTTPS
 - Session isolation via `Mcp-Session-Id` headers
+- Token validation with JWKS key rotation support
 
 ### AWS Security
 - IAM roles with minimal required permissions for S3 access
@@ -1085,14 +1477,212 @@ DISTRICT_ALIASES = {
 }
 ```
 
-### Deployment Automation Pattern
+### MCP EntryPoint Integration Architecture
 
-Using the starter toolkit pattern:
+The application implements a BedrockAgentCoreApp entrypoint that serves as the bridge between user queries and MCP tool execution. This entrypoint receives payloads from AgentCore Runtime and orchestrates the LLM's tool selection and execution process.
+
+#### EntryPoint Component Design
 
 ```python
-# Configure
+from strands import Agent
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+
+class RestaurantSearchEntryPoint:
+    def __init__(self):
+        self.agent = Agent()
+        self.app = BedrockAgentCoreApp()
+        self.setup_entrypoint()
+    
+    def setup_entrypoint(self):
+        @self.app.entrypoint
+        def invoke(payload):
+            """Process user input and return a response"""
+            try:
+                # Extract user message from payload
+                user_message = self.extract_user_message(payload)
+                
+                # Process through Strands Agent (LLM + MCP tools)
+                response = self.agent(user_message)
+                
+                # Return JSON-serializable response
+                return self.format_response(response)
+                
+            except Exception as e:
+                return self.handle_error(e)
+    
+    def extract_user_message(self, payload: dict) -> str:
+        """Extract user prompt from AgentCore payload structure"""
+        # Handle various payload formats
+        if isinstance(payload, dict):
+            return payload.get("prompt", payload.get("input", {}).get("prompt", "Hello"))
+        return str(payload)
+    
+    def format_response(self, response) -> str:
+        """Ensure response is JSON-serializable"""
+        if isinstance(response, str):
+            return response
+        return str(response)
+    
+    def handle_error(self, error: Exception) -> str:
+        """Handle errors gracefully with user-friendly messages"""
+        return f"I'm sorry, I encountered an error: {str(error)}. Please try again."
+    
+    def run(self):
+        """Start the BedrockAgentCore runtime server"""
+        self.app.run()
+```
+
+#### Payload Processing Pipeline
+
+The entrypoint processes requests through the following pipeline:
+
+1. **Payload Reception**: Receives structured payload from AgentCore Runtime
+2. **Message Extraction**: Extracts user prompt from payload structure
+3. **Agent Processing**: Passes message to Strands Agent for LLM processing
+4. **Tool Selection**: LLM automatically selects appropriate MCP tools based on query
+5. **Tool Execution**: MCP tools are invoked with extracted parameters
+6. **Response Integration**: Tool results are integrated into agent response
+7. **Response Formatting**: Final response is formatted as JSON-serializable string
+8. **Error Handling**: Graceful error handling with user-friendly messages
+
+#### Strands Agent Configuration
+
+The Strands Agent is configured to work with the available MCP tools:
+
+```python
+from strands import Agent, Tool
+
+# Configure agent with MCP tools
+agent_config = {
+    "model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "temperature": 0.1,
+    "max_tokens": 2048,
+    "system_prompt": SYSTEM_PROMPT,
+    "tools": [
+        Tool(name="search_restaurants_by_district", 
+             description="Search for restaurants in specific districts",
+             parameters={"districts": {"type": "array", "items": {"type": "string"}}}),
+        Tool(name="search_restaurants_by_meal_type",
+             description="Search for restaurants by meal type based on operating hours", 
+             parameters={"meal_types": {"type": "array", "items": {"type": "string"}}}),
+        Tool(name="search_restaurants_combined",
+             description="Search for restaurants by both district and meal type",
+             parameters={
+                 "districts": {"type": "array", "items": {"type": "string"}, "required": False},
+                 "meal_types": {"type": "array", "items": {"type": "string"}, "required": False}
+             })
+    ]
+}
+
+agent = Agent(**agent_config)
+```
+
+#### Integration with MCP Server
+
+The entrypoint integrates with the FastMCP server through the Strands Agent:
+
+```mermaid
+graph TB
+    subgraph "BedrockAgentCoreApp EntryPoint"
+        PAYLOAD[Payload Reception]
+        EXTRACT[Message Extraction]
+        AGENT[Strands Agent]
+        FORMAT[Response Formatting]
+    end
+    
+    subgraph "Strands Agent Processing"
+        LLM[Claude 3.5 Sonnet]
+        TOOL_SELECT[Tool Selection]
+        TOOL_CALL[Tool Invocation]
+    end
+    
+    subgraph "FastMCP Server"
+        MCP_TOOLS[MCP Tools]
+        RESTAURANT_SERVICE[Restaurant Service]
+        DATA_ACCESS[Data Access]
+    end
+    
+    PAYLOAD --> EXTRACT
+    EXTRACT --> AGENT
+    AGENT --> LLM
+    LLM --> TOOL_SELECT
+    TOOL_SELECT --> TOOL_CALL
+    TOOL_CALL --> MCP_TOOLS
+    MCP_TOOLS --> RESTAURANT_SERVICE
+    RESTAURANT_SERVICE --> DATA_ACCESS
+    DATA_ACCESS --> RESTAURANT_SERVICE
+    RESTAURANT_SERVICE --> MCP_TOOLS
+    MCP_TOOLS --> TOOL_CALL
+    TOOL_CALL --> LLM
+    LLM --> AGENT
+    AGENT --> FORMAT
+```
+
+#### Error Handling in EntryPoint
+
+The entrypoint implements comprehensive error handling:
+
+```python
+class EntryPointErrorHandler:
+    def handle_payload_error(self, payload) -> str:
+        """Handle invalid payload structures"""
+        return "I received an invalid request format. Please try again."
+    
+    def handle_agent_error(self, error: Exception) -> str:
+        """Handle Strands Agent processing errors"""
+        if "tool" in str(error).lower():
+            return "I'm having trouble accessing the restaurant search tools. Please try again in a moment."
+        return "I encountered an error processing your request. Could you please rephrase your question?"
+    
+    def handle_mcp_error(self, error: Exception) -> str:
+        """Handle MCP tool execution errors"""
+        return "I'm having trouble searching the restaurant database. Please try again or ask for help with a different search."
+    
+    def handle_timeout_error(self) -> str:
+        """Handle request timeout errors"""
+        return "Your search is taking longer than expected. Please try a more specific query or try again."
+```
+
+#### Deployment Configuration
+
+The entrypoint is deployed as the main application entry point:
+
+```python
+# main.py - Application entry point
+from restaurant_search_entrypoint import RestaurantSearchEntryPoint
+
+if __name__ == "__main__":
+    entrypoint = RestaurantSearchEntryPoint()
+    entrypoint.run()
+```
+
+#### AgentCore Runtime Configuration
+
+The entrypoint integrates with AgentCore Runtime configuration:
+
+```yaml
+# .bedrock_agentcore.yaml
+name: "restaurant-search-mcp"
+platform: "linux/arm64"
+entrypoint: "main.py"
+network_mode: "PUBLIC"
+observability:
+  enabled: true
+authentication:
+  type: "jwt"
+  config:
+    discovery_url: "${COGNITO_DISCOVERY_URL}"
+    allowed_clients: ["${COGNITO_CLIENT_ID}"]
+```
+
+### Deployment Automation Pattern
+
+Using the starter toolkit pattern with entrypoint integration:
+
+```python
+# Configure with entrypoint
 agentcore_runtime.configure(
-    entrypoint="restaurant_mcp_server.py",
+    entrypoint="main.py",  # Points to BedrockAgentCoreApp entrypoint
     auto_create_execution_role=True,
     auto_create_ecr=True,
     requirements_file="requirements.txt",

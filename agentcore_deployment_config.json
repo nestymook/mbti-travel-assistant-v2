@@ -26,7 +26,8 @@
     "test_user": {
       "username": "nestymook@gmail.com",
       "email": "nestymook@gmail.com",
-      "status": "FORCE_CHANGE_PASSWORD"
+      "status": "CONFIRMED",
+      "password_updated": true
     },
     "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
     "setup_timestamp": "us-east-1",
@@ -38,5 +39,5 @@
     }
   },
   "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1758965020.7411327
+  "configured_at": 1758979128.3830655
 }

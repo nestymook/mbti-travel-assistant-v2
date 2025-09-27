@@ -1,5 +1,30 @@
-default_agent: restaurant_search_mcp
+default_agent: restaurant_search_conversational_agent
 agents:
+  restaurant_search_conversational_agent:
+    name: restaurant_search_conversational_agent
+    entrypoint: C:/MBTI_Travel_Assistant/main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: null
+      execution_role_auto_create: true
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: null
+      ecr_auto_create: true
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: ENTRYPOINT
+      observability:
+        enabled: true
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
+    request_header_configuration: null
+    oauth_configuration: null
   restaurant_search_mcp:
     name: restaurant_search_mcp
     entrypoint: C:/MBTI_Travel_Assistant/restaurant_mcp_server.py
@@ -21,7 +46,7 @@ agents:
     bedrock_agentcore:
       agent_id: restaurant_search_mcp-JZdACMALGo
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp-JZdACMALGo
-      agent_session_id: null
+      agent_session_id: dfdb5271-565d-4d29-9c59-b9df328bd2d7
     codebuild:
       project_name: null
       execution_role: null
