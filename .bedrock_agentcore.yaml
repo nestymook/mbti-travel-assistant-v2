@@ -1,4 +1,4 @@
-default_agent: restaurant_search_mcp_no_auth
+default_agent: restaurant_search_mcp
 agents:
   restaurant_search_mcp:
     name: restaurant_search_mcp
@@ -19,8 +19,8 @@ agents:
       observability:
         enabled: true
     bedrock_agentcore:
-      agent_id: null
-      agent_arn: null
+      agent_id: restaurant_search_mcp-JZdACMALGo
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp-JZdACMALGo
       agent_session_id: null
     codebuild:
       project_name: bedrock-agentcore-restaurant_search_mcp-builder
@@ -30,7 +30,7 @@ agents:
       customJWTAuthorizer:
         allowedClients:
         - 26k0pnja579pdpb1pt6savs27e
-        discoveryUrl: https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp_no_auth:

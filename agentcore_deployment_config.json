@@ -9,7 +9,7 @@
       "allowedClients": [
         "26k0pnja579pdpb1pt6savs27e"
       ],
-      "discoveryUrl": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration"
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
     }
   },
   "cognito_config": {
@@ -24,19 +24,19 @@
       "client_name": "restaurant-search-mcp-client"
     },
     "test_user": {
-      "username": "test@example.com",
-      "email": "test@example.com",
+      "username": "nestymook@gmail.com",
+      "email": "nestymook@gmail.com",
       "status": "FORCE_CHANGE_PASSWORD"
     },
-    "discovery_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
     "setup_timestamp": "us-east-1",
     "custom_domain": {
       "domain_prefix": "restaurant-mcp-9cccf837",
       "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
-      "discovery_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration",
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
       "status": "ACTIVE"
     }
   },
   "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1758930786.3877373
+  "configured_at": 1758964504.3943198
 }
