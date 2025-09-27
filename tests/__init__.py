@@ -1,1 +1,0 @@
-# Tests package for restaurant search MCP application

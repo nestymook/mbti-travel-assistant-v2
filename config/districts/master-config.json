@@ -28,7 +28,7 @@
       "schedulingWeight": 20
     },
     {
-      "configFile": "lantau.json",
+      "configFile": "islands.json",
       "enabled": true,
       "schedulingWeight": 5
     }

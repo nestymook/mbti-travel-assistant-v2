@@ -3,11 +3,11 @@
     "restaurant-search-mcp": {
       "command": "python",
       "args": [
-        "./restaurant_mcp_server.py"
+        "restaurant-search-mcp/src/restaurant_mcp_server.py"
       ],
       "env": {
         "REQUIRE_AUTHENTICATION": "false",
-        "PYTHONPATH": "."
+        "PYTHONPATH": "restaurant-search-mcp"
       },
       "disabled": false,
       "autoApprove": [

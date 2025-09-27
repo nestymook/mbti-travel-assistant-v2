@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-09-27T20:24:04.481284",
-  "tests": {
-    "server_startup_no_auth": false,
-    "server_startup_with_auth": false,
-    "auth_config_creation": true,
-    "middleware_factory_creation": true
-  }
-}
