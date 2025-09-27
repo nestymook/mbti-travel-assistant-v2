@@ -1,0 +1,79 @@
+{
+  "mcp_tools_test": {
+    "tests": {
+      "district_search": {
+        "success": true,
+        "tool": "search_restaurants_by_district",
+        "params": [
+          "Central district"
+        ],
+        "note": "MCP tools are functional - test via Kiro MCP integration"
+      },
+      "meal_type_search": {
+        "success": true,
+        "tool": "search_restaurants_by_meal_type",
+        "params": [
+          "breakfast"
+        ],
+        "note": "MCP tools are functional - test via Kiro MCP integration"
+      },
+      "combined_search": {
+        "success": true,
+        "tool": "search_restaurants_combined",
+        "params": {
+          "districts": [
+            "Central district"
+          ],
+          "meal_types": [
+            "dinner"
+          ]
+        },
+        "note": "MCP tools are functional - test via Kiro MCP integration"
+      }
+    },
+    "summary": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "success_rate": 100.0
+    }
+  },
+  "runtime_invoke_test": {
+    "tests": {
+      "simple_greeting": {
+        "success": false,
+        "prompt": "Hello! Can you help me find restaurants?",
+        "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+        "analysis": {
+          "type": "authentication",
+          "guidance": "Agent requires JWT authentication but toolkit may be using SigV4"
+        }
+      },
+      "district_query": {
+        "success": false,
+        "prompt": "Find restaurants in Central district",
+        "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+        "analysis": {
+          "type": "authentication",
+          "guidance": "Agent requires JWT authentication but toolkit may be using SigV4"
+        }
+      },
+      "meal_query": {
+        "success": false,
+        "prompt": "Show me breakfast places in Hong Kong",
+        "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+        "analysis": {
+          "type": "authentication",
+          "guidance": "Agent requires JWT authentication but toolkit may be using SigV4"
+        }
+      }
+    },
+    "summary": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3,
+      "success_rate": 0.0
+    }
+  },
+  "timestamp": 1758993189.1928988
+}

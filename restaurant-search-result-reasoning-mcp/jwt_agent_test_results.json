@@ -1,0 +1,38 @@
+{
+  "tests": {
+    "greeting": {
+      "success": false,
+      "prompt": "Hello! Can you help me find restaurants in Hong Kong?",
+      "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+      "error_type": "authentication_error",
+      "method": "mcp_invoke"
+    },
+    "district_search": {
+      "success": false,
+      "prompt": "Find restaurants in Central district",
+      "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+      "error_type": "authentication_error",
+      "method": "mcp_invoke"
+    },
+    "meal_search": {
+      "success": false,
+      "prompt": "Show me breakfast places in Tsim Sha Tsui",
+      "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+      "error_type": "authentication_error",
+      "method": "mcp_invoke"
+    },
+    "conversational": {
+      "success": false,
+      "prompt": "I want to have dinner tonight. What are some good restaurants in Causeway Bay?",
+      "error": "An error occurred (AccessDeniedException) when calling the InvokeAgentRuntime operation: Authorization method mismatch. The agent is configured for a different authorization method than what was used in your request. Check the agent's authorization configuration and ensure your request uses the matching method (OAuth or SigV4)",
+      "error_type": "authentication_error",
+      "method": "mcp_invoke"
+    }
+  },
+  "summary": {
+    "total": 4,
+    "passed": 0,
+    "failed": 4,
+    "success_rate": 0.0
+  }
+}

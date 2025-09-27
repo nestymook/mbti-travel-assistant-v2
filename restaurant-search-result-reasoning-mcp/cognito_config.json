@@ -1,0 +1,31 @@
+{
+  "region": "us-east-1",
+  "user_pool": {
+    "user_pool_id": "us-east-1_wBAxW7yd4",
+    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_wBAxW7yd4",
+    "creation_date": "2025-09-27T07:48:31.750000+09:00"
+  },
+  "app_client": {
+    "client_id": "26k0pnja579pdpb1pt6savs27e",
+    "client_name": "restaurant-search-mcp-client"
+  },
+  "test_user": {
+    "username": "testing_user@test.com.hk",
+    "email": "testing_user@test.com.hk",
+    "status": "CONFIRMED",
+    "password_updated": true
+  },
+  "previous_test_user": {
+    "username": "nestymook@gmail.com",
+    "email": "nestymook@gmail.com",
+    "note": "Previous test user, kept for reference"
+  },
+  "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+  "setup_timestamp": "us-east-1",
+  "custom_domain": {
+    "domain_prefix": "restaurant-mcp-9cccf837",
+    "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+    "status": "ACTIVE"
+  }
+}
