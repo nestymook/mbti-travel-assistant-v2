@@ -14,6 +14,12 @@
   - **`restaurants/`**: Restaurant data organized by region
   - **`tourist_spots/`**: Tourism-related configurations
 
+- **`tests/`**: Test suite for MCP server and deployment validation
+  - **`test_mcp_deployment.py`**: Basic MCP deployment tests (no authentication)
+  - **`test_authenticated_mcp.py`**: Comprehensive tests for authenticated MCP server
+  - **`test_mcp_with_toolkit.py`**: Tests using bedrock-agentcore-starter-toolkit
+  - **`test_restaurant_service.py`**: Unit tests for restaurant service components
+
 ### Tutorial Structure (`01-tutorials/`)
 
 Each AgentCore component has its own subdirectory:
@@ -52,6 +58,21 @@ Real-world applications including:
 - **`config/`**: Configuration files and data
 - **`scripts/`**: Deployment and setup automation
 - **`images/`**: Documentation assets and diagrams
+
+### Core Application Files
+
+- **`restaurant_mcp_server.py`**: Main MCP server implementation with FastMCP
+- **`deploy_agentcore.py`**: AgentCore deployment script with Cognito authentication
+- **`.bedrock_agentcore.yaml`**: AgentCore configuration file
+- **`cognito_config.json`**: Cognito User Pool and authentication configuration
+- **`Dockerfile`**: Container configuration for ARM64 deployment
+
+### Testing Files
+
+- **`test_authenticated_mcp.py`**: End-to-end tests for deployed authenticated MCP server
+- **`test_mcp_with_toolkit.py`**: Tests using AgentCore toolkit Runtime class
+- **`test_mcp_deployment.py`**: Basic deployment validation tests
+- **`mcp_test_results.json`**: Test execution results and metrics
 
 ## Development Patterns
 

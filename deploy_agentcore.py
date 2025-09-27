@@ -383,6 +383,11 @@ def main():
         
         if args.status_only:
             # Just check status
+            deployment.configure_agentcore_runtime(
+                entrypoint=args.entrypoint,
+                agent_name=args.agent_name,
+                requirements_file=args.requirements
+            )
             status = deployment.agentcore_runtime.status()
             print(f"Deployment Status: {json.dumps(status, indent=2, default=str)}")
             return 0

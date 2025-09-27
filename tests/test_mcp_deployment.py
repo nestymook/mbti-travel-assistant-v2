@@ -1,13 +1,36 @@
 #!/usr/bin/env python3
 """
 Test MCP Deployment by invoking the agent runtime
+
+Follows program guidelines:
+- Test payloads are base64 encoded in /tests/payload/
+- Test requests are stored in /tests/request/
+- Test responses are saved to /tests/response/
+- Test results are saved to /tests/results/
 """
 
 import subprocess
 import json
 import time
 import base64
+import os
 
+
+def load_base64_payload(payload_file: str) -> str:
+    """Load base64 encoded payload from file."""
+    payload_path = os.path.join("tests/payload", payload_file)
+    with open(payload_path, 'r') as f:
+        return f.read().strip()
+
+def save_response(response_file: str, response_data) -> None:
+    """Save response data to response directory."""
+    os.makedirs("tests/response", exist_ok=True)
+    response_path = os.path.join("tests/response", response_file)
+    with open(response_path, 'w') as f:
+        if isinstance(response_data, str):
+            f.write(response_data)
+        else:
+            json.dump(response_data, f, indent=2, default=str)
 
 def test_mcp_agent_invocation():
     """Test the MCP agent by invoking it."""
@@ -16,21 +39,6 @@ def test_mcp_agent_invocation():
     
     agent_id = "restaurant_search_mcp_no_auth-QkpwVXBnQD"
     
-    # Create a simple MCP initialization request
-    mcp_request = {
-        "jsonrpc": "2.0",
-        "id": 1,
-        "method": "initialize",
-        "params": {
-            "protocolVersion": "2024-11-05",
-            "capabilities": {},
-            "clientInfo": {
-                "name": "test-client",
-                "version": "1.0.0"
-            }
-        }
-    }
-    
     try:
         print(f"📋 Testing agent: {agent_id}")
         print(f"🔧 Sending MCP initialize request...")
@@ -38,16 +46,16 @@ def test_mcp_agent_invocation():
         # Use AWS CLI to invoke the agent runtime
         agent_arn = f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{agent_id}"
         
-        # Encode payload as base64
-        payload_json = json.dumps(mcp_request)
-        payload_b64 = base64.b64encode(payload_json.encode()).decode()
+        # Load base64 payload from file
+        payload_b64 = load_base64_payload("mcp_initialize_request.b64")
         
+        response_file = "mcp_initialize_response.json"
         cmd = [
             "aws", "bedrock-agentcore", "invoke-agent-runtime",
             "--agent-runtime-arn", agent_arn,
             "--region", "us-east-1",
             "--payload", payload_b64,
-            "response.json"
+            os.path.join("tests/response", response_file)
         ]
         
         print(f"Command: {' '.join(cmd[:6])}... [body omitted]")
@@ -59,7 +67,8 @@ def test_mcp_agent_invocation():
             
             try:
                 # Read response from file
-                with open("response.json", "r") as f:
+                response_path = os.path.join("tests/response", response_file)
+                with open(response_path, "r") as f:
                     response = json.load(f)
                 print(f"\n📊 Response:")
                 print(json.dumps(response, indent=2))
@@ -114,27 +123,19 @@ def test_mcp_tools_list():
     
     agent_id = "restaurant_search_mcp_no_auth-QkpwVXBnQD"
     
-    # MCP tools/list request
-    tools_request = {
-        "jsonrpc": "2.0",
-        "id": 2,
-        "method": "tools/list",
-        "params": {}
-    }
-    
     try:
         agent_arn = f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{agent_id}"
         
-        # Encode payload as base64
-        payload_json = json.dumps(tools_request)
-        payload_b64 = base64.b64encode(payload_json.encode()).decode()
+        # Load base64 payload from file
+        payload_b64 = load_base64_payload("mcp_tools_list_request.b64")
         
+        response_file = "mcp_tools_list_response.json"
         cmd = [
             "aws", "bedrock-agentcore", "invoke-agent-runtime",
             "--agent-runtime-arn", agent_arn,
             "--region", "us-east-1",
             "--payload", payload_b64,
-            "tools_response.json"
+            os.path.join("tests/response", response_file)
         ]
         
         print("🔧 Requesting available MCP tools...")
@@ -144,7 +145,8 @@ def test_mcp_tools_list():
         if result.returncode == 0:
             try:
                 # Read response from file
-                with open("tools_response.json", "r") as f:
+                response_path = os.path.join("tests/response", response_file)
+                with open(response_path, "r") as f:
                     response = json.load(f)
                 
                 if 'result' in response and 'tools' in response['result']:
@@ -179,6 +181,9 @@ def main():
     print("🚀 Restaurant Search MCP Deployment Test")
     print("=" * 45)
     
+    # Ensure results directory exists
+    os.makedirs("tests/results", exist_ok=True)
+    
     # Test 1: Basic MCP initialization
     init_success = test_mcp_agent_invocation()
     
@@ -186,9 +191,23 @@ def main():
         # Test 2: List available tools
         tools = test_mcp_tools_list()
         
+        # Save test results
+        test_results = {
+            "mcp_initialization": "SUCCESS" if init_success else "FAILED",
+            "tools_found": len(tools),
+            "tools_list": tools,
+            "deployment_status": "SUCCESS" if len(tools) >= 3 else "PARTIAL",
+            "timestamp": time.time()
+        }
+        
+        results_file = os.path.join("tests/results", "mcp_deployment_test_results.json")
+        with open(results_file, "w") as f:
+            json.dump(test_results, f, indent=2, default=str)
+        
         print(f"\n📊 Deployment Test Summary:")
         print(f"✅ MCP Initialization: SUCCESS")
         print(f"✅ Tools Available: {len(tools)} tools found")
+        print(f"💾 Results saved to: {results_file}")
         
         if len(tools) >= 3:  # We expect 3 restaurant search tools
             print("🎉 DEPLOYMENT STATUS: SUCCESS - All systems operational!")
@@ -197,8 +216,22 @@ def main():
             print("⚠️ DEPLOYMENT STATUS: PARTIAL - Some tools may be missing")
             return False
     else:
+        # Save failure results
+        test_results = {
+            "mcp_initialization": "FAILED",
+            "tools_found": 0,
+            "tools_list": [],
+            "deployment_status": "FAILED",
+            "timestamp": time.time()
+        }
+        
+        results_file = os.path.join("tests/results", "mcp_deployment_test_results.json")
+        with open(results_file, "w") as f:
+            json.dump(test_results, f, indent=2, default=str)
+        
         print(f"\n📊 Deployment Test Summary:")
         print(f"❌ MCP Initialization: FAILED")
+        print(f"💾 Results saved to: {results_file}")
         print("💥 DEPLOYMENT STATUS: FAILED - Agent not responding")
         return False
 

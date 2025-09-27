@@ -1,6 +1,41 @@
 # Restaurant Search MCP Server - Testing Infrastructure
 
-This directory contains comprehensive testing infrastructure for the Restaurant Search MCP Server, including local MCP client testing, comprehensive scenario validation, and test data generation.
+This directory contains comprehensive testing infrastructure for the Restaurant Search MCP Server, including local MCP client testing, comprehensive scenario validation, test data generation, and AWS deployment testing.
+
+## Directory Structure (Following Program Guidelines)
+
+### `/tests/payload/`
+Base64 encoded test payloads:
+- `mcp_initialize_request.b64` - MCP initialization request
+- `mcp_tools_list_request.b64` - MCP tools list request  
+- `district_search_prompt.b64` - District search prompt
+- `meal_type_search_prompt.b64` - Meal type search prompt
+- `combined_search_prompt.b64` - Combined search prompt
+- `general_conversation_prompt.b64` - General conversation prompt
+
+### `/tests/request/`
+JSON request files (human-readable versions):
+- `mcp_initialize_request.json` - MCP initialization request
+- `mcp_tools_list_request.json` - MCP tools list request
+- `district_search_prompt.json` - District search prompt
+- `meal_type_search_prompt.json` - Meal type search prompt
+- `combined_search_prompt.json` - Combined search prompt
+- `general_conversation_prompt.json` - General conversation prompt
+
+### `/tests/response/`
+Test response files (generated during test execution):
+- `mcp_initialize_response.json` - MCP initialization response
+- `mcp_tools_list_response.json` - MCP tools list response
+- `district_search_response.json` - District search response
+- `meal_type_search_response.json` - Meal type search response
+- `combined_search_response.json` - Combined search response
+- `general_conversation_response.json` - General conversation response
+
+### `/tests/results/`
+Test execution results and summaries:
+- `authenticated_mcp_test_results.json` - Authenticated MCP test results
+- `toolkit_test_results.json` - Toolkit test results
+- `mcp_deployment_test_results.json` - Deployment test results
 
 ## Overview
 
@@ -8,7 +43,33 @@ The testing infrastructure validates all MCP tools and requirements using real c
 
 ## Test Components
 
-### 1. Local MCP Client (`test_mcp_client.py`)
+### AWS Deployment Tests
+
+#### 1. Authenticated MCP Tests (`test_authenticated_mcp.py`)
+Tests for the deployed authenticated MCP server in AWS:
+- AgentCore invoke command testing
+- AWS CLI bedrock-agentcore invoke testing
+- Comprehensive restaurant search scenarios
+- Response validation and error handling
+- Results saved to `/tests/results/authenticated_mcp_test_results.json`
+
+#### 2. Toolkit Tests (`test_mcp_with_toolkit.py`)
+Tests using bedrock-agentcore-starter-toolkit:
+- Runtime status checking
+- Agent invocation testing
+- Toolkit integration validation
+- Results saved to `/tests/results/toolkit_test_results.json`
+
+#### 3. Deployment Tests (`test_mcp_deployment.py`)
+Basic MCP deployment validation:
+- MCP initialization testing
+- Tools list validation
+- No-auth agent testing
+- Results saved to `/tests/results/mcp_deployment_test_results.json`
+
+### Local Development Tests
+
+#### 4. Local MCP Client (`test_mcp_client.py`)
 
 Basic MCP client for testing server connectivity and tool functionality.
 
@@ -28,7 +89,7 @@ python tests/test_mcp_client.py [server_url]
 python tests/test_mcp_client.py
 ```
 
-### 2. Comprehensive Test Scenarios (`test_scenarios.py`)
+#### 5. Comprehensive Test Scenarios (`test_scenarios.py`)
 
 Advanced test scenarios using real config data and edge cases.
 
@@ -54,7 +115,7 @@ python tests/test_scenarios.py [server_url]
 python -c "from tests.test_scenarios import ComprehensiveTestScenarios; ComprehensiveTestScenarios().print_scenario_summary()"
 ```
 
-### 3. Test Data Generator (`test_data_generator.py`)
+#### 6. Test Data Generator (`test_data_generator.py`)
 
 Generates test data for edge cases and error handling validation.
 
@@ -79,7 +140,7 @@ python tests/test_data_generator.py
 # Output will be in tests/test_data/ directory
 ```
 
-### 4. Test Runner (`run_local_tests.py`)
+#### 7. Test Runner (`run_local_tests.py`)
 
 Unified test runner that executes all test suites.
 
@@ -206,14 +267,30 @@ The tests validate all requirements from the specification:
 
 ## Running Tests
 
-### Quick Start
+### AWS Deployment Tests
+
+Test the deployed authenticated MCP server:
+```bash
+# Test authenticated MCP server
+python tests/test_authenticated_mcp.py
+
+# Test with toolkit
+python tests/test_mcp_with_toolkit.py
+
+# Test basic deployment
+python tests/test_mcp_deployment.py
+```
+
+### Local Development Tests
+
+#### Quick Start
 
 1. Start the MCP server:
    ```bash
    python restaurant_mcp_server.py
    ```
 
-2. Run all tests:
+2. Run all local tests:
    ```bash
    python tests/run_local_tests.py
    ```
@@ -303,11 +380,42 @@ When adding new tests:
 4. Update this README with new test categories
 5. Ensure tests use real config data when possible
 
+## Program Guidelines Compliance
+
+All test files follow the established program guidelines:
+- ✅ Test payloads are base64 encoded in `/tests/payload/`
+- ✅ Test requests are stored in `/tests/request/`
+- ✅ Test responses are saved to `/tests/response/`
+- ✅ Test results are saved to `/tests/results/`
+
 ## Files
 
+### AWS Deployment Tests
+- `test_authenticated_mcp.py` - Authenticated MCP server testing
+- `test_mcp_with_toolkit.py` - Toolkit integration testing
+- `test_mcp_deployment.py` - Basic deployment testing
+
+### Local Development Tests
 - `test_mcp_client.py` - Basic MCP client testing
 - `test_scenarios.py` - Comprehensive scenario testing
 - `test_data_generator.py` - Test data generation
 - `run_local_tests.py` - Unified test runner
+
+### Service Tests
+- `test_restaurant_service.py` - Restaurant service unit tests
+- `test_district_service.py` - District service unit tests
+- `test_time_service.py` - Time service unit tests
+
+### Integration Tests
+- `test_system_integration.py` - System integration tests
+- `test_conversational_flow.py` - Conversational flow tests
+
+### Documentation
 - `README.md` - This documentation
+
+### Generated Directories
+- `payload/` - Base64 encoded test payloads
+- `request/` - JSON request files
+- `response/` - Test response files (generated)
+- `results/` - Test execution results (generated)
 - `test_data/` - Generated test data (created by generator)

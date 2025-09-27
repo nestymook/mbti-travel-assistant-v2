@@ -6,12 +6,12 @@ agents:
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-c34606a2ff
-      execution_role_auto_create: false
+      execution_role: null
+      execution_role_auto_create: true
       account: '209803798463'
       region: us-east-1
-      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_mcp
-      ecr_auto_create: false
+      ecr_repository: null
+      ecr_auto_create: true
       network_configuration:
         network_mode: PUBLIC
       protocol_configuration:
@@ -23,9 +23,9 @@ agents:
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp-JZdACMALGo
       agent_session_id: null
     codebuild:
-      project_name: bedrock-agentcore-restaurant_search_mcp-builder
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-c34606a2ff
-      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+      project_name: null
+      execution_role: null
+      source_bucket: null
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
