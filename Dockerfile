@@ -1,4 +1,5 @@
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+# REQUIRED: ARM64 platform for Amazon Bedrock AgentCore Runtime
+FROM --platform=linux/arm64 ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 WORKDIR /app
 
 # Configure UV for container environment

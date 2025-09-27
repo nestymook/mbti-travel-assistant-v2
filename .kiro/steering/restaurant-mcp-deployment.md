@@ -44,10 +44,19 @@ This steering document provides comprehensive guidance for deploying, managing, 
 ## Architecture Requirements
 
 ### Critical Platform Specification
-**IMPORTANT**: Amazon Bedrock AgentCore Runtime requires `linux/arm64` architecture containers.
+**CRITICAL REQUIREMENT**: Amazon Bedrock AgentCore Runtime **REQUIRES** `linux/arm64` architecture containers. This is **MANDATORY** and not optional.
 
 #### Development vs Runtime Environment
 - **Development**: Can use x86/AMD64 (Windows, macOS, Linux)
+- **Runtime**: **MUST** be `linux/arm64` (managed by AgentCore Runtime)
+- **Build Process**: AWS CodeBuild handles cross-platform building automatically
+
+#### Dockerfile Requirements
+**REQUIRED**: All Dockerfiles must specify ARM64 platform:
+```dockerfile
+# MANDATORY: ARM64 platform specification
+FROM --platform=linux/arm64 [base-image]
+```
 - **Runtime**: Must be `linux/arm64` (managed by AgentCore)
 - **Build Process**: AWS CodeBuild handles cross-platform building automatically
 

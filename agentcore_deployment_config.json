@@ -9,7 +9,7 @@
       "allowedClients": [
         "26k0pnja579pdpb1pt6savs27e"
       ],
-      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration"
+      "discoveryUrl": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration"
     }
   },
   "cognito_config": {
@@ -28,9 +28,15 @@
       "email": "test@example.com",
       "status": "FORCE_CHANGE_PASSWORD"
     },
-    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration",
-    "setup_timestamp": "us-east-1"
+    "discovery_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration",
+    "setup_timestamp": "us-east-1",
+    "custom_domain": {
+      "domain_prefix": "restaurant-mcp-9cccf837",
+      "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
+      "discovery_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration",
+      "status": "ACTIVE"
+    }
   },
   "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1758929087.9673839
+  "configured_at": 1758930786.3877373
 }
