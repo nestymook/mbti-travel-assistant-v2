@@ -112,3 +112,70 @@ equirement 9
 3. WHEN mapping district names to S3 paths THEN it SHALL use the region/district structure (e.g., hong-kong-island/admiralty.json)
 4. IF district configuration files are missing or invalid THEN the system SHALL return appropriate error messages
 5. WHEN district validation is needed THEN the system SHALL check against the loaded district configuration
+
+### Requirement 9 - LLM Integration (CRITICAL)
+
+**User Story:** As a foundation model, I want to process natural language queries and automatically call appropriate MCP tools, so that users can search restaurants using conversational language.
+
+#### Acceptance Criteria
+
+1. WHEN a natural language query is received (e.g., "Find restaurants in Central district") THEN the system SHALL parse the intent and extract relevant parameters
+2. WHEN district names are mentioned in natural language THEN the system SHALL map them to the correct MCP tool parameters (e.g., "Central district" → `districts: ["Central district"]`)
+3. WHEN meal types are mentioned in natural language THEN the system SHALL map them to valid meal type parameters (e.g., "breakfast places" → `meal_types: ["breakfast"]`)
+4. WHEN both location and meal time are mentioned THEN the system SHALL use the combined search tool with appropriate parameters
+5. WHEN ambiguous queries are received THEN the system SHALL ask for clarification or provide suggestions
+6. WHEN invalid district names are mentioned THEN the system SHALL suggest valid alternatives from available districts
+7. WHEN the query intent cannot be determined THEN the system SHALL provide helpful guidance on available search options
+
+### Requirement 10 - AgentCore Foundation Model Configuration
+
+**User Story:** As a system administrator, I want to configure a foundation model in AgentCore, so that natural language queries can be processed and converted to MCP tool calls.
+
+#### Acceptance Criteria
+
+1. WHEN AgentCore is configured THEN it SHALL include a foundation model specification (e.g., Claude 3.5 Sonnet)
+2. WHEN the foundation model is configured THEN it SHALL have access to all available MCP tools and their parameter schemas
+3. WHEN model parameters are set THEN they SHALL be optimized for restaurant search tasks (appropriate temperature, max tokens, etc.)
+4. WHEN system prompts are configured THEN they SHALL include context about Hong Kong districts and restaurant search capabilities
+5. WHEN tool calling is enabled THEN the model SHALL be able to invoke MCP tools with correct parameter formatting
+6. IF model configuration fails THEN the system SHALL provide detailed error messages for troubleshooting
+
+### Requirement 11 - Natural Language Processing Pipeline
+
+**User Story:** As a foundation model, I want to understand restaurant search queries in natural language, so that I can provide intuitive conversational search capabilities.
+
+#### Acceptance Criteria
+
+1. WHEN processing "Find restaurants in [district]" queries THEN the system SHALL call `search_restaurants_by_district` with the specified district
+2. WHEN processing "[meal type] restaurants" queries THEN the system SHALL call `search_restaurants_by_meal_type` with the appropriate meal type
+3. WHEN processing combined queries like "breakfast places in Central" THEN the system SHALL call `search_restaurants_combined` with both parameters
+4. WHEN processing cuisine-specific queries THEN the system SHALL search by district and filter results by cuisine type mentioned
+5. WHEN processing time-specific queries THEN the system SHALL map time references to appropriate meal types (e.g., "morning" → "breakfast")
+6. WHEN generating responses THEN the system SHALL format restaurant data in a user-friendly, conversational manner
+7. WHEN no results are found THEN the system SHALL provide helpful suggestions for alternative searches
+
+### Requirement 12 - AgentCore Runtime Integration
+
+**User Story:** As a system integrator, I want AgentCore Runtime to properly bridge natural language queries to MCP tool calls, so that the complete restaurant search workflow functions seamlessly.
+
+#### Acceptance Criteria
+
+1. WHEN a user sends `{"input": {"prompt": "Find restaurants in Central district"}}` THEN AgentCore SHALL process the natural language and call the appropriate MCP tool
+2. WHEN the foundation model generates MCP tool calls THEN AgentCore SHALL route them to the deployed MCP server
+3. WHEN MCP tools return restaurant data THEN AgentCore SHALL pass the results back to the foundation model for response formatting
+4. WHEN errors occur in the pipeline THEN AgentCore SHALL provide meaningful error messages to users
+5. WHEN the system is under load THEN AgentCore SHALL handle concurrent requests efficiently
+6. IF the MCP server is unavailable THEN AgentCore SHALL provide appropriate fallback responses
+
+### Requirement 13 - Response Formatting and User Experience
+
+**User Story:** As an end user, I want to receive well-formatted restaurant recommendations, so that I can easily understand and act on the search results.
+
+#### Acceptance Criteria
+
+1. WHEN restaurant results are returned THEN they SHALL be formatted in a conversational, easy-to-read manner
+2. WHEN multiple restaurants are found THEN they SHALL be presented in a logical order (e.g., by district, then by name)
+3. WHEN restaurant details are shown THEN they SHALL include key information like name, address, cuisine type, and operating hours
+4. WHEN operating hours are displayed THEN they SHALL be formatted in a user-friendly way (e.g., "Open for breakfast: Mon-Fri 7:00-11:30")
+5. WHEN no restaurants match the criteria THEN the response SHALL suggest alternative searches or nearby options
+6. WHEN errors occur THEN the error messages SHALL be user-friendly and provide guidance on how to refine the search

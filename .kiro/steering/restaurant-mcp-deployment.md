@@ -260,8 +260,37 @@ observability:
 
 ## Authentication Configuration
 
-### Current Status: No Authentication
-The current deployment uses **no authentication** for immediate operational readiness. JWT authentication requires additional AWS configuration.
+### Current Status: No Authentication - LLM Integration Required
+The current deployment uses **no authentication** for immediate operational readiness. However, **the critical missing component is LLM model configuration** for natural language processing.
+
+#### Root Cause Analysis: Missing LLM Integration
+
+**The 406 "Not Acceptable" Error** occurs because:
+
+1. **AgentCore expects natural language prompts**: `{"input": {"prompt": "Find restaurants in Central district"}}`
+2. **MCP server expects direct tool calls**: `{"method": "tools/call", "params": {"name": "search_restaurants_by_district", "arguments": {"districts": ["Central district"]}}}`
+3. **Missing translation layer**: No LLM model is configured to translate natural language → MCP tool calls
+
+#### Expected Workflow (Currently Missing)
+```
+User Query → AgentCore Runtime → [MISSING: LLM Model] → MCP Server → S3 Restaurant Data
+```
+
+#### What Should Happen
+1. User sends: `"Find restaurants in Central district"`
+2. **LLM Model** (Claude, etc.) should:
+   - Parse the natural language
+   - Understand available MCP tools
+   - Extract parameters: `districts: ["Central district"]`
+   - Call: `search_restaurants_by_district(districts=["Central district"])`
+   - Format response for user
+
+#### Current Issue
+- ✅ **MCP Server**: Running and healthy (logs show PingRequest processing)
+- ✅ **Restaurant Data**: 73 files with 63+ restaurants per district
+- ✅ **S3 Access**: Permissions working correctly
+- ✅ **AgentCore Runtime**: READY status
+- ❌ **LLM Model**: Not configured to process prompts and call MCP tools
 
 ### JWT Authentication Setup (For Production)
 
@@ -611,9 +640,83 @@ The deployed MCP server can be used with foundation models through:
 - **MCP Protocol**: Model Context Protocol Specification
 - **AgentCore Samples**: amazon-bedrock-agentcore-samples repository
 
+## MCP Tools Payload Reference
+
+### Expected Parameters by Tool
+
+#### 1. search_restaurants_by_district
+```json
+{
+  "method": "tools/call",
+  "params": {
+    "name": "search_restaurants_by_district", 
+    "arguments": {
+      "districts": ["Central district", "Admiralty"]
+    }
+  }
+}
+```
+- **Parameters**: `districts: List[str]` (required)
+- **Valid Districts**: Central district, Admiralty, Causeway Bay, Wan Chai, Sheung Wan, Western District, Tsim Sha Tsui, Mong Kok, Yau Ma Tei
+- **Returns**: JSON with restaurant data and metadata
+
+#### 2. search_restaurants_by_meal_type
+```json
+{
+  "method": "tools/call",
+  "params": {
+    "name": "search_restaurants_by_meal_type",
+    "arguments": {
+      "meal_types": ["breakfast", "lunch"]
+    }
+  }
+}
+```
+- **Parameters**: `meal_types: List[str]` (required)
+- **Valid Values**: `["breakfast", "lunch", "dinner"]`
+- **Time Periods**: Breakfast (07:00-11:29), Lunch (11:30-17:29), Dinner (17:30-22:30)
+
+#### 3. search_restaurants_combined
+```json
+{
+  "method": "tools/call", 
+  "params": {
+    "name": "search_restaurants_combined",
+    "arguments": {
+      "districts": ["Central district"],
+      "meal_types": ["lunch"]
+    }
+  }
+}
+```
+- **Parameters**: `districts: Optional[List[str]]`, `meal_types: Optional[List[str]]`
+- **Constraint**: At least one parameter must be provided
+
+### Natural Language to MCP Tool Translation Examples
+
+#### What Users Send (Natural Language)
+```json
+{"input": {"prompt": "Find restaurants in Central district"}}
+{"input": {"prompt": "Show me breakfast restaurants"}}
+{"input": {"prompt": "Find lunch places in Admiralty"}}
+```
+
+#### What LLM Should Generate (MCP Tool Calls)
+```json
+// For "Find restaurants in Central district"
+{"method": "tools/call", "params": {"name": "search_restaurants_by_district", "arguments": {"districts": ["Central district"]}}}
+
+// For "Show me breakfast restaurants"  
+{"method": "tools/call", "params": {"name": "search_restaurants_by_meal_type", "arguments": {"meal_types": ["breakfast"]}}}
+
+// For "Find lunch places in Admiralty"
+{"method": "tools/call", "params": {"name": "search_restaurants_combined", "arguments": {"districts": ["Admiralty"], "meal_types": ["lunch"]}}}
+```
+
 ## Final Deployment Confirmation
 
 ### ✅ **DEPLOYMENT SUCCESSFUL - STATUS: READY**
+### ⚠️ **LLM INTEGRATION REQUIRED FOR FULL FUNCTIONALITY**
 
 The Restaurant Search MCP has been successfully redeployed and is fully operational:
 
@@ -642,15 +745,42 @@ The Restaurant Search MCP has been successfully redeployed and is fully operatio
 - ✅ **Network Access**: PUBLIC HTTPS endpoints configured
 - ✅ **Monitoring**: CloudWatch logs and metrics enabled
 
-### Next Steps
-1. **Test MCP Tools**: Use AWS CLI or MCP clients to test restaurant search functionality
-2. **Foundation Model Integration**: Connect with Bedrock models for AI-powered restaurant recommendations
-3. **Production Monitoring**: Set up alerts and dashboards for operational monitoring
-4. **JWT Authentication Setup**: 
-   - Add Cognito domain IAM permissions to your policy
-   - Create custom Cognito domain via AWS Console
-   - Update configuration and redeploy with JWT authentication
-5. **Performance Optimization**: Monitor CloudWatch metrics and optimize as needed
+### Next Steps to Complete Integration
+
+#### 1. **CRITICAL: Configure LLM Model**
+- **Add Bedrock foundation model** (Claude 3.5 Sonnet, etc.) to AgentCore configuration
+- **Configure model** to understand MCP tools and translate natural language queries
+- **Set up prompt engineering** for restaurant search domain
+- **Test natural language processing** with restaurant queries
+
+#### 2. **Update AgentCore Configuration**
+```yaml
+# Add to .bedrock_agentcore.yaml
+model_configuration:
+  foundation_model: "anthropic.claude-3-5-sonnet-20241022-v2:0"
+  model_parameters:
+    max_tokens: 4096
+    temperature: 0.1
+  tool_calling: enabled
+```
+
+#### 3. **Test Complete Workflow**
+```bash
+# Test natural language queries (should work after LLM configuration)
+python test_aws_sample_invocation.py
+```
+
+#### 4. **Production Readiness**
+- **JWT Authentication Setup**: Add Cognito custom domain
+- **Performance Monitoring**: CloudWatch alerts and dashboards  
+- **Load Testing**: Validate performance under load
+- **Documentation**: Update integration guides
+
+#### 5. **Alternative Solutions**
+If LLM integration is complex, consider:
+- **Direct MCP tool calling** (bypass natural language)
+- **Custom prompt templates** for restaurant domain
+- **Integration with existing Bedrock Agents**
 
 ---
 
