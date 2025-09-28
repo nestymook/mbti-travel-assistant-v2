@@ -1,0 +1,24 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "normal_0000",
+        "name": "Normal Restaurant 0",
+        "address": "0 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 5,
+          "neutral": 13
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

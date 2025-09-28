@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-09-27T20:56:53.646156+00:00",
+  "test_suite": "Reasoning Server Authentication Middleware Integration Tests",
+  "tests": {
+    "health_check_bypass": {
+      "status": "PASSED",
+      "message": "Health check endpoint bypasses authentication correctly",
+      "details": {
+        "status_code": 200,
+        "response_data": {
+          "status": "healthy",
+          "timestamp": "2025-09-27T20:56:54.345663+00:00",
+          "server_type": "reasoning_mcp"
+        }
+      }
+    },
+    "metrics_bypass": {
+      "status": "PASSED",
+      "message": "Metrics endpoint bypasses authentication correctly",
+      "details": {
+        "status_code": 200,
+        "response_data": {
+          "mcp_server_status": "running",
+          "server_type": "reasoning_mcp",
+          "available_tools": [
+            "recommend_restaurants",
+            "analyze_restaurant_sentiment"
+          ]
+        }
+      }
+    },
+    "protected_endpoint_authentication": {
+      "status": "PASSED",
+      "message": "Protected endpoint authentication working correctly",
+      "details": {
+        "unauthenticated_rejected": true,
+        "invalid_token_rejected": true,
+        "authentication_logic_tested": true
+      }
+    },
+    "authentication_error_responses": {
+      "status": "PASSED",
+      "message": "Authentication error responses: 4/4 passed",
+      "details": {
+        "scenarios": {
+          "missing_auth_header": {
+            "status": "PASSED",
+            "message": "Missing Authorization header correctly returns 401"
+          },
+          "invalid_auth_format": {
+            "status": "PASSED",
+            "message": "Invalid Authorization format correctly returns 401"
+          },
+          "empty_bearer_token": {
+            "status": "PASSED",
+            "message": "Empty Bearer token correctly returns 401"
+          },
+          "malformed_jwt_token": {
+            "status": "PASSED",
+            "message": "Malformed JWT token correctly returns 401"
+          }
+        },
+        "passed": 4,
+        "total": 4
+      }
+    }
+  },
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "success_rate": "100.0%"
+  }
+}

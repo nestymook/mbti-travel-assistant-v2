@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "data": {
+    "recommendation": {
+      "id": "rest_003",
+      "name": "Amazing Seafood",
+      "address": "789 Causeway Bay",
+      "meal_type": ["dinner"],
+      "sentiment": {"likes": 95, "dislikes": 3, "neutral": 2},
+      "location_category": "restaurant",
+      "district": "Causeway Bay",
+      "price_range": "$$"
+    },
+    "candidates": [
+      {
+        "id": "rest_003",
+        "name": "Amazing Seafood",
+        "address": "789 Causeway Bay",
+        "meal_type": ["dinner"],
+        "sentiment": {"likes": 95, "dislikes": 3, "neutral": 2},
+        "location_category": "restaurant",
+        "district": "Causeway Bay",
+        "price_range": "$$"
+      },
+      {
+        "id": "rest_001",
+        "name": "Excellent Dim Sum",
+        "address": "123 Central Street",
+        "meal_type": ["breakfast", "lunch"],
+        "sentiment": {"likes": 85, "dislikes": 10, "neutral": 5},
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$"
+      },
+      {
+        "id": "rest_002",
+        "name": "Great Noodle House",
+        "address": "456 Admiralty Road",
+        "meal_type": ["lunch", "dinner"],
+        "sentiment": {"likes": 70, "dislikes": 15, "neutral": 15},
+        "location_category": "restaurant",
+        "district": "Admiralty",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes",
+    "candidate_count": 3,
+    "analysis_summary": {
+      "restaurant_count": 3,
+      "average_likes": 83.33,
+      "average_dislikes": 9.33,
+      "average_neutral": 7.33,
+      "top_sentiment_score": 95.0,
+      "bottom_sentiment_score": 70.0,
+      "ranking_method": "sentiment_likes"
+    },
+    "timestamp": "2024-01-01T00:00:00Z"
+  }
+}

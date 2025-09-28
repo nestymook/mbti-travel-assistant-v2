@@ -1,0 +1,175 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "high_sentiment_0000",
+        "name": "High_Sentiment Restaurant 0",
+        "address": "0 High_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 100,
+          "dislikes": 2,
+          "neutral": 1
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$"
+      },
+      {
+        "id": "high_sentiment_0001",
+        "name": "High_Sentiment Restaurant 1",
+        "address": "1 High_Sentiment Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 84,
+          "dislikes": 2,
+          "neutral": 9
+        },
+        "location_category": "fine_dining",
+        "district": "Central district",
+        "price_range": "$"
+      },
+      {
+        "id": "high_sentiment_0002",
+        "name": "High_Sentiment Restaurant 2",
+        "address": "2 High_Sentiment Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 82,
+          "dislikes": 4,
+          "neutral": 4
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "high_sentiment_0003",
+        "name": "High_Sentiment Restaurant 3",
+        "address": "3 High_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 100,
+          "dislikes": 9,
+          "neutral": 7
+        },
+        "location_category": "fine_dining",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$$"
+      },
+      {
+        "id": "high_sentiment_0004",
+        "name": "High_Sentiment Restaurant 4",
+        "address": "4 High_Sentiment Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 80,
+          "dislikes": 3,
+          "neutral": 7
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$"
+      },
+      {
+        "id": "high_sentiment_0005",
+        "name": "High_Sentiment Restaurant 5",
+        "address": "5 High_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 90,
+          "dislikes": 2,
+          "neutral": 2
+        },
+        "location_category": "restaurant",
+        "district": "Causeway Bay",
+        "price_range": "$$$"
+      },
+      {
+        "id": "high_sentiment_0006",
+        "name": "High_Sentiment Restaurant 6",
+        "address": "6 High_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 99,
+          "dislikes": 5,
+          "neutral": 1
+        },
+        "location_category": "fine_dining",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$"
+      },
+      {
+        "id": "high_sentiment_0007",
+        "name": "High_Sentiment Restaurant 7",
+        "address": "7 High_Sentiment Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 92,
+          "dislikes": 2,
+          "neutral": 9
+        },
+        "location_category": "fast_food",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "high_sentiment_0008",
+        "name": "High_Sentiment Restaurant 8",
+        "address": "8 High_Sentiment Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 82,
+          "dislikes": 1,
+          "neutral": 4
+        },
+        "location_category": "restaurant",
+        "district": "Sheung Wan",
+        "price_range": "$$"
+      },
+      {
+        "id": "high_sentiment_0009",
+        "name": "High_Sentiment Restaurant 9",
+        "address": "9 High_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 83,
+          "dislikes": 7,
+          "neutral": 5
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

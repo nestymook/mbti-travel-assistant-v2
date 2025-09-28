@@ -1,1 +1,1 @@
-# Restaurant Search MCP - Source Package
+# Source code for restaurant reasoning MCP server

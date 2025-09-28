@@ -285,7 +285,7 @@ def create_strands_agent() -> Agent:
     
     # Configure Strands Agent with optimized parameters
     agent = Agent(
-        model="anthropic.claude-3-5-sonnet-20241022-v2:0",
+        model="amazon.nova-pro-v1:0",
         system_prompt=system_prompt,
         tools=tools,
         temperature=0.1,  # Low temperature for consistent tool calling

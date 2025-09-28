@@ -133,9 +133,9 @@ The AgentCore foundation model is configured to handle natural language restaura
 ```python
 # Foundation model configuration for AgentCore
 foundation_model_config = {
-    "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "model_id": "amazon.nova-pro-v1:0",
     "model_parameters": {
-        "temperature": 0.1,  # Low temperature for consistent tool calling
+        "temperature": 0.1,  # Low temperature for consistent reasoning and tool calling
         "max_tokens": 2048,
         "top_p": 0.9
     },
@@ -780,7 +780,7 @@ mcp_launch_result = agentcore_runtime.launch()
 
 # Configure foundation model agent
 foundation_model_config = {
-    "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "model_id": "amazon.nova-pro-v1:0",
     "model_parameters": {
         "temperature": 0.1,
         "max_tokens": 2048,

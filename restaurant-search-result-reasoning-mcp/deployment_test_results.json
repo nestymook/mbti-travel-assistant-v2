@@ -1,7 +1,43 @@
 {
-  "timestamp": 1758997102.3949885,
-  "basic_connectivity": false,
-  "mcp_tools": false,
-  "overall_success": false,
-  "jwt_authentication": true
+  "deployment_summary": {
+    "status": "SUCCESS",
+    "timestamp": "2025-09-27T20:29:22Z",
+    "agent_name": "restaurant_reasoning_mcp",
+    "agent_id": "restaurant_reasoning_mcp-UFz1VQCFu1",
+    "agent_arn": "arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1",
+    "endpoint_arn": "arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1/runtime-endpoint/DEFAULT"
+  },
+  "configuration": {
+    "entrypoint": "restaurant_reasoning_mcp_server.py",
+    "protocol": "MCP",
+    "platform": "linux/arm64",
+    "region": "us-east-1",
+    "network_mode": "PUBLIC",
+    "observability_enabled": true
+  },
+  "authentication": {
+    "type": "customJWTAuthorizer",
+    "cognito_user_pool_id": "us-east-1_wBAxW7yd4",
+    "client_id": "26k0pnja579pdpb1pt6savs27e",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+  },
+  "infrastructure": {
+    "execution_role": "arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2616b454f4",
+    "ecr_repository": "209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_reasoning_mcp",
+    "codebuild_project": "bedrock-agentcore-restaurant_reasoning_mcp-builder"
+  },
+  "status_checks": {
+    "agent_status": "READY",
+    "endpoint_status": "READY",
+    "deployment_successful": true,
+    "authentication_configured": true,
+    "observability_enabled": true
+  },
+  "requirements_satisfied": [
+    "5.1 - AgentCore Runtime deployment configuration created",
+    "5.2 - Auto-creation of execution role and ECR repository configured",
+    "7.1 - Protocol MCP and agent name restaurant_reasoning_mcp configured",
+    "11.1 - JWT authorizer configuration with existing Cognito integration",
+    "13.1 - AgentCore Runtime configured with customJWTAuthorizer"
+  ]
 }

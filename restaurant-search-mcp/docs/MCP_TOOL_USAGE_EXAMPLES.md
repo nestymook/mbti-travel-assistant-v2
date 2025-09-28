@@ -71,7 +71,7 @@ def create_mcp_tools() -> list[Tool]:
 
 # Configure Strands Agent
 strands_agent = Agent(
-    model="anthropic.claude-3-5-sonnet-20241022-v2:0",
+    model="amazon.nova-pro-v1:0",
     system_prompt="You are a helpful Hong Kong restaurant search assistant...",
     tools=create_mcp_tools(),
     temperature=0.1,
@@ -4225,7 +4225,7 @@ class EntrypointAgent:
         Remember: Your goal is to help users discover amazing dining experiences in Hong Kong!"""
         
         return Agent(
-            model="anthropic.claude-3-5-sonnet-20241022-v2:0",
+            model="amazon.nova-pro-v1:0",
             system_prompt=system_prompt,
             tools=self.tools,
             temperature=0.1,  # Low temperature for consistent tool calling
@@ -4414,7 +4414,7 @@ def process_request(payload: Dict[str, Any]) -> str:
             "prompt_length": len(user_prompt),
             "processing_timestamp": datetime.now().isoformat(),
             "tools_available": [tool.name for tool in tools],
-            "agent_model": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+            "agent_model": "amazon.nova-pro-v1:0",
             "entrypoint_version": "2.0.0"
         }
         

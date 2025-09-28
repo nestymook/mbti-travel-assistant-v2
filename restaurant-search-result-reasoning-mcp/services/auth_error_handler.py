@@ -1,8 +1,8 @@
 """
-Comprehensive authentication error handling system.
+Comprehensive authentication error handling system for restaurant reasoning MCP server.
 
 This module provides standardized error responses, security logging, and monitoring
-for authentication failures in the restaurant search MCP server.
+for authentication failures in the restaurant reasoning MCP server.
 """
 
 import json
@@ -98,7 +98,7 @@ class TroubleshootingGuide:
 
 class AuthenticationErrorHandler:
     """
-    Comprehensive authentication error response system.
+    Comprehensive authentication error response system for reasoning server.
     
     Provides standardized error responses, security logging, and monitoring
     for different types of authentication failures.
@@ -127,7 +127,7 @@ class AuthenticationErrorHandler:
         self._failed_attempts = {}  # Track failed attempts by IP/user
         self._suspicious_patterns = []
         
-        logger.info("Authentication error handler initialized")
+        logger.info("Authentication error handler initialized for reasoning server")
     
     def handle_authentication_error(self, error: AuthenticationError,
                                   request_context: Optional[Dict[str, Any]] = None) -> JSONResponse:
@@ -202,7 +202,7 @@ class AuthenticationErrorHandler:
             self._log_security_event(error, request_context, SecurityEventType.EXPIRED_TOKEN_ACCESS)
         
         headers = {
-            'WWW-Authenticate': 'Bearer realm="MCP Server", error="invalid_token", error_description="The access token expired"',
+            'WWW-Authenticate': 'Bearer realm="Reasoning MCP Server", error="invalid_token", error_description="The access token expired"',
             'Cache-Control': 'no-store',
             'Pragma': 'no-cache'
         }
@@ -394,7 +394,8 @@ class AuthenticationErrorHandler:
                 error_message=error.message if not self.mask_sensitive_data else self._mask_sensitive_details(error.message),
                 additional_data={
                     'error_type': error.error_type,
-                    'request_id': self._generate_request_id(request_context)
+                    'request_id': self._generate_request_id(request_context),
+                    'server_type': 'reasoning_mcp'
                 }
             )
             
@@ -452,7 +453,7 @@ class AuthenticationErrorHandler:
         }
         
         if status_code == 401:
-            headers['WWW-Authenticate'] = f'Bearer realm="MCP Server", error="invalid_token"'
+            headers['WWW-Authenticate'] = f'Bearer realm="Reasoning MCP Server", error="invalid_token"'
         
         return headers
     

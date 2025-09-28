@@ -1,0 +1,175 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "low_sentiment_0000",
+        "name": "Low_Sentiment Restaurant 0",
+        "address": "0 Low_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 30,
+          "dislikes": 33,
+          "neutral": 10
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$"
+      },
+      {
+        "id": "low_sentiment_0001",
+        "name": "Low_Sentiment Restaurant 1",
+        "address": "1 Low_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 14,
+          "dislikes": 53,
+          "neutral": 13
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "low_sentiment_0002",
+        "name": "Low_Sentiment Restaurant 2",
+        "address": "2 Low_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 11,
+          "dislikes": 30,
+          "neutral": 12
+        },
+        "location_category": "cafe",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$"
+      },
+      {
+        "id": "low_sentiment_0003",
+        "name": "Low_Sentiment Restaurant 3",
+        "address": "3 Low_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 27,
+          "dislikes": 36,
+          "neutral": 30
+        },
+        "location_category": "fine_dining",
+        "district": "Admiralty",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "low_sentiment_0004",
+        "name": "Low_Sentiment Restaurant 4",
+        "address": "4 Low_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 28,
+          "dislikes": 38,
+          "neutral": 10
+        },
+        "location_category": "fine_dining",
+        "district": "Causeway Bay",
+        "price_range": "$$$"
+      },
+      {
+        "id": "low_sentiment_0005",
+        "name": "Low_Sentiment Restaurant 5",
+        "address": "5 Low_Sentiment Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 14,
+          "dislikes": 36,
+          "neutral": 20
+        },
+        "location_category": "restaurant",
+        "district": "Wan Chai",
+        "price_range": "$"
+      },
+      {
+        "id": "low_sentiment_0006",
+        "name": "Low_Sentiment Restaurant 6",
+        "address": "6 Low_Sentiment Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 21,
+          "dislikes": 57,
+          "neutral": 21
+        },
+        "location_category": "fast_food",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "low_sentiment_0007",
+        "name": "Low_Sentiment Restaurant 7",
+        "address": "7 Low_Sentiment Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 33,
+          "dislikes": 44,
+          "neutral": 27
+        },
+        "location_category": "fine_dining",
+        "district": "Central district",
+        "price_range": "$$$"
+      },
+      {
+        "id": "low_sentiment_0008",
+        "name": "Low_Sentiment Restaurant 8",
+        "address": "8 Low_Sentiment Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 36,
+          "dislikes": 50,
+          "neutral": 29
+        },
+        "location_category": "cafe",
+        "district": "Mong Kok",
+        "price_range": "$"
+      },
+      {
+        "id": "low_sentiment_0009",
+        "name": "Low_Sentiment Restaurant 9",
+        "address": "9 Low_Sentiment Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 11,
+          "dislikes": 51,
+          "neutral": 17
+        },
+        "location_category": "restaurant",
+        "district": "Sheung Wan",
+        "price_range": "$$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

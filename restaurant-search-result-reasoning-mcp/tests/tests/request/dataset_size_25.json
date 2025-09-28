@@ -1,0 +1,420 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "normal_0000",
+        "name": "Normal Restaurant 0",
+        "address": "0 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 5,
+          "neutral": 13
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0001",
+        "name": "Normal Restaurant 1",
+        "address": "1 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 99,
+          "dislikes": 7,
+          "neutral": 23
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0002",
+        "name": "Normal Restaurant 2",
+        "address": "2 Normal Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 57,
+          "dislikes": 12,
+          "neutral": 21
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0003",
+        "name": "Normal Restaurant 3",
+        "address": "3 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 99,
+          "dislikes": 18,
+          "neutral": 12
+        },
+        "location_category": "fast_food",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0004",
+        "name": "Normal Restaurant 4",
+        "address": "4 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 27,
+          "neutral": 18
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0005",
+        "name": "Normal Restaurant 5",
+        "address": "5 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 73,
+          "dislikes": 8,
+          "neutral": 7
+        },
+        "location_category": "restaurant",
+        "district": "Causeway Bay",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0006",
+        "name": "Normal Restaurant 6",
+        "address": "6 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 63,
+          "dislikes": 30,
+          "neutral": 6
+        },
+        "location_category": "fine_dining",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0007",
+        "name": "Normal Restaurant 7",
+        "address": "7 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 78,
+          "dislikes": 7,
+          "neutral": 22
+        },
+        "location_category": "fast_food",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0008",
+        "name": "Normal Restaurant 8",
+        "address": "8 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 38,
+          "dislikes": 6,
+          "neutral": 12
+        },
+        "location_category": "restaurant",
+        "district": "Sheung Wan",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0009",
+        "name": "Normal Restaurant 9",
+        "address": "9 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 42,
+          "dislikes": 17,
+          "neutral": 13
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0010",
+        "name": "Normal Restaurant 10",
+        "address": "10 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 75,
+          "dislikes": 11,
+          "neutral": 13
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0011",
+        "name": "Normal Restaurant 11",
+        "address": "11 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 98,
+          "dislikes": 28,
+          "neutral": 12
+        },
+        "location_category": "fine_dining",
+        "district": "Wan Chai",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0012",
+        "name": "Normal Restaurant 12",
+        "address": "12 Normal Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 58,
+          "dislikes": 26,
+          "neutral": 15
+        },
+        "location_category": "cafe",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0013",
+        "name": "Normal Restaurant 13",
+        "address": "13 Normal Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 70,
+          "dislikes": 17,
+          "neutral": 13
+        },
+        "location_category": "cafe",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0014",
+        "name": "Normal Restaurant 14",
+        "address": "14 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 57,
+          "dislikes": 25,
+          "neutral": 20
+        },
+        "location_category": "fine_dining",
+        "district": "Admiralty",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0015",
+        "name": "Normal Restaurant 15",
+        "address": "15 Normal Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 47,
+          "dislikes": 12,
+          "neutral": 22
+        },
+        "location_category": "fast_food",
+        "district": "Mong Kok",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "normal_0016",
+        "name": "Normal Restaurant 16",
+        "address": "16 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 81,
+          "dislikes": 16,
+          "neutral": 12
+        },
+        "location_category": "fine_dining",
+        "district": "Central district",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0017",
+        "name": "Normal Restaurant 17",
+        "address": "17 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 9,
+          "neutral": 25
+        },
+        "location_category": "fine_dining",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0018",
+        "name": "Normal Restaurant 18",
+        "address": "18 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 79,
+          "dislikes": 17,
+          "neutral": 24
+        },
+        "location_category": "fast_food",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0019",
+        "name": "Normal Restaurant 19",
+        "address": "19 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 26,
+          "neutral": 22
+        },
+        "location_category": "fast_food",
+        "district": "Central district",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0020",
+        "name": "Normal Restaurant 20",
+        "address": "20 Normal Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 85,
+          "dislikes": 10,
+          "neutral": 19
+        },
+        "location_category": "fast_food",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0021",
+        "name": "Normal Restaurant 21",
+        "address": "21 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 94,
+          "dislikes": 8,
+          "neutral": 25
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$$$"
+      },
+      {
+        "id": "normal_0022",
+        "name": "Normal Restaurant 22",
+        "address": "22 Normal Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 22,
+          "neutral": 21
+        },
+        "location_category": "fast_food",
+        "district": "Wan Chai",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0023",
+        "name": "Normal Restaurant 23",
+        "address": "23 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 16,
+          "neutral": 14
+        },
+        "location_category": "restaurant",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0024",
+        "name": "Normal Restaurant 24",
+        "address": "24 Normal Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 40,
+          "dislikes": 28,
+          "neutral": 20
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$$$$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

@@ -92,7 +92,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
         )
         self.security_monitor = get_security_monitor()
         
-        logger.info("Authentication middleware initialized")
+        logger.info("Authentication middleware initialized for reasoning server")
         logger.info(f"Bypass paths: {config.bypass_paths}")
         logger.info(f"Authentication required: {config.require_authentication}")
     
@@ -155,11 +155,11 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 }
                 self.security_monitor.log_token_validation(True, token_info, request_context)
                 
-                # Inject user context into request state
+                # Inject user context into request state for authenticated reasoning requests
                 request.state.user_context = user_context
                 request.state.authenticated = True
                 
-                # Log user context for audit purposes
+                # Log user context for audit purposes for reasoning operations
                 if self.config.log_user_context:
                     self._log_user_context(request, user_context)
                 
@@ -172,7 +172,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 return response
                 
             except AuthenticationError as e:
-                logger.warning(f"Authentication failed: {e.message}")
+                logger.warning(f"Authentication failed for reasoning server: {e.message}")
                 
                 # Log failed authentication attempt
                 user_context_dict = {'user_id': 'unknown', 'username': 'unknown', 'email': 'unknown'}
@@ -187,7 +187,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 return self.error_handler.handle_authentication_error(e, request_context)
             
         except Exception as e:
-            logger.error(f"Unexpected error in authentication middleware: {e}")
+            logger.error(f"Unexpected error in authentication middleware for reasoning server: {e}")
             return self._create_internal_error_response(str(e))
     
     def _should_bypass_auth(self, request: Request) -> bool:
@@ -211,7 +211,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
     
     def _extract_bearer_token(self, request: Request) -> str:
         """
-        Extract JWT token from Authorization Bearer header.
+        Extract JWT token from Authorization Bearer header for reasoning server.
         
         Args:
             request: HTTP request
@@ -257,7 +257,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
     
     async def _validate_token_and_create_context(self, token: str) -> UserContext:
         """
-        Validate JWT token and create user context.
+        Validate JWT token and create user context for reasoning server.
         
         Args:
             token: JWT token string
@@ -282,7 +282,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 session_id=None  # Could be extracted from token if needed
             )
             
-            logger.debug(f"Successfully authenticated user: {user_context.username}")
+            logger.debug(f"Successfully authenticated user for reasoning server: {user_context.username}")
             return user_context
             
         except AuthenticationError:
@@ -300,7 +300,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
     
     def _log_user_context(self, request: Request, user_context: UserContext) -> None:
         """
-        Log user context for audit purposes.
+        Log user context for audit purposes for reasoning operations.
         
         Args:
             request: HTTP request
@@ -317,13 +317,14 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 'client_ip': request.client.host if hasattr(request, 'client') else 'unknown',
                 'user_agent': request.headers.get('User-Agent', 'unknown'),
                 'token_exp': user_context.token_claims.exp,
-                'token_iat': user_context.token_claims.iat
+                'token_iat': user_context.token_claims.iat,
+                'server_type': 'reasoning_mcp'
             }
             
-            logger.info(f"User authenticated: {json.dumps(audit_info)}")
+            logger.info(f"User authenticated for reasoning operations: {json.dumps(audit_info)}")
             
         except Exception as e:
-            logger.warning(f"Failed to log user context: {e}")
+            logger.warning(f"Failed to log user context for reasoning server: {e}")
     
     def _add_auth_headers(self, response: Response, user_context: UserContext) -> None:
         """
@@ -337,6 +338,7 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
             if hasattr(response, 'headers'):
                 response.headers['X-Authenticated-User'] = user_context.username
                 response.headers['X-User-ID'] = user_context.user_id
+                response.headers['X-Server-Type'] = 'reasoning-mcp'
                 
         except Exception as e:
             logger.warning(f"Failed to add auth headers: {e}")
@@ -376,14 +378,15 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 'message': error.message,
                 'details': error.details,
                 'suggested_action': error.suggested_action,
-                'timestamp': datetime.now(timezone.utc).isoformat()
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'server_type': 'reasoning_mcp'
             }
         }
         
         # Add WWW-Authenticate header for 401 responses
         headers = {}
         if status_code == 401:
-            headers['WWW-Authenticate'] = 'Bearer realm="MCP Server", error="invalid_token"'
+            headers['WWW-Authenticate'] = 'Bearer realm="Reasoning MCP Server", error="invalid_token"'
         
         return JSONResponse(
             status_code=status_code,
@@ -408,7 +411,8 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 'client_ip': request.client.host if hasattr(request, 'client') and request.client else 'unknown',
                 'user_agent': request.headers.get('User-Agent', 'unknown') if hasattr(request, 'headers') else 'unknown',
                 'timestamp': datetime.now(timezone.utc).isoformat(),
-                'request_id': request.headers.get('X-Request-ID') if hasattr(request, 'headers') else None
+                'request_id': request.headers.get('X-Request-ID') if hasattr(request, 'headers') else None,
+                'server_type': 'reasoning_mcp'
             }
         except Exception as e:
             logger.warning(f"Failed to create request context: {e}")
@@ -417,7 +421,8 @@ class AuthenticationMiddleware(BaseHTTPMiddleware):
                 'method': 'unknown',
                 'client_ip': 'unknown',
                 'user_agent': 'unknown',
-                'timestamp': datetime.now(timezone.utc).isoformat()
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'server_type': 'reasoning_mcp'
             }
     
     def _create_internal_error_response(self, error_message: str) -> JSONResponse:

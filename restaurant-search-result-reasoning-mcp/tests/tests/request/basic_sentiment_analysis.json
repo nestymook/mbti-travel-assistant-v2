@@ -1,0 +1,90 @@
+{
+  "tool_name": "analyze_restaurant_sentiment",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "normal_0000",
+        "name": "Normal Restaurant 0",
+        "address": "0 Normal Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 44,
+          "dislikes": 5,
+          "neutral": 13
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0001",
+        "name": "Normal Restaurant 1",
+        "address": "1 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 99,
+          "dislikes": 7,
+          "neutral": 23
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0002",
+        "name": "Normal Restaurant 2",
+        "address": "2 Normal Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 57,
+          "dislikes": 12,
+          "neutral": 21
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "normal_0003",
+        "name": "Normal Restaurant 3",
+        "address": "3 Normal Street",
+        "meal_type": [
+          "breakfast",
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 99,
+          "dislikes": 18,
+          "neutral": 12
+        },
+        "location_category": "fast_food",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "normal_0004",
+        "name": "Normal Restaurant 4",
+        "address": "4 Normal Street",
+        "meal_type": [
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 27,
+          "neutral": 18
+        },
+        "location_category": "fast_food",
+        "district": "Admiralty",
+        "price_range": "$$"
+      }
+    ]
+  }
+}

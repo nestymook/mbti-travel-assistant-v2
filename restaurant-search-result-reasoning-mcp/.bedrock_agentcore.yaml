@@ -1,4 +1,4 @@
-default_agent: restaurant_search_mcp
+default_agent: restaurant_reasoning_mcp
 agents:
   restaurant_search_conversational_agent:
     name: restaurant_search_conversational_agent
@@ -114,5 +114,38 @@ agents:
       execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-53c8e0f88f
       source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
     authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+  restaurant_reasoning_mcp:
+    name: restaurant_reasoning_mcp
+    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: null
+      execution_role_auto_create: true
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: null
+      ecr_auto_create: true
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: restaurant_reasoning_mcp-UFz1VQCFu1
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1
+      agent_session_id: null
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null

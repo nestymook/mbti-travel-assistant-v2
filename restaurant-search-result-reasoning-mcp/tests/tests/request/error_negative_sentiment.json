@@ -1,0 +1,24 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "invalid_005",
+        "name": "Negative Sentiment",
+        "address": "5 Invalid Street",
+        "sentiment": {
+          "likes": -10,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "meal_type": [
+          "lunch"
+        ],
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

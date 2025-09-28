@@ -1,0 +1,56 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "comp_001",
+        "name": "High Likes Low Neutral",
+        "address": "1 Comparison Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 80,
+          "dislikes": 15,
+          "neutral": 5
+        },
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "comp_002",
+        "name": "Medium Likes High Neutral",
+        "address": "2 Comparison Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 60,
+          "dislikes": 10,
+          "neutral": 30
+        },
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "comp_003",
+        "name": "Low Likes Medium Neutral",
+        "address": "3 Comparison Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

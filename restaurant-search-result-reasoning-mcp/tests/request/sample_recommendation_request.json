@@ -1,0 +1,38 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "rest_001",
+        "name": "Excellent Dim Sum",
+        "address": "123 Central Street",
+        "meal_type": ["breakfast", "lunch"],
+        "sentiment": {"likes": 85, "dislikes": 10, "neutral": 5},
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$"
+      },
+      {
+        "id": "rest_002",
+        "name": "Great Noodle House",
+        "address": "456 Admiralty Road",
+        "meal_type": ["lunch", "dinner"],
+        "sentiment": {"likes": 70, "dislikes": 15, "neutral": 15},
+        "location_category": "restaurant",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "rest_003",
+        "name": "Amazing Seafood",
+        "address": "789 Causeway Bay",
+        "meal_type": ["dinner"],
+        "sentiment": {"likes": 95, "dislikes": 3, "neutral": 2},
+        "location_category": "restaurant",
+        "district": "Causeway Bay",
+        "price_range": "$$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

@@ -1,1 +1,1 @@
-# Restaurant Search MCP - Services Package
+# Business logic services for restaurant reasoning

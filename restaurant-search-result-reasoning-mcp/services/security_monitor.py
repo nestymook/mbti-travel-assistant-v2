@@ -1,5 +1,5 @@
 """
-Security logging and monitoring system for authentication events.
+Security logging and monitoring system for authentication events in reasoning server.
 
 This module provides comprehensive security event logging, audit trails,
 and monitoring for suspicious authentication patterns.

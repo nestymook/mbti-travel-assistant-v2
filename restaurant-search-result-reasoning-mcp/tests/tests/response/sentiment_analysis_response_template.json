@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "sentiment_analysis": {
+      "restaurant_count": 0,
+      "average_likes": 0.0,
+      "average_dislikes": 0.0,
+      "average_neutral": 0.0,
+      "top_sentiment_score": 0.0,
+      "bottom_sentiment_score": 0.0,
+      "ranking_method": "sentiment_likes"
+    },
+    "restaurant_count": 0,
+    "ranking_method": "sentiment_likes",
+    "timestamp": "2024-01-01T00:00:00Z"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "success": false,
+  "error": {
+    "type": "ValidationError",
+    "message": "Restaurant validation failed: Missing required sentiment field for restaurant invalid_001",
+    "timestamp": "2024-01-01T00:00:00Z",
+    "details": {
+      "invalid_restaurants": [
+        {
+          "restaurant_id": "invalid_001",
+          "errors": ["Missing required field: sentiment"],
+          "warnings": []
+        }
+      ],
+      "valid_count": 0,
+      "total_count": 1
+    }
+  }
+}

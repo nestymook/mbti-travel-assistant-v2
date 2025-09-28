@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-09-27T20:57:02.434772+00:00",
+  "test_suite": "Reasoning Server Authentication Integration Tests",
+  "tests": {
+    "cognito_authentication_flow": {
+      "status": "FAILED",
+      "message": "Authentication error: Authentication failed: 'Session'",
+      "details": {
+        "error_type": "AUTHENTICATION_ERROR",
+        "error_code": "UNKNOWN_ERROR",
+        "suggested_action": "Check network connectivity and service availability"
+      }
+    },
+    "jwt_token_validation_scenarios": {
+      "status": "FAILED",
+      "message": "JWT validation test setup failed: Authentication failed: 'Session'",
+      "details": {
+        "exception": "Authentication failed: 'Session'"
+      }
+    },
+    "reasoning_mcp_server_authentication": {
+      "status": "FAILED",
+      "message": "Authentication failed: Authentication failed: 'Session'",
+      "details": {
+        "error_type": "AUTHENTICATION_ERROR",
+        "error_code": "UNKNOWN_ERROR"
+      }
+    },
+    "error_handling_scenarios": {
+      "status": "PARTIAL",
+      "message": "Error handling scenarios: 1/2 passed",
+      "details": {
+        "scenarios": {
+          "invalid_credentials": {
+            "status": "FAILED",
+            "message": "Unexpected error type: AUTHENTICATION_ERROR"
+          },
+          "invalid_refresh_token": {
+            "status": "PASSED",
+            "message": "Invalid refresh token correctly rejected: NotAuthorizedException"
+          }
+        },
+        "passed": 1,
+        "total": 2
+      }
+    }
+  },
+  "summary": {
+    "total": 4,
+    "passed": 0,
+    "failed": 3,
+    "skipped": 0,
+    "success_rate": "0.0%"
+  }
+}

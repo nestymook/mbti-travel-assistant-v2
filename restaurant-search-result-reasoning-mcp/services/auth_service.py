@@ -1,5 +1,6 @@
 """
 Authentication service for Cognito integration with SRP authentication flow.
+Adapted for restaurant reasoning MCP server.
 """
 
 import json
@@ -91,7 +92,7 @@ class CognitoAuthenticator:
     Cognito authentication service using SRP (Secure Remote Password) protocol.
     
     Handles user authentication, token management, and session validation
-    for AWS Cognito User Pools.
+    for AWS Cognito User Pools in the restaurant reasoning MCP server.
     """
     
     def __init__(self, user_pool_id: str, client_id: str, region: str):
@@ -487,7 +488,8 @@ class TokenValidator:
     """
     JWT token validator for Cognito tokens with JWKS key management.
     
-    Handles token signature verification, claims validation, and JWKS key caching.
+    Handles token signature verification, claims validation, and JWKS key caching
+    for the restaurant reasoning MCP server.
     """
     
     def __init__(self, cognito_config: Dict):
@@ -757,11 +759,13 @@ class TokenValidator:
         current_time = datetime.now(timezone.utc).timestamp()
         return current_time < self.jwks_cache_expiry
 
+
 class JWKSManager:
     """
     JWKS (JSON Web Key Set) manager for handling Cognito public keys.
     
-    Manages key fetching, caching, and rotation for JWT token validation.
+    Manages key fetching, caching, and rotation for JWT token validation
+    in the restaurant reasoning MCP server.
     """
     
     def __init__(self, discovery_url: str, cache_ttl: int = 3600):
@@ -770,432 +774,91 @@ class JWKSManager:
         
         Args:
             discovery_url: Cognito discovery URL
-            cache_ttl: Cache time-to-live in seconds (default: 1 hour)
+            cache_ttl: Cache time-to-live in seconds
         """
         self.discovery_url = discovery_url
         self.cache_ttl = cache_ttl
         self.jwks_url = discovery_url.replace('/.well-known/openid-configuration', '/.well-known/jwks.json')
         
-        # Cache management
-        self.jwks_keys = {}
-        self.cache_timestamp = None
-        self.oidc_config = None
+        # Key cache
+        self.keys_cache = {}
+        self.cache_expiry = None
     
-    async def get_jwks_keys(self) -> Dict:
+    async def get_key(self, kid: str) -> str:
         """
-        Get JWKS keys with caching.
-        
-        Returns:
-            Dictionary of kid -> public key mappings
-            
-        Raises:
-            AuthenticationError: If JWKS retrieval fails
-        """
-        if self.is_cache_expired():
-            await self.refresh_jwks_cache()
-        
-        return self.jwks_keys
-    
-    async def refresh_jwks_cache(self) -> None:
-        """
-        Refresh JWKS cache from Cognito.
-        
-        Raises:
-            AuthenticationError: If refresh fails
-        """
-        try:
-            # First get OIDC configuration if not cached
-            if not self.oidc_config:
-                oidc_response = requests.get(self.discovery_url, timeout=10)
-                oidc_response.raise_for_status()
-                self.oidc_config = oidc_response.json()
-                
-                # Update JWKS URL from OIDC config if available
-                if 'jwks_uri' in self.oidc_config:
-                    self.jwks_url = self.oidc_config['jwks_uri']
-            
-            # Fetch JWKS
-            jwks_response = requests.get(self.jwks_url, timeout=10)
-            jwks_response.raise_for_status()
-            
-            jwks_data = jwks_response.json()
-            
-            # Process and cache keys
-            new_keys = {}
-            for key_data in jwks_data.get('keys', []):
-                kid = key_data.get('kid')
-                if kid and key_data.get('kty') == 'RSA' and key_data.get('use') == 'sig':
-                    try:
-                        # Convert JWK to PEM format using PyJWT
-                        public_key = RSAAlgorithm.from_jwk(json.dumps(key_data))
-                        new_keys[kid] = public_key
-                    except Exception as e:
-                        # Log warning but continue with other keys
-                        print(f"Warning: Failed to process key {kid}: {e}")
-            
-            if not new_keys:
-                raise AuthenticationError(
-                    error_type="JWKS_ERROR",
-                    error_code="NO_VALID_KEYS",
-                    message="No valid signing keys found in JWKS",
-                    details="JWKS response contained no usable RSA signing keys",
-                    suggested_action="Verify Cognito User Pool configuration"
-                )
-            
-            # Update cache
-            self.jwks_keys = new_keys
-            self.cache_timestamp = datetime.now(timezone.utc).timestamp()
-            
-        except requests.RequestException as e:
-            raise AuthenticationError(
-                error_type="JWKS_FETCH_ERROR",
-                error_code="NETWORK_ERROR",
-                message=f"Failed to fetch JWKS: {str(e)}",
-                details=f"Request to {self.jwks_url} failed",
-                suggested_action="Check network connectivity and JWKS endpoint availability"
-            )
-        except Exception as e:
-            raise AuthenticationError(
-                error_type="JWKS_PROCESSING_ERROR",
-                error_code="PROCESSING_ERROR",
-                message=f"Failed to process JWKS response: {str(e)}",
-                details=str(e),
-                suggested_action="Verify JWKS response format and content"
-            )
-    
-    def get_signing_key_for_kid(self, kid: str) -> str:
-        """
-        Get signing key for specific key ID.
+        Get public key by key ID.
         
         Args:
             kid: Key ID
             
         Returns:
-            RSA public key for the given kid
+            RSA public key
             
         Raises:
-            AuthenticationError: If key not found
+            AuthenticationError: If key not found or fetch fails
         """
-        if kid not in self.jwks_keys:
+        # Check cache first
+        if self._is_cache_valid() and kid in self.keys_cache:
+            return self.keys_cache[kid]
+        
+        # Refresh cache
+        await self._refresh_cache()
+        
+        if kid not in self.keys_cache:
             raise AuthenticationError(
                 error_type="KEY_NOT_FOUND",
-                error_code="SIGNING_KEY_NOT_FOUND",
-                message=f"Signing key not found for kid: {kid}",
-                details=f"Available keys: {list(self.jwks_keys.keys())}",
-                suggested_action="Verify token validity and refresh JWKS cache"
+                error_code="JWKS_KEY_NOT_FOUND",
+                message=f"Key ID {kid} not found in JWKS",
+                details="The requested key ID is not available in the key set",
+                suggested_action="Verify token validity and key rotation"
             )
         
-        return self.jwks_keys[kid]
+        return self.keys_cache[kid]
     
-    def is_cache_expired(self) -> bool:
-        """
-        Check if JWKS cache has expired.
-        
-        Returns:
-            True if cache is expired or empty, False otherwise
-        """
-        if not self.cache_timestamp or not self.jwks_keys:
-            return True
+    async def _refresh_cache(self) -> None:
+        """Refresh JWKS cache from endpoint."""
+        try:
+            response = requests.get(self.jwks_url, timeout=10)
+            response.raise_for_status()
+            
+            jwks_data = response.json()
+            
+            # Process and cache keys
+            self.keys_cache = {}
+            for key_data in jwks_data.get('keys', []):
+                kid = key_data.get('kid')
+                if kid and key_data.get('kty') == 'RSA':
+                    public_key = RSAAlgorithm.from_jwk(json.dumps(key_data))
+                    self.keys_cache[kid] = public_key
+            
+            # Update cache expiry
+            self.cache_expiry = datetime.now(timezone.utc).timestamp() + self.cache_ttl
+            
+        except Exception as e:
+            raise AuthenticationError(
+                error_type="JWKS_FETCH_ERROR",
+                error_code="CACHE_REFRESH_FAILED",
+                message=f"Failed to refresh JWKS cache: {str(e)}",
+                details=str(e),
+                suggested_action="Check network connectivity and JWKS endpoint"
+            )
+    
+    def _is_cache_valid(self) -> bool:
+        """Check if cache is still valid."""
+        if self.cache_expiry is None:
+            return False
         
         current_time = datetime.now(timezone.utc).timestamp()
-        return (current_time - self.cache_timestamp) >= self.cache_ttl
+        return current_time < self.cache_expiry
 
 
-class AuthenticationMiddleware:
-    """
-    Authentication middleware for FastMCP server integration.
-    
-    Handles JWT token extraction, validation, and user context injection.
-    """
-    
-    def __init__(self, token_validator: TokenValidator):
-        """
-        Initialize authentication middleware.
-        
-        Args:
-            token_validator: TokenValidator instance for JWT validation
-        """
-        self.token_validator = token_validator
-    
-    async def __call__(self, request, call_next):
-        """
-        Process request with authentication.
-        
-        Args:
-            request: HTTP request object
-            call_next: Next middleware in chain
-            
-        Returns:
-            HTTP response
-        """
-        from fastapi import HTTPException
-        from fastapi.responses import JSONResponse
-        
-        # Skip authentication for health check endpoints
-        if request.url.path in ['/health', '/metrics', '/status']:
-            return await call_next(request)
-        
-        try:
-            # Extract Bearer token from Authorization header
-            auth_header = request.headers.get('Authorization', '')
-            
-            if not auth_header:
-                return self.create_error_response(
-                    "MISSING_AUTHORIZATION",
-                    "Authorization header is required"
-                )
-            
-            token = self.extract_bearer_token(auth_header)
-            
-            if not token:
-                return self.create_error_response(
-                    "INVALID_AUTHORIZATION_FORMAT",
-                    "Authorization header must be in format: Bearer <token>"
-                )
-            
-            # Validate JWT token
-            claims = await self.token_validator.validate_jwt_token(token)
-            
-            # Inject user context into request state
-            request.state.user_context = UserContext(
-                user_id=claims.user_id,
-                username=claims.username,
-                email=claims.email,
-                authenticated=True,
-                token_claims=claims
-            )
-            
-            # Continue to next middleware/handler
-            response = await call_next(request)
-            
-            # Add user context to response headers for debugging (optional)
-            if hasattr(request.state, 'user_context'):
-                response.headers['X-User-ID'] = request.state.user_context.user_id
-                response.headers['X-Username'] = request.state.user_context.username
-            
-            return response
-            
-        except AuthenticationError as e:
-            return self.create_error_response(e.error_code, e.message, e.details)
-        except Exception as e:
-            return self.create_error_response(
-                "AUTHENTICATION_ERROR",
-                f"Authentication failed: {str(e)}"
-            )
-    
-    def extract_bearer_token(self, auth_header: str) -> Optional[str]:
-        """
-        Extract Bearer token from Authorization header.
-        
-        Args:
-            auth_header: Authorization header value
-            
-        Returns:
-            JWT token string or None if invalid format
-        """
-        if not auth_header.startswith('Bearer '):
-            return None
-        
-        token = auth_header[7:].strip()  # Remove 'Bearer ' prefix
-        
-        if not token:
-            return None
-        
-        return token
-    
-    def create_error_response(self, error_type: str, message: str, 
-                            details: str = None) -> JSONResponse:
-        """
-        Create standardized error response.
-        
-        Args:
-            error_type: Error type code
-            message: Error message
-            details: Optional error details
-            
-        Returns:
-            JSONResponse with error information
-        """
-        error_data = {
-            "error": {
-                "type": error_type,
-                "message": message,
-                "timestamp": datetime.now(timezone.utc).isoformat()
-            }
-        }
-        
-        if details:
-            error_data["error"]["details"] = details
-        
-        # Determine HTTP status code based on error type
-        status_code = 401  # Default to Unauthorized
-        
-        if error_type in ["MISSING_AUTHORIZATION", "INVALID_AUTHORIZATION_FORMAT"]:
-            status_code = 401
-        elif error_type in ["TOKEN_EXPIRED", "INVALID_TOKEN", "TOKEN_VALIDATION_ERROR"]:
-            status_code = 401
-        elif error_type in ["JWKS_FETCH_ERROR", "AUTHENTICATION_ERROR"]:
-            status_code = 503  # Service Unavailable
-        
-        return JSONResponse(
-            status_code=status_code,
-            content=error_data
-        )
-
-
-# Utility functions for authentication integration
-
-def create_cognito_authenticator_from_config(config_path: str = "cognito_config.json") -> CognitoAuthenticator:
-    """
-    Create CognitoAuthenticator from configuration file.
-    
-    Args:
-        config_path: Path to Cognito configuration file
-        
-    Returns:
-        Configured CognitoAuthenticator instance
-        
-    Raises:
-        AuthenticationError: If configuration is invalid
-    """
-    try:
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-        
-        return CognitoAuthenticator(
-            user_pool_id=config['user_pool']['user_pool_id'],
-            client_id=config['app_client']['client_id'],
-            region=config['region']
-        )
-        
-    except FileNotFoundError:
-        raise AuthenticationError(
-            error_type="CONFIG_ERROR",
-            error_code="CONFIG_FILE_NOT_FOUND",
-            message=f"Cognito configuration file not found: {config_path}",
-            details="Configuration file is required for authentication setup",
-            suggested_action="Create cognito_config.json with User Pool configuration"
-        )
-    except KeyError as e:
-        raise AuthenticationError(
-            error_type="CONFIG_ERROR",
-            error_code="MISSING_CONFIG_KEY",
-            message=f"Missing required configuration key: {e}",
-            details="Configuration file must contain user_pool, app_client, and region",
-            suggested_action="Verify configuration file format and required fields"
-        )
-    except Exception as e:
-        raise AuthenticationError(
-            error_type="CONFIG_ERROR",
-            error_code="CONFIG_LOAD_ERROR",
-            message=f"Failed to load configuration: {str(e)}",
-            details=str(e),
-            suggested_action="Verify configuration file format and permissions"
-        )
-
-
-def create_token_validator_from_config(config_path: str = "cognito_config.json") -> TokenValidator:
-    """
-    Create TokenValidator from configuration file.
-    
-    Args:
-        config_path: Path to Cognito configuration file
-        
-    Returns:
-        Configured TokenValidator instance
-        
-    Raises:
-        AuthenticationError: If configuration is invalid
-    """
-    try:
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-        
-        cognito_config = {
-            'user_pool_id': config['user_pool']['user_pool_id'],
-            'client_id': config['app_client']['client_id'],
-            'region': config['region'],
-            'discovery_url': config['discovery_url']
-        }
-        
-        return TokenValidator(cognito_config)
-        
-    except Exception as e:
-        raise AuthenticationError(
-            error_type="CONFIG_ERROR",
-            error_code="TOKEN_VALIDATOR_CONFIG_ERROR",
-            message=f"Failed to create TokenValidator: {str(e)}",
-            details=str(e),
-            suggested_action="Verify Cognito configuration file"
-        )
-
-
-# Example usage and testing utilities
-
-async def test_authentication_flow(username: str, password: str, 
-                                 config_path: str = "cognito_config.json") -> Dict:
-    """
-    Test complete authentication flow for debugging.
-    
-    Args:
-        username: Test username
-        password: Test password
-        config_path: Path to configuration file
-        
-    Returns:
-        Dictionary with test results
-    """
-    results = {
-        "authentication": False,
-        "token_validation": False,
-        "user_context": None,
-        "errors": []
-    }
-    
-    try:
-        # Test authentication
-        authenticator = create_cognito_authenticator_from_config(config_path)
-        tokens = authenticator.authenticate_user(username, password)
-        results["authentication"] = True
-        results["tokens"] = {
-            "has_id_token": bool(tokens.id_token),
-            "has_access_token": bool(tokens.access_token),
-            "has_refresh_token": bool(tokens.refresh_token),
-            "expires_in": tokens.expires_in
-        }
-        
-        # Test token validation
-        validator = create_token_validator_from_config(config_path)
-        claims = await validator.validate_jwt_token(tokens.access_token)
-        results["token_validation"] = True
-        results["claims"] = {
-            "user_id": claims.user_id,
-            "username": claims.username,
-            "email": claims.email,
-            "token_use": claims.token_use,
-            "client_id": claims.client_id
-        }
-        
-        # Test user context creation
-        user_context = authenticator.validate_user_session(tokens.access_token)
-        results["user_context"] = {
-            "user_id": user_context.user_id,
-            "username": user_context.username,
-            "email": user_context.email,
-            "authenticated": user_context.authenticated
-        }
-        
-    except AuthenticationError as e:
-        results["errors"].append({
-            "type": e.error_type,
-            "code": e.error_code,
-            "message": e.message,
-            "details": e.details
-        })
-    except Exception as e:
-        results["errors"].append({
-            "type": "UNKNOWN_ERROR",
-            "message": str(e)
-        })
-    
-    return results
+# Export main classes
+__all__ = [
+    'CognitoAuthenticator',
+    'TokenValidator',
+    'JWKSManager',
+    'AuthenticationTokens',
+    'AuthenticationError',
+    'JWTClaims',
+    'UserContext'
+]

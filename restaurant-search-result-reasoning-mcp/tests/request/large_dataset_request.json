@@ -1,0 +1,58 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "large_001",
+        "name": "Performance Test Restaurant 1",
+        "address": "1 Performance Street",
+        "meal_type": ["lunch"],
+        "sentiment": {"likes": 90, "dislikes": 5, "neutral": 5},
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "large_002",
+        "name": "Performance Test Restaurant 2",
+        "address": "2 Performance Street",
+        "meal_type": ["lunch"],
+        "sentiment": {"likes": 80, "dislikes": 10, "neutral": 10},
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "large_003",
+        "name": "Performance Test Restaurant 3",
+        "address": "3 Performance Street",
+        "meal_type": ["lunch"],
+        "sentiment": {"likes": 70, "dislikes": 15, "neutral": 15},
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "large_004",
+        "name": "Performance Test Restaurant 4",
+        "address": "4 Performance Street",
+        "meal_type": ["lunch"],
+        "sentiment": {"likes": 60, "dislikes": 20, "neutral": 20},
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      },
+      {
+        "id": "large_005",
+        "name": "Performance Test Restaurant 5",
+        "address": "5 Performance Street",
+        "meal_type": ["lunch"],
+        "sentiment": {"likes": 50, "dislikes": 25, "neutral": 25},
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "combined_sentiment"
+  }
+}

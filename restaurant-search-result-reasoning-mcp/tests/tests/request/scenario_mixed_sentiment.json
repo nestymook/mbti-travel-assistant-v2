@@ -1,0 +1,175 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "mixed_sentiment_0000",
+        "name": "Mixed_Sentiment Restaurant 0",
+        "address": "0 Mixed_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 90,
+          "dislikes": 5,
+          "neutral": 5
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$$"
+      },
+      {
+        "id": "mixed_sentiment_0001",
+        "name": "Mixed_Sentiment Restaurant 1",
+        "address": "1 Mixed_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 30,
+          "neutral": 20
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "mixed_sentiment_0002",
+        "name": "Mixed_Sentiment Restaurant 2",
+        "address": "2 Mixed_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 20,
+          "dislikes": 60,
+          "neutral": 20
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "mixed_sentiment_0003",
+        "name": "Mixed_Sentiment Restaurant 3",
+        "address": "3 Mixed_Sentiment Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 90,
+          "dislikes": 5,
+          "neutral": 5
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$"
+      },
+      {
+        "id": "mixed_sentiment_0004",
+        "name": "Mixed_Sentiment Restaurant 4",
+        "address": "4 Mixed_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 30,
+          "neutral": 20
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "mixed_sentiment_0005",
+        "name": "Mixed_Sentiment Restaurant 5",
+        "address": "5 Mixed_Sentiment Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 20,
+          "dislikes": 60,
+          "neutral": 20
+        },
+        "location_category": "fine_dining",
+        "district": "Admiralty",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "mixed_sentiment_0006",
+        "name": "Mixed_Sentiment Restaurant 6",
+        "address": "6 Mixed_Sentiment Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 90,
+          "dislikes": 5,
+          "neutral": 5
+        },
+        "location_category": "fast_food",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "mixed_sentiment_0007",
+        "name": "Mixed_Sentiment Restaurant 7",
+        "address": "7 Mixed_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 30,
+          "neutral": 20
+        },
+        "location_category": "fine_dining",
+        "district": "Causeway Bay",
+        "price_range": "$$$"
+      },
+      {
+        "id": "mixed_sentiment_0008",
+        "name": "Mixed_Sentiment Restaurant 8",
+        "address": "8 Mixed_Sentiment Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 20,
+          "dislikes": 60,
+          "neutral": 20
+        },
+        "location_category": "cafe",
+        "district": "Sheung Wan",
+        "price_range": "$$$"
+      },
+      {
+        "id": "mixed_sentiment_0009",
+        "name": "Mixed_Sentiment Restaurant 9",
+        "address": "9 Mixed_Sentiment Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 90,
+          "dislikes": 5,
+          "neutral": 5
+        },
+        "location_category": "restaurant",
+        "district": "Wan Chai",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

@@ -1,42 +1,42 @@
-# Authentication Usage Examples
+# Authentication Usage Examples - Restaurant Reasoning MCP Server
 
-This document provides comprehensive examples for implementing authentication with the Restaurant Search MCP server using AWS Cognito and JWT tokens.
+This document provides comprehensive examples for implementing authentication with the Restaurant Reasoning MCP server using AWS Cognito and JWT tokens. The reasoning server reuses the existing authentication infrastructure from the restaurant search MCP server.
 
 ## Table of Contents
 
-1. [SRP Authentication Examples](#srp-authentication-examples)
-2. [JWT Token Management](#jwt-token-management)
-3. [MCP Client Integration](#mcp-client-integration)
-4. [Error Handling Examples](#error-handling-examples)
-5. [Token Refresh Scenarios](#token-refresh-scenarios)
-6. [Production Integration Patterns](#production-integration-patterns)
+1. [SRP Authentication Examples for Reasoning](#srp-authentication-examples-for-reasoning)
+2. [JWT Token Management for Reasoning Operations](#jwt-token-management-for-reasoning-operations)
+3. [Reasoning MCP Client Integration](#reasoning-mcp-client-integration)
+4. [Error Handling Examples for Reasoning](#error-handling-examples-for-reasoning)
+5. [Token Refresh Scenarios for Reasoning](#token-refresh-scenarios-for-reasoning)
+6. [Production Integration Patterns for Reasoning](#production-integration-patterns-for-reasoning)
 
-## SRP Authentication Examples
+## SRP Authentication Examples for Reasoning
 
-### Basic SRP Authentication
+### Basic SRP Authentication for Reasoning Server
 
 ```python
 #!/usr/bin/env python3
 """
-Basic SRP authentication example using CognitoAuthenticator.
+Basic SRP authentication example for Restaurant Reasoning MCP server.
 """
 
 import json
 import sys
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-def basic_authentication_example():
-    """Demonstrate basic SRP authentication flow."""
+def basic_reasoning_authentication_example():
+    """Demonstrate basic SRP authentication flow for reasoning server."""
     
-    # Load Cognito configuration
+    # Load Cognito configuration (reused from restaurant search server)
     try:
         with open('cognito_config.json', 'r') as f:
             config = json.load(f)
     except FileNotFoundError:
-        print("Error: cognito_config.json not found. Run setup_cognito.py first.")
+        print("Error: cognito_config.json not found. Copy from restaurant-search-mcp or run setup_cognito.py.")
         return False
     
-    # Initialize authenticator
+    # Initialize authenticator for reasoning server
     authenticator = CognitoAuthenticator(
         user_pool_id=config['user_pool']['user_pool_id'],
         client_id=config['app_client']['client_id'],
@@ -48,48 +48,49 @@ def basic_authentication_example():
     password = "TempPass123!"  # Use actual password
     
     try:
-        print(f"🔐 Authenticating user: {username}")
+        print(f"🧠 Authenticating user for reasoning server: {username}")
         
-        # Perform SRP authentication
+        # Perform SRP authentication for reasoning operations
         tokens = authenticator.authenticate_user(username, password)
         
-        print("✅ Authentication successful!")
+        print("✅ Reasoning server authentication successful!")
         print(f"Token Type: {tokens.token_type}")
         print(f"Access Token: {tokens.access_token[:50]}...")
         print(f"ID Token: {tokens.id_token[:50]}...")
         print(f"Expires In: {tokens.expires_in} seconds")
+        print("🎯 Ready for restaurant sentiment analysis and recommendations!")
         
         return tokens
         
     except AuthenticationError as e:
-        print(f"❌ Authentication failed:")
+        print(f"❌ Reasoning server authentication failed:")
         print(f"  Error Type: {e.error_type}")
         print(f"  Error Code: {e.error_code}")
         print(f"  Message: {e.message}")
         print(f"  Suggested Action: {e.suggested_action}")
         return None
     except Exception as e:
-        print(f"❌ Unexpected error: {e}")
+        print(f"❌ Unexpected error in reasoning authentication: {e}")
         return None
 
 if __name__ == "__main__":
-    basic_authentication_example()
+    basic_reasoning_authentication_example()
 ```
-#
-## Interactive Authentication Script
+### I
+nteractive Authentication Script for Reasoning Operations
 
 ```python
 #!/usr/bin/env python3
 """
-Interactive authentication script with user input.
+Interactive authentication script for reasoning operations with user input.
 """
 
 import getpass
 import json
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-def interactive_authentication():
-    """Interactive authentication with user input."""
+def interactive_reasoning_authentication():
+    """Interactive authentication for reasoning operations with user input."""
     
     # Load configuration
     with open('cognito_config.json', 'r') as f:
@@ -101,55 +102,58 @@ def interactive_authentication():
         region=config['region']
     )
     
-    print("🔐 Restaurant Search MCP Authentication")
-    print("=" * 40)
+    print("🧠 Restaurant Reasoning MCP Authentication")
+    print("=" * 45)
+    print("🎯 Authenticate to access sentiment analysis and recommendation tools")
     
     # Get credentials from user
     username = input("Username (email): ").strip()
     password = getpass.getpass("Password: ")
     
     try:
-        print("\n🔄 Authenticating...")
+        print("\n🔄 Authenticating for reasoning operations...")
         tokens = authenticator.authenticate_user(username, password)
         
-        print("✅ Authentication successful!")
-        print(f"Welcome, {username}!")
+        print("✅ Reasoning authentication successful!")
+        print(f"Welcome to Restaurant Reasoning, {username}!")
         
-        # Validate session
+        # Validate session for reasoning context
         user_context = authenticator.validate_user_session(tokens.access_token)
         print(f"User ID: {user_context.user_id}")
         print(f"Email: {user_context.email}")
+        print("🎯 Ready for sentiment analysis and recommendations!")
         
-        # Save tokens for later use (in production, use secure storage)
+        # Save tokens for reasoning operations (in production, use secure storage)
         token_data = {
             'access_token': tokens.access_token,
             'id_token': tokens.id_token,
             'refresh_token': tokens.refresh_token,
             'expires_in': tokens.expires_in,
-            'token_type': tokens.token_type
+            'token_type': tokens.token_type,
+            'reasoning_context': True
         }
         
-        with open('user_tokens.json', 'w') as f:
+        with open('reasoning_user_tokens.json', 'w') as f:
             json.dump(token_data, f, indent=2)
         
-        print("💾 Tokens saved to user_tokens.json")
+        print("💾 Reasoning tokens saved to reasoning_user_tokens.json")
         return tokens
         
     except AuthenticationError as e:
-        print(f"\n❌ Authentication failed: {e.message}")
+        print(f"\n❌ Reasoning authentication failed: {e.message}")
         print(f"💡 Suggestion: {e.suggested_action}")
         return None
 
 if __name__ == "__main__":
-    interactive_authentication()
+    interactive_reasoning_authentication()
 ```
 
-### Batch User Authentication
+### Batch User Authentication for Reasoning Operations
 
 ```python
 #!/usr/bin/env python3
 """
-Batch authentication for multiple users.
+Batch authentication for multiple users accessing reasoning operations.
 """
 
 import json
@@ -157,8 +161,8 @@ import csv
 from typing import List, Dict
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-def batch_authentication(users_file: str = "test_users.csv"):
-    """Authenticate multiple users from CSV file."""
+def batch_reasoning_authentication(users_file: str = "reasoning_test_users.csv"):
+    """Authenticate multiple users for reasoning operations from CSV file."""
     
     # Load configuration
     with open('cognito_config.json', 'r') as f:
@@ -177,16 +181,16 @@ def batch_authentication(users_file: str = "test_users.csv"):
             reader = csv.DictReader(f)
             users = list(reader)
     except FileNotFoundError:
-        print(f"❌ Users file not found: {users_file}")
+        print(f"❌ Reasoning users file not found: {users_file}")
         return []
     
-    print(f"🔐 Batch authenticating {len(users)} users...")
+    print(f"🧠 Batch authenticating {len(users)} users for reasoning operations...")
     
     for i, user in enumerate(users, 1):
         username = user['username']
         password = user['password']
         
-        print(f"\n[{i}/{len(users)}] Authenticating: {username}")
+        print(f"\n[{i}/{len(users)}] Authenticating for reasoning: {username}")
         
         try:
             tokens = authenticator.authenticate_user(username, password)
@@ -196,18 +200,20 @@ def batch_authentication(users_file: str = "test_users.csv"):
                 'status': 'success',
                 'user_id': None,
                 'email': None,
+                'reasoning_ready': True,
                 'error': None
             }
             
-            # Get user info
+            # Get user info for reasoning context
             try:
                 user_context = authenticator.validate_user_session(tokens.access_token)
                 result['user_id'] = user_context.user_id
                 result['email'] = user_context.email
             except Exception as e:
                 result['error'] = f"Session validation failed: {e}"
+                result['reasoning_ready'] = False
             
-            print(f"  ✅ Success - User ID: {result['user_id']}")
+            print(f"  ✅ Success - User ID: {result['user_id']} (Reasoning Ready)")
             
         except AuthenticationError as e:
             result = {
@@ -215,6 +221,7 @@ def batch_authentication(users_file: str = "test_users.csv"):
                 'status': 'failed',
                 'user_id': None,
                 'email': None,
+                'reasoning_ready': False,
                 'error': f"{e.error_type}: {e.message}"
             }
             print(f"  ❌ Failed - {e.error_type}")
@@ -222,52 +229,54 @@ def batch_authentication(users_file: str = "test_users.csv"):
         results.append(result)
     
     # Save results
-    with open('batch_auth_results.json', 'w') as f:
+    with open('batch_reasoning_auth_results.json', 'w') as f:
         json.dump(results, f, indent=2)
     
     # Summary
     successful = len([r for r in results if r['status'] == 'success'])
+    reasoning_ready = len([r for r in results if r['reasoning_ready']])
     failed = len(results) - successful
     
-    print(f"\n📊 Batch Authentication Summary:")
+    print(f"\n📊 Batch Reasoning Authentication Summary:")
     print(f"  Total Users: {len(results)}")
     print(f"  Successful: {successful}")
+    print(f"  Reasoning Ready: {reasoning_ready}")
     print(f"  Failed: {failed}")
-    print(f"  Results saved to: batch_auth_results.json")
+    print(f"  Results saved to: batch_reasoning_auth_results.json")
     
     return results
 
 if __name__ == "__main__":
-    # Example CSV format:
+    # Example CSV format for reasoning users:
     # username,password
-    # user1@example.com,Password123!
-    # user2@example.com,Password456!
+    # reasoning_user1@example.com,Password123!
+    # reasoning_user2@example.com,Password456!
     
-    batch_authentication()
+    batch_reasoning_authentication()
 ```
 
-## JWT Token Management
+## JWT Token Management for Reasoning Operations
 
-### Token Validation Example
+### Token Validation Example for Reasoning
 
 ```python
 #!/usr/bin/env python3
 """
-JWT token validation examples.
+JWT token validation examples for reasoning operations.
 """
 
 import json
 import asyncio
 from services.auth_service import TokenValidator, AuthenticationError
 
-async def token_validation_example():
-    """Demonstrate JWT token validation."""
+async def reasoning_token_validation_example():
+    """Demonstrate JWT token validation for reasoning operations."""
     
     # Load configuration
     with open('cognito_config.json', 'r') as f:
         config = json.load(f)
     
-    # Initialize token validator
+    # Initialize token validator for reasoning
     validator_config = {
         'user_pool_id': config['user_pool']['user_pool_id'],
         'client_id': config['app_client']['client_id'],
@@ -277,22 +286,22 @@ async def token_validation_example():
     
     validator = TokenValidator(validator_config)
     
-    # Load test token (from previous authentication)
+    # Load test token (from previous reasoning authentication)
     try:
-        with open('user_tokens.json', 'r') as f:
+        with open('reasoning_user_tokens.json', 'r') as f:
             token_data = json.load(f)
         access_token = token_data['access_token']
     except FileNotFoundError:
-        print("❌ No tokens found. Run authentication example first.")
+        print("❌ No reasoning tokens found. Run reasoning authentication example first.")
         return
     
     try:
-        print("🔍 Validating JWT token...")
+        print("🔍 Validating JWT token for reasoning operations...")
         
-        # Validate token
+        # Validate token for reasoning context
         claims = await validator.validate_jwt_token(access_token)
         
-        print("✅ Token validation successful!")
+        print("✅ Reasoning token validation successful!")
         print(f"User ID: {claims.user_id}")
         print(f"Username: {claims.username}")
         print(f"Email: {claims.email}")
@@ -300,38 +309,39 @@ async def token_validation_example():
         print(f"Token Use: {claims.token_use}")
         print(f"Issued At: {claims.iat}")
         print(f"Expires At: {claims.exp}")
+        print("🎯 Token valid for reasoning operations!")
         
         # Check if token is expired
         if validator.is_token_expired(access_token):
-            print("⚠️ Token is expired")
+            print("⚠️ Token is expired - refresh needed for reasoning operations")
         else:
-            print("✅ Token is valid and not expired")
+            print("✅ Token is valid and ready for sentiment analysis and recommendations")
         
     except AuthenticationError as e:
-        print(f"❌ Token validation failed:")
+        print(f"❌ Reasoning token validation failed:")
         print(f"  Error Type: {e.error_type}")
         print(f"  Error Code: {e.error_code}")
         print(f"  Message: {e.message}")
         print(f"  Suggested Action: {e.suggested_action}")
 
 if __name__ == "__main__":
-    asyncio.run(token_validation_example())
+    asyncio.run(reasoning_token_validation_example())
 ```
 
-### Token Refresh Example
+### Token Refresh Example for Reasoning Operations
 
 ```python
 #!/usr/bin/env python3
 """
-Token refresh example using refresh tokens.
+Token refresh example for reasoning operations using refresh tokens.
 """
 
 import json
 import time
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-def token_refresh_example():
-    """Demonstrate token refresh flow."""
+def reasoning_token_refresh_example():
+    """Demonstrate token refresh flow for reasoning operations."""
     
     # Load configuration
     with open('cognito_config.json', 'r') as f:
@@ -343,64 +353,66 @@ def token_refresh_example():
         region=config['region']
     )
     
-    # Load existing tokens
+    # Load existing reasoning tokens
     try:
-        with open('user_tokens.json', 'r') as f:
+        with open('reasoning_user_tokens.json', 'r') as f:
             token_data = json.load(f)
         refresh_token = token_data['refresh_token']
     except FileNotFoundError:
-        print("❌ No tokens found. Authenticate first.")
+        print("❌ No reasoning tokens found. Authenticate first.")
         return
     
     try:
-        print("🔄 Refreshing access token...")
+        print("🔄 Refreshing access token for reasoning operations...")
         
-        # Refresh tokens
+        # Refresh tokens for continued reasoning access
         new_tokens = authenticator.refresh_token(refresh_token)
         
-        print("✅ Token refresh successful!")
+        print("✅ Reasoning token refresh successful!")
         print(f"New Access Token: {new_tokens.access_token[:50]}...")
         print(f"New ID Token: {new_tokens.id_token[:50]}...")
         print(f"Expires In: {new_tokens.expires_in} seconds")
+        print("🎯 Ready for continued reasoning operations!")
         
-        # Update stored tokens
+        # Update stored reasoning tokens
         token_data.update({
             'access_token': new_tokens.access_token,
             'id_token': new_tokens.id_token,
             'expires_in': new_tokens.expires_in,
-            'refreshed_at': time.time()
+            'refreshed_at': time.time(),
+            'reasoning_context': True
         })
         
-        with open('user_tokens.json', 'w') as f:
+        with open('reasoning_user_tokens.json', 'w') as f:
             json.dump(token_data, f, indent=2)
         
-        print("💾 Updated tokens saved")
+        print("💾 Updated reasoning tokens saved")
         
         return new_tokens
         
     except AuthenticationError as e:
-        print(f"❌ Token refresh failed:")
+        print(f"❌ Reasoning token refresh failed:")
         print(f"  Error Type: {e.error_type}")
         print(f"  Message: {e.message}")
         print(f"  Suggested Action: {e.suggested_action}")
         
         if e.error_code == 'NotAuthorizedException':
-            print("💡 Refresh token may be expired. Re-authentication required.")
+            print("💡 Refresh token may be expired. Re-authentication required for reasoning operations.")
         
         return None
 
 if __name__ == "__main__":
-    token_refresh_example()
+    reasoning_token_refresh_example()
 ```
 
-## MCP Client Integration
+## Reasoning MCP Client Integration
 
-### Basic Authenticated MCP Client
+### Basic Authenticated Reasoning MCP Client
 
 ```python
 #!/usr/bin/env python3
 """
-Basic authenticated MCP client example.
+Basic authenticated MCP client example for reasoning operations.
 """
 
 import json
@@ -409,28 +421,28 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 from services.auth_service import CognitoAuthenticator
 
-async def authenticated_mcp_client():
-    """Example of MCP client with JWT authentication."""
+async def authenticated_reasoning_mcp_client():
+    """Example of MCP client with JWT authentication for reasoning operations."""
     
     # Load configuration
     with open('cognito_config.json', 'r') as f:
         config = json.load(f)
     
-    # Load AgentCore deployment configuration
+    # Load AgentCore deployment configuration for reasoning server
     try:
-        with open('agentcore_deployment_config.json', 'r') as f:
+        with open('reasoning_deployment_config.json', 'r') as f:
             deployment_config = json.load(f)
         
-        # Extract AgentCore endpoint URL
-        agent_arn = deployment_config['configuration_response']['agent_arn']
-        # Construct endpoint URL (this may vary based on your deployment)
+        # Extract reasoning AgentCore endpoint URL
+        agent_arn = deployment_config['launch_result']['agent_arn']
+        # Construct reasoning endpoint URL
         mcp_url = f"https://{agent_arn.split('/')[-1]}.bedrock-agentcore.us-east-1.amazonaws.com"
         
     except FileNotFoundError:
-        print("❌ Deployment config not found. Deploy AgentCore first.")
+        print("❌ Reasoning deployment config not found. Deploy reasoning AgentCore first.")
         return
     
-    # Authenticate and get tokens
+    # Authenticate and get tokens for reasoning
     authenticator = CognitoAuthenticator(
         user_pool_id=config['user_pool']['user_pool_id'],
         client_id=config['app_client']['client_id'],
@@ -438,77 +450,123 @@ async def authenticated_mcp_client():
     )
     
     try:
-        # Load existing tokens or authenticate
+        # Load existing tokens or authenticate for reasoning
         try:
-            with open('user_tokens.json', 'r') as f:
+            with open('reasoning_user_tokens.json', 'r') as f:
                 token_data = json.load(f)
             access_token = token_data['access_token']
             
             # Check if token is expired and refresh if needed
             if authenticator.validate_user_session(access_token):
-                print("✅ Using existing valid token")
+                print("✅ Using existing valid token for reasoning operations")
             
         except (FileNotFoundError, Exception):
-            print("🔐 Authenticating...")
+            print("🔐 Authenticating for reasoning operations...")
             tokens = authenticator.authenticate_user(
                 config['test_user']['email'],
                 "TempPass123!"  # Use actual password
             )
             access_token = tokens.access_token
         
-        # Set up authenticated headers
+        # Set up authenticated headers for reasoning
         headers = {
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
         }
         
-        print(f"🔗 Connecting to MCP server: {mcp_url}")
+        print(f"🔗 Connecting to reasoning MCP server: {mcp_url}")
         
-        # Connect to MCP server with authentication
+        # Sample restaurant data for reasoning operations
+        sample_restaurants = [
+            {
+                "id": "rest_001",
+                "name": "Central Gourmet",
+                "address": "123 Central Street, Central",
+                "sentiment": {"likes": 95, "dislikes": 3, "neutral": 2},
+                "meal_type": ["breakfast", "lunch"],
+                "district": "Central district",
+                "price_range": "$$$"
+            },
+            {
+                "id": "rest_002",
+                "name": "Tsim Sha Tsui Delight",
+                "address": "456 Nathan Road, TST",
+                "sentiment": {"likes": 78, "dislikes": 15, "neutral": 7},
+                "meal_type": ["lunch", "dinner"],
+                "district": "Tsim Sha Tsui",
+                "price_range": "$$"
+            },
+            {
+                "id": "rest_003",
+                "name": "Causeway Bay Bistro",
+                "address": "789 Hennessy Road, CWB",
+                "sentiment": {"likes": 82, "dislikes": 12, "neutral": 6},
+                "meal_type": ["breakfast", "dinner"],
+                "district": "Causeway Bay",
+                "price_range": "$$"
+            }
+        ]
+        
+        # Connect to reasoning MCP server with authentication
         async with streamablehttp_client(mcp_url, headers=headers) as (read, write, _):
             async with ClientSession(read, write) as session:
-                # Initialize session
+                # Initialize reasoning session
                 await session.initialize()
-                print("✅ MCP session initialized")
+                print("✅ Reasoning MCP session initialized")
                 
-                # List available tools
+                # List available reasoning tools
                 tools_response = await session.list_tools()
                 tools = [tool.name for tool in tools_response.tools]
-                print(f"📋 Available tools: {tools}")
+                print(f"🧠 Available reasoning tools: {tools}")
                 
-                # Test restaurant search by district
-                print("\n🔍 Testing restaurant search by district...")
+                # Test restaurant recommendation with sentiment analysis
+                print("\n🎯 Testing restaurant recommendation by sentiment likes...")
                 result = await session.call_tool(
-                    "search_restaurants_by_district",
-                    {"districts": ["Central district"]}
+                    "recommend_restaurants",
+                    {
+                        "restaurants": sample_restaurants,
+                        "ranking_method": "sentiment_likes"
+                    }
                 )
                 
-                print("✅ Search completed!")
-                print(f"Result: {result.content[0].text[:200]}...")
+                print("✅ Sentiment-based recommendation completed!")
+                print(f"Result: {result.content[0].text[:300]}...")
                 
-                # Test restaurant search by meal type
-                print("\n🔍 Testing restaurant search by meal type...")
+                # Test restaurant recommendation with combined sentiment
+                print("\n🎯 Testing restaurant recommendation by combined sentiment...")
                 result = await session.call_tool(
-                    "search_restaurants_by_meal_type",
-                    {"meal_types": ["breakfast"]}
+                    "recommend_restaurants",
+                    {
+                        "restaurants": sample_restaurants,
+                        "ranking_method": "combined_sentiment"
+                    }
                 )
                 
-                print("✅ Search completed!")
-                print(f"Result: {result.content[0].text[:200]}...")
+                print("✅ Combined sentiment recommendation completed!")
+                print(f"Result: {result.content[0].text[:300]}...")
+                
+                # Test sentiment analysis only
+                print("\n📊 Testing sentiment analysis without recommendation...")
+                result = await session.call_tool(
+                    "analyze_restaurant_sentiment",
+                    {"restaurants": sample_restaurants}
+                )
+                
+                print("✅ Sentiment analysis completed!")
+                print(f"Result: {result.content[0].text[:300]}...")
                 
     except Exception as e:
-        print(f"❌ MCP client error: {e}")
+        print(f"❌ Reasoning MCP client error: {e}")
 
 if __name__ == "__main__":
-    asyncio.run(authenticated_mcp_client())
-```
-
-### Advanced MCP Client with Error Handling
+    asyncio.run(authenticated_reasoning_mcp_client())
+```##
+# Advanced Reasoning MCP Client with Error Handling
 
 ```python
 #!/usr/bin/env python3
 """
-Advanced MCP client with comprehensive error handling.
+Advanced MCP client with comprehensive error handling for reasoning operations.
 """
 
 import json
@@ -519,11 +577,11 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-class AuthenticatedMCPClient:
-    """Advanced MCP client with authentication and error handling."""
+class AuthenticatedReasoningMCPClient:
+    """Advanced MCP client with authentication and error handling for reasoning operations."""
     
     def __init__(self, config_file: str = 'cognito_config.json'):
-        """Initialize the authenticated MCP client."""
+        """Initialize the authenticated reasoning MCP client."""
         with open(config_file, 'r') as f:
             self.config = json.load(f)
         
@@ -536,22 +594,22 @@ class AuthenticatedMCPClient:
         self.access_token: Optional[str] = None
         self.token_expires_at: Optional[float] = None
         
-    async def ensure_authenticated(self) -> bool:
-        """Ensure we have a valid access token."""
+    async def ensure_reasoning_authenticated(self) -> bool:
+        """Ensure we have a valid access token for reasoning operations."""
         try:
             # Check if we have a valid token
             if self.access_token and self.token_expires_at:
                 if time.time() < self.token_expires_at - 300:  # 5 min buffer
                     return True
             
-            # Try to load existing tokens
+            # Try to load existing reasoning tokens
             try:
-                with open('user_tokens.json', 'r') as f:
+                with open('reasoning_user_tokens.json', 'r') as f:
                     token_data = json.load(f)
                 
-                # Try to refresh token
+                # Try to refresh token for reasoning
                 if 'refresh_token' in token_data:
-                    print("🔄 Refreshing access token...")
+                    print("🔄 Refreshing access token for reasoning operations...")
                     new_tokens = self.authenticator.refresh_token(
                         token_data['refresh_token']
                     )
@@ -559,25 +617,26 @@ class AuthenticatedMCPClient:
                     self.access_token = new_tokens.access_token
                     self.token_expires_at = time.time() + new_tokens.expires_in
                     
-                    # Update stored tokens
+                    # Update stored reasoning tokens
                     token_data.update({
                         'access_token': new_tokens.access_token,
                         'id_token': new_tokens.id_token,
                         'expires_in': new_tokens.expires_in,
-                        'refreshed_at': time.time()
+                        'refreshed_at': time.time(),
+                        'reasoning_context': True
                     })
                     
-                    with open('user_tokens.json', 'w') as f:
+                    with open('reasoning_user_tokens.json', 'w') as f:
                         json.dump(token_data, f, indent=2)
                     
-                    print("✅ Token refreshed successfully")
+                    print("✅ Reasoning token refreshed successfully")
                     return True
                     
             except (FileNotFoundError, AuthenticationError):
                 pass
             
-            # Fall back to full authentication
-            print("🔐 Performing full authentication...")
+            # Fall back to full authentication for reasoning
+            print("🔐 Performing full authentication for reasoning operations...")
             tokens = self.authenticator.authenticate_user(
                 self.config['test_user']['email'],
                 "TempPass123!"  # Use actual password
@@ -586,22 +645,22 @@ class AuthenticatedMCPClient:
             self.access_token = tokens.access_token
             self.token_expires_at = time.time() + tokens.expires_in
             
-            print("✅ Authentication successful")
+            print("✅ Reasoning authentication successful")
             return True
             
         except AuthenticationError as e:
-            print(f"❌ Authentication failed: {e.message}")
+            print(f"❌ Reasoning authentication failed: {e.message}")
             return False
         except Exception as e:
-            print(f"❌ Unexpected authentication error: {e}")
+            print(f"❌ Unexpected reasoning authentication error: {e}")
             return False
     
-    async def call_mcp_tool(self, tool_name: str, parameters: Dict[str, Any], 
-                           mcp_url: str) -> Optional[Dict]:
-        """Call an MCP tool with authentication and error handling."""
+    async def call_reasoning_mcp_tool(self, tool_name: str, parameters: Dict[str, Any], 
+                                    mcp_url: str) -> Optional[Dict]:
+        """Call a reasoning MCP tool with authentication and error handling."""
         
-        # Ensure we're authenticated
-        if not await self.ensure_authenticated():
+        # Ensure we're authenticated for reasoning
+        if not await self.ensure_reasoning_authenticated():
             return None
         
         headers = {
@@ -614,128 +673,182 @@ class AuthenticatedMCPClient:
         
         while retry_count < max_retries:
             try:
-                print(f"🔗 Connecting to MCP server (attempt {retry_count + 1})...")
+                print(f"🔗 Connecting to reasoning MCP server (attempt {retry_count + 1})...")
                 
                 async with streamablehttp_client(mcp_url, headers=headers) as (read, write, _):
                     async with ClientSession(read, write) as session:
                         await session.initialize()
                         
-                        print(f"🛠️ Calling tool: {tool_name}")
+                        print(f"🧠 Calling reasoning tool: {tool_name}")
                         result = await session.call_tool(tool_name, parameters)
                         
                         return {
                             'success': True,
                             'result': result.content[0].text if result.content else None,
                             'tool_name': tool_name,
-                            'parameters': parameters
+                            'parameters': parameters,
+                            'reasoning_operation': True
                         }
                         
             except Exception as e:
                 retry_count += 1
                 error_msg = str(e)
                 
-                print(f"❌ MCP call failed (attempt {retry_count}): {error_msg}")
+                print(f"❌ Reasoning MCP call failed (attempt {retry_count}): {error_msg}")
                 
                 # Check if it's an authentication error
                 if "401" in error_msg or "Unauthorized" in error_msg:
-                    print("🔄 Authentication error, refreshing token...")
+                    print("🔄 Authentication error, refreshing token for reasoning...")
                     self.access_token = None
                     self.token_expires_at = None
                     
-                    if not await self.ensure_authenticated():
-                        print("❌ Failed to refresh authentication")
+                    if not await self.ensure_reasoning_authenticated():
+                        print("❌ Failed to refresh reasoning authentication")
                         break
                     
                     headers['Authorization'] = f'Bearer {self.access_token}'
                 
                 if retry_count < max_retries:
                     wait_time = 2 ** retry_count  # Exponential backoff
-                    print(f"⏳ Waiting {wait_time}s before retry...")
+                    print(f"⏳ Waiting {wait_time}s before reasoning retry...")
                     await asyncio.sleep(wait_time)
                 else:
-                    print(f"❌ Max retries ({max_retries}) exceeded")
+                    print(f"❌ Max retries ({max_retries}) exceeded for reasoning operation")
         
         return {
             'success': False,
-            'error': f"Failed after {max_retries} attempts",
+            'error': f"Reasoning operation failed after {max_retries} attempts",
             'tool_name': tool_name,
-            'parameters': parameters
+            'parameters': parameters,
+            'reasoning_operation': True
         }
 
-async def advanced_mcp_example():
-    """Demonstrate advanced MCP client usage."""
+async def advanced_reasoning_mcp_example():
+    """Demonstrate advanced reasoning MCP client usage."""
     
-    client = AuthenticatedMCPClient()
+    client = AuthenticatedReasoningMCPClient()
     
-    # Load deployment configuration to get MCP URL
+    # Load reasoning deployment configuration to get MCP URL
     try:
-        with open('agentcore_deployment_config.json', 'r') as f:
+        with open('reasoning_deployment_config.json', 'r') as f:
             deployment_config = json.load(f)
         
-        agent_arn = deployment_config['configuration_response']['agent_arn']
+        agent_arn = deployment_config['launch_result']['agent_arn']
         mcp_url = f"https://{agent_arn.split('/')[-1]}.bedrock-agentcore.us-east-1.amazonaws.com"
         
     except FileNotFoundError:
-        print("❌ Deployment config not found")
+        print("❌ Reasoning deployment config not found")
         return
     
-    # Test multiple tool calls
+    # Sample restaurant data for comprehensive reasoning tests
+    test_restaurants = [
+        {
+            "id": "rest_001",
+            "name": "Premium Central Dining",
+            "address": "1 Central Plaza, Central",
+            "sentiment": {"likes": 120, "dislikes": 8, "neutral": 12},
+            "meal_type": ["breakfast", "lunch", "dinner"],
+            "district": "Central district",
+            "price_range": "$$$$"
+        },
+        {
+            "id": "rest_002",
+            "name": "TST Family Restaurant",
+            "address": "88 Nathan Road, TST",
+            "sentiment": {"likes": 95, "dislikes": 25, "neutral": 15},
+            "meal_type": ["lunch", "dinner"],
+            "district": "Tsim Sha Tsui",
+            "price_range": "$$"
+        },
+        {
+            "id": "rest_003",
+            "name": "Causeway Bay Express",
+            "address": "200 Hennessy Road, CWB",
+            "sentiment": {"likes": 65, "dislikes": 30, "neutral": 25},
+            "meal_type": ["breakfast", "lunch"],
+            "district": "Causeway Bay",
+            "price_range": "$"
+        },
+        {
+            "id": "rest_004",
+            "name": "Admiralty Fine Dining",
+            "address": "5 Admiralty Centre, Admiralty",
+            "sentiment": {"likes": 110, "dislikes": 5, "neutral": 10},
+            "meal_type": ["dinner"],
+            "district": "Admiralty",
+            "price_range": "$$$$$"
+        }
+    ]
+    
+    # Test multiple reasoning scenarios
     test_cases = [
         {
-            'tool': 'search_restaurants_by_district',
-            'params': {'districts': ['Central district', 'Tsim Sha Tsui']}
-        },
-        {
-            'tool': 'search_restaurants_by_meal_type',
-            'params': {'meal_types': ['breakfast', 'lunch']}
-        },
-        {
-            'tool': 'search_restaurants_combined',
+            'tool': 'recommend_restaurants',
             'params': {
-                'districts': ['Causeway Bay'],
-                'meal_types': ['dinner']
-            }
+                'restaurants': test_restaurants,
+                'ranking_method': 'sentiment_likes'
+            },
+            'description': 'Recommendation by sentiment likes'
+        },
+        {
+            'tool': 'recommend_restaurants',
+            'params': {
+                'restaurants': test_restaurants,
+                'ranking_method': 'combined_sentiment'
+            },
+            'description': 'Recommendation by combined sentiment'
+        },
+        {
+            'tool': 'analyze_restaurant_sentiment',
+            'params': {
+                'restaurants': test_restaurants
+            },
+            'description': 'Sentiment analysis without recommendation'
         }
     ]
     
     results = []
     
     for i, test_case in enumerate(test_cases, 1):
-        print(f"\n[{i}/{len(test_cases)}] Testing {test_case['tool']}...")
+        print(f"\n[{i}/{len(test_cases)}] Testing {test_case['description']}...")
         
-        result = await client.call_mcp_tool(
+        result = await client.call_reasoning_mcp_tool(
             test_case['tool'],
             test_case['params'],
             mcp_url
         )
         
-        results.append(result)
+        results.append({
+            **result,
+            'test_description': test_case['description']
+        })
         
         if result['success']:
             print(f"✅ Success: {len(result['result'])} characters returned")
         else:
             print(f"❌ Failed: {result['error']}")
     
-    # Save results
-    with open('mcp_test_results.json', 'w') as f:
+    # Save reasoning results
+    with open('reasoning_mcp_test_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n📊 Test Results Summary:")
+    print(f"\n📊 Reasoning Test Results Summary:")
     successful = len([r for r in results if r['success']])
     print(f"  Successful: {successful}/{len(results)}")
-    print(f"  Results saved to: mcp_test_results.json")
+    print(f"  Results saved to: reasoning_mcp_test_results.json")
 
 if __name__ == "__main__":
-    asyncio.run(advanced_mcp_example())
-```## 
-Error Handling Examples
+    asyncio.run(advanced_reasoning_mcp_example())
+```
 
-### Comprehensive Error Handler
+## Error Handling Examples for Reasoning
+
+### Comprehensive Error Handler for Reasoning Operations
 
 ```python
 #!/usr/bin/env python3
 """
-Comprehensive error handling examples for authentication scenarios.
+Comprehensive error handling examples for reasoning authentication scenarios.
 """
 
 import json
@@ -747,1282 +860,702 @@ from services.auth_service import (
     AuthenticationError
 )
 
-class AuthenticationErrorHandler:
-    """Centralized error handling for authentication scenarios."""
+class ReasoningAuthenticationErrorHandler:
+    """Centralized error handling for reasoning authentication scenarios."""
     
     def __init__(self):
-        """Initialize error handler with common error patterns."""
+        """Initialize error handler with reasoning-specific error patterns."""
         self.error_handlers = {
-            'AUTHENTICATION_FAILED': self._handle_auth_failed,
-            'USER_NOT_FOUND': self._handle_user_not_found,
-            'USER_NOT_CONFIRMED': self._handle_user_not_confirmed,
-            'TOKEN_EXPIRED': self._handle_token_expired,
-            'TOKEN_VALIDATION_ERROR': self._handle_token_validation,
-            'NETWORK_ERROR': self._handle_network_error,
-            'COGNITO_ERROR': self._handle_cognito_error
+            'REASONING_AUTHENTICATION_FAILED': self._handle_reasoning_auth_failed,
+            'REASONING_USER_NOT_FOUND': self._handle_reasoning_user_not_found,
+            'REASONING_TOKEN_EXPIRED': self._handle_reasoning_token_expired,
+            'REASONING_TOKEN_VALIDATION_ERROR': self._handle_reasoning_token_validation,
+            'REASONING_NETWORK_ERROR': self._handle_reasoning_network_error,
+            'REASONING_MCP_ERROR': self._handle_reasoning_mcp_error
         }
     
-    def handle_error(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle authentication error and provide recovery suggestions."""
+    def handle_reasoning_error(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning authentication error and provide recovery suggestions."""
         
         handler = self.error_handlers.get(
-            error.error_type, 
-            self._handle_unknown_error
+            f"REASONING_{error.error_type}", 
+            self._handle_unknown_reasoning_error
         )
         
         return handler(error)
     
-    def _handle_auth_failed(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle authentication failure errors."""
+    def _handle_reasoning_auth_failed(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning authentication failure errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'Invalid username or password. Please check your credentials.',
+            'user_message': 'Invalid credentials for reasoning operations. Please check your username and password.',
             'recovery_actions': [
-                'Verify username (email) is correct',
+                'Verify username (email) is correct for reasoning access',
                 'Check password for typos',
                 'Ensure caps lock is off',
-                'Try password reset if needed'
+                'Try password reset if needed',
+                'Verify you have access to reasoning operations'
             ],
             'retry_recommended': True,
-            'contact_support': False
+            'contact_support': False,
+            'reasoning_context': True
         }
     
-    def _handle_user_not_found(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle user not found errors."""
+    def _handle_reasoning_user_not_found(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning user not found errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'User account not found. Please check your email address.',
+            'user_message': 'User account not found for reasoning operations. Please check your email address.',
             'recovery_actions': [
                 'Verify email address is correct',
-                'Check if account was created',
-                'Contact administrator if needed'
+                'Check if account was created with reasoning access',
+                'Contact administrator for reasoning permissions',
+                'Verify you are using the correct Cognito User Pool'
             ],
             'retry_recommended': False,
-            'contact_support': True
+            'contact_support': True,
+            'reasoning_context': True
         }
     
-    def _handle_user_not_confirmed(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle user not confirmed errors."""
+    def _handle_reasoning_token_expired(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning token expiration errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'Account not verified. Please check your email for verification link.',
+            'user_message': 'Reasoning session expired. Please log in again to continue sentiment analysis.',
             'recovery_actions': [
-                'Check email inbox for verification message',
-                'Check spam/junk folder',
-                'Request new verification email',
-                'Contact support if no email received'
-            ],
-            'retry_recommended': False,
-            'contact_support': True
-        }
-    
-    def _handle_token_expired(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle token expiration errors."""
-        return {
-            'error_type': error.error_type,
-            'user_message': 'Session expired. Please log in again.',
-            'recovery_actions': [
-                'Use refresh token if available',
-                'Re-authenticate with username/password',
-                'Clear stored tokens'
+                'Use refresh token if available for reasoning session',
+                'Re-authenticate with username/password for reasoning access',
+                'Clear stored reasoning tokens',
+                'Restart reasoning operations'
             ],
             'retry_recommended': True,
-            'contact_support': False
+            'contact_support': False,
+            'reasoning_context': True
         }
     
-    def _handle_token_validation(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle token validation errors."""
+    def _handle_reasoning_token_validation(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning token validation errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'Authentication token is invalid. Please log in again.',
+            'user_message': 'Reasoning authentication token is invalid. Please log in again to access sentiment analysis.',
             'recovery_actions': [
-                'Clear stored tokens',
-                'Re-authenticate',
-                'Check system clock is correct'
+                'Clear stored reasoning tokens',
+                'Re-authenticate for reasoning operations',
+                'Check system clock is correct',
+                'Verify reasoning server configuration'
             ],
             'retry_recommended': True,
-            'contact_support': False
+            'contact_support': False,
+            'reasoning_context': True
         }
     
-    def _handle_network_error(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle network-related errors."""
+    def _handle_reasoning_network_error(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning network-related errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'Network connection error. Please check your internet connection.',
+            'user_message': 'Network connection error for reasoning operations. Please check your internet connection.',
             'recovery_actions': [
                 'Check internet connectivity',
-                'Verify firewall settings',
-                'Try again in a few moments',
-                'Contact IT support if persistent'
+                'Verify firewall settings for reasoning server access',
+                'Try reasoning operations again in a few moments',
+                'Contact IT support if reasoning access persists to fail'
             ],
             'retry_recommended': True,
-            'contact_support': False
+            'contact_support': False,
+            'reasoning_context': True
         }
     
-    def _handle_cognito_error(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle Cognito service errors."""
+    def _handle_reasoning_mcp_error(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle reasoning MCP-specific errors."""
         return {
             'error_type': error.error_type,
-            'user_message': 'Authentication service error. Please try again later.',
+            'user_message': 'Reasoning MCP server error. The sentiment analysis service may be temporarily unavailable.',
             'recovery_actions': [
-                'Wait a few minutes and retry',
-                'Check AWS service status',
-                'Contact support if persistent'
+                'Check reasoning server deployment status',
+                'Verify reasoning MCP server is running',
+                'Try reasoning operations again in a few moments',
+                'Contact support if reasoning service remains unavailable'
             ],
             'retry_recommended': True,
-            'contact_support': True
+            'contact_support': True,
+            'reasoning_context': True
         }
     
-    def _handle_unknown_error(self, error: AuthenticationError) -> Dict[str, Any]:
-        """Handle unknown errors."""
+    def _handle_unknown_reasoning_error(self, error: AuthenticationError) -> Dict[str, Any]:
+        """Handle unknown reasoning errors."""
         return {
-            'error_type': 'UNKNOWN_ERROR',
-            'user_message': 'An unexpected error occurred. Please contact support.',
+            'error_type': 'UNKNOWN_REASONING_ERROR',
+            'user_message': 'An unexpected error occurred during reasoning operations. Please try again.',
             'recovery_actions': [
-                'Note the exact error message',
-                'Try again later',
-                'Contact technical support'
+                'Try reasoning authentication again',
+                'Check reasoning server logs',
+                'Contact support with error details',
+                'Verify reasoning system status'
             ],
-            'retry_recommended': False,
-            'contact_support': True
+            'retry_recommended': True,
+            'contact_support': True,
+            'reasoning_context': True
         }
 
-async def error_handling_example():
-    """Demonstrate comprehensive error handling."""
+async def reasoning_error_handling_example():
+    """Demonstrate reasoning error handling patterns."""
     
-    error_handler = AuthenticationErrorHandler()
+    error_handler = ReasoningAuthenticationErrorHandler()
     
-    # Load configuration
-    with open('cognito_config.json', 'r') as f:
-        config = json.load(f)
-    
-    authenticator = CognitoAuthenticator(
-        user_pool_id=config['user_pool']['user_pool_id'],
-        client_id=config['app_client']['client_id'],
-        region=config['region']
-    )
-    
-    # Test various error scenarios
-    test_scenarios = [
-        {
-            'name': 'Invalid Password',
-            'username': config['test_user']['email'],
-            'password': 'WrongPassword123!'
-        },
-        {
-            'name': 'Non-existent User',
-            'username': 'nonexistent@example.com',
-            'password': 'Password123!'
-        },
-        {
-            'name': 'Valid Credentials',
-            'username': config['test_user']['email'],
-            'password': 'TempPass123!'  # Use actual password
-        }
+    # Simulate various reasoning authentication errors
+    test_errors = [
+        AuthenticationError(
+            error_type='AUTHENTICATION_FAILED',
+            error_code='NotAuthorizedException',
+            message='Invalid credentials for reasoning operations',
+            suggested_action='Check username and password for reasoning access'
+        ),
+        AuthenticationError(
+            error_type='TOKEN_EXPIRED',
+            error_code='TokenExpiredException',
+            message='Reasoning session token has expired',
+            suggested_action='Refresh token or re-authenticate for reasoning'
+        ),
+        AuthenticationError(
+            error_type='NETWORK_ERROR',
+            error_code='NetworkException',
+            message='Cannot connect to reasoning authentication service',
+            suggested_action='Check network connectivity for reasoning operations'
+        )
     ]
     
-    results = []
+    print("🧠 Testing reasoning error handling patterns...")
     
-    for scenario in test_scenarios:
-        print(f"\n🧪 Testing: {scenario['name']}")
-        print(f"Username: {scenario['username']}")
+    for i, error in enumerate(test_errors, 1):
+        print(f"\n[{i}] Handling reasoning error: {error.error_type}")
         
-        try:
-            tokens = authenticator.authenticate_user(
-                scenario['username'],
-                scenario['password']
-            )
-            
-            result = {
-                'scenario': scenario['name'],
-                'success': True,
-                'message': 'Authentication successful',
-                'tokens_received': True
-            }
-            
-            print("✅ Success!")
-            
-        except AuthenticationError as e:
-            # Handle the error using our error handler
-            error_info = error_handler.handle_error(e)
-            
-            result = {
-                'scenario': scenario['name'],
-                'success': False,
-                'error_type': e.error_type,
-                'error_code': e.error_code,
-                'error_message': e.message,
-                'user_message': error_info['user_message'],
-                'recovery_actions': error_info['recovery_actions'],
-                'retry_recommended': error_info['retry_recommended'],
-                'contact_support': error_info['contact_support']
-            }
-            
-            print(f"❌ {error_info['user_message']}")
-            print("💡 Recovery actions:")
-            for action in error_info['recovery_actions']:
-                print(f"  - {action}")
+        error_response = error_handler.handle_reasoning_error(error)
         
-        results.append(result)
+        print(f"  User Message: {error_response['user_message']}")
+        print(f"  Recovery Actions: {len(error_response['recovery_actions'])} suggested")
+        print(f"  Retry Recommended: {error_response['retry_recommended']}")
+        print(f"  Reasoning Context: {error_response['reasoning_context']}")
     
-    # Save error handling results
-    with open('error_handling_results.json', 'w') as f:
-        json.dump(results, f, indent=2)
-    
-    print(f"\n📊 Error Handling Test Results:")
-    for result in results:
-        status = "✅" if result['success'] else "❌"
-        print(f"  {status} {result['scenario']}")
-    
-    print(f"\nResults saved to: error_handling_results.json")
+    print("\n✅ Reasoning error handling examples completed")
 
 if __name__ == "__main__":
-    asyncio.run(error_handling_example())
+    asyncio.run(reasoning_error_handling_example())
 ```
 
-### Retry Logic with Exponential Backoff
+## Token Refresh Scenarios for Reasoning
+
+### Automatic Token Refresh for Long Reasoning Sessions
 
 ```python
 #!/usr/bin/env python3
 """
-Retry logic with exponential backoff for authentication operations.
+Automatic token refresh for long-running reasoning sessions.
 """
 
+import json
 import asyncio
 import time
-import random
-from typing import Optional, Callable, Any
+from typing import Optional
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-class RetryableAuthenticator:
-    """Authenticator with built-in retry logic and exponential backoff."""
+class ReasoningSessionManager:
+    """Manages authentication tokens for extended reasoning sessions."""
     
-    def __init__(self, authenticator: CognitoAuthenticator, 
-                 max_retries: int = 3, base_delay: float = 1.0):
-        """Initialize retryable authenticator."""
-        self.authenticator = authenticator
-        self.max_retries = max_retries
-        self.base_delay = base_delay
-    
-    async def authenticate_with_retry(self, username: str, password: str) -> Optional[Any]:
-        """Authenticate with retry logic and exponential backoff."""
-        
-        for attempt in range(self.max_retries + 1):
-            try:
-                print(f"🔐 Authentication attempt {attempt + 1}/{self.max_retries + 1}")
-                
-                tokens = self.authenticator.authenticate_user(username, password)
-                
-                print(f"✅ Authentication successful on attempt {attempt + 1}")
-                return tokens
-                
-            except AuthenticationError as e:
-                # Don't retry for certain error types
-                non_retryable_errors = [
-                    'AUTHENTICATION_FAILED',  # Wrong credentials
-                    'USER_NOT_FOUND',         # User doesn't exist
-                    'USER_NOT_CONFIRMED'      # User not verified
-                ]
-                
-                if e.error_type in non_retryable_errors:
-                    print(f"❌ Non-retryable error: {e.error_type}")
-                    raise e
-                
-                if attempt < self.max_retries:
-                    # Calculate delay with exponential backoff and jitter
-                    delay = self.base_delay * (2 ** attempt)
-                    jitter = random.uniform(0, 0.1 * delay)
-                    total_delay = delay + jitter
-                    
-                    print(f"⚠️ Attempt {attempt + 1} failed: {e.error_type}")
-                    print(f"⏳ Retrying in {total_delay:.2f} seconds...")
-                    
-                    await asyncio.sleep(total_delay)
-                else:
-                    print(f"❌ All {self.max_retries + 1} attempts failed")
-                    raise e
-        
-        return None
-    
-    async def refresh_token_with_retry(self, refresh_token: str) -> Optional[Any]:
-        """Refresh token with retry logic."""
-        
-        for attempt in range(self.max_retries + 1):
-            try:
-                print(f"🔄 Token refresh attempt {attempt + 1}/{self.max_retries + 1}")
-                
-                tokens = self.authenticator.refresh_token(refresh_token)
-                
-                print(f"✅ Token refresh successful on attempt {attempt + 1}")
-                return tokens
-                
-            except AuthenticationError as e:
-                # Don't retry for invalid refresh tokens
-                if e.error_code == 'NotAuthorizedException':
-                    print(f"❌ Invalid refresh token, cannot retry")
-                    raise e
-                
-                if attempt < self.max_retries:
-                    delay = self.base_delay * (2 ** attempt)
-                    jitter = random.uniform(0, 0.1 * delay)
-                    total_delay = delay + jitter
-                    
-                    print(f"⚠️ Refresh attempt {attempt + 1} failed: {e.error_type}")
-                    print(f"⏳ Retrying in {total_delay:.2f} seconds...")
-                    
-                    await asyncio.sleep(total_delay)
-                else:
-                    print(f"❌ All {self.max_retries + 1} refresh attempts failed")
-                    raise e
-        
-        return None
-
-async def retry_logic_example():
-    """Demonstrate retry logic with exponential backoff."""
-    
-    # Load configuration
-    with open('cognito_config.json', 'r') as f:
-        config = json.load(f)
-    
-    # Create base authenticator
-    base_authenticator = CognitoAuthenticator(
-        user_pool_id=config['user_pool']['user_pool_id'],
-        client_id=config['app_client']['client_id'],
-        region=config['region']
-    )
-    
-    # Create retryable authenticator
-    retryable_auth = RetryableAuthenticator(
-        authenticator=base_authenticator,
-        max_retries=3,
-        base_delay=1.0
-    )
-    
-    # Test authentication with retry
-    try:
-        start_time = time.time()
-        
-        tokens = await retryable_auth.authenticate_with_retry(
-            username=config['test_user']['email'],
-            password='TempPass123!'  # Use actual password
-        )
-        
-        end_time = time.time()
-        
-        if tokens:
-            print(f"\n✅ Authentication completed in {end_time - start_time:.2f} seconds")
-            print(f"Access Token: {tokens.access_token[:50]}...")
-            
-            # Test token refresh with retry
-            print(f"\n🔄 Testing token refresh with retry...")
-            
-            refresh_start = time.time()
-            new_tokens = await retryable_auth.refresh_token_with_retry(
-                tokens.refresh_token
-            )
-            refresh_end = time.time()
-            
-            if new_tokens:
-                print(f"✅ Token refresh completed in {refresh_end - refresh_start:.2f} seconds")
-        
-    except AuthenticationError as e:
-        print(f"\n❌ Final authentication failure:")
-        print(f"  Error Type: {e.error_type}")
-        print(f"  Message: {e.message}")
-        print(f"  Suggested Action: {e.suggested_action}")
-
-if __name__ == "__main__":
-    asyncio.run(retry_logic_example())
-```
-
-## Token Refresh Scenarios
-
-### Automatic Token Refresh Manager
-
-```python
-#!/usr/bin/env python3
-"""
-Automatic token refresh manager for long-running applications.
-"""
-
-import asyncio
-import json
-import time
-from typing import Optional, Callable
-from dataclasses import dataclass
-from services.auth_service import CognitoAuthenticator, AuthenticationTokens, AuthenticationError
-
-@dataclass
-class TokenState:
-    """Token state management."""
-    tokens: Optional[AuthenticationTokens] = None
-    expires_at: Optional[float] = None
-    refresh_threshold: float = 300  # 5 minutes before expiry
-    last_refresh: Optional[float] = None
-
-class TokenManager:
-    """Automatic token refresh manager."""
-    
-    def __init__(self, authenticator: CognitoAuthenticator, 
-                 token_file: str = 'user_tokens.json'):
-        """Initialize token manager."""
-        self.authenticator = authenticator
-        self.token_file = token_file
-        self.state = TokenState()
-        self.refresh_callbacks = []
-        self._refresh_task = None
-        self._running = False
-    
-    def add_refresh_callback(self, callback: Callable[[AuthenticationTokens], None]):
-        """Add callback to be called when tokens are refreshed."""
-        self.refresh_callbacks.append(callback)
-    
-    async def initialize(self, username: str = None, password: str = None) -> bool:
-        """Initialize token manager with authentication."""
-        
-        # Try to load existing tokens
-        if await self._load_tokens():
-            if await self._validate_current_tokens():
-                print("✅ Loaded valid tokens from file")
-                return True
-        
-        # Authenticate if credentials provided
-        if username and password:
-            try:
-                print("🔐 Performing initial authentication...")
-                tokens = self.authenticator.authenticate_user(username, password)
-                
-                self.state.tokens = tokens
-                self.state.expires_at = time.time() + tokens.expires_in
-                self.state.last_refresh = time.time()
-                
-                await self._save_tokens()
-                print("✅ Initial authentication successful")
-                return True
-                
-            except AuthenticationError as e:
-                print(f"❌ Initial authentication failed: {e.message}")
-                return False
-        
-        print("❌ No valid tokens and no credentials provided")
-        return False
-    
-    async def get_valid_token(self) -> Optional[str]:
-        """Get a valid access token, refreshing if necessary."""
-        
-        if not self.state.tokens:
-            return None
-        
-        # Check if token needs refresh
-        if self._needs_refresh():
-            if not await self._refresh_tokens():
-                return None
-        
-        return self.state.tokens.access_token
-    
-    def start_auto_refresh(self):
-        """Start automatic token refresh background task."""
-        if not self._running:
-            self._running = True
-            self._refresh_task = asyncio.create_task(self._auto_refresh_loop())
-            print("🔄 Started automatic token refresh")
-    
-    def stop_auto_refresh(self):
-        """Stop automatic token refresh."""
-        self._running = False
-        if self._refresh_task:
-            self._refresh_task.cancel()
-            print("⏹️ Stopped automatic token refresh")
-    
-    async def _auto_refresh_loop(self):
-        """Background task for automatic token refresh."""
-        
-        while self._running:
-            try:
-                if self._needs_refresh():
-                    print("🔄 Auto-refreshing tokens...")
-                    await self._refresh_tokens()
-                
-                # Check every minute
-                await asyncio.sleep(60)
-                
-            except asyncio.CancelledError:
-                break
-            except Exception as e:
-                print(f"⚠️ Auto-refresh error: {e}")
-                await asyncio.sleep(60)
-    
-    def _needs_refresh(self) -> bool:
-        """Check if tokens need refresh."""
-        if not self.state.tokens or not self.state.expires_at:
-            return False
-        
-        time_until_expiry = self.state.expires_at - time.time()
-        return time_until_expiry <= self.state.refresh_threshold
-    
-    async def _refresh_tokens(self) -> bool:
-        """Refresh access tokens using refresh token."""
-        
-        if not self.state.tokens or not self.state.tokens.refresh_token:
-            print("❌ No refresh token available")
-            return False
-        
-        try:
-            new_tokens = self.authenticator.refresh_token(
-                self.state.tokens.refresh_token
-            )
-            
-            # Update state
-            old_refresh_token = self.state.tokens.refresh_token
-            self.state.tokens = new_tokens
-            self.state.tokens.refresh_token = old_refresh_token  # Keep original refresh token
-            self.state.expires_at = time.time() + new_tokens.expires_in
-            self.state.last_refresh = time.time()
-            
-            await self._save_tokens()
-            
-            # Notify callbacks
-            for callback in self.refresh_callbacks:
-                try:
-                    callback(self.state.tokens)
-                except Exception as e:
-                    print(f"⚠️ Refresh callback error: {e}")
-            
-            print("✅ Tokens refreshed successfully")
-            return True
-            
-        except AuthenticationError as e:
-            print(f"❌ Token refresh failed: {e.message}")
-            return False
-    
-    async def _validate_current_tokens(self) -> bool:
-        """Validate current tokens."""
-        if not self.state.tokens:
-            return False
-        
-        try:
-            self.authenticator.validate_user_session(self.state.tokens.access_token)
-            return True
-        except Exception:
-            return False
-    
-    async def _load_tokens(self) -> bool:
-        """Load tokens from file."""
-        try:
-            with open(self.token_file, 'r') as f:
-                token_data = json.load(f)
-            
-            self.state.tokens = AuthenticationTokens(
-                id_token=token_data['id_token'],
-                access_token=token_data['access_token'],
-                refresh_token=token_data['refresh_token'],
-                expires_in=token_data['expires_in'],
-                token_type=token_data.get('token_type', 'Bearer')
-            )
-            
-            # Calculate expiry time
-            if 'refreshed_at' in token_data:
-                self.state.expires_at = token_data['refreshed_at'] + token_data['expires_in']
-                self.state.last_refresh = token_data['refreshed_at']
-            else:
-                # Assume tokens are fresh
-                self.state.expires_at = time.time() + token_data['expires_in']
-                self.state.last_refresh = time.time()
-            
-            return True
-            
-        except (FileNotFoundError, KeyError, json.JSONDecodeError):
-            return False
-    
-    async def _save_tokens(self):
-        """Save tokens to file."""
-        if not self.state.tokens:
-            return
-        
-        token_data = {
-            'id_token': self.state.tokens.id_token,
-            'access_token': self.state.tokens.access_token,
-            'refresh_token': self.state.tokens.refresh_token,
-            'expires_in': self.state.tokens.expires_in,
-            'token_type': self.state.tokens.token_type,
-            'refreshed_at': self.state.last_refresh or time.time()
-        }
-        
-        with open(self.token_file, 'w') as f:
-            json.dump(token_data, f, indent=2)
-
-async def token_manager_example():
-    """Demonstrate automatic token management."""
-    
-    # Load configuration
-    with open('cognito_config.json', 'r') as f:
-        config = json.load(f)
-    
-    # Create authenticator
-    authenticator = CognitoAuthenticator(
-        user_pool_id=config['user_pool']['user_pool_id'],
-        client_id=config['app_client']['client_id'],
-        region=config['region']
-    )
-    
-    # Create token manager
-    token_manager = TokenManager(authenticator)
-    
-    # Add refresh callback
-    def on_token_refresh(tokens):
-        print(f"🔔 Tokens refreshed at {time.strftime('%H:%M:%S')}")
-    
-    token_manager.add_refresh_callback(on_token_refresh)
-    
-    # Initialize with credentials
-    success = await token_manager.initialize(
-        username=config['test_user']['email'],
-        password='TempPass123!'  # Use actual password
-    )
-    
-    if not success:
-        print("❌ Failed to initialize token manager")
-        return
-    
-    # Start auto-refresh
-    token_manager.start_auto_refresh()
-    
-    try:
-        # Simulate long-running application
-        for i in range(10):
-            print(f"\n[{i+1}/10] Getting valid token...")
-            
-            token = await token_manager.get_valid_token()
-            if token:
-                print(f"✅ Got valid token: {token[:50]}...")
-                
-                # Simulate some work
-                await asyncio.sleep(2)
-            else:
-                print("❌ Failed to get valid token")
-                break
-        
-        print("\n🎯 Simulating token expiry scenario...")
-        
-        # Force token refresh by setting short expiry
-        if token_manager.state.tokens:
-            token_manager.state.expires_at = time.time() + 10  # Expire in 10 seconds
-            token_manager.state.refresh_threshold = 5  # Refresh 5 seconds before
-            
-            print("⏳ Waiting for auto-refresh...")
-            await asyncio.sleep(15)
-            
-            # Get token after refresh
-            token = await token_manager.get_valid_token()
-            if token:
-                print(f"✅ Token after auto-refresh: {token[:50]}...")
-    
-    finally:
-        # Clean up
-        token_manager.stop_auto_refresh()
-
-if __name__ == "__main__":
-    asyncio.run(token_manager_example())
-```## Product
-ion Integration Patterns
-
-### Web Application Integration
-
-```python
-#!/usr/bin/env python3
-"""
-Web application integration example using FastAPI.
-"""
-
-from fastapi import FastAPI, HTTPException, Depends, status
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from fastapi.middleware.cors import CORSMiddleware
-import json
-import asyncio
-from typing import Optional
-from services.auth_service import TokenValidator, AuthenticationError, UserContext
-
-app = FastAPI(title="Restaurant Search API", version="1.0.0")
-
-# Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Configure appropriately for production
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Security scheme
-security = HTTPBearer()
-
-# Global token validator
-token_validator = None
-
-@app.on_event("startup")
-async def startup_event():
-    """Initialize token validator on startup."""
-    global token_validator
-    
-    # Load Cognito configuration
-    with open('cognito_config.json', 'r') as f:
-        config = json.load(f)
-    
-    validator_config = {
-        'user_pool_id': config['user_pool']['user_pool_id'],
-        'client_id': config['app_client']['client_id'],
-        'region': config['region'],
-        'discovery_url': config['discovery_url']
-    }
-    
-    token_validator = TokenValidator(validator_config)
-    print("✅ Token validator initialized")
-
-async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)) -> UserContext:
-    """Dependency to get current authenticated user."""
-    
-    if not token_validator:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Authentication service not initialized"
-        )
-    
-    try:
-        # Validate JWT token
-        claims = await token_validator.validate_jwt_token(credentials.credentials)
-        
-        # Create user context
-        user_context = UserContext(
-            user_id=claims.user_id,
-            username=claims.username,
-            email=claims.email,
-            authenticated=True,
-            token_claims=claims
-        )
-        
-        return user_context
-        
-    except AuthenticationError as e:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=f"Authentication failed: {e.message}",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-
-@app.get("/")
-async def root():
-    """Public endpoint - no authentication required."""
-    return {"message": "Restaurant Search API", "status": "running"}
-
-@app.get("/health")
-async def health_check():
-    """Health check endpoint - no authentication required."""
-    return {"status": "healthy", "timestamp": "2025-09-27T12:00:00Z"}
-
-@app.get("/profile")
-async def get_user_profile(current_user: UserContext = Depends(get_current_user)):
-    """Get user profile - authentication required."""
-    return {
-        "user_id": current_user.user_id,
-        "username": current_user.username,
-        "email": current_user.email,
-        "authenticated": current_user.authenticated
-    }
-
-@app.post("/restaurants/search")
-async def search_restaurants(
-    search_request: dict,
-    current_user: UserContext = Depends(get_current_user)
-):
-    """Search restaurants - authentication required."""
-    
-    # Log authenticated request
-    print(f"🔍 Restaurant search by user: {current_user.email}")
-    
-    # Here you would integrate with your MCP client
-    # For this example, we'll return a mock response
-    
-    districts = search_request.get('districts', [])
-    meal_types = search_request.get('meal_types', [])
-    
-    return {
-        "user": current_user.email,
-        "search_criteria": {
-            "districts": districts,
-            "meal_types": meal_types
-        },
-        "results": [
-            {
-                "id": "rest_001",
-                "name": "Sample Restaurant",
-                "district": "Central district",
-                "meal_types": ["breakfast", "lunch"],
-                "address": "123 Sample Street, Central"
-            }
-        ],
-        "total_results": 1
-    }
-
-@app.exception_handler(AuthenticationError)
-async def authentication_exception_handler(request, exc: AuthenticationError):
-    """Global authentication error handler."""
-    return HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail={
-            "error_type": exc.error_type,
-            "error_code": exc.error_code,
-            "message": exc.message,
-            "suggested_action": exc.suggested_action
-        },
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-```
-
-### Client SDK Example
-
-```python
-#!/usr/bin/env python3
-"""
-Client SDK for Restaurant Search API with authentication.
-"""
-
-import json
-import asyncio
-import aiohttp
-from typing import Optional, Dict, List, Any
-from dataclasses import dataclass
-from services.auth_service import CognitoAuthenticator, AuthenticationTokens, AuthenticationError
-
-@dataclass
-class RestaurantSearchRequest:
-    """Restaurant search request model."""
-    districts: Optional[List[str]] = None
-    meal_types: Optional[List[str]] = None
-
-@dataclass
-class Restaurant:
-    """Restaurant model."""
-    id: str
-    name: str
-    district: str
-    meal_types: List[str]
-    address: str
-
-class RestaurantSearchClient:
-    """Client SDK for Restaurant Search API."""
-    
-    def __init__(self, api_base_url: str, cognito_config: Dict[str, Any]):
-        """Initialize the client SDK."""
-        self.api_base_url = api_base_url.rstrip('/')
-        self.cognito_config = cognito_config
+    def __init__(self, config_file: str = 'cognito_config.json'):
+        """Initialize reasoning session manager."""
+        with open(config_file, 'r') as f:
+            self.config = json.load(f)
         
         self.authenticator = CognitoAuthenticator(
-            user_pool_id=cognito_config['user_pool']['user_pool_id'],
-            client_id=cognito_config['app_client']['client_id'],
-            region=cognito_config['region']
+            user_pool_id=self.config['user_pool']['user_pool_id'],
+            client_id=self.config['app_client']['client_id'],
+            region=self.config['region']
         )
         
         self.access_token: Optional[str] = None
-        self.session: Optional[aiohttp.ClientSession] = None
+        self.refresh_token: Optional[str] = None
+        self.token_expires_at: Optional[float] = None
+        self.session_active = False
     
-    async def __aenter__(self):
-        """Async context manager entry."""
-        self.session = aiohttp.ClientSession()
-        return self
-    
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        """Async context manager exit."""
-        if self.session:
-            await self.session.close()
-    
-    async def authenticate(self, username: str, password: str) -> bool:
-        """Authenticate with the API."""
+    async def start_reasoning_session(self, username: str, password: str) -> bool:
+        """Start a new reasoning session with authentication."""
         try:
+            print("🧠 Starting reasoning session...")
+            
             tokens = self.authenticator.authenticate_user(username, password)
+            
             self.access_token = tokens.access_token
-            print("✅ Authentication successful")
+            self.refresh_token = tokens.refresh_token
+            self.token_expires_at = time.time() + tokens.expires_in
+            self.session_active = True
+            
+            # Save reasoning session tokens
+            session_data = {
+                'access_token': tokens.access_token,
+                'refresh_token': tokens.refresh_token,
+                'id_token': tokens.id_token,
+                'expires_in': tokens.expires_in,
+                'session_started_at': time.time(),
+                'reasoning_session': True
+            }
+            
+            with open('reasoning_session_tokens.json', 'w') as f:
+                json.dump(session_data, f, indent=2)
+            
+            print("✅ Reasoning session started successfully")
             return True
+            
         except AuthenticationError as e:
-            print(f"❌ Authentication failed: {e.message}")
+            print(f"❌ Failed to start reasoning session: {e.message}")
             return False
     
-    def _get_headers(self) -> Dict[str, str]:
-        """Get request headers with authentication."""
-        headers = {'Content-Type': 'application/json'}
+    async def ensure_valid_reasoning_token(self) -> bool:
+        """Ensure we have a valid token for reasoning operations."""
+        if not self.session_active:
+            print("❌ No active reasoning session")
+            return False
         
-        if self.access_token:
-            headers['Authorization'] = f'Bearer {self.access_token}'
-        
-        return headers
-    
-    async def get_profile(self) -> Optional[Dict[str, Any]]:
-        """Get user profile."""
-        if not self.access_token:
-            raise ValueError("Not authenticated. Call authenticate() first.")
-        
-        async with self.session.get(
-            f"{self.api_base_url}/profile",
-            headers=self._get_headers()
-        ) as response:
-            if response.status == 200:
-                return await response.json()
-            elif response.status == 401:
-                raise AuthenticationError(
-                    error_type="UNAUTHORIZED",
-                    error_code="TOKEN_INVALID",
-                    message="Authentication token is invalid or expired",
-                    details="",
-                    suggested_action="Re-authenticate with valid credentials"
-                )
-            else:
-                response.raise_for_status()
-    
-    async def search_restaurants(self, search_request: RestaurantSearchRequest) -> List[Restaurant]:
-        """Search for restaurants."""
-        if not self.access_token:
-            raise ValueError("Not authenticated. Call authenticate() first.")
-        
-        request_data = {
-            'districts': search_request.districts,
-            'meal_types': search_request.meal_types
-        }
-        
-        async with self.session.post(
-            f"{self.api_base_url}/restaurants/search",
-            headers=self._get_headers(),
-            json=request_data
-        ) as response:
-            if response.status == 200:
-                data = await response.json()
-                
-                restaurants = []
-                for item in data.get('results', []):
-                    restaurant = Restaurant(
-                        id=item['id'],
-                        name=item['name'],
-                        district=item['district'],
-                        meal_types=item['meal_types'],
-                        address=item['address']
-                    )
-                    restaurants.append(restaurant)
-                
-                return restaurants
-            elif response.status == 401:
-                raise AuthenticationError(
-                    error_type="UNAUTHORIZED",
-                    error_code="TOKEN_INVALID",
-                    message="Authentication token is invalid or expired",
-                    details="",
-                    suggested_action="Re-authenticate with valid credentials"
-                )
-            else:
-                response.raise_for_status()
-    
-    async def health_check(self) -> Dict[str, Any]:
-        """Check API health (no authentication required)."""
-        async with self.session.get(f"{self.api_base_url}/health") as response:
-            response.raise_for_status()
-            return await response.json()
-
-async def client_sdk_example():
-    """Demonstrate client SDK usage."""
-    
-    # Load configuration
-    with open('cognito_config.json', 'r') as f:
-        cognito_config = json.load(f)
-    
-    api_url = "http://localhost:8000"  # Your API URL
-    
-    async with RestaurantSearchClient(api_url, cognito_config) as client:
-        # Test health check (no auth required)
-        print("🏥 Testing health check...")
-        health = await client.health_check()
-        print(f"Health status: {health['status']}")
-        
-        # Authenticate
-        print("\n🔐 Authenticating...")
-        success = await client.authenticate(
-            username=cognito_config['test_user']['email'],
-            password='TempPass123!'  # Use actual password
-        )
-        
-        if not success:
-            print("❌ Authentication failed")
-            return
-        
-        # Get user profile
-        print("\n👤 Getting user profile...")
-        profile = await client.get_profile()
-        print(f"User: {profile['email']}")
-        
-        # Search restaurants
-        print("\n🔍 Searching restaurants...")
-        
-        search_requests = [
-            RestaurantSearchRequest(districts=['Central district']),
-            RestaurantSearchRequest(meal_types=['breakfast']),
-            RestaurantSearchRequest(
-                districts=['Tsim Sha Tsui'],
-                meal_types=['dinner']
-            )
-        ]
-        
-        for i, request in enumerate(search_requests, 1):
-            print(f"\n[{i}] Search: districts={request.districts}, meal_types={request.meal_types}")
+        # Check if token needs refresh (5 minutes before expiry)
+        if time.time() >= self.token_expires_at - 300:
+            print("🔄 Reasoning token expiring soon, refreshing...")
             
             try:
-                restaurants = await client.search_restaurants(request)
-                print(f"Found {len(restaurants)} restaurants:")
+                new_tokens = self.authenticator.refresh_token(self.refresh_token)
                 
-                for restaurant in restaurants:
-                    print(f"  - {restaurant.name} ({restaurant.district})")
-                    
-            except Exception as e:
-                print(f"❌ Search failed: {e}")
+                self.access_token = new_tokens.access_token
+                self.token_expires_at = time.time() + new_tokens.expires_in
+                
+                # Update session tokens
+                with open('reasoning_session_tokens.json', 'r') as f:
+                    session_data = json.load(f)
+                
+                session_data.update({
+                    'access_token': new_tokens.access_token,
+                    'id_token': new_tokens.id_token,
+                    'expires_in': new_tokens.expires_in,
+                    'last_refreshed_at': time.time()
+                })
+                
+                with open('reasoning_session_tokens.json', 'w') as f:
+                    json.dump(session_data, f, indent=2)
+                
+                print("✅ Reasoning token refreshed successfully")
+                return True
+                
+            except AuthenticationError as e:
+                print(f"❌ Failed to refresh reasoning token: {e.message}")
+                self.session_active = False
+                return False
+        
+        return True
+    
+    async def perform_reasoning_operation(self, operation_name: str, data: dict) -> dict:
+        """Perform a reasoning operation with automatic token management."""
+        if not await self.ensure_valid_reasoning_token():
+            return {'success': False, 'error': 'Invalid reasoning session'}
+        
+        print(f"🎯 Performing reasoning operation: {operation_name}")
+        
+        # Simulate reasoning operation (replace with actual MCP call)
+        await asyncio.sleep(1)  # Simulate processing time
+        
+        return {
+            'success': True,
+            'operation': operation_name,
+            'data': data,
+            'timestamp': time.time(),
+            'token_valid': True
+        }
+    
+    def end_reasoning_session(self):
+        """End the reasoning session and clear tokens."""
+        self.session_active = False
+        self.access_token = None
+        self.refresh_token = None
+        self.token_expires_at = None
+        
+        # Clear session tokens
+        try:
+            import os
+            os.remove('reasoning_session_tokens.json')
+        except FileNotFoundError:
+            pass
+        
+        print("🔚 Reasoning session ended")
+
+async def long_reasoning_session_example():
+    """Demonstrate long-running reasoning session with automatic token refresh."""
+    
+    session_manager = ReasoningSessionManager()
+    
+    # Load test credentials
+    with open('cognito_config.json', 'r') as f:
+        config = json.load(f)
+    
+    # Start reasoning session
+    success = await session_manager.start_reasoning_session(
+        config['test_user']['email'],
+        'TempPass123!'
+    )
+    
+    if not success:
+        return
+    
+    # Simulate long-running reasoning operations
+    reasoning_operations = [
+        {'name': 'sentiment_analysis_batch_1', 'data': {'restaurants': 50}},
+        {'name': 'recommendation_generation_1', 'data': {'method': 'sentiment_likes'}},
+        {'name': 'sentiment_analysis_batch_2', 'data': {'restaurants': 75}},
+        {'name': 'recommendation_generation_2', 'data': {'method': 'combined_sentiment'}},
+        {'name': 'sentiment_analysis_batch_3', 'data': {'restaurants': 100}}
+    ]
+    
+    print(f"\n🧠 Starting {len(reasoning_operations)} reasoning operations...")
+    
+    for i, operation in enumerate(reasoning_operations, 1):
+        print(f"\n[{i}/{len(reasoning_operations)}] {operation['name']}")
+        
+        result = await session_manager.perform_reasoning_operation(
+            operation['name'],
+            operation['data']
+        )
+        
+        if result['success']:
+            print(f"  ✅ Completed successfully")
+        else:
+            print(f"  ❌ Failed: {result['error']}")
+        
+        # Simulate time between operations
+        await asyncio.sleep(2)
+    
+    # End session
+    session_manager.end_reasoning_session()
+    print("\n🎉 Long reasoning session completed successfully")
 
 if __name__ == "__main__":
-    asyncio.run(client_sdk_example())
+    asyncio.run(long_reasoning_session_example())
 ```
 
-### Production Configuration Example
+## Production Integration Patterns for Reasoning
+
+### Production Reasoning Client with Full Error Handling
 
 ```python
 #!/usr/bin/env python3
 """
-Production configuration and deployment example.
+Production-ready reasoning client with comprehensive error handling and retry logic.
 """
 
 import json
-import os
-from typing import Dict, Any
+import asyncio
+import time
+import logging
+from typing import Optional, Dict, Any, List
+from dataclasses import dataclass
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+from services.auth_service import CognitoAuthenticator, AuthenticationError
 
-class ProductionConfig:
-    """Production configuration management."""
+@dataclass
+class ReasoningRequest:
+    """Represents a reasoning request with metadata."""
+    request_id: str
+    operation_type: str
+    restaurants: List[Dict]
+    ranking_method: Optional[str] = None
+    timestamp: float = None
     
-    def __init__(self, environment: str = "production"):
-        """Initialize production configuration."""
-        self.environment = environment
-        self.config = self._load_config()
+    def __post_init__(self):
+        if self.timestamp is None:
+            self.timestamp = time.time()
+
+@dataclass
+class ReasoningResponse:
+    """Represents a reasoning response with metadata."""
+    request_id: str
+    success: bool
+    result: Optional[str] = None
+    error: Optional[str] = None
+    processing_time: Optional[float] = None
+    timestamp: float = None
     
-    def _load_config(self) -> Dict[str, Any]:
-        """Load configuration based on environment."""
-        
-        # Base configuration
-        config = {
-            "authentication": {
-                "token_refresh_threshold": 300,  # 5 minutes
-                "max_retry_attempts": 3,
-                "retry_base_delay": 1.0,
-                "jwks_cache_ttl": 3600,  # 1 hour
-                "session_timeout": 3600  # 1 hour
-            },
-            "api": {
-                "timeout": 30,
-                "max_connections": 100,
-                "rate_limit": {
-                    "requests_per_minute": 60,
-                    "burst_size": 10
-                }
-            },
-            "logging": {
-                "level": "INFO",
-                "format": "json",
-                "include_sensitive_data": False
-            },
-            "security": {
-                "require_https": True,
-                "cors_origins": [],
-                "csrf_protection": True,
-                "content_security_policy": True
-            }
-        }
-        
-        # Environment-specific overrides
-        if self.environment == "development":
-            config.update({
-                "logging": {"level": "DEBUG"},
-                "security": {
-                    "require_https": False,
-                    "cors_origins": ["http://localhost:3000", "http://localhost:8080"]
-                }
-            })
-        elif self.environment == "staging":
-            config.update({
-                "security": {
-                    "cors_origins": ["https://staging.example.com"]
-                }
-            })
-        elif self.environment == "production":
-            config.update({
-                "security": {
-                    "cors_origins": ["https://app.example.com"]
-                }
-            })
-        
-        # Load from environment variables
-        self._load_from_env(config)
-        
-        return config
+    def __post_init__(self):
+        if self.timestamp is None:
+            self.timestamp = time.time()
+
+class ProductionReasoningClient:
+    """Production-ready reasoning client with full error handling."""
     
-    def _load_from_env(self, config: Dict[str, Any]):
-        """Load sensitive configuration from environment variables."""
+    def __init__(self, config_file: str = 'cognito_config.json'):
+        """Initialize production reasoning client."""
+        # Set up logging
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - REASONING - %(levelname)s - %(message)s'
+        )
+        self.logger = logging.getLogger(__name__)
         
-        # Cognito configuration from environment
-        cognito_config = {}
+        # Load configuration
+        with open(config_file, 'r') as f:
+            self.config = json.load(f)
         
-        env_mappings = {
-            'COGNITO_USER_POOL_ID': 'user_pool_id',
-            'COGNITO_CLIENT_ID': 'client_id',
-            'COGNITO_REGION': 'region',
-            'COGNITO_DISCOVERY_URL': 'discovery_url'
-        }
+        # Initialize authenticator
+        self.authenticator = CognitoAuthenticator(
+            user_pool_id=self.config['user_pool']['user_pool_id'],
+            client_id=self.config['app_client']['client_id'],
+            region=self.config['region']
+        )
         
-        for env_var, config_key in env_mappings.items():
-            value = os.getenv(env_var)
-            if value:
-                cognito_config[config_key] = value
+        # Token management
+        self.access_token: Optional[str] = None
+        self.refresh_token: Optional[str] = None
+        self.token_expires_at: Optional[float] = None
         
-        if cognito_config:
-            config['cognito'] = cognito_config
+        # Configuration
+        self.max_retries = 3
+        self.retry_delay = 1.0
+        self.timeout = 30.0
         
-        # API configuration from environment
-        api_config = {}
-        
-        if os.getenv('API_BASE_URL'):
-            api_config['base_url'] = os.getenv('API_BASE_URL')
-        
-        if os.getenv('MCP_SERVER_URL'):
-            api_config['mcp_server_url'] = os.getenv('MCP_SERVER_URL')
-        
-        if api_config:
-            config['api'].update(api_config)
-        
-        # Security configuration
-        if os.getenv('SECRET_KEY'):
-            config['security']['secret_key'] = os.getenv('SECRET_KEY')
-        
-        if os.getenv('CORS_ORIGINS'):
-            origins = os.getenv('CORS_ORIGINS').split(',')
-            config['security']['cors_origins'] = [origin.strip() for origin in origins]
+        # Load MCP URL
+        self.mcp_url = self._load_mcp_url()
     
-    def get_cognito_config(self) -> Dict[str, Any]:
-        """Get Cognito configuration."""
-        if 'cognito' in self.config:
-            return self.config['cognito']
-        
-        # Fall back to file-based configuration
+    def _load_mcp_url(self) -> str:
+        """Load reasoning MCP server URL from deployment config."""
         try:
-            with open('cognito_config.json', 'r') as f:
-                return json.load(f)
+            with open('reasoning_deployment_config.json', 'r') as f:
+                deployment_config = json.load(f)
+            
+            agent_arn = deployment_config['launch_result']['agent_arn']
+            return f"https://{agent_arn.split('/')[-1]}.bedrock-agentcore.us-east-1.amazonaws.com"
+            
         except FileNotFoundError:
-            raise ValueError("Cognito configuration not found in environment or file")
+            self.logger.error("Reasoning deployment config not found")
+            raise ValueError("Reasoning deployment configuration not available")
     
-    def get_api_config(self) -> Dict[str, Any]:
-        """Get API configuration."""
-        return self.config['api']
-    
-    def get_security_config(self) -> Dict[str, Any]:
-        """Get security configuration."""
-        return self.config['security']
-    
-    def get_logging_config(self) -> Dict[str, Any]:
-        """Get logging configuration."""
-        return self.config['logging']
-    
-    def validate_config(self) -> bool:
-        """Validate configuration completeness."""
-        
-        required_cognito_fields = [
-            'user_pool_id', 'client_id', 'region', 'discovery_url'
-        ]
-        
+    async def authenticate(self, username: str, password: str) -> bool:
+        """Authenticate for reasoning operations."""
         try:
-            cognito_config = self.get_cognito_config()
+            self.logger.info(f"Authenticating user for reasoning: {username}")
             
-            for field in required_cognito_fields:
-                if field not in cognito_config:
-                    print(f"❌ Missing required Cognito field: {field}")
-                    return False
+            tokens = self.authenticator.authenticate_user(username, password)
             
-            print("✅ Configuration validation passed")
+            self.access_token = tokens.access_token
+            self.refresh_token = tokens.refresh_token
+            self.token_expires_at = time.time() + tokens.expires_in
+            
+            self.logger.info("Reasoning authentication successful")
             return True
             
-        except Exception as e:
-            print(f"❌ Configuration validation failed: {e}")
+        except AuthenticationError as e:
+            self.logger.error(f"Reasoning authentication failed: {e.message}")
             return False
+    
+    async def ensure_valid_token(self) -> bool:
+        """Ensure we have a valid token for reasoning operations."""
+        if not self.access_token or not self.token_expires_at:
+            self.logger.error("No valid reasoning token available")
+            return False
+        
+        # Check if token needs refresh
+        if time.time() >= self.token_expires_at - 300:  # 5 min buffer
+            try:
+                self.logger.info("Refreshing reasoning token")
+                
+                new_tokens = self.authenticator.refresh_token(self.refresh_token)
+                
+                self.access_token = new_tokens.access_token
+                self.token_expires_at = time.time() + new_tokens.expires_in
+                
+                self.logger.info("Reasoning token refreshed successfully")
+                return True
+                
+            except AuthenticationError as e:
+                self.logger.error(f"Failed to refresh reasoning token: {e.message}")
+                return False
+        
+        return True
+    
+    async def process_reasoning_request(self, request: ReasoningRequest) -> ReasoningResponse:
+        """Process a reasoning request with full error handling."""
+        start_time = time.time()
+        
+        self.logger.info(f"Processing reasoning request: {request.request_id}")
+        
+        # Ensure authentication
+        if not await self.ensure_valid_token():
+            return ReasoningResponse(
+                request_id=request.request_id,
+                success=False,
+                error="Authentication failed for reasoning operation"
+            )
+        
+        # Prepare MCP call parameters
+        if request.operation_type == "recommend_restaurants":
+            tool_name = "recommend_restaurants"
+            parameters = {
+                "restaurants": request.restaurants,
+                "ranking_method": request.ranking_method or "sentiment_likes"
+            }
+        elif request.operation_type == "analyze_sentiment":
+            tool_name = "analyze_restaurant_sentiment"
+            parameters = {"restaurants": request.restaurants}
+        else:
+            return ReasoningResponse(
+                request_id=request.request_id,
+                success=False,
+                error=f"Unknown reasoning operation type: {request.operation_type}"
+            )
+        
+        # Execute MCP call with retries
+        for attempt in range(self.max_retries):
+            try:
+                self.logger.info(f"Reasoning attempt {attempt + 1}/{self.max_retries}")
+                
+                headers = {
+                    'Authorization': f'Bearer {self.access_token}',
+                    'Content-Type': 'application/json'
+                }
+                
+                async with streamablehttp_client(self.mcp_url, headers=headers) as (read, write, _):
+                    async with ClientSession(read, write) as session:
+                        await session.initialize()
+                        
+                        result = await session.call_tool(tool_name, parameters)
+                        
+                        processing_time = time.time() - start_time
+                        
+                        self.logger.info(f"Reasoning request completed: {request.request_id}")
+                        
+                        return ReasoningResponse(
+                            request_id=request.request_id,
+                            success=True,
+                            result=result.content[0].text if result.content else None,
+                            processing_time=processing_time
+                        )
+                        
+            except Exception as e:
+                self.logger.warning(f"Reasoning attempt {attempt + 1} failed: {e}")
+                
+                if attempt < self.max_retries - 1:
+                    await asyncio.sleep(self.retry_delay * (2 ** attempt))
+                else:
+                    processing_time = time.time() - start_time
+                    
+                    return ReasoningResponse(
+                        request_id=request.request_id,
+                        success=False,
+                        error=f"Reasoning operation failed after {self.max_retries} attempts: {e}",
+                        processing_time=processing_time
+                    )
 
-def production_deployment_example():
-    """Example of production deployment configuration."""
+async def production_reasoning_example():
+    """Demonstrate production reasoning client usage."""
     
-    # Set environment variables (in production, these would be set by your deployment system)
-    os.environ.update({
-        'ENVIRONMENT': 'production',
-        'COGNITO_USER_POOL_ID': 'us-east-1_XXXXXXXXX',
-        'COGNITO_CLIENT_ID': 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
-        'COGNITO_REGION': 'us-east-1',
-        'COGNITO_DISCOVERY_URL': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_XXXXXXXXX/.well-known/openid-configuration',
-        'API_BASE_URL': 'https://api.example.com',
-        'MCP_SERVER_URL': 'https://mcp.example.com',
-        'SECRET_KEY': 'your-secret-key-here',
-        'CORS_ORIGINS': 'https://app.example.com,https://admin.example.com'
-    })
+    client = ProductionReasoningClient()
     
-    # Initialize production configuration
-    config = ProductionConfig(environment='production')
+    # Load test credentials
+    with open('cognito_config.json', 'r') as f:
+        config = json.load(f)
     
-    # Validate configuration
-    if not config.validate_config():
-        print("❌ Configuration validation failed")
+    # Authenticate
+    auth_success = await client.authenticate(
+        config['test_user']['email'],
+        'TempPass123!'
+    )
+    
+    if not auth_success:
+        print("❌ Authentication failed")
         return
     
-    print("🚀 Production Configuration:")
-    print(f"Environment: {config.environment}")
-    print(f"API Config: {json.dumps(config.get_api_config(), indent=2)}")
-    print(f"Security Config: {json.dumps(config.get_security_config(), indent=2)}")
-    print(f"Logging Config: {json.dumps(config.get_logging_config(), indent=2)}")
+    # Sample restaurant data for production testing
+    production_restaurants = [
+        {
+            "id": "prod_rest_001",
+            "name": "Central Business Lunch",
+            "address": "Tower 1, Central Plaza",
+            "sentiment": {"likes": 150, "dislikes": 12, "neutral": 18},
+            "meal_type": ["lunch"],
+            "district": "Central district",
+            "price_range": "$$$"
+        },
+        {
+            "id": "prod_rest_002",
+            "name": "TST Night Market",
+            "address": "Temple Street, TST",
+            "sentiment": {"likes": 200, "dislikes": 45, "neutral": 35},
+            "meal_type": ["dinner"],
+            "district": "Tsim Sha Tsui",
+            "price_range": "$"
+        }
+    ]
     
-    # Example of using configuration in production
-    cognito_config = config.get_cognito_config()
-    print(f"\n🔐 Cognito Configuration:")
-    print(f"User Pool ID: {cognito_config['user_pool_id']}")
-    print(f"Client ID: {cognito_config['client_id']}")
-    print(f"Region: {cognito_config['region']}")
+    # Create reasoning requests
+    requests = [
+        ReasoningRequest(
+            request_id="req_001",
+            operation_type="recommend_restaurants",
+            restaurants=production_restaurants,
+            ranking_method="sentiment_likes"
+        ),
+        ReasoningRequest(
+            request_id="req_002",
+            operation_type="recommend_restaurants",
+            restaurants=production_restaurants,
+            ranking_method="combined_sentiment"
+        ),
+        ReasoningRequest(
+            request_id="req_003",
+            operation_type="analyze_sentiment",
+            restaurants=production_restaurants
+        )
+    ]
+    
+    # Process requests
+    results = []
+    
+    for request in requests:
+        response = await client.process_reasoning_request(request)
+        results.append(response)
+        
+        if response.success:
+            print(f"✅ {request.request_id}: Success ({response.processing_time:.2f}s)")
+        else:
+            print(f"❌ {request.request_id}: Failed - {response.error}")
+    
+    # Save production results
+    results_data = [
+        {
+            'request_id': r.request_id,
+            'success': r.success,
+            'result_length': len(r.result) if r.result else 0,
+            'error': r.error,
+            'processing_time': r.processing_time,
+            'timestamp': r.timestamp
+        }
+        for r in results
+    ]
+    
+    with open('production_reasoning_results.json', 'w') as f:
+        json.dump(results_data, f, indent=2)
+    
+    print(f"\n📊 Production Results: {len([r for r in results if r.success])}/{len(results)} successful")
+    print("💾 Results saved to production_reasoning_results.json")
 
 if __name__ == "__main__":
-    production_deployment_example()
+    asyncio.run(production_reasoning_example())
 ```
+
+---
 
 ## Summary
 
-This document provides comprehensive examples for implementing authentication with the Restaurant Search MCP server:
+This document provides comprehensive authentication usage examples specifically adapted for the Restaurant Reasoning MCP server, including:
 
-### Key Components Covered:
+1. **SRP Authentication Examples**: Basic, interactive, and batch authentication patterns for reasoning operations
+2. **JWT Token Management**: Token validation, refresh, and lifecycle management for reasoning sessions
+3. **Reasoning MCP Client Integration**: Basic and advanced MCP client examples with reasoning-specific tools
+4. **Error Handling**: Comprehensive error handling patterns for reasoning authentication scenarios
+5. **Token Refresh Scenarios**: Automatic token refresh for long-running reasoning sessions
+6. **Production Integration**: Production-ready client with full error handling and retry logic
 
-1. **SRP Authentication**: Basic, interactive, and batch authentication examples
-2. **JWT Token Management**: Validation, refresh, and automatic management
-3. **MCP Client Integration**: Basic and advanced authenticated MCP clients
-4. **Error Handling**: Comprehensive error handling with retry logic
-5. **Token Refresh**: Automatic token refresh scenarios and management
-6. **Production Integration**: Web API, client SDK, and production configuration
-
-### Best Practices Demonstrated:
-
-- **Security**: Proper token handling and validation
-- **Reliability**: Retry logic with exponential backoff
-- **Maintainability**: Clean error handling and logging
-- **Scalability**: Automatic token management for long-running applications
-- **Production-Ready**: Environment-based configuration and security
-
-### Usage Guidelines:
-
-1. Start with basic authentication examples to understand the flow
-2. Implement error handling for robust applications
-3. Use token managers for long-running applications
-4. Follow production patterns for deployment
-5. Customize examples based on your specific requirements
-
-All examples are designed to work with the existing Restaurant Search MCP authentication infrastructure and can be adapted for different use cases and environments.
+All examples are specifically tailored for reasoning operations while reusing the existing Cognito authentication infrastructure from the restaurant search MCP server.

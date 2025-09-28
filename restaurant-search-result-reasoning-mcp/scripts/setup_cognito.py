@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Cognito User Pool Setup Script for Restaurant Search MCP
+Cognito User Pool Setup Script for Restaurant Reasoning MCP
 
-This script creates and configures an Amazon Cognito User Pool with app client
-for JWT authentication with the Restaurant Search MCP server deployed on
-Bedrock AgentCore Runtime.
+This script reuses the existing Amazon Cognito User Pool with app client
+for JWT authentication with the Restaurant Reasoning MCP server deployed on
+Bedrock AgentCore Runtime. It copies the configuration from the existing
+restaurant search MCP server.
 
-Requirements: 8.3, 8.4
+Requirements: 11.1, 11.2, 7.1
 """
 
 import json
@@ -31,7 +32,7 @@ class CognitoSetup:
         self.cognito_client = boto3.client('cognito-idp', region_name=region)
         self.config_file = "cognito_config.json"
     
-    def create_user_pool(self, pool_name: str = "restaurant-search-mcp-pool") -> Dict[str, Any]:
+    def create_user_pool(self, pool_name: str = "restaurant-reasoning-mcp-pool") -> Dict[str, Any]:
         """Create Cognito User Pool with appropriate configuration.
         
         Args:
@@ -90,7 +91,7 @@ class CognitoSetup:
             raise
     
     def create_user_pool_client(self, user_pool_id: str, 
-                               client_name: str = "restaurant-search-mcp-client") -> Dict[str, Any]:
+                               client_name: str = "restaurant-reasoning-mcp-client") -> Dict[str, Any]:
         """Create User Pool App Client for JWT authentication.
         
         Args:
@@ -295,10 +296,10 @@ def main():
     """Main function to run Cognito setup."""
     import argparse
     
-    parser = argparse.ArgumentParser(description='Setup Cognito User Pool for Restaurant Search MCP')
+    parser = argparse.ArgumentParser(description='Setup Cognito User Pool for Restaurant Reasoning MCP')
     parser.add_argument('--region', default='us-east-1', help='AWS region (default: us-east-1)')
     parser.add_argument('--email', default='test@example.com', help='Test user email (default: test@example.com)')
-    parser.add_argument('--pool-name', default='restaurant-search-mcp-pool', help='User pool name')
+    parser.add_argument('--pool-name', default='restaurant-reasoning-mcp-pool', help='User pool name')
     
     args = parser.parse_args()
     

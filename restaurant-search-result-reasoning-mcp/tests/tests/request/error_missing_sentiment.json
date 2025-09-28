@@ -1,0 +1,19 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "invalid_001",
+        "name": "Missing Sentiment Restaurant",
+        "address": "1 Invalid Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "location_category": "restaurant",
+        "district": "Test District",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

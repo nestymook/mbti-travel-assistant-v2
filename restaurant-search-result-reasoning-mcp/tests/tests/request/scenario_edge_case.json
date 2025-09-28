@@ -1,0 +1,175 @@
+{
+  "tool_name": "recommend_restaurants",
+  "parameters": {
+    "restaurants": [
+      {
+        "id": "edge_case_0000",
+        "name": "Edge_Case Restaurant 0",
+        "address": "0 Edge_Case Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 0,
+          "dislikes": 0,
+          "neutral": 0
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$$"
+      },
+      {
+        "id": "edge_case_0001",
+        "name": "Edge_Case Restaurant 1",
+        "address": "1 Edge_Case Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 1,
+          "dislikes": 0,
+          "neutral": 0
+        },
+        "location_category": "cafe",
+        "district": "Admiralty",
+        "price_range": "$"
+      },
+      {
+        "id": "edge_case_0002",
+        "name": "Edge_Case Restaurant 2",
+        "address": "2 Edge_Case Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 0,
+          "dislikes": 0,
+          "neutral": 100
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "edge_case_0003",
+        "name": "Edge_Case Restaurant 3",
+        "address": "3 Edge_Case Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "restaurant",
+        "district": "Central district",
+        "price_range": "$$"
+      },
+      {
+        "id": "edge_case_0004",
+        "name": "Edge_Case Restaurant 4",
+        "address": "4 Edge_Case Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "restaurant",
+        "district": "Tsim Sha Tsui",
+        "price_range": "$$"
+      },
+      {
+        "id": "edge_case_0005",
+        "name": "Edge_Case Restaurant 5",
+        "address": "5 Edge_Case Street",
+        "meal_type": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "fine_dining",
+        "district": "Admiralty",
+        "price_range": "$$$$"
+      },
+      {
+        "id": "edge_case_0006",
+        "name": "Edge_Case Restaurant 6",
+        "address": "6 Edge_Case Street",
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "fast_food",
+        "district": "Sheung Wan",
+        "price_range": "$"
+      },
+      {
+        "id": "edge_case_0007",
+        "name": "Edge_Case Restaurant 7",
+        "address": "7 Edge_Case Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "fine_dining",
+        "district": "Causeway Bay",
+        "price_range": "$$$"
+      },
+      {
+        "id": "edge_case_0008",
+        "name": "Edge_Case Restaurant 8",
+        "address": "8 Edge_Case Street",
+        "meal_type": [
+          "lunch"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "cafe",
+        "district": "Sheung Wan",
+        "price_range": "$$$"
+      },
+      {
+        "id": "edge_case_0009",
+        "name": "Edge_Case Restaurant 9",
+        "address": "9 Edge_Case Street",
+        "meal_type": [
+          "breakfast"
+        ],
+        "sentiment": {
+          "likes": 50,
+          "dislikes": 25,
+          "neutral": 25
+        },
+        "location_category": "restaurant",
+        "district": "Wan Chai",
+        "price_range": "$"
+      }
+    ],
+    "ranking_method": "sentiment_likes"
+  }
+}

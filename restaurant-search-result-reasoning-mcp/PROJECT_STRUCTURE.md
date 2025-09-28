@@ -1,170 +1,66 @@
-# Restaurant Search MCP - Project Structure
+# Restaurant Search Result Reasoning MCP Server - Project Structure
 
-## 📁 Directory Organization
+This project provides intelligent restaurant recommendation services based on sentiment analysis using the Model Context Protocol (MCP) and AWS Bedrock AgentCore.
+
+## Directory Structure
 
 ```
-restaurant-search-mcp/
-├── src/                              # Source code
-│   ├── main.py                       # BedrockAgentCoreApp entrypoint
-│   ├── restaurant_mcp_server.py      # FastMCP server implementation
-│   ├── services/                     # Business logic services
-│   │   ├── __init__.py
-│   │   ├── restaurant_service.py     # Restaurant search logic
-│   │   ├── district_service.py       # Geographic data management
-│   │   ├── time_service.py           # Meal time classification
-│   │   ├── data_access.py            # S3 data access layer
-│   │   ├── auth_service.py           # Authentication utilities
-│   │   ├── auth_middleware.py        # Authentication middleware
-│   │   └── security_monitor.py       # Security monitoring
-│   └── models/                       # Data models
-│       ├── __init__.py
-│       └── restaurant_models.py      # Restaurant data structures
-├── tests/                            # Test suite
+restaurant-search-result-reasoning-mcp/
+├── __init__.py                                 # Package initialization
+├── requirements.txt                            # Python dependencies
+├── restaurant_reasoning_mcp_server.py          # Main FastMCP server
+├── PROJECT_STRUCTURE.md                        # This file
+├── models/                                     # Data models
 │   ├── __init__.py
-│   ├── test_auth_prompt.py           # Authentication testing
-│   ├── test_deployed_agent_toolkit.py # Agent deployment testing
-│   └── test_mcp_endpoint_invoke.py   # MCP endpoint testing
-├── scripts/                          # Deployment and utility scripts
-│   ├── execute_deployment.py         # Complete deployment workflow
-│   ├── deploy_agentcore.py          # AgentCore deployment operations
-│   ├── setup_cognito.py             # Cognito authentication setup
-│   ├── create_test_user_cli.py      # Test user management
-│   └── debug_auth.py                # Authentication troubleshooting
-├── docs/                            # Documentation
-│   ├── README.md                    # Documentation index
-│   ├── DEPLOYMENT_GUIDE.md          # Deployment instructions
-│   ├── TESTING_GUIDE.md             # Testing documentation
-│   ├── KIRO_MCP_TESTING_GUIDE.md    # Kiro MCP integration guide
-│   └── COGNITO_SETUP_GUIDE.md       # Authentication setup
-├── config/                          # Configuration files
-│   └── cognito_config.json          # Cognito configuration (generated)
-├── requirements.txt                 # Python dependencies
-├── README.md                        # Project overview
-├── .bedrock_agentcore.yaml          # AgentCore configuration
-└── PROJECT_STRUCTURE.md             # This file
+│   ├── restaurant_models.py                    # Restaurant and sentiment models
+│   ├── validation_models.py                    # Validation and config models
+│   └── auth_models.py                          # Authentication models
+├── services/                                   # Business logic services
+│   ├── __init__.py
+│   ├── sentiment_service.py                    # Sentiment analysis logic
+│   ├── recommendation_service.py               # Recommendation algorithms
+│   ├── validation_service.py                   # Data validation
+│   └── restaurant_reasoning_service.py         # Core reasoning service
+├── src/                                        # Additional source code
+│   └── __init__.py
+└── tests/                                      # Test suite
+    ├── __init__.py
+    ├── test_sentiment_service.py               # Sentiment service tests
+    ├── test_recommendation_service.py          # Recommendation tests
+    ├── test_validation_service.py              # Validation tests
+    ├── test_restaurant_reasoning_service.py    # Reasoning service tests
+    └── test_reasoning_mcp_tools.py             # MCP tool tests
 ```
 
-## 🎯 Key Benefits of This Structure
+## Key Components
 
-### 1. **Modular Organization**
-- Clear separation of concerns
-- Easy to navigate and maintain
-- Scalable for additional features
+### Models
+- **restaurant_models.py**: Sentiment, Restaurant, and RecommendationResult data models
+- **validation_models.py**: ValidationResult, ValidationError, and ReasoningConfig models
+- **auth_models.py**: Authentication models (CognitoConfig, JWTClaims, UserContext)
 
-### 2. **Template Ready**
-- Can be copied to create new MCP apps
-- Consistent structure across projects
-- Reusable components
+### Services
+- **sentiment_service.py**: Core sentiment analysis functionality
+- **recommendation_service.py**: Restaurant ranking algorithms
+- **validation_service.py**: Restaurant data validator
+- **restaurant_reasoning_service.py**: Main business logic service
 
-### 3. **Development Friendly**
-- Proper Python package structure
-- Clear import paths
-- Organized test suite
+### Main Server
+- **restaurant_reasoning_mcp_server.py**: FastMCP server with reasoning tools
 
-### 4. **Deployment Ready**
-- All deployment scripts in `/scripts/`
-- Configuration files in `/config/`
-- Documentation in `/docs/`
+### Tests
+- Comprehensive unit tests for all services and components
+- MCP tool integration tests
+- End-to-end reasoning workflow tests
 
-## 🔧 Import Path Updates
+## Dependencies
 
-### Updated Import Statements
-```python
-# Old imports (root level)
-from services.restaurant_service import RestaurantService
-from models.restaurant_models import Restaurant
+- mcp>=1.10.0: Model Context Protocol framework
+- bedrock-agentcore: AWS Bedrock AgentCore SDK
+- bedrock-agentcore-starter-toolkit: AgentCore development toolkit
+- pydantic>=2.0.0: Data validation and serialization
+- Additional dependencies for authentication and web services
 
-# New imports (organized structure)
-from src.services.restaurant_service import RestaurantService
-from src.models.restaurant_models import Restaurant
-```
+## Implementation Status
 
-### Python Path Configuration
-Add to your Python path or use relative imports:
-```python
-import sys
-sys.path.append('.')  # Add project root to path
-```
-
-## 🚀 Usage After Reorganization
-
-### Running from Project Root
-```bash
-cd restaurant-search-mcp
-
-# Run deployment
-python scripts/execute_deployment.py
-
-# Run tests
-python tests/test_auth_prompt.py
-python tests/test_deployed_agent_toolkit.py
-
-# Run MCP server locally
-python src/restaurant_mcp_server.py
-```
-
-### Running BedrockAgentCoreApp
-```bash
-cd restaurant-search-mcp
-python src/main.py
-```
-
-## 📋 Configuration Updates Needed
-
-### 1. Update .bedrock_agentcore.yaml
-```yaml
-# Update entrypoint path
-entrypoint: src/main.py  # Changed from main.py
-```
-
-### 2. Update MCP Configuration
-```json
-{
-  "mcpServers": {
-    "restaurant-search-mcp": {
-      "command": "python",
-      "args": ["src/restaurant_mcp_server.py"],  // Updated path
-      "cwd": "restaurant-search-mcp",            // Updated working directory
-      "env": {
-        "PYTHONPATH": "."
-      }
-    }
-  }
-}
-```
-
-### 3. Update Deployment Scripts
-- Update file paths in deployment scripts
-- Adjust working directories
-- Update import statements
-
-## 🎯 Template Creation Benefits
-
-### Easy Replication
-```bash
-# Create new MCP app
-cp -r restaurant-search-mcp my-new-mcp-app
-
-# Customize for new domain
-cd my-new-mcp-app
-# Update src/main.py with new tools
-# Update src/services/ with new business logic
-# Update config/ with new configurations
-```
-
-### Consistent Structure
-- Same directory layout for all MCP apps
-- Standardized deployment process
-- Reusable documentation templates
-
-### Scalable Development
-- Add new services in `src/services/`
-- Add new models in `src/models/`
-- Add new tests in `tests/`
-- Add new scripts in `scripts/`
-
----
-
-**Structure Created**: September 27, 2025  
-**Status**: ✅ Ready for Template Use  
-**Next Action**: Update configuration files and test the new structure
+This project structure is set up as part of task 1. Individual components will be implemented in subsequent tasks according to the implementation plan.
