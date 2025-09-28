@@ -7,6 +7,7 @@ This script helps debug authentication issues with Cognito.
 
 import json
 import boto3
+import getpass
 from botocore.exceptions import ClientError
 from services.auth_service import CognitoAuthenticator, AuthenticationError
 
@@ -22,7 +23,10 @@ def debug_cognito_auth():
     client_id = config['app_client']['client_id']
     region = config['region']
     username = config['test_user']['email']
-    password = "TestPass123!"
+    
+    # Prompt for password securely
+    print(f"Please enter password for {username}:")
+    password = getpass.getpass("Password: ")
     
     print(f"Debugging authentication for:")
     print(f"  User Pool ID: {user_pool_id}")

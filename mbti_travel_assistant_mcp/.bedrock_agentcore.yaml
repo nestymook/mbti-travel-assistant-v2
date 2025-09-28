@@ -1,58 +1,35 @@
-# Amazon Bedrock AgentCore Configuration
-# MBTI Travel Assistant MCP Server
-
-name: "mbti-travel-assistant-mcp"
-description: "MBTI Travel Assistant that orchestrates MCP client calls to restaurant search and reasoning services"
-version: "1.0.0"
-
-# Platform Configuration - ARM64 required for AgentCore Runtime
-platform: "linux/arm64"
-container_runtime: "docker"
-
-# Network Configuration
-network_mode: "PUBLIC"
-
-# Runtime Configuration
-runtime:
-  type: "agentcore"
-  framework: "strands-agents"
-  
-# Authentication Configuration
-authentication:
-  type: "jwt"
-  config:
-    customJWTAuthorizer:
-      allowedClients: []  # To be configured during deployment
-      discoveryUrl: ""    # To be configured with Cognito User Pool
-
-# Observability Configuration
-observability:
-  enabled: true
-  tracing: true
-  metrics: true
-  logs: true
-  
-# Environment Variables
-environment:
-  AWS_REGION: "us-east-1"
-  AWS_DEFAULT_REGION: "us-east-1"
-  DOCKER_CONTAINER: "1"
-  LOG_LEVEL: "INFO"
-  
-# Resource Configuration
-resources:
-  cpu: "1 vCPU"
-  memory: "2 GB"
-  
-# Scaling Configuration
-scaling:
-  min_instances: 1
-  max_instances: 10
-  target_utilization: 70
-
-# Health Check Configuration
-health_check:
-  path: "/health"
-  interval: 30
-  timeout: 5
-  retries: 3
+default_agent: mbti_travel_assistant_mcp
+agents:
+  mbti_travel_assistant_mcp:
+    name: mbti_travel_assistant_mcp
+    entrypoint: C:/MBTI_Travel_Assistant/mbti_travel_assistant_mcp/main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-e69df5f887
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-mbti_travel_assistant_mcp
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: mbti_travel_assistant_mcp-skv6fd785E
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-mbti_travel_assistant_mcp-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e69df5f887
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
+    request_header_configuration: null
+    oauth_configuration: null

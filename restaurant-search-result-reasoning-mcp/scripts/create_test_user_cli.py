@@ -9,6 +9,7 @@ which might have different permission requirements.
 import json
 import subprocess
 import sys
+import getpass
 
 
 def run_aws_cli_command(command):
@@ -37,7 +38,10 @@ def create_test_user_with_cli():
     
     user_pool_id = config['user_pool']['user_pool_id']
     new_username = "testing_user@test.com.hk"
-    new_password = "TestPass123!"
+    
+    # Prompt for password securely
+    print(f"Please enter password for {new_username}:")
+    new_password = getpass.getpass("Password: ")
     
     print(f"Creating test user: {new_username}")
     print(f"User Pool ID: {user_pool_id}")
@@ -102,7 +106,10 @@ def test_authentication():
     
     client_id = config['app_client']['client_id']
     username = config['test_user']['username']
-    password = "TestPass123!"
+    
+    # Prompt for password securely
+    print(f"Please enter password for {username} to test authentication:")
+    password = getpass.getpass("Password: ")
     
     print(f"Testing authentication for: {username}")
     
@@ -154,7 +161,7 @@ def main():
         if auth_success:
             print("\n✅ Test user creation completed successfully!")
             print("Username: testing_user@test.com.hk")
-            print("Password: TestPass123!")
+            print("Password: [Password set securely]")
             return 0
         else:
             print("\n⚠️ User created but authentication test failed")

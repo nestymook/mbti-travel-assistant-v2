@@ -1,0 +1,57 @@
+{
+  "name": "mbti-travel-assistant-mcp-production",
+  "container_uri": "209803798463.dkr.ecr.us-east-1.amazonaws.com/mbti-travel-assistant-mcp:latest",
+  "platform": "linux/arm64",
+  "network_mode": "PUBLIC",
+  "authentication": {
+    "type": "jwt",
+    "config": {
+      "customJWTAuthorizer": {
+        "allowedClients": [],
+        "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration"
+      }
+    }
+  },
+  "environment": {
+    "AWS_REGION": "us-east-1",
+    "AWS_DEFAULT_REGION": "us-east-1",
+    "ENVIRONMENT": "production",
+    "COGNITO_USER_POOL_ID": "us-east-1_wBAxW7yd4",
+    "COGNITO_REGION": "us-east-1",
+    "DOCKER_CONTAINER": "1",
+    "SEARCH_MCP_ENDPOINT": "https://restaurant_search_conversational_agent-dsuHTs5FJn.agentcore.us-east-1.amazonaws.com",
+    "REASONING_MCP_ENDPOINT": "https://restaurant_reasoning_mcp-UFz1VQCFu1.agentcore.us-east-1.amazonaws.com",
+    "MCP_CONNECTION_TIMEOUT": "45",
+    "MCP_RETRY_ATTEMPTS": "5",
+    "AGENT_MODEL": "amazon.nova-pro-v1:0:300k",
+    "AGENT_TEMPERATURE": "0.1",
+    "AGENT_MAX_TOKENS": "4096",
+    "LOG_LEVEL": "INFO",
+    "LOG_FORMAT": "json",
+    "CACHE_ENABLED": "true",
+    "CACHE_TTL": "1800",
+    "JWT_ALGORITHM": "RS256",
+    "TOKEN_CACHE_TTL": "1800"
+  },
+  "observability": {
+    "enabled": true,
+    "tracing": true,
+    "metrics": true,
+    "logs": true
+  },
+  "resources": {
+    "cpu": "2 vCPU",
+    "memory": "4 GB"
+  },
+  "scaling": {
+    "min_instances": 2,
+    "max_instances": 20,
+    "target_utilization": 70
+  },
+  "health_check": {
+    "path": "/health",
+    "interval": 30,
+    "timeout": 5,
+    "retries": 3
+  }
+}
