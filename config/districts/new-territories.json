@@ -23,12 +23,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3002",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3002",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3002",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3002"
-      ],
       "districtId": 3002
     },
     {
@@ -51,12 +45,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3003",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3003",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3003",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3003"
-      ],
       "districtId": 3003
     },
     {
@@ -79,12 +67,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3005",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3005",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3005",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3005"
-      ],
       "districtId": 3005
     },
     {
@@ -107,12 +89,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3007",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3007",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3007",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3007"
-      ],
       "districtId": 3007
     },
     {
@@ -135,12 +111,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3001",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3001",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3001",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3001"
-      ],
       "districtId": 3001
     },
     {
@@ -163,12 +133,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3004",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3004",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3004",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3004"
-      ],
       "districtId": 3004
     },
     {
@@ -191,12 +155,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3006",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3006",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3006",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3006"
-      ],
       "districtId": 3006
     },
     {
@@ -219,12 +177,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3008",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3008",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3008",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3008"
-      ],
       "districtId": 3008
     },
     {
@@ -247,12 +199,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3009",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3009",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3009",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3009"
-      ],
       "districtId": 3009
     },
     {
@@ -275,12 +221,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3010",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3010",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3010",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3010"
-      ],
       "districtId": 3010
     },
     {
@@ -303,12 +243,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3011",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3011",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3011",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3011"
-      ],
       "districtId": 3011
     },
     {
@@ -331,12 +265,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3012",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3012",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3012",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3012"
-      ],
       "districtId": 3012
     },
     {
@@ -359,12 +287,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3013",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3013",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3013",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3013"
-      ],
       "districtId": 3013
     },
     {
@@ -387,12 +309,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3014",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3014",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3014",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3014"
-      ],
       "districtId": 3014
     },
     {
@@ -415,12 +331,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3015",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3015",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3015",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3015"
-      ],
       "districtId": 3015
     },
     {
@@ -443,12 +353,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3016",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3016",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3016",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3016"
-      ],
       "districtId": 3016
     },
     {
@@ -471,12 +375,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3017",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3017",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3017",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3017"
-      ],
       "districtId": 3017
     },
     {
@@ -499,12 +397,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3018",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3018",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3018",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3018"
-      ],
       "districtId": 3018
     },
     {
@@ -527,12 +419,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3019",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3019",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3019",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3019"
-      ],
       "districtId": 3019
     },
     {
@@ -555,12 +441,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3020",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3020",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3020",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3020"
-      ],
       "districtId": 3020
     },
     {
@@ -583,12 +463,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3021",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3021",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3021",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3021"
-      ],
       "districtId": 3021
     },
     {
@@ -611,12 +485,6 @@
         "intervalPages": 5,
         "saveProgressEvery": 2
       },
-      "openriceUrls": [
-        "https://www.openrice.com/en/hongkong/restaurants?regionId=0&districtId=3022",
-        "https://www.openrice.com/en/hongkong/restaurants/district/3022",
-        "https://www.openrice.com/zh/hongkong/restaurants?regionId=0&districtId=3022",
-        "https://www.openrice.com/zh/hongkong/restaurants/district/3022"
-      ],
       "districtId": 3022
     }
   ]

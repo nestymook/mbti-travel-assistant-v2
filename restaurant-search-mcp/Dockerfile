@@ -37,4 +37,4 @@ COPY . .
 
 # Use the full module path
 
-CMD ["opentelemetry-instrument", "python", "-m", "restaurant_mcp_server"]
+CMD ["opentelemetry-instrument", "python", "-m", "main"]

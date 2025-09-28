@@ -1,4 +1,4 @@
-default_agent: restaurant_search_mcp
+default_agent: restaurant_search_conversational_agent
 agents:
   restaurant_search_conversational_agent:
     name: restaurant_search_conversational_agent
@@ -6,27 +6,31 @@ agents:
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-edbe21d01d
-      execution_role_auto_create: false
+      execution_role: null
+      execution_role_auto_create: true
       account: '209803798463'
       region: us-east-1
-      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_conversational_agent
-      ecr_auto_create: false
+      ecr_repository: null
+      ecr_auto_create: true
       network_configuration:
         network_mode: PUBLIC
       protocol_configuration:
-        server_protocol: HTTP
+        server_protocol: MCP
       observability:
         enabled: true
     bedrock_agentcore:
       agent_id: restaurant_search_conversational_agent-dsuHTs5FJn
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_conversational_agent-dsuHTs5FJn
-      agent_session_id: 32c5821f-5ed6-4edc-97e1-012ce82d0254
+      agent_session_id: null
     codebuild:
       project_name: null
       execution_role: null
       source_bucket: null
-    authorizer_configuration: null
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp:

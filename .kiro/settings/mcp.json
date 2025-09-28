@@ -16,6 +16,22 @@
         "search_restaurants_combined"
       ],
       "disabledTools": []
+    },
+    "restaurant-reasoning-mcp": {
+      "command": "python",
+      "args": [
+        "restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py"
+      ],
+      "env": {
+        "REQUIRE_AUTHENTICATION": "false",
+        "PYTHONPATH": "restaurant-search-result-reasoning-mcp"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "disabledTools": []
     }
   }
 }
