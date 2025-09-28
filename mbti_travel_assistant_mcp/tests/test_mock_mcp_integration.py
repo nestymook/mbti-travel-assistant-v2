@@ -268,7 +268,7 @@ class TestMockMCPIntegration:
             
             # Create restaurant agent
             with patch('services.restaurant_agent.settings') as mock_settings:
-                mock_settings.agentcore.agent_model = "anthropic.claude-3-5-sonnet-20241022-v2:0"
+                mock_settings.agentcore.agent_model = "amazon.nova-pro-v1:0:300k"
                 mock_settings.agentcore.agent_temperature = 0.1
                 mock_settings.agentcore.agent_max_tokens = 4096
                 

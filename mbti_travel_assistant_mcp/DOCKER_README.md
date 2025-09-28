@@ -123,7 +123,7 @@ JWT_AUDIENCE=mbti-travel-assistant-prod
 
 #### AgentCore Runtime Configuration
 ```bash
-AGENT_MODEL=anthropic.claude-3-5-sonnet-20241022-v2:0
+AGENT_MODEL=amazon.nova-pro-v1:0:300k
 AGENT_TEMPERATURE=0.1
 AGENT_MAX_TOKENS=4096
 ```

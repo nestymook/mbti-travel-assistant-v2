@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This feature involves creating an MBTI Travel Assistant that operates as a Bedrock AgentCore runtime service, receiving HTTP requests from web servers and using an internal LLM to orchestrate MCP client calls to existing MCP servers. The system will process HTTP payloads containing district and meal time parameters, authenticate requests via JWT tokens, and use an embedded foundation model to intelligently coordinate calls to existing MCP servers for restaurant search and sentiment-based reasoning.
+This feature involves creating an MBTI Travel Assistant that operates as a Bedrock AgentCore runtime service that receives HTTP requests from web servers and uses an internal LLM to orchestrate calls to existing deployed AgentCore MCP servers for restaurant search and sentiment-based reasoning.
 
-The application follows the BedrockAgentCore runtime pattern with an entrypoint that receives structured payloads, processes them through an internal LLM agent, and returns exactly one recommended restaurant plus 19 candidate restaurants in JSON format optimized for front-end web application consumption. The internal LLM acts as an MCP client to communicate with existing `restaurant_search_conversational_agent` and `restaurant_reasoning_mcp` MCP servers.
+The application follows the BedrockAgentCore runtime pattern with an entrypoint that receives structured payloads, processes them through an internal LLM agent, and returns exactly one recommended restaurant plus 19 candidate restaurants in JSON format optimized for front-end web application consumption. The internal LLM acts as an MCP client to communicate with existing deployed AgentCore MCP servers: `restaurant_search_conversational_agent-dsuHTs5FJn` and `restaurant_reasoning_mcp-UFz1VQCFu1`.
 
 ## Requirements
 
@@ -42,20 +42,20 @@ The application follows the BedrockAgentCore runtime pattern with an entrypoint 
 
 ### Requirement 3 - MCP Client Integration for Internal LLM
 
-**User Story:** As an internal LLM agent, I want to act as an MCP client to communicate with existing MCP servers, so that I can retrieve restaurant data and generate intelligent recommendations.
+**User Story:** As an internal LLM agent, I want to act as an MCP client to communicate with existing deployed AgentCore MCP servers, so that I can retrieve restaurant data and generate intelligent recommendations.
 
 #### Acceptance Criteria
 
-1. WHEN the internal LLM needs restaurant data THEN it SHALL establish MCP client connections to the `restaurant-search-mcp` MCP server
-2. WHEN making MCP calls to the search server THEN the LLM SHALL use the `search_restaurants_combined` MCP tool with district and meal_type parameters
-3. WHEN search MCP responses are received THEN the LLM SHALL parse the restaurant data from the MCP tool response and validate the structure
-4. WHEN restaurant data is obtained THEN the LLM SHALL establish MCP client connection to the `restaurant-reasoning-mcp` MCP server
-5. WHEN calling the reasoning MCP server THEN the LLM SHALL use the `recommend_restaurants` MCP tool with the restaurant list and ranking method parameters
-6. WHEN reasoning MCP responses are received THEN the LLM SHALL extract the recommendation and candidates from the MCP tool response
-7. WHEN MCP connections fail THEN the LLM SHALL implement retry logic and error handling for MCP client connectivity issues
-8. WHEN MCP tool calls fail THEN the LLM SHALL handle tool execution errors gracefully and provide meaningful error context
-9. IF MCP servers are unavailable THEN the LLM SHALL return appropriate error messages indicating which MCP service is unavailable
-10. WHEN MCP responses are malformed THEN the LLM SHALL handle parsing errors and provide fallback responses
+1. WHEN the internal LLM needs restaurant data THEN it SHALL establish HTTP connections to the deployed AgentCore MCP server `restaurant_search_conversational_agent-dsuHTs5FJn`
+2. WHEN making calls to the search server THEN the LLM SHALL use HTTP requests to the AgentCore runtime endpoint with district and meal_type parameters
+3. WHEN search responses are received THEN the LLM SHALL parse the restaurant data from the HTTP response and validate the structure
+4. WHEN restaurant data is obtained THEN the LLM SHALL establish HTTP connection to the deployed AgentCore MCP server `restaurant_reasoning_mcp-UFz1VQCFu1`
+5. WHEN calling the reasoning server THEN the LLM SHALL use HTTP requests to the AgentCore runtime endpoint with the restaurant list and ranking method parameters
+6. WHEN reasoning responses are received THEN the LLM SHALL extract the recommendation and candidates from the HTTP response
+7. WHEN HTTP connections fail THEN the LLM SHALL implement retry logic and error handling for AgentCore connectivity issues
+8. WHEN AgentCore calls fail THEN the LLM SHALL handle execution errors gracefully and provide meaningful error context
+9. IF AgentCore servers are unavailable THEN the LLM SHALL return appropriate error messages indicating which AgentCore service is unavailable
+10. WHEN AgentCore responses are malformed THEN the LLM SHALL handle parsing errors and provide fallback responses
 
 ### Requirement 4 - JSON Response Structure for Frontend
 
@@ -155,7 +155,24 @@ The application follows the BedrockAgentCore runtime pattern with an entrypoint 
 9. WHEN secrets are managed THEN they SHALL be stored securely using AWS Secrets Manager or similar
 10. IF deployment fails THEN the system SHALL provide detailed error information for troubleshooting
 
-### Requirement 10 - Testing and Quality Assurance
+### Requirement 10 - MCP Server Implementation
+
+**User Story:** As an MCP client application, I want to access restaurant recommendation functionality through MCP protocol, so that I can integrate restaurant recommendations into various applications and workflows.
+
+#### Acceptance Criteria
+
+1. WHEN the MCP server starts THEN it SHALL expose restaurant recommendation tools via the Model Context Protocol
+2. WHEN MCP clients connect THEN the server SHALL provide tool discovery with available restaurant recommendation tools
+3. WHEN the `get_restaurant_recommendation` MCP tool is called THEN it SHALL accept district and meal_time parameters
+4. WHEN processing MCP tool calls THEN the server SHALL use the same internal LLM agent and AgentCore client logic as the runtime entrypoint
+5. WHEN returning MCP tool responses THEN they SHALL contain structured restaurant recommendation data
+6. WHEN MCP tool calls fail THEN the server SHALL return appropriate MCP error responses with error details
+7. WHEN multiple MCP clients connect THEN the server SHALL handle concurrent connections efficiently
+8. WHEN MCP protocol negotiation occurs THEN the server SHALL support the latest MCP protocol version
+9. IF MCP tool parameters are invalid THEN the server SHALL return validation error responses
+10. WHEN MCP server health is checked THEN it SHALL report the status of underlying AgentCore dependencies
+
+### Requirement 11 - Testing and Quality Assurance
 
 **User Story:** As a developer, I want comprehensive testing coverage for the travel assistant, so that I can ensure reliability and correctness of restaurant recommendations.
 

@@ -115,7 +115,7 @@ class AgentCoreSettings(BaseSettings):
     
     # Strands Agent Configuration
     agent_model: str = Field(
-        default="anthropic.claude-3-5-sonnet-20241022-v2:0",
+        default="amazon.nova-pro-v1:0:300k",
         env="AGENT_MODEL",
         description="Foundation model for Strands Agent"
     )

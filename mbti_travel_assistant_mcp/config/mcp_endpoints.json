@@ -103,7 +103,7 @@
   },
   "production": {
     "search_mcp": {
-      "endpoint": "https://prod-search-mcp.agentcore.aws",
+      "endpoint": "https://restaurant_search_conversational_agent-dsuHTs5FJn.agentcore.us-east-1.amazonaws.com",
       "name": "restaurant-search-mcp",
       "description": "Restaurant search MCP server for production",
       "tools": [
@@ -135,7 +135,7 @@
       }
     },
     "reasoning_mcp": {
-      "endpoint": "https://prod-reasoning-mcp.agentcore.aws",
+      "endpoint": "https://restaurant_reasoning_mcp-UFz1VQCFu1.agentcore.us-east-1.amazonaws.com",
       "name": "restaurant-reasoning-mcp",
       "description": "Restaurant reasoning MCP server for production",
       "tools": [

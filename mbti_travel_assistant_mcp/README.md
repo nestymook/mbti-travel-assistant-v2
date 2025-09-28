@@ -109,7 +109,7 @@ COGNITO_USER_POOL_ID=us-east-1_example123
 COGNITO_REGION=us-east-1
 
 # Agent Configuration
-AGENT_MODEL=anthropic.claude-3-5-sonnet-20241022-v2:0
+AGENT_MODEL=amazon.nova-pro-v1:0:300k
 AGENT_TEMPERATURE=0.1
 
 # Caching

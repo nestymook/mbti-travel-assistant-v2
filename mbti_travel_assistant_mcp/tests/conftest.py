@@ -48,7 +48,7 @@ def test_settings():
         ),
         agentcore=ApplicationSettings.AgentCoreSettings(
             runtime_port=8080,
-            agent_model="anthropic.claude-3-5-sonnet-20241022-v2:0",
+            agent_model="amazon.nova-pro-v1:0:300k",
             agent_temperature=0.1,
             agent_max_tokens=1000
         ),

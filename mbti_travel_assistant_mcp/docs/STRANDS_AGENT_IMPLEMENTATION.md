@@ -19,7 +19,7 @@ This document summarizes the implementation of Task 5: "Implement internal LLM a
 2. **Agent Configuration:**
    ```python
    model_config = ModelConfig(
-       model_id=settings.agentcore.agent_model,  # anthropic.claude-3-5-sonnet-20241022-v2:0
+       model_id=settings.agentcore.agent_model,  # amazon.nova-pro-v1:0:300k
        temperature=settings.agentcore.agent_temperature,  # 0.1
        max_tokens=settings.agentcore.agent_max_tokens,  # 4096
        top_p=0.9,
@@ -88,7 +88,7 @@ This document summarizes the implementation of Task 5: "Implement internal LLM a
 **Settings Configuration** (already existed):
 ```python
 class AgentCoreSettings(BaseSettings):
-    agent_model: str = "anthropic.claude-3-5-sonnet-20241022-v2:0"
+    agent_model: str = "amazon.nova-pro-v1:0:300k"
     agent_temperature: float = 0.1
     agent_max_tokens: int = 4096
 ```
