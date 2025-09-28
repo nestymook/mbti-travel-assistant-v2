@@ -1,0 +1,987 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T21:38:19.864Z",
+    "version": "1.0.0",
+    "district": "Shek O",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 28,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.685Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "11f173be-afb1-4d39-895a-f54b4459ad64",
+      "name": "urchin",
+      "address": "G/F, 358 Shek O Village",
+      "mealType": [
+        "Italian",
+        "shek o",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 3,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe2f5ee4-50d0-4d01-9cf2-7606dbe3fe32",
+      "name": "和牛漢堡扒 八寶河",
+      "address": "G/F, 598 Shek O Village",
+      "mealType": [
+        "shek o",
+        "Western",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7a036a3-cf28-4d84-aaf1-59e322389e70",
+      "name": "headed Canadian 忌廉湯 curry",
+      "address": "G/F, 907 Shek O Village",
+      "mealType": [
+        "BBQ Ground",
+        "Hong Kong Style",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3ab62b71-2a32-483f-a983-152a894cb463",
+      "name": "即煮美食站",
+      "address": "G/F, Shek O Beach Building, Shek O Beach",
+      "mealType": [
+        "Mediterranean",
+        "hamburger",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 16,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8bb6d4a2-f113-49a0-a099-de8ab02fb8a0",
+      "name": "pastries Cutlet",
+      "address": "Fast Food Kiosk, Big Wave Bay Beach",
+      "mealType": [
+        "shek o",
+        "hamburger",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8af8e3e9-78ff-4226-88f4-0ab387bab399",
+      "name": "n N branches",
+      "address": "Tai Long Wan",
+      "mealType": [
+        "Snack Shop & Deli",
+        "shek o",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "235b7000-a72f-4911-9a96-5b4b4ab9c70e",
+      "name": "巴斯克烤芝士蛋糕 西京燒定食 308 韓式牛肉",
+      "address": "Shop 103, G/F, 784 Shek O Village",
+      "mealType": [
+        "bbq",
+        "shek o",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f2c4aad6-d9de-4521-83bf-facc02b62c1d",
+      "name": "PHO 海天一色 Temple",
+      "address": "G/F, 580 Shek O Village",
+      "mealType": [
+        "Thai",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 5,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0a167cb4-3292-429b-a8e8-6bd83448a443",
+      "name": "discount",
+      "address": "Big Wave Bay",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "food stall noodles"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d86b295e-80d2-4d3a-ba29-0c6a6a0b5896",
+      "name": "Italian",
+      "address": "G/F, 061 Shek O Village",
+      "mealType": [
+        "Western",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5285bb55-b61c-4e8c-bfbd-5b7fd44c7b80",
+      "name": "Yuet",
+      "address": "Shop 047, G/F, Car Park, Shek O Beach",
+      "mealType": [
+        "BBQ Ground",
+        "Hong Kong Style",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "acf55e86-d692-4805-86b3-ae2cf79bff19",
+      "name": "串燒鱔片",
+      "address": "G/F, 639 Shek O Village",
+      "mealType": [
+        "Dai Pai Dong",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ccb1aa4-a5c8-47a5-8ef6-930c26b640e2",
+      "name": "SOUTHSIDE",
+      "address": "G/F, 01 Shek O Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a5a0ebc-cdcf-456a-a88b-2d7c71bd231d",
+      "name": "排骨蛋炒飯 tiles 街頭豬腸粉",
+      "address": "G/F, 211 Shek O Village",
+      "mealType": [
+        "shek o",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bee08f17-c16f-4cf2-beb8-5f3fd07751e8",
+      "name": "寶寶餐廳小廚's 招牌鮮炸肉丸",
+      "address": "G/F, 884 Shek O Village",
+      "mealType": [
+        "shek o",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "adcc44fa-7e3d-4038-b08f-7af5b750c1a8",
+      "name": "136 菠蘿炒飯 蒜蓉烤餅",
+      "address": "G/F, 165 Shek O Village",
+      "mealType": [
+        "hong kong style",
+        "shek o",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e849f01-b4b4-4794-899b-127a14fb5cd7",
+      "name": "龍蝦湯 芥辣牛柳粒 pastry",
+      "address": "土地灣",
+      "mealType": [
+        "Hong Kong Style",
+        "shek o",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "07c24f34-e958-4598-a903-74b16e1579a6",
+      "name": "回鍋肉 Campus Hang",
+      "address": "G/F, 850 Shek O Village",
+      "mealType": [
+        "Western",
+        "shek o",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "651a49fe-7b7b-44e0-802a-56ea9f7971c1",
+      "name": "faces 焗雞翼 Surprisingly",
+      "address": "Shek O Village Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5ba0042c-ba41-46cf-9d45-28618194e6c9",
+      "name": "leisurely",
+      "address": "Hok Tsui Tsuen",
+      "mealType": [
+        "hong kong style",
+        "sweet soup",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c81003d4-ea40-44f6-86bf-5282b1df217c",
+      "name": "fare famous Supreme Ning",
+      "address": "G/F, 549 Shek O Village",
+      "mealType": [
+        "Hong Kong Style",
+        "shek o",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "948144e6-fed2-47b9-b782-6d8338ea4c60",
+      "name": "一口粟米 芝麻雞翼 too LIKE",
+      "address": "G/F, 208 Shek O Village Road",
+      "mealType": [
+        "hong kong style",
+        "shek o",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9b9da4fd-13b9-4090-843d-7e8a56fe0a58",
+      "name": "plaza",
+      "address": "Address not available",
+      "mealType": [
+        "Unknown"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "incomplete",
+        "version": "1.0.0",
+        "qualityScore": 45
+      }
+    },
+    {
+      "id": "d682dbf9-fe67-424e-b685-00af9c952ff5",
+      "name": "愛文生",
+      "address": "Address not available",
+      "mealType": [
+        "Unknown"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "incomplete",
+        "version": "1.0.0",
+        "qualityScore": 45
+      }
+    },
+    {
+      "id": "0e5349ea-02b7-4e17-9133-9a4dc45bd8c9",
+      "name": "回鍋肉粗炒",
+      "address": "Shek O Beach",
+      "mealType": [
+        "shek o",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e77c5f8e-ac04-48e3-83d0-8e6c56de6a2c",
+      "name": "西貢脆春卷",
+      "address": "Hok Tsui Tsuen",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a709e950-00e1-4ec0-93bd-ba3d238edf74",
+      "name": "SANGDONG 烤填鴨",
+      "address": "G/F, 777 Shek O Village",
+      "mealType": [
+        "noodles rice noodles",
+        "shek o",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 0,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8344d0d5-e357-41f0-a53b-ed06b52f4a24",
+      "name": "Salted 拉麵 White",
+      "address": "G/F, Shek O Beach Building, Shek O Beach",
+      "mealType": [
+        "Western",
+        "shek o"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Shek O",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    }
+  ]
+}

@@ -18,12 +18,14 @@ The application focuses on sentiment-based reasoning rather than search function
 2. WHEN selecting candidates THEN the system SHALL rank restaurants by either highest sentiment likes OR highest combined likes plus neutral percentage
 3. WHEN ranking by sentiment likes THEN the system SHALL sort restaurants in descending order by the "likes" value in the sentiment field
 4. WHEN ranking by combined sentiment THEN the system SHALL calculate (likes + neutral) percentage and sort in descending order
-5. WHEN candidates are selected THEN the system SHALL return the top 20 restaurants from the ranked list
-6. WHEN providing a recommendation THEN the system SHALL randomly select 1 restaurant from the top 20 candidates
-7. WHEN returning results THEN the system SHALL provide both the complete candidate list (20 restaurants) and the single recommended restaurant
-8. IF fewer than 20 restaurants are provided THEN the system SHALL return all available restaurants as candidates
-9. IF sentiment data is missing or invalid for a restaurant THEN the system SHALL exclude it from ranking calculations
-10. WHEN sentiment percentages are calculated THEN the system SHALL ensure they are based on total sentiment responses (likes + dislikes + neutral)
+5. WHEN candidates are selected THEN the system SHALL return the top 10 restaurants from the ranked list for lunch and dinner meal types, and top 20 restaurants for breakfast meal type
+6. WHEN providing a recommendation THEN the system SHALL randomly select 1 restaurant from the top candidates (10 for lunch/dinner, 20 for breakfast)
+7. WHEN returning results THEN the system SHALL provide both the complete candidate list (10 for lunch/dinner, 20 for breakfast) and the single recommended restaurant
+8. IF fewer than the required number of restaurants are provided THEN the system SHALL return all available restaurants as candidates
+9. WHEN meal type context is available THEN the system SHALL determine candidate count based on meal type: breakfast (20 candidates), lunch (10 candidates), dinner (10 candidates)
+10. IF meal type context is not available THEN the system SHALL default to 10 candidates for general restaurant recommendations
+11. IF sentiment data is missing or invalid for a restaurant THEN the system SHALL exclude it from ranking calculations
+12. WHEN sentiment percentages are calculated THEN the system SHALL ensure they are based on total sentiment responses (likes + dislikes + neutral)
 
 ### Requirement 2
 

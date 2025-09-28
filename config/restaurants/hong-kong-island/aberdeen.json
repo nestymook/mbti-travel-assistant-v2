@@ -1,0 +1,1889 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T18:35:38.842Z",
+    "version": "1.0.0",
+    "district": "Aberdeen",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 54,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.513Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "18135090-5546-46f9-90a9-6c49a0238461",
+      "name": "neighbourhood 香煎餃子",
+      "address": "Shop 4, G/F, ac5, Nam Ning Street",
+      "mealType": [
+        "aberdeen",
+        "Hong Kong Style",
+        "food stall noodles"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5e34227c-f91a-4d4e-a927-cbd3c5f27291",
+      "name": "Fun 瀛燒居酒屋 offering Pasta",
+      "address": "Shop 1&9-0, 1/F, Aberdeen Centre Shopping Arcade Site 2",
+      "mealType": [
+        "chiu chow",
+        "aberdeen",
+        "Chiu Chow"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "247db314-b6a9-40f4-9e8f-0dde9ecb47c5",
+      "name": "北京填鴨",
+      "address": "Shop B&C, G/F, ac5, Nam Ning Street",
+      "mealType": [
+        "Japanese",
+        "roast meat",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8ed99eeb-b577-4635-b8ce-24ad09a68d5a",
+      "name": "卷 above 和牛 CF",
+      "address": "Shop 4B, G/F, Site 5, Aberdeen Centre, 14 Nam Ning Street",
+      "mealType": [
+        "all you can eat",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0f71b5b4-2440-4834-b475-b4497614832f",
+      "name": "豆乳 Yip",
+      "address": "455-866 Wah Kwong House, Wah Fu Estate, Aberdeen",
+      "mealType": [
+        "hong kong style",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c3ce186a-4bd0-4958-b503-c5a9f4ba1daf",
+      "name": "Fathoms Alva",
+      "address": "Shop 0, G/F, Aberdeen Centre Site 4, 11 Nam Ning Street, Aberdeen",
+      "mealType": [
+        "Stir Fry",
+        "Chinese",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9ab67f9a-1ef6-49b1-bb01-e43777646e07",
+      "name": "麵包蟹 和牛 韓餐Korean",
+      "address": "Shop 2-6, G/F, Aberdeen Centre Shopping Arcade Site 3, 1-5 Nam Ning Street",
+      "mealType": [
+        "aberdeen",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 4,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7e9b6e7-c841-4904-a71b-358afe29305a",
+      "name": "lasagna",
+      "address": "Shop CF1, Cooked Food Centre, 2/F, Aberdeen Municipal Services Building, 203 Aberdeen Main Road",
+      "mealType": [
+        "hong kong style",
+        "Cooked Food Center",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "400994f4-5743-4abe-b457-73471ffee583",
+      "name": "Sailing's",
+      "address": "Shop 87, 1/F, ac4, Nam Ning Street, Aberdeen",
+      "mealType": [
+        "Japanese",
+        "meatless menu",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 4,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a217973a-6545-4717-a416-381fb094519e",
+      "name": "Lun 特朱古力 Pig",
+      "address": "Shop H, 0/F, ac5, 14 Nam Ning Street",
+      "mealType": [
+        "Italian",
+        "pizza",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42819bef-2195-44cc-a9ba-c94f87e9530b",
+      "name": "2-3人餐 滷水 牛之盛合 Olive hanger",
+      "address": "Vessel No. B145430, Aberdeen New Reclamation Area 2A",
+      "mealType": [
+        "Takeaway",
+        "Nostalgic",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "83113e90-dc38-4915-bbf7-2112b30814f8",
+      "name": "providing Sip Semua",
+      "address": "Shop 5, G/F, Aberdeen Centre Shopping Arcade Site 2, 7-11 Nam Ning Street",
+      "mealType": [
+        "Taiwan",
+        "taiwanese drink",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "70baaec0-24ef-481e-a5b8-78cebc0b571c",
+      "name": "便當 popcorn 黑松露 Relax",
+      "address": "G/F, 537 Aberdeen Main Road, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abc80171-2378-4f45-aea2-89af37dba3b3",
+      "name": "抹茶刨冰 R&Y's Baked",
+      "address": "Shop 0, G/F, ABBA Shopping Mall, 223 Aberdeen Main Road, Aberdeen",
+      "mealType": [
+        "skewer",
+        "ramen",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c24df1a-92cc-4a2e-917e-17eb9e079fd5",
+      "name": "Nin",
+      "address": "G/F, Fu Yue Court, 88 Shek Pai Wan Road, Aberdeen",
+      "mealType": [
+        "hong kong style",
+        "Seafood",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8420f854-c38e-429d-bfc4-71b4c9f9bc22",
+      "name": "Vang",
+      "address": "Shop 3, 0/F, Site 4, Aberdeen Centre, 2-16 Nam Ning Street",
+      "mealType": [
+        "taiwan",
+        "aberdeen",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "351a3902-78d2-431f-8c43-9770b4a78707",
+      "name": "Stone's 七味炸雞",
+      "address": "Shop 0, G/F, Abba Shopping Mall, 223-227 Aberdeen Main Road",
+      "mealType": [
+        "salad",
+        "Western",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 0,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1d812346-8cf8-4c5c-aa50-58b72052510b",
+      "name": "火鍋冰室AO bottom",
+      "address": "Shop 216, 2/F, Port Centre, 38 Chengtu Road, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 8,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c091fae-e33e-4b64-bc2d-ad0016f89d2c",
+      "name": "燒鵝",
+      "address": "Shop C, G/F, Hip Sing Mansion, 58-62 Old Main Street Aberdeen, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "shanghai",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 14,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f3f13117-e8b0-49b7-9b1e-9af3dd49670b",
+      "name": "culture",
+      "address": "Shop 74, G/F, Noble Square, 3 Wah Kwai Road, Aberdeen",
+      "mealType": [
+        "noodles rice noodles",
+        "aberdeen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c734de89-5c86-4268-b583-a5a77d64ab7a",
+      "name": "imported dishes:",
+      "address": "G/F, Kam Heung Building, 128 Aberdeen Main Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3abdd604-e9a3-44ba-8f60-7040a8f838a6",
+      "name": "G05",
+      "address": "G/F, 784 Aberdeen Main Road, Aberdeen",
+      "mealType": [
+        "guangdong",
+        "hong kong style",
+        "chinese buns"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8db94831-94d1-4f20-9ade-9b029dd5b54a",
+      "name": "us",
+      "address": "Shop 3, G/F, Aberdeen Centre Site 2, 7-11 Nam Ning Street, Aberdeen",
+      "mealType": [
+        "sushi sashimi",
+        "aberdeen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb569e0f-4f77-47b3-a3e6-da383de494bf",
+      "name": "Little",
+      "address": "Shop 4-4, G/F, 208 Aberdeen Main Road, Aberdeen",
+      "mealType": [
+        "wonton dumpling",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5d5348c2-cdf7-4dad-9742-413e3d7278fe",
+      "name": "Lounge",
+      "address": "Shop 956, 3/F, Port Centre, 38 Chengtu Road",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "434eae04-c289-49a4-bfed-e991a37f18d4",
+      "name": "Kitchen choice",
+      "address": "Shop 0-7, G/F, 58-62 Old Main Street, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 4,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d63fd866-195a-43a3-a514-de65036f8723",
+      "name": "前菜 H dates",
+      "address": "No6-0 Town Centre Wah Fu Estate,, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2cfa2575-14c0-4c40-a910-cb669770b687",
+      "name": "泰式排骨",
+      "address": "Shop 8B & 5C, G/F, Aberdeen Centre Site 5, 6-12 Nam Ning Street, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "korean fried chicken",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 6,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4acd3806-ac92-4ec6-a567-adad5ca797ed",
+      "name": "冰粉 Each appeals",
+      "address": "Shop 893, 2/F, Port Centre, 208 Cheng Tu Road, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "yunnan",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0b62bc37-a628-4639-a191-95a969542832",
+      "name": "Japanese",
+      "address": "Shop F, 9/F, ac5, Nam Ning Street, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "Dim Sum",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 6,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4404253f-526c-46ed-b785-f52ca90e780a",
+      "name": "3企業 士多Tong single 鴛鴦滑",
+      "address": "Shop 06A, G/F, ABBA Shopping Mall, 223 Aberdeen Main Road, Aberdeen",
+      "mealType": [
+        "Vietnamese",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac913750-4a11-40fe-b102-1ecacd5191aa",
+      "name": "pet-friendly",
+      "address": "Shop 89, 10-24 & 26, G/F, ac2, Nam Ning Street",
+      "mealType": [
+        "hong kong style",
+        "Fast Food",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8146002-3510-4c85-986f-45e7f0c3ccd2",
+      "name": "漢堡扒 HOF",
+      "address": "G/F, May Court, 56 Old Main Street, Aberdeen",
+      "mealType": [
+        "aberdeen",
+        "Korean",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 5,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2543333d-7aea-4a1b-b720-a4b1235e66df",
+      "name": "火焰雪山 84",
+      "address": "4/F, Aberdeen Marina Club, 8 Shum Wan Road, Aberdeen",
+      "mealType": [
+        "guangdong",
+        "Club House",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d109ed9c-9779-4bb1-93a4-9bb099cf8842",
+      "name": "1-4 卡邦尼烏冬 Amazing",
+      "address": "Shop 977, 2/F, Port Centre, 38 Chengtu Road",
+      "mealType": [
+        "aberdeen",
+        "American",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c7271e54-c5d3-4460-8e09-d055d61adebf",
+      "name": "They Sun",
+      "address": "Shop 5, G/F, ac5, Nam Ning Street",
+      "mealType": [
+        "Fast Food",
+        "wonton dumpling",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc77f725-ab23-4c7d-a50a-f03a5dd1324c",
+      "name": "Ink 黑醋骨",
+      "address": "Shop 0B & 5C, G/F, Aberdeen Centre Site 5, 6-12 Nam Ning Street",
+      "mealType": [
+        "aberdeen",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9b53b7ce-991f-4388-9c30-179f5889dfc7",
+      "name": "Zhang sauces",
+      "address": "Shop 6, G/F, Siu Kwan Mansion, 118A-120 Old Main Street",
+      "mealType": [
+        "Japanese",
+        "aberdeen",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1560dd13-9ed9-4a73-aedf-c060911d708d",
+      "name": "Browse 狀元蹄 蒸元貝 originated Fast",
+      "address": "G/F, 26 Wu Pak Street",
+      "mealType": [
+        "Takeaway",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 14,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2a7c1c6c-adbd-44aa-8472-04b511d4835a",
+      "name": "豆腐 dim-sum addition various ONO Siu 什菓冰",
+      "address": "2/F-5/F, Onshine Commercial Building, 10 Tung Sing Road",
+      "mealType": [
+        "noodles rice noodles",
+        "aberdeen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f2eed097-78db-48c3-945c-fbf7badc4ebe",
+      "name": "330 餃 Reservoir",
+      "address": "Shop 77, 4/F, Noble Square, 3 Wah Kwai Road",
+      "mealType": [
+        "Dim Sum",
+        "guangdong",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed95e7c3-6e6d-43f8-9816-ed933cf3e520",
+      "name": "自家農場菜",
+      "address": "G/F, 65 Wu Pak Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c237edf3-3679-48fa-a0a6-44755fb97e6c",
+      "name": "Tres Brisket",
+      "address": "The Aberdeen Marina Club, 8 Shum Wan Road",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08f7ca6a-4da2-4b32-aa20-03d4dd037253",
+      "name": "壽司 Ushi bakery",
+      "address": "Shop D, G/F, Ever Secure Mansion, 21-25 Ka Wo Street, Tin Wan",
+      "mealType": [
+        "noodles rice noodles",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d0607c69-2ad4-4b69-b41d-eaa05cb812b9",
+      "name": "feelings Conservatory's 水晶球",
+      "address": "8/F, ac6, Nam Ning Street",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2157c2ab-2db2-4277-ae05-fe6882283ac4",
+      "name": "bun L2/F Mixian's",
+      "address": "Shop 99-93, G/F, Port Centre, 38 Chengtu Road",
+      "mealType": [
+        "bakery",
+        "aberdeen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4b25a01-e405-458e-83f3-501d79621655",
+      "name": "Pan",
+      "address": "Shop 9A-3B, G/F, ac4, Nam Ning Street",
+      "mealType": [
+        "American",
+        "aberdeen",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 4,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "16d5b691-299d-4977-98b8-8bdee1349353",
+      "name": "秘製肉丸",
+      "address": "G/F, 959 Shek Pai Wan Road",
+      "mealType": [
+        "aberdeen",
+        "Guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac3cab24-948b-4d76-b508-eda58c53cbe2",
+      "name": "BBQ dinnerParking cement",
+      "address": "Shop 26, G/F, Noble Square, 3 Wah Kwai Road",
+      "mealType": [
+        "Yunnan",
+        "yunnan",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47040756-e636-4a76-85f1-313aa29ba11e",
+      "name": "火炙壽司盛合(特上) 豆漿 spicy",
+      "address": "Shop 5, G/F, Silver Mansion, 81 Shek Pai Wan Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "aberdeen"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34460f86-5013-48c9-946e-8fe5a3532d78",
+      "name": "Centre",
+      "address": "Shop D, G/F, Sze Hei Building, 90-96 Shek Pai Wan Road",
+      "mealType": [
+        "aberdeen",
+        "noodles rice noodles",
+        "Shanghai"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eaff1ac0-639e-4d08-87a1-3f211ad95715",
+      "name": "藤椒魚皮 live 名人海鮮場，想見明星可以去碰一碰運氣。",
+      "address": "Shop K-L, G/F, Kam Fung Building, 171 Aberdeen Main Road",
+      "mealType": [
+        "Sweets",
+        "dessert",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0db1f834-87e8-413a-8b86-0f3dd18a7d89",
+      "name": "花膠雞麵",
+      "address": "Pao Yue Kong Swimming Pool, 2 Shum Wan Road, Wong Chuk Hang",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ddb4c96a-6cf7-4815-bbd8-ecbed0fa385e",
+      "name": "never sake G4D",
+      "address": "Shop A6, G/F, 82 Old Main Street Aberdeen",
+      "mealType": [
+        "hong kong style",
+        "Guangdong",
+        "sweet soup"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Aberdeen",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

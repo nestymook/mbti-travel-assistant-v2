@@ -1,0 +1,2105 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T17:49:34.018Z",
+    "version": "1.0.0",
+    "district": "Sha Tin",
+    "locationCategory": "New Territories",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:06.135Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "750641d7-1237-4a9d-bea8-6f08f81f4457",
+      "name": "Pepperoni beauty",
+      "address": "Shop 5671, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "sha tin",
+        "International",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 200,
+        "dislikes": 12,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42e59442-241b-4058-95b0-3829ac1307ae",
+      "name": "sit",
+      "address": "Shop 272A, 4/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 613,
+        "dislikes": 24,
+        "neutral": 44
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce18778e-96dc-40f4-b204-a60a1ab4a070",
+      "name": "Peking Nam",
+      "address": "Shop 645, 1/F, Kings Wing Plaza 1, 3 On Kwan Street, Shek Mun",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 681,
+        "dislikes": 11,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24615eb3-eed5-4766-b044-245a1638159d",
+      "name": "creating boasts dishes'",
+      "address": "Shop 18-73, 44-46, 1/F, Shatin Plaza, 21-27 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "Japanese",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 545,
+        "dislikes": 15,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "79170948-aac6-45c7-ac25-66073911edd9",
+      "name": "110 glass Wan Dirty",
+      "address": "Shop 776, 5/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 775,
+        "dislikes": 65,
+        "neutral": 103
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c21ac082-9a52-4f78-bec9-c1f60e803b85",
+      "name": "會所 well-known Afternoon",
+      "address": "Shop 476, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "American",
+        "Steak House",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 532,
+        "dislikes": 34,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c816a72-5b25-429f-b54d-4568b008ec5e",
+      "name": "pair Pici BIG dishes:",
+      "address": "Shop 429, 1/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Hong Kong Style",
+        "sha tin",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 924,
+        "dislikes": 37,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e310ce50-b69c-4d3b-9fb8-a22f17de765d",
+      "name": "izakaya Manya",
+      "address": "Shop 996, 2/F, Building 19W, 19 Science Park West Avenue, Hong Kong Science Park, Pak Shek Kok",
+      "mealType": [
+        "sha tin",
+        "International",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 537,
+        "dislikes": 20,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8974bb5a-a19c-42e4-bc91-34ed34b39f29",
+      "name": "breakfast Alaska",
+      "address": "Shop 528, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "roast meat",
+        "Japanese",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 315,
+        "dislikes": 7,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2f802b4a-0f84-4d45-9644-432b9c0db35e",
+      "name": "Pessoas's lots Nho 麵 西冷",
+      "address": "Shop 7, G/F, Shatin Park Phase 1, 8-12 Sha Kok Street",
+      "mealType": [
+        "sha tin",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 370,
+        "dislikes": 7,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "11ad7f33-eec3-4a8a-83c4-4f8bfe24cadf",
+      "name": "Mary high-end marble recommend @449's",
+      "address": "Shop A321, 3/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "Singaporean",
+        "sha tin",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 458,
+        "dislikes": 79,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8409b5f5-a684-4fb7-b965-ba2387dcc341",
+      "name": "黃金 Signature Whisk",
+      "address": "Shop 9, G/F, Lai Shing Garden, 1-7 Sha Tin Wai Road",
+      "mealType": [
+        "sha tin",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 344,
+        "dislikes": 14,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac8000e6-c987-4137-b7f6-6431b780e4ab",
+      "name": "手工即炸魚皮",
+      "address": "Shop 866, 6/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Western",
+        "French",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 469,
+        "dislikes": 13,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4685e09-3ce3-4c8c-814b-09ad6ab355d7",
+      "name": "Itamomo's 1-15",
+      "address": "Shop 1B-0C, 2/F, Wai Wah Centre, 11-17 Sha Tin Centre Street",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 370,
+        "dislikes": 3,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0146e48a-d8f6-4e0a-9999-04e8df54f2c3",
+      "name": "LG/F 烤豬扒 Path",
+      "address": "Shop 26, G/F, Garden Rivera, 20-30 Tai Chung Kiu Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 211,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "632b7877-0af3-4680-be6d-e39af4dcc289",
+      "name": "糖不甩 Crispy colours",
+      "address": "Shop 113, L6/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Coffee Shop",
+        "Korean",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 273,
+        "dislikes": 9,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4fcaa0e-c0f9-44fd-923a-99f671086d9b",
+      "name": "managers al",
+      "address": "Shop 66-58, G/F, Garden Rivera, 20-30 Tai Chung Kiu Road",
+      "mealType": [
+        "sha tin",
+        "teppanyaki",
+        "robatayaki"
+      ],
+      "sentiment": {
+        "likes": 179,
+        "dislikes": 6,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa96c4cb-2182-490d-9a6f-525045bfdde9",
+      "name": "薯條 狂人 Nothing Fung",
+      "address": "Shop 046, 1/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "roast meat",
+        "sha tin",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 248,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d52c3d94-2244-410b-91ab-237e5e9a6741",
+      "name": "Beancurd",
+      "address": "Shop 677, 2/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street, Sha Tin",
+      "mealType": [
+        "Italian",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 309,
+        "dislikes": 17,
+        "neutral": 49
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e5bfcdcc-26ad-49e7-afca-a08eeb18e05f",
+      "name": "UK 38 newly",
+      "address": "Shop 845, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 218,
+        "dislikes": 9,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a7807b3-54d4-45ba-9a28-ded22ca60130",
+      "name": "lunch",
+      "address": "Shop 767, 6/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 168,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "30902de4-a076-4d21-aaf5-6e0d41b03e46",
+      "name": "BE 盲鰽魚海鮮鍋 301 diversified Fa",
+      "address": "Shop 359, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Hot Pot",
+        "sha tin",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 150,
+        "dislikes": 13,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7895b55-47e4-4e1c-9e12-020dfb609bb9",
+      "name": "夏威夷薄餅 及 All background",
+      "address": "Shop 4511-3009, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "singaporean",
+        "Singaporean",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 134,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0727f39e-8441-4abd-9110-d3b8e75db505",
+      "name": "wooden Playground's 1-15",
+      "address": "Shop 654, 1/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "malaysian",
+        "Malaysian",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 286,
+        "dislikes": 27,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0b5b49d6-8750-4208-98c1-71ad239f0374",
+      "name": "長腳蟹 beans",
+      "address": "Shop E, G/F, Greenfield Court, 9-11 Sha Tin Wai Road",
+      "mealType": [
+        "Japanese",
+        "sha tin",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 176,
+        "dislikes": 4,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "82b7e570-7ad5-43af-9274-67406e674ecd",
+      "name": "photos 生津 Bubbles Niku",
+      "address": "Shop 296A, 3/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 350,
+        "dislikes": 25,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "73249463-3aed-4465-8fa7-c41d124b8615",
+      "name": "dim-sum 海鮮",
+      "address": "Shop 8109-3092, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "Taiwan",
+        "sha tin",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 110,
+        "dislikes": 16,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7d211638-dc24-4c60-a337-1101c9c0ae8c",
+      "name": "北京烤填鴨 美式",
+      "address": "Shop A204, 3/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 134,
+        "dislikes": 12,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "602142ff-b6e3-4ce1-983f-f07a144207fe",
+      "name": "Telegraph",
+      "address": "Shop 076A, 3/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "Chinese",
+        "bbq",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 251,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd1cafbf-75dd-46c3-8f6f-83d841cacb5d",
+      "name": "selected Hot customers",
+      "address": "G/F, 91 Ha Wo Che",
+      "mealType": [
+        "Stir Fry",
+        "chinese bbq",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 466,
+        "dislikes": 152,
+        "neutral": 132
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9fecf466-7b90-48dc-8cae-ce98b1aa6a0b",
+      "name": "Oyster Cafeteria 新鮮",
+      "address": "4/F, Hyatt Regency Hong Kong Sha Tin, 18 Chak Cheung Street",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 305,
+        "dislikes": 37,
+        "neutral": 70
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "681232a2-98ba-444d-a3d2-2326fb79617b",
+      "name": "誘惑",
+      "address": "Shop S266-S069, G/F, Enterprise Place, 5 Science Park West Avenue, Phase 3, Hong Kong Science Park, Pak Shek Kok",
+      "mealType": [
+        "sushi sashimi",
+        "sha tin",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e1c10a9e-28fd-4380-b0a6-47d5fb4bb220",
+      "name": "Lounge's 牛肉球 Area",
+      "address": "Shop A800, 2/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "sha tin",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 235,
+        "dislikes": 46,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0719ebc-ffdd-44f2-ba9c-d7537716fd2c",
+      "name": "Katachi representative",
+      "address": "Shop 8157, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "Vietnamese",
+        "noodles rice noodles",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 100,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "209263b6-7265-4d3f-ae32-b0ef30116848",
+      "name": "more 砂鍋醉藥雞 evoke",
+      "address": "Shop 665, 5/F, Grand Central Plaza, 138 Sha Tin Rural Committee Road",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 345,
+        "dislikes": 11,
+        "neutral": 73
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d836f17d-8e63-4f30-ab86-fc3c6a07b492",
+      "name": "dinner 海鮮砂鍋粥",
+      "address": "8/F, Royal Park Hotel, 8 Pak Hok Ting Street",
+      "mealType": [
+        "sha tin",
+        "International",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 201,
+        "dislikes": 18,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d2a1cd56-0c8c-4e67-a246-8dc3f2d636ed",
+      "name": "燒菠蘿 too",
+      "address": "Shop 2A-8B, 2/F, Wai Wah Centre, 11-17 Sha Tin Centre Street",
+      "mealType": [
+        "Hot Pot",
+        "taiwan",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 320,
+        "dislikes": 2,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9b5ffb4b-d03d-4625-8ecc-5eae0d3e379b",
+      "name": "海鮮飯 Shing Wing's",
+      "address": "Shop S079, G/F, Core Building 2, 1 Science Park E Ave, Phase 1, Hong Kong Science Park, Pak Shek Kok",
+      "mealType": [
+        "hong kong style",
+        "guangdong",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cd8a0de9-f5fb-47b2-9391-ba749be3cbdb",
+      "name": "Road 家鄉雞",
+      "address": "Shop 08, G/F, Garden Rivera, 20-30 Tai Chung Kiu Road",
+      "mealType": [
+        "sha tin",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 557,
+        "dislikes": 9,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b715e59b-8d1b-445b-9b02-2033f83699a1",
+      "name": "many 黑芝麻芝士蛋糕 小籠包豬肉餃",
+      "address": "Shop 254, 1/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Yoshoku",
+        "udon",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 10,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "66575d33-129e-47ab-b06b-f47a41bb359d",
+      "name": "Ning brunch",
+      "address": "Shop 7864-3108, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "sha tin",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 109,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2fc86c69-e983-4631-a5ca-8d011e0a437d",
+      "name": "蝦餅 餐廳Cafe",
+      "address": "0/F, ALVA HOTEL BY ROYAL, 1 Yuen Hong Street",
+      "mealType": [
+        "Brunch",
+        "International",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 149,
+        "dislikes": 24,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "18d23edb-17f1-44d8-951d-62b768d00b35",
+      "name": "冰梅醬燒骨 寬帶麵 神話 冬甩",
+      "address": "Shop 188, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Hot Pot",
+        "sha tin",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 159,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0015f531-6046-4b4f-9fc2-9f34ad598824",
+      "name": "Lung",
+      "address": "Shop 2859 & 3110, 3/F, Lucky Plaza, 1-15 Wang Pok Street",
+      "mealType": [
+        "all you can eat",
+        "chicken hot pot",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 185,
+        "dislikes": 7,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3da04f61-f919-4335-a5fb-deb2659c52be",
+      "name": "張秀 ACADEMÏCS Tsukiji",
+      "address": "G/F, Pok Hong Estate Cooked Food Stall",
+      "mealType": [
+        "Dai Pai Dong",
+        "Cooked Food Center",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e173cd7-84dd-402f-b50d-d48b9d58d332",
+      "name": "Cococabana's 110",
+      "address": "Shop 179, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Coffee Shop",
+        "International",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 4,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3edaedc3-066b-4c2a-ba10-b4d794ada92c",
+      "name": "蝦腸 Garden IGable cuisines 美國Prime choices",
+      "address": "Shop A659, 3/F, New Town Plaza Phase III, 2-8 Sha Tin Centre Street",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 90,
+        "dislikes": 8,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "041403b9-0e57-40ad-8f0d-567bbd638e45",
+      "name": "Road Western holiday talented",
+      "address": "Shop 4, G/F, Regal Riverside Hotel, 34-36 Tai Chung Kiu Road",
+      "mealType": [
+        "Chinese",
+        "sha tin",
+        "bbq"
+      ],
+      "sentiment": {
+        "likes": 99,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "25badb43-c723-487f-b19d-fcf90db8b89b",
+      "name": "Temple chinese-style fish",
+      "address": "1/F, Royal Park Hotel, 8 Pak Hok Ting Street",
+      "mealType": [
+        "teppanyaki",
+        "Japanese",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 142,
+        "dislikes": 6,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "edfba65f-e1ff-4bdc-bb8d-d32dbb88faf6",
+      "name": "shopkeeper bean 丼",
+      "address": "Shop G92A, G/F, Kings Wing Plaza 2, 1 On Kwan Street, Shek Mun",
+      "mealType": [
+        "korean bbq",
+        "sha tin",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 221,
+        "dislikes": 5,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "850adf8f-7951-4d12-9443-5ca339ef17ad",
+      "name": "arty 老厝邊",
+      "address": "Shop 698A, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "chiu chow",
+        "Chiu Chow",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 11,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef02595d-2c68-4adb-a19c-cb3bd2fdf2c2",
+      "name": "蛋白脆 between",
+      "address": "Shop 210, 4/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Japanese",
+        "sha tin",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 76,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75fdfd18-aa3d-418b-9cdf-76b019883e26",
+      "name": "超濃芋泥 Sakurada H",
+      "address": "Shop 332, 1/F, Citylink, 1 Sha Tin Station Circuit",
+      "mealType": [
+        "Japanese",
+        "sha tin",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 18,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "980912c2-6489-4308-8775-46280a715221",
+      "name": "大學太古",
+      "address": "Shop RT847, 1/F, Building 17W, Hong Kong Science Park, 17 Science Park West Avenue, Pak Shek Kok",
+      "mealType": [
+        "Korean",
+        "sha tin",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 107,
+        "dislikes": 11,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "43b1849e-014e-4a7e-b9b9-a389930eb2c2",
+      "name": "Chiu based",
+      "address": "Shop 527, 1/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "chinese buns",
+        "Stir Fry",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 179,
+        "dislikes": 18,
+        "neutral": 93
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e2c56b47-c284-4291-8cb7-8a2451fb5b2d",
+      "name": "as",
+      "address": "Shop G78, G/F, Kings Wing Plaza 2, 1 On Kwan Street, Shek Mun",
+      "mealType": [
+        "salad",
+        "Yoshoku",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 105,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "801cfc74-d67b-464a-a12b-8291f97112ef",
+      "name": "12 大南",
+      "address": "Shop G88A, G/F, Kings Wing Plaza 2, 1 On Kwan Street, Shek Mun",
+      "mealType": [
+        "wonton dumpling",
+        "sha tin",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 17,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7607fb6e-9d34-4e0d-8060-01fbdc31d0d5",
+      "name": "menus",
+      "address": "Shop 282-152, 2/F, Wo Che Plaza, 3 Tak Hau Street",
+      "mealType": [
+        "sha tin",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 7,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a8d6397-2dff-47eb-81d0-b785ba171b64",
+      "name": "하하치킨 Bubbles Western Mix new",
+      "address": "Shop 089, 7/F, New Town Plaza Phase I, 18-19 Sha Tin Centre Street",
+      "mealType": [
+        "Izakaya",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 16,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0f8d7c59-9075-4fcd-b2dd-01e8f790f45a",
+      "name": "芒果 Meat",
+      "address": "Courtyard By Marriott Hong Kong Sha Tin Hotel, 1 On Ping Street",
+      "mealType": [
+        "Buffet",
+        "International",
+        "sha tin"
+      ],
+      "sentiment": {
+        "likes": 167,
+        "dislikes": 48,
+        "neutral": 48
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sha Tin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

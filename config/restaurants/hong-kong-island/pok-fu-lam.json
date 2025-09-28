@@ -1,0 +1,923 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T18:41:17.504Z",
+    "version": "1.0.0",
+    "district": "Pok Fu Lam",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 26,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.571Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "1746b0c9-ae86-4cc8-ab99-5a63a6abc835",
+      "name": "farmers 等等 Niku 北海五品盛",
+      "address": "Shop 462, 3/F, The Arcade, 100 Cyberport Road",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 198,
+        "dislikes": 14,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3f55f104-10de-4494-9738-7fa40142bd3c",
+      "name": "Deer cook",
+      "address": "9/F, LE MERIDIEN HONG KONG, CYBERPORT, 100 Cyberport Road",
+      "mealType": [
+        "chinese bbq",
+        "pok fu lam",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 6,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "50e67cd6-1688-4ee8-9aac-1c8e31173dc6",
+      "name": "double-stewed",
+      "address": "9/F, Le Meridien Hong Kong, Cyberport, 100 Cyberport Road",
+      "mealType": [
+        "pok fu lam",
+        "Japanese",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5bfc07a-a53a-46ce-8cc7-7aeb587afd08",
+      "name": "Lower 公仔麵",
+      "address": "Shop 625, 1/F, The Arcade, 100 Cyberport Road",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7164689-c95d-4ee3-90fe-bb0d59815c0f",
+      "name": "thousands la SANGDONG Lok",
+      "address": "Shop 460, 2/F, The Arcade, 100 Cyberport Road",
+      "mealType": [
+        "pok fu lam",
+        "Mexican",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b6f5df27-84e1-44e4-8ed8-809633a330a6",
+      "name": "dining Man",
+      "address": "5/F, Le Meridien Hong Kong, Cyberport, 100 Cyberport Road",
+      "mealType": [
+        "Buffet",
+        "International",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8da61445-5939-4c6b-b944-ad78cf0a233d",
+      "name": "Beans 燒賣皇",
+      "address": "Shop B, G/F, The Jockey Club Tower, Centennial Campus, The University of Hong Kong",
+      "mealType": [
+        "Coffee Shop",
+        "pok fu lam",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2571e510-7518-4965-9123-ca3e8e003a46",
+      "name": "@449",
+      "address": "Shop 309, 411, 501 & 601, The Arcade, 100 Cyberport Road, Pok Fu Lam",
+      "mealType": [
+        "irish",
+        "wine",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "86d0fe1b-89ea-4e17-83e4-935a72564f04",
+      "name": "街坊粥店 Chuen medal",
+      "address": "Shop 90, 1/F, The Arcade, 100 Cyberport Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "51a86c76-1d1d-4b09-bf15-a37311e3735c",
+      "name": "Duan Balls Bowl 拌飯團",
+      "address": "Shop 2A, G/F, Manifold Count, 36-46 Pok Fu Lam Road, Sai Ying Pun",
+      "mealType": [
+        "Singaporean",
+        "Malaysian",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1cf45c91-a77f-4251-b24a-96d02b8eb62a",
+      "name": "38 原味芝士蛋糕",
+      "address": "Rm 209, 9/f Chong Yuet Ming Amenities Centre, HKU",
+      "mealType": [
+        "Coffee Shop",
+        "bakery",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94c2777b-43d7-48f5-bbe7-d92e18260431",
+      "name": "Outlet 蘑菇薄餅 Clay",
+      "address": "G/F, HKU Main Library (Old Wing), Pok Fu Lam",
+      "mealType": [
+        "Coffee Shop",
+        "International",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6bc883a3-c1c1-421a-a0ef-dae1cb09b1cf",
+      "name": "Grilled 和牛肋眼上蓋",
+      "address": "Shop 003, 4/F, The Arcade, 100 Cyberport Road",
+      "mealType": [
+        "Vending Machine",
+        "Japanese",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "db7377ef-106a-4332-b101-5e759bc6da61",
+      "name": "意粉 生蠔 一罐",
+      "address": "0/F, Chong Yuet Ming Amenities Centre, University of Hong Kong, Pok Fu Lam",
+      "mealType": [
+        "hong kong style",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "990bf194-1e99-4150-bb89-1104ee3f45a2",
+      "name": "specialty 特式仙草 136 al",
+      "address": "5/F, VTC Pokfulam Complex, 145 Pok Fu Lam Road, Pok Fu Lam",
+      "mealType": [
+        "Western",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1210c015-1531-4652-95d6-eb5dde43381c",
+      "name": "elements wall",
+      "address": "G/F, Main Block, Queen Mary Hospital, 102 Pok Fu Lam Road, Pok Fu Lam",
+      "mealType": [
+        "Coffee Shop",
+        "pok fu lam",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a69be9a1-14b5-4fc1-bdf2-a23c2993ac7d",
+      "name": "27A Crabmeat",
+      "address": "Shop 1, Food Carnival, 2/F, Chi Fu Landmark, Pok Fu Lam",
+      "mealType": [
+        "pok fu lam",
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "63161034-bdf4-46a7-9718-e423e5632d14",
+      "name": "head",
+      "address": "薄扶林香港大學太古堂13樓",
+      "mealType": [
+        "hong kong style",
+        "meatless menu",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7c84226-858e-4eab-84f2-c46d07e11c04",
+      "name": "撈麵 Shui",
+      "address": "Shop 782A, 4/F, Core A, Cyberport 3, 100 Cyberport Road, Pok Fu Lam",
+      "mealType": [
+        "bakery",
+        "Western",
+        "soup"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2747608f-e571-4da7-adad-7f31605bb60e",
+      "name": "Male Table's",
+      "address": "Portion of the Foyer Area, 4/F, Cyberport 2, 100 Cyberport Road, Pok Fu Lam",
+      "mealType": [
+        "American",
+        "pok fu lam",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3862e19a-2cf4-4ae5-a9de-13ffae819449",
+      "name": "tender",
+      "address": "Shop 9-8, G/F, The Annex, 100 Cyberport Road, Cyberport, Pok Fu Lam",
+      "mealType": [
+        "hamburger",
+        "pok fu lam",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f167d1b5-39e0-42eb-b2c4-604410432dda",
+      "name": "Au recipes flavours",
+      "address": "G/F, Le Méridien Hong Kong, Cyberport, 100 Cyberport Road, Pok Fu Lam",
+      "mealType": [
+        "Western",
+        "pok fu lam",
+        "Fine Dining"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c4ddd47-6135-4894-9dd2-18f502a1049e",
+      "name": "mainly Kaya Soft",
+      "address": "Shop 982A, 4/F, The Arcade, 100 Cyberport Road, Pok Fu Lam",
+      "mealType": [
+        "Food Court",
+        "pok fu lam",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d81afe65-e850-4f96-828f-a61e5556922b",
+      "name": "Une WMCCC BreadTalk",
+      "address": "Shop 0D, Wah Fu(I) Shopping Centre, Wah Fu Estate, Pok Fu Lam",
+      "mealType": [
+        "Yoshoku",
+        "Western",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 9,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d4265a3f-a086-40b2-89b5-47b2cfec18f5",
+      "name": "seasonal their",
+      "address": "Concourse, 14/F, IT Street, Cyberport Telegraph Bay, Pok Fu Lam",
+      "mealType": [
+        "American",
+        "Coffee Shop",
+        "pok fu lam"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36d9c58f-8ec9-4b6e-afee-4982961e35be",
+      "name": "urchins 牛舌芯",
+      "address": "9/F, Block T, Queen Mary Hospital, 102 Pok Fu Lam Road, Pok Fu Lam",
+      "mealType": [
+        "Coffee Shop",
+        "pok fu lam",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Pok Fu Lam",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

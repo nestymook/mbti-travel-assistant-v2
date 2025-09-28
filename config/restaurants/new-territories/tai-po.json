@@ -1,0 +1,2119 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T19:57:04.964Z",
+    "version": "1.0.0",
+    "district": "Tai Po",
+    "locationCategory": "New Territories",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:06.196Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "722b7e39-92c6-49e3-92f5-2f83934b7e08",
+      "name": "Charred lighting",
+      "address": "Shop 076, 2/F, Zone B, Tai Po Mega Mall, 8&10 On Pong Road",
+      "mealType": [
+        "Yoshoku",
+        "Japanese",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 671,
+        "dislikes": 24,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "915099b1-7101-46fa-b989-52f2cea46433",
+      "name": "delicate de G4B painting hot 冷盤",
+      "address": "Shop B1, G/F, Mei Sun Building, 4-20 Kau Hui Chik Street",
+      "mealType": [
+        "tai po",
+        "Hot Pot",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 300,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0db6316b-c7b3-49bf-a6ec-3158f87bc263",
+      "name": "G/F 雞湯 A1",
+      "address": "Shop 5, G/F, Yuet Fat Mansion, 9 Kau Hui Chik Street",
+      "mealType": [
+        "tai po",
+        "International",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 492,
+        "dislikes": 19,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "65452e1c-86ae-4b7e-909b-6b0c3a32debf",
+      "name": "favourite lovers 黃金炸魚皮 Family",
+      "address": "Shop 80, G/F, Eightland Gardens, 2 On Chee Road",
+      "mealType": [
+        "pizza",
+        "tai po",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 445,
+        "dislikes": 23,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c7e5e4b-1c1b-4592-a25d-fcd97e8612bd",
+      "name": "ceilings",
+      "address": "Shop G32-62, G/F, Tai Po Arts Centre, 12 On Pong Road",
+      "mealType": [
+        "Italian",
+        "Western",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 297,
+        "dislikes": 17,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bdf02dd1-3d2e-41de-925e-94f7354ecd7c",
+      "name": "Middle",
+      "address": "Shop B, G/F, Kerry Lake Egret Nature Park, 2 Hung Lam Drive, Tai Po Kau",
+      "mealType": [
+        "Pet Friendly",
+        "International",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 244,
+        "dislikes": 27,
+        "neutral": 78
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e386ec5b-89d3-49c7-98d1-08fe5a9992e8",
+      "name": "interactive watch 乳鴿 Small salad",
+      "address": "G/F & 1/F, Tai Po Plaza, 1 On Tai Road",
+      "mealType": [
+        "korean bbq",
+        "Korean",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 329,
+        "dislikes": 16,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0ddb9603-2759-4441-8f62-2a802df93c26",
+      "name": "feels Daikiya",
+      "address": "G/F, 988A Lung Mei Village, Ting Kok Road, Tai Mei Tuk",
+      "mealType": [
+        "tai po",
+        "Coffee Shop",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f9e1096f-96bf-4304-9ee1-c7d924b1a054",
+      "name": "vegetarian Hand KAKURA pendant Feng",
+      "address": "Shop B8, G/F, Mei Sun Building, 4-20 Kau Hui Chik Street",
+      "mealType": [
+        "Dai Pai Dong",
+        "tai po",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 191,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a924ebbd-f9c5-425e-9301-81fc51265120",
+      "name": "Tong on",
+      "address": "Shop 3A, G/F, Wing Fat Building, 1 Chui Wo Lane",
+      "mealType": [
+        "Japanese",
+        "tai po",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 162,
+        "dislikes": 14,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "37e44599-092d-40ab-b7fe-84f6b2f36319",
+      "name": "魚鍋 八寶河",
+      "address": "Shop A, G/F, Kerry Lake Egret Nature Park, 2 Hung Lam Drive",
+      "mealType": [
+        "Stir Fry",
+        "Guangdong",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 220,
+        "dislikes": 7,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "171ef47f-4393-4980-89ca-c40240499e84",
+      "name": "indigenous Pescado Waki",
+      "address": "Shop 007-148, G/F, Zone C, Tai Po Mega Mall, 8&10 On Pong Road",
+      "mealType": [
+        "all you can eat",
+        "tai po",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 410,
+        "dislikes": 16,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b4c8a3a8-a674-48b3-ad82-90ff1f0e154b",
+      "name": "Steak",
+      "address": "Shop D6, G/F, 47 Po Heung Street",
+      "mealType": [
+        "Sweets",
+        "hong kong style",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9908cdc7-3b59-4ac9-b200-b2b223e9f209",
+      "name": "三文治 菜館Chun's",
+      "address": "Shop 34-09, G/F, Tai Po Plaza, 1 On Tai Road",
+      "mealType": [
+        "chinese bbq",
+        "tai po",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 11,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f44563c-2ed7-43ae-a99f-7579eb0fa3fe",
+      "name": "榮式雞扒飯",
+      "address": "Shop C, G/F, Po Hong Building, 35-39 Po Heung Street",
+      "mealType": [
+        "tai po",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 94,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f29477f8-3334-49e8-82ed-2d9cf6dd7541",
+      "name": "breakfast 好海鮮飯店",
+      "address": "Shop 13, G/F, Treasure Garden, 1 On Chee Road",
+      "mealType": [
+        "tai po",
+        "Dim Sum",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3ee4e518-d6a4-487b-93a5-0eb6161a6c7c",
+      "name": "粟米批。 wooden miss",
+      "address": "G/F, 499 Kwong Fuk Road",
+      "mealType": [
+        "Stir Fry",
+        "tai po",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04fcbf67-d9fc-43f6-91da-43b9e163d3d4",
+      "name": "金邊 漁市場小廚's",
+      "address": "G/F, 54D Tai Mei Tuk Chuen",
+      "mealType": [
+        "Hot Pot",
+        "tai po",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5535e6d1-d46b-42da-8198-ae0c6ea9bf8a",
+      "name": "菌菇湯麵 Yip",
+      "address": "Shop E, G/F, Kwong On Building, 20-26 Wan Tau Street",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 406,
+        "dislikes": 19,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08d765b2-b351-404c-8768-4b975837b88d",
+      "name": "blends 湯麵",
+      "address": "G/F, 37-34 Kwong Fuk Road",
+      "mealType": [
+        "Hong Kong Style",
+        "tai po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 3,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "14edec63-0fe6-415a-b5f6-8f4aa37b28ac",
+      "name": "Gróa 腐竹糖水 ornaments",
+      "address": "Shop A9, G/F, Mei Sun Building, 4-20 Kau Hui Chik Street",
+      "mealType": [
+        "Chinese",
+        "Hot Pot",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 468,
+        "dislikes": 13,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0841cb92-3de9-4e49-aa52-109274ab1012",
+      "name": "奶蓋 點心小廚 ac4",
+      "address": "Shop G49, G/F, Tai Po Arts Centre, 12 On Pong Road",
+      "mealType": [
+        "tai po",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 2,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "010f4206-4e5e-48d4-9617-bd45b57ef77d",
+      "name": "consultant 元貝 大排骨便當",
+      "address": "Shop C, G/F, 15 Tin Kok Road",
+      "mealType": [
+        "Coffee Shop",
+        "tai po",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 88,
+        "dislikes": 6,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "46c0a29b-5d9b-40af-8797-586891827c15",
+      "name": "牛肋 pickled UnionPay",
+      "address": "G/F, 506 Tai Mei Tuk Village, Ting Kok Road",
+      "mealType": [
+        "Western",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 158,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d0587e9-fb8a-4b7f-a746-0c5ddf5b6fc7",
+      "name": "墨魚頭",
+      "address": "Shop D5, G/F, 47 Po Heung Street",
+      "mealType": [
+        "Takeaway",
+        "tai po",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 52,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eb2640fa-32a4-4057-b8dc-6001e231b1e4",
+      "name": "red",
+      "address": "G/F, 84 Yan Hing Street",
+      "mealType": [
+        "tai po",
+        "chicken hot pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 148,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9beb959-98c6-46e3-8d01-363ba545198b",
+      "name": "梅菜扣肉 67 counter",
+      "address": "Shop 93, G/F, Beautiful Garden, 11 Chui Lok Street, Tai Po",
+      "mealType": [
+        "teppanyaki",
+        "omakase",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "075200c9-1b2a-4a9e-8a6c-af07b3a31da4",
+      "name": "沙律 Grilled levels",
+      "address": "Shop 6-8, G/F, Block A, La Fountaine, 6 Chui Lok Street",
+      "mealType": [
+        "Hot Pot",
+        "Chinese",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2d1fcb30-10c1-4814-aa24-ad7ca6e5c858",
+      "name": "free down Market",
+      "address": "Shop E, G/F, 47 Tai Mei Tuk Chuen, Tai Mei Tuk",
+      "mealType": [
+        "skewer",
+        "Thai",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 162,
+        "dislikes": 21,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5213efe0-909c-41cf-87a4-03bd3fc8a7bb",
+      "name": "雙拼 big soy 咖啡 意大利飯",
+      "address": "Shop 74, G/F, Block B, Greenery Plaza, 3 Chui Yi Street",
+      "mealType": [
+        "tai po",
+        "Japanese",
+        "udon"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "867795ac-22c5-4768-988c-f729645d98ea",
+      "name": "安格斯肥牛 Island Salad",
+      "address": "DD54, Yim Tin Tsai, Sam Mun Tsai Road",
+      "mealType": [
+        "tai po",
+        "Nostalgic",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "782e9d5c-cf12-4ae1-8e4f-7d7610c69846",
+      "name": "特飲 Bo",
+      "address": "Shop 220C, 1/F, Zone A, Tai Po Mega Mall, 8-10 On Pong Road",
+      "mealType": [
+        "Japanese",
+        "udon",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 5,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "35b2e46d-a318-414e-8fe2-36544f97a25e",
+      "name": "肉 OX牛油包 worldwide Plaza",
+      "address": "Shop B, G/F, Kam Fuk Building, 23-39 Tai Ming Lane",
+      "mealType": [
+        "tai po",
+        "Hong Kong Style",
+        "chinese bbq"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "079c0447-591d-4e9e-8e80-1b76c28e674f",
+      "name": "金記冰室Kam 仨Tres you",
+      "address": "G/F, Kwong On Building, 20 Wan Tau Street",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad538f3d-cb97-4128-9106-ff07ce68cb56",
+      "name": "芝加哥 蜆",
+      "address": "Shop 3-96 & 14-33, 1/F, Fortune Plaza Arcade, 4 On Chee Road",
+      "mealType": [
+        "guangdong",
+        "Dim Sum",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3f0484d1-2f0c-4d58-884f-511cff9c8e1a",
+      "name": "肚雞 omasum Lasagna Daikiya",
+      "address": "Shop 1, G/F, 5 Tai Ming Lane",
+      "mealType": [
+        "guangdong",
+        "shanghai",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "811bf1da-5bce-4caa-80c7-174ffb6d9cf1",
+      "name": "Bear",
+      "address": "Shop F, G/F, Kwong On Building, 20-26 Wan Tau Street",
+      "mealType": [
+        "Japanese",
+        "tai po",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 247,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f509290a-e7c7-4fc2-a4af-a9d7e29b341e",
+      "name": "薯條 grilled Tokyo",
+      "address": "G/F, Po Fung Building, 6 Tai Ming Lane",
+      "mealType": [
+        "Taiwan",
+        "tai po",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 9,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "31b968a8-d2e5-4ce2-81ff-4414467139a4",
+      "name": "specialties 八寶河",
+      "address": "Shop 79-91, G/F, Fortune Plaza, 4 On Chee Road",
+      "mealType": [
+        "food stall noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c68e4caa-20d8-43b3-bd94-ac9aecff78e3",
+      "name": "全日早餐 Bahia Coconut 流記艇仔粉 Municipal",
+      "address": "Shop B, G/F, Wah Lok House, 51 Po Heung Street",
+      "mealType": [
+        "tai po",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9ecfed58-e5ff-4753-8633-9912df1b9766",
+      "name": "offer Cookfood wagyu",
+      "address": "Shop CFS39, 2/F, Tai Po Hui Market and Cooked Food Centre, 8 Heung Sze Wui Street",
+      "mealType": [
+        "Sweets",
+        "hong kong style",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 5,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0570ad4f-e0ed-42d6-be3d-60ce2a7b841b",
+      "name": "five",
+      "address": "Shop 1, G/F, Nam Shing Mansion, 16 Nam Shing Street",
+      "mealType": [
+        "tai po",
+        "Yunnan",
+        "yunnan"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "62d9e8d3-690d-4451-813b-8a60cad0b993",
+      "name": "懷舊煎蠔餅 麻甩雞",
+      "address": "Shop B, G/F, Winnye Tower, 28 Kau Hui Chik Street",
+      "mealType": [
+        "Steak House",
+        "Bar",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 403,
+        "dislikes": 4,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac368844-fa36-4c0d-9fc7-cd8c8ff5b09a",
+      "name": "Oasis",
+      "address": "G/F, 99 Kwong Fuk Road",
+      "mealType": [
+        "tai po",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "87b54f14-f362-4d49-a41c-df12ed77540b",
+      "name": "breads 膽沾麵",
+      "address": "Shop 9, G/F, Kam Chung Building, 128-130 Kwong Fuk Road",
+      "mealType": [
+        "Singaporean",
+        "singaporean",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1d021251-9705-4f06-a1bb-a3bd23f0306c",
+      "name": "Satay everything Pavilia",
+      "address": "Shop 036a, 670b, 671, 1/F, Zone D, Tai Po Mega Mall, 8&10 On Pong Road",
+      "mealType": [
+        "All Day Breakfast",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 170,
+        "dislikes": 22,
+        "neutral": 61
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8d75cf81-4ad7-4d1b-922f-01794466281a",
+      "name": "酥皮湯 concept 'ocean' Old May",
+      "address": "G/F, 255A Lung Mei Village, Ting Kok Road",
+      "mealType": [
+        "Buffet",
+        "skewer",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 268,
+        "dislikes": 21,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4c530b04-4780-4b5b-b523-5f3a0bc17644",
+      "name": "Bowl 米線 of Dessert's",
+      "address": "Shop 53, G/F, Treasure Garden, 1 On Chee Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 99,
+        "dislikes": 5,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8ccd8662-869d-4c76-ad9e-37a6b298c2d0",
+      "name": "Yuen",
+      "address": "G/F, 59 Kwong Fuk Road",
+      "mealType": [
+        "Hong Kong Style",
+        "tai po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "65de9a27-0ab3-4ddd-9fee-2e299dede599",
+      "name": "consultant",
+      "address": "Shop E, G/F, Tony Court, 6-11 Tung Cheung Street",
+      "mealType": [
+        "wonton dumpling",
+        "tai po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bb2e3a5-e7cb-43a1-a70c-d868b6c4c65c",
+      "name": "卷 飲品",
+      "address": "G/F, 5 Tung Cheong Street",
+      "mealType": [
+        "Snack Shop & Deli",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b83c53fd-fd19-4818-a6a7-d26279d117d1",
+      "name": "white aged Tung still",
+      "address": "G/F, 8 Tung Cheung Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "97633f13-ab26-4e9e-83b1-74106b276458",
+      "name": "餐廳小廚's",
+      "address": "Shop 577, 1/F, Zone B, Tai Po Mega Mall, 8&10 On Pong Road",
+      "mealType": [
+        "Japanese",
+        "tai po",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1f64b50d-de05-414b-81e4-0884d3bc3b06",
+      "name": "Ho",
+      "address": "Shop CSF30, 2/F, Tai Po Hui Market and Cooked Food Centre, 8 Heung Sze Wui Street",
+      "mealType": [
+        "Shanghai",
+        "Cooked Food Center",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 29,
+        "neutral": 87
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c6aad66-35ab-4463-9fe6-cd1dc5eaec9e",
+      "name": "808",
+      "address": "G/F, 40B Wan Tau Street",
+      "mealType": [
+        "tai po",
+        "congee",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 10,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea5a0b2d-9954-4621-b90d-b335071b293c",
+      "name": "they ancient Estate",
+      "address": "Shop 06A, Lung Mei Tsuen, Ting Kok Road, Tai Mei Tuk",
+      "mealType": [
+        "guangdong",
+        "Private Kitchen",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a3fe419-4c6c-425d-b2ef-9834e7ce2add",
+      "name": "growth",
+      "address": "Shop J, G/F, Kwong On Building, 20-26 Wan Tau Street",
+      "mealType": [
+        "tai po",
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 234,
+        "dislikes": 8,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3627b19d-45eb-4884-9f9f-64d009f8ec54",
+      "name": "pizza",
+      "address": "Shop D1, G/F, Wing Cheung Building, 6-14 Fu Shin Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "054edb26-9fc4-4ffe-af81-3cacc8a1d0ca",
+      "name": "grey Palace's fashion Churros",
+      "address": "G/F, 53B-32 Tai Mei Tuk Village, Ting Kok Road",
+      "mealType": [
+        "Thai",
+        "tai po"
+      ],
+      "sentiment": {
+        "likes": 206,
+        "dislikes": 28,
+        "neutral": 68
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9ce59a6f-b34b-492f-9cc0-0f5562bc9994",
+      "name": "Chung",
+      "address": "Shop CF49-35, 2/F, Tai Po Hui Market and Cooked Food Centre, 8 Heung Sze Wui Street",
+      "mealType": [
+        "chicken hot pot",
+        "Dai Pai Dong",
+        "Cooked Food Center"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tai Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}
