@@ -1,0 +1,463 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "MBTI Travel Assistant MCP - Monitoring Dashboard",
+    "tags": ["mbti", "travel-assistant", "mcp", "agentcore"],
+    "style": "dark",
+    "timezone": "browser",
+    "refresh": "30s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "System Overview",
+        "type": "stat",
+        "gridPos": {
+          "h": 4,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "targets": [
+          {
+            "expr": "up{job=\"mbti-travel-assistant\"}",
+            "legendFormat": "Service Status",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Request Rate",
+            "refId": "B"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job=\"mbti-travel-assistant\"}[5m]))",
+            "legendFormat": "95th Percentile Response Time",
+            "refId": "C"
+          },
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\",status=~\"5..\"}[5m]) / rate(http_requests_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Error Rate",
+            "refId": "D"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 0.8
+                },
+                {
+                  "color": "red",
+                  "value": 0.95
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "Request Rate",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 4
+        },
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Total Requests/sec",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\",status=~\"2..\"}[5m])",
+            "legendFormat": "Success Requests/sec",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\",status=~\"4..\"}[5m])",
+            "legendFormat": "Client Error Requests/sec",
+            "refId": "C"
+          },
+          {
+            "expr": "rate(http_requests_total{job=\"mbti-travel-assistant\",status=~\"5..\"}[5m])",
+            "legendFormat": "Server Error Requests/sec",
+            "refId": "D"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Requests per second",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Response Time",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 4
+        },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, rate(http_request_duration_seconds_bucket{job=\"mbti-travel-assistant\"}[5m]))",
+            "legendFormat": "50th Percentile",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job=\"mbti-travel-assistant\"}[5m]))",
+            "legendFormat": "95th Percentile",
+            "refId": "B"
+          },
+          {
+            "expr": "histogram_quantile(0.99, rate(http_request_duration_seconds_bucket{job=\"mbti-travel-assistant\"}[5m]))",
+            "legendFormat": "99th Percentile",
+            "refId": "C"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Response time (seconds)",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "MCP Server Performance",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 12
+        },
+        "targets": [
+          {
+            "expr": "rate(mcp_call_duration_seconds_count{server=\"search-mcp\"}[5m])",
+            "legendFormat": "Search MCP Calls/sec",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(mcp_call_duration_seconds_count{server=\"reasoning-mcp\"}[5m])",
+            "legendFormat": "Reasoning MCP Calls/sec",
+            "refId": "B"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(mcp_call_duration_seconds_bucket{server=\"search-mcp\"}[5m]))",
+            "legendFormat": "Search MCP 95th Percentile",
+            "refId": "C"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(mcp_call_duration_seconds_bucket{server=\"reasoning-mcp\"}[5m]))",
+            "legendFormat": "Reasoning MCP 95th Percentile",
+            "refId": "D"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Calls/sec & Duration (s)",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "MCP Error Rates",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 12
+        },
+        "targets": [
+          {
+            "expr": "rate(mcp_call_errors_total{server=\"search-mcp\"}[5m]) / rate(mcp_call_duration_seconds_count{server=\"search-mcp\"}[5m])",
+            "legendFormat": "Search MCP Error Rate",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(mcp_call_errors_total{server=\"reasoning-mcp\"}[5m]) / rate(mcp_call_duration_seconds_count{server=\"reasoning-mcp\"}[5m])",
+            "legendFormat": "Reasoning MCP Error Rate",
+            "refId": "B"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Error Rate",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "System Resources",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 20
+        },
+        "targets": [
+          {
+            "expr": "process_cpu_seconds_total{job=\"mbti-travel-assistant\"}",
+            "legendFormat": "CPU Usage",
+            "refId": "A"
+          },
+          {
+            "expr": "process_resident_memory_bytes{job=\"mbti-travel-assistant\"} / 1024 / 1024",
+            "legendFormat": "Memory Usage (MB)",
+            "refId": "B"
+          },
+          {
+            "expr": "process_open_fds{job=\"mbti-travel-assistant\"}",
+            "legendFormat": "Open File Descriptors",
+            "refId": "C"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Usage",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Cache Performance",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 20
+        },
+        "targets": [
+          {
+            "expr": "rate(cache_hits_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Cache Hits/sec",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(cache_misses_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Cache Misses/sec",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(cache_hits_total{job=\"mbti-travel-assistant\"}[5m]) / (rate(cache_hits_total{job=\"mbti-travel-assistant\"}[5m]) + rate(cache_misses_total{job=\"mbti-travel-assistant\"}[5m]))",
+            "legendFormat": "Cache Hit Rate",
+            "refId": "C"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Rate",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Authentication Metrics",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 28
+        },
+        "targets": [
+          {
+            "expr": "rate(auth_requests_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Auth Requests/sec",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(auth_failures_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Auth Failures/sec",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(auth_failures_total{job=\"mbti-travel-assistant\"}[5m]) / rate(auth_requests_total{job=\"mbti-travel-assistant\"}[5m])",
+            "legendFormat": "Auth Failure Rate",
+            "refId": "C"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Rate",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Health Check Status",
+        "type": "stat",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 28
+        },
+        "targets": [
+          {
+            "expr": "health_check_status{job=\"mbti-travel-assistant\",check=\"overall\"}",
+            "legendFormat": "Overall Health",
+            "refId": "A"
+          },
+          {
+            "expr": "health_check_status{job=\"mbti-travel-assistant\",check=\"mcp_search_server\"}",
+            "legendFormat": "Search MCP Health",
+            "refId": "B"
+          },
+          {
+            "expr": "health_check_status{job=\"mbti-travel-assistant\",check=\"mcp_reasoning_server\"}",
+            "legendFormat": "Reasoning MCP Health",
+            "refId": "C"
+          },
+          {
+            "expr": "health_check_status{job=\"mbti-travel-assistant\",check=\"cache_service\"}",
+            "legendFormat": "Cache Health",
+            "refId": "D"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "red",
+                  "value": 0
+                },
+                {
+                  "color": "yellow",
+                  "value": 0.5
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                }
+              ]
+            },
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "text": "Unhealthy"
+                  },
+                  "0.5": {
+                    "text": "Degraded"
+                  },
+                  "1": {
+                    "text": "Healthy"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": 10,
+        "title": "Recent Logs",
+        "type": "logs",
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 36
+        },
+        "targets": [
+          {
+            "expr": "{job=\"mbti-travel-assistant\"} |= \"ERROR\" or \"WARN\"",
+            "refId": "A"
+          }
+        ],
+        "options": {
+          "showTime": true,
+          "showLabels": true,
+          "showCommonLabels": false,
+          "wrapLogMessage": true,
+          "prettifyLogMessage": false,
+          "enableLogDetails": true,
+          "dedupStrategy": "none",
+          "sortOrder": "Descending"
+        }
+      }
+    ],
+    "templating": {
+      "list": [
+        {
+          "name": "environment",
+          "type": "query",
+          "query": "label_values(up{job=\"mbti-travel-assistant\"}, environment)",
+          "refresh": 1,
+          "includeAll": false,
+          "multi": false,
+          "current": {
+            "value": "development",
+            "text": "development"
+          }
+        },
+        {
+          "name": "instance",
+          "type": "query",
+          "query": "label_values(up{job=\"mbti-travel-assistant\", environment=\"$environment\"}, instance)",
+          "refresh": 1,
+          "includeAll": true,
+          "multi": true,
+          "current": {
+            "value": "All",
+            "text": "All"
+          }
+        }
+      ]
+    },
+    "annotations": {
+      "list": [
+        {
+          "name": "Deployments",
+          "datasource": "prometheus",
+          "expr": "changes(process_start_time_seconds{job=\"mbti-travel-assistant\"}[1m])",
+          "titleFormat": "Deployment",
+          "textFormat": "Service restarted",
+          "iconColor": "blue"
+        },
+        {
+          "name": "Alerts",
+          "datasource": "prometheus",
+          "expr": "ALERTS{job=\"mbti-travel-assistant\"}",
+          "titleFormat": "{{alertname}}",
+          "textFormat": "{{summary}}",
+          "iconColor": "red"
+        }
+      ]
+    }
+  }
+}

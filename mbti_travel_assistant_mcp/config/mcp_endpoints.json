@@ -1,0 +1,193 @@
+{
+  "development": {
+    "search_mcp": {
+      "endpoint": "http://localhost:8001",
+      "name": "restaurant-search-mcp",
+      "description": "Restaurant search MCP server for development",
+      "tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ],
+      "connection": {
+        "timeout": 30,
+        "retry_attempts": 3,
+        "retry_delay": 1.0,
+        "max_retry_delay": 10.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 60,
+        "timeout": 5,
+        "endpoint": "/health"
+      }
+    },
+    "reasoning_mcp": {
+      "endpoint": "http://localhost:8002",
+      "name": "restaurant-reasoning-mcp",
+      "description": "Restaurant reasoning MCP server for development",
+      "tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "connection": {
+        "timeout": 30,
+        "retry_attempts": 3,
+        "retry_delay": 1.0,
+        "max_retry_delay": 10.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 60,
+        "timeout": 5,
+        "endpoint": "/health"
+      }
+    }
+  },
+  "staging": {
+    "search_mcp": {
+      "endpoint": "https://staging-search-mcp.agentcore.aws",
+      "name": "restaurant-search-mcp",
+      "description": "Restaurant search MCP server for staging",
+      "tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ],
+      "connection": {
+        "timeout": 30,
+        "retry_attempts": 3,
+        "retry_delay": 1.0,
+        "max_retry_delay": 10.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 300,
+        "timeout": 10,
+        "endpoint": "/health"
+      },
+      "authentication": {
+        "type": "jwt",
+        "token_source": "cognito"
+      }
+    },
+    "reasoning_mcp": {
+      "endpoint": "https://staging-reasoning-mcp.agentcore.aws",
+      "name": "restaurant-reasoning-mcp",
+      "description": "Restaurant reasoning MCP server for staging",
+      "tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "connection": {
+        "timeout": 30,
+        "retry_attempts": 3,
+        "retry_delay": 1.0,
+        "max_retry_delay": 10.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 300,
+        "timeout": 10,
+        "endpoint": "/health"
+      },
+      "authentication": {
+        "type": "jwt",
+        "token_source": "cognito"
+      }
+    }
+  },
+  "production": {
+    "search_mcp": {
+      "endpoint": "https://prod-search-mcp.agentcore.aws",
+      "name": "restaurant-search-mcp",
+      "description": "Restaurant search MCP server for production",
+      "tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ],
+      "connection": {
+        "timeout": 45,
+        "retry_attempts": 5,
+        "retry_delay": 2.0,
+        "max_retry_delay": 30.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 300,
+        "timeout": 15,
+        "endpoint": "/health"
+      },
+      "authentication": {
+        "type": "jwt",
+        "token_source": "cognito"
+      },
+      "monitoring": {
+        "metrics_enabled": true,
+        "tracing_enabled": true,
+        "logging_level": "INFO"
+      }
+    },
+    "reasoning_mcp": {
+      "endpoint": "https://prod-reasoning-mcp.agentcore.aws",
+      "name": "restaurant-reasoning-mcp",
+      "description": "Restaurant reasoning MCP server for production",
+      "tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "connection": {
+        "timeout": 45,
+        "retry_attempts": 5,
+        "retry_delay": 2.0,
+        "max_retry_delay": 30.0,
+        "backoff_factor": 2.0
+      },
+      "health_check": {
+        "enabled": true,
+        "interval": 300,
+        "timeout": 15,
+        "endpoint": "/health"
+      },
+      "authentication": {
+        "type": "jwt",
+        "token_source": "cognito"
+      },
+      "monitoring": {
+        "metrics_enabled": true,
+        "tracing_enabled": true,
+        "logging_level": "INFO"
+      }
+    }
+  },
+  "common": {
+    "circuit_breaker": {
+      "failure_threshold": 5,
+      "recovery_timeout": 60,
+      "expected_exception_types": [
+        "ConnectionError",
+        "TimeoutError",
+        "HTTPError"
+      ]
+    },
+    "rate_limiting": {
+      "requests_per_minute": 100,
+      "burst_size": 20
+    },
+    "monitoring": {
+      "metrics_namespace": "MBTI/TravelAssistant/MCP",
+      "custom_metrics": [
+        "mcp_call_duration",
+        "mcp_call_success_rate",
+        "mcp_connection_pool_size",
+        "mcp_retry_count"
+      ]
+    }
+  }
+}

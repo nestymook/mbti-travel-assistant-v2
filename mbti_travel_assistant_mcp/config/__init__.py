@@ -1,0 +1,1 @@
+# Configuration package for MBTI Travel Assistant MCP

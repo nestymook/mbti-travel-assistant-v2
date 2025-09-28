@@ -1,0 +1,154 @@
+version: '3.8'
+
+services:
+  # MBTI Travel Assistant MCP Service
+  mbti-travel-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64
+    container_name: mbti-travel-assistant-mcp
+    ports:
+      - "8080:8080"  # AgentCore Runtime
+      - "8000:8000"  # MCP Server (if needed)
+      - "9090:9090"  # Metrics endpoint
+    environment:
+      - ENVIRONMENT=development
+      - AWS_REGION=us-east-1
+      - LOG_LEVEL=DEBUG
+      - CACHE_ENABLED=true
+      - TRACING_ENABLED=true
+      - METRICS_ENABLED=true
+      # MCP Endpoints (using local mock servers)
+      - SEARCH_MCP_ENDPOINT=http://search-mcp-mock:8001
+      - REASONING_MCP_ENDPOINT=http://reasoning-mcp-mock:8002
+      # Authentication (development mode)
+      - COGNITO_USER_POOL_ID=us-east-1_dev123456
+      - JWT_ALGORITHM=RS256
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./cache:/app/cache
+      - ./config:/app/config:ro
+    depends_on:
+      - redis
+      - search-mcp-mock
+      - reasoning-mcp-mock
+    networks:
+      - mbti-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/app/health_check.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Redis Cache Service
+  redis:
+    image: redis:7-alpine
+    container_name: mbti-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - mbti-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Mock Search MCP Server for Development
+  search-mcp-mock:
+    image: wiremock/wiremock:latest
+    container_name: search-mcp-mock
+    ports:
+      - "8001:8080"
+    volumes:
+      - ./tests/mocks/search-mcp:/home/wiremock
+    command: ["--global-response-templating", "--verbose"]
+    networks:
+      - mbti-network
+    restart: unless-stopped
+
+  # Mock Reasoning MCP Server for Development
+  reasoning-mcp-mock:
+    image: wiremock/wiremock:latest
+    container_name: reasoning-mcp-mock
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./tests/mocks/reasoning-mcp:/home/wiremock
+    command: ["--global-response-templating", "--verbose"]
+    networks:
+      - mbti-network
+    restart: unless-stopped
+
+  # Prometheus for Metrics Collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mbti-prometheus
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - mbti-network
+    restart: unless-stopped
+
+  # Grafana for Metrics Visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mbti-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - mbti-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  # Jaeger for Distributed Tracing
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: mbti-jaeger
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "14268:14268"  # Jaeger collector
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    networks:
+      - mbti-network
+    restart: unless-stopped
+
+networks:
+  mbti-network:
+    driver: bridge
+    name: mbti-travel-assistant-network
+
+volumes:
+  redis_data:
+    name: mbti-redis-data
+  prometheus_data:
+    name: mbti-prometheus-data
+  grafana_data:
+    name: mbti-grafana-data

@@ -1,0 +1,73 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'mbti-travel-assistant-dev'
+    environment: 'development'
+
+rule_files:
+  - "rules/*.yml"
+
+scrape_configs:
+  # MBTI Travel Assistant MCP Service
+  - job_name: 'mbti-travel-assistant'
+    static_configs:
+      - targets: ['mbti-travel-assistant:9090']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    honor_labels: true
+    params:
+      format: ['prometheus']
+
+  # AgentCore Runtime Metrics
+  - job_name: 'agentcore-runtime'
+    static_configs:
+      - targets: ['mbti-travel-assistant:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # Redis Metrics
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Mock MCP Servers (Development)
+  - job_name: 'search-mcp-mock'
+    static_configs:
+      - targets: ['search-mcp-mock:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  - job_name: 'reasoning-mcp-mock'
+    static_configs:
+      - targets: ['reasoning-mcp-mock:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Prometheus Self-Monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 30s
+
+  # Node Exporter (if available)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 30s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+# Storage configuration
+storage:
+  tsdb:
+    retention.time: 7d
+    retention.size: 1GB

@@ -1,0 +1,162 @@
+groups:
+  - name: mbti_travel_assistant_alerts
+    rules:
+      # Service Health Alerts
+      - alert: MBTITravelAssistantDown
+        expr: up{job="mbti-travel-assistant-prod"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mbti-travel-assistant
+        annotations:
+          summary: "MBTI Travel Assistant service is down"
+          description: "MBTI Travel Assistant service has been down for more than 1 minute"
+
+      - alert: AgentCoreRuntimeDown
+        expr: up{job="agentcore-runtime-prod"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          service: agentcore-runtime
+        annotations:
+          summary: "AgentCore Runtime is down"
+          description: "AgentCore Runtime has been down for more than 2 minutes"
+
+      # Performance Alerts
+      - alert: HighResponseTime
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="mbti-travel-assistant-prod"}[5m])) > 5
+        for: 5m
+        labels:
+          severity: warning
+          service: mbti-travel-assistant
+        annotations:
+          summary: "High response time detected"
+          description: "95th percentile response time is {{ $value }}s for more than 5 minutes"
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{job="mbti-travel-assistant-prod",status=~"5.."}[5m]) / rate(http_requests_total{job="mbti-travel-assistant-prod"}[5m]) > 0.05
+        for: 3m
+        labels:
+          severity: warning
+          service: mbti-travel-assistant
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value | humanizePercentage }} for more than 3 minutes"
+
+      # MCP Client Alerts
+      - alert: MCPClientConnectionFailure
+        expr: increase(mcp_client_connection_failures_total[5m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+          service: mcp-client
+        annotations:
+          summary: "MCP client connection failures"
+          description: "MCP client has {{ $value }} connection failures in the last 5 minutes"
+
+      - alert: MCPServerUnreachable
+        expr: up{job="external-mcp-health"} == 0
+        for: 3m
+        labels:
+          severity: critical
+          service: mcp-server
+        annotations:
+          summary: "MCP server unreachable"
+          description: "MCP server {{ $labels.instance }} has been unreachable for more than 3 minutes"
+
+      # Resource Usage Alerts
+      - alert: HighMemoryUsage
+        expr: (container_memory_usage_bytes{name="mbti-travel-assistant-mcp-prod"} / container_spec_memory_limit_bytes{name="mbti-travel-assistant-mcp-prod"}) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          service: mbti-travel-assistant
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value | humanizePercentage }} for more than 5 minutes"
+
+      - alert: HighCPUUsage
+        expr: rate(container_cpu_usage_seconds_total{name="mbti-travel-assistant-mcp-prod"}[5m]) > 1.5
+        for: 10m
+        labels:
+          severity: warning
+          service: mbti-travel-assistant
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }} cores for more than 10 minutes"
+
+      # Authentication Alerts
+      - alert: HighAuthenticationFailures
+        expr: increase(jwt_authentication_failures_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: warning
+          service: authentication
+        annotations:
+          summary: "High authentication failure rate"
+          description: "{{ $value }} authentication failures in the last 5 minutes"
+
+      - alert: CognitoTokenValidationFailure
+        expr: increase(cognito_token_validation_failures_total[5m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+          service: cognito
+        annotations:
+          summary: "Cognito token validation failures"
+          description: "{{ $value }} Cognito token validation failures in the last 5 minutes"
+
+      # Cache Alerts
+      - alert: CacheHitRateLow
+        expr: rate(cache_hits_total[5m]) / (rate(cache_hits_total[5m]) + rate(cache_misses_total[5m])) < 0.7
+        for: 10m
+        labels:
+          severity: warning
+          service: cache
+        annotations:
+          summary: "Low cache hit rate"
+          description: "Cache hit rate is {{ $value | humanizePercentage }} for more than 10 minutes"
+
+      - alert: RedisConnectionFailure
+        expr: redis_connected_clients == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: redis
+        annotations:
+          summary: "Redis connection failure"
+          description: "No Redis clients connected for more than 1 minute"
+
+  - name: infrastructure_alerts
+    rules:
+      # Disk Space Alerts
+      - alert: DiskSpaceLow
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: infrastructure
+        annotations:
+          summary: "Low disk space"
+          description: "Disk space is {{ $value | humanizePercentage }} available"
+
+      - alert: DiskSpaceCritical
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.05
+        for: 1m
+        labels:
+          severity: critical
+          service: infrastructure
+        annotations:
+          summary: "Critical disk space"
+          description: "Disk space is {{ $value | humanizePercentage }} available"
+
+      # Network Alerts
+      - alert: HighNetworkErrors
+        expr: increase(node_network_receive_errs_total[5m]) > 10
+        for: 3m
+        labels:
+          severity: warning
+          service: network
+        annotations:
+          summary: "High network errors"
+          description: "{{ $value }} network receive errors in the last 5 minutes"

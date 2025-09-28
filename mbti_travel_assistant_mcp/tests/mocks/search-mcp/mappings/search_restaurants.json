@@ -1,0 +1,106 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mcp/tools/search_restaurants_combined",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.districts"
+      },
+      {
+        "matchesJsonPath": "$.meal_types"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "restaurants": [
+        {
+          "id": "rest_001",
+          "name": "Central Breakfast Cafe",
+          "address": "123 Central Street, Central District",
+          "district": "Central district",
+          "meal_type": ["breakfast", "brunch"],
+          "sentiment": {
+            "likes": 85,
+            "dislikes": 10,
+            "neutral": 5
+          },
+          "price_range": "$$",
+          "operating_hours": {
+            "monday": ["07:00-11:30"],
+            "tuesday": ["07:00-11:30"],
+            "wednesday": ["07:00-11:30"],
+            "thursday": ["07:00-11:30"],
+            "friday": ["07:00-11:30"],
+            "saturday": ["08:00-12:00"],
+            "sunday": ["08:00-12:00"]
+          },
+          "location_category": "urban"
+        },
+        {
+          "id": "rest_002",
+          "name": "Morning Glory Restaurant",
+          "address": "456 Business Avenue, Central District",
+          "district": "Central district",
+          "meal_type": ["breakfast", "lunch"],
+          "sentiment": {
+            "likes": 92,
+            "dislikes": 5,
+            "neutral": 3
+          },
+          "price_range": "$$$",
+          "operating_hours": {
+            "monday": ["06:30-14:00"],
+            "tuesday": ["06:30-14:00"],
+            "wednesday": ["06:30-14:00"],
+            "thursday": ["06:30-14:00"],
+            "friday": ["06:30-14:00"],
+            "saturday": ["07:00-15:00"],
+            "sunday": ["07:00-15:00"]
+          },
+          "location_category": "business"
+        },
+        {
+          "id": "rest_003",
+          "name": "Sunrise Diner",
+          "address": "789 Market Street, Central District",
+          "district": "Central district",
+          "meal_type": ["breakfast", "lunch", "dinner"],
+          "sentiment": {
+            "likes": 78,
+            "dislikes": 15,
+            "neutral": 7
+          },
+          "price_range": "$",
+          "operating_hours": {
+            "monday": ["06:00-22:00"],
+            "tuesday": ["06:00-22:00"],
+            "wednesday": ["06:00-22:00"],
+            "thursday": ["06:00-22:00"],
+            "friday": ["06:00-23:00"],
+            "saturday": ["06:00-23:00"],
+            "sunday": ["07:00-21:00"]
+          },
+          "location_category": "casual"
+        }
+      ],
+      "metadata": {
+        "total_found": 3,
+        "search_criteria": {
+          "districts": ["Central district"],
+          "meal_types": ["breakfast"]
+        },
+        "timestamp": "{{now format='yyyy-MM-dd HH:mm:ss'}}"
+      }
+    }
+  }
+}

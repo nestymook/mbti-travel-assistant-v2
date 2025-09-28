@@ -278,16 +278,11 @@ def recommend_restaurants(
         ], "sentiment_likes")
     """
     try:
-        # Get user context for audit logging
-        user_context = None
-        if request:
-            user_context = AuthenticationHelper.get_user_context(request)
-        
-        # Log tool invocation with user context
+        # Log tool invocation (no request context available in MCP tools)
         log_mcp_tool_invocation('recommend_restaurants', {
             'restaurants': restaurants,
             'ranking_method': ranking_method
-        }, user_context)
+        }, None)
         
         logger.info(f"Processing recommendation request for {len(restaurants) if isinstance(restaurants, list) else 0} restaurants")
         
@@ -384,15 +379,10 @@ def analyze_restaurant_sentiment(restaurants: List[Dict[str, Any]]) -> str:
         ])
     """
     try:
-        # Get user context for audit logging
-        user_context = None
-        if request:
-            user_context = AuthenticationHelper.get_user_context(request)
-        
-        # Log tool invocation with user context
+        # Log tool invocation (no request context available in MCP tools)
         log_mcp_tool_invocation('analyze_restaurant_sentiment', {
             'restaurants': restaurants
-        }, user_context)
+        }, None)
         
         logger.info(f"Processing sentiment analysis for {len(restaurants) if isinstance(restaurants, list) else 0} restaurants")
         

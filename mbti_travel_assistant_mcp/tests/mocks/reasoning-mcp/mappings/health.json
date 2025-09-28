@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/health"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "healthy",
+      "service": "restaurant-reasoning-mcp-mock",
+      "version": "1.0.0",
+      "timestamp": "{{now format='yyyy-MM-dd HH:mm:ss'}}",
+      "uptime": "{{now format='PT'}}",
+      "checks": {
+        "ml_model": "healthy",
+        "memory": "healthy",
+        "disk": "healthy"
+      }
+    }
+  }
+}
