@@ -1,0 +1,29 @@
+[
+    {
+        "Rules": [
+            {
+                "ResourceType": "collection",
+                "Resource": ["collection/bedrock-knowledge-base-d2fm65"],
+                "Permission": [
+                    "aoss:CreateCollectionItems",
+                    "aoss:DeleteCollectionItems",
+                    "aoss:UpdateCollectionItems",
+                    "aoss:DescribeCollectionItems"
+                ]
+            },
+            {
+                "ResourceType": "index",
+                "Resource": ["index/bedrock-knowledge-base-d2fm65/*"],
+                "Permission": [
+                    "aoss:CreateIndex",
+                    "aoss:DeleteIndex",
+                    "aoss:UpdateIndex",
+                    "aoss:DescribeIndex",
+                    "aoss:ReadDocument",
+                    "aoss:WriteDocument"
+                ]
+            }
+        ],
+        "Principal": ["arn:aws:sts::209803798463:assumed-role/AWSReservedSSO_RestaurantCrawlerFullAccess_37749380ed19e3d5/nestymook"]
+    }
+]

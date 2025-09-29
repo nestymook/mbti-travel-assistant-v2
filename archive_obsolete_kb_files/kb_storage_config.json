@@ -1,0 +1,12 @@
+{
+    "type": "OPENSEARCH_SERVERLESS",
+    "opensearchServerlessConfiguration": {
+        "collectionArn": "arn:aws:aoss:us-east-1:209803798463:collection/r481xgx08tn06w6kcc1i",
+        "vectorIndexName": "bedrock-knowledge-base-mbti-nova",
+        "fieldMapping": {
+            "vectorField": "vector",
+            "textField": "text",
+            "metadataField": "metadata"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:sts::209803798463:assumed-role/AWSReservedSSO_RestaurantCrawlerFullAccess_37749380ed19e3d5/nestymook"
+            },
+            "Action": "es:*",
+            "Resource": "arn:aws:es:us-east-1:209803798463:domain/mbti-kb-quick-start/*"
+        }
+    ]
+}

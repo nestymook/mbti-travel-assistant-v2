@@ -1,0 +1,25 @@
+{
+    "name": "MBTI-S3-NovaProParsing-DataSource",
+    "description": "S3 data source with Nova Pro parsing and no chunking",
+    "dataSourceConfiguration": {
+        "type": "S3",
+        "s3Configuration": {
+            "bucketArn": "arn:aws:s3:::mbti-knowledgebase-209803798463-us-east-1"
+        }
+    },
+    "dataDeletionPolicy": "RETAIN",
+    "vectorIngestionConfiguration": {
+        "parsingConfiguration": {
+            "parsingStrategy": "BEDROCK_FOUNDATION_MODEL",
+            "bedrockFoundationModelConfiguration": {
+                "modelArn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0",
+                "parsingPrompt": {
+                    "parsingPromptText": "Extract and preserve all text content from this document, maintaining the original structure and formatting. Include all MBTI personality information, location details, operating hours, and any metadata present in the document."
+                }
+            }
+        },
+        "chunkingConfiguration": {
+            "chunkingStrategy": "NONE"
+        }
+    }
+}

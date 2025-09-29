@@ -1,0 +1,23 @@
+{
+    "name": "MBTI-NovaProParsing-KnowledgeBase",
+    "description": "MBTI Knowledge Base with Nova Pro parsing, no chunking, Titan embeddings, and OpenSearch Serverless",
+    "roleArn": "arn:aws:iam::209803798463:role/MBTIKnowledgeBaseRole-NovaProParsing",
+    "knowledgeBaseConfiguration": {
+        "type": "VECTOR",
+        "vectorKnowledgeBaseConfiguration": {
+            "embeddingModelArn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-embed-text-v1"
+        }
+    },
+    "storageConfiguration": {
+        "type": "OPENSEARCH_SERVERLESS",
+        "opensearchServerlessConfiguration": {
+            "collectionArn": "arn:aws:aoss:us-east-1:209803798463:collection/r481xgx08tn06w6kcc1i",
+            "vectorIndexName": "bedrock-knowledge-base-default-index",
+            "fieldMapping": {
+                "vectorField": "bedrock-knowledge-base-default-vector",
+                "textField": "AMAZON_BEDROCK_TEXT_CHUNK",
+                "metadataField": "AMAZON_BEDROCK_METADATA"
+            }
+        }
+    }
+}

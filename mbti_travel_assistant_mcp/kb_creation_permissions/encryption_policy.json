@@ -1,0 +1,9 @@
+{
+    "Rules": [
+        {
+            "ResourceType": "collection",
+            "Resource": ["collection/bedrock-knowledge-base-d2fm65"]
+        }
+    ],
+    "AWSOwnedKey": true
+}
