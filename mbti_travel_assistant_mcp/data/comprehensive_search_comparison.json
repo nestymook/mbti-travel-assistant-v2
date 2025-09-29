@@ -1,0 +1,156 @@
+{
+  "test_timestamp": "2025-09-29T18:01:49.953566",
+  "test_type": "comprehensive_search_comparison",
+  "model": "amazon.nova-pro-v1:0",
+  "knowledge_base_id": "RCWW86CLM9",
+  "expected_infj_attractions": [
+    "Broadway Cinematheque",
+    "Central Market",
+    "Hong Kong Cultural Centre",
+    "Hong Kong House of Stories",
+    "Hong Kong Museum of Art",
+    "Hong Kong Palace Museum",
+    "M+",
+    "Man Mo Temple",
+    "PMQ (Police Married Quarters)",
+    "Pacific Place Rooftop Garden",
+    "Po Lin Monastery",
+    "SoHo & Central Art Galleries",
+    "Tai Kwun"
+  ],
+  "strategies_tested": [
+    "semantic_comprehensive",
+    "filename_pattern",
+    "folder_directory_search",
+    "metadata_attribute_search",
+    "explicit_no_analysis",
+    "hybrid_folder_filename",
+    "database_query_style"
+  ],
+  "results": {
+    "semantic_comprehensive": {
+      "completeness_rate": 53.84615384615385,
+      "response_time": 6.200037956237793,
+      "quality": "medium",
+      "attractions_found": [
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 8,
+      "total_citations": 8
+    },
+    "filename_pattern": {
+      "completeness_rate": 84.61538461538461,
+      "response_time": 6.709059715270996,
+      "quality": "high",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "Man Mo Temple",
+        "PMQ (Police Married Quarters)",
+        "Po Lin Monastery",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 12,
+      "total_citations": 12
+    },
+    "folder_directory_search": {
+      "completeness_rate": 69.23076923076923,
+      "response_time": 2.2650277614593506,
+      "quality": "medium",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "PMQ (Police Married Quarters)",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 9,
+      "total_citations": 9
+    },
+    "metadata_attribute_search": {
+      "completeness_rate": 69.23076923076923,
+      "response_time": 2.2363550662994385,
+      "quality": "medium",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "PMQ (Police Married Quarters)",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 9,
+      "total_citations": 9
+    },
+    "explicit_no_analysis": {
+      "completeness_rate": 69.23076923076923,
+      "response_time": 2.3786191940307617,
+      "quality": "medium",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "PMQ (Police Married Quarters)",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 9,
+      "total_citations": 9
+    },
+    "hybrid_folder_filename": {
+      "completeness_rate": 53.84615384615385,
+      "response_time": 2.3922183513641357,
+      "quality": "medium",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "PMQ (Police Married Quarters)",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 8,
+      "total_citations": 8
+    },
+    "database_query_style": {
+      "completeness_rate": 69.23076923076923,
+      "response_time": 2.6734554767608643,
+      "quality": "medium",
+      "attractions_found": [
+        "Broadway Cinematheque",
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "PMQ (Police Married Quarters)",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "infj_files_cited": 10,
+      "total_citations": 10
+    }
+  }
+}

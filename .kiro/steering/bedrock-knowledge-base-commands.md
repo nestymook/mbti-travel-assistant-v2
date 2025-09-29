@@ -218,35 +218,21 @@ aws bedrock-agent create-data-source \
 
 ### Update Data Source
 ```bash
-aws bedrock-agent update-data-source \
-    --knowledge-base-id RCWW86CLM9 \
-    --data-source-id RQPU9JWBU8 \
-    --name "Updated Data Source Name" \
-    --data-source-configuration '{
-        "type": "S3",
-        "s3Configuration": {
-            "bucketArn": "arn:aws:s3:::mbti-knowledgebase-209803798463-us-east-1",
-            "inclusionPrefixes": ["Tourist_Spots_With_Hours.markdown", "new-documents/"]
-        }
-    }' \
-    --region us-east-1
+aws bedrock-agent update-data-source --knowledge-base-id RCWW86CLM9 --data-source-id JJSNBHN3VI --name "Updated-Data-Source" --data-source-configuration '{"type": "S3","s3Configuration": {"bucketArn": "arn:aws:s3:::mbti-knowledgebase-209803798463-us-east-1","inclusionPrefixes": ["Tourist_Spots_With_Hours.markdown"]}}' --vector-ingestion-configuration '{"chunkingConfiguration": {"chunkingStrategy": "NONE"}}' --region us-east-1
 ```
 
 ## Ingestion Job Management Commands
 
 ### Start Ingestion Job (CRITICAL for syncing)
 ```bash
-aws bedrock-agent start-ingestion-job \
-    --knowledge-base-id RCWW86CLM9 \
-    --data-source-id RQPU9JWBU8 \
-    --region us-east-1
+aws bedrock-agent start-ingestion-job --knowledge-base-id RCWW86CLM9 --data-source-id JJSNBHN3VI --region us-east-1
 ```
 
 ### List Ingestion Jobs
 ```bash
 aws bedrock-agent list-ingestion-jobs \
     --knowledge-base-id RCWW86CLM9 \
-    --data-source-id RQPU9JWBU8 \
+    --data-source-id JJSNBHN3VI \
     --region us-east-1
 ```
 

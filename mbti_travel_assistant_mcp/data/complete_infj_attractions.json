@@ -1,0 +1,244 @@
+{
+  "mbti_type": "INFJ",
+  "personality_description": "Introverted, Intuitive, Feeling, Judging - The Advocate",
+  "total_attractions": 13,
+  "expected_attractions": 13,
+  "retrieval_completeness": "13/13 (100.0%)",
+  "retrieval_timestamp": "2025-09-29T16:42:46.775154",
+  "attractions": [
+    {
+      "name": "Pacific Place Rooftop Garden",
+      "mbti_type": "INFJ",
+      "description": "## Location Information",
+      "location": {
+        "address": "88 Queensway, Admiralty",
+        "district": "Admiralty",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–10:00 PM",
+        "weekends": "10:00 AM–10:00 PM",
+        "holidays": "10:00 AM–10:00 PM"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.849848747253418,
+      "source_file": "INFJ_Pacific_Place_Rooftop_Garden.md"
+    },
+    {
+      "name": "Man Mo Temple",
+      "mbti_type": "INFJ",
+      "description": "## Location Information",
+      "location": {
+        "address": "124-126 Hollywood Road, Sheung Wan",
+        "district": "Sheung Wan",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "8:00 AM–6:00 PM",
+        "weekends": "8:00 AM–6:00 PM",
+        "holidays": "8:00 AM–6:00 PM"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.8199185132980347,
+      "source_file": "INFJ_Man_Mo_Temple.md"
+    },
+    {
+      "name": "M+",
+      "mbti_type": "INFJ",
+      "description": "Visionary art for reflection and future thinking.",
+      "location": {
+        "address": "38 Museum Drive, West Kowloon Cultural District",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Mon)",
+        "weekends": "10:00 AM–6:00 PM",
+        "holidays": "10:00 AM–6:00 PM"
+      },
+      "contact_remarks": "+852 2200 0217",
+      "relevance_score": 0.812471866607666,
+      "source_file": "INFJ_M+.md"
+    },
+    {
+      "name": "Hong Kong Cultural Centre",
+      "mbti_type": "INFJ",
+      "description": "Performing arts fostering vision and empathy.",
+      "location": {
+        "address": "10 Salisbury Road, Tsim Sha Tsui",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "9:00 AM–11:00 PM",
+        "weekends": "9:00 AM–11:00 PM",
+        "holidays": "9:00 AM–11:00 PM"
+      },
+      "contact_remarks": "+852 2734 2009",
+      "relevance_score": 0.805566281080246,
+      "source_file": "INFJ_Hong_Kong_Cultural_Centre.md"
+    },
+    {
+      "name": "Tai Kwun",
+      "mbti_type": "INFJ",
+      "description": "Thought-provoking installations and exhibitions.",
+      "location": {
+        "address": "10 Hollywood Road, Central",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "11:00 AM–8:00 PM",
+        "weekends": "11:00 AM–8:00 PM",
+        "holidays": "11:00 AM–8:00 PM"
+      },
+      "contact_remarks": "+852 3559 2600",
+      "relevance_score": 0.7905479967594147,
+      "source_file": "INFJ_Tai_Kwun.md"
+    },
+    {
+      "name": "SoHo & Central Art Galleries",
+      "mbti_type": "INFJ",
+      "description": "Artistic journey sparking idealism.",
+      "location": {
+        "address": "Soho, Central, Hong Kong Island",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "**Weekends (Sat-Sun):**",
+        "weekends": "**Public Holidays:**",
+        "holidays": "## Additional Information"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.7845001518726349,
+      "source_file": "INFJ_SoHo_and_Central_Art_Galleries.md"
+    },
+    {
+      "name": "Hong Kong Palace Museum",
+      "mbti_type": "INFJ",
+      "description": "## Location Information",
+      "location": {
+        "address": "8 Museum Drive, West Kowloon Cultural District",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Tue)",
+        "weekends": "10:00 AM–6:00 PM",
+        "holidays": "10:00 AM–6:00 PM"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.7826410830020905,
+      "source_file": "INFJ_Hong_Kong_Palace_Museum.md"
+    },
+    {
+      "name": "Hong Kong Museum of Art",
+      "mbti_type": "INFJ",
+      "description": "Promotes creativity and deeper understanding.",
+      "location": {
+        "address": "10 Salisbury Road, Tsim Sha Tsui",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Tue)",
+        "weekends": "10:00 AM–7:00 PM",
+        "holidays": "10:00 AM–7:00 PM"
+      },
+      "contact_remarks": "+852 2721 0116",
+      "relevance_score": 0.7820773422718048,
+      "source_file": "INFJ_Hong_Kong_Museum_of_Art.md"
+    },
+    {
+      "name": "Central Market",
+      "mbti_type": "INFJ",
+      "description": "Interactive experiences for self-discovery.",
+      "location": {
+        "address": "80 Des Voeux Road Central, Central",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–10:00 PM",
+        "weekends": "10:00 AM–10:00 PM",
+        "holidays": "10:00 AM–10:00 PM"
+      },
+      "contact_remarks": "MBTI Playground",
+      "relevance_score": 0.7573312520980835,
+      "source_file": "INFJ_Central_Market.md"
+    },
+    {
+      "name": "Po Lin Monastery",
+      "mbti_type": "INFJ",
+      "description": "Spiritual retreat for inner harmony.",
+      "location": {
+        "address": "Ngong Ping Road, Lantau Island",
+        "district": "Lantau",
+        "area": "Islands"
+      },
+      "operating_hours": {
+        "weekdays": "8:00 AM–6:00 PM",
+        "weekends": "8:00 AM–6:00 PM",
+        "holidays": "8:00 AM–6:00 PM"
+      },
+      "contact_remarks": "+852 2985 5248",
+      "relevance_score": 0.7142867147922516,
+      "source_file": "INFJ_Po_Lin_Monastery.md"
+    },
+    {
+      "name": "Hong Kong House of Stories",
+      "mbti_type": "INFJ",
+      "description": "Stories of transformation and imagination.",
+      "location": {
+        "address": "G/F, 72A Stone Nullah Lane, Wan Chai",
+        "district": "Wan Chai",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "11:00 AM–6:00 PM",
+        "weekends": "11:00 AM–6:00 PM",
+        "holidays": "11:00 AM–6:00 PM"
+      },
+      "contact_remarks": "+852 2833 4608",
+      "relevance_score": 0.6998027563095093,
+      "source_file": "INFJ_Hong_Kong_House_of_Stories.md"
+    },
+    {
+      "name": "Broadway Cinematheque",
+      "mbti_type": "INFJ",
+      "description": "Indie films for deep meaning and inspiration.",
+      "location": {
+        "address": "3 Public Square Street, Yau Ma Tei",
+        "district": "Yau Ma Tei",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "11:00 AM–10:00 PM",
+        "weekends": "11:00 AM–10:00 PM",
+        "holidays": "11:00 AM–10:00 PM"
+      },
+      "contact_remarks": "+852 2388 0002",
+      "relevance_score": 0.6735222935676575,
+      "source_file": "INFJ_Broadway_Cinematheque.md"
+    },
+    {
+      "name": "PMQ (Police Married Quarters)",
+      "mbti_type": "INFJ",
+      "description": "Innovative art and design for introspection.",
+      "location": {
+        "address": "35 Aberdeen Street, Central",
+        "district": "Sheung Wan",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "7:00 AM–11:00 PM",
+        "weekends": "7:00 AM–11:00 PM",
+        "holidays": "7:00 AM–11:00 PM"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.669669896364212,
+      "source_file": "INFJ_PMQ_Police_Married_Quarters.md"
+    }
+  ]
+}

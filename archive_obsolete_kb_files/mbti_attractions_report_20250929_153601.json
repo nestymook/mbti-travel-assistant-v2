@@ -1,0 +1,214 @@
+{
+  "ENFP": [
+    {
+      "name": "Kong Island",
+      "mbti_type": "ENFP",
+      "description": "Avenue of Stars",
+      "address": "38 Museum Drive, West Kowloon",
+      "district": "Central District",
+      "operating_hours": {
+        "weekday": "6:30 AM–11:00 PM",
+        "weekend": "6:30 AM–11:00 PM",
+        "holiday": "7:00 AM–11:00 PM"
+      },
+      "remarks": "Hong Kong Avenue of Comic Stars",
+      "relevance_score": 0.804647833108902
+    }
+  ],
+  "INTJ": [
+    {
+      "name": "Central District",
+      "mbti_type": "INTJ",
+      "description": "Features organized urban design and efficient public transport, perfect for self-guided exploration.",
+      "address": "No. 9 Science Park West Avenue, Hong Kong Science Park, Shatin, New Territories",
+      "district": "Central District",
+      "operating_hours": {
+        "weekday": "10:00 AM–7:00 PM (Closed Tue)",
+        "weekend": "10:00 AM–7:00 PM",
+        "holiday": "10:00 AM–7:00 PM"
+      },
+      "remarks": "Hong Kong Island",
+      "relevance_score": 0.911131352186203
+    },
+    {
+      "name": "The Chinese University of Hong Kong",
+      "mbti_type": "INTJ",
+      "description": "Analytical collections on Chinese art and history.",
+      "address": "Address not specified",
+      "district": "Central District",
+      "operating_hours": {
+        "weekday": "10:00 AM–5:00 PM",
+        "weekend": "10:00 AM–5:00 PM",
+        "holiday": "7:00 AM–11:00 PM"
+      },
+      "remarks": "Art Gallery Conservation Annex, University Ave, Ma Liu Shui, Shatin",
+      "relevance_score": 0.855341374874115
+    },
+    {
+      "name": "35 Aberdeen Street, Central",
+      "mbti_type": "INTJ",
+      "description": "strategic ideas in a heritage setting.",
+      "address": "Address not specified",
+      "district": "Sha Tin",
+      "operating_hours": {
+        "weekday": "7:00 AM–11:00 PM",
+        "weekend": "7:00 AM–11:00 PM",
+        "holiday": "Closed"
+      },
+      "remarks": "Hong Kong Island",
+      "relevance_score": 0.8422182202339172
+    }
+  ],
+  "ISFJ": [
+    {
+      "name": "Mon)",
+      "mbti_type": "ISFJ",
+      "description": "Pineapple Dam Nature Trail",
+      "address": "Address not specified",
+      "district": "Admiralty",
+      "operating_hours": {
+        "weekday": "10:00 AM–6:00 PM",
+        "weekend": "10:00 AM–6:00 PM",
+        "holiday": "10:00 AM–10:00 PM"
+      },
+      "remarks": "Low-key trail blending nature and tranquility.",
+      "relevance_score": 0.823029100894928
+    },
+    {
+      "name": "Pacific Place Rooftop Garden",
+      "mbti_type": "ISFJ",
+      "description": "Hong Kong Island",
+      "address": "8 Museum Drive, West Kowloon Cultural District",
+      "district": "Central District",
+      "operating_hours": {
+        "weekday": "10:00 AM–10:00 PM",
+        "weekend": "10:00 AM–10:00 PM",
+        "holiday": "11:00 AM–8:00 PM"
+      },
+      "remarks": "Hong Kong House of Stories",
+      "relevance_score": 0.818018913269043
+    }
+  ],
+  "ESTP": [
+    {
+      "name": "Soho, Central, Hong Kong Island",
+      "mbti_type": "ESTP",
+      "description": "Hong Kong Island",
+      "address": "Address not specified",
+      "district": "Kowloon",
+      "operating_hours": {
+        "weekday": "Hours not specified",
+        "weekend": "Hours not specified",
+        "holiday": "Hours not specified"
+      },
+      "remarks": "Happy Valley Racecourse",
+      "relevance_score": 0.8232883512973785
+    },
+    {
+      "name": "Salisbury Road, Tsim Sha Tsui",
+      "mbti_type": "ESTP",
+      "description": "Urban movement symbolizing dynamism.",
+      "address": "180 Wong Chuk Hang Road, Aberdeen",
+      "district": "Kowloon",
+      "operating_hours": {
+        "weekday": "6:00 AM–12:00 AM",
+        "weekend": "6:00 AM–12:00 AM",
+        "holiday": "10:00 AM–12:00 AM"
+      },
+      "remarks": "Hong Kong Island",
+      "relevance_score": 0.8163657188415527
+    }
+  ],
+  "INFP": [
+    {
+      "name": "88 Queensway, Admiralty",
+      "mbti_type": "INFP",
+      "description": "Hong Kong Island",
+      "address": "38 Museum Drive, West Kowloon Cultural District",
+      "district": "Kowloon",
+      "operating_hours": {
+        "weekday": "10:00 AM–10:00 PM",
+        "weekend": "10:00 AM–10:00 PM",
+        "holiday": "10:00 AM–6:00 PM"
+      },
+      "remarks": "Hong Kong House of Stories",
+      "relevance_score": 0.8368088603019714
+    },
+    {
+      "name": "Market",
+      "mbti_type": "INFP",
+      "description": "Interactive experiences for self-discovery.",
+      "address": "G/F, 72A Stone Nullah Lane, Wan",
+      "district": "Admiralty",
+      "operating_hours": {
+        "weekday": "10:00 AM–10:00 PM",
+        "weekend": "10:00 AM–10:00 PM",
+        "holiday": "10:00 AM–10:00 PM"
+      },
+      "remarks": "MBTI Playground",
+      "relevance_score": 0.8328914642333984
+    },
+    {
+      "name": ", Tsim Sha Tsui",
+      "mbti_type": "INFP",
+      "description": "Artistic journey sparking idealism.",
+      "address": "Address not specified",
+      "district": "Islands",
+      "operating_hours": {
+        "weekday": "10:00 AM–6:00 PM (Closed Tue)",
+        "weekend": "10:00 AM–7:00 PM",
+        "holiday": "11:00 AM–6:00 PM"
+      },
+      "remarks": "Hong Kong Island",
+      "relevance_score": 0.8027148842811584
+    }
+  ],
+  "ENTJ": [
+    {
+      "name": "Modern arts for big-picture thinking.",
+      "mbti_type": "ENTJ",
+      "description": "+852 2200 0217",
+      "address": "8 Museum Drive, West Kowloon Cultural District",
+      "district": "Causeway Bay",
+      "operating_hours": {
+        "weekday": "AM–11:30 PM",
+        "weekend": "10:00 AM–6:00 PM (Closed Mon)",
+        "holiday": "10:00 AM–6:00 PM"
+      },
+      "remarks": "Hong Kong Palace Museum",
+      "relevance_score": 0.8042622208595276
+    }
+  ],
+  "ISFP": [
+    {
+      "name": "Repulse Bay",
+      "mbti_type": "ISFP",
+      "description": "Laid-back coastal adventure.",
+      "address": "Address not specified",
+      "district": "Sai Kung",
+      "operating_hours": {
+        "weekday": "10:00 AM–5:00 PM",
+        "weekend": "10:00 AM–5:00 PM",
+        "holiday": "10:00 AM–5:00 PM"
+      },
+      "remarks": "Repulse Bay Road, Repulse Bay",
+      "relevance_score": 0.8436890840530396
+    }
+  ],
+  "ENTP": [
+    {
+      "name": "Modern arts for big-picture thinking.",
+      "mbti_type": "ENTP",
+      "description": "+852 2200 0217",
+      "address": "8 Museum Drive, West Kowloon Cultural District",
+      "district": "Causeway Bay",
+      "operating_hours": {
+        "weekday": "AM–11:30 PM",
+        "weekend": "10:00 AM–6:00 PM (Closed Mon)",
+        "holiday": "10:00 AM–6:00 PM"
+      },
+      "remarks": "Hong Kong Palace Museum",
+      "relevance_score": 0.8102691173553467
+    }
+  ]
+}

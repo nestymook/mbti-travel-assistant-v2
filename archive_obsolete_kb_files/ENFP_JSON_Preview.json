@@ -1,0 +1,168 @@
+{
+  "mbti_type": "ENFP",
+  "personality_description": "ENFP personality type attractions in Hong Kong",
+  "total_attractions": 7,
+  "attractions": [
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "35 Aberdeen Street, Central",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "7:00 AM–11:00 PM",
+        "weekends": "7:00 AM–11:00 PM",
+        "holidays": "7:00 AM–11:00 PM"
+      },
+      "contact_info": "Explore designers and makerspace creativity.",
+      "additional_info": "",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "Central District"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "+852 2200 0217",
+        "district": "38 Museum Drive, West Kowloon Cultural District",
+        "area": "Tsim Sha Tsui"
+      },
+      "operating_hours": {
+        "weekdays": "Kowloon",
+        "weekends": "10:00 AM–6:00 PM (Closed Mon)",
+        "holidays": "10:00 AM–6:00 PM"
+      },
+      "contact_info": "World-class modern art and visionary exhibits.",
+      "additional_info": "10:00 AM–6:00 PM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "38 Museum Drive, West Kowloon Cultural District"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "+852 2721 0116",
+        "district": "10 Salisbury Road, Tsim Sha Tsui",
+        "area": "Tsim Sha Tsui"
+      },
+      "operating_hours": {
+        "weekdays": "Kowloon",
+        "weekends": "10:00 AM–6:00 PM (Closed Tue)",
+        "holidays": "10:00 AM–7:00 PM"
+      },
+      "contact_info": "Colorful, engaging displays foster curiosity.",
+      "additional_info": "10:00 AM–7:00 PM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "10 Salisbury Road, Tsim Sha Tsui"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "+852 2388 0002",
+        "district": "3 Public Square Street, Yau Ma Tei",
+        "area": "Yau Ma Tei"
+      },
+      "operating_hours": {
+        "weekdays": "Kowloon",
+        "weekends": "11:00 AM–10:00 PM",
+        "holidays": "11:00 AM–10:00 PM"
+      },
+      "contact_info": "Indie films encourage new perspectives.",
+      "additional_info": "11:00 AM–10:00 PM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "3 Public Square Street, Yau Ma Tei"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "Includes Mong Kok Night Markets",
+        "district": "Temple Street, Jordan, Kowloon",
+        "area": "Jordan"
+      },
+      "operating_hours": {
+        "weekdays": "Kowloon",
+        "weekends": "4:00 PM–12:00 AM",
+        "holidays": "4:00 PM–12:00 AM"
+      },
+      "contact_info": "Social, energetic bazaars for sensory exploration.",
+      "additional_info": "4:00 PM–12:00 AM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "Temple Street, Jordan, Kowloon"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "+852 2200 0778",
+        "district": "18 Museum Drive, West Kowloon Cultural District",
+        "area": "Tsim Sha Tsui"
+      },
+      "operating_hours": {
+        "weekdays": "Kowloon",
+        "weekends": "6:00 AM–11:00 PM",
+        "holidays": "6:00 AM–11:00 PM"
+      },
+      "contact_info": "Art installations and open spaces.",
+      "additional_info": "6:00 AM–11:00 PM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "18 Museum Drive, West Kowloon Cultural District"
+      ]
+    },
+    {
+      "name": "",
+      "mbti_match": "ENFP",
+      "description": "ENFP",
+      "location": {
+        "address": "MBTI Playground",
+        "district": "80 Des Voeux Road Central, Central",
+        "area": "Central District"
+      },
+      "operating_hours": {
+        "weekdays": "Hong Kong Island",
+        "weekends": "10:00 AM–10:00 PM",
+        "holidays": "10:00 AM–10:00 PM"
+      },
+      "contact_info": "Playful scene for lively self-expression.",
+      "additional_info": "10:00 AM–10:00 PM",
+      "keywords": [
+        "ENFP",
+        "Hong Kong",
+        "Tourist Attraction",
+        "80 Des Voeux Road Central, Central"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "mbti_type": "INFJ",
+  "personality_description": "Introverted, Intuitive, Feeling, Judging - The Advocate",
+  "total_attractions": 8,
+  "retrieval_timestamp": "2025-09-29T16:38:36.467749",
+  "attractions": [
+    {
+      "name": "Hong Kong Cultural Centre",
+      "mbti_type": "INFJ",
+      "description": "Performing arts fostering vision and empathy.",
+      "location": {
+        "address": "10 Salisbury Road, Tsim Sha Tsui",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "9:00 AM–11:00 PM",
+        "weekends": "9:00 AM–11:00 PM",
+        "holidays": "9:00 AM–11:00 PM"
+      },
+      "contact_remarks": "+852 2734 2009",
+      "relevance_score": 0.8181464970111847,
+      "source_file": "INFJ_Hong_Kong_Cultural_Centre.md"
+    },
+    {
+      "name": "M+",
+      "mbti_type": "INFJ",
+      "description": "Visionary art for reflection and future thinking.",
+      "location": {
+        "address": "38 Museum Drive, West Kowloon Cultural District",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Mon)",
+        "weekends": "10:00 AM–6:00 PM",
+        "holidays": "10:00 AM–6:00 PM"
+      },
+      "contact_remarks": "+852 2200 0217",
+      "relevance_score": 0.8154681622982025,
+      "source_file": "INFJ_M+.md"
+    },
+    {
+      "name": "Tai Kwun",
+      "mbti_type": "INFJ",
+      "description": "Thought-provoking installations and exhibitions.",
+      "location": {
+        "address": "10 Hollywood Road, Central",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "11:00 AM–8:00 PM",
+        "weekends": "11:00 AM–8:00 PM",
+        "holidays": "11:00 AM–8:00 PM"
+      },
+      "contact_remarks": "+852 3559 2600",
+      "relevance_score": 0.7906692326068878,
+      "source_file": "INFJ_Tai_Kwun.md"
+    },
+    {
+      "name": "SoHo & Central Art Galleries",
+      "mbti_type": "INFJ",
+      "description": "Artistic journey sparking idealism.",
+      "location": {
+        "address": "Soho, Central, Hong Kong Island",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "**Weekends (Sat-Sun):**",
+        "weekends": "**Public Holidays:**",
+        "holidays": "## Additional Information"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.7902913987636566,
+      "source_file": "INFJ_SoHo_and_Central_Art_Galleries.md"
+    },
+    {
+      "name": "Hong Kong Palace Museum",
+      "mbti_type": "INFJ",
+      "description": "## Location Information",
+      "location": {
+        "address": "8 Museum Drive, West Kowloon Cultural District",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Tue)",
+        "weekends": "10:00 AM–6:00 PM",
+        "holidays": "10:00 AM–6:00 PM"
+      },
+      "contact_remarks": "**Full Day Info:**",
+      "relevance_score": 0.7879765033721924,
+      "source_file": "INFJ_Hong_Kong_Palace_Museum.md"
+    },
+    {
+      "name": "Hong Kong Museum of Art",
+      "mbti_type": "INFJ",
+      "description": "Promotes creativity and deeper understanding.",
+      "location": {
+        "address": "10 Salisbury Road, Tsim Sha Tsui",
+        "district": "Tsim Sha Tsui",
+        "area": "Kowloon"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–6:00 PM (Closed Tue)",
+        "weekends": "10:00 AM–7:00 PM",
+        "holidays": "10:00 AM–7:00 PM"
+      },
+      "contact_remarks": "+852 2721 0116",
+      "relevance_score": 0.7846458554267883,
+      "source_file": "INFJ_Hong_Kong_Museum_of_Art.md"
+    },
+    {
+      "name": "Central Market",
+      "mbti_type": "INFJ",
+      "description": "Interactive experiences for self-discovery.",
+      "location": {
+        "address": "80 Des Voeux Road Central, Central",
+        "district": "Central District",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "10:00 AM–10:00 PM",
+        "weekends": "10:00 AM–10:00 PM",
+        "holidays": "10:00 AM–10:00 PM"
+      },
+      "contact_remarks": "MBTI Playground",
+      "relevance_score": 0.7724609673023224,
+      "source_file": "INFJ_Central_Market.md"
+    },
+    {
+      "name": "Hong Kong House of Stories",
+      "mbti_type": "INFJ",
+      "description": "Stories of transformation and imagination.",
+      "location": {
+        "address": "G/F, 72A Stone Nullah Lane, Wan Chai",
+        "district": "Wan Chai",
+        "area": "Hong Kong Island"
+      },
+      "operating_hours": {
+        "weekdays": "11:00 AM–6:00 PM",
+        "weekends": "11:00 AM–6:00 PM",
+        "holidays": "11:00 AM–6:00 PM"
+      },
+      "contact_remarks": "+852 2833 4608",
+      "relevance_score": 0.7267139554023743,
+      "source_file": "INFJ_Hong_Kong_House_of_Stories.md"
+    }
+  ]
+}

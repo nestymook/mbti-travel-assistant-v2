@@ -1,0 +1,188 @@
+{
+  "all_areas_all_districts": [
+    {
+      "area": "hong_kong_island",
+      "district": "admiralty",
+      "filename": "INFJ_Pacific_Place_Rooftop_Garden.md",
+      "full_path": "hong_kong_island\\admiralty\\INFJ_Pacific_Place_Rooftop_Garden.md",
+      "s3_path": "hong_kong_island/admiralty/INFJ_Pacific_Place_Rooftop_Garden.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Central_Market.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Central_Market.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Central_Market.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_SoHo_and_Central_Art_Galleries.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_SoHo_and_Central_Art_Galleries.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_SoHo_and_Central_Art_Galleries.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Tai_Kwun.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Tai_Kwun.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Tai_Kwun.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "sheung_wan",
+      "filename": "INFJ_Man_Mo_Temple.md",
+      "full_path": "hong_kong_island\\sheung_wan\\INFJ_Man_Mo_Temple.md",
+      "s3_path": "hong_kong_island/sheung_wan/INFJ_Man_Mo_Temple.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "sheung_wan",
+      "filename": "INFJ_PMQ_Police_Married_Quarters.md",
+      "full_path": "hong_kong_island\\sheung_wan\\INFJ_PMQ_Police_Married_Quarters.md",
+      "s3_path": "hong_kong_island/sheung_wan/INFJ_PMQ_Police_Married_Quarters.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "wan_chai",
+      "filename": "INFJ_Hong_Kong_House_of_Stories.md",
+      "full_path": "hong_kong_island\\wan_chai\\INFJ_Hong_Kong_House_of_Stories.md",
+      "s3_path": "hong_kong_island/wan_chai/INFJ_Hong_Kong_House_of_Stories.md"
+    },
+    {
+      "area": "islands",
+      "district": "lantau",
+      "filename": "INFJ_Po_Lin_Monastery.md",
+      "full_path": "islands\\lantau\\INFJ_Po_Lin_Monastery.md",
+      "s3_path": "islands/lantau/INFJ_Po_Lin_Monastery.md"
+    },
+    {
+      "area": "kowloon",
+      "district": "tsim_sha_tsui",
+      "filename": "INFJ_Hong_Kong_Cultural_Centre.md",
+      "full_path": "kowloon\\tsim_sha_tsui\\INFJ_Hong_Kong_Cultural_Centre.md",
+      "s3_path": "kowloon/tsim_sha_tsui/INFJ_Hong_Kong_Cultural_Centre.md"
+    },
+    {
+      "area": "kowloon",
+      "district": "tsim_sha_tsui",
+      "filename": "INFJ_Hong_Kong_Museum_of_Art.md",
+      "full_path": "kowloon\\tsim_sha_tsui\\INFJ_Hong_Kong_Museum_of_Art.md",
+      "s3_path": "kowloon/tsim_sha_tsui/INFJ_Hong_Kong_Museum_of_Art.md"
+    },
+    {
+      "area": "kowloon",
+      "district": "tsim_sha_tsui",
+      "filename": "INFJ_Hong_Kong_Palace_Museum.md",
+      "full_path": "kowloon\\tsim_sha_tsui\\INFJ_Hong_Kong_Palace_Museum.md",
+      "s3_path": "kowloon/tsim_sha_tsui/INFJ_Hong_Kong_Palace_Museum.md"
+    },
+    {
+      "area": "kowloon",
+      "district": "tsim_sha_tsui",
+      "filename": "INFJ_M+.md",
+      "full_path": "kowloon\\tsim_sha_tsui\\INFJ_M+.md",
+      "s3_path": "kowloon/tsim_sha_tsui/INFJ_M+.md"
+    },
+    {
+      "area": "kowloon",
+      "district": "yau_ma_tei",
+      "filename": "INFJ_Broadway_Cinematheque.md",
+      "full_path": "kowloon\\yau_ma_tei\\INFJ_Broadway_Cinematheque.md",
+      "s3_path": "kowloon/yau_ma_tei/INFJ_Broadway_Cinematheque.md"
+    }
+  ],
+  "all_areas_central_districts": [
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Central_Market.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Central_Market.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Central_Market.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_SoHo_and_Central_Art_Galleries.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_SoHo_and_Central_Art_Galleries.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_SoHo_and_Central_Art_Galleries.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Tai_Kwun.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Tai_Kwun.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Tai_Kwun.md"
+    }
+  ],
+  "hong_kong_island_all_districts": [
+    {
+      "area": "hong_kong_island",
+      "district": "admiralty",
+      "filename": "INFJ_Pacific_Place_Rooftop_Garden.md",
+      "full_path": "hong_kong_island\\admiralty\\INFJ_Pacific_Place_Rooftop_Garden.md",
+      "s3_path": "hong_kong_island/admiralty/INFJ_Pacific_Place_Rooftop_Garden.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Central_Market.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Central_Market.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Central_Market.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_SoHo_and_Central_Art_Galleries.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_SoHo_and_Central_Art_Galleries.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_SoHo_and_Central_Art_Galleries.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "central_district",
+      "filename": "INFJ_Tai_Kwun.md",
+      "full_path": "hong_kong_island\\central_district\\INFJ_Tai_Kwun.md",
+      "s3_path": "hong_kong_island/central_district/INFJ_Tai_Kwun.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "sheung_wan",
+      "filename": "INFJ_Man_Mo_Temple.md",
+      "full_path": "hong_kong_island\\sheung_wan\\INFJ_Man_Mo_Temple.md",
+      "s3_path": "hong_kong_island/sheung_wan/INFJ_Man_Mo_Temple.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "sheung_wan",
+      "filename": "INFJ_PMQ_Police_Married_Quarters.md",
+      "full_path": "hong_kong_island\\sheung_wan\\INFJ_PMQ_Police_Married_Quarters.md",
+      "s3_path": "hong_kong_island/sheung_wan/INFJ_PMQ_Police_Married_Quarters.md"
+    },
+    {
+      "area": "hong_kong_island",
+      "district": "wan_chai",
+      "filename": "INFJ_Hong_Kong_House_of_Stories.md",
+      "full_path": "hong_kong_island\\wan_chai\\INFJ_Hong_Kong_House_of_Stories.md",
+      "s3_path": "hong_kong_island/wan_chai/INFJ_Hong_Kong_House_of_Stories.md"
+    }
+  ],
+  "summary": {
+    "test_case_1_count": 13,
+    "test_case_2_count": 3,
+    "test_case_3_count": 7,
+    "areas_analyzed": [
+      "islands",
+      "kowloon",
+      "hong_kong_island"
+    ],
+    "districts_with_infj": [
+      "hong_kong_island/admiralty",
+      "hong_kong_island/central_district",
+      "kowloon/yau_ma_tei",
+      "islands/lantau",
+      "kowloon/tsim_sha_tsui",
+      "hong_kong_island/wan_chai",
+      "hong_kong_island/sheung_wan"
+    ]
+  }
+}

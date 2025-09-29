@@ -1,0 +1,134 @@
+{
+  "test_timestamp": "2025-09-29T17:37:37.800154",
+  "test_type": "realistic_mbti_search",
+  "knowledge_base_id": "RCWW86CLM9",
+  "model": "amazon.nova-pro-v1:0",
+  "expected_infj_attractions": [
+    "Broadway Cinematheque",
+    "Central Market",
+    "Hong Kong Cultural Centre",
+    "Hong Kong House of Stories",
+    "Hong Kong Museum of Art",
+    "Hong Kong Palace Museum",
+    "M+",
+    "Man Mo Temple",
+    "PMQ (Police Married Quarters)",
+    "Pacific Place Rooftop Garden",
+    "Po Lin Monastery",
+    "SoHo & Central Art Galleries",
+    "Tai Kwun"
+  ],
+  "strategies_tested": [
+    "mbti_traits_focused",
+    "experience_categories",
+    "personality_keywords",
+    "anti_crowd_focus",
+    "comprehensive_mbti"
+  ],
+  "results": {
+    "mbti_traits_focused": {
+      "completeness_rate": 53.84615384615385,
+      "citation_rate": 53.84615384615385,
+      "keyword_density": 41.17647058823529,
+      "response_time": 7.720049142837524,
+      "quality": "medium",
+      "attractions_found": [
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "files_cited": [
+        "INFJ_Central_Market.md",
+        "INFJ_Tai_Kwun.md",
+        "INFJ_Hong_Kong_Museum_of_Art.md",
+        "INFJ_SoHo_and_Central_Art_Galleries.md",
+        "INFJ_M+.md",
+        "INFJ_Hong_Kong_Palace_Museum.md",
+        "INFJ_Hong_Kong_Cultural_Centre.md"
+      ],
+      "infj_keyword_matches": 7
+    },
+    "experience_categories": {
+      "completeness_rate": 30.76923076923077,
+      "citation_rate": 15.384615384615385,
+      "keyword_density": 47.05882352941176,
+      "response_time": 4.325234889984131,
+      "quality": "low",
+      "attractions_found": [
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "SoHo & Central Art Galleries"
+      ],
+      "files_cited": [
+        "INFJ_SoHo_and_Central_Art_Galleries.md",
+        "INFJ_Hong_Kong_Cultural_Centre.md"
+      ],
+      "infj_keyword_matches": 8
+    },
+    "personality_keywords": {
+      "completeness_rate": 15.384615384615385,
+      "citation_rate": 15.384615384615385,
+      "keyword_density": 47.05882352941176,
+      "response_time": 5.000213623046875,
+      "quality": "low",
+      "attractions_found": [
+        "Hong Kong Cultural Centre",
+        "SoHo & Central Art Galleries"
+      ],
+      "files_cited": [
+        "INFJ_SoHo_and_Central_Art_Galleries.md",
+        "INFJ_Hong_Kong_Cultural_Centre.md"
+      ],
+      "infj_keyword_matches": 8
+    },
+    "anti_crowd_focus": {
+      "completeness_rate": 23.076923076923077,
+      "citation_rate": 23.076923076923077,
+      "keyword_density": 58.82352941176471,
+      "response_time": 3.9048726558685303,
+      "quality": "low",
+      "attractions_found": [
+        "Hong Kong Museum of Art",
+        "M+",
+        "SoHo & Central Art Galleries"
+      ],
+      "files_cited": [
+        "INFJ_Hong_Kong_Museum_of_Art.md",
+        "INFJ_M+.md",
+        "INFJ_SoHo_and_Central_Art_Galleries.md"
+      ],
+      "infj_keyword_matches": 10
+    },
+    "comprehensive_mbti": {
+      "completeness_rate": 53.84615384615385,
+      "citation_rate": 53.84615384615385,
+      "keyword_density": 47.05882352941176,
+      "response_time": 8.40636396408081,
+      "quality": "medium",
+      "attractions_found": [
+        "Central Market",
+        "Hong Kong Cultural Centre",
+        "Hong Kong Museum of Art",
+        "Hong Kong Palace Museum",
+        "M+",
+        "SoHo & Central Art Galleries",
+        "Tai Kwun"
+      ],
+      "files_cited": [
+        "INFJ_Central_Market.md",
+        "INFJ_Tai_Kwun.md",
+        "INFJ_Hong_Kong_Museum_of_Art.md",
+        "INFJ_SoHo_and_Central_Art_Galleries.md",
+        "INFJ_M+.md",
+        "INFJ_Hong_Kong_Palace_Museum.md",
+        "INFJ_Hong_Kong_Cultural_Centre.md"
+      ],
+      "infj_keyword_matches": 8
+    }
+  }
+}
