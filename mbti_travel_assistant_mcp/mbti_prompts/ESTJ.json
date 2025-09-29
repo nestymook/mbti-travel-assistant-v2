@@ -1,0 +1,64 @@
+{
+  "personality_type": "ESTJ",
+  "description": "The Executive - Organized, practical leaders who value efficiency and getting things done",
+  "core_traits": ["organized", "efficient", "practical", "leadership", "goal-oriented", "systematic"],
+  "preferred_activities": ["business tours", "organized events", "leadership experiences", "efficient systems", "achievement-focused activities"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ESTJ personality type attractions Hong Kong",
+      "ESTJ executive organized efficient experiences",
+      "ESTJ leadership practical systematic venues"
+    ],
+    "trait_based_queries": [
+      "organized efficient systematic attractions Hong Kong",
+      "practical leadership goal-oriented experiences",
+      "business professional executive venues",
+      "structured organized methodical spaces",
+      "achievement-focused success-oriented attractions"
+    ],
+    "activity_focused_queries": [
+      "business districts corporate centers Hong Kong",
+      "organized tours structured experiences",
+      "leadership venues executive spaces",
+      "efficient systematic organized attractions",
+      "achievement exhibitions success displays",
+      "professional development business centers"
+    ],
+    "emotional_experiential_queries": [
+      "efficient productive achievement-oriented experiences",
+      "organized structured systematic venues",
+      "leadership empowering executive attractions",
+      "practical useful functional spaces",
+      "goal-oriented success-focused venues",
+      "professional business-oriented experiences"
+    ],
+    "location_specific_queries": [
+      "ESTJ business districts corporate areas",
+      "ESTJ organized venues structured spaces",
+      "ESTJ leadership centers executive venues",
+      "ESTJ efficient systematic attractions"
+    ],
+    "context_based_queries": [
+      "business professional executive experiences",
+      "organized structured systematic tours",
+      "efficient productive goal-oriented venues",
+      "leadership achievement-focused attractions",
+      "practical functional useful spaces",
+      "systematic methodical organized experiences"
+    ],
+    "semantic_variations": [
+      "executive leadership organized attractions",
+      "efficient systematic methodical venues",
+      "practical functional goal-oriented spaces",
+      "business professional corporate experiences",
+      "achievement-focused success-oriented attractions",
+      "structured organized systematic venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "trait_based_queries"],
+    "high_discovery_potential": ["business districts", "organized venues", "leadership centers"],
+    "recommended_query_count": 16,
+    "expected_coverage": "85-90%"
+  }
+}

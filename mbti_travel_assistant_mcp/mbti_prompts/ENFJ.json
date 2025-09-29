@@ -1,0 +1,64 @@
+{
+  "personality_type": "ENFJ",
+  "description": "The Protagonist - Charismatic, inspiring leaders who are passionate about helping others grow",
+  "core_traits": ["charismatic", "inspiring", "empathetic", "organized", "people-focused", "growth-oriented"],
+  "preferred_activities": ["community engagement", "cultural events", "educational experiences", "social gatherings", "inspiring activities"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ENFJ personality type attractions Hong Kong",
+      "ENFJ protagonist inspiring community experiences",
+      "ENFJ charismatic people-focused venues"
+    ],
+    "trait_based_queries": [
+      "inspiring charismatic community-focused attractions",
+      "empathetic people-centered social Hong Kong",
+      "educational growth-oriented learning experiences",
+      "cultural community engagement venues",
+      "organized structured group activities"
+    ],
+    "activity_focused_queries": [
+      "cultural centers community venues Hong Kong",
+      "educational museums learning centers",
+      "performance venues inspiring shows",
+      "community centers social gathering spaces",
+      "workshops educational growth experiences",
+      "festivals cultural community events"
+    ],
+    "emotional_experiential_queries": [
+      "inspiring uplifting empowering experiences",
+      "community-building social connection venues",
+      "educational growth-oriented learning spaces",
+      "charismatic engaging interactive attractions",
+      "empathetic compassionate understanding venues",
+      "motivational inspiring transformative experiences"
+    ],
+    "location_specific_queries": [
+      "ENFJ cultural districts community centers",
+      "ENFJ educational venues learning spaces",
+      "ENFJ performance areas inspiring venues",
+      "ENFJ social gathering community spaces"
+    ],
+    "context_based_queries": [
+      "group activities community experiences",
+      "educational workshops learning opportunities",
+      "inspiring motivational uplifting venues",
+      "social networking community building",
+      "cultural events group participation",
+      "empowering growth-oriented experiences"
+    ],
+    "semantic_variations": [
+      "inspirational motivational empowering attractions",
+      "community-focused social engagement venues",
+      "educational developmental growth spaces",
+      "charismatic engaging interactive experiences",
+      "empathetic compassionate understanding attractions",
+      "organized structured group-oriented venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["cultural centers", "educational venues", "community spaces"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

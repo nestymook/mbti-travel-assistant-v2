@@ -1,0 +1,64 @@
+{
+  "personality_type": "ESFP",
+  "description": "The Entertainer - Spontaneous, energetic, and enthusiastic people-persons who love life and new experiences",
+  "core_traits": ["spontaneous", "energetic", "enthusiastic", "people-oriented", "fun-loving", "experiential"],
+  "preferred_activities": ["entertainment", "social gatherings", "spontaneous fun", "people connections", "lively experiences"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ESFP personality type attractions Hong Kong",
+      "ESFP entertainer spontaneous energetic experiences",
+      "ESFP enthusiastic people-oriented fun venues"
+    ],
+    "trait_based_queries": [
+      "spontaneous energetic fun attractions Hong Kong",
+      "enthusiastic people-oriented social experiences",
+      "entertaining lively vibrant venues",
+      "fun-loving exciting social spaces",
+      "experiential interactive engaging attractions"
+    ],
+    "activity_focused_queries": [
+      "entertainment venues fun experiences Hong Kong",
+      "social gatherings lively spaces",
+      "festivals events spontaneous fun",
+      "interactive exhibits engaging experiences",
+      "performance venues entertaining shows",
+      "markets social vibrant spaces"
+    ],
+    "emotional_experiential_queries": [
+      "fun entertaining lively experiences",
+      "spontaneous exciting energetic venues",
+      "enthusiastic vibrant social attractions",
+      "people-oriented interactive engaging spaces",
+      "joyful uplifting fun-filled venues",
+      "experiential hands-on interactive attractions"
+    ],
+    "location_specific_queries": [
+      "ESFP entertainment districts fun areas",
+      "ESFP social venues lively spaces",
+      "ESFP vibrant energetic districts",
+      "ESFP interactive entertainment locations"
+    ],
+    "context_based_queries": [
+      "fun entertaining social experiences",
+      "spontaneous energetic lively venues",
+      "people-oriented interactive attractions",
+      "enthusiastic vibrant social spaces",
+      "experiential hands-on fun activities",
+      "entertaining engaging social venues"
+    ],
+    "semantic_variations": [
+      "entertaining fun-filled lively attractions",
+      "spontaneous energetic vibrant venues",
+      "social people-oriented interactive spaces",
+      "enthusiastic joyful uplifting experiences",
+      "experiential hands-on engaging attractions",
+      "fun-loving entertaining social venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["entertainment venues", "social spaces", "interactive attractions"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

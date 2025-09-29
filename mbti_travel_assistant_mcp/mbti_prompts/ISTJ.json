@@ -1,0 +1,64 @@
+{
+  "personality_type": "ISTJ",
+  "description": "The Logistician - Practical, reliable, and methodical individuals who value tradition and stability",
+  "core_traits": ["practical", "reliable", "methodical", "traditional", "organized", "detail-oriented"],
+  "preferred_activities": ["historical exploration", "structured tours", "traditional experiences", "educational visits", "systematic learning"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ISTJ personality type attractions Hong Kong",
+      "ISTJ logistician practical traditional experiences",
+      "ISTJ methodical organized structured venues"
+    ],
+    "trait_based_queries": [
+      "traditional historical heritage attractions Hong Kong",
+      "practical methodical organized experiences",
+      "reliable structured systematic venues",
+      "detail-oriented educational learning spaces",
+      "conservative traditional cultural sites"
+    ],
+    "activity_focused_queries": [
+      "historical museums heritage sites Hong Kong",
+      "traditional cultural centers heritage venues",
+      "educational tours structured experiences",
+      "museums systematic organized exhibits",
+      "heritage trails historical walks",
+      "traditional architecture historical buildings"
+    ],
+    "emotional_experiential_queries": [
+      "reliable dependable trustworthy experiences",
+      "traditional authentic heritage venues",
+      "methodical systematic organized attractions",
+      "educational informative learning spaces",
+      "practical useful functional venues",
+      "stable consistent predictable experiences"
+    ],
+    "location_specific_queries": [
+      "ISTJ historical districts heritage areas",
+      "ISTJ traditional museums cultural sites",
+      "ISTJ educational venues learning centers",
+      "ISTJ heritage trails historical walks"
+    ],
+    "context_based_queries": [
+      "structured organized systematic tours",
+      "traditional heritage cultural experiences",
+      "educational learning informative venues",
+      "methodical detailed comprehensive visits",
+      "reliable predictable stable attractions",
+      "historical traditional authentic sites"
+    ],
+    "semantic_variations": [
+      "systematic methodical organized attractions",
+      "traditional heritage historical venues",
+      "reliable dependable trustworthy experiences",
+      "practical functional useful spaces",
+      "educational informative learning attractions",
+      "structured organized systematic venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "trait_based_queries"],
+    "high_discovery_potential": ["historical museums", "heritage sites", "traditional venues"],
+    "recommended_query_count": 16,
+    "expected_coverage": "85-90%"
+  }
+}

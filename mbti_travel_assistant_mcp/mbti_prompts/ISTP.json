@@ -1,0 +1,64 @@
+{
+  "personality_type": "ISTP",
+  "description": "The Virtuoso - Bold, practical experimenters who love hands-on experiences and mechanical things",
+  "core_traits": ["practical", "hands-on", "independent", "adaptable", "mechanical", "experiential"],
+  "preferred_activities": ["hands-on experiences", "mechanical exploration", "practical activities", "independent adventures", "skill-based learning"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ISTP personality type attractions Hong Kong",
+      "ISTP virtuoso hands-on practical experiences",
+      "ISTP mechanical independent adaptable venues"
+    ],
+    "trait_based_queries": [
+      "hands-on practical mechanical attractions Hong Kong",
+      "independent adaptable experiential venues",
+      "practical skill-based learning experiences",
+      "mechanical technical engineering spaces",
+      "experimental hands-on interactive attractions"
+    ],
+    "activity_focused_queries": [
+      "science museums hands-on exhibits Hong Kong",
+      "technical museums mechanical displays",
+      "interactive workshops skill-based learning",
+      "engineering centers technical spaces",
+      "adventure activities practical experiences",
+      "maker spaces hands-on workshops"
+    ],
+    "emotional_experiential_queries": [
+      "hands-on practical experiential venues",
+      "independent self-directed exploration",
+      "mechanical technical skill-based experiences",
+      "adaptable flexible experimental attractions",
+      "practical useful functional spaces",
+      "interactive engaging hands-on venues"
+    ],
+    "location_specific_queries": [
+      "ISTP technical museums mechanical spaces",
+      "ISTP hands-on workshops practical venues",
+      "ISTP independent exploration areas",
+      "ISTP skill-based learning centers"
+    ],
+    "context_based_queries": [
+      "hands-on interactive practical experiences",
+      "independent self-paced exploration",
+      "mechanical technical skill demonstrations",
+      "practical useful functional attractions",
+      "experimental hands-on learning venues",
+      "adaptable flexible experiential spaces"
+    ],
+    "semantic_variations": [
+      "practical hands-on experiential attractions",
+      "mechanical technical engineering venues",
+      "independent self-directed exploration spaces",
+      "skill-based practical learning experiences",
+      "interactive hands-on experimental attractions",
+      "adaptable flexible practical venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "trait_based_queries"],
+    "high_discovery_potential": ["science museums", "technical spaces", "hands-on workshops"],
+    "recommended_query_count": 16,
+    "expected_coverage": "80-85%"
+  }
+}

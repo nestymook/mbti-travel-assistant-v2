@@ -1,0 +1,65 @@
+{
+  "personality_type": "INFJ",
+  "description": "The Advocate - Quiet, mystical, and inspiring idealists who seek meaning and authenticity",
+  "core_traits": ["introspective", "intuitive", "empathetic", "visionary", "authentic", "meaningful"],
+  "preferred_activities": ["contemplation", "artistic expression", "cultural exploration", "spiritual growth", "meaningful connections"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "INFJ personality type attractions Hong Kong",
+      "INFJ advocate quiet contemplative experiences",
+      "INFJ introspective meaningful venues"
+    ],
+    "trait_based_queries": [
+      "quiet contemplative reflective places Hong Kong",
+      "introspective solitary peaceful spaces",
+      "visionary artistic cultural experiences",
+      "deep meaningful authentic attractions",
+      "spiritual mindful meditative locations",
+      "empathetic compassionate understanding venues"
+    ],
+    "activity_focused_queries": [
+      "museums galleries libraries quiet spaces",
+      "art galleries contemporary modern INFJ",
+      "cultural centers performance venues INFJ",
+      "bookstores libraries reading spaces INFJ",
+      "temples spiritual meditation centers",
+      "gardens parks peaceful contemplative spaces"
+    ],
+    "emotional_experiential_queries": [
+      "inspiring uplifting meaningful experiences",
+      "spiritual mindful meditative INFJ",
+      "aesthetic beautiful visually stunning INFJ",
+      "intellectual scholarly academic INFJ",
+      "authentic genuine heartfelt experiences",
+      "transformative life-changing meaningful venues"
+    ],
+    "location_specific_queries": [
+      "INFJ Central District quiet cultural venues",
+      "INFJ Tsim Sha Tsui museums galleries",
+      "INFJ Hong Kong Island peaceful spaces",
+      "INFJ Sheung Wan traditional authentic areas"
+    ],
+    "context_based_queries": [
+      "morning peaceful quiet INFJ attractions",
+      "evening atmospheric INFJ places",
+      "solo travel individual INFJ experiences",
+      "photography scenic INFJ spots",
+      "meditation reflection contemplation spaces",
+      "artistic creative expression venues"
+    ],
+    "semantic_variations": [
+      "contemplative reflective introspective attractions",
+      "meaningful authentic genuine experiences",
+      "spiritual transcendent mystical venues",
+      "artistic creative expressive spaces",
+      "peaceful serene tranquil environments",
+      "visionary inspiring idealistic attractions"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["trait_based_queries", "activity_focused_queries"],
+    "high_discovery_potential": ["museums", "galleries", "temples", "peaceful spaces"],
+    "recommended_query_count": 20,
+    "expected_coverage": "90-95%"
+  }
+}

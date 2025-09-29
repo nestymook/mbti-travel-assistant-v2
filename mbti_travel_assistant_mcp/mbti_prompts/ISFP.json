@@ -1,0 +1,64 @@
+{
+  "personality_type": "ISFP",
+  "description": "The Adventurer - Flexible, charming artists who are always ready to explore new possibilities",
+  "core_traits": ["artistic", "flexible", "gentle", "sensitive", "aesthetic", "harmonious"],
+  "preferred_activities": ["artistic exploration", "aesthetic experiences", "gentle adventures", "creative expression", "natural beauty"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ISFP personality type attractions Hong Kong",
+      "ISFP adventurer artistic flexible experiences",
+      "ISFP gentle sensitive aesthetic venues"
+    ],
+    "trait_based_queries": [
+      "artistic creative aesthetic attractions Hong Kong",
+      "gentle sensitive harmonious experiences",
+      "flexible adaptable exploratory venues",
+      "beautiful aesthetic visually stunning spaces",
+      "natural peaceful serene environments"
+    ],
+    "activity_focused_queries": [
+      "art galleries creative studios Hong Kong",
+      "aesthetic beautiful scenic venues",
+      "nature parks gardens peaceful spaces",
+      "creative workshops artistic experiences",
+      "craft markets artisan spaces",
+      "photography scenic beautiful locations"
+    ],
+    "emotional_experiential_queries": [
+      "beautiful aesthetic inspiring experiences",
+      "gentle harmonious peaceful venues",
+      "artistic creative expressive attractions",
+      "sensitive compassionate understanding spaces",
+      "flexible adaptable exploratory venues",
+      "natural serene tranquil environments"
+    ],
+    "location_specific_queries": [
+      "ISFP artistic districts creative areas",
+      "ISFP beautiful scenic natural spaces",
+      "ISFP gentle peaceful venues",
+      "ISFP aesthetic creative galleries"
+    ],
+    "context_based_queries": [
+      "artistic creative aesthetic experiences",
+      "gentle peaceful harmonious venues",
+      "beautiful scenic natural attractions",
+      "flexible exploratory adaptive spaces",
+      "sensitive compassionate understanding venues",
+      "creative expressive artistic opportunities"
+    ],
+    "semantic_variations": [
+      "artistic aesthetic creative attractions",
+      "gentle harmonious peaceful venues",
+      "beautiful scenic visually stunning spaces",
+      "flexible adaptable exploratory experiences",
+      "sensitive compassionate understanding attractions",
+      "natural serene tranquil environments"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["art galleries", "scenic venues", "creative spaces", "natural areas"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

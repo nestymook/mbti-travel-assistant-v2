@@ -1,0 +1,64 @@
+{
+  "personality_type": "ESTP",
+  "description": "The Entrepreneur - Energetic, perceptive, and spontaneous individuals who love action and excitement",
+  "core_traits": ["energetic", "spontaneous", "action-oriented", "social", "adaptable", "exciting"],
+  "preferred_activities": ["action sports", "social events", "spontaneous adventures", "energetic experiences", "exciting activities"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ESTP personality type attractions Hong Kong",
+      "ESTP entrepreneur energetic action experiences",
+      "ESTP spontaneous exciting social venues"
+    ],
+    "trait_based_queries": [
+      "energetic action-oriented exciting attractions Hong Kong",
+      "spontaneous adventurous dynamic experiences",
+      "social interactive engaging venues",
+      "exciting thrilling adrenaline-filled spaces",
+      "adaptable flexible spontaneous activities"
+    ],
+    "activity_focused_queries": [
+      "adventure activities exciting experiences Hong Kong",
+      "social venues energetic spaces",
+      "action sports thrilling activities",
+      "entertainment districts exciting venues",
+      "interactive exhibits engaging experiences",
+      "festivals events dynamic social gatherings"
+    ],
+    "emotional_experiential_queries": [
+      "exciting thrilling adrenaline-filled experiences",
+      "energetic dynamic action-packed venues",
+      "spontaneous adventurous exploratory attractions",
+      "social interactive engaging spaces",
+      "fun entertaining exciting venues",
+      "adaptable flexible spontaneous experiences"
+    ],
+    "location_specific_queries": [
+      "ESTP entertainment districts exciting areas",
+      "ESTP action venues thrilling spaces",
+      "ESTP social energetic districts",
+      "ESTP adventure activity locations"
+    ],
+    "context_based_queries": [
+      "action-packed exciting thrilling experiences",
+      "social energetic group activities",
+      "spontaneous adventurous exploration",
+      "dynamic interactive engaging venues",
+      "fun entertaining exciting attractions",
+      "adaptable flexible action-oriented spaces"
+    ],
+    "semantic_variations": [
+      "dynamic energetic action-packed attractions",
+      "exciting thrilling adrenaline-filled venues",
+      "spontaneous adventurous exploratory spaces",
+      "social interactive engaging experiences",
+      "fun entertaining exciting attractions",
+      "adaptable flexible dynamic venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["adventure activities", "entertainment districts", "social venues"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "personality_type": "ENFP",
+  "description": "The Campaigner - Enthusiastic, creative, and spontaneous individuals who love exploring new possibilities with people",
+  "core_traits": ["enthusiastic", "creative", "spontaneous", "energetic", "people-oriented", "possibility-focused"],
+  "preferred_activities": ["social exploration", "creative adventures", "spontaneous discoveries", "people connections", "energetic experiences"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ENFP personality type attractions Hong Kong",
+      "ENFP campaigner enthusiastic creative experiences",
+      "ENFP energetic spontaneous social venues"
+    ],
+    "trait_based_queries": [
+      "enthusiastic energetic vibrant attractions Hong Kong",
+      "creative spontaneous adventurous experiences",
+      "social people-oriented interactive venues",
+      "possibility-focused exploratory spaces",
+      "dynamic exciting engaging attractions"
+    ],
+    "activity_focused_queries": [
+      "interactive exhibits engaging experiences Hong Kong",
+      "creative markets artistic social spaces",
+      "festivals events social gatherings",
+      "adventure activities energetic experiences",
+      "social venues networking spaces",
+      "creative workshops interactive learning"
+    ],
+    "emotional_experiential_queries": [
+      "energizing exciting inspiring experiences",
+      "creative stimulating possibility-rich venues",
+      "social interactive people-focused attractions",
+      "spontaneous adventurous exploratory spaces",
+      "enthusiastic dynamic engaging venues",
+      "possibility-focused future-oriented experiences"
+    ],
+    "location_specific_queries": [
+      "ENFP vibrant social districts Hong Kong",
+      "ENFP creative markets festival areas",
+      "ENFP interactive venues social spaces",
+      "ENFP energetic adventure locations"
+    ],
+    "context_based_queries": [
+      "social interactive group experiences",
+      "creative spontaneous adventure opportunities",
+      "energetic dynamic engaging attractions",
+      "people-focused social connection venues",
+      "possibility-rich exploratory experiences",
+      "enthusiastic vibrant social spaces"
+    ],
+    "semantic_variations": [
+      "vibrant energetic enthusiastic attractions",
+      "creative spontaneous adventurous venues",
+      "social interactive people-centered spaces",
+      "dynamic engaging exciting experiences",
+      "possibility-rich exploratory attractions",
+      "inspiring motivational uplifting venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["interactive exhibits", "social venues", "creative markets", "festivals"],
+    "recommended_query_count": 18,
+    "expected_coverage": "85-90%"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "personality_type": "ENTP",
+  "description": "The Debater - Innovative, enthusiastic, and creative thinkers who love exploring new possibilities",
+  "core_traits": ["innovative", "enthusiastic", "creative", "adaptable", "energetic", "possibility-focused"],
+  "preferred_activities": ["brainstorming", "networking", "creative exploration", "debate", "innovation", "social learning"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ENTP personality type attractions Hong Kong",
+      "ENTP debater innovative creative experiences",
+      "ENTP enthusiastic energetic exploration"
+    ],
+    "trait_based_queries": [
+      "innovative creative possibility-focused attractions",
+      "enthusiastic energetic dynamic Hong Kong",
+      "adaptable flexible experimental experiences",
+      "social networking interactive venues",
+      "brainstorming collaborative creative spaces"
+    ],
+    "activity_focused_queries": [
+      "innovation centers creative hubs Hong Kong",
+      "interactive exhibits experimental spaces",
+      "networking events social gatherings",
+      "creative workshops brainstorming venues",
+      "startup incubators innovation districts",
+      "collaborative spaces co-working environments"
+    ],
+    "emotional_experiential_queries": [
+      "energizing inspiring innovative experiences",
+      "creative stimulating possibility-rich venues",
+      "enthusiastic dynamic engaging attractions",
+      "interactive social collaborative spaces",
+      "experimental cutting-edge innovative venues",
+      "possibility-focused future-oriented experiences"
+    ],
+    "location_specific_queries": [
+      "ENTP innovation districts creative hubs",
+      "ENTP startup areas entrepreneurial spaces",
+      "ENTP social venues networking centers",
+      "ENTP creative districts artistic areas"
+    ],
+    "context_based_queries": [
+      "social networking interactive experiences",
+      "creative brainstorming collaborative venues",
+      "innovative experimental cutting-edge spaces",
+      "energetic dynamic engaging attractions",
+      "possibility-focused exploratory experiences",
+      "entrepreneurial startup innovation centers"
+    ],
+    "semantic_variations": [
+      "inventive creative experimental attractions",
+      "dynamic energetic enthusiastic venues",
+      "collaborative interactive social spaces",
+      "innovative cutting-edge possibility-rich experiences",
+      "adaptable flexible experimental venues",
+      "entrepreneurial startup innovation attractions"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["innovation centers", "creative hubs", "interactive spaces"],
+    "recommended_query_count": 17,
+    "expected_coverage": "80-90%"
+  }
+}

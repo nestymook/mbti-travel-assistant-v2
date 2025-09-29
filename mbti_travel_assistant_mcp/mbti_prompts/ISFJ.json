@@ -1,0 +1,64 @@
+{
+  "personality_type": "ISFJ",
+  "description": "The Protector - Warm, caring, and responsible individuals who value harmony and helping others",
+  "core_traits": ["caring", "responsible", "harmonious", "supportive", "traditional", "service-oriented"],
+  "preferred_activities": ["cultural preservation", "community service", "peaceful environments", "caring experiences", "traditional activities"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ISFJ personality type attractions Hong Kong",
+      "ISFJ protector caring harmonious experiences",
+      "ISFJ supportive traditional peaceful venues"
+    ],
+    "trait_based_queries": [
+      "caring supportive nurturing attractions Hong Kong",
+      "harmonious peaceful serene experiences",
+      "traditional cultural preservation venues",
+      "responsible community-focused spaces",
+      "gentle caring compassionate environments"
+    ],
+    "activity_focused_queries": [
+      "cultural heritage preservation sites Hong Kong",
+      "community centers caring spaces",
+      "peaceful gardens serene environments",
+      "traditional crafts cultural workshops",
+      "museums cultural preservation exhibits",
+      "temples peaceful spiritual spaces"
+    ],
+    "emotional_experiential_queries": [
+      "nurturing caring supportive experiences",
+      "peaceful harmonious serene venues",
+      "traditional authentic cultural attractions",
+      "community-focused service-oriented spaces",
+      "gentle compassionate understanding venues",
+      "stable secure comfortable environments"
+    ],
+    "location_specific_queries": [
+      "ISFJ peaceful gardens community spaces",
+      "ISFJ traditional cultural heritage sites",
+      "ISFJ caring supportive venues",
+      "ISFJ harmonious serene environments"
+    ],
+    "context_based_queries": [
+      "peaceful quiet harmonious experiences",
+      "caring supportive community venues",
+      "traditional cultural preservation sites",
+      "gentle nurturing comfortable spaces",
+      "responsible service-oriented attractions",
+      "stable secure predictable environments"
+    ],
+    "semantic_variations": [
+      "nurturing caring supportive attractions",
+      "peaceful harmonious serene venues",
+      "traditional cultural heritage spaces",
+      "responsible community-focused experiences",
+      "gentle compassionate understanding attractions",
+      "stable secure comfortable environments"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["cultural heritage sites", "peaceful gardens", "community centers"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

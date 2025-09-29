@@ -1,0 +1,64 @@
+{
+  "personality_type": "ESFJ",
+  "description": "The Consul - Warm, caring, and popular individuals who love helping others and bringing people together",
+  "core_traits": ["warm", "caring", "social", "helpful", "harmonious", "people-focused"],
+  "preferred_activities": ["social gatherings", "community events", "group activities", "caring experiences", "popular attractions"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ESFJ personality type attractions Hong Kong",
+      "ESFJ consul warm caring social experiences",
+      "ESFJ helpful harmonious people-focused venues"
+    ],
+    "trait_based_queries": [
+      "warm caring social attractions Hong Kong",
+      "helpful harmonious people-focused experiences",
+      "popular social gathering venues",
+      "community-oriented group activities",
+      "friendly welcoming social spaces"
+    ],
+    "activity_focused_queries": [
+      "social venues community centers Hong Kong",
+      "popular attractions group activities",
+      "festivals events social gatherings",
+      "community centers caring spaces",
+      "group tours social experiences",
+      "family-friendly popular attractions"
+    ],
+    "emotional_experiential_queries": [
+      "warm welcoming friendly experiences",
+      "caring helpful supportive venues",
+      "social harmonious people-focused attractions",
+      "popular well-liked community spaces",
+      "group-oriented social gathering venues",
+      "helpful service-oriented caring experiences"
+    ],
+    "location_specific_queries": [
+      "ESFJ popular social districts Hong Kong",
+      "ESFJ community centers group venues",
+      "ESFJ family-friendly social spaces",
+      "ESFJ caring helpful service areas"
+    ],
+    "context_based_queries": [
+      "social group community experiences",
+      "popular family-friendly attractions",
+      "caring helpful supportive venues",
+      "harmonious peaceful social spaces",
+      "group activities community events",
+      "warm welcoming friendly environments"
+    ],
+    "semantic_variations": [
+      "social community-oriented group attractions",
+      "warm caring helpful venues",
+      "popular well-liked social spaces",
+      "harmonious peaceful people-focused experiences",
+      "friendly welcoming social attractions",
+      "supportive caring community venues"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["social venues", "community centers", "popular attractions"],
+    "recommended_query_count": 17,
+    "expected_coverage": "85-90%"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "personality_type": "INTP",
+  "description": "The Thinker - Curious, theoretical, and flexible thinkers who love exploring ideas and concepts",
+  "core_traits": ["curious", "theoretical", "flexible", "analytical", "innovative", "conceptual"],
+  "preferred_activities": ["research", "exploration", "experimentation", "learning", "discovery", "theoretical discussions"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "INTP personality type attractions Hong Kong",
+      "INTP thinker curious exploration experiences",
+      "INTP theoretical analytical venues"
+    ],
+    "trait_based_queries": [
+      "curious exploratory discovery attractions",
+      "theoretical conceptual learning Hong Kong",
+      "flexible adaptable experimental experiences",
+      "analytical investigative research venues",
+      "innovative creative thinking spaces"
+    ],
+    "activity_focused_queries": [
+      "science museums experimental exhibits Hong Kong",
+      "research centers theoretical learning spaces",
+      "discovery centers exploratory experiences",
+      "innovation labs creative thinking venues",
+      "academic institutions scholarly environments",
+      "experimental art installations conceptual spaces"
+    ],
+    "emotional_experiential_queries": [
+      "intellectually curious mind-expanding experiences",
+      "theoretical abstract conceptual attractions",
+      "flexible open-ended exploratory venues",
+      "innovative experimental cutting-edge spaces",
+      "analytical investigative research opportunities",
+      "discovery-based learning experiences"
+    ],
+    "location_specific_queries": [
+      "INTP universities research centers Hong Kong",
+      "INTP science museums theoretical exhibits",
+      "INTP innovation districts experimental spaces",
+      "INTP libraries academic environments"
+    ],
+    "context_based_queries": [
+      "curious exploration discovery experiences",
+      "theoretical learning research opportunities",
+      "experimental hands-on investigative venues",
+      "flexible self-paced exploration tours",
+      "innovative technology demonstration spaces",
+      "academic scholarly intellectual environments"
+    ],
+    "semantic_variations": [
+      "investigative exploratory research-based attractions",
+      "theoretical conceptual abstract experiences",
+      "experimental innovative cutting-edge venues",
+      "curious discovery-oriented learning spaces",
+      "analytical scientific methodical attractions",
+      "flexible adaptable open-ended experiences"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["science museums", "research centers", "experimental spaces"],
+    "recommended_query_count": 18,
+    "expected_coverage": "80-90%"
+  }
+}

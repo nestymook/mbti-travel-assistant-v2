@@ -1,0 +1,65 @@
+{
+  "personality_type": "INFP",
+  "description": "The Mediator - Idealistic, creative, and deeply personal individuals who value authenticity and harmony",
+  "core_traits": ["idealistic", "creative", "authentic", "harmonious", "individualistic", "value-driven"],
+  "preferred_activities": ["creative expression", "personal exploration", "artistic pursuits", "nature connection", "authentic experiences"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "INFP personality type attractions Hong Kong",
+      "INFP mediator creative authentic experiences",
+      "INFP idealistic harmonious venues"
+    ],
+    "trait_based_queries": [
+      "creative artistic authentic expression Hong Kong",
+      "idealistic harmonious peaceful spaces",
+      "individualistic personal unique experiences",
+      "value-driven meaningful authentic attractions",
+      "gentle harmonious serene environments",
+      "creative artistic expressive venues"
+    ],
+    "activity_focused_queries": [
+      "art galleries creative studios Hong Kong",
+      "creative workshops artistic spaces",
+      "nature parks gardens peaceful environments",
+      "independent bookstores literary cafes",
+      "craft markets artisan workshops",
+      "music venues acoustic intimate spaces"
+    ],
+    "emotional_experiential_queries": [
+      "authentic genuine heartfelt experiences",
+      "creative inspiring artistic venues",
+      "peaceful harmonious serene attractions",
+      "individualistic unique personal spaces",
+      "idealistic uplifting meaningful experiences",
+      "gentle nurturing supportive environments"
+    ],
+    "location_specific_queries": [
+      "INFP creative districts artistic areas",
+      "INFP peaceful gardens nature spaces",
+      "INFP independent venues authentic experiences",
+      "INFP cultural creative expression centers"
+    ],
+    "context_based_queries": [
+      "creative artistic expression opportunities",
+      "peaceful nature connection experiences",
+      "authentic personal meaningful venues",
+      "harmonious gentle serene attractions",
+      "individualistic unique personal spaces",
+      "value-driven authentic experiences"
+    ],
+    "semantic_variations": [
+      "artistic creative expressive attractions",
+      "authentic genuine heartfelt venues",
+      "peaceful harmonious serene spaces",
+      "idealistic meaningful value-driven experiences",
+      "individualistic unique personal attractions",
+      "gentle nurturing supportive environments"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["activity_focused_queries", "emotional_experiential_queries"],
+    "high_discovery_potential": ["art galleries", "creative spaces", "nature areas", "authentic venues"],
+    "recommended_query_count": 18,
+    "expected_coverage": "85-90%"
+  }
+}

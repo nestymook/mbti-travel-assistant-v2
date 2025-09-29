@@ -1,0 +1,64 @@
+{
+  "personality_type": "ENTJ",
+  "description": "The Commander - Bold, strategic leaders who enjoy organizing and directing experiences",
+  "core_traits": ["leadership", "strategic", "organized", "efficient", "goal-oriented", "commanding"],
+  "preferred_activities": ["leadership experiences", "strategic planning", "business centers", "networking", "achievement-oriented activities"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "ENTJ personality type attractions Hong Kong",
+      "ENTJ commander leadership experiences",
+      "ENTJ strategic organized efficient venues"
+    ],
+    "trait_based_queries": [
+      "leadership strategic commanding experiences",
+      "organized efficient goal-oriented attractions",
+      "business networking professional Hong Kong",
+      "strategic planning executive venues",
+      "achievement-oriented success-focused spaces"
+    ],
+    "activity_focused_queries": [
+      "business districts financial centers Hong Kong",
+      "leadership development strategic venues",
+      "corporate headquarters executive spaces",
+      "networking events professional gatherings",
+      "achievement exhibitions success stories",
+      "strategic planning conference centers"
+    ],
+    "emotional_experiential_queries": [
+      "empowering leadership inspiring experiences",
+      "strategic goal-oriented achievement venues",
+      "efficient organized systematic attractions",
+      "commanding authoritative impressive spaces",
+      "success-oriented accomplishment experiences",
+      "professional development growth opportunities"
+    ],
+    "location_specific_queries": [
+      "ENTJ Central District business centers",
+      "ENTJ financial districts leadership venues",
+      "ENTJ corporate headquarters Hong Kong",
+      "ENTJ professional networking spaces"
+    ],
+    "context_based_queries": [
+      "business hours professional environments",
+      "leadership networking executive experiences",
+      "strategic planning organized tours",
+      "achievement-focused success venues",
+      "efficient time-managed experiences",
+      "goal-oriented structured activities"
+    ],
+    "semantic_variations": [
+      "executive leadership commanding attractions",
+      "strategic organizational systematic venues",
+      "professional business-oriented experiences",
+      "efficient goal-directed achievement spaces",
+      "authoritative impressive commanding venues",
+      "success-focused accomplishment attractions"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["trait_based_queries", "location_specific_queries"],
+    "high_discovery_potential": ["business districts", "leadership venues", "professional spaces"],
+    "recommended_query_count": 16,
+    "expected_coverage": "85-95%"
+  }
+}

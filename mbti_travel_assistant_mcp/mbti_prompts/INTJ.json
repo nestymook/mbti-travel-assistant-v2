@@ -1,0 +1,64 @@
+{
+  "personality_type": "INTJ",
+  "description": "The Architect - Strategic, independent, and visionary thinkers who prefer structured, intellectual experiences",
+  "core_traits": ["strategic", "independent", "visionary", "analytical", "systematic", "future-focused"],
+  "preferred_activities": ["museums", "libraries", "architecture", "planning", "research", "strategic thinking"],
+  "search_strategies": {
+    "direct_mbti_queries": [
+      "INTJ personality type attractions Hong Kong",
+      "INTJ architect strategic planning experiences",
+      "INTJ independent systematic exploration"
+    ],
+    "trait_based_queries": [
+      "strategic planning analytical thinking attractions",
+      "independent systematic exploration Hong Kong",
+      "visionary future-focused cultural experiences",
+      "architectural design strategic spaces",
+      "analytical research intellectual venues"
+    ],
+    "activity_focused_queries": [
+      "museums architecture strategic design Hong Kong",
+      "libraries research centers intellectual spaces",
+      "planning exhibitions systematic displays",
+      "architectural tours strategic buildings",
+      "technology innovation centers Hong Kong",
+      "science museums analytical exhibits"
+    ],
+    "emotional_experiential_queries": [
+      "intellectually stimulating challenging experiences",
+      "strategic thinking problem-solving venues",
+      "independent exploration self-guided tours",
+      "systematic organized structured attractions",
+      "visionary innovative cutting-edge spaces",
+      "analytical deep-dive educational experiences"
+    ],
+    "location_specific_queries": [
+      "INTJ Central District strategic venues",
+      "INTJ Tsim Sha Tsui museums architecture",
+      "INTJ Hong Kong Island intellectual spaces",
+      "INTJ Kowloon technology innovation centers"
+    ],
+    "context_based_queries": [
+      "morning strategic planning quiet venues",
+      "solo independent exploration INTJ",
+      "systematic organized tour experiences",
+      "intellectual challenging learning opportunities",
+      "architectural photography strategic angles",
+      "research academic scholarly environments"
+    ],
+    "semantic_variations": [
+      "systematic methodical organized attractions",
+      "strategic long-term planning experiences",
+      "intellectual analytical scholarly venues",
+      "independent autonomous self-directed tours",
+      "innovative cutting-edge future-focused spaces",
+      "architectural structural design exhibitions"
+    ]
+  },
+  "optimization_notes": {
+    "best_performing_categories": ["trait_based_queries", "activity_focused_queries"],
+    "high_discovery_potential": ["architectural tours", "technology centers", "systematic exhibitions"],
+    "recommended_query_count": 15,
+    "expected_coverage": "85-95%"
+  }
+}
