@@ -2,16 +2,20 @@
 MBTI Travel Assistant MCP - BedrockAgentCore Runtime Entrypoint
 
 This module implements the main BedrockAgentCore runtime entrypoint for the MBTI Travel Assistant.
-It receives HTTP requests from web servers, processes them through an internal LLM agent,
-and orchestrates MCP client calls to existing restaurant search and reasoning MCP servers.
+It receives HTTP requests with MBTI personality parameters and generates comprehensive 3-day travel 
+itineraries using Amazon Nova Pro foundation model to query an OpenSearch knowledge base for 
+personality-matched tourist spots, and integrates with existing MCP servers for restaurant recommendations.
 
 The entrypoint follows the BedrockAgentCore runtime pattern with @app.entrypoint decorator
 and returns structured JSON responses optimized for frontend web applications.
 
 Requirements Implemented:
-- Requirement 2.1: BedrockAgentCoreApp with @app.entrypoint decorator
-- Requirement 2.2: Payload extraction and parameter processing  
-- Requirement 6.1: JWT authentication integration
+- Requirement 1.1, 1.2, 8.1: MBTI personality processing and JWT authentication
+- Requirement 1.7, 1.8, 1.9: Request processing pipeline with error handling and monitoring
+- Requirement 2.1-2.10: 3-day itinerary generation with session assignment logic
+- Requirement 3.1-3.10: Restaurant assignment and MCP integration
+- Requirement 5.1-5.10: Nova Pro foundation model integration
+- Requirement 6.1-6.10: Complete JSON response structure
 """
 
 import json
@@ -51,12 +55,18 @@ from models.request_models import (
     ErrorInfo,
     ResponseMetadata
 )
+from models.mbti_request_response_models import (
+    ItineraryRequest,
+    ItineraryResponse,
+    ItineraryResponseMetadata
+)
 from models.restaurant_models import Restaurant
 
 # Services
 from services.jwt_auth_handler import JWTAuthHandler
 from services.mcp_client_manager import MCPClientManager
 from services.restaurant_agent import RestaurantAgent
+from services.itinerary_generator import ItineraryGenerator
 from services.response_formatter import ResponseFormatter
 from services.error_handler import ErrorHandler
 from services.cache_service import CacheService
@@ -92,6 +102,12 @@ try:
 except Exception as e:
     logger.warning(f"Restaurant agent initialization failed: {e}")
     restaurant_agent = None
+
+try:
+    itinerary_generator = ItineraryGenerator()
+except Exception as e:
+    logger.warning(f"Itinerary generator initialization failed: {e}")
+    itinerary_generator = None
 
 try:
     response_formatter = ResponseFormatter()
@@ -345,6 +361,342 @@ def process_restaurant_request(payload: Dict[str, Any]) -> str:
                 )
             except Exception as e:
                 logger.warning(f"Failed to send error metrics to CloudWatch: {e}")
+        
+        return error_response
+
+
+@app.entrypoint
+def process_mbti_itinerary_request(payload: Dict[str, Any]) -> str:
+    """
+    Main entrypoint for processing MBTI-based 3-day itinerary requests.
+    
+    This function serves as the BedrockAgentCore runtime entrypoint that receives
+    HTTP requests with MBTI personality parameters, processes them through Nova Pro
+    foundation model to query the knowledge base for personality-matched tourist spots,
+    and generates comprehensive 3-day travel itineraries with restaurant assignments.
+    
+    Implements Requirements:
+    - 1.1, 1.2, 8.1: MBTI personality validation and JWT authentication integration
+    - 1.7, 1.8, 1.9: Complete itinerary generation orchestration with error handling and monitoring
+    - 2.1-2.10: 3-day itinerary generation with strict session assignment logic
+    - 3.1-3.10: Restaurant assignment using MCP client integration
+    - 5.1-5.10: Nova Pro foundation model integration for knowledge base queries
+    - 6.1-6.10: Complete JSON response structure for frontend consumption
+    
+    Args:
+        payload: HTTP request payload containing:
+            - MBTI_personality: 4-character MBTI personality code (required)
+            - user_context: User context from JWT token (optional)
+            - preferences: Additional user preferences (optional)
+            - start_date: Preferred start date for the itinerary (optional)
+            - special_requirements: Special requirements or constraints (optional)
+            - auth_token: JWT authentication token (optional, may be in headers)
+    
+    Returns:
+        JSON string containing:
+        {
+            "main_itinerary": {
+                "day_1": {
+                    "morning_session": TouristSpot with MBTI_match field,
+                    "afternoon_session": TouristSpot with MBTI_match field,
+                    "night_session": TouristSpot with MBTI_match field,
+                    "breakfast": Restaurant,
+                    "lunch": Restaurant,
+                    "dinner": Restaurant
+                },
+                "day_2": {...},
+                "day_3": {...}
+            },
+            "candidate_tourist_spots": {
+                "day_1": [TouristSpot with MBTI_match field, ...],
+                "day_2": [...],
+                "day_3": [...]
+            },
+            "candidate_restaurants": {
+                "day_1": {
+                    "breakfast": [Restaurant, ...],
+                    "lunch": [Restaurant, ...],
+                    "dinner": [Restaurant, ...]
+                },
+                "day_2": {...},
+                "day_3": {...}
+            },
+            "metadata": {
+                "MBTI_personality": "INFJ",
+                "generation_timestamp": "2025-01-01T12:00:00Z",
+                "total_spots_found": 45,
+                "total_restaurants_found": 120,
+                "processing_time_ms": 8500,
+                "validation_status": "passed"
+            },
+            "error": ErrorInfo (if applicable)
+        }
+    
+    Raises:
+        Various exceptions are caught and converted to structured error responses
+    """
+    start_time = datetime.utcnow()
+    correlation_id = f"mbti_req_{int(start_time.timestamp() * 1000)}"
+    
+    logger.info(
+        "Processing MBTI-based 3-day itinerary request",
+        extra={
+            "correlation_id": correlation_id,
+            "payload_keys": list(payload.keys()) if payload else [],
+            "agentcore_available": AGENTCORE_AVAILABLE
+        }
+    )
+    
+    # Record request start metrics
+    performance_monitor.record_metric(
+        MetricType.THROUGHPUT,
+        1.0,
+        {"endpoint": "mbti_itinerary"}
+    )
+    
+    try:
+        # Step 1: Validate and parse MBTI itinerary request payload (Requirement 1.1, 1.2)
+        with performance_monitor.time_operation("mbti_payload_validation"):
+            itinerary_request = _validate_and_parse_mbti_payload(payload, correlation_id)
+        
+        # Step 2: Authenticate request using JWT (Requirement 8.1)
+        user_context = None
+        if jwt_auth_handler and settings.authentication.cognito_user_pool_id:
+            with performance_monitor.time_operation("mbti_jwt_authentication"):
+                user_context = _authenticate_mbti_request(payload, correlation_id)
+                # Update request with authenticated user context
+                itinerary_request.user_context = user_context
+        
+        # Step 3: Check cache for existing MBTI itinerary results (Performance optimization)
+        cache_key = _generate_mbti_cache_key(
+            itinerary_request.mbti_personality,
+            itinerary_request.start_date
+        )
+        
+        if cache_service and settings.cache.cache_enabled:
+            cached_response = cache_service.get_cached_response(cache_key)
+            if cached_response:
+                logger.info(
+                    "Returning cached MBTI itinerary response",
+                    extra={
+                        "correlation_id": correlation_id,
+                        "cache_key": cache_key,
+                        "mbti_personality": itinerary_request.mbti_personality
+                    }
+                )
+                # Log metrics for cached response
+                _log_mbti_request_metrics(
+                    correlation_id, start_time, payload,
+                    len(cached_response.encode()), True
+                )
+                return cached_response
+        
+        # Step 4: Generate 3-day itinerary using Nova Pro and MCP integration (Requirement 1.7, 1.8)
+        if itinerary_generator:
+            with performance_monitor.time_operation("mbti_itinerary_generation"):
+                itinerary_result = asyncio.run(_generate_complete_mbti_itinerary(
+                    itinerary_request, correlation_id
+                ))
+        else:
+            # Fallback response when itinerary generator is not available
+            logger.error(
+                "Itinerary generator not available for MBTI request",
+                extra={"correlation_id": correlation_id}
+            )
+            itinerary_result = {
+                "main_itinerary": None,
+                "candidate_tourist_spots": {},
+                "candidate_restaurants": {},
+                "error": {
+                    "error_type": "service_unavailable",
+                    "message": "Itinerary generator service is not available",
+                    "suggested_actions": [
+                        "Try the request again later",
+                        "Contact support if problem persists"
+                    ],
+                    "error_code": "ITINERARY_GENERATOR_UNAVAILABLE"
+                }
+            }
+        
+        # Step 5: Format response for frontend consumption (Requirement 6.1-6.10)
+        with performance_monitor.time_operation("mbti_response_formatting"):
+            formatted_response = _format_mbti_final_response(
+                itinerary_result,
+                itinerary_request,
+                start_time,
+                correlation_id
+            )
+        
+        # Step 6: Cache successful response
+        if (cache_service and settings.cache.cache_enabled and 
+            not formatted_response.get("error")):
+            cache_service.cache_response(
+                cache_key,
+                json.dumps(formatted_response, default=str),
+                settings.cache.cache_ttl
+            )
+        
+        # Step 7: Prepare final response and log metrics (Requirement 1.9)
+        final_response = json.dumps(formatted_response, default=str)
+        
+        # Log comprehensive request metrics
+        _log_mbti_request_metrics(
+            correlation_id, start_time, payload,
+            len(final_response.encode()),
+            not formatted_response.get("error")
+        )
+        
+        # Record performance metrics
+        processing_time = (datetime.utcnow() - start_time).total_seconds()
+        performance_monitor.record_metric(
+            MetricType.RESPONSE_TIME,
+            processing_time,
+            {"endpoint": "mbti_itinerary", "status": "success"}
+        )
+        
+        # Send comprehensive metrics to CloudWatch if available
+        if cloudwatch_monitor:
+            try:
+                # Response time metrics
+                cloudwatch_monitor.put_metric(
+                    "MBTIResponseTime",
+                    processing_time,
+                    MetricUnit.SECONDS,
+                    {
+                        "Environment": settings.environment,
+                        "Endpoint": "mbti_itinerary",
+                        "MBTI_Type": itinerary_request.mbti_personality
+                    }
+                )
+                
+                # Request count metrics
+                cloudwatch_monitor.put_metric(
+                    "MBTIRequestCount",
+                    1.0,
+                    MetricUnit.COUNT,
+                    {
+                        "Environment": settings.environment,
+                        "Status": "success",
+                        "MBTI_Type": itinerary_request.mbti_personality
+                    }
+                )
+                
+                # Business metrics
+                if formatted_response.get("metadata"):
+                    metadata = formatted_response["metadata"]
+                    
+                    cloudwatch_monitor.put_metric(
+                        "MBTISpotsFound",
+                        metadata.get("total_spots_found", 0),
+                        MetricUnit.COUNT,
+                        {
+                            "Environment": settings.environment,
+                            "MBTI_Type": itinerary_request.mbti_personality
+                        }
+                    )
+                    
+                    cloudwatch_monitor.put_metric(
+                        "MBTIRestaurantsFound",
+                        metadata.get("total_restaurants_found", 0),
+                        MetricUnit.COUNT,
+                        {
+                            "Environment": settings.environment,
+                            "MBTI_Type": itinerary_request.mbti_personality
+                        }
+                    )
+                    
+                    cloudwatch_monitor.put_metric(
+                        "MBTIKnowledgeBaseQueries",
+                        metadata.get("knowledge_base_queries", 0),
+                        MetricUnit.COUNT,
+                        {
+                            "Environment": settings.environment,
+                            "MBTI_Type": itinerary_request.mbti_personality
+                        }
+                    )
+                    
+            except Exception as e:
+                logger.warning(f"Failed to send MBTI metrics to CloudWatch: {e}")
+        
+        logger.info(
+            "Successfully processed MBTI-based 3-day itinerary request",
+            extra={
+                "correlation_id": correlation_id,
+                "mbti_personality": itinerary_request.mbti_personality,
+                "has_main_itinerary": "main_itinerary" in formatted_response,
+                "total_spots_found": formatted_response.get("metadata", {}).get("total_spots_found", 0),
+                "total_restaurants_found": formatted_response.get("metadata", {}).get("total_restaurants_found", 0),
+                "cache_hit": False
+            }
+        )
+        
+        return final_response
+        
+    except Exception as e:
+        # Handle processing errors with comprehensive error categorization (Requirement 1.9)
+        error_response_dict = _handle_mbti_processing_error(e, correlation_id, payload)
+        error_response = json.dumps(error_response_dict, default=str)
+        
+        # Log error metrics
+        _log_mbti_request_metrics(
+            correlation_id, start_time, payload or {},
+            len(error_response.encode()), False
+        )
+        
+        # Record error metrics
+        processing_time = (datetime.utcnow() - start_time).total_seconds()
+        performance_monitor.record_metric(
+            MetricType.RESPONSE_TIME,
+            processing_time,
+            {"endpoint": "mbti_itinerary", "status": "error"}
+        )
+        performance_monitor.record_metric(
+            MetricType.ERROR_RATE,
+            1.0,
+            {"endpoint": "mbti_itinerary"}
+        )
+        
+        # Send comprehensive error metrics to CloudWatch if available
+        if cloudwatch_monitor:
+            try:
+                # Error rate metrics
+                cloudwatch_monitor.put_metric(
+                    "MBTIErrorRate",
+                    1.0,
+                    MetricUnit.COUNT,
+                    {
+                        "Environment": settings.environment,
+                        "Endpoint": "mbti_itinerary",
+                        "ErrorType": type(e).__name__
+                    }
+                )
+                
+                # Request count with error status
+                cloudwatch_monitor.put_metric(
+                    "MBTIRequestCount",
+                    1.0,
+                    MetricUnit.COUNT,
+                    {
+                        "Environment": settings.environment,
+                        "Status": "error",
+                        "ErrorType": type(e).__name__
+                    }
+                )
+                
+                # Response time for failed requests
+                cloudwatch_monitor.put_metric(
+                    "MBTIResponseTime",
+                    processing_time,
+                    MetricUnit.SECONDS,
+                    {
+                        "Environment": settings.environment,
+                        "Endpoint": "mbti_itinerary",
+                        "Status": "error"
+                    }
+                )
+                
+            except Exception as cloudwatch_error:
+                logger.warning(f"Failed to send MBTI error metrics to CloudWatch: {cloudwatch_error}")
         
         return error_response
 
@@ -844,6 +1196,13 @@ def health_check() -> Dict[str, Any]:
     """
     Comprehensive health check endpoint for monitoring and load balancing.
     
+    Includes specific health checks for MBTI Travel Assistant components:
+    - Nova Pro knowledge base connectivity
+    - MCP client connections for restaurant services
+    - Itinerary generator service availability
+    - JWT authentication service status
+    - Cache service availability
+    
     Uses the HealthChecker service to perform detailed health checks on all
     system components including MCP servers, cache, authentication, and system resources.
     
@@ -1140,6 +1499,601 @@ def _initialize_application() -> None:
     except Exception as e:
         logger.error(f"Application initialization failed: {str(e)}")
         raise
+
+
+def _validate_and_parse_mbti_payload(
+    payload: Dict[str, Any], 
+    correlation_id: str
+) -> ItineraryRequest:
+    """
+    Validate and parse the incoming MBTI itinerary request payload.
+    
+    Implements Requirement 1.1, 1.2: MBTI personality validation and extraction
+    
+    Args:
+        payload: Raw request payload from AgentCore entrypoint
+        correlation_id: Request correlation ID for logging
+        
+    Returns:
+        Validated ItineraryRequest object
+        
+    Raises:
+        ValueError: If payload validation fails
+    """
+    if not payload:
+        logger.error(
+            "Empty MBTI request payload received",
+            extra={"correlation_id": correlation_id}
+        )
+        raise ValueError("Request payload is required")
+    
+    logger.debug(
+        "Validating MBTI request payload",
+        extra={
+            "correlation_id": correlation_id,
+            "payload": payload
+        }
+    )
+    
+    # Create ItineraryRequest from payload
+    itinerary_request = ItineraryRequest.from_dict(payload)
+    
+    # Validate request structure and MBTI personality
+    validation_errors = itinerary_request.validate()
+    if validation_errors:
+        error_msg = f"MBTI request validation failed: {', '.join(validation_errors)}"
+        logger.error(
+            error_msg,
+            extra={
+                "correlation_id": correlation_id,
+                "validation_errors": validation_errors
+            }
+        )
+        raise ValueError(error_msg)
+    
+    logger.info(
+        "MBTI request payload validated successfully",
+        extra={
+            "correlation_id": correlation_id,
+            "mbti_personality": itinerary_request.mbti_personality,
+            "has_preferences": bool(itinerary_request.preferences),
+            "has_start_date": bool(itinerary_request.start_date)
+        }
+    )
+    
+    return itinerary_request
+
+
+def _authenticate_mbti_request(
+    payload: Dict[str, Any], 
+    correlation_id: str
+) -> Optional[Dict[str, Any]]:
+    """
+    Authenticate the incoming MBTI request using JWT token validation.
+    
+    Implements Requirement 8.1: JWT authentication integration
+    
+    Args:
+        payload: Request payload that may contain auth_token
+        correlation_id: Request correlation ID for logging
+        
+    Returns:
+        User context dictionary if authentication succeeds, None if no auth required
+        
+    Raises:
+        ValueError: If authentication fails
+    """
+    logger.debug(
+        "Starting JWT authentication for MBTI request",
+        extra={"correlation_id": correlation_id}
+    )
+    
+    # Extract JWT token from payload or headers
+    auth_token = (
+        payload.get("auth_token") or 
+        payload.get("authorization") or
+        payload.get("jwt_token")
+    )
+    
+    if not auth_token:
+        if settings.authentication.require_authentication:
+            logger.error(
+                "Authentication required for MBTI request but no token provided",
+                extra={"correlation_id": correlation_id}
+            )
+            raise ValueError("Authentication token is required")
+        else:
+            logger.info(
+                "No authentication token provided for MBTI request, proceeding without auth",
+                extra={"correlation_id": correlation_id}
+            )
+            return None
+    
+    try:
+        # Validate JWT token using JWT auth handler
+        if not jwt_auth_handler:
+            raise ValueError("JWT authentication handler not available")
+            
+        validation_result = jwt_auth_handler.validate_token(auth_token)
+        
+        if not validation_result.is_valid:
+            logger.error(
+                "JWT token validation failed for MBTI request",
+                extra={
+                    "correlation_id": correlation_id,
+                    "error": validation_result.error.message if validation_result.error else "Unknown error"
+                }
+            )
+            raise ValueError(f"Authentication failed: {validation_result.error.message}")
+        
+        user_context = validation_result.user_context.to_dict() if validation_result.user_context else {}
+        
+        logger.info(
+            "Successfully authenticated MBTI request",
+            extra={
+                "correlation_id": correlation_id,
+                "user_id": user_context.get("user_id"),
+                "validation_time_ms": validation_result.validation_time_ms
+            }
+        )
+        
+        return user_context
+        
+    except Exception as e:
+        logger.error(
+            f"MBTI authentication error: {str(e)}",
+            extra={
+                "correlation_id": correlation_id,
+                "error_type": type(e).__name__
+            }
+        )
+        raise ValueError(f"Authentication failed: {str(e)}")
+
+
+async def _generate_complete_mbti_itinerary(
+    request: ItineraryRequest,
+    correlation_id: str
+) -> Dict[str, Any]:
+    """
+    Generate complete 3-day MBTI itinerary using Nova Pro and MCP integration.
+    
+    Implements Requirement 1.7, 1.8: Complete itinerary generation orchestration
+    Implements comprehensive error handling and retry logic
+    
+    Args:
+        request: Validated ItineraryRequest
+        correlation_id: Request correlation ID
+        
+    Returns:
+        Dictionary containing main itinerary, candidate lists, and metadata
+        
+    Raises:
+        Various exceptions from itinerary generation process
+    """
+    logger.info(
+        "Generating complete MBTI-based 3-day itinerary",
+        extra={
+            "correlation_id": correlation_id,
+            "mbti_personality": request.mbti_personality,
+            "has_preferences": bool(request.preferences),
+            "has_start_date": bool(request.start_date)
+        }
+    )
+    
+    # Retry configuration for resilience
+    max_retries = 3
+    retry_delay = 1.0  # seconds
+    
+    for attempt in range(max_retries):
+        try:
+            # Generate itinerary using the ItineraryGenerator service
+            # This will:
+            # 1. Query Nova Pro foundation model for MBTI-matched tourist spots
+            # 2. Generate 3-day session assignments with strict business rules
+            # 3. Assign restaurants using MCP client integration
+            # 4. Generate candidate lists for alternative options
+            # 5. Validate all assignments against business rules
+            
+            # Record attempt metrics
+            performance_monitor.record_metric(
+                MetricType.THROUGHPUT,
+                1.0,
+                {"operation": "mbti_generation_attempt", "attempt": attempt + 1}
+            )
+            
+            generation_result = await itinerary_generator.generate_complete_itinerary(
+                mbti_personality=request.get_normalized_mbti_personality(),
+                user_preferences=request.preferences,
+                start_date=request.start_date,
+                special_requirements=request.special_requirements,
+                user_context=request.user_context,
+                correlation_id=correlation_id
+            )
+        
+            if not generation_result.success:
+                logger.error(
+                    f"MBTI itinerary generation failed on attempt {attempt + 1}: {generation_result.error_details}",
+                    extra={"correlation_id": correlation_id, "attempt": attempt + 1}
+                )
+                
+                # Check if this is a retryable error
+                if attempt < max_retries - 1 and _is_retryable_error(generation_result.error_details):
+                    logger.info(
+                        f"Retrying MBTI itinerary generation, attempt {attempt + 2}",
+                        extra={"correlation_id": correlation_id}
+                    )
+                    await asyncio.sleep(retry_delay * (attempt + 1))  # Exponential backoff
+                    continue
+                else:
+                    # Final failure or non-retryable error
+                    return {
+                        "main_itinerary": None,
+                        "candidate_tourist_spots": {},
+                        "candidate_restaurants": {},
+                        "error": generation_result.error_details
+                    }
+        
+            # Convert generation result to response format
+            response_data = {
+                "main_itinerary": generation_result.main_itinerary.to_dict() if generation_result.main_itinerary else None,
+                "candidate_tourist_spots": generation_result.candidate_lists.tourist_spots if generation_result.candidate_lists else {},
+                "candidate_restaurants": generation_result.candidate_lists.restaurants if generation_result.candidate_lists else {},
+                "generation_metadata": generation_result.generation_metadata,
+                "processing_time_ms": generation_result.processing_time_ms,
+                "validation_report": generation_result.validation_report.to_dict() if generation_result.validation_report else None
+            }
+            
+            logger.info(
+                "MBTI itinerary generation completed successfully",
+                extra={
+                    "correlation_id": correlation_id,
+                    "mbti_personality": request.mbti_personality,
+                    "processing_time_ms": generation_result.processing_time_ms,
+                    "has_main_itinerary": bool(generation_result.main_itinerary),
+                    "validation_passed": generation_result.validation_report.is_valid if generation_result.validation_report else False,
+                    "attempt": attempt + 1
+                }
+            )
+            
+            # Record success metrics
+            performance_monitor.record_metric(
+                MetricType.THROUGHPUT,
+                1.0,
+                {"operation": "mbti_generation_success", "attempts": attempt + 1}
+            )
+            
+            return response_data
+            
+        except Exception as e:
+            logger.error(
+                f"MBTI itinerary generation error on attempt {attempt + 1}: {str(e)}",
+                extra={
+                    "correlation_id": correlation_id,
+                    "error_type": type(e).__name__,
+                    "attempt": attempt + 1
+                }
+            )
+            
+            # Check if this is a retryable error and we have retries left
+            if attempt < max_retries - 1 and _is_retryable_exception(e):
+                logger.info(
+                    f"Retrying MBTI itinerary generation after exception, attempt {attempt + 2}",
+                    extra={"correlation_id": correlation_id}
+                )
+                await asyncio.sleep(retry_delay * (attempt + 1))  # Exponential backoff
+                continue
+            else:
+                # Final failure
+                performance_monitor.record_metric(
+                    MetricType.ERROR_RATE,
+                    1.0,
+                    {"operation": "mbti_generation_failure", "attempts": attempt + 1}
+                )
+                raise
+    
+    # This should never be reached, but just in case
+    raise Exception("MBTI itinerary generation failed after all retry attempts")
+
+
+def _format_mbti_final_response(
+    itinerary_data: Dict[str, Any],
+    request: ItineraryRequest,
+    start_time: datetime,
+    correlation_id: str
+) -> Dict[str, Any]:
+    """
+    Format the final MBTI itinerary response for frontend consumption.
+    
+    Implements Requirement 6.1-6.10: Complete JSON response structure
+    
+    Args:
+        itinerary_data: Data from itinerary generation process
+        request: Original ItineraryRequest
+        start_time: Request start time for processing metrics
+        correlation_id: Request correlation ID
+        
+    Returns:
+        Dictionary formatted for frontend consumption
+    """
+    logger.debug(
+        "Formatting final MBTI itinerary response",
+        extra={"correlation_id": correlation_id}
+    )
+    
+    try:
+        processing_time_ms = (datetime.utcnow() - start_time).total_seconds() * 1000
+        
+        # Create comprehensive metadata
+        metadata = ItineraryResponseMetadata(
+            mbti_personality=request.get_normalized_mbti_personality(),
+            generation_timestamp=datetime.utcnow().isoformat(),
+            total_spots_found=itinerary_data.get("generation_metadata", {}).get("total_spots_found", 0),
+            total_restaurants_found=itinerary_data.get("generation_metadata", {}).get("total_restaurants_found", 0),
+            processing_time_ms=int(processing_time_ms),
+            cache_hit=False,
+            validation_status=itinerary_data.get("validation_report", {}).get("status", "unknown"),
+            knowledge_base_queries=itinerary_data.get("generation_metadata", {}).get("nova_pro_queries", 0),
+            mcp_calls=itinerary_data.get("generation_metadata", {}).get("mcp_calls", [])
+        )
+        
+        # Format final response structure
+        formatted_response = {
+            "main_itinerary": itinerary_data.get("main_itinerary"),
+            "candidate_tourist_spots": itinerary_data.get("candidate_tourist_spots", {}),
+            "candidate_restaurants": itinerary_data.get("candidate_restaurants", {}),
+            "metadata": metadata.to_dict(),
+            "error": itinerary_data.get("error")
+        }
+        
+        # Remove None values for cleaner response
+        if formatted_response["error"] is None:
+            del formatted_response["error"]
+        
+        return formatted_response
+        
+    except Exception as e:
+        logger.error(
+            f"Error formatting final MBTI response: {str(e)}",
+            extra={"correlation_id": correlation_id}
+        )
+        
+        # Return error response if formatting fails
+        return {
+            "main_itinerary": None,
+            "candidate_tourist_spots": {},
+            "candidate_restaurants": {},
+            "metadata": {
+                "mbti_personality": request.get_normalized_mbti_personality(),
+                "generation_timestamp": datetime.utcnow().isoformat(),
+                "total_spots_found": 0,
+                "total_restaurants_found": 0,
+                "processing_time_ms": (datetime.utcnow() - start_time).total_seconds() * 1000,
+                "cache_hit": False,
+                "validation_status": "error"
+            },
+            "error": {
+                "error_type": "response_formatting_error",
+                "message": f"Failed to format MBTI response: {str(e)}",
+                "suggested_actions": [
+                    "Try the request again",
+                    "Check MBTI personality parameter",
+                    "Contact support if problem persists"
+                ],
+                "error_code": "MBTI_RESPONSE_FORMAT_ERROR"
+            }
+        }
+
+
+def _generate_mbti_cache_key(mbti_personality: str, start_date: Optional[str]) -> str:
+    """
+    Generate cache key for MBTI itinerary request parameters.
+    
+    Args:
+        mbti_personality: MBTI personality type
+        start_date: Optional start date
+        
+    Returns:
+        Cache key string
+    """
+    key_parts = [
+        "mbti_itinerary",
+        mbti_personality.upper() if mbti_personality else "unknown",
+        start_date or "any_date",
+        datetime.utcnow().strftime("%Y-%m-%d")  # Include date for daily cache invalidation
+    ]
+    return ":".join(key_parts)
+
+
+def _log_mbti_request_metrics(
+    correlation_id: str,
+    start_time: datetime,
+    payload: Dict[str, Any],
+    response_size: int,
+    success: bool
+) -> None:
+    """
+    Log comprehensive MBTI request metrics for monitoring.
+    
+    Implements Requirement 1.9: Comprehensive logging and monitoring
+    
+    Args:
+        correlation_id: Request correlation ID
+        start_time: Request start time
+        payload: Request payload
+        response_size: Size of response in bytes
+        success: Whether request was successful
+    """
+    processing_time_ms = (datetime.utcnow() - start_time).total_seconds() * 1000
+    
+    metrics = {
+        "correlation_id": correlation_id,
+        "processing_time_ms": processing_time_ms,
+        "payload_size_bytes": len(json.dumps(payload, default=str).encode()),
+        "response_size_bytes": response_size,
+        "success": success,
+        "timestamp": datetime.utcnow().isoformat(),
+        "mbti_personality": payload.get("MBTI_personality", payload.get("mbti_personality")),
+        "has_preferences": bool(payload.get("preferences")),
+        "has_start_date": bool(payload.get("start_date")),
+        "has_special_requirements": bool(payload.get("special_requirements")),
+        "has_auth_token": bool(payload.get("auth_token") or payload.get("authorization"))
+    }
+    
+    if success:
+        logger.info("MBTI itinerary request completed successfully", extra=metrics)
+    else:
+        logger.error("MBTI itinerary request failed", extra=metrics)
+
+
+def _is_retryable_error(error_details: Dict[str, Any]) -> bool:
+    """
+    Determine if an error is retryable based on error details.
+    
+    Args:
+        error_details: Error details from generation result
+        
+    Returns:
+        True if error is retryable, False otherwise
+    """
+    if not error_details:
+        return False
+    
+    error_type = error_details.get("error_type", "").lower()
+    error_code = error_details.get("error_code", "").lower()
+    
+    # Retryable error types
+    retryable_types = {
+        "network_error",
+        "timeout_error", 
+        "service_unavailable",
+        "rate_limit_exceeded",
+        "temporary_failure",
+        "mcp_connection_error",
+        "knowledge_base_timeout"
+    }
+    
+    retryable_codes = {
+        "network_timeout",
+        "service_timeout",
+        "mcp_timeout",
+        "kb_timeout",
+        "rate_limited"
+    }
+    
+    return error_type in retryable_types or error_code in retryable_codes
+
+
+def _is_retryable_exception(exception: Exception) -> bool:
+    """
+    Determine if an exception is retryable.
+    
+    Args:
+        exception: Exception that occurred
+        
+    Returns:
+        True if exception is retryable, False otherwise
+    """
+    # Retryable exception types
+    retryable_exceptions = {
+        "TimeoutError",
+        "ConnectionError", 
+        "NetworkError",
+        "ServiceUnavailableError",
+        "RateLimitError"
+    }
+    
+    exception_name = type(exception).__name__
+    
+    # Check for specific error messages that indicate retryable conditions
+    error_message = str(exception).lower()
+    retryable_messages = {
+        "timeout",
+        "connection",
+        "network",
+        "unavailable",
+        "rate limit",
+        "temporary"
+    }
+    
+    return (exception_name in retryable_exceptions or 
+            any(msg in error_message for msg in retryable_messages))
+
+
+def _handle_mbti_processing_error(
+    error: Exception,
+    correlation_id: str,
+    payload: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    Handle MBTI processing errors with comprehensive error categorization.
+    
+    Implements Requirement 1.9: Error handling and response formatting
+    
+    Args:
+        error: Exception that occurred
+        correlation_id: Request correlation ID  
+        payload: Original request payload
+        
+    Returns:
+        Structured error response dictionary
+    """
+    logger.error(
+        f"MBTI processing error occurred: {str(error)}",
+        extra={
+            "correlation_id": correlation_id,
+            "error_type": type(error).__name__,
+            "payload_keys": list(payload.keys()) if payload else []
+        }
+    )
+    
+    # Use error handler service for comprehensive error handling
+    try:
+        if error_handler:
+            error_response = error_handler.handle_entrypoint_error(error, correlation_id)
+            # Customize error response for MBTI context
+            error_response["metadata"] = {
+                "mbti_personality": payload.get("MBTI_personality", payload.get("mbti_personality")),
+                "generation_timestamp": datetime.utcnow().isoformat(),
+                "total_spots_found": 0,
+                "total_restaurants_found": 0,
+                "processing_time_ms": 0,
+                "cache_hit": False,
+                "validation_status": "error"
+            }
+            return error_response
+        else:
+            raise Exception("Error handler not available")
+    except Exception as handler_error:
+        logger.error(
+            f"MBTI error handler failed: {str(handler_error)}",
+            extra={"correlation_id": correlation_id}
+        )
+        
+        # Fallback error response for MBTI requests
+        return {
+            "main_itinerary": None,
+            "candidate_tourist_spots": {},
+            "candidate_restaurants": {},
+            "metadata": {
+                "mbti_personality": payload.get("MBTI_personality", payload.get("mbti_personality")),
+                "generation_timestamp": datetime.utcnow().isoformat(),
+                "total_spots_found": 0,
+                "total_restaurants_found": 0,
+                "processing_time_ms": 0,
+                "cache_hit": False,
+                "validation_status": "error"
+            },
+            "error": {
+                "error_type": "internal_error",
+                "message": "An internal error occurred while processing your MBTI itinerary request",
+                "suggested_actions": [
+                    "Try the request again",
+                    "Check MBTI personality parameter format",
+                    "Contact support if problem persists"
+                ],
+                "error_code": "MBTI_INTERNAL_ERROR"
+            }
+        }
 
 
 if __name__ == "__main__":

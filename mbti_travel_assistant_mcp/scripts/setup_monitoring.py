@@ -829,4 +829,220 @@ Examples:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main())    
+def _generate_alertmanager_config(self) -> Dict[str, Any]:
+        """Generate Alertmanager configuration"""
+        return {
+            "global": {
+                "smtp_smarthost": "localhost:587",
+                "smtp_from": f"alerts@{self.agent_name}.com"
+            },
+            "route": {
+                "group_by": ["alertname"],
+                "group_wait": "10s",
+                "group_interval": "10s",
+                "repeat_interval": "1h",
+                "receiver": "web.hook"
+            },
+            "receivers": [
+                {
+                    "name": "web.hook",
+                    "webhook_configs": [
+                        {
+                            "url": f"http://{self.agent_name}:8080/alerts/webhook",
+                            "send_resolved": True
+                        }
+                    ]
+                }
+            ]
+        }
+    
+    def _generate_performance_dashboard_config(self) -> Dict[str, Any]:
+        """Generate performance dashboard configuration"""
+        return {
+            "dashboard": {
+                "id": None,
+                "title": f"MBTI Travel Assistant Performance - {self.environment.title()}",
+                "tags": ["mbti", "travel-assistant", "performance", self.environment],
+                "style": "dark",
+                "timezone": "browser",
+                "refresh": "10s",
+                "time": {
+                    "from": "now-30m",
+                    "to": "now"
+                },
+                "panels": [
+                    {
+                        "id": 1,
+                        "title": "Real-time Performance Metrics",
+                        "type": "stat",
+                        "gridPos": {"h": 4, "w": 24, "x": 0, "y": 0},
+                        "targets": [
+                            {
+                                "expr": f"rate(http_requests_total{{job=\"{self.agent_name}\"}}[1m])",
+                                "legendFormat": "Requests/sec",
+                                "refId": "A"
+                            },
+                            {
+                                "expr": f"histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{{job=\"{self.agent_name}\"}}[1m]))",
+                                "legendFormat": "95th Percentile Response Time",
+                                "refId": "B"
+                            },
+                            {
+                                "expr": f"rate(http_requests_total{{job=\"{self.agent_name}\",status=~\"5..\"}}[1m]) / rate(http_requests_total{{job=\"{self.agent_name}\"}}[1m])",
+                                "legendFormat": "Error Rate",
+                                "refId": "C"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Alert Status",
+                        "type": "stat",
+                        "gridPos": {"h": 4, "w": 12, "x": 0, "y": 4},
+                        "targets": [
+                            {
+                                "expr": f"active_alerts{{environment=\"{self.environment}\"}}",
+                                "legendFormat": "Active Alerts",
+                                "refId": "A"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "title": "System Health",
+                        "type": "stat",
+                        "gridPos": {"h": 4, "w": 12, "x": 12, "y": 4},
+                        "targets": [
+                            {
+                                "expr": f"health_status{{environment=\"{self.environment}\"}}",
+                                "legendFormat": "Health Status",
+                                "refId": "A"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+
+async def setup_comprehensive_monitoring():
+    """Setup comprehensive monitoring with all components"""
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        description='Setup comprehensive monitoring for MBTI Travel Assistant'
+    )
+    parser.add_argument('--environment', default='development',
+                       choices=['development', 'staging', 'production'],
+                       help='Environment name')
+    parser.add_argument('--region', default='us-east-1',
+                       help='AWS region')
+    parser.add_argument('--agent-name', default='mbti-travel-assistant-mcp',
+                       help='Agent name')
+    parser.add_argument('--enable-alerting', action='store_true',
+                       help='Enable alerting system')
+    parser.add_argument('--enable-performance-dashboard', action='store_true',
+                       help='Enable performance dashboard')
+    
+    args = parser.parse_args()
+    
+    try:
+        # Setup basic monitoring
+        monitoring_setup = MonitoringSetup(
+            environment=args.environment,
+            region=args.region,
+            agent_name=args.agent_name
+        )
+        
+        result = await monitoring_setup.setup_complete_monitoring()
+        
+        # Setup alerting system if requested
+        if args.enable_alerting:
+            from services.alerting_system import AlertingSystem, NotificationChannel, AlertSeverity
+            
+            alerting = AlertingSystem(environment=args.environment)
+            
+            # Add default notification channels
+            if args.environment == "production":
+                # Email notifications for production
+                email_channel = NotificationChannel(
+                    name="email_alerts",
+                    type="email",
+                    config={
+                        "recipients": ["ops@example.com", "alerts@example.com"],
+                        "host": "smtp.example.com",
+                        "port": 587,
+                        "username": "alerts@example.com",
+                        "password": "password",
+                        "from_email": "alerts@example.com"
+                    },
+                    severity_filter=[AlertSeverity.CRITICAL, AlertSeverity.WARNING]
+                )
+                alerting.add_notification_channel(email_channel)
+                
+                # Slack notifications
+                slack_channel = NotificationChannel(
+                    name="slack_alerts",
+                    type="slack",
+                    config={
+                        "webhook_url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+                        "channel": "#alerts"
+                    },
+                    severity_filter=[AlertSeverity.CRITICAL, AlertSeverity.WARNING]
+                )
+                alerting.add_notification_channel(slack_channel)
+            
+            logger.info("Alerting system configured")
+        
+        # Setup performance dashboard if requested
+        if args.enable_performance_dashboard:
+            from services.performance_dashboard import PerformanceDashboard
+            from services.cloudwatch_monitor import CloudWatchMonitor
+            
+            cloudwatch_monitor = CloudWatchMonitor(
+                region=args.region,
+                environment=args.environment
+            )
+            
+            dashboard = PerformanceDashboard(
+                cloudwatch_monitor=cloudwatch_monitor,
+                environment=args.environment
+            )
+            
+            logger.info("Performance dashboard configured")
+        
+        if result["status"] == "success":
+            print("\n" + "="*60)
+            print("🎉 COMPREHENSIVE MONITORING SETUP SUCCESSFUL! 🎉")
+            print("="*60)
+            print(f"Environment: {args.environment}")
+            print(f"Agent: {args.agent_name}")
+            print(f"Region: {args.region}")
+            print(f"Components: {result['summary']['successful_components']}/{result['summary']['total_components']}")
+            print(f"Success Rate: {result['summary']['success_rate']:.1f}%")
+            if args.enable_alerting:
+                print("✓ Alerting system enabled")
+            if args.enable_performance_dashboard:
+                print("✓ Performance dashboard enabled")
+            print("="*60)
+            return 0
+        else:
+            print("\n" + "="*60)
+            print("⚠️ MONITORING SETUP COMPLETED WITH ISSUES")
+            print("="*60)
+            print(f"Success Rate: {result['summary']['success_rate']:.1f}%")
+            print(f"Warnings: {len(result['summary']['warnings'])}")
+            for warning in result['summary']['warnings']:
+                print(f"  - {warning}")
+            print("="*60)
+            return 1
+            
+    except Exception as e:
+        logger.error(f"Comprehensive monitoring setup failed: {e}")
+        return 1
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(asyncio.run(setup_comprehensive_monitoring()))

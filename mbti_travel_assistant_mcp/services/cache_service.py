@@ -1,8 +1,9 @@
 """
 Cache Service
 
-This module provides caching functionality for restaurant recommendation
-responses to improve performance and reduce load on MCP servers.
+This module provides comprehensive caching functionality for MBTI personality results,
+tourist spots, restaurant recommendations, and complete itinerary responses to improve
+performance and reduce load on knowledge base and MCP servers.
 """
 
 import json
@@ -16,25 +17,39 @@ logger = logging.getLogger(__name__)
 
 class CacheService:
     """
-    Service for caching restaurant recommendation responses.
+    Comprehensive caching service for MBTI Travel Assistant.
     
     This service provides in-memory caching with TTL support to improve
-    performance for frequently requested restaurant recommendations.
-    Implements caching for restaurant search results and recommendation responses.
+    performance for frequently requested MBTI personality results, tourist spots,
+    restaurant recommendations, and complete itinerary responses.
+    
+    Supports:
+    - MBTI personality results caching
+    - Tourist spot data caching
+    - Restaurant search and recommendation caching
+    - Complete itinerary response caching
+    - TTL-based cache expiration and invalidation
     """
     
-    def __init__(self, default_ttl: int = 1800):
+    def __init__(self, default_ttl: int = 1800, mbti_ttl: int = 3600, tourist_spots_ttl: int = 7200):
         """
         Initialize the cache service with in-memory storage.
         
         Args:
             default_ttl: Default TTL in seconds (30 minutes)
+            mbti_ttl: TTL for MBTI personality results (60 minutes)
+            tourist_spots_ttl: TTL for tourist spot data (120 minutes)
         """
         self._cache: Dict[str, Dict[str, Any]] = {}
         self._default_ttl = default_ttl
+        self._mbti_ttl = mbti_ttl
+        self._tourist_spots_ttl = tourist_spots_ttl
         self._hit_count = 0
         self._miss_count = 0
-        logger.info(f"Initialized CacheService with default TTL: {default_ttl}s")
+        logger.info(
+            f"Initialized CacheService with TTLs - default: {default_ttl}s, "
+            f"MBTI: {mbti_ttl}s, tourist_spots: {tourist_spots_ttl}s"
+        )
     
     def generate_search_cache_key(self, district: str, meal_time: str) -> str:
         """
@@ -85,6 +100,64 @@ class CacheService:
         sorted_restaurants = sorted(restaurants, key=lambda r: r.get('id', ''))
         restaurants_str = json.dumps(sorted_restaurants, sort_keys=True)
         return hashlib.md5(restaurants_str.encode()).hexdigest()
+    
+    def generate_mbti_cache_key(self, mbti_personality: str) -> str:
+        """
+        Generate cache key for MBTI personality results.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code (e.g., INFJ, ENFP)
+            
+        Returns:
+            Cache key string for MBTI personality results
+        """
+        # Normalize MBTI personality for consistent caching
+        mbti_normalized = mbti_personality.upper().strip()
+        
+        # Include date to ensure daily cache refresh for tourist spots
+        date_str = datetime.utcnow().strftime("%Y-%m-%d")
+        
+        key_data = f"mbti:{mbti_normalized}:{date_str}"
+        return hashlib.md5(key_data.encode()).hexdigest()
+    
+    def generate_tourist_spots_cache_key(self, mbti_personality: str, query_type: str = "default") -> str:
+        """
+        Generate cache key for tourist spots data.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            query_type: Type of query (default, fallback, etc.)
+            
+        Returns:
+            Cache key string for tourist spots data
+        """
+        mbti_normalized = mbti_personality.upper().strip()
+        query_type_normalized = query_type.lower().strip()
+        
+        # Include date for daily refresh
+        date_str = datetime.utcnow().strftime("%Y-%m-%d")
+        
+        key_data = f"tourist_spots:{mbti_normalized}:{query_type_normalized}:{date_str}"
+        return hashlib.md5(key_data.encode()).hexdigest()
+    
+    def generate_itinerary_cache_key(self, mbti_personality: str, request_hash: str) -> str:
+        """
+        Generate cache key for complete itinerary responses.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            request_hash: Hash of the complete request parameters
+            
+        Returns:
+            Cache key string for complete itinerary
+        """
+        mbti_normalized = mbti_personality.upper().strip()
+        
+        # Include hour for shorter cache duration on complete itineraries
+        hour_str = datetime.utcnow().strftime("%Y-%m-%d-%H")
+        
+        key_data = f"itinerary:{mbti_normalized}:{request_hash}:{hour_str}"
+        return hashlib.md5(key_data.encode()).hexdigest()
     
     def get_cached_response(self, cache_key: str) -> Optional[str]:
         """
@@ -279,6 +352,199 @@ class CacheService:
         
         return None
     
+    def cache_mbti_personality_results(
+        self,
+        mbti_personality: str,
+        tourist_spots: List[Dict[str, Any]],
+        query_metadata: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Cache MBTI personality query results from knowledge base.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            tourist_spots: List of tourist spots matching the personality
+            query_metadata: Optional metadata about the query
+            
+        Returns:
+            Cache key used for storage
+        """
+        cache_key = self.generate_mbti_cache_key(mbti_personality)
+        
+        response_data = {
+            "mbti_personality": mbti_personality.upper(),
+            "tourist_spots": tourist_spots,
+            "total_spots": len(tourist_spots),
+            "query_metadata": query_metadata or {},
+            "cached_at": datetime.utcnow().isoformat(),
+            "cache_type": "mbti_personality_results"
+        }
+        
+        self.cache_response(cache_key, json.dumps(response_data), self._mbti_ttl)
+        logger.info(f"Cached MBTI personality results for {mbti_personality}: {len(tourist_spots)} spots")
+        return cache_key
+    
+    def get_cached_mbti_personality_results(self, mbti_personality: str) -> Optional[Dict[str, Any]]:
+        """
+        Get cached MBTI personality query results.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            
+        Returns:
+            Cached MBTI personality results or None if not found/expired
+        """
+        cache_key = self.generate_mbti_cache_key(mbti_personality)
+        cached_response = self.get_cached_response(cache_key)
+        
+        if cached_response:
+            try:
+                result = json.loads(cached_response)
+                logger.info(f"Cache hit for MBTI personality {mbti_personality}: {result.get('total_spots', 0)} spots")
+                return result
+            except json.JSONDecodeError:
+                logger.error(f"Failed to parse cached MBTI results for key: {cache_key}")
+                self.invalidate_cache(cache_key)
+        
+        return None
+    
+    def cache_tourist_spots_data(
+        self,
+        mbti_personality: str,
+        tourist_spots: List[Dict[str, Any]],
+        query_type: str = "default",
+        processing_metadata: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Cache tourist spots data for specific MBTI personality.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            tourist_spots: List of tourist spots data
+            query_type: Type of query (default, fallback, etc.)
+            processing_metadata: Optional metadata about processing
+            
+        Returns:
+            Cache key used for storage
+        """
+        cache_key = self.generate_tourist_spots_cache_key(mbti_personality, query_type)
+        
+        response_data = {
+            "mbti_personality": mbti_personality.upper(),
+            "query_type": query_type,
+            "tourist_spots": tourist_spots,
+            "total_spots": len(tourist_spots),
+            "processing_metadata": processing_metadata or {},
+            "cached_at": datetime.utcnow().isoformat(),
+            "cache_type": "tourist_spots_data"
+        }
+        
+        self.cache_response(cache_key, json.dumps(response_data), self._tourist_spots_ttl)
+        logger.info(f"Cached tourist spots data for {mbti_personality} ({query_type}): {len(tourist_spots)} spots")
+        return cache_key
+    
+    def get_cached_tourist_spots_data(
+        self,
+        mbti_personality: str,
+        query_type: str = "default"
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Get cached tourist spots data for specific MBTI personality.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            query_type: Type of query (default, fallback, etc.)
+            
+        Returns:
+            Cached tourist spots data or None if not found/expired
+        """
+        cache_key = self.generate_tourist_spots_cache_key(mbti_personality, query_type)
+        cached_response = self.get_cached_response(cache_key)
+        
+        if cached_response:
+            try:
+                result = json.loads(cached_response)
+                logger.info(
+                    f"Cache hit for tourist spots {mbti_personality} ({query_type}): "
+                    f"{result.get('total_spots', 0)} spots"
+                )
+                return result
+            except json.JSONDecodeError:
+                logger.error(f"Failed to parse cached tourist spots data for key: {cache_key}")
+                self.invalidate_cache(cache_key)
+        
+        return None
+    
+    def cache_complete_itinerary(
+        self,
+        mbti_personality: str,
+        request_params: Dict[str, Any],
+        itinerary_response: Dict[str, Any]
+    ) -> str:
+        """
+        Cache complete itinerary response.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            request_params: Original request parameters
+            itinerary_response: Complete itinerary response
+            
+        Returns:
+            Cache key used for storage
+        """
+        # Generate hash of request parameters for cache key
+        request_str = json.dumps(request_params, sort_keys=True)
+        request_hash = hashlib.md5(request_str.encode()).hexdigest()
+        
+        cache_key = self.generate_itinerary_cache_key(mbti_personality, request_hash)
+        
+        response_data = {
+            "mbti_personality": mbti_personality.upper(),
+            "request_hash": request_hash,
+            "request_params": request_params,
+            "itinerary_response": itinerary_response,
+            "cached_at": datetime.utcnow().isoformat(),
+            "cache_type": "complete_itinerary"
+        }
+        
+        # Use shorter TTL for complete itineraries (1 hour)
+        itinerary_ttl = 3600
+        self.cache_response(cache_key, json.dumps(response_data), itinerary_ttl)
+        logger.info(f"Cached complete itinerary for {mbti_personality}")
+        return cache_key
+    
+    def get_cached_complete_itinerary(
+        self,
+        mbti_personality: str,
+        request_params: Dict[str, Any]
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Get cached complete itinerary response.
+        
+        Args:
+            mbti_personality: 4-character MBTI personality code
+            request_params: Original request parameters
+            
+        Returns:
+            Cached complete itinerary or None if not found/expired
+        """
+        request_str = json.dumps(request_params, sort_keys=True)
+        request_hash = hashlib.md5(request_str.encode()).hexdigest()
+        
+        cache_key = self.generate_itinerary_cache_key(mbti_personality, request_hash)
+        cached_response = self.get_cached_response(cache_key)
+        
+        if cached_response:
+            try:
+                result = json.loads(cached_response)
+                logger.info(f"Cache hit for complete itinerary {mbti_personality}")
+                return result.get("itinerary_response")
+            except json.JSONDecodeError:
+                logger.error(f"Failed to parse cached itinerary for key: {cache_key}")
+                self.invalidate_cache(cache_key)
+        
+        return None
+    
     def invalidate_cache(self, cache_key: str) -> bool:
         """
         Invalidate a specific cache entry.
@@ -314,6 +580,9 @@ class CacheService:
         expired_entries = 0
         search_entries = 0
         recommendation_entries = 0
+        mbti_entries = 0
+        tourist_spots_entries = 0
+        itinerary_entries = 0
         total_access_count = 0
         
         for key, entry in self._cache.items():
@@ -321,11 +590,17 @@ class CacheService:
                 active_entries += 1
                 total_access_count += entry.get("access_count", 0)
                 
-                # Categorize cache entries
-                if key.startswith("search:") or "search:" in key:
+                # Categorize cache entries by type
+                if "search:" in key:
                     search_entries += 1
-                elif key.startswith("recommendation:") or "recommendation:" in key:
+                elif "recommendation:" in key:
                     recommendation_entries += 1
+                elif "mbti:" in key:
+                    mbti_entries += 1
+                elif "tourist_spots:" in key:
+                    tourist_spots_entries += 1
+                elif "itinerary:" in key:
+                    itinerary_entries += 1
             else:
                 expired_entries += 1
         
@@ -338,12 +613,19 @@ class CacheService:
             "expired_entries": expired_entries,
             "search_cache_entries": search_entries,
             "recommendation_cache_entries": recommendation_entries,
+            "mbti_cache_entries": mbti_entries,
+            "tourist_spots_cache_entries": tourist_spots_entries,
+            "itinerary_cache_entries": itinerary_entries,
             "cache_hits": self._hit_count,
             "cache_misses": self._miss_count,
             "hit_rate_percentage": round(hit_rate, 2),
             "total_access_count": total_access_count,
             "cache_type": "in_memory",
-            "default_ttl_seconds": self._default_ttl
+            "ttl_config": {
+                "default_ttl_seconds": self._default_ttl,
+                "mbti_ttl_seconds": self._mbti_ttl,
+                "tourist_spots_ttl_seconds": self._tourist_spots_ttl
+            }
         }
     
     def get_cache_efficiency_metrics(self) -> Dict[str, Any]:
@@ -425,6 +707,121 @@ class CacheService:
             logger.info(f"Invalidated {len(keys_to_remove)} recommendation cache entries")
         
         return len(keys_to_remove)
+    
+    def invalidate_mbti_cache(self, mbti_personality: Optional[str] = None) -> int:
+        """
+        Invalidate MBTI personality cache entries.
+        
+        Args:
+            mbti_personality: Specific MBTI personality to invalidate (all if None)
+            
+        Returns:
+            Number of entries invalidated
+        """
+        keys_to_remove = []
+        
+        for key in self._cache.keys():
+            if "mbti:" in key:
+                if mbti_personality is None:
+                    # Remove all MBTI cache entries
+                    keys_to_remove.append(key)
+                else:
+                    # Check if this entry matches the specific MBTI personality
+                    if mbti_personality.upper() in key.upper():
+                        keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del self._cache[key]
+        
+        if keys_to_remove:
+            personality_info = f" for {mbti_personality}" if mbti_personality else ""
+            logger.info(f"Invalidated {len(keys_to_remove)} MBTI cache entries{personality_info}")
+        
+        return len(keys_to_remove)
+    
+    def invalidate_tourist_spots_cache(self, mbti_personality: Optional[str] = None) -> int:
+        """
+        Invalidate tourist spots cache entries.
+        
+        Args:
+            mbti_personality: Specific MBTI personality to invalidate (all if None)
+            
+        Returns:
+            Number of entries invalidated
+        """
+        keys_to_remove = []
+        
+        for key in self._cache.keys():
+            if "tourist_spots:" in key:
+                if mbti_personality is None:
+                    # Remove all tourist spots cache entries
+                    keys_to_remove.append(key)
+                else:
+                    # Check if this entry matches the specific MBTI personality
+                    if mbti_personality.upper() in key.upper():
+                        keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del self._cache[key]
+        
+        if keys_to_remove:
+            personality_info = f" for {mbti_personality}" if mbti_personality else ""
+            logger.info(f"Invalidated {len(keys_to_remove)} tourist spots cache entries{personality_info}")
+        
+        return len(keys_to_remove)
+    
+    def invalidate_itinerary_cache(self, mbti_personality: Optional[str] = None) -> int:
+        """
+        Invalidate complete itinerary cache entries.
+        
+        Args:
+            mbti_personality: Specific MBTI personality to invalidate (all if None)
+            
+        Returns:
+            Number of entries invalidated
+        """
+        keys_to_remove = []
+        
+        for key in self._cache.keys():
+            if "itinerary:" in key:
+                if mbti_personality is None:
+                    # Remove all itinerary cache entries
+                    keys_to_remove.append(key)
+                else:
+                    # Check if this entry matches the specific MBTI personality
+                    if mbti_personality.upper() in key.upper():
+                        keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del self._cache[key]
+        
+        if keys_to_remove:
+            personality_info = f" for {mbti_personality}" if mbti_personality else ""
+            logger.info(f"Invalidated {len(keys_to_remove)} itinerary cache entries{personality_info}")
+        
+        return len(keys_to_remove)
+    
+    def invalidate_all_mbti_related_cache(self, mbti_personality: Optional[str] = None) -> Dict[str, int]:
+        """
+        Invalidate all MBTI-related cache entries (MBTI, tourist spots, and itineraries).
+        
+        Args:
+            mbti_personality: Specific MBTI personality to invalidate (all if None)
+            
+        Returns:
+            Dictionary with counts of invalidated entries by type
+        """
+        results = {
+            "mbti_entries": self.invalidate_mbti_cache(mbti_personality),
+            "tourist_spots_entries": self.invalidate_tourist_spots_cache(mbti_personality),
+            "itinerary_entries": self.invalidate_itinerary_cache(mbti_personality)
+        }
+        
+        total_invalidated = sum(results.values())
+        personality_info = f" for {mbti_personality}" if mbti_personality else ""
+        logger.info(f"Invalidated {total_invalidated} total MBTI-related cache entries{personality_info}")
+        
+        return results
     
     def _cleanup_expired_entries(self) -> None:
         """Clean up expired cache entries with enhanced logging."""

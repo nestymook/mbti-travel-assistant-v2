@@ -2,7 +2,8 @@
  * Error Handling Example for MBTI Travel Assistant MCP
  * 
  * This example demonstrates comprehensive error handling patterns
- * for different types of errors that can occur when using the API.
+ * for different types of errors that can occur when generating
+ * MBTI-based 3-day travel itineraries.
  */
 
 const axios = require('axios');
@@ -24,7 +25,7 @@ class MBTIClientWithErrorHandling {
     
     this.client = axios.create({
       baseURL: baseURL,
-      timeout: 10000,
+      timeout: 15000, // 15 seconds for itinerary generation
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'MBTITravelApp-ErrorHandling/1.0.0'
@@ -100,49 +101,76 @@ class MBTIClientWithErrorHandling {
     }
   }
   
-  async getRestaurantRecommendationSafely(request) {
+  async generateMBTIItinerarySafely(mbtiPersonality, userContext = null) {
     try {
+      const request = { MBTI_personality: mbtiPersonality };
+      if (userContext) request.user_context = userContext;
+      
       const response = await this.client.post('/invocations', request);
       return {
         success: true,
         data: response.data,
-        error: null
+        error: null,
+        partialSuccess: false
       };
     } catch (error) {
+      // Check for partial success (tourist spots but no restaurants)
+      const hasPartialData = error.response?.data?.main_itinerary && 
+        Object.keys(error.response.data.main_itinerary).length > 0;
+      
       return {
         success: false,
-        data: null,
-        error: error
+        data: hasPartialData ? error.response.data : null,
+        error: error,
+        partialSuccess: hasPartialData
       };
     }
   }
   
-  async getRestaurantRecommendationWithRetry(request, maxRetries = 3) {
+  async generateMBTIItineraryWithRetry(mbtiPersonality, userContext = null, maxRetries = 3) {
     let lastError;
     
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
+        const request = { MBTI_personality: mbtiPersonality };
+        if (userContext) request.user_context = userContext;
+        
         const response = await this.client.post('/invocations', request);
         return response.data;
       } catch (error) {
         lastError = error;
         
-        // Don't retry on client errors (4xx) except rate limiting
+        // Don't retry on validation errors or auth errors (except expired tokens)
         if (error.response?.status >= 400 && 
             error.response?.status < 500 && 
-            error.response?.status !== 429) {
+            !['AUTH_FAILED', 'RATE_LIMIT_EXCEEDED'].includes(error.code)) {
           throw error;
         }
         
         if (attempt < maxRetries) {
-          const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
-          console.log(`Attempt ${attempt} failed, retrying in ${delay}ms...`);
+          const delay = Math.min(2000 * Math.pow(2, attempt - 1), 15000);
+          console.log(`Attempt ${attempt} failed for ${mbtiPersonality}, retrying in ${delay}ms...`);
           await this.sleep(delay);
         }
       }
     }
     
     throw lastError;
+  }
+  
+  validateMBTIType(mbtiType) {
+    if (!mbtiType || typeof mbtiType !== 'string' || mbtiType.length !== 4) {
+      return false;
+    }
+    
+    const validTypes = [
+      'INTJ', 'INTP', 'ENTJ', 'ENTP',
+      'INFJ', 'INFP', 'ENFJ', 'ENFP', 
+      'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ',
+      'ISTP', 'ISFP', 'ESTP', 'ESFP'
+    ];
+    
+    return validTypes.includes(mbtiType.toUpperCase());
   }
   
   sleep(ms) {

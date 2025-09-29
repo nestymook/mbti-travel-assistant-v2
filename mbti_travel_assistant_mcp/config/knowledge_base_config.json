@@ -1,0 +1,191 @@
+{
+  "development": {
+    "knowledge_base_id": "RCWW86CLM9",
+    "region": "us-east-1",
+    "model_arn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0",
+    "retrieval_configuration": {
+      "vectorSearchConfiguration": {
+        "numberOfResults": 20,
+        "overrideSearchType": "HYBRID"
+      }
+    },
+    "generation_configuration": {
+      "inferenceConfig": {
+        "textInferenceConfig": {
+          "temperature": 0.1,
+          "topP": 0.9,
+          "maxTokens": 4096,
+          "stopSequences": []
+        }
+      },
+      "promptTemplate": {
+        "textPromptTemplate": "You are an expert travel assistant specializing in MBTI personality-based recommendations. Based on the following context about Hong Kong tourist spots, provide detailed information that matches the personality type preferences.\n\nContext: $search_results$\n\nQuery: $query$\n\nPlease provide comprehensive information about tourist spots that align with the specified MBTI personality type, including operating hours, districts, and why they match the personality preferences."
+      }
+    },
+    "query_optimization": {
+      "enable_semantic_search": true,
+      "enable_keyword_search": true,
+      "search_strategy": "hybrid",
+      "rerank_results": true
+    }
+  },
+  "staging": {
+    "knowledge_base_id": "RCWW86CLM9",
+    "region": "us-east-1",
+    "model_arn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0",
+    "retrieval_configuration": {
+      "vectorSearchConfiguration": {
+        "numberOfResults": 25,
+        "overrideSearchType": "HYBRID"
+      }
+    },
+    "generation_configuration": {
+      "inferenceConfig": {
+        "textInferenceConfig": {
+          "temperature": 0.1,
+          "topP": 0.9,
+          "maxTokens": 4096,
+          "stopSequences": []
+        }
+      },
+      "promptTemplate": {
+        "textPromptTemplate": "You are an expert travel assistant specializing in MBTI personality-based recommendations. Based on the following context about Hong Kong tourist spots, provide detailed information that matches the personality type preferences.\n\nContext: $search_results$\n\nQuery: $query$\n\nPlease provide comprehensive information about tourist spots that align with the specified MBTI personality type, including operating hours, districts, and why they match the personality preferences."
+      }
+    },
+    "query_optimization": {
+      "enable_semantic_search": true,
+      "enable_keyword_search": true,
+      "search_strategy": "hybrid",
+      "rerank_results": true
+    },
+    "monitoring": {
+      "enable_query_logging": true,
+      "enable_performance_metrics": true,
+      "log_level": "INFO"
+    }
+  },
+  "production": {
+    "knowledge_base_id": "RCWW86CLM9",
+    "region": "us-east-1",
+    "model_arn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0",
+    "retrieval_configuration": {
+      "vectorSearchConfiguration": {
+        "numberOfResults": 30,
+        "overrideSearchType": "HYBRID"
+      }
+    },
+    "generation_configuration": {
+      "inferenceConfig": {
+        "textInferenceConfig": {
+          "temperature": 0.1,
+          "topP": 0.9,
+          "maxTokens": 4096,
+          "stopSequences": []
+        }
+      },
+      "promptTemplate": {
+        "textPromptTemplate": "You are an expert travel assistant specializing in MBTI personality-based recommendations. Based on the following context about Hong Kong tourist spots, provide detailed information that matches the personality type preferences.\n\nContext: $search_results$\n\nQuery: $query$\n\nPlease provide comprehensive information about tourist spots that align with the specified MBTI personality type, including operating hours, districts, and why they match the personality preferences."
+      }
+    },
+    "query_optimization": {
+      "enable_semantic_search": true,
+      "enable_keyword_search": true,
+      "search_strategy": "hybrid",
+      "rerank_results": true
+    },
+    "monitoring": {
+      "enable_query_logging": true,
+      "enable_performance_metrics": true,
+      "log_level": "INFO"
+    },
+    "caching": {
+      "enable_response_cache": true,
+      "cache_ttl_seconds": 3600,
+      "cache_key_strategy": "query_hash"
+    }
+  },
+  "common": {
+    "supported_models": [
+      "amazon.nova-pro-v1:0",
+      "anthropic.claude-3-sonnet-20240229-v1:0",
+      "anthropic.claude-3-haiku-20240307-v1:0"
+    ],
+    "mbti_personality_mapping": {
+      "INTJ": {
+        "keywords": ["strategic", "architectural", "museums", "planning", "systematic"],
+        "preferences": ["quiet", "educational", "structured", "intellectual"]
+      },
+      "INTP": {
+        "keywords": ["analytical", "theoretical", "science", "technology", "research"],
+        "preferences": ["quiet", "exploratory", "flexible", "intellectual"]
+      },
+      "ENTJ": {
+        "keywords": ["leadership", "business", "networking", "achievement", "efficiency"],
+        "preferences": ["active", "goal-oriented", "structured", "social"]
+      },
+      "ENTP": {
+        "keywords": ["innovative", "entrepreneurial", "networking", "brainstorming", "variety"],
+        "preferences": ["active", "exploratory", "flexible", "social"]
+      },
+      "INFJ": {
+        "keywords": ["meaningful", "cultural", "spiritual", "artistic", "peaceful"],
+        "preferences": ["quiet", "meaningful", "structured", "personal"]
+      },
+      "INFP": {
+        "keywords": ["authentic", "artistic", "nature", "personal", "creative"],
+        "preferences": ["quiet", "meaningful", "flexible", "personal"]
+      },
+      "ENFJ": {
+        "keywords": ["community", "cultural", "educational", "inspiring", "people"],
+        "preferences": ["active", "meaningful", "structured", "social"]
+      },
+      "ENFP": {
+        "keywords": ["vibrant", "diverse", "interactive", "spontaneous", "people"],
+        "preferences": ["active", "exploratory", "flexible", "social"]
+      },
+      "ISTJ": {
+        "keywords": ["traditional", "historical", "reliable", "detailed", "organized"],
+        "preferences": ["quiet", "educational", "structured", "practical"]
+      },
+      "ISFJ": {
+        "keywords": ["service", "community", "traditional", "caring", "detailed"],
+        "preferences": ["quiet", "meaningful", "structured", "practical"]
+      },
+      "ESTJ": {
+        "keywords": ["organized", "efficient", "traditional", "leadership", "practical"],
+        "preferences": ["active", "goal-oriented", "structured", "practical"]
+      },
+      "ESFJ": {
+        "keywords": ["community", "service", "traditional", "people", "harmony"],
+        "preferences": ["active", "meaningful", "structured", "social"]
+      },
+      "ISTP": {
+        "keywords": ["hands-on", "mechanical", "practical", "tools", "crafts"],
+        "preferences": ["quiet", "exploratory", "flexible", "practical"]
+      },
+      "ISFP": {
+        "keywords": ["artistic", "nature", "aesthetic", "personal", "gentle"],
+        "preferences": ["quiet", "meaningful", "flexible", "personal"]
+      },
+      "ESTP": {
+        "keywords": ["action", "adventure", "sports", "immediate", "practical"],
+        "preferences": ["active", "exploratory", "flexible", "practical"]
+      },
+      "ESFP": {
+        "keywords": ["fun", "people", "entertainment", "spontaneous", "energetic"],
+        "preferences": ["active", "exploratory", "flexible", "social"]
+      }
+    },
+    "query_templates": {
+      "personality_search": "Find Hong Kong tourist spots that match {mbti_type} personality preferences: {preferences}. Focus on {keywords} experiences.",
+      "district_search": "Find {mbti_type} personality-matched tourist spots in {district} district of Hong Kong.",
+      "session_search": "Find {mbti_type} personality-matched tourist spots suitable for {session_type} activities ({time_range}) in Hong Kong."
+    },
+    "error_handling": {
+      "max_retries": 3,
+      "retry_delay_seconds": 1,
+      "timeout_seconds": 30,
+      "fallback_strategy": "return_partial_results"
+    }
+  }
+}

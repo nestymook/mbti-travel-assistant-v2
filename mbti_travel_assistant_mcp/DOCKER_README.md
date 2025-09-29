@@ -1,6 +1,38 @@
-# Docker Deployment Guide
+# Docker Setup for MBTI Travel Assistant MCP
 
-This guide covers Docker containerization and deployment for the MBTI Travel Assistant MCP service.
+This document provides a quick reference for running the MBTI Travel Assistant MCP using Docker containers with ARM64 platform support for Amazon Bedrock AgentCore Runtime.
+
+> 📖 **For comprehensive deployment instructions, troubleshooting, and advanced configuration, see the [Docker Deployment Guide](./DOCKER_DEPLOYMENT_GUIDE.md)**
+
+## 🚀 Quick Commands
+
+```bash
+# Development deployment
+./scripts/deploy_docker_dev.sh
+
+# Production deployment  
+./scripts/deploy_docker_prod.sh
+
+# Run tests
+./scripts/test_docker.sh
+
+# Monitor services
+./scripts/monitor_docker.sh
+
+# Health check
+curl http://localhost:8080/health
+```
+
+## 📋 Service Ports
+
+| Service | Development | Production | Purpose |
+|---------|-------------|------------|---------|
+| MBTI Travel Assistant | 8080 | 8080 | AgentCore Runtime |
+| Redis | 6379 | - | Cache service |
+| Prometheus | 9091 | 9091 | Metrics collection |
+| Grafana | 3000 | - | Dashboards |
+| Jaeger | 16686 | - | Tracing |
+| Nginx | - | 80, 443 | Reverse proxy |
 
 ## Overview
 

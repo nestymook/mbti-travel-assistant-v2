@@ -511,6 +511,199 @@ class PerformanceMonitor:
             except Exception as e:
                 logger.error(f"Error in system monitoring: {e}")
     
+    async def measure_parallel_operations(
+        self,
+        operations: List[Callable],
+        operation_name: str,
+        max_concurrent: int = 5
+    ) -> List[Any]:
+        """
+        Measure performance of parallel operations.
+        
+        Args:
+            operations: List of async callable operations
+            operation_name: Name for performance tracking
+            max_concurrent: Maximum concurrent operations
+            
+        Returns:
+            List of operation results
+        """
+        start_time = time.time()
+        semaphore = asyncio.Semaphore(max_concurrent)
+        
+        async def execute_with_semaphore(operation):
+            async with semaphore:
+                op_start = time.time()
+                try:
+                    result = await operation()
+                    op_duration = time.time() - op_start
+                    
+                    # Record individual operation metrics
+                    self.record_metric(
+                        MetricType.RESPONSE_TIME,
+                        op_duration,
+                        {"operation": operation_name, "type": "individual"},
+                        {"status": "success"}
+                    )
+                    
+                    return result
+                except Exception as e:
+                    op_duration = time.time() - op_start
+                    
+                    # Record failed operation metrics
+                    self.record_metric(
+                        MetricType.RESPONSE_TIME,
+                        op_duration,
+                        {"operation": operation_name, "type": "individual"},
+                        {"status": "error", "error_type": type(e).__name__}
+                    )
+                    
+                    raise
+        
+        # Execute all operations concurrently
+        tasks = [execute_with_semaphore(op) for op in operations]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        # Record overall parallel operation metrics
+        total_duration = time.time() - start_time
+        successful_ops = len([r for r in results if not isinstance(r, Exception)])
+        failed_ops = len(results) - successful_ops
+        
+        self.record_metric(
+            MetricType.RESPONSE_TIME,
+            total_duration,
+            {"operation": operation_name, "type": "parallel_batch"},
+            {
+                "total_operations": len(operations),
+                "successful_operations": successful_ops,
+                "failed_operations": failed_ops,
+                "max_concurrent": max_concurrent
+            }
+        )
+        
+        # Record throughput
+        throughput = len(operations) / total_duration if total_duration > 0 else 0
+        self.record_metric(
+            MetricType.THROUGHPUT,
+            throughput,
+            {"operation": operation_name}
+        )
+        
+        logger.info(
+            f"Parallel operation '{operation_name}' completed: "
+            f"{len(operations)} ops in {total_duration:.2f}s "
+            f"({throughput:.2f} ops/sec), {successful_ops} successful, {failed_ops} failed"
+        )
+        
+        return results
+    
+    def record_connection_pool_metrics(self, pool_stats: Dict[str, Any]):
+        """
+        Record connection pool performance metrics.
+        
+        Args:
+            pool_stats: Connection pool statistics
+        """
+        global_stats = pool_stats.get("global_stats", {})
+        
+        # Record global connection metrics
+        for metric_name, value in global_stats.items():
+            if metric_name in ["active_connections", "idle_connections", "failed_connections"]:
+                self.record_metric(
+                    MetricType.CONNECTION_COUNT,
+                    value,
+                    {"connection_type": metric_name.replace("_connections", "")}
+                )
+        
+        # Record per-server connection metrics
+        pool_stats_data = pool_stats.get("pool_stats", {})
+        for server_endpoint, server_stats in pool_stats_data.items():
+            for metric_name, value in server_stats.items():
+                if metric_name.endswith("_connections"):
+                    self.record_metric(
+                        MetricType.CONNECTION_COUNT,
+                        value,
+                        {
+                            "server": server_endpoint,
+                            "connection_type": metric_name.replace("_connections", "")
+                        }
+                    )
+    
+    def get_performance_optimization_recommendations(self) -> List[Dict[str, Any]]:
+        """
+        Analyze performance metrics and provide optimization recommendations.
+        
+        Returns:
+            List of optimization recommendations
+        """
+        recommendations = []
+        
+        # Analyze response times
+        response_time_stats = self.get_stats(MetricType.RESPONSE_TIME, time_window_minutes=60)
+        for stats_key, stats in response_time_stats.items():
+            if stats.avg_value > 5.0:  # Slow operations (>5 seconds)
+                recommendations.append({
+                    "type": "performance",
+                    "severity": "high" if stats.avg_value > 10.0 else "medium",
+                    "issue": f"Slow operation detected: {stats_key}",
+                    "metric": f"Average response time: {stats.avg_value:.2f}s",
+                    "recommendation": "Consider optimizing this operation or increasing parallelism",
+                    "stats_key": stats_key
+                })
+        
+        # Analyze error rates
+        error_rate_stats = self.get_stats(MetricType.ERROR_RATE, time_window_minutes=60)
+        for stats_key, stats in error_rate_stats.items():
+            if stats.avg_value > 0.1:  # High error rate (>10%)
+                recommendations.append({
+                    "type": "reliability",
+                    "severity": "high" if stats.avg_value > 0.2 else "medium",
+                    "issue": f"High error rate detected: {stats_key}",
+                    "metric": f"Error rate: {stats.avg_value * 100:.1f}%",
+                    "recommendation": "Investigate error causes and implement retry logic",
+                    "stats_key": stats_key
+                })
+        
+        # Analyze cache hit rates
+        cache_stats = self.get_stats(MetricType.CACHE_HIT_RATE, time_window_minutes=60)
+        for stats_key, stats in cache_stats.items():
+            if stats.avg_value < 0.5:  # Low cache hit rate (<50%)
+                recommendations.append({
+                    "type": "caching",
+                    "severity": "medium",
+                    "issue": f"Low cache hit rate: {stats_key}",
+                    "metric": f"Cache hit rate: {stats.avg_value * 100:.1f}%",
+                    "recommendation": "Review cache TTL settings or cache key generation strategy",
+                    "stats_key": stats_key
+                })
+        
+        # Analyze system resources
+        cpu_stats = self.get_stats(MetricType.CPU_USAGE, time_window_minutes=30)
+        for stats_key, stats in cpu_stats.items():
+            if stats.avg_value > 80.0:  # High CPU usage
+                recommendations.append({
+                    "type": "resources",
+                    "severity": "high" if stats.avg_value > 90.0 else "medium",
+                    "issue": "High CPU usage detected",
+                    "metric": f"Average CPU usage: {stats.avg_value:.1f}%",
+                    "recommendation": "Consider scaling up resources or optimizing CPU-intensive operations",
+                    "stats_key": stats_key
+                })
+        
+        memory_stats = self.get_stats(MetricType.MEMORY_USAGE, time_window_minutes=30)
+        for stats_key, stats in memory_stats.items():
+            if stats.avg_value > 85.0:  # High memory usage
+                recommendations.append({
+                    "type": "resources",
+                    "severity": "high" if stats.avg_value > 95.0 else "medium",
+                    "issue": "High memory usage detected",
+                    "metric": f"Average memory usage: {stats.avg_value:.1f}%",
+                    "recommendation": "Consider increasing memory or implementing memory optimization",
+                    "stats_key": stats_key
+                })
+        
+        return recommendations
+    
     def shutdown(self):
         """Shutdown the performance monitor"""
         if self._cleanup_task:

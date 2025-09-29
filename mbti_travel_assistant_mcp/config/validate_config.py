@@ -58,6 +58,9 @@ class ConfigValidator:
             # Validate logging configuration
             self._validate_logging_config(settings, environment)
             
+            # Validate knowledge base configuration
+            self._validate_knowledge_base_config(settings, environment)
+            
             # Report results
             self._report_validation_results(environment)
             
@@ -175,6 +178,43 @@ class ConfigValidator:
         # Production should use INFO or higher
         if environment == "production" and logging_config.log_level == "DEBUG":
             self.validation_warnings.append(f"{environment}: DEBUG logging not recommended for production")
+    
+    def _validate_knowledge_base_config(self, settings: Any, environment: str) -> None:
+        """Validate knowledge base configuration"""
+        kb_config = settings.knowledge_base
+        
+        # Check required fields
+        if not kb_config.knowledge_base_id:
+            self.validation_errors.append(f"{environment}: KNOWLEDGE_BASE_ID is required")
+        
+        if not kb_config.knowledge_base_region:
+            self.validation_errors.append(f"{environment}: KNOWLEDGE_BASE_REGION is required")
+        
+        if not kb_config.knowledge_base_model:
+            self.validation_errors.append(f"{environment}: KNOWLEDGE_BASE_MODEL is required")
+        elif not kb_config.knowledge_base_model.startswith("amazon.nova-pro"):
+            self.validation_warnings.append(f"{environment}: KNOWLEDGE_BASE_MODEL should be Nova Pro for optimal performance")
+        
+        # Check max results
+        if kb_config.max_results <= 0:
+            self.validation_errors.append(f"{environment}: KB_MAX_RESULTS must be positive")
+        elif kb_config.max_results > 100:
+            self.validation_warnings.append(f"{environment}: KB_MAX_RESULTS is very high ({kb_config.max_results})")
+        
+        # Check search type
+        valid_search_types = ["SEMANTIC", "HYBRID"]
+        if kb_config.search_type not in valid_search_types:
+            self.validation_errors.append(f"{environment}: KB_SEARCH_TYPE must be one of {valid_search_types}")
+        
+        # Check temperature
+        if not (0.0 <= kb_config.kb_temperature <= 2.0):
+            self.validation_errors.append(f"{environment}: KB_TEMPERATURE must be between 0.0 and 2.0")
+        
+        # Check max tokens
+        if kb_config.kb_max_tokens <= 0:
+            self.validation_errors.append(f"{environment}: KB_MAX_TOKENS must be positive")
+        elif kb_config.kb_max_tokens > 8192:
+            self.validation_warnings.append(f"{environment}: KB_MAX_TOKENS is very high ({kb_config.kb_max_tokens})")
     
     def _is_valid_url(self, url: str) -> bool:
         """Check if URL is valid"""

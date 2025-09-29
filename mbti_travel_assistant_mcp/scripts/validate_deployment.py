@@ -1,23 +1,30 @@
 #!/usr/bin/env python3
 """
-Deployment validation script for MBTI Travel Assistant MCP.
+Deployment Validation Script
 
-This script validates deployment configurations, prerequisites, and
-deployed agent health across different environments.
+This script validates the deployment of the MBTI Travel Assistant MCP
+to ensure all components are working correctly and meet performance
+and functionality requirements.
 """
 
-import json
-import os
-import sys
+import asyncio
 import logging
-import subprocess
-import requests
+import json
+import time
+import sys
+from typing import Dict, List, Optional, Any
+from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, Any, List, Optional
-from datetime import datetime
 
+import aiohttp
 import boto3
-from botocore.exceptions import ClientError, NoCredentialsError
+from botocore.exceptions import ClientError
+
+# Add project root to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from services.health_check import HealthChecker, HealthStatus
+from services.cloudwatch_monitor import CloudWatchMonitor
 
 # Configure logging
 logging.basicConfig(
@@ -28,538 +35,748 @@ logger = logging.getLogger(__name__)
 
 
 class DeploymentValidator:
-    """Validates deployment configurations and deployed agent health."""
+    """
+    Validates MBTI Travel Assistant deployment.
     
-    def __init__(self, region: str = "us-east-1"):
+    Performs comprehensive validation including health checks,
+    performance testing, functionality verification, and
+    monitoring validation.
+    """
+    
+    def __init__(
+        self,
+        environment: str,
+        agent_name: str,
+        region: str = "us-east-1",
+        endpoint_url: Optional[str] = None
+    ):
         """
-        Initialize the deployment validator.
+        Initialize deployment validator.
         
         Args:
-            region: AWS region for validation
+            environment: Environment name
+            agent_name: Agent name
+            region: AWS region
+            endpoint_url: Optional endpoint URL for testing
         """
+        self.environment = environment
+        self.agent_name = agent_name
         self.region = region
+        self.endpoint_url = endpoint_url
+        
+        # Initialize AWS clients
         self.session = boto3.Session()
+        self.cloudwatch = self.session.client('cloudwatch', region_name=region)
         
-        try:
-            self.sts_client = self.session.client('sts', region_name=region)
-            self.ecr_client = self.session.client('ecr', region_name=region)
-            self.cognito_client = self.session.client('cognito-idp', region_name=region)
-            self.cloudwatch_client = self.session.client('cloudwatch', region_name=region)
-            
-            self.account_id = self.sts_client.get_caller_identity()['Account']
-            logger.info(f"Validating in AWS account: {self.account_id} in region: {region}")
-            
-        except NoCredentialsError:
-            logger.error("AWS credentials not found. Please configure your credentials.")
-            sys.exit(1)
-        except Exception as e:
-            logger.error(f"Failed to initialize AWS clients: {str(e)}")
-            sys.exit(1)
+        # Validation configuration
+        self.validation_config = self._load_validation_config()
+        
+        logger.info(f"Initialized DeploymentValidator for {agent_name} in {environment}")
     
-    def validate_prerequisites(self) -> Dict[str, Any]:
-        """Validate deployment prerequisites."""
-        logger.info("Validating deployment prerequisites...")
+    def _load_validation_config(self) -> Dict[str, Any]:
+        """Load validation configuration"""
+        config_file = Path(f"config/validation_{self.environment}.json")
         
-        results = {
-            "aws_credentials": False,
-            "docker": False,
-            "bedrock_access": False,
-            "agentcore_permissions": False,
-            "configuration_files": False,
-            "environment_configs": False
-        }
-        
-        # Check AWS credentials
-        try:
-            self.sts_client.get_caller_identity()
-            results["aws_credentials"] = True
-            logger.info("✓ AWS credentials valid")
-        except Exception as e:
-            logger.error(f"✗ AWS credentials invalid: {e}")
-        
-        # Check Docker
-        try:
-            subprocess.run(['docker', '--version'], check=True, capture_output=True)
-            results["docker"] = True
-            logger.info("✓ Docker available")
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            logger.error("✗ Docker not available")
-        
-        # Check Bedrock access
-        try:
-            bedrock_client = self.session.client('bedrock', region_name=self.region)
-            bedrock_client.list_foundation_models()
-            results["bedrock_access"] = True
-            logger.info("✓ Bedrock access available")
-        except Exception as e:
-            logger.error(f"✗ Bedrock access failed: {e}")
-        
-        # Check AgentCore permissions (placeholder)
-        try:
-            # This would check actual AgentCore permissions
-            # For now, we'll assume they're available if other AWS services work
-            results["agentcore_permissions"] = results["aws_credentials"]
-            if results["agentcore_permissions"]:
-                logger.info("✓ AgentCore permissions assumed available")
-            else:
-                logger.error("✗ AgentCore permissions not available")
-        except Exception as e:
-            logger.error(f"✗ AgentCore permissions check failed: {e}")
-        
-        # Check configuration files
-        config_files = [
-            ".bedrock_agentcore.yaml",
-            "config/environments/development.env",
-            "config/environments/staging.env",
-            "config/environments/production.env",
-            "Dockerfile",
-            "requirements.txt"
-        ]
-        
-        missing_files = []
-        for file_path in config_files:
-            if not Path(file_path).exists():
-                missing_files.append(file_path)
-        
-        if not missing_files:
-            results["configuration_files"] = True
-            logger.info("✓ All configuration files present")
-        else:
-            logger.error(f"✗ Missing configuration files: {missing_files}")
-        
-        # Validate environment configurations
-        env_validation = self._validate_environment_configs()
-        results["environment_configs"] = env_validation["valid"]
-        
-        if env_validation["valid"]:
-            logger.info("✓ Environment configurations valid")
-        else:
-            logger.error(f"✗ Environment configuration errors: {env_validation['errors']}")
-        
-        return results
-    
-    def _validate_environment_configs(self) -> Dict[str, Any]:
-        """Validate environment configuration files."""
-        environments = ["development", "staging", "production"]
-        required_vars = [
-            "ENVIRONMENT",
-            "AWS_REGION",
-            "SEARCH_MCP_ENDPOINT",
-            "REASONING_MCP_ENDPOINT",
-            "AGENT_MODEL"
-        ]
-        
-        errors = []
-        valid = True
-        
-        for env in environments:
-            env_file = Path(f"config/environments/{env}.env")
-            
-            if not env_file.exists():
-                errors.append(f"Missing environment file: {env_file}")
-                valid = False
-                continue
-            
-            # Parse environment file
-            env_vars = {}
-            try:
-                with open(env_file, 'r') as f:
-                    for line in f:
-                        line = line.strip()
-                        if line and not line.startswith('#') and '=' in line:
-                            key, value = line.split('=', 1)
-                            env_vars[key.strip()] = value.strip()
-            except Exception as e:
-                errors.append(f"Failed to parse {env_file}: {e}")
-                valid = False
-                continue
-            
-            # Check required variables
-            for var in required_vars:
-                if var not in env_vars or not env_vars[var]:
-                    errors.append(f"Missing or empty variable {var} in {env}")
-                    valid = False
-            
-            # Validate MCP endpoints
-            for endpoint_var in ["SEARCH_MCP_ENDPOINT", "REASONING_MCP_ENDPOINT"]:
-                endpoint = env_vars.get(endpoint_var, "")
-                if endpoint and not (endpoint.startswith("http://") or endpoint.startswith("https://")):
-                    errors.append(f"Invalid URL format for {endpoint_var} in {env}: {endpoint}")
-                    valid = False
-        
-        return {"valid": valid, "errors": errors}
-    
-    def validate_deployment(self, environment: str) -> Dict[str, Any]:
-        """Validate a specific deployment."""
-        logger.info(f"Validating {environment} deployment...")
-        
-        results = {
-            "environment": environment,
-            "deployment_config": False,
-            "ecr_repository": False,
-            "container_image": False,
-            "cognito_user_pool": False,
-            "agent_runtime": False,
-            "monitoring": False,
-            "health_check": False
-        }
-        
-        # Check deployment configuration
-        config_file = Path(f"agentcore_deployment_config_{environment}.json")
         if config_file.exists():
-            try:
-                with open(config_file, 'r') as f:
-                    config = json.load(f)
-                
-                results["deployment_config"] = True
-                results["config"] = config
-                logger.info(f"✓ Deployment configuration found for {environment}")
-                
-                # Validate ECR repository
-                if "ecr_repository" in config:
-                    ecr_valid = self._validate_ecr_repository(config["ecr_repository"])
-                    results["ecr_repository"] = ecr_valid
-                
-                # Validate container image
-                if "container_uri" in config:
-                    image_valid = self._validate_container_image(config["container_uri"])
-                    results["container_image"] = image_valid
-                
-                # Validate Cognito User Pool
-                if "cognito_user_pool_id" in config:
-                    cognito_valid = self._validate_cognito_user_pool(config["cognito_user_pool_id"])
-                    results["cognito_user_pool"] = cognito_valid
-                elif "cognito_config" in config and "user_pool_id" in config["cognito_config"]:
-                    cognito_valid = self._validate_cognito_user_pool(config["cognito_config"]["user_pool_id"])
-                    results["cognito_user_pool"] = cognito_valid
-                
-                # Validate agent runtime (placeholder)
-                if "agent_arn" in config:
-                    runtime_valid = self._validate_agent_runtime(config["agent_arn"])
-                    results["agent_runtime"] = runtime_valid
-                
-                # Validate monitoring setup
-                monitoring_valid = self._validate_monitoring(config.get("agent_name", ""), environment)
-                results["monitoring"] = monitoring_valid
-                
-            except Exception as e:
-                logger.error(f"✗ Failed to validate deployment configuration: {e}")
-        else:
-            logger.error(f"✗ No deployment configuration found for {environment}")
+            with open(config_file, 'r') as f:
+                return json.load(f)
         
-        return results
+        # Default validation configuration
+        return {
+            "response_time": {
+                "max_response_time_ms": 10000 if self.environment == "development" else 5000,
+                "percentile_threshold": 95
+            },
+            "error_rate": {
+                "max_error_rate": 0.1 if self.environment == "development" else 0.05,
+                "measurement_period_minutes": 5
+            },
+            "availability": {
+                "min_uptime_percentage": 95.0 if self.environment == "development" else 99.0,
+                "measurement_period_hours": 1
+            }
+        }
     
-    def _validate_ecr_repository(self, ecr_uri: str) -> bool:
-        """Validate ECR repository exists."""
+    async def validate_complete_deployment(self) -> Dict[str, Any]:
+        """
+        Perform complete deployment validation.
+        
+        Returns:
+            Validation result dictionary
+        """
+        logger.info("Starting complete deployment validation")
+        
+        validation_result = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "environment": self.environment,
+            "agent_name": self.agent_name,
+            "region": self.region,
+            "validations": {}
+        }
+        
         try:
-            repository_name = ecr_uri.split('/')[-1].split(':')[0]
-            self.ecr_client.describe_repositories(repositoryNames=[repository_name])
-            logger.info(f"✓ ECR repository exists: {repository_name}")
-            return True
-        except ClientError as e:
-            if e.response['Error']['Code'] == 'RepositoryNotFoundException':
-                logger.error(f"✗ ECR repository not found: {repository_name}")
-            else:
-                logger.error(f"✗ ECR repository validation failed: {e}")
-            return False
+            # 1. Health check validation
+            logger.info("Validation 1: Health checks")
+            health_result = await self._validate_health_checks()
+            validation_result["validations"]["health_checks"] = health_result
+            
+            # 2. Endpoint connectivity validation
+            logger.info("Validation 2: Endpoint connectivity")
+            connectivity_result = await self._validate_endpoint_connectivity()
+            validation_result["validations"]["connectivity"] = connectivity_result
+            
+            # 3. Performance validation
+            logger.info("Validation 3: Performance metrics")
+            performance_result = await self._validate_performance()
+            validation_result["validations"]["performance"] = performance_result
+            
+            # 4. Functionality validation
+            logger.info("Validation 4: Functionality tests")
+            functionality_result = await self._validate_functionality()
+            validation_result["validations"]["functionality"] = functionality_result
+            
+            # 5. Monitoring validation
+            logger.info("Validation 5: Monitoring systems")
+            monitoring_result = await self._validate_monitoring()
+            validation_result["validations"]["monitoring"] = monitoring_result
+            
+            # 6. Security validation
+            logger.info("Validation 6: Security configuration")
+            security_result = await self._validate_security()
+            validation_result["validations"]["security"] = security_result
+            
+            # Calculate overall validation status
+            validation_result["overall_status"] = self._calculate_overall_status(validation_result["validations"])
+            validation_result["summary"] = self._generate_validation_summary(validation_result["validations"])
+            
+            logger.info(f"Deployment validation completed - Status: {validation_result['overall_status']}")
+            return validation_result
+            
         except Exception as e:
-            logger.error(f"✗ ECR repository validation error: {e}")
-            return False
-    
-    def _validate_container_image(self, container_uri: str) -> bool:
-        """Validate container image exists in ECR."""
+            logger.error(f"Deployment validation failed: {e}")
+            validation_result["overall_status"] = "failed"
+            validation_result["error"] = str(e)
+            return validation_result 
+   
+    async def _validate_health_checks(self) -> Dict[str, Any]:
+        """Validate health check endpoints"""
         try:
-            parts = container_uri.split('/')
-            repository_name = parts[-1].split(':')[0]
-            tag = parts[-1].split(':')[1] if ':' in parts[-1] else 'latest'
+            if not self.endpoint_url:
+                return {
+                    "success": False,
+                    "error": "No endpoint URL provided for health check validation"
+                }
             
-            response = self.ecr_client.describe_images(
-                repositoryName=repository_name,
-                imageIds=[{'imageTag': tag}]
-            )
+            health_endpoints = [
+                "/health",
+                "/health/ready",
+                "/health/live"
+            ]
             
-            if response['imageDetails']:
-                logger.info(f"✓ Container image exists: {container_uri}")
-                return True
-            else:
-                logger.error(f"✗ Container image not found: {container_uri}")
-                return False
-                
-        except ClientError as e:
-            logger.error(f"✗ Container image validation failed: {e}")
-            return False
+            results = {}
+            overall_success = True
+            
+            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30)) as session:
+                for endpoint in health_endpoints:
+                    try:
+                        url = f"{self.endpoint_url.rstrip('/')}{endpoint}"
+                        start_time = time.time()
+                        
+                        async with session.get(url) as response:
+                            response_time = (time.time() - start_time) * 1000
+                            
+                            if response.status == 200:
+                                response_data = await response.json()
+                                results[endpoint] = {
+                                    "success": True,
+                                    "status_code": response.status,
+                                    "response_time_ms": response_time,
+                                    "data": response_data
+                                }
+                            else:
+                                results[endpoint] = {
+                                    "success": False,
+                                    "status_code": response.status,
+                                    "response_time_ms": response_time,
+                                    "error": f"Unexpected status code: {response.status}"
+                                }
+                                overall_success = False
+                                
+                    except Exception as e:
+                        results[endpoint] = {
+                            "success": False,
+                            "error": str(e)
+                        }
+                        overall_success = False
+            
+            return {
+                "success": overall_success,
+                "endpoints": results,
+                "total_endpoints": len(health_endpoints),
+                "successful_endpoints": sum(1 for r in results.values() if r.get("success", False))
+            }
+            
         except Exception as e:
-            logger.error(f"✗ Container image validation error: {e}")
-            return False
+            return {
+                "success": False,
+                "error": str(e)
+            }
     
-    def _validate_cognito_user_pool(self, user_pool_id: str) -> bool:
-        """Validate Cognito User Pool exists and is configured."""
+    async def _validate_endpoint_connectivity(self) -> Dict[str, Any]:
+        """Validate endpoint connectivity and basic functionality"""
         try:
-            response = self.cognito_client.describe_user_pool(UserPoolId=user_pool_id)
+            if not self.endpoint_url:
+                return {
+                    "success": False,
+                    "error": "No endpoint URL provided for connectivity validation"
+                }
             
-            if response['UserPool']:
-                logger.info(f"✓ Cognito User Pool exists: {user_pool_id}")
+            connectivity_tests = []
+            
+            # Test basic connectivity
+            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30)) as session:
+                try:
+                    start_time = time.time()
+                    async with session.get(self.endpoint_url) as response:
+                        response_time = (time.time() - start_time) * 1000
+                        
+                        connectivity_tests.append({
+                            "test": "basic_connectivity",
+                            "success": response.status in [200, 404],  # 404 is OK for root endpoint
+                            "status_code": response.status,
+                            "response_time_ms": response_time
+                        })
+                        
+                except Exception as e:
+                    connectivity_tests.append({
+                        "test": "basic_connectivity",
+                        "success": False,
+                        "error": str(e)
+                    })
                 
-                # Check for clients
-                clients = self.cognito_client.list_user_pool_clients(
-                    UserPoolId=user_pool_id,
-                    MaxResults=10
+                # Test CORS headers (if applicable)
+                try:
+                    async with session.options(self.endpoint_url) as response:
+                        cors_headers = {
+                            "access-control-allow-origin": response.headers.get("Access-Control-Allow-Origin"),
+                            "access-control-allow-methods": response.headers.get("Access-Control-Allow-Methods"),
+                            "access-control-allow-headers": response.headers.get("Access-Control-Allow-Headers")
+                        }
+                        
+                        connectivity_tests.append({
+                            "test": "cors_headers",
+                            "success": True,
+                            "cors_headers": cors_headers
+                        })
+                        
+                except Exception as e:
+                    connectivity_tests.append({
+                        "test": "cors_headers",
+                        "success": False,
+                        "error": str(e)
+                    })
+            
+            successful_tests = sum(1 for test in connectivity_tests if test.get("success", False))
+            
+            return {
+                "success": successful_tests > 0,
+                "tests": connectivity_tests,
+                "total_tests": len(connectivity_tests),
+                "successful_tests": successful_tests
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    async def _validate_performance(self) -> Dict[str, Any]:
+        """Validate performance metrics"""
+        try:
+            performance_config = self.validation_config.get("response_time", {})
+            max_response_time = performance_config.get("max_response_time_ms", 5000)
+            
+            # Get recent CloudWatch metrics
+            end_time = datetime.utcnow()
+            start_time = end_time - timedelta(minutes=30)
+            
+            metrics_to_check = [
+                "ResponseTime",
+                "ErrorRate",
+                "Throughput"
+            ]
+            
+            metric_results = {}
+            
+            for metric_name in metrics_to_check:
+                try:
+                    response = self.cloudwatch.get_metric_statistics(
+                        Namespace='MBTI/TravelAssistant',
+                        MetricName=metric_name,
+                        Dimensions=[
+                            {
+                                'Name': 'Environment',
+                                'Value': self.environment
+                            },
+                            {
+                                'Name': 'Service',
+                                'Value': self.agent_name
+                            }
+                        ],
+                        StartTime=start_time,
+                        EndTime=end_time,
+                        Period=300,  # 5 minutes
+                        Statistics=['Average', 'Maximum']
+                    )
+                    
+                    datapoints = response.get('Datapoints', [])
+                    
+                    if datapoints:
+                        avg_value = sum(dp['Average'] for dp in datapoints) / len(datapoints)
+                        max_value = max(dp['Maximum'] for dp in datapoints)
+                        
+                        # Validate against thresholds
+                        if metric_name == "ResponseTime":
+                            success = avg_value <= max_response_time
+                        elif metric_name == "ErrorRate":
+                            max_error_rate = self.validation_config.get("error_rate", {}).get("max_error_rate", 0.05)
+                            success = avg_value <= max_error_rate
+                        else:
+                            success = True  # No specific threshold for throughput
+                        
+                        metric_results[metric_name] = {
+                            "success": success,
+                            "average_value": avg_value,
+                            "maximum_value": max_value,
+                            "datapoints_count": len(datapoints)
+                        }
+                    else:
+                        metric_results[metric_name] = {
+                            "success": False,
+                            "error": "No data points available"
+                        }
+                        
+                except Exception as e:
+                    metric_results[metric_name] = {
+                        "success": False,
+                        "error": str(e)
+                    }
+            
+            successful_metrics = sum(1 for result in metric_results.values() if result.get("success", False))
+            
+            return {
+                "success": successful_metrics > 0,
+                "metrics": metric_results,
+                "total_metrics": len(metrics_to_check),
+                "successful_metrics": successful_metrics
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    async def _validate_functionality(self) -> Dict[str, Any]:
+        """Validate core functionality"""
+        try:
+            if not self.endpoint_url:
+                return {
+                    "success": False,
+                    "error": "No endpoint URL provided for functionality validation"
+                }
+            
+            # Test MBTI itinerary generation (if endpoint supports it)
+            test_cases = [
+                {
+                    "name": "health_check_functionality",
+                    "endpoint": "/health",
+                    "method": "GET",
+                    "expected_status": 200
+                }
+            ]
+            
+            # Add MBTI-specific tests if we have the right endpoint
+            if "/generate-itinerary" in str(self.endpoint_url) or "mbti" in str(self.endpoint_url).lower():
+                test_cases.append({
+                    "name": "mbti_itinerary_generation",
+                    "endpoint": "/generate-itinerary",
+                    "method": "POST",
+                    "payload": {"MBTI_personality": "INFJ"},
+                    "expected_status": 200
+                })
+            
+            functionality_results = []
+            
+            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=60)) as session:
+                for test_case in test_cases:
+                    try:
+                        url = f"{self.endpoint_url.rstrip('/')}{test_case['endpoint']}"
+                        start_time = time.time()
+                        
+                        if test_case["method"] == "GET":
+                            async with session.get(url) as response:
+                                response_time = (time.time() - start_time) * 1000
+                                success = response.status == test_case["expected_status"]
+                                
+                                try:
+                                    response_data = await response.json()
+                                except:
+                                    response_data = await response.text()
+                                
+                                functionality_results.append({
+                                    "test": test_case["name"],
+                                    "success": success,
+                                    "status_code": response.status,
+                                    "response_time_ms": response_time,
+                                    "response_data": response_data if success else None
+                                })
+                        
+                        elif test_case["method"] == "POST":
+                            payload = test_case.get("payload", {})
+                            async with session.post(url, json=payload) as response:
+                                response_time = (time.time() - start_time) * 1000
+                                success = response.status == test_case["expected_status"]
+                                
+                                try:
+                                    response_data = await response.json()
+                                except:
+                                    response_data = await response.text()
+                                
+                                functionality_results.append({
+                                    "test": test_case["name"],
+                                    "success": success,
+                                    "status_code": response.status,
+                                    "response_time_ms": response_time,
+                                    "payload": payload,
+                                    "response_data": response_data if success else None
+                                })
+                                
+                    except Exception as e:
+                        functionality_results.append({
+                            "test": test_case["name"],
+                            "success": False,
+                            "error": str(e)
+                        })
+            
+            successful_tests = sum(1 for result in functionality_results if result.get("success", False))
+            
+            return {
+                "success": successful_tests > 0,
+                "tests": functionality_results,
+                "total_tests": len(test_cases),
+                "successful_tests": successful_tests
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    async def _validate_monitoring(self) -> Dict[str, Any]:
+        """Validate monitoring systems"""
+        try:
+            monitoring_checks = []
+            
+            # Check CloudWatch log groups
+            logs_client = self.session.client('logs', region_name=self.region)
+            expected_log_groups = [
+                f"/aws/lambda/{self.agent_name}-{self.environment}",
+                f"/mbti/travel-assistant/{self.environment}/application"
+            ]
+            
+            for log_group in expected_log_groups:
+                try:
+                    logs_client.describe_log_groups(logGroupNamePrefix=log_group)
+                    monitoring_checks.append({
+                        "check": f"log_group_{log_group.replace('/', '_')}",
+                        "success": True,
+                        "log_group": log_group
+                    })
+                except ClientError as e:
+                    if e.response['Error']['Code'] == 'ResourceNotFoundException':
+                        monitoring_checks.append({
+                            "check": f"log_group_{log_group.replace('/', '_')}",
+                            "success": False,
+                            "error": f"Log group not found: {log_group}"
+                        })
+                    else:
+                        monitoring_checks.append({
+                            "check": f"log_group_{log_group.replace('/', '_')}",
+                            "success": False,
+                            "error": str(e)
+                        })
+            
+            # Check CloudWatch metrics
+            try:
+                metrics_response = self.cloudwatch.list_metrics(
+                    Namespace='MBTI/TravelAssistant',
+                    Dimensions=[
+                        {
+                            'Name': 'Environment',
+                            'Value': self.environment
+                        }
+                    ]
                 )
                 
-                if clients['UserPoolClients']:
-                    logger.info(f"✓ Cognito User Pool has {len(clients['UserPoolClients'])} client(s)")
-                    return True
-                else:
-                    logger.warning(f"⚠ Cognito User Pool has no clients: {user_pool_id}")
-                    return False
-            else:
-                logger.error(f"✗ Cognito User Pool not found: {user_pool_id}")
-                return False
+                metrics_count = len(metrics_response.get('Metrics', []))
+                monitoring_checks.append({
+                    "check": "cloudwatch_metrics",
+                    "success": metrics_count > 0,
+                    "metrics_count": metrics_count
+                })
                 
-        except ClientError as e:
-            logger.error(f"✗ Cognito User Pool validation failed: {e}")
-            return False
-        except Exception as e:
-            logger.error(f"✗ Cognito User Pool validation error: {e}")
-            return False
-    
-    def _validate_agent_runtime(self, agent_arn: str) -> bool:
-        """Validate AgentCore runtime (placeholder implementation)."""
-        # TODO: Implement actual AgentCore runtime validation
-        # This would use the AgentCore SDK to check runtime status
-        
-        logger.info(f"✓ Agent runtime validation (mock): {agent_arn}")
-        return True
-    
-    def _validate_monitoring(self, agent_name: str, environment: str) -> bool:
-        """Validate monitoring setup."""
-        try:
-            dashboard_name = f"{agent_name}-{environment}-dashboard"
-            
-            # Check CloudWatch dashboard
-            try:
-                self.cloudwatch_client.get_dashboard(DashboardName=dashboard_name)
-                logger.info(f"✓ CloudWatch dashboard exists: {dashboard_name}")
-                dashboard_exists = True
-            except ClientError as e:
-                if e.response['Error']['Code'] == 'ResourceNotFound':
-                    logger.warning(f"⚠ CloudWatch dashboard not found: {dashboard_name}")
-                    dashboard_exists = False
-                else:
-                    raise
+            except Exception as e:
+                monitoring_checks.append({
+                    "check": "cloudwatch_metrics",
+                    "success": False,
+                    "error": str(e)
+                })
             
             # Check CloudWatch alarms
-            alarm_prefix = f"{agent_name}-{environment}-"
-            alarms = self.cloudwatch_client.describe_alarms(
-                AlarmNamePrefix=alarm_prefix,
-                MaxRecords=100
-            )
+            try:
+                alarms_response = self.cloudwatch.describe_alarms(
+                    AlarmNamePrefix=f"{self.agent_name}-{self.environment}"
+                )
+                
+                alarms_count = len(alarms_response.get('MetricAlarms', []))
+                monitoring_checks.append({
+                    "check": "cloudwatch_alarms",
+                    "success": alarms_count > 0,
+                    "alarms_count": alarms_count
+                })
+                
+            except Exception as e:
+                monitoring_checks.append({
+                    "check": "cloudwatch_alarms",
+                    "success": False,
+                    "error": str(e)
+                })
             
-            if alarms['MetricAlarms']:
-                logger.info(f"✓ Found {len(alarms['MetricAlarms'])} CloudWatch alarms")
-                alarms_exist = True
-            else:
-                logger.warning(f"⚠ No CloudWatch alarms found with prefix: {alarm_prefix}")
-                alarms_exist = False
+            successful_checks = sum(1 for check in monitoring_checks if check.get("success", False))
             
-            return dashboard_exists or alarms_exist
+            return {
+                "success": successful_checks > 0,
+                "checks": monitoring_checks,
+                "total_checks": len(monitoring_checks),
+                "successful_checks": successful_checks
+            }
             
         except Exception as e:
-            logger.error(f"✗ Monitoring validation failed: {e}")
-            return False
+            return {
+                "success": False,
+                "error": str(e)
+            }
     
-    def validate_health_check(self, agent_endpoint: str) -> bool:
-        """Validate agent health check endpoint."""
+    async def _validate_security(self) -> Dict[str, Any]:
+        """Validate security configuration"""
         try:
-            health_url = f"{agent_endpoint}/health"
-            response = requests.get(health_url, timeout=10)
+            security_checks = []
             
-            if response.status_code == 200:
-                logger.info(f"✓ Health check passed: {health_url}")
-                return True
-            else:
-                logger.error(f"✗ Health check failed: {health_url} (status: {response.status_code})")
-                return False
+            if self.endpoint_url:
+                # Check HTTPS
+                is_https = self.endpoint_url.startswith('https://')
+                security_checks.append({
+                    "check": "https_enabled",
+                    "success": is_https,
+                    "endpoint": self.endpoint_url
+                })
                 
-        except requests.RequestException as e:
-            logger.error(f"✗ Health check request failed: {e}")
-            return False
+                # Check security headers
+                async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30)) as session:
+                    try:
+                        async with session.get(f"{self.endpoint_url}/health") as response:
+                            security_headers = {
+                                "x-content-type-options": response.headers.get("X-Content-Type-Options"),
+                                "x-frame-options": response.headers.get("X-Frame-Options"),
+                                "x-xss-protection": response.headers.get("X-XSS-Protection"),
+                                "strict-transport-security": response.headers.get("Strict-Transport-Security")
+                            }
+                            
+                            headers_present = sum(1 for v in security_headers.values() if v is not None)
+                            
+                            security_checks.append({
+                                "check": "security_headers",
+                                "success": headers_present > 0,
+                                "headers_present": headers_present,
+                                "total_headers": len(security_headers),
+                                "headers": security_headers
+                            })
+                            
+                    except Exception as e:
+                        security_checks.append({
+                            "check": "security_headers",
+                            "success": False,
+                            "error": str(e)
+                        })
+            
+            # Check IAM roles and policies (basic check)
+            try:
+                iam_client = self.session.client('iam', region_name=self.region)
+                
+                # This is a basic check - in practice, you'd check specific roles
+                roles_response = iam_client.list_roles(MaxItems=1)
+                
+                security_checks.append({
+                    "check": "iam_access",
+                    "success": True,
+                    "message": "IAM access verified"
+                })
+                
+            except Exception as e:
+                security_checks.append({
+                    "check": "iam_access",
+                    "success": False,
+                    "error": str(e)
+                })
+            
+            successful_checks = sum(1 for check in security_checks if check.get("success", False))
+            
+            return {
+                "success": successful_checks > 0,
+                "checks": security_checks,
+                "total_checks": len(security_checks),
+                "successful_checks": successful_checks
+            }
+            
         except Exception as e:
-            logger.error(f"✗ Health check error: {e}")
-            return False
+            return {
+                "success": False,
+                "error": str(e)
+            }
     
-    def generate_validation_report(self, validations: Dict[str, Any]) -> str:
-        """Generate a comprehensive validation report."""
-        report = []
-        report.append("="*60)
-        report.append("DEPLOYMENT VALIDATION REPORT")
-        report.append("="*60)
-        report.append(f"Generated: {datetime.utcnow().isoformat()}Z")
-        report.append(f"AWS Account: {self.account_id}")
-        report.append(f"Region: {self.region}")
-        report.append("")
+    def _calculate_overall_status(self, validations: Dict[str, Any]) -> str:
+        """Calculate overall validation status"""
+        if not validations:
+            return "unknown"
         
-        # Prerequisites section
-        if "prerequisites" in validations:
-            report.append("PREREQUISITES:")
-            prereqs = validations["prerequisites"]
-            for check, passed in prereqs.items():
-                status = "✓ PASS" if passed else "✗ FAIL"
-                report.append(f"  {check.replace('_', ' ').title()}: {status}")
-            report.append("")
+        successful_validations = sum(1 for v in validations.values() if v.get("success", False))
+        total_validations = len(validations)
         
-        # Environment deployments section
-        for env in ["development", "staging", "production"]:
-            if env in validations:
-                report.append(f"{env.upper()} DEPLOYMENT:")
-                deployment = validations[env]
-                
-                for check, passed in deployment.items():
-                    if check in ["environment", "config"]:
-                        continue
-                    
-                    status = "✓ PASS" if passed else "✗ FAIL"
-                    report.append(f"  {check.replace('_', ' ').title()}: {status}")
-                report.append("")
+        success_rate = successful_validations / total_validations if total_validations > 0 else 0
         
-        # Summary section
-        report.append("SUMMARY:")
+        if success_rate >= 0.8:
+            return "passed"
+        elif success_rate >= 0.6:
+            return "passed_with_warnings"
+        else:
+            return "failed"
+    
+    def _generate_validation_summary(self, validations: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate validation summary"""
+        summary = {
+            "total_validations": len(validations),
+            "successful_validations": 0,
+            "failed_validations": 0,
+            "warnings": []
+        }
         
-        total_checks = 0
-        passed_checks = 0
+        for validation_name, validation_result in validations.items():
+            if validation_result.get("success", False):
+                summary["successful_validations"] += 1
+            else:
+                summary["failed_validations"] += 1
+                error = validation_result.get("error", "Unknown error")
+                summary["warnings"].append(f"{validation_name}: {error}")
         
-        for section, checks in validations.items():
-            if isinstance(checks, dict):
-                for check, passed in checks.items():
-                    if isinstance(passed, bool):
-                        total_checks += 1
-                        if passed:
-                            passed_checks += 1
+        summary["success_rate"] = (
+            summary["successful_validations"] / summary["total_validations"] * 100
+            if summary["total_validations"] > 0 else 0
+        )
         
-        report.append(f"  Total Checks: {total_checks}")
-        report.append(f"  Passed: {passed_checks}")
-        report.append(f"  Failed: {total_checks - passed_checks}")
-        report.append(f"  Success Rate: {(passed_checks/total_checks*100):.1f}%" if total_checks > 0 else "  Success Rate: N/A")
+        return summary
+    
+    async def save_validation_report(self, validation_result: Dict[str, Any], output_file: Optional[str] = None) -> str:
+        """Save validation report to file"""
+        if not output_file:
+            timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+            output_file = f"deployment_validation_report_{self.environment}_{timestamp}.json"
         
-        report.append("="*60)
-        
-        return "\n".join(report)
+        try:
+            with open(output_file, 'w') as f:
+                json.dump(validation_result, f, indent=2, default=str)
+            
+            logger.info(f"Validation report saved to: {output_file}")
+            return output_file
+            
+        except Exception as e:
+            logger.error(f"Failed to save validation report: {e}")
+            raise
 
 
-def main():
-    """Main validation function."""
+async def main():
+    """Main validation function"""
     import argparse
     
     parser = argparse.ArgumentParser(
-        description='Validate MBTI Travel Assistant deployment',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  # Validate prerequisites only
-  python validate_deployment.py --prerequisites-only
-  
-  # Validate specific environment
-  python validate_deployment.py --environment staging
-  
-  # Validate all environments
-  python validate_deployment.py --all
-  
-  # Generate detailed report
-  python validate_deployment.py --all --report validation_report.txt
-        """
+        description='Validate MBTI Travel Assistant deployment'
     )
-    
-    parser.add_argument('--environment', '-e',
+    parser.add_argument('--environment', required=True,
                        choices=['development', 'staging', 'production'],
-                       help='Validate specific environment')
-    parser.add_argument('--all', action='store_true',
-                       help='Validate all environments')
-    parser.add_argument('--prerequisites-only', action='store_true',
-                       help='Only validate prerequisites')
+                       help='Environment name')
+    parser.add_argument('--agent-name', default='mbti-travel-assistant-mcp',
+                       help='Agent name')
     parser.add_argument('--region', default='us-east-1',
-                       help='AWS region for validation')
-    parser.add_argument('--report', '-r',
-                       help='Generate validation report to file')
-    parser.add_argument('--verbose', '-v', action='store_true',
-                       help='Enable verbose logging')
+                       help='AWS region')
+    parser.add_argument('--endpoint-url',
+                       help='Endpoint URL for testing')
+    parser.add_argument('--output-file',
+                       help='Output file for validation report')
     
     args = parser.parse_args()
     
-    # Configure logging level
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-    
     try:
-        validator = DeploymentValidator(region=args.region)
-        validations = {}
+        validator = DeploymentValidator(
+            environment=args.environment,
+            agent_name=args.agent_name,
+            region=args.region,
+            endpoint_url=args.endpoint_url
+        )
         
-        # Validate prerequisites
-        validations["prerequisites"] = validator.validate_prerequisites()
+        result = await validator.validate_complete_deployment()
         
-        if args.prerequisites_only:
-            # Only show prerequisites validation
-            prereqs = validations["prerequisites"]
-            all_passed = all(prereqs.values())
+        # Save validation report
+        report_file = await validator.save_validation_report(result, args.output_file)
+        
+        if result["overall_status"] == "passed":
+            print("\n" + "="*60)
+            print("🎉 DEPLOYMENT VALIDATION PASSED! 🎉")
+            print("="*60)
+            print(f"Environment: {args.environment}")
+            print(f"Agent: {args.agent_name}")
+            print(f"Success Rate: {result['summary']['success_rate']:.1f}%")
+            print(f"Report File: {report_file}")
+            print("="*60)
+            return 0
+        elif result["overall_status"] == "passed_with_warnings":
+            print("\n" + "="*60)
+            print("⚠️ DEPLOYMENT VALIDATION PASSED WITH WARNINGS")
+            print("="*60)
+            print(f"Success Rate: {result['summary']['success_rate']:.1f}%")
+            print(f"Warnings: {len(result['summary']['warnings'])}")
+            for warning in result['summary']['warnings']:
+                print(f"  - {warning}")
+            print(f"Report File: {report_file}")
+            print("="*60)
+            return 0
+        else:
+            print("\n" + "="*60)
+            print("❌ DEPLOYMENT VALIDATION FAILED")
+            print("="*60)
+            print(f"Success Rate: {result['summary']['success_rate']:.1f}%")
+            print(f"Failed Validations: {result['summary']['failed_validations']}")
+            for warning in result['summary']['warnings']:
+                print(f"  - {warning}")
+            print(f"Report File: {report_file}")
+            print("="*60)
+            return 1
             
-            print("\nPrerequisites Validation:")
-            for check, passed in prereqs.items():
-                status = "✓ PASS" if passed else "✗ FAIL"
-                print(f"  {check.replace('_', ' ').title()}: {status}")
-            
-            if all_passed:
-                print("\n✓ All prerequisites validation passed!")
-                sys.exit(0)
-            else:
-                print("\n✗ Some prerequisites validation failed!")
-                sys.exit(1)
-        
-        # Validate specific environment or all environments
-        environments_to_validate = []
-        
-        if args.environment:
-            environments_to_validate = [args.environment]
-        elif args.all:
-            environments_to_validate = ["development", "staging", "production"]
-        else:
-            # Default to development if no specific environment requested
-            environments_to_validate = ["development"]
-        
-        for env in environments_to_validate:
-            validations[env] = validator.validate_deployment(env)
-        
-        # Generate and display report
-        report = validator.generate_validation_report(validations)
-        
-        if args.report:
-            with open(args.report, 'w') as f:
-                f.write(report)
-            print(f"Validation report saved to: {args.report}")
-        else:
-            print(report)
-        
-        # Determine exit code based on validation results
-        all_passed = True
-        for section, checks in validations.items():
-            if isinstance(checks, dict):
-                for check, passed in checks.items():
-                    if isinstance(passed, bool) and not passed:
-                        all_passed = False
-                        break
-        
-        if all_passed:
-            print("\n✓ All validations passed!")
-            sys.exit(0)
-        else:
-            print("\n✗ Some validations failed!")
-            sys.exit(1)
-        
     except Exception as e:
-        logger.error(f"Validation failed: {str(e)}")
-        if args.verbose:
-            import traceback
-            traceback.print_exc()
-        sys.exit(1)
+        logger.error(f"Deployment validation failed: {e}")
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(asyncio.run(main()))

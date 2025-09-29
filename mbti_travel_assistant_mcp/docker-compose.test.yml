@@ -1,0 +1,174 @@
+version: '3.8'
+
+services:
+  # MBTI Travel Assistant MCP Service - Testing Configuration
+  mbti-travel-assistant-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64
+    container_name: mbti-travel-assistant-mcp-test
+    ports:
+      - "8080:8080"  # AgentCore Runtime
+      - "8000:8000"  # MCP Server (if needed)
+      - "9090:9090"  # Metrics endpoint
+    environment:
+      - ENVIRONMENT=development
+      - AWS_REGION=us-east-1
+      - LOG_LEVEL=DEBUG
+      - LOG_FORMAT=json
+      - CACHE_ENABLED=true
+      - CACHE_TTL=300
+      - TRACING_ENABLED=true
+      - METRICS_ENABLED=true
+      # MCP Endpoints (using mock servers)
+      - SEARCH_MCP_ENDPOINT=http://search-mcp-mock:8080
+      - REASONING_MCP_ENDPOINT=http://reasoning-mcp-mock:8080
+      - MCP_CONNECTION_TIMEOUT=30
+      - MCP_RETRY_ATTEMPTS=3
+      # Authentication (development mode - no real auth)
+      - COGNITO_USER_POOL_ID=us-east-1_dev123456
+      - JWT_ALGORITHM=RS256
+      - JWT_AUDIENCE=mbti-travel-assistant-test
+      - TOKEN_CACHE_TTL=300
+      # AgentCore Configuration
+      - AGENT_MODEL=amazon.nova-pro-v1:0:300k
+      - AGENT_TEMPERATURE=0.1
+      - AGENT_MAX_TOKENS=4096
+      # Knowledge Base Configuration
+      - KNOWLEDGE_BASE_ID=RCWW86CLM9
+      - KNOWLEDGE_BASE_REGION=us-east-1
+      - KNOWLEDGE_BASE_MODEL=amazon.nova-pro-v1:0
+      - KB_MAX_RESULTS=20
+      - KB_SEARCH_TYPE=HYBRID
+      - KB_TEMPERATURE=0.1
+      - KB_MAX_TOKENS=4096
+      # Testing flags
+      - DEBUG=true
+      - MOCK_MCP_SERVERS=true
+    volumes:
+      - ./logs:/app/logs
+      - ./tests/data:/app/data
+      - ./tests/cache:/app/cache
+      - ./config:/app/config:ro
+      - ./tests/results:/app/test_results
+    depends_on:
+      - redis-test
+      - search-mcp-mock
+      - reasoning-mcp-mock
+    networks:
+      - mbti-test-network
+    restart: "no"  # Don't restart for testing
+    healthcheck:
+      test: ["/app/health_check.sh"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Redis Cache Service for Testing
+  redis-test:
+    image: redis:7-alpine
+    container_name: mbti-redis-test
+    ports:
+      - "6380:6379"  # Different port to avoid conflicts
+    volumes:
+      - redis_test_data:/data
+    networks:
+      - mbti-test-network
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Mock Search MCP Server for Testing
+  search-mcp-mock:
+    image: wiremock/wiremock:latest
+    container_name: search-mcp-mock-test
+    ports:
+      - "8001:8080"
+    volumes:
+      - ./tests/mocks/search-mcp:/home/wiremock
+    command: ["--global-response-templating", "--verbose"]
+    networks:
+      - mbti-test-network
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/__admin/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Mock Reasoning MCP Server for Testing
+  reasoning-mcp-mock:
+    image: wiremock/wiremock:latest
+    container_name: reasoning-mcp-mock-test
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./tests/mocks/reasoning-mcp:/home/wiremock
+    command: ["--global-response-templating", "--verbose"]
+    networks:
+      - mbti-test-network
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/__admin/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Test Runner Service
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64
+    container_name: mbti-test-runner
+    environment:
+      - ENVIRONMENT=development
+      - AWS_REGION=us-east-1
+      - MBTI_SERVICE_URL=http://mbti-travel-assistant-test:8080
+      - SEARCH_MCP_URL=http://search-mcp-mock:8080
+      - REASONING_MCP_URL=http://reasoning-mcp-mock:8080
+      - REDIS_URL=redis://redis-test:6379/0
+    volumes:
+      - ./tests:/app/tests
+      - ./tests/results:/app/test_results
+    depends_on:
+      - mbti-travel-assistant-test
+      - redis-test
+      - search-mcp-mock
+      - reasoning-mcp-mock
+    networks:
+      - mbti-test-network
+    command: ["python", "-m", "pytest", "/app/tests", "-v", "--tb=short", "--junitxml=/app/test_results/junit.xml"]
+    restart: "no"
+
+  # Load Testing Service
+  load-tester:
+    image: loadimpact/k6:latest
+    container_name: mbti-load-tester
+    volumes:
+      - ./tests/load:/scripts
+      - ./tests/results:/results
+    environment:
+      - TARGET_URL=http://mbti-travel-assistant-test:8080
+    depends_on:
+      - mbti-travel-assistant-test
+    networks:
+      - mbti-test-network
+    command: ["run", "--out", "json=/results/load_test_results.json", "/scripts/load_test.js"]
+    restart: "no"
+
+networks:
+  mbti-test-network:
+    driver: bridge
+    name: mbti-travel-assistant-test-network
+
+volumes:
+  redis_test_data:
+    name: mbti-redis-test-data

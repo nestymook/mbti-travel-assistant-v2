@@ -133,6 +133,55 @@ class AgentCoreSettings(BaseSettings):
     )
 
 
+class KnowledgeBaseSettings(BaseSettings):
+    """Knowledge Base configuration settings"""
+    
+    # Knowledge Base Configuration
+    knowledge_base_id: str = Field(
+        default="RCWW86CLM9",
+        env="KNOWLEDGE_BASE_ID",
+        description="Amazon Bedrock Knowledge Base ID"
+    )
+    
+    knowledge_base_region: str = Field(
+        default="us-east-1",
+        env="KNOWLEDGE_BASE_REGION",
+        description="AWS region for Knowledge Base"
+    )
+    
+    knowledge_base_model: str = Field(
+        default="amazon.nova-pro-v1:0",
+        env="KNOWLEDGE_BASE_MODEL",
+        description="Foundation model for Knowledge Base queries"
+    )
+    
+    # Query Configuration
+    max_results: int = Field(
+        default=20,
+        env="KB_MAX_RESULTS",
+        description="Maximum number of results from Knowledge Base queries"
+    )
+    
+    search_type: str = Field(
+        default="HYBRID",
+        env="KB_SEARCH_TYPE",
+        description="Knowledge Base search type (SEMANTIC, HYBRID)"
+    )
+    
+    # Generation Configuration
+    kb_temperature: float = Field(
+        default=0.1,
+        env="KB_TEMPERATURE",
+        description="Temperature for Knowledge Base generation"
+    )
+    
+    kb_max_tokens: int = Field(
+        default=4096,
+        env="KB_MAX_TOKENS",
+        description="Maximum tokens for Knowledge Base responses"
+    )
+
+
 class LoggingSettings(BaseSettings):
     """Logging and observability settings"""
     
@@ -189,6 +238,7 @@ class ApplicationSettings(BaseSettings):
     authentication: AuthenticationSettings = AuthenticationSettings()
     cache: CacheSettings = CacheSettings()
     agentcore: AgentCoreSettings = AgentCoreSettings()
+    knowledge_base: KnowledgeBaseSettings = KnowledgeBaseSettings()
     logging: LoggingSettings = LoggingSettings()
     
     class Config:

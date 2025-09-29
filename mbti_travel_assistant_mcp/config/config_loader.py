@@ -235,6 +235,42 @@ class ConfigLoader:
             raise ConfigurationError(f"Invalid JSON in Cognito configuration: {e}")
         except Exception as e:
             raise ConfigurationError(f"Failed to load Cognito configuration: {e}")
+    
+    def load_knowledge_base_config(self, environment: Optional[str] = None) -> Dict[str, Any]:
+        """Load Knowledge Base configuration from JSON file
+        
+        Args:
+            environment: Environment name
+            
+        Returns:
+            Dictionary with Knowledge Base configuration
+        """
+        env = environment or os.getenv("ENVIRONMENT", "development")
+        
+        kb_config_file = self.config_dir / "knowledge_base_config.json"
+        if not kb_config_file.exists():
+            raise ConfigurationError(f"Knowledge Base configuration file not found: {kb_config_file}")
+        
+        try:
+            with open(kb_config_file, 'r') as f:
+                config = json.load(f)
+            
+            if env not in config:
+                raise ConfigurationError(f"Environment '{env}' not found in Knowledge Base configuration")
+            
+            # Merge environment-specific config with common config
+            env_config = config[env].copy()
+            if "common" in config:
+                for key, value in config["common"].items():
+                    if key not in env_config:
+                        env_config[key] = value
+            
+            return env_config
+            
+        except json.JSONDecodeError as e:
+            raise ConfigurationError(f"Invalid JSON in Knowledge Base configuration: {e}")
+        except Exception as e:
+            raise ConfigurationError(f"Failed to load Knowledge Base configuration: {e}")
 
 
 # Global configuration loader instance
