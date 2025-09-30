@@ -6,12 +6,12 @@ agents:
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: null
-      execution_role_auto_create: true
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-e69df5f887
+      execution_role_auto_create: false
       account: '209803798463'
       region: us-east-1
-      ecr_repository: null
-      ecr_auto_create: true
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-mbti_travel_assistant_mcp
+      ecr_auto_create: false
       network_configuration:
         network_mode: PUBLIC
       protocol_configuration:
@@ -26,7 +26,11 @@ agents:
       project_name: null
       execution_role: null
       source_bucket: null
-    authorizer_configuration: null
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 26k0pnja579pdpb1pt6savs27e
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp:

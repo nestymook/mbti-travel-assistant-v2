@@ -110,6 +110,34 @@ const router = createRouter({
         allowDeepLink: true
       }
     },
+    {
+      path: '/oauth-test.html',
+      name: 'oauth-test',
+      beforeEnter() {
+        // Redirect to the actual static HTML file
+        window.location.href = '/oauth-test.html'
+      },
+      meta: {
+        requiresAuth: false,
+        title: 'OAuth Test',
+        preserveState: false,
+        allowDeepLink: true
+      }
+    },
+    {
+      path: '/debug-auth.html',
+      name: 'debug-auth',
+      beforeEnter() {
+        // Redirect to the actual static HTML file
+        window.location.href = '/debug-auth.html'
+      },
+      meta: {
+        requiresAuth: false,
+        title: 'Auth Debug',
+        preserveState: false,
+        allowDeepLink: true
+      }
+    },
     // Catch-all route for 404 handling
     {
       path: '/:pathMatch(.*)*',
@@ -183,6 +211,21 @@ async function authGuard(
   const authStore = useAuthStore()
   
   try {
+    // Skip authentication guard for static files and debug pages
+    const staticPaths = ['/oauth-test.html', '/debug-auth.html', '/test-oauth.html']
+    if (staticPaths.some(path => to.path.includes(path))) {
+      console.log('Skipping auth guard for static file:', to.path)
+      next()
+      return
+    }
+
+    // Skip authentication guard for debug and test routes
+    if (to.name === 'oauth-test' || to.name === 'debug-auth') {
+      console.log('Skipping auth guard for debug route:', to.name)
+      next()
+      return
+    }
+
     // Wait for auth store to initialize
     if (!authStore.isInitialized) {
       await authStore.initialize()

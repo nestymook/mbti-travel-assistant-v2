@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Flow Test - Step by Step</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-container h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-header {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .button:hover { background: #0056b3; }
+        .button.success { background: #28a745; }
+        .button.warning { background: #ffc107; color: #212529; }
+        .button.danger { background: #dc3545; }
+        .status-good { color: #28a745; font-weight: bold; }
+        .status-bad { color: #dc3545; font-weight: bold; }
+        .status-warning { color: #ffc107; font-weight: bold; }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .log-container {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .log-entry {
+            margin: 2px 0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+        .log-info { background: #d1ecf1; color: #0c5460; }
+        .log-success { background: #d4edda; color: #155724; }
+        .log-warning { background: #fff3cd; color: #856404; }
+        .log-error { background: #f8d7da; color: #721c24; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 OAuth Flow Test - Step by Step Diagnosis</h1>
+    
+    <div class="test-container">
+        <h2>🎯 Current Status</h2>
+        <div id="currentStatus">
+            <div>🔄 Analyzing current state...</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="test-container">
+            <h2>📋 Configuration Check</h2>
+            <div id="configCheck"></div>
+        </div>
+        
+        <div class="test-container">
+            <h2>🔗 Current URL Analysis</h2>
+            <div class="code-block" id="urlAnalysis"></div>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <h2>🧪 Step-by-Step OAuth Test</h2>
+        
+        <div class="step">
+            <div class="step-header">Step 1: Pre-Login Check</div>
+            <button class="button" onclick="preLoginCheck()">🔍 Check Current State</button>
+            <div id="preLoginResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 2: Test Cognito Login URL</div>
+            <button class="button" onclick="testLoginUrl()">🔗 Generate & Test Login URL</button>
+            <div id="loginUrlResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 3: Initiate OAuth Flow</div>
+            <button class="button warning" onclick="startOAuthFlow()">🚀 Start OAuth Login</button>
+            <div id="oauthFlowResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 4: Callback Analysis (After Login)</div>
+            <button class="button" onclick="analyzeCallback()">📊 Analyze Callback</button>
+            <div id="callbackResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 5: Manual Token Exchange</div>
+            <button class="button" onclick="manualTokenExchange()">🔄 Exchange Token</button>
+            <div id="tokenExchangeResult"></div>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <h2>📝 Test Log</h2>
+        <div class="log-container" id="testLog"></div>
+        <button class="button" onclick="clearLog()">🗑️ Clear Log</button>
+    </div>
+
+    <div class="test-container">
+        <h2>🛠️ Troubleshooting Actions</h2>
+        <button class="button success" onclick="goToStandaloneDebug()">🔍 Standalone Debug</button>
+        <button class="button" onclick="goToBypassRouter()">🚀 Router Bypass</button>
+        <button class="button warning" onclick="clearAllData()">🗑️ Clear All Data</button>
+        <button class="button" onclick="refreshPage()">🔄 Refresh Page</button>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            CLOUDFRONT_DOMAIN: 'https://d39ank8zud5pbg.cloudfront.net',
+            COGNITO_DOMAIN: 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com',
+            CLIENT_ID: '26k0pnja579pdpb1pt6savs27e',
+            USER_POOL_ID: 'us-east-1_wBAxW7yd4',
+            CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/',
+            AUTH_CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/auth/callback'
+        };
+
+        // Logging function
+        function log(message, type = 'info') {
+            const logContainer = document.getElementById('testLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+
+        // Update current status
+        function updateCurrentStatus() {
+            const statusDiv = document.getElementById('currentStatus');
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            let status = '';
+            
+            if (urlParams.has('error')) {
+                status = `<div class="status-bad">❌ OAuth Error: ${urlParams.get('error')}</div>`;
+                if (urlParams.get('error_description')) {
+                    status += `<div>Description: ${urlParams.get('error_description')}</div>`;
+                }
+            } else if (urlParams.has('code')) {
+                status = '<div class="status-good">✅ Authorization code received!</div>';
+                status += `<div>Code: ${urlParams.get('code').substring(0, 20)}...</div>`;
+            } else {
+                status = '<div class="status-warning">⚠️ No OAuth parameters found - ready to test</div>';
+            }
+            
+            statusDiv.innerHTML = status;
+        }
+
+        // Configuration check
+        function updateConfigCheck() {
+            const configDiv = document.getElementById('configCheck');
+            const checks = [
+                { name: 'CloudFront Domain', value: CONFIG.CLOUDFRONT_DOMAIN, valid: true },
+                { name: 'Cognito Domain', value: CONFIG.COGNITO_DOMAIN, valid: true },
+                { name: 'Client ID', value: CONFIG.CLIENT_ID, valid: CONFIG.CLIENT_ID.length > 0 },
+                { name: 'User Pool ID', value: CONFIG.USER_POOL_ID, valid: CONFIG.USER_POOL_ID.includes('us-east-1') },
+                { name: 'Callback URL', value: CONFIG.CALLBACK_URL, valid: CONFIG.CALLBACK_URL.startsWith('https://') }
+            ];
+
+            configDiv.innerHTML = checks.map(check => 
+                `<div><span class="${check.valid ? 'status-good' : 'status-bad'}">${check.valid ? '✅' : '❌'}</span> ${check.name}: ${check.value}</div>`
+            ).join('');
+        }
+
+        // URL analysis
+        function updateUrlAnalysis() {
+            const urlDiv = document.getElementById('urlAnalysis');
+            const urlParams = new URLSearchParams(window.location.search);
+            const hashParams = new URLSearchParams(window.location.hash.substring(1));
+            
+            const analysis = {
+                'Full URL': window.location.href,
+                'Origin': window.location.origin,
+                'Pathname': window.location.pathname,
+                'Search': window.location.search || '(none)',
+                'Hash': window.location.hash || '(none)',
+                'Query Parameters': Object.fromEntries(urlParams.entries()),
+                'Hash Parameters': Object.fromEntries(hashParams.entries())
+            };
+            
+            urlDiv.textContent = JSON.stringify(analysis, null, 2);
+        }
+
+        // Step 1: Pre-login check
+        function preLoginCheck() {
+            log('Starting pre-login check...', 'info');
+            const resultDiv = document.getElementById('preLoginResult');
+            
+            const checks = {
+                'Current URL': window.location.href,
+                'Has existing tokens': !!localStorage.getItem('aws-amplify-cache'),
+                'Has session data': sessionStorage.length > 0,
+                'Browser cookies enabled': navigator.cookieEnabled,
+                'Local storage available': typeof(Storage) !== "undefined"
+            };
+            
+            resultDiv.innerHTML = '<div class="code-block">' + JSON.stringify(checks, null, 2) + '</div>';
+            log('Pre-login check completed', 'success');
+        }
+
+        // Step 2: Test login URL
+        function testLoginUrl() {
+            log('Testing login URL generation...', 'info');
+            const resultDiv = document.getElementById('loginUrlResult');
+            
+            const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                client_id: CONFIG.CLIENT_ID,
+                response_type: 'code',
+                scope: 'email openid profile',
+                redirect_uri: CONFIG.CALLBACK_URL,
+                state: 'test-state-' + Date.now()
+            }).toString();
+            
+            resultDiv.innerHTML = `
+                <div><strong>Generated Login URL:</strong></div>
+                <div class="code-block">${loginUrl}</div>
+                <button class="button" onclick="window.open('${loginUrl}', '_blank')">🔗 Test URL in New Tab</button>
+            `;
+            
+            log('Login URL generated successfully', 'success');
+        }
+
+        // Step 3: Start OAuth flow
+        function startOAuthFlow() {
+            log('Starting OAuth flow...', 'warning');
+            const resultDiv = document.getElementById('oauthFlowResult');
+            
+            const state = 'oauth-test-' + Date.now();
+            const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                client_id: CONFIG.CLIENT_ID,
+                response_type: 'code',
+                scope: 'email openid profile',
+                redirect_uri: CONFIG.CALLBACK_URL,
+                state: state
+            }).toString();
+            
+            // Store state for verification
+            sessionStorage.setItem('oauth-state', state);
+            
+            resultDiv.innerHTML = `
+                <div class="status-warning">⚠️ You will be redirected to Cognito for login...</div>
+                <div>State: ${state}</div>
+                <div>Redirect URI: ${CONFIG.CALLBACK_URL}</div>
+            `;
+            
+            log(`Redirecting to Cognito with state: ${state}`, 'info');
+            
+            // Redirect after a short delay
+            setTimeout(() => {
+                window.location.href = loginUrl;
+            }, 2000);
+        }
+
+        // Step 4: Analyze callback
+        function analyzeCallback() {
+            log('Analyzing OAuth callback...', 'info');
+            const resultDiv = document.getElementById('callbackResult');
+            const urlParams = new URLSearchParams(window.location.search);
+            const storedState = sessionStorage.getItem('oauth-state');
+            
+            const analysis = {
+                'Has authorization code': urlParams.has('code'),
+                'Authorization code': urlParams.get('code') ? urlParams.get('code').substring(0, 20) + '...' : 'Not found',
+                'Has error': urlParams.has('error'),
+                'Error': urlParams.get('error') || 'None',
+                'Error description': urlParams.get('error_description') || 'None',
+                'State parameter': urlParams.get('state') || 'Not found',
+                'Stored state': storedState || 'Not found',
+                'State matches': urlParams.get('state') === storedState,
+                'Current URL': window.location.href
+            };
+            
+            resultDiv.innerHTML = '<div class="code-block">' + JSON.stringify(analysis, null, 2) + '</div>';
+            
+            if (urlParams.has('code')) {
+                log('Authorization code found in callback!', 'success');
+            } else if (urlParams.has('error')) {
+                log(`OAuth error: ${urlParams.get('error')}`, 'error');
+            } else {
+                log('No OAuth parameters found in callback', 'warning');
+            }
+        }
+
+        // Step 5: Manual token exchange
+        async function manualTokenExchange() {
+            log('Starting manual token exchange...', 'info');
+            const resultDiv = document.getElementById('tokenExchangeResult');
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+
+            if (!authCode) {
+                const message = 'No authorization code found. Complete OAuth flow first.';
+                resultDiv.innerHTML = `<div class="status-bad">${message}</div>`;
+                log(message, 'error');
+                return;
+            }
+
+            try {
+                const tokenEndpoint = `${CONFIG.COGNITO_DOMAIN}/oauth2/token`;
+                
+                const params = new URLSearchParams({
+                    grant_type: 'authorization_code',
+                    client_id: CONFIG.CLIENT_ID,
+                    code: authCode,
+                    redirect_uri: CONFIG.CALLBACK_URL
+                });
+
+                log('Sending token exchange request...', 'info');
+                
+                const response = await fetch(tokenEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: params.toString()
+                });
+
+                const responseText = await response.text();
+                
+                if (!response.ok) {
+                    const errorResult = {
+                        success: false,
+                        status: response.status,
+                        statusText: response.statusText,
+                        error: responseText
+                    };
+                    
+                    resultDiv.innerHTML = '<div class="code-block">' + JSON.stringify(errorResult, null, 2) + '</div>';
+                    log(`Token exchange failed: ${response.status}`, 'error');
+                    return;
+                }
+
+                const tokens = JSON.parse(responseText);
+                const result = {
+                    success: true,
+                    hasAccessToken: !!tokens.access_token,
+                    hasIdToken: !!tokens.id_token,
+                    hasRefreshToken: !!tokens.refresh_token,
+                    tokenType: tokens.token_type,
+                    expiresIn: tokens.expires_in,
+                    scope: tokens.scope
+                };
+                
+                resultDiv.innerHTML = '<div class="code-block">' + JSON.stringify(result, null, 2) + '</div>';
+                log('Token exchange successful!', 'success');
+
+            } catch (error) {
+                const errorResult = {
+                    success: false,
+                    error: error.message,
+                    stack: error.stack
+                };
+                
+                resultDiv.innerHTML = '<div class="code-block">' + JSON.stringify(errorResult, null, 2) + '</div>';
+                log(`Token exchange error: ${error.message}`, 'error');
+            }
+        }
+
+        // Utility functions
+        function clearLog() {
+            document.getElementById('testLog').innerHTML = '';
+            log('Log cleared', 'info');
+        }
+
+        function goToStandaloneDebug() {
+            window.location.href = '/standalone-debug.html';
+        }
+
+        function goToBypassRouter() {
+            window.location.href = '/bypass-router.html';
+        }
+
+        function clearAllData() {
+            if (confirm('Clear all authentication data?')) {
+                localStorage.clear();
+                sessionStorage.clear();
+                log('All data cleared', 'warning');
+                updateCurrentStatus();
+            }
+        }
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        // Initialize page
+        function initializePage() {
+            log('Initializing OAuth flow test page...', 'info');
+            updateCurrentStatus();
+            updateConfigCheck();
+            updateUrlAnalysis();
+            
+            // Auto-analyze if callback parameters are present
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('code') || urlParams.has('error')) {
+                log('OAuth callback detected, auto-analyzing...', 'info');
+                setTimeout(analyzeCallback, 1000);
+            }
+            
+            log('Page initialization complete', 'success');
+        }
+
+        // Auto-refresh status
+        function autoRefresh() {
+            updateCurrentStatus();
+            updateUrlAnalysis();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initializePage);
+        setInterval(autoRefresh, 5000);
+    </script>
+</body>
+</html>

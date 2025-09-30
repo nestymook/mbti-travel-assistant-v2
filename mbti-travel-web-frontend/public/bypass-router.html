@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Bypass - MBTI Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #5a67d8;
+        }
+        .button.success { background: #28a745; }
+        .button.warning { background: #ffc107; color: #212529; }
+        .info-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Router Bypass - Debug Tools</h1>
+        
+        <div class="info-box">
+            <strong>Purpose:</strong> This page provides direct access to debug tools without going through the Vue router, 
+            which can sometimes interfere with authentication testing.
+        </div>
+        
+        <h2>Available Debug Tools</h2>
+        
+        <a href="/standalone-debug.html" class="button">
+            🔍 Standalone Debug Page
+        </a>
+        
+        <a href="/oauth-test.html" class="button">
+            🧪 OAuth Test Page
+        </a>
+        
+        <a href="/debug-auth.html" class="button">
+            📊 Auth Debug Page
+        </a>
+        
+        <br><br>
+        
+        <h2>Direct Actions</h2>
+        
+        <button class="button" onclick="testDirectLogin()">
+            🔐 Direct Cognito Login
+        </button>
+        
+        <button class="button warning" onclick="clearAllData()">
+            🗑️ Clear All Data
+        </button>
+        
+        <a href="/" class="button success">
+            🏠 Go to Main App
+        </a>
+        
+        <div class="info-box">
+            <strong>Current URL:</strong> <span id="currentUrl"></span><br>
+            <strong>Has Auth Code:</strong> <span id="hasCode"></span><br>
+            <strong>Has Error:</strong> <span id="hasError"></span><br>
+            <strong>Has Tokens:</strong> <span id="hasTokens"></span>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            COGNITO_DOMAIN: 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com',
+            CLIENT_ID: '26k0pnja579pdpb1pt6savs27e',
+            CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/'
+        };
+
+        function updateStatus() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            document.getElementById('currentUrl').textContent = window.location.href;
+            document.getElementById('hasCode').textContent = urlParams.has('code') ? 'Yes' : 'No';
+            document.getElementById('hasError').textContent = urlParams.has('error') ? `Yes (${urlParams.get('error')})` : 'No';
+            document.getElementById('hasTokens').textContent = localStorage.getItem('aws-amplify-cache') ? 'Yes' : 'No';
+        }
+
+        function testDirectLogin() {
+            const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                client_id: CONFIG.CLIENT_ID,
+                response_type: 'code',
+                scope: 'email openid profile',
+                redirect_uri: CONFIG.CALLBACK_URL
+            }).toString();
+            
+            console.log('Redirecting to:', loginUrl);
+            window.location.href = loginUrl;
+        }
+
+        function clearAllData() {
+            if (confirm('This will clear all authentication data. Continue?')) {
+                localStorage.clear();
+                sessionStorage.clear();
+                
+                // Clear cookies
+                document.cookie.split(";").forEach(function(c) { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                
+                alert('All data cleared!');
+                updateStatus();
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', updateStatus);
+        setInterval(updateStatus, 5000);
+    </script>
+</body>
+</html>

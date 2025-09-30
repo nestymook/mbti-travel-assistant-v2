@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Flow Diagnostic - Step by Step</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .diagnostic-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .diagnostic-container h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-header {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .button:hover { background: #0056b3; }
+        .button.success { background: #28a745; }
+        .button.warning { background: #ffc107; color: #212529; }
+        .button.danger { background: #dc3545; }
+        .status-good { color: #28a745; font-weight: bold; }
+        .status-bad { color: #dc3545; font-weight: bold; }
+        .status-warning { color: #ffc107; font-weight: bold; }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .test-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .test-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .test-warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .test-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 OAuth Flow Diagnostic - Find the Break Point</h1>
+    
+    <div class="diagnostic-container">
+        <h2>🎯 Current Status</h2>
+        <div id="currentStatus">
+            <div>🔄 Analyzing OAuth flow...</div>
+        </div>
+    </div>
+
+    <div class="diagnostic-container">
+        <h2>📋 Step-by-Step Diagnostic</h2>
+        
+        <div class="step">
+            <div class="step-header">Step 1: Test Cognito Domain Accessibility</div>
+            <button class="button" onclick="testCognitoDomain()">🌐 Test Cognito Domain</button>
+            <div id="domainTestResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 2: Test Well-Known Configuration</div>
+            <button class="button" onclick="testWellKnownConfig()">🔧 Test OIDC Configuration</button>
+            <div id="wellKnownResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 3: Generate and Test Login URL</div>
+            <button class="button" onclick="generateLoginUrl()">🔗 Generate Login URL</button>
+            <div id="loginUrlResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 4: Test Login URL in New Tab</div>
+            <button class="button warning" onclick="testLoginInNewTab()">🚀 Open Login in New Tab</button>
+            <div id="newTabResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 5: Monitor This Page for Callback</div>
+            <button class="button" onclick="startCallbackMonitoring()">👁️ Start Monitoring</button>
+            <div id="monitoringResult"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-header">Step 6: Manual Redirect Test</div>
+            <button class="button danger" onclick="testDirectRedirect()">⚠️ Test Direct Redirect</button>
+            <div id="redirectResult"></div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="diagnostic-container">
+            <h2>🔍 Current URL Analysis</h2>
+            <div class="code-block" id="urlAnalysis"></div>
+        </div>
+        
+        <div class="diagnostic-container">
+            <h2>🗂️ Browser Storage</h2>
+            <div class="code-block" id="storageAnalysis"></div>
+        </div>
+    </div>
+
+    <div class="diagnostic-container">
+        <h2>📊 Test Results Summary</h2>
+        <div id="testSummary">
+            <div class="test-info">Run the diagnostic steps above to see results</div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            CLOUDFRONT_DOMAIN: 'https://d39ank8zud5pbg.cloudfront.net',
+            COGNITO_DOMAIN: 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com',
+            CLIENT_ID: '26k0pnja579pdpb1pt6savs27e',
+            CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/'
+        };
+
+        let testResults = {};
+        let monitoringActive = false;
+
+        // Update current status
+        function updateCurrentStatus() {
+            const statusDiv = document.getElementById('currentStatus');
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            let status = '';
+            
+            if (urlParams.has('error')) {
+                status = `<div class="status-bad">❌ OAuth Error: ${urlParams.get('error')}</div>`;
+                if (urlParams.get('error_description')) {
+                    status += `<div>Description: ${urlParams.get('error_description')}</div>`;
+                }
+            } else if (urlParams.has('code')) {
+                status = '<div class="status-good">✅ Authorization code received!</div>';
+                status += `<div>Code: ${urlParams.get('code').substring(0, 20)}...</div>`;
+            } else {
+                status = '<div class="status-warning">⚠️ No OAuth parameters - ready for testing</div>';
+            }
+            
+            statusDiv.innerHTML = status;
+        }
+
+        // Update URL analysis
+        function updateUrlAnalysis() {
+            const urlDiv = document.getElementById('urlAnalysis');
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            const analysis = {
+                'Current URL': window.location.href,
+                'Has Code': urlParams.has('code'),
+                'Has Error': urlParams.has('error'),
+                'Has State': urlParams.has('state'),
+                'Query Parameters': Object.fromEntries(urlParams.entries()),
+                'Referrer': document.referrer || 'None'
+            };
+            
+            urlDiv.textContent = JSON.stringify(analysis, null, 2);
+        }
+
+        // Update storage analysis
+        function updateStorageAnalysis() {
+            const storageDiv = document.getElementById('storageAnalysis');
+            
+            const analysis = {
+                'Local Storage Items': localStorage.length,
+                'Session Storage Items': sessionStorage.length,
+                'Has AWS Amplify Cache': !!localStorage.getItem('aws-amplify-cache'),
+                'Cookies Enabled': navigator.cookieEnabled,
+                'User Agent': navigator.userAgent.substring(0, 100) + '...'
+            };
+            
+            storageDiv.textContent = JSON.stringify(analysis, null, 2);
+        }
+
+        // Test 1: Cognito Domain
+        async function testCognitoDomain() {
+            const resultDiv = document.getElementById('domainTestResult');
+            resultDiv.innerHTML = '<div class="test-info">Testing Cognito domain accessibility...</div>';
+            
+            try {
+                const response = await fetch(CONFIG.COGNITO_DOMAIN, { 
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                });
+                
+                testResults.domainTest = 'success';
+                resultDiv.innerHTML = '<div class="test-success">✅ Cognito domain is accessible</div>';
+                
+            } catch (error) {
+                testResults.domainTest = 'error';
+                resultDiv.innerHTML = `<div class="test-error">❌ Cognito domain test failed: ${error.message}</div>`;
+            }
+            
+            updateTestSummary();
+        }
+
+        // Test 2: Well-Known Configuration
+        async function testWellKnownConfig() {
+            const resultDiv = document.getElementById('wellKnownResult');
+            resultDiv.innerHTML = '<div class="test-info">Testing OIDC well-known configuration...</div>';
+            
+            try {
+                const wellKnownUrl = `${CONFIG.COGNITO_DOMAIN}/.well-known/openid_configuration`;
+                const response = await fetch(wellKnownUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const config = await response.json();
+                
+                testResults.wellKnownTest = 'success';
+                resultDiv.innerHTML = `
+                    <div class="test-success">✅ OIDC configuration accessible</div>
+                    <div class="code-block">Authorization Endpoint: ${config.authorization_endpoint}
+Token Endpoint: ${config.token_endpoint}
+JWKS URI: ${config.jwks_uri}</div>
+                `;
+                
+            } catch (error) {
+                testResults.wellKnownTest = 'error';
+                resultDiv.innerHTML = `<div class="test-error">❌ Well-known config test failed: ${error.message}</div>`;
+            }
+            
+            updateTestSummary();
+        }
+
+        // Test 3: Generate Login URL
+        function generateLoginUrl() {
+            const resultDiv = document.getElementById('loginUrlResult');
+            
+            try {
+                const state = 'diagnostic-test-' + Date.now();
+                const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                    client_id: CONFIG.CLIENT_ID,
+                    response_type: 'code',
+                    scope: 'email openid profile',
+                    redirect_uri: CONFIG.CALLBACK_URL,
+                    state: state
+                }).toString();
+                
+                // Store state for verification
+                sessionStorage.setItem('oauth-diagnostic-state', state);
+                
+                testResults.loginUrlTest = 'success';
+                resultDiv.innerHTML = `
+                    <div class="test-success">✅ Login URL generated successfully</div>
+                    <div class="code-block">${loginUrl}</div>
+                    <button class="button" onclick="window.open('${loginUrl}', '_blank')">🔗 Test URL in New Tab</button>
+                `;
+                
+            } catch (error) {
+                testResults.loginUrlTest = 'error';
+                resultDiv.innerHTML = `<div class="test-error">❌ Login URL generation failed: ${error.message}</div>`;
+            }
+            
+            updateTestSummary();
+        }
+
+        // Test 4: Test in New Tab
+        function testLoginInNewTab() {
+            const resultDiv = document.getElementById('newTabResult');
+            
+            try {
+                const state = 'newtab-test-' + Date.now();
+                const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                    client_id: CONFIG.CLIENT_ID,
+                    response_type: 'code',
+                    scope: 'email openid profile',
+                    redirect_uri: CONFIG.CALLBACK_URL,
+                    state: state
+                }).toString();
+                
+                sessionStorage.setItem('oauth-newtab-state', state);
+                
+                const newWindow = window.open(loginUrl, '_blank', 'width=600,height=700');
+                
+                if (newWindow) {
+                    testResults.newTabTest = 'success';
+                    resultDiv.innerHTML = `
+                        <div class="test-success">✅ New tab opened successfully</div>
+                        <div class="test-info">Complete login in the new tab, then return here to check for callback</div>
+                        <div>State: ${state}</div>
+                    `;
+                } else {
+                    testResults.newTabTest = 'error';
+                    resultDiv.innerHTML = '<div class="test-error">❌ Popup blocked or failed to open new tab</div>';
+                }
+                
+            } catch (error) {
+                testResults.newTabTest = 'error';
+                resultDiv.innerHTML = `<div class="test-error">❌ New tab test failed: ${error.message}</div>`;
+            }
+            
+            updateTestSummary();
+        }
+
+        // Test 5: Start Callback Monitoring
+        function startCallbackMonitoring() {
+            const resultDiv = document.getElementById('monitoringResult');
+            
+            if (monitoringActive) {
+                monitoringActive = false;
+                resultDiv.innerHTML = '<div class="test-warning">⏸️ Monitoring stopped</div>';
+                return;
+            }
+            
+            monitoringActive = true;
+            resultDiv.innerHTML = '<div class="test-info">👁️ Monitoring for OAuth callback... Complete login in another tab.</div>';
+            
+            const monitorInterval = setInterval(() => {
+                if (!monitoringActive) {
+                    clearInterval(monitorInterval);
+                    return;
+                }
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                if (urlParams.has('code')) {
+                    monitoringActive = false;
+                    clearInterval(monitorInterval);
+                    testResults.callbackMonitoring = 'success';
+                    resultDiv.innerHTML = `
+                        <div class="test-success">✅ OAuth callback detected!</div>
+                        <div>Authorization Code: ${urlParams.get('code').substring(0, 20)}...</div>
+                        <div>State: ${urlParams.get('state') || 'None'}</div>
+                    `;
+                    updateTestSummary();
+                } else if (urlParams.has('error')) {
+                    monitoringActive = false;
+                    clearInterval(monitorInterval);
+                    testResults.callbackMonitoring = 'error';
+                    resultDiv.innerHTML = `
+                        <div class="test-error">❌ OAuth error detected!</div>
+                        <div>Error: ${urlParams.get('error')}</div>
+                        <div>Description: ${urlParams.get('error_description') || 'None'}</div>
+                    `;
+                    updateTestSummary();
+                }
+                
+                updateCurrentStatus();
+                updateUrlAnalysis();
+            }, 1000);
+            
+            // Stop monitoring after 5 minutes
+            setTimeout(() => {
+                if (monitoringActive) {
+                    monitoringActive = false;
+                    clearInterval(monitorInterval);
+                    testResults.callbackMonitoring = 'timeout';
+                    resultDiv.innerHTML = '<div class="test-warning">⏰ Monitoring timed out after 5 minutes</div>';
+                    updateTestSummary();
+                }
+            }, 300000);
+        }
+
+        // Test 6: Direct Redirect Test
+        function testDirectRedirect() {
+            const resultDiv = document.getElementById('redirectResult');
+            
+            if (!confirm('This will redirect the current page to Cognito login. Continue?')) {
+                return;
+            }
+            
+            try {
+                const state = 'direct-redirect-' + Date.now();
+                const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                    client_id: CONFIG.CLIENT_ID,
+                    response_type: 'code',
+                    scope: 'email openid profile',
+                    redirect_uri: CONFIG.CALLBACK_URL,
+                    state: state
+                }).toString();
+                
+                sessionStorage.setItem('oauth-direct-state', state);
+                
+                resultDiv.innerHTML = `
+                    <div class="test-warning">⚠️ Redirecting to Cognito login...</div>
+                    <div>State: ${state}</div>
+                `;
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = loginUrl;
+                }, 2000);
+                
+            } catch (error) {
+                testResults.directRedirectTest = 'error';
+                resultDiv.innerHTML = `<div class="test-error">❌ Direct redirect failed: ${error.message}</div>`;
+                updateTestSummary();
+            }
+        }
+
+        // Update test summary
+        function updateTestSummary() {
+            const summaryDiv = document.getElementById('testSummary');
+            
+            const results = Object.entries(testResults).map(([test, result]) => {
+                const status = result === 'success' ? '✅' : result === 'error' ? '❌' : '⚠️';
+                const className = result === 'success' ? 'test-success' : result === 'error' ? 'test-error' : 'test-warning';
+                return `<div class="${className}">${status} ${test}: ${result}</div>`;
+            }).join('');
+            
+            summaryDiv.innerHTML = results || '<div class="test-info">No tests completed yet</div>';
+        }
+
+        // Initialize page
+        function initializePage() {
+            updateCurrentStatus();
+            updateUrlAnalysis();
+            updateStorageAnalysis();
+            
+            // Check if this is a callback
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('code') || urlParams.has('error')) {
+                testResults.callbackReceived = urlParams.has('code') ? 'success' : 'error';
+                updateTestSummary();
+            }
+        }
+
+        // Auto-refresh
+        function autoRefresh() {
+            updateCurrentStatus();
+            updateUrlAnalysis();
+            updateStorageAnalysis();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initializePage);
+        setInterval(autoRefresh, 5000);
+    </script>
+</body>
+</html>

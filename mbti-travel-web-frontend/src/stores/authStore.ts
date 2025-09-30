@@ -113,46 +113,44 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // Login is now handled entirely through Cognito Hosted UI
-  // This method is kept for compatibility but redirects to Hosted UI
-  async function login(email?: string, password?: string): Promise<void> {
-    console.log('Redirecting to Cognito Hosted UI for authentication')
-    redirectToHostedUI()
-  }
+  // Direct login using email and password (Hosted UI is broken)
+  async function login(email: string, password: string): Promise<void> {
+    if (!email || !password) {
+      throw new Error('Email and password are required')
+    }
 
-  async function loginWithHostedUI(): Promise<void> {
     try {
       isLoading.value = true
       error.value = null
 
       if (cognitoAuth.isConfigurationValid()) {
-        // Redirect to Cognito Hosted UI
-        await cognitoAuth.signInWithHostedUI()
+        // Use direct Cognito authentication
+        const userData = await cognitoAuth.login(email, password)
+        user.value = userData
+        console.log('Direct login successful:', userData.email)
       } else {
         throw new Error('Cognito not configured')
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Hosted UI login failed'
+      const errorMessage = err instanceof Error ? err.message : 'Login failed'
       error.value = errorMessage
+      user.value = null
       throw new Error(errorMessage)
     } finally {
       isLoading.value = false
     }
   }
 
+  // Legacy method - now shows error about Hosted UI being broken
+  async function loginWithHostedUI(): Promise<void> {
+    error.value = 'Hosted UI is currently unavailable. Please use email/password login.'
+    throw new Error('Hosted UI domain is broken. Use direct login instead.')
+  }
+
+  // Legacy method - now shows error about Hosted UI being broken  
   function redirectToHostedUI(): void {
-    try {
-      if (cognitoAuth.isConfigurationValid()) {
-        const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
-        window.location.href = hostedUIUrl
-      } else {
-        // Fallback to login page if Cognito not configured
-        window.location.href = '/login'
-      }
-    } catch (err) {
-      console.error('Failed to redirect to hosted UI:', err)
-      window.location.href = '/login'
-    }
+    console.error('Hosted UI domain is broken, cannot redirect')
+    error.value = 'Hosted UI is currently unavailable. Please use email/password login.'
   }
 
   async function logout(): Promise<void> {

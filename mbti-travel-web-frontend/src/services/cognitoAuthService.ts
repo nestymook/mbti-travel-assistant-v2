@@ -30,18 +30,17 @@ export class CognitoAuthService {
 
   /**
    * Initialize AWS Amplify with Cognito configuration
+   * Note: Hosted UI domain is broken, so we disable OAuth and use direct authentication
    */
   private initializeAmplify(): void {
     try {
       const config = this.getCognitoConfig()
       
-      console.log('Configuring Amplify with:', {
+      console.log('Configuring Amplify with direct authentication (Hosted UI domain broken):', {
         userPoolId: config.userPoolId,
         clientId: config.userPoolClientId,
-        domain: config.domain,
-        redirectSignIn: config.redirectSignIn,
-        redirectSignOut: config.redirectSignOut,
-        region: config.region
+        region: config.region,
+        hostedUiDisabled: true
       })
       
       Amplify.configure({
@@ -50,13 +49,14 @@ export class CognitoAuthService {
             userPoolId: config.userPoolId,
             userPoolClientId: config.userPoolClientId,
             loginWith: {
-              oauth: {
-                domain: config.domain ? `${config.domain}.auth.${config.region}.amazoncognito.com` : undefined,
-                scopes: ['email', 'openid', 'profile'],
-                redirectSignIn: [config.redirectSignIn || window.location.origin],
-                redirectSignOut: [config.redirectSignOut || window.location.origin],
-                responseType: 'code'
-              },
+              // Disable OAuth due to broken Hosted UI domain
+              // oauth: {
+              //   domain: config.domain ? `${config.domain}.auth.${config.region}.amazoncognito.com` : undefined,
+              //   scopes: ['email', 'openid', 'profile'],
+              //   redirectSignIn: [config.redirectSignIn || window.location.origin],
+              //   redirectSignOut: [config.redirectSignOut || window.location.origin],
+              //   responseType: 'code'
+              // },
               email: true,
               username: false
             },
@@ -79,7 +79,7 @@ export class CognitoAuthService {
       })
 
       this.isConfigured = true
-      console.log('AWS Amplify configured successfully')
+      console.log('AWS Amplify configured successfully with direct authentication')
     } catch (error) {
       console.error('Failed to configure AWS Amplify:', error)
       this.isConfigured = false

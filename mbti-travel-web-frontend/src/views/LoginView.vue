@@ -18,15 +18,46 @@
           Secure authentication powered by AWS Cognito
         </p>
         
-        <button
-          type="button"
-          @click="handleHostedUILogin"
-          :disabled="isLoading"
-          class="login-button"
-        >
-          <span v-if="isLoading">Redirecting to login...</span>
-          <span v-else>Sign In</span>
-        </button>
+        <form @submit.prevent="handleDirectLogin" class="login-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              v-model="email"
+              type="email"
+              required
+              :disabled="isLoading"
+              class="form-input"
+              placeholder="Enter your email"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              v-model="password"
+              type="password"
+              required
+              :disabled="isLoading"
+              class="form-input"
+              placeholder="Enter your password"
+            />
+          </div>
+          
+          <button
+            type="submit"
+            :disabled="isLoading || !email || !password"
+            class="login-button"
+          >
+            <span v-if="isLoading">Signing in...</span>
+            <span v-else>Sign In</span>
+          </button>
+        </form>
+        
+        <div class="hosted-ui-notice">
+          <p><small>Note: Hosted UI is temporarily unavailable. Please use email/password login.</small></p>
+        </div>
       </div>
 
       <div class="login-footer">
@@ -38,16 +69,35 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
 
+const router = useRouter()
 const authStore = useAuthStore()
+
+// Form data
+const email = ref('')
+const password = ref('')
 
 // Computed
 const isLoading = computed(() => authStore.isLoading)
 const error = computed(() => authStore.error)
 
 // Methods
+async function handleDirectLogin(): Promise<void> {
+  try {
+    await authStore.login(email.value, password.value)
+    
+    // Success - redirect to home
+    await router.push({ name: 'home' })
+  } catch (err) {
+    console.error('Direct login failed:', err)
+    // Error is already set in the auth store
+  }
+}
+
+// Legacy method for compatibility (now shows error)
 async function handleHostedUILogin(): Promise<void> {
   try {
     authStore.redirectToHostedUI()
@@ -63,7 +113,7 @@ onMounted(() => {
   // Check if user is already authenticated
   if (authStore.isAuthenticated) {
     // User is already logged in, redirect to home
-    window.location.href = '/'
+    router.push({ name: 'home' })
     return
   }
 })
@@ -157,6 +207,60 @@ onMounted(() => {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.hosted-ui-notice {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  color: #856404;
+}
+
+.hosted-ui-notice p {
+  margin: 0;
+  font-size: 0.85rem;
 }
 
 .login-footer {

@@ -145,7 +145,7 @@ function getSecurityHeaders(filePath) {
   
   // Add CSP header for HTML files
   if (filePath.endsWith('.html')) {
-    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cognito-idp.us-east-1.amazonaws.com https://*.amazoncognito.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.amazonaws.com https://*.amazoncognito.com https://p4ex20jih1.execute-api.us-east-1.amazonaws.com; frame-ancestors 'none';";
+    const csp = "default-src self; script-src self unsafe-inline unsafe-eval https://cognito-idp.us-east-1.amazonaws.com https://*.amazoncognito.com; style-src self unsafe-inline; img-src self data: https:; font-src self data:; connect-src self https://*.amazonaws.com https://*.amazoncognito.com https://p4ex20jih1.execute-api.us-east-1.amazonaws.com; frame-ancestors none;";
     headers.push(`--metadata content-security-policy="${csp}"`);
   }
   
