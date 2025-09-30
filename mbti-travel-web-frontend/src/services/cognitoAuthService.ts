@@ -34,17 +34,19 @@ export class CognitoAuthService {
    */
   private initializeAmplify(): void {
     try {
+      console.log('🔧 Initializing Amplify configuration...')
       const config = this.getCognitoConfig()
       
-      console.log('Configuring Amplify with OAuth/OIDC for AgentCore compatibility:', {
+      console.log('🔧 Cognito config loaded:', {
         userPoolId: config.userPoolId,
         clientId: config.userPoolClientId,
         region: config.region,
         domain: config.domain,
-        oauthEnabled: true
+        redirectSignIn: config.redirectSignIn,
+        redirectSignOut: config.redirectSignOut
       })
       
-      Amplify.configure({
+      const amplifyConfig = {
         Auth: {
           Cognito: {
             userPoolId: config.userPoolId,
@@ -77,12 +79,21 @@ export class CognitoAuthService {
             }
           }
         }
-      })
+      }
+      
+      console.log('🔧 Amplify config object:', JSON.stringify(amplifyConfig, null, 2))
+      
+      Amplify.configure(amplifyConfig)
 
       this.isConfigured = true
-      console.log('AWS Amplify configured successfully with OAuth/OIDC')
+      console.log('🔧 AWS Amplify configured successfully with OAuth/OIDC')
     } catch (error) {
-      console.error('Failed to configure AWS Amplify:', error)
+      console.error('🔧 Failed to configure AWS Amplify:', error)
+      console.error('🔧 Configuration error details:', {
+        name: error?.name,
+        message: error?.message,
+        stack: error?.stack
+      })
       this.isConfigured = false
     }
   }
@@ -91,17 +102,29 @@ export class CognitoAuthService {
    * Get Cognito configuration from environment variables
    */
   private getCognitoConfig(): CognitoConfig {
+    console.log('🌍 Loading environment variables...')
+    console.log('🌍 All env vars:', import.meta.env)
+    
     const userPoolId = import.meta.env.VITE_COGNITO_USER_POOL_ID
     const userPoolClientId = import.meta.env.VITE_COGNITO_CLIENT_ID
     const domain = import.meta.env.VITE_COGNITO_DOMAIN
     const redirectSignIn = import.meta.env.VITE_COGNITO_REDIRECT_SIGN_IN
     const redirectSignOut = import.meta.env.VITE_COGNITO_REDIRECT_SIGN_OUT
 
+    console.log('🌍 Cognito env vars:', {
+      userPoolId,
+      userPoolClientId,
+      domain,
+      redirectSignIn,
+      redirectSignOut
+    })
+
     if (!userPoolId || !userPoolClientId) {
+      console.error('🌍 Missing required Cognito configuration')
       throw new Error('Cognito configuration missing. Please set VITE_COGNITO_USER_POOL_ID and VITE_COGNITO_CLIENT_ID')
     }
 
-    return {
+    const config = {
       userPoolId,
       userPoolClientId,
       region: userPoolId.split('_')[0], // Extract region from user pool ID
@@ -109,26 +132,39 @@ export class CognitoAuthService {
       redirectSignIn,
       redirectSignOut
     }
+    
+    console.log('🌍 Final config:', config)
+    return config
   }
 
   /**
    * Sign in with email and password
    */
   async login(email: string, password: string): Promise<UserContext> {
+    console.log('🔑 CognitoAuthService login called:', { email, hasPassword: !!password })
+    
     if (!this.isConfigured) {
+      console.error('🔑 Cognito service not configured')
       throw new Error('Cognito service not configured')
     }
 
     try {
+      console.log('🔑 Calling AWS Amplify signIn...')
       const signInResult = await signIn({
         username: email,
         password: password
       })
 
+      console.log('🔑 SignIn result:', signInResult)
+
       if (signInResult.isSignedIn) {
+        console.log('🔑 User is signed in, getting user details...')
         // Get user details
         const user = await getCurrentUser()
+        console.log('🔑 Current user:', user)
+        
         const session = await fetchAuthSession()
+        console.log('🔑 Auth session:', { hasTokens: !!session.tokens })
 
         const userData: UserContext = {
           id: user.userId,
@@ -136,33 +172,42 @@ export class CognitoAuthService {
           name: user.signInDetails?.loginId?.split('@')[0] || 'User',
           roles: ['user'],
           preferences: {
-            theme: 'light',
-            language: 'en'
+            budget: 'medium',
+            interests: [],
+            includeRestaurants: true,
+            includeTouristSpots: true
           }
         }
 
+        console.log('🔑 Created user data:', userData)
         return userData
       } else {
+        console.error('🔑 Sign in incomplete:', signInResult)
         throw new Error('Sign in incomplete. Additional steps may be required.')
       }
     } catch (error: any) {
-      console.error('Cognito login failed:', error)
+      console.error('🔑 Cognito login failed:', error)
       
       // Handle specific Cognito errors
       if (error.name === 'NotAuthorizedException') {
+        console.error('🔑 Invalid credentials')
         throw new Error('Invalid email or password')
       } else if (error.name === 'UserNotConfirmedException') {
+        console.error('🔑 User not confirmed')
         throw new Error('Please verify your email address before signing in')
       } else if (error.name === 'PasswordResetRequiredException') {
+        console.error('🔑 Password reset required')
         throw new Error('Password reset required. Please reset your password.')
       } else if (error.name === 'UserNotFoundException') {
+        console.error('🔑 User not found')
         throw new Error('User not found. Please check your email address.')
       } else if (error.name === 'TooManyRequestsException') {
+        console.error('🔑 Too many requests')
         throw new Error('Too many login attempts. Please try again later.')
       }
       
       // Log the actual error for debugging
-      console.error('Cognito login error details:', {
+      console.error('🔑 Cognito login error details:', {
         name: error.name,
         message: error.message,
         code: error.code,

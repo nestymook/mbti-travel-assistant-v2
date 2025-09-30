@@ -86,13 +86,22 @@ const error = computed(() => authStore.error)
 
 // Methods
 async function handleDirectLogin(): Promise<void> {
+  console.log('🔐 Login attempt started:', { email: email.value, hasPassword: !!password.value })
+  
   try {
+    console.log('🔐 Calling authStore.login...')
     await authStore.login(email.value, password.value)
     
+    console.log('🔐 Login successful, redirecting to home...')
     // Success - redirect to home
     await router.push({ name: 'home' })
   } catch (err) {
-    console.error('Direct login failed:', err)
+    console.error('🔐 Direct login failed:', err)
+    console.error('🔐 Error details:', {
+      name: err?.name,
+      message: err?.message,
+      stack: err?.stack
+    })
     // Error is already set in the auth store
   }
 }

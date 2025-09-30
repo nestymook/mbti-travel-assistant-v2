@@ -37,10 +37,19 @@ export function setupGlobalErrorHandling(app: App): void {
       event.reason.message?.includes('login') ||
       event.reason.message?.includes('auth') ||
       event.reason.message?.includes('sign') ||
+      event.reason.message?.includes('Login') ||
+      event.reason.message?.includes('Auth') ||
+      event.reason.message?.includes('Sign') ||
       event.reason.name?.includes('Auth') ||
-      event.reason.name?.includes('Cognito')
+      event.reason.name?.includes('Cognito') ||
+      event.reason.name?.includes('NotAuthorizedException') ||
+      event.reason.name?.includes('UserNotConfirmedException') ||
+      event.reason.name?.includes('UserNotFoundException') ||
+      event.reason.name?.includes('InvalidParameterException') ||
+      event.reason.name?.includes('TooManyRequestsException') ||
+      event.reason.name?.includes('PasswordResetRequiredException')
     )) {
-      console.log('Skipping global error handling for authentication error')
+      console.log('Skipping global error handling for authentication error:', event.reason)
       return
     }
     

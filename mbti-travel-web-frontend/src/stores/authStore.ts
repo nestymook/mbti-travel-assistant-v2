@@ -115,28 +115,39 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Direct login using email and password (Hosted UI is broken)
   async function login(email: string, password: string): Promise<void> {
+    console.log('🏪 AuthStore login called:', { email, hasPassword: !!password })
+    
     if (!email || !password) {
+      console.error('🏪 Missing email or password')
       throw new Error('Email and password are required')
     }
 
     try {
+      console.log('🏪 Setting loading state...')
       isLoading.value = true
       error.value = null
 
+      console.log('🏪 Checking Cognito configuration...')
       if (cognitoAuth.isConfigurationValid()) {
+        console.log('🏪 Cognito configured, attempting login...')
         // Use direct Cognito authentication
         const userData = await cognitoAuth.login(email, password)
+        console.log('🏪 Cognito login successful:', userData)
         user.value = userData
-        console.log('Direct login successful:', userData.email)
+        console.log('🏪 User set in store:', user.value)
       } else {
+        console.error('🏪 Cognito not configured')
         throw new Error('Cognito not configured')
       }
     } catch (err) {
+      console.error('🏪 Login error caught:', err)
       const errorMessage = err instanceof Error ? err.message : 'Login failed'
+      console.error('🏪 Setting error message:', errorMessage)
       error.value = errorMessage
       user.value = null
       throw new Error(errorMessage)
     } finally {
+      console.log('🏪 Setting loading to false')
       isLoading.value = false
     }
   }
