@@ -1,35 +1,66 @@
 # MBTI Travel Assistant MCP
 
-A BedrockAgentCore runtime service that receives HTTP requests from web servers and uses an internal LLM agent to orchestrate MCP client calls to existing MCP servers for intelligent restaurant recommendations.
+A BedrockAgentCore runtime service that generates personalized 3-day Hong Kong travel itineraries based on MBTI personality types. The service uses Amazon Nova Pro foundation model to query knowledge bases for personality-matched tourist spots and integrates with MCP servers for restaurant recommendations.
+
+## 🚀 **DEPLOYED TO AWS AGENTCORE** ✅
+
+**Deployment Status**: FULLY OPERATIONAL  
+**Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
+**Region**: us-east-1  
+**Platform**: linux/arm64  
+**Authentication**: JWT (AWS Cognito)  
+**Last Deployed**: September 30, 2025  
 
 ## Overview
 
-The MBTI Travel Assistant operates as a Bedrock AgentCore runtime with an entrypoint that receives structured payloads, processes them through an internal LLM agent, and returns exactly one recommended restaurant plus 19 candidate restaurants in JSON format optimized for front-end web application consumption.
+The MBTI Travel Assistant operates as a Bedrock AgentCore runtime that receives MBTI personality parameters and generates comprehensive 3-day travel itineraries. It combines personality-matched tourist spots from knowledge bases with intelligent restaurant recommendations through MCP integration.
 
 ### Key Features
 
-- **BedrockAgentCore Runtime**: Serverless, scalable runtime with built-in security and observability
-- **Internal LLM Agent**: Uses Strands Agents framework with foundation models for intelligent orchestration
-- **MCP Client Integration**: Communicates with existing restaurant search and reasoning MCP servers
-- **JWT Authentication**: Secure authentication via AWS Cognito User Pool integration
-- **Structured Responses**: JSON responses optimized for frontend web applications
-- **Comprehensive Error Handling**: Graceful handling of failures with meaningful error messages
-- **Performance Optimization**: Caching, parallel processing, and connection pooling
+- **🎭 MBTI Personality Processing**: Supports all 16 MBTI personality types with personalized recommendations
+- **📅 3-Day Itinerary Generation**: Complete 3-day × 6-session travel itineraries (morning, afternoon, night + meals)
+- **🧠 Amazon Nova Pro Integration**: Uses Nova Pro 300K foundation model for knowledge base queries
+- **🏛️ Tourist Spot Matching**: Personality-matched tourist spots with MBTI compatibility scoring
+- **🍽️ Restaurant Integration**: MCP client integration for intelligent restaurant recommendations
+- **🔐 JWT Authentication**: Secure authentication via AWS Cognito User Pool integration
+- **📊 Structured Responses**: JSON responses optimized for frontend web applications
+- **⚡ Performance Optimized**: Caching, parallel processing, and connection pooling
+- **🔍 Comprehensive Error Handling**: Graceful handling of failures with meaningful error messages
 
 ## Architecture
 
 ```
-Web Servers → JWT Auth → AgentCore Runtime → Internal LLM Agent → MCP Clients → External MCP Servers
-                                                                      ↓
-Frontend ← JSON Response ← Response Formatter ← Orchestrated Results ← MCP Responses
+Web Frontend → JWT Auth → AgentCore Runtime → Nova Pro Model → Knowledge Base (Tourist Spots)
+                                    ↓                              ↓
+                            MBTI Processor → Itinerary Generator → MCP Clients → Restaurant MCPs
+                                    ↓                              ↓
+Frontend ← 3-Day Itinerary ← Response Formatter ← Session Assignment ← Restaurant Recommendations
+```
+
+### Current Deployment Architecture
+
+```
+🌐 Frontend (Vue 3 + TypeScript)
+    ↓ HTTPS + JWT
+🔐 AWS Cognito Authentication
+    ↓ Authenticated Requests
+☁️ Amazon Bedrock AgentCore Runtime
+    ├── 🎭 MBTI Travel Assistant (DEPLOYED)
+    │   ├── 🧠 Amazon Nova Pro 300K Model
+    │   ├── 📚 OpenSearch Knowledge Base (Tourist Spots)
+    │   └── 🔄 MCP Client Manager
+    └── 🍽️ MCP Server Integration
+        ├── 🔍 Restaurant Search MCP (DEPLOYED)
+        └── 🧠 Restaurant Reasoning MCP (DEPLOYED)
 ```
 
 ### MCP Server Integration
 
-The internal LLM agent acts as an MCP client to communicate with:
+The MBTI Travel Assistant acts as an MCP client to communicate with:
 
 1. **Restaurant Search MCP Server** (`restaurant-search-mcp`): For restaurant discovery by district and meal type
 2. **Restaurant Reasoning MCP Server** (`restaurant-reasoning-mcp`): For sentiment analysis and recommendations
+3. **Knowledge Base Integration**: Direct queries to OpenSearch for MBTI-matched tourist spots
 
 ## Quick Start
 
@@ -78,19 +109,45 @@ The internal LLM agent acts as an MCP client to communicate with:
 
 ### Deployment
 
-1. **Build ARM64 container**:
+#### ✅ Current Production Deployment
+
+The MBTI Travel Assistant is **DEPLOYED and OPERATIONAL** on AWS AgentCore:
+
+```bash
+# Check deployment status
+python check_deployment_status.py
+
+# Test complete workflow
+python test_complete_mbti_workflow.py
+
+# Test MBTI itinerary generation
+python test_mbti_itinerary.py
+```
+
+**Deployment Details**:
+- **Status**: ✅ READY (Both Agent and Endpoint)
+- **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`
+- **Region**: us-east-1
+- **Platform**: linux/arm64 (CodeBuild deployment)
+- **Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`
+- **Model**: Amazon Nova Pro 300K
+- **Observability**: Enabled with CloudWatch and X-Ray
+
+#### Manual Deployment (if needed)
+
+1. **Deploy to AgentCore**:
    ```bash
-   docker build --platform linux/arm64 -t mbti-travel-assistant .
+   python deploy_mbti_agentcore.py
    ```
 
-2. **Deploy to AgentCore**:
+2. **Monitor deployment**:
    ```bash
-   python scripts/deploy_agentcore.py
+   python deploy_mbti_agentcore.py --status-only
    ```
 
 3. **Test deployment**:
    ```bash
-   python tests/test_e2e.py
+   python test_deployed_agent.py
    ```
 
 ## Configuration

@@ -2,6 +2,14 @@
 
 A Vue 3 + TypeScript web application that provides an interactive interface for the MBTI Travel Assistant, delivering personalized 3-day Hong Kong travel itineraries based on MBTI personality types.
 
+## 🚀 **BACKEND DEPLOYED TO AWS AGENTCORE** ✅
+
+**Backend Status**: FULLY OPERATIONAL  
+**Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
+**Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`  
+**Model**: Amazon Nova Pro 300K  
+**Ready for Frontend Integration**: ✅
+
 ## 🌟 Features
 
 - **Personality-Driven UI**: Dynamic interface customizations for all 16 MBTI personality types
@@ -49,14 +57,14 @@ The application will be available at `http://localhost:5173`
 Create `.env.development` file with the following variables:
 
 ```env
-# API Configuration
-VITE_API_BASE_URL=https://your-mcp-endpoint.com
+# API Configuration - ✅ DEPLOYED BACKEND
+VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
 VITE_API_TIMEOUT=100000
 
-# Authentication (AWS Cognito)
-VITE_COGNITO_USER_POOL_ID=us-east-1_xxxxxxxxx
-VITE_COGNITO_CLIENT_ID=your-client-id
-VITE_COGNITO_DOMAIN=https://your-domain.auth.us-east-1.amazoncognito.com
+# Authentication (AWS Cognito) - ✅ CONFIGURED
+VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4
 
 # External Services
 VITE_MBTI_TEST_URL=https://www.16personalities.com/free-personality-test
@@ -71,11 +79,12 @@ VITE_ENABLE_DEBUG_MODE=true
 For production deployment, create `.env.production`:
 
 ```env
-VITE_API_BASE_URL=https://prod-api.example.com
+# ✅ PRODUCTION BACKEND DEPLOYED TO AWS AGENTCORE
+VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
 VITE_API_TIMEOUT=60000
-VITE_COGNITO_USER_POOL_ID=us-east-1_prod_pool
-VITE_COGNITO_CLIENT_ID=prod-client-id
-VITE_COGNITO_DOMAIN=https://prod-auth.auth.us-east-1.amazoncognito.com
+VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4
 VITE_MBTI_TEST_URL=https://www.16personalities.com/free-personality-test
 VITE_ENABLE_ANALYTICS=true
 VITE_ENABLE_DEBUG_MODE=false

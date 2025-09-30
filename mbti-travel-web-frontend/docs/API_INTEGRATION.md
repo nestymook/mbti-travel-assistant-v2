@@ -2,6 +2,14 @@
 
 This document provides comprehensive guidance for integrating with the MBTI Travel Assistant MCP backend service, including authentication, error handling, and best practices.
 
+## 🚀 **BACKEND DEPLOYED TO AWS AGENTCORE** ✅
+
+**Backend Status**: FULLY OPERATIONAL  
+**Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
+**Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`  
+**Model**: Amazon Nova Pro 300K  
+**Deployment Date**: September 30, 2025
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
@@ -45,7 +53,25 @@ The MBTI Travel Web Frontend integrates with the MBTI Travel Assistant MCP (Mode
 
 The application uses AWS Cognito for user authentication and JWT token management.
 
-#### Configuration
+#### ✅ Production Configuration (Deployed)
+
+```typescript
+// Production API Configuration
+const API_CONFIG = {
+  baseURL: 'https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E',
+  timeout: 60000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+}
+
+// AWS Cognito Configuration (Deployed)
+const COGNITO_CONFIG = {
+  userPoolId: 'us-east-1_wBAxW7yd4',
+  clientId: '26k0pnja579pdpb1pt6savs27e',
+  domain: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4',
+  discoveryUrl: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration'
+}
 
 ```typescript
 // config/auth.ts
