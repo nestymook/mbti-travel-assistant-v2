@@ -1,4 +1,4 @@
-default_agent: mbti_travel_assistant_mcp
+default_agent: main
 agents:
   mbti_travel_assistant_mcp:
     name: mbti_travel_assistant_mcp
@@ -23,14 +23,14 @@ agents:
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E
       agent_session_id: null
     codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
+      project_name: bedrock-agentcore-mbti_travel_assistant_mcp-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e69df5f887
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
-        - 26k0pnja579pdpb1pt6savs27e
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/jwks.json
+        - 4qi4m90hi389p8tabmejuau9td
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp:
@@ -59,6 +59,35 @@ agents:
       project_name: null
       execution_role: null
       source_bucket: null
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+  main:
+    name: main
+    entrypoint: C:/MBTI_Travel_Assistant/mbti_travel_assistant_mcp/main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-e69df5f887
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-main
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: main-DUQgnrHqCl
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/main-DUQgnrHqCl
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-main-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-0d6e4079e3
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
     authorizer_configuration: null
     request_header_configuration: null
     oauth_configuration: null

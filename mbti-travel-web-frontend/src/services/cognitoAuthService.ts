@@ -30,17 +30,18 @@ export class CognitoAuthService {
 
   /**
    * Initialize AWS Amplify with Cognito configuration
-   * Note: Hosted UI domain is broken, so we disable OAuth and use direct authentication
+   * Note: OAuth enabled with OIDC for AgentCore compatibility
    */
   private initializeAmplify(): void {
     try {
       const config = this.getCognitoConfig()
       
-      console.log('Configuring Amplify with direct authentication (Hosted UI domain broken):', {
+      console.log('Configuring Amplify with OAuth/OIDC for AgentCore compatibility:', {
         userPoolId: config.userPoolId,
         clientId: config.userPoolClientId,
         region: config.region,
-        hostedUiDisabled: true
+        domain: config.domain,
+        oauthEnabled: true
       })
       
       Amplify.configure({
@@ -49,14 +50,14 @@ export class CognitoAuthService {
             userPoolId: config.userPoolId,
             userPoolClientId: config.userPoolClientId,
             loginWith: {
-              // Disable OAuth due to broken Hosted UI domain
-              // oauth: {
-              //   domain: config.domain ? `${config.domain}.auth.${config.region}.amazoncognito.com` : undefined,
-              //   scopes: ['email', 'openid', 'profile'],
-              //   redirectSignIn: [config.redirectSignIn || window.location.origin],
-              //   redirectSignOut: [config.redirectSignOut || window.location.origin],
-              //   responseType: 'code'
-              // },
+              // Enable OAuth with OIDC for AgentCore compatibility
+              oauth: {
+                domain: config.domain ? `${config.domain}.auth.${config.region}.amazoncognito.com` : undefined,
+                scopes: ['email', 'openid', 'profile'],
+                redirectSignIn: [config.redirectSignIn || window.location.origin],
+                redirectSignOut: [config.redirectSignOut || window.location.origin],
+                responseType: 'code'
+              },
               email: true,
               username: false
             },
@@ -79,7 +80,7 @@ export class CognitoAuthService {
       })
 
       this.isConfigured = true
-      console.log('AWS Amplify configured successfully with direct authentication')
+      console.log('AWS Amplify configured successfully with OAuth/OIDC')
     } catch (error) {
       console.error('Failed to configure AWS Amplify:', error)
       this.isConfigured = false
@@ -321,7 +322,7 @@ export class CognitoAuthService {
   }
 
   /**
-   * Get current auth token
+   * Get current auth token (ID token for OIDC compatibility)
    */
   async getAuthToken(): Promise<string | null> {
     if (!this.isConfigured) {
@@ -330,7 +331,8 @@ export class CognitoAuthService {
 
     try {
       const session = await fetchAuthSession()
-      return session.tokens?.accessToken?.toString() || null
+      // Use ID token instead of access token for OIDC/AgentCore compatibility
+      return session.tokens?.idToken?.toString() || null
     } catch (error) {
       console.error('Failed to get auth token:', error)
       return null

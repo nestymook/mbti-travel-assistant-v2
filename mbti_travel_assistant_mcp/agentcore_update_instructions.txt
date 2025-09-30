@@ -1,0 +1,16 @@
+
+AgentCore OIDC Configuration Update Instructions
+Generated: {
+  "timestamp": "2025-09-30"
+}
+
+Agent Information:
+- Agent ID: mbti_travel_assistant_mcp-skv6fd785E
+- Agent ARN: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E
+
+OIDC Configuration:
+- User Pool ID: us-east-1_TBRhQ79hS
+- Client ID: 4qi4m90hi389p8tabmejuau9td
+- Discovery URL: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+
+Follow the manual steps printed above to complete the update.

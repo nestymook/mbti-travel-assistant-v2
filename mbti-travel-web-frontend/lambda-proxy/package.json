@@ -1,0 +1,12 @@
+{
+  "name": "mbti-travel-lambda-proxy",
+  "version": "1.0.0",
+  "description": "Lambda proxy for MBTI Travel AgentCore integration",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

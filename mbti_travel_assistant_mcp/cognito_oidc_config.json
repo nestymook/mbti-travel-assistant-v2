@@ -1,0 +1,41 @@
+{
+  "region": "us-east-1",
+  "user_pool": {
+    "user_pool_id": "us-east-1_TBRhQ79hS",
+    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_TBRhQ79hS",
+    "creation_date": "2025-09-30T23:13:39.891114"
+  },
+  "app_client": {
+    "client_id": "4qi4m90hi389p8tabmejuau9td",
+    "client_name": "mbti-travel-oidc-client"
+  },
+  "test_user": {
+    "username": "mbti-test-user@example.com",
+    "email": "mbti-test-user@example.com",
+    "password": "MBTITest123!",
+    "status": "CONFIRMED"
+  },
+  "oidc_configuration": {
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration",
+    "jwks_uri": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/jwks.json",
+    "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS",
+    "authorization_endpoint": "https://mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com/oauth2/authorize",
+    "token_endpoint": "https://mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com/oauth2/token",
+    "userinfo_endpoint": "https://mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com/oauth2/userInfo"
+  },
+  "custom_domain": {
+    "domain_prefix": "mbti-travel-oidc-1759241607",
+    "domain_url": "https://mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com",
+    "status": "ACTIVE"
+  },
+  "setup_timestamp": "2025-09-30T23:13:39.891114",
+  "oauth_flows": [
+    "code",
+    "implicit"
+  ],
+  "oauth_scopes": [
+    "openid",
+    "email",
+    "profile"
+  ]
+}

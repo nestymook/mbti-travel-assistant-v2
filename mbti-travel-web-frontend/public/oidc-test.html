@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIDC Authentication Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover { background-color: #0056b3; }
+        button:disabled { background-color: #6c757d; cursor: not-allowed; }
+        .token-display {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .user-info {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 OIDC Authentication Test</h1>
+        <p>Testing OIDC authentication flow with the new Cognito User Pool</p>
+
+        <div class="test-section">
+            <h3>Configuration</h3>
+            <div id="config-info" class="info">
+                <strong>User Pool ID:</strong> us-east-1_TBRhQ79hS<br>
+                <strong>Client ID:</strong> 4qi4m90hi389p8tabmejuau9td<br>
+                <strong>Domain:</strong> mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com<br>
+                <strong>Discovery URL:</strong> https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>Authentication Status</h3>
+            <div id="auth-status" class="warning">Not authenticated</div>
+            <button id="login-btn" onclick="startOIDCLogin()">Login with OIDC</button>
+            <button id="logout-btn" onclick="logout()" disabled>Logout</button>
+            <button id="test-token-btn" onclick="testTokenWithAgentCore()" disabled>Test Token with AgentCore</button>
+        </div>
+
+        <div class="test-section">
+            <h3>User Information</h3>
+            <div id="user-info" class="user-info" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>ID Token (for AgentCore)</h3>
+            <div id="id-token" class="token-display" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>Access Token</h3>
+            <div id="access-token" class="token-display" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>AgentCore Test Results</h3>
+            <div id="agentcore-results" class="info" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>Debug Log</h3>
+            <div id="debug-log" class="token-display"></div>
+            <button onclick="clearLog()">Clear Log</button>
+        </div>
+    </div>
+
+    <script>
+        // OIDC Configuration
+        const OIDC_CONFIG = {
+            userPoolId: 'us-east-1_TBRhQ79hS',
+            clientId: '4qi4m90hi389p8tabmejuau9td',
+            domain: 'mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com',
+            redirectUri: window.location.origin + window.location.pathname,
+            scopes: ['openid', 'email', 'profile']
+        };
+
+        // AgentCore endpoint
+        const AGENTCORE_ENDPOINT = 'https://p4ex20jih1.execute-api.us-east-1.amazonaws.com/prod/generate-itinerary';
+
+        let currentTokens = null;
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toISOString();
+            const logElement = document.getElementById('debug-log');
+            const logEntry = `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
+            logElement.textContent += logEntry;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(`[OIDC Test] ${message}`);
+        }
+
+        function clearLog() {
+            document.getElementById('debug-log').textContent = '';
+        }
+
+        function generateRandomString(length = 32) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        async function sha256(plain) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(plain);
+            const hash = await crypto.subtle.digest('SHA-256', data);
+            return hash;
+        }
+
+        function base64URLEncode(buffer) {
+            const bytes = new Uint8Array(buffer);
+            let binary = '';
+            for (let i = 0; i < bytes.byteLength; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary)
+                .replace(/\+/g, '-')
+                .replace(/\//g, '_')
+                .replace(/=/g, '');
+        }
+
+        async function generatePKCE() {
+            const codeVerifier = generateRandomString(128);
+            const codeChallenge = base64URLEncode(await sha256(codeVerifier));
+            return { codeVerifier, codeChallenge };
+        }
+
+        async function startOIDCLogin() {
+            try {
+                log('Starting OIDC login flow...');
+                
+                // Generate PKCE parameters
+                const { codeVerifier, codeChallenge } = await generatePKCE();
+                const state = generateRandomString(32);
+                const nonce = generateRandomString(32);
+
+                // Store PKCE parameters in sessionStorage
+                sessionStorage.setItem('oidc_code_verifier', codeVerifier);
+                sessionStorage.setItem('oidc_state', state);
+                sessionStorage.setItem('oidc_nonce', nonce);
+
+                // Build authorization URL
+                const authParams = new URLSearchParams({
+                    response_type: 'code',
+                    client_id: OIDC_CONFIG.clientId,
+                    redirect_uri: OIDC_CONFIG.redirectUri,
+                    scope: OIDC_CONFIG.scopes.join(' '),
+                    state: state,
+                    nonce: nonce,
+                    code_challenge: codeChallenge,
+                    code_challenge_method: 'S256'
+                });
+
+                const authUrl = `https://${OIDC_CONFIG.domain}/oauth2/authorize?${authParams.toString()}`;
+                
+                log(`Redirecting to: ${authUrl}`);
+                window.location.href = authUrl;
+
+            } catch (error) {
+                log(`Login error: ${error.message}`, 'error');
+            }
+        }
+
+        async function handleOAuthCallback() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            const state = urlParams.get('state');
+            const error = urlParams.get('error');
+
+            if (error) {
+                log(`OAuth error: ${error} - ${urlParams.get('error_description')}`, 'error');
+                updateAuthStatus('OAuth Error', 'error');
+                return;
+            }
+
+            if (!code) {
+                log('No authorization code found in URL', 'warning');
+                return;
+            }
+
+            log(`Received authorization code: ${code.substring(0, 20)}...`);
+
+            // Verify state parameter
+            const storedState = sessionStorage.getItem('oidc_state');
+            if (state !== storedState) {
+                log('State parameter mismatch - possible CSRF attack', 'error');
+                updateAuthStatus('Security Error', 'error');
+                return;
+            }
+
+            try {
+                // Exchange code for tokens
+                await exchangeCodeForTokens(code);
+            } catch (error) {
+                log(`Token exchange error: ${error.message}`, 'error');
+                updateAuthStatus('Token Exchange Failed', 'error');
+            }
+        }
+
+        async function exchangeCodeForTokens(code) {
+            const codeVerifier = sessionStorage.getItem('oidc_code_verifier');
+            
+            if (!codeVerifier) {
+                throw new Error('Code verifier not found in session storage');
+            }
+
+            const tokenParams = new URLSearchParams({
+                grant_type: 'authorization_code',
+                client_id: OIDC_CONFIG.clientId,
+                code: code,
+                redirect_uri: OIDC_CONFIG.redirectUri,
+                code_verifier: codeVerifier
+            });
+
+            log('Exchanging authorization code for tokens...');
+
+            const response = await fetch(`https://${OIDC_CONFIG.domain}/oauth2/token`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: tokenParams.toString()
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Token exchange failed: ${response.status} - ${errorText}`);
+            }
+
+            const tokens = await response.json();
+            log('Token exchange successful!');
+
+            // Store tokens
+            currentTokens = tokens;
+            sessionStorage.setItem('oidc_tokens', JSON.stringify(tokens));
+
+            // Parse ID token to get user info
+            const userInfo = parseJWT(tokens.id_token);
+            
+            // Update UI
+            updateAuthStatus('Authenticated', 'success');
+            displayUserInfo(userInfo);
+            displayTokens(tokens);
+
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+
+            // Clean up session storage
+            sessionStorage.removeItem('oidc_code_verifier');
+            sessionStorage.removeItem('oidc_state');
+            sessionStorage.removeItem('oidc_nonce');
+        }
+
+        function parseJWT(token) {
+            try {
+                const base64Url = token.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+            } catch (error) {
+                log(`JWT parsing error: ${error.message}`, 'error');
+                return null;
+            }
+        }
+
+        function updateAuthStatus(status, type) {
+            const statusElement = document.getElementById('auth-status');
+            statusElement.textContent = status;
+            statusElement.className = type;
+
+            const isAuthenticated = type === 'success';
+            document.getElementById('login-btn').disabled = isAuthenticated;
+            document.getElementById('logout-btn').disabled = !isAuthenticated;
+            document.getElementById('test-token-btn').disabled = !isAuthenticated;
+        }
+
+        function displayUserInfo(userInfo) {
+            const userInfoElement = document.getElementById('user-info');
+            if (userInfo) {
+                userInfoElement.innerHTML = `
+                    <strong>User ID:</strong> ${userInfo.sub}<br>
+                    <strong>Email:</strong> ${userInfo.email}<br>
+                    <strong>Name:</strong> ${userInfo.name || 'N/A'}<br>
+                    <strong>Email Verified:</strong> ${userInfo.email_verified}<br>
+                    <strong>Token Use:</strong> ${userInfo.token_use}<br>
+                    <strong>Issued At:</strong> ${new Date(userInfo.iat * 1000).toLocaleString()}<br>
+                    <strong>Expires At:</strong> ${new Date(userInfo.exp * 1000).toLocaleString()}
+                `;
+                userInfoElement.style.display = 'block';
+            } else {
+                userInfoElement.style.display = 'none';
+            }
+        }
+
+        function displayTokens(tokens) {
+            // Display ID token
+            const idTokenElement = document.getElementById('id-token');
+            if (tokens.id_token) {
+                idTokenElement.textContent = tokens.id_token;
+                idTokenElement.style.display = 'block';
+            }
+
+            // Display access token
+            const accessTokenElement = document.getElementById('access-token');
+            if (tokens.access_token) {
+                accessTokenElement.textContent = tokens.access_token;
+                accessTokenElement.style.display = 'block';
+            }
+        }
+
+        async function testTokenWithAgentCore() {
+            if (!currentTokens || !currentTokens.id_token) {
+                log('No ID token available for testing', 'error');
+                return;
+            }
+
+            const resultsElement = document.getElementById('agentcore-results');
+            resultsElement.style.display = 'block';
+            resultsElement.innerHTML = '<strong>Testing ID token with AgentCore...</strong>';
+
+            try {
+                log('Testing ID token with AgentCore endpoint...');
+
+                const testPayload = {
+                    MBTI_personality: "INFJ",
+                    user_context: {
+                        user_id: "oidc-test-user",
+                        preferences: {
+                            budget: "medium",
+                            interests: ["culture", "food", "sightseeing"],
+                            includeRestaurants: true,
+                            includeTouristSpots: true
+                        }
+                    },
+                    start_date: "2025-10-01",
+                    special_requirements: "OIDC authentication test"
+                };
+
+                const response = await fetch(AGENTCORE_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${currentTokens.id_token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(testPayload)
+                });
+
+                log(`AgentCore response status: ${response.status}`);
+
+                if (response.ok) {
+                    const result = await response.json();
+                    log('AgentCore test successful!', 'success');
+                    resultsElement.innerHTML = `
+                        <div class="success">
+                            <strong>✅ AgentCore Test Successful!</strong><br>
+                            Status: ${response.status}<br>
+                            Response received: ${JSON.stringify(result).substring(0, 200)}...
+                        </div>
+                    `;
+                } else {
+                    const errorText = await response.text();
+                    log(`AgentCore test failed: ${response.status} - ${errorText}`, 'error');
+                    resultsElement.innerHTML = `
+                        <div class="error">
+                            <strong>❌ AgentCore Test Failed</strong><br>
+                            Status: ${response.status}<br>
+                            Error: ${errorText}
+                        </div>
+                    `;
+                }
+
+            } catch (error) {
+                log(`AgentCore test error: ${error.message}`, 'error');
+                resultsElement.innerHTML = `
+                    <div class="error">
+                        <strong>❌ AgentCore Test Error</strong><br>
+                        Error: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function logout() {
+            // Clear tokens
+            currentTokens = null;
+            sessionStorage.removeItem('oidc_tokens');
+
+            // Clear UI
+            updateAuthStatus('Not authenticated', 'warning');
+            document.getElementById('user-info').style.display = 'none';
+            document.getElementById('id-token').style.display = 'none';
+            document.getElementById('access-token').style.display = 'none';
+            document.getElementById('agentcore-results').style.display = 'none';
+
+            // Redirect to Cognito logout
+            const logoutUrl = `https://${OIDC_CONFIG.domain}/logout?client_id=${OIDC_CONFIG.clientId}&logout_uri=${encodeURIComponent(OIDC_CONFIG.redirectUri)}`;
+            log(`Logging out via: ${logoutUrl}`);
+            window.location.href = logoutUrl;
+        }
+
+        // Check for existing tokens on page load
+        function checkExistingAuth() {
+            const storedTokens = sessionStorage.getItem('oidc_tokens');
+            if (storedTokens) {
+                try {
+                    currentTokens = JSON.parse(storedTokens);
+                    const userInfo = parseJWT(currentTokens.id_token);
+                    
+                    // Check if token is still valid
+                    if (userInfo && userInfo.exp > Date.now() / 1000) {
+                        log('Found valid existing tokens');
+                        updateAuthStatus('Authenticated', 'success');
+                        displayUserInfo(userInfo);
+                        displayTokens(currentTokens);
+                    } else {
+                        log('Existing tokens expired');
+                        sessionStorage.removeItem('oidc_tokens');
+                    }
+                } catch (error) {
+                    log(`Error loading existing tokens: ${error.message}`, 'error');
+                    sessionStorage.removeItem('oidc_tokens');
+                }
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            log('OIDC Test Page Loaded');
+            
+            // Check for OAuth callback
+            if (window.location.search.includes('code=')) {
+                handleOAuthCallback();
+            } else {
+                checkExistingAuth();
+            }
+        });
+    </script>
+</body>
+</html>

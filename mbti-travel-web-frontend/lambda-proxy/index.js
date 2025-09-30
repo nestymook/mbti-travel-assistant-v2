@@ -1,8 +1,8 @@
-const https = require('https');
+const { BedrockAgentCoreClient, InvokeAgentRuntimeCommand } = require('@aws-sdk/client-bedrock-agentcore');
 
-// AgentCore endpoint configuration  
-const AGENTCORE_ENDPOINT = 'bedrock-agentcore.us-east-1.amazonaws.com';
-const AGENT_ID = 'mbti_travel_assistant_mcp-skv6fd785E';
+// AgentCore configuration
+const AGENT_RUNTIME_ARN = 'arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E';
+const AWS_REGION = 'us-east-1';
 
 exports.handler = async (event) => {
     console.log('Lambda proxy received event:', JSON.stringify(event, null, 2));
@@ -56,78 +56,60 @@ exports.handler = async (event) => {
             };
         }
         
-        // Prepare the request to AgentCore
-        const agentCorePayload = JSON.stringify(requestBody);
-        
-        const options = {
-            hostname: AGENTCORE_ENDPOINT,
-            port: 443,
-            path: `/runtime/${AGENT_ID}/invocations`,
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': Buffer.byteLength(agentCorePayload),
-                'Authorization': `Bearer ${jwtToken}`,
-                'Accept': 'application/json'
-            }
-        };
-        
-        console.log('Making request to AgentCore:', options);
-        
-        // Make request to AgentCore
-        const agentCoreResponse = await new Promise((resolve, reject) => {
-            const req = https.request(options, (res) => {
-                let data = '';
-                
-                res.on('data', (chunk) => {
-                    data += chunk;
-                });
-                
-                res.on('end', () => {
-                    console.log('AgentCore response status:', res.statusCode);
-                    console.log('AgentCore response headers:', res.headers);
-                    console.log('AgentCore response data:', data);
-                    
-                    resolve({
-                        statusCode: res.statusCode,
-                        headers: res.headers,
-                        body: data
-                    });
-                });
-            });
-            
-            req.on('error', (error) => {
-                console.error('Request to AgentCore failed:', error);
-                reject(error);
-            });
-            
-            req.on('timeout', () => {
-                console.error('Request to AgentCore timed out');
-                req.destroy();
-                reject(new Error('Request timeout'));
-            });
-            
-            // Set timeout (3 minutes for long-running agent operations)
-            req.setTimeout(180000);
-            
-            req.write(agentCorePayload);
-            req.end();
+        // Create BedrockAgentCore client
+        const client = new BedrockAgentCoreClient({
+            region: AWS_REGION
         });
         
-        // Parse AgentCore response
+        // Generate a session ID (must be 33+ characters)
+        const runtimeSessionId = `session-${Date.now()}-${Math.random().toString(36).substring(2)}-${Math.random().toString(36).substring(2)}`;
+        
+        // Prepare the input text from request body
+        const inputText = JSON.stringify(requestBody);
+        
+        // Create payload as Uint8Array
+        const payload = new TextEncoder().encode(inputText);
+        
+        console.log('Making request to AgentCore:', {
+            agentRuntimeArn: AGENT_RUNTIME_ARN,
+            runtimeSessionId: runtimeSessionId,
+            payloadSize: payload.length,
+            inputPreview: inputText.substring(0, 200) + '...'
+        });
+        
+        // Create the invoke command input
+        const input = {
+            runtimeSessionId: runtimeSessionId,
+            agentRuntimeArn: AGENT_RUNTIME_ARN,
+            qualifier: "DEFAULT",
+            payload: payload
+        };
+        
+        // Create and send the command
+        const command = new InvokeAgentRuntimeCommand(input);
+        const response = await client.send(command);
+        
+        console.log('AgentCore response received');
+        
+        // Transform the response to string
+        const textResponse = await response.response.transformToString();
+        
+        console.log('AgentCore response data:', textResponse);
+        
+        // Parse the response
         let responseBody;
         try {
-            responseBody = JSON.parse(agentCoreResponse.body);
+            responseBody = JSON.parse(textResponse);
         } catch (error) {
             console.error('Failed to parse AgentCore response as JSON:', error);
             responseBody = { 
                 error: 'Invalid response from AgentCore',
-                raw_response: agentCoreResponse.body 
+                raw_response: textResponse 
             };
         }
         
         return {
-            statusCode: agentCoreResponse.statusCode || 200,
+            statusCode: 200,
             headers: {
                 ...corsHeaders,
                 'Content-Type': 'application/json'

@@ -14,6 +14,10 @@ const API_GATEWAY_NAME = 'mbti-travel-proxy-api';
 console.log('🚀 Deploying Lambda proxy for MBTI Travel API...');
 
 async function createZipFile() {
+  // Install dependencies first
+  console.log('📦 Installing Lambda dependencies...');
+  execSync('npm install', { cwd: 'lambda-proxy', stdio: 'inherit' });
+  
   return new Promise((resolve, reject) => {
     const output = fs.createWriteStream('lambda-proxy.zip');
     const archive = archiver('zip', { zlib: { level: 9 } });
@@ -28,7 +32,16 @@ async function createZipFile() {
     });
 
     archive.pipe(output);
+    
+    // Add the main file
     archive.file('lambda-proxy/index.js', { name: 'index.js' });
+    
+    // Add package.json
+    archive.file('lambda-proxy/package.json', { name: 'package.json' });
+    
+    // Add node_modules directory
+    archive.directory('lambda-proxy/node_modules/', 'node_modules/');
+    
     archive.finalize();
   });
 }
