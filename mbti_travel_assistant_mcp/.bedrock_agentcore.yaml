@@ -23,14 +23,14 @@ agents:
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E
       agent_session_id: null
     codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
+      project_name: bedrock-agentcore-mbti_travel_assistant_mcp-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e69df5f887
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
         - 26k0pnja579pdpb1pt6savs27e
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/jwks.json
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp:
