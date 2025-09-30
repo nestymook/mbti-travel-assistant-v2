@@ -49,6 +49,17 @@ const router = createRouter({
       }
     },
     {
+      path: '/auth/callback',
+      name: 'auth-callback',
+      component: () => import('../views/AuthCallbackView.vue'),
+      meta: {
+        requiresAuth: false,
+        title: 'Authenticating...',
+        preserveState: false,
+        allowDeepLink: true
+      }
+    },
+    {
       path: '/itinerary/:mbti',
       name: 'itinerary',
       component: ItineraryPage,
@@ -193,6 +204,14 @@ async function authGuard(
 
     // If route requires authentication and user is not authenticated
     if (requiresAuth && !isAuthenticated) {
+      // Check if this is an OAuth callback
+      if (to.query.code) {
+        console.log('OAuth callback detected, redirecting to auth callback handler')
+        // This is an OAuth callback, redirect to auth callback handler
+        next({ name: 'auth-callback', query: to.query, replace: true })
+        return
+      }
+      
       // Validate current token before redirecting
       const isTokenValid = await authStore.validateCurrentToken()
       
@@ -203,20 +222,12 @@ async function authGuard(
         // Clear any preserved state for security
         clearPreservedState()
         
-        // Redirect to Cognito Hosted UI instead of login page
-        try {
-          const cognitoAuth = CognitoAuthService.getInstance()
-          const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
-          window.location.href = hostedUIUrl
-        } catch (error) {
-          console.error('Failed to redirect to Cognito Hosted UI:', error)
-          // Fallback to login page if Cognito redirect fails
-          next({
-            name: 'login',
-            query: { returnUrl: encodeURIComponent(returnUrl) },
-            replace: true
-          })
-        }
+        // Redirect to internal login page
+        next({
+          name: 'login',
+          query: { returnUrl: encodeURIComponent(returnUrl) },
+          replace: true
+        })
         return
       }
     }
@@ -250,16 +261,9 @@ async function authGuard(
     next()
   } catch (error) {
     console.error('Navigation guard error:', error)
-    // On error, redirect to Cognito Hosted UI or home based on auth requirement
+    // On error, redirect to login or home based on auth requirement
     if (to.meta.requiresAuth) {
-      try {
-        const cognitoAuth = CognitoAuthService.getInstance()
-        const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
-        window.location.href = hostedUIUrl
-      } catch (error) {
-        console.error('Failed to redirect to Cognito Hosted UI:', error)
-        next({ name: 'login', replace: true })
-      }
+      next({ name: 'login', replace: true })
     } else {
       next({ name: 'home', replace: true })
     }

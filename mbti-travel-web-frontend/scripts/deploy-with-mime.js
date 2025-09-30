@@ -47,7 +47,8 @@ async function uploadWithMimeTypes() {
     const cacheControl = getCacheControl(relativePath);
     
     try {
-      const command = `aws s3 cp "${file}" "s3://${bucketName}/${relativePath}" --content-type "${contentType}" --cache-control "${cacheControl}" --region us-east-1`;
+      const securityHeaders = getSecurityHeaders(relativePath);
+      const command = `aws s3 cp "${file}" "s3://${bucketName}/${relativePath}" --content-type "${contentType}" --cache-control "${cacheControl}" ${securityHeaders} --region us-east-1`;
       
       if (verbose) {
         console.log(`📤 Uploading: ${relativePath} (${contentType})`);
@@ -113,9 +114,9 @@ function getContentType(filePath) {
 }
 
 function getCacheControl(filePath) {
-  // HTML files - no cache (for SPA routing)
+  // HTML files - no cache (for SPA routing) - remove must-revalidate for performance
   if (filePath.endsWith('.html') || filePath === 'index.html') {
-    return 'public, max-age=0, must-revalidate';
+    return 'public, max-age=0, no-cache';
   }
   
   // Static assets with hash in filename - long cache
@@ -131,6 +132,24 @@ function getCacheControl(filePath) {
   
   // JSON and other files - short cache
   return 'public, max-age=3600';
+}
+
+function getSecurityHeaders(filePath) {
+  const headers = [];
+  
+  // Add security headers for all files
+  headers.push('--metadata x-content-type-options=nosniff');
+  headers.push('--metadata x-frame-options=DENY');
+  headers.push('--metadata x-xss-protection="1; mode=block"');
+  headers.push('--metadata referrer-policy=strict-origin-when-cross-origin');
+  
+  // Add CSP header for HTML files
+  if (filePath.endsWith('.html')) {
+    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cognito-idp.us-east-1.amazonaws.com https://*.amazoncognito.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.amazonaws.com https://*.amazoncognito.com https://p4ex20jih1.execute-api.us-east-1.amazonaws.com; frame-ancestors 'none';";
+    headers.push(`--metadata content-security-policy="${csp}"`);
+  }
+  
+  return headers.join(' ');
 }
 
 // Run the deployment

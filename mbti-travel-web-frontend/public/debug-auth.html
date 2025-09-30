@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Debug - MBTI Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .debug-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .debug-section h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .param-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+        }
+        .param-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .param-value {
+            font-family: monospace;
+            color: #666;
+            word-break: break-all;
+        }
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Authentication Debug Page</h1>
+    
+    <div class="debug-section">
+        <h2>Current URL Information</h2>
+        <div class="param-item">
+            <div class="param-name">Full URL:</div>
+            <div class="param-value" id="fullUrl"></div>
+        </div>
+        <div class="param-item">
+            <div class="param-name">Pathname:</div>
+            <div class="param-value" id="pathname"></div>
+        </div>
+        <div class="param-item">
+            <div class="param-name">Search:</div>
+            <div class="param-value" id="search"></div>
+        </div>
+        <div class="param-item">
+            <div class="param-name">Hash:</div>
+            <div class="param-value" id="hash"></div>
+        </div>
+    </div>
+
+    <div class="debug-section">
+        <h2>URL Parameters</h2>
+        <div id="urlParams"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>Local Storage</h2>
+        <div id="localStorage"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>Session Storage</h2>
+        <div id="sessionStorage"></div>
+    </div>
+
+    <div class="debug-section">
+        <h2>Actions</h2>
+        <button class="button" onclick="goToApp()">Go to Main App</button>
+        <button class="button" onclick="goToLogin()">Go to Login</button>
+        <button class="button" onclick="clearStorage()">Clear All Storage</button>
+        <button class="button" onclick="location.reload()">Refresh Page</button>
+    </div>
+
+    <script>
+        function displayDebugInfo() {
+            // URL Information
+            document.getElementById('fullUrl').textContent = window.location.href;
+            document.getElementById('pathname').textContent = window.location.pathname;
+            document.getElementById('search').textContent = window.location.search;
+            document.getElementById('hash').textContent = window.location.hash;
+
+            // URL Parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramsDiv = document.getElementById('urlParams');
+            if (urlParams.toString()) {
+                for (const [key, value] of urlParams) {
+                    const paramDiv = document.createElement('div');
+                    paramDiv.className = 'param-item';
+                    paramDiv.innerHTML = `
+                        <div class="param-name">${key}:</div>
+                        <div class="param-value">${value}</div>
+                    `;
+                    paramsDiv.appendChild(paramDiv);
+                }
+            } else {
+                paramsDiv.innerHTML = '<div class="param-item">No URL parameters found</div>';
+            }
+
+            // Local Storage
+            const localStorageDiv = document.getElementById('localStorage');
+            if (localStorage.length > 0) {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const value = localStorage.getItem(key);
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'param-item';
+                    itemDiv.innerHTML = `
+                        <div class="param-name">${key}:</div>
+                        <div class="param-value">${value.substring(0, 200)}${value.length > 200 ? '...' : ''}</div>
+                    `;
+                    localStorageDiv.appendChild(itemDiv);
+                }
+            } else {
+                localStorageDiv.innerHTML = '<div class="param-item">No local storage items found</div>';
+            }
+
+            // Session Storage
+            const sessionStorageDiv = document.getElementById('sessionStorage');
+            if (sessionStorage.length > 0) {
+                for (let i = 0; i < sessionStorage.length; i++) {
+                    const key = sessionStorage.key(i);
+                    const value = sessionStorage.getItem(key);
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'param-item';
+                    itemDiv.innerHTML = `
+                        <div class="param-name">${key}:</div>
+                        <div class="param-value">${value.substring(0, 200)}${value.length > 200 ? '...' : ''}</div>
+                    `;
+                    sessionStorageDiv.appendChild(itemDiv);
+                }
+            } else {
+                sessionStorageDiv.innerHTML = '<div class="param-item">No session storage items found</div>';
+            }
+        }
+
+        function goToApp() {
+            window.location.href = '/';
+        }
+
+        function goToLogin() {
+            window.location.href = '/login';
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            alert('Storage cleared! Refreshing page...');
+            location.reload();
+        }
+
+        // Display debug info on page load
+        displayDebugInfo();
+
+        // Auto-refresh every 5 seconds
+        setInterval(displayDebugInfo, 5000);
+    </script>
+</body>
+</html>

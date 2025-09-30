@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Test - MBTI Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: #5a67d8;
+        }
+        .code-block {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 OAuth Flow Test</h1>
+    
+    <div class="test-section">
+        <h2>Current URL Information</h2>
+        <div class="code-block" id="urlInfo"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>OAuth Parameters</h2>
+        <div class="code-block" id="oauthParams"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Manual Token Exchange Test</h2>
+        <button class="button" onclick="testTokenExchange()">Test Token Exchange</button>
+        <div class="code-block" id="tokenResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Actions</h2>
+        <a href="/" class="button">Go to Main App</a>
+        <a href="/login" class="button">Go to Login</a>
+        <button class="button" onclick="testCognitoLogin()">Test Cognito Login</button>
+    </div>
+
+    <script>
+        // Display URL information
+        function displayUrlInfo() {
+            const urlInfo = {
+                href: window.location.href,
+                origin: window.location.origin,
+                pathname: window.location.pathname,
+                search: window.location.search,
+                hash: window.location.hash
+            };
+            document.getElementById('urlInfo').textContent = JSON.stringify(urlInfo, null, 2);
+        }
+
+        // Display OAuth parameters
+        function displayOAuthParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {};
+            for (const [key, value] of urlParams) {
+                params[key] = value;
+            }
+            document.getElementById('oauthParams').textContent = JSON.stringify(params, null, 2);
+        }
+
+        // Test token exchange
+        async function testTokenExchange() {
+            const resultDiv = document.getElementById('tokenResult');
+            resultDiv.textContent = 'Testing token exchange...';
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+
+            if (!authCode) {
+                resultDiv.textContent = 'No authorization code found in URL';
+                return;
+            }
+
+            try {
+                const tokenEndpoint = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/oauth2/token';
+                
+                const params = new URLSearchParams({
+                    grant_type: 'authorization_code',
+                    client_id: '26k0pnja579pdpb1pt6savs27e',
+                    code: authCode,
+                    redirect_uri: 'https://d39ank8zud5pbg.cloudfront.net/'
+                });
+
+                const response = await fetch(tokenEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: params.toString()
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    resultDiv.textContent = `Token exchange failed: ${response.status}\n${errorText}`;
+                    return;
+                }
+
+                const tokens = await response.json();
+                resultDiv.textContent = JSON.stringify({
+                    success: true,
+                    hasAccessToken: !!tokens.access_token,
+                    hasIdToken: !!tokens.id_token,
+                    hasRefreshToken: !!tokens.refresh_token,
+                    tokenType: tokens.token_type,
+                    expiresIn: tokens.expires_in
+                }, null, 2);
+
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        // Test Cognito login
+        function testCognitoLogin() {
+            const loginUrl = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?' + 
+                new URLSearchParams({
+                    client_id: '26k0pnja579pdpb1pt6savs27e',
+                    response_type: 'code',
+                    scope: 'email openid profile',
+                    redirect_uri: 'https://d39ank8zud5pbg.cloudfront.net/'
+                }).toString();
+            
+            window.location.href = loginUrl;
+        }
+
+        // Initialize
+        displayUrlInfo();
+        displayOAuthParams();
+    </script>
+</body>
+</html>

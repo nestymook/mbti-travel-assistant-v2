@@ -83,32 +83,35 @@ export default defineConfig(({ mode }) => {
               './src/components/itinerary/layouts/ESFJLayout.vue'
             ]
           },
-          // Optimize chunk file names
+          // Optimize chunk file names with better cache busting
           chunkFileNames: (chunkInfo) => {
             const facadeModuleId = chunkInfo.facadeModuleId
             if (facadeModuleId) {
               if (facadeModuleId.includes('personality')) {
-                return 'assets/personality-[name]-[hash].js'
+                return 'assets/personality-[name]-[hash:8].js'
               }
               if (facadeModuleId.includes('components')) {
-                return 'assets/components-[name]-[hash].js'
+                return 'assets/components-[name]-[hash:8].js'
               }
             }
-            return 'assets/[name]-[hash].js'
+            return 'assets/[name]-[hash:8].js'
           },
-          // Optimize asset file names
+          // Optimize asset file names with better cache busting
           assetFileNames: (assetInfo) => {
-            if (/\.(css)$/.test(assetInfo.name || '')) {
-              return 'assets/styles/[name]-[hash].[ext]'
+            const fileName = assetInfo.names?.[0] || assetInfo.name || 'unknown'
+            if (/\.(css)$/.test(fileName)) {
+              return 'assets/styles/[name]-[hash:8].[ext]'
             }
-            if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name || '')) {
-              return 'assets/images/[name]-[hash].[ext]'
+            if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(fileName)) {
+              return 'assets/images/[name]-[hash:8].[ext]'
             }
-            if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name || '')) {
-              return 'assets/fonts/[name]-[hash].[ext]'
+            if (/\.(woff2?|eot|ttf|otf)$/i.test(fileName)) {
+              return 'assets/fonts/[name]-[hash:8].[ext]'
             }
-            return 'assets/[name]-[hash].[ext]'
-          }
+            return 'assets/[name]-[hash:8].[ext]'
+          },
+          // Better entry file naming
+          entryFileNames: 'assets/[name]-[hash:8].js'
         }
       },
       // Optimize chunk size warnings

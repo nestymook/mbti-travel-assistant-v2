@@ -26,16 +26,12 @@ const userDisplayName = computed(() => authStore.userDisplayName)
 function handleLogout(): void {
   closeMobileMenu()
   
-  // Use Cognito Hosted UI for logout
-  try {
-    const cognitoAuth = CognitoAuthService.getInstance()
-    const hostedUILogoutUrl = cognitoAuth.getHostedUILogoutUrl()
-    window.location.href = hostedUILogoutUrl
-  } catch (error) {
-    console.error('Failed to redirect to Cognito Hosted UI logout:', error)
-    // Fallback to regular logout
-    authStore.logout()
-  }
+  // Sign out from Cognito and clear all application state
+  authStore.logout().catch((error) => {
+    console.error('Logout failed:', error)
+    // Force redirect to login page even if logout fails
+    window.location.href = '/login'
+  })
 }
 
 function toggleMobileMenu(): void {

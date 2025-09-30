@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Flow Test - MBTI Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 10px 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .button.success {
+            background: #28a745;
+        }
+        .button.warning {
+            background: #ffc107;
+            color: #212529;
+        }
+        .button.danger {
+            background: #dc3545;
+        }
+        .code-block {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-left: 4px solid #007bff;
+            overflow-x: auto;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-success { background: #28a745; }
+        .status-warning { background: #ffc107; }
+        .status-error { background: #dc3545; }
+        .status-info { background: #17a2b8; }
+        .log-entry {
+            padding: 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .log-info { background: #d1ecf1; color: #0c5460; }
+        .log-success { background: #d4edda; color: #155724; }
+        .log-warning { background: #fff3cd; color: #856404; }
+        .log-error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🧪 OAuth Flow Test - MBTI Travel Planner</h1>
+    
+    <div class="test-section">
+        <h2>Configuration Status</h2>
+        <div id="configStatus">
+            <div><span class="status-indicator status-info"></span>Checking configuration...</div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Current URL Information</h2>
+        <div class="code-block" id="urlInfo"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>OAuth Parameters</h2>
+        <div class="code-block" id="oauthParams"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Actions</h2>
+        <button class="button" onclick="testCognitoLogin()">🔐 Test Cognito Login</button>
+        <button class="button" onclick="testTokenExchange()">🔄 Test Token Exchange</button>
+        <button class="button success" onclick="goToMainApp()">🏠 Go to Main App</button>
+        <button class="button warning" onclick="clearAllStorage()">🗑️ Clear Storage</button>
+        <a href="/debug-auth.html" class="button">🔍 Debug Auth State</a>
+    </div>
+
+    <div class="test-section">
+        <h2>Token Exchange Test</h2>
+        <div class="code-block" id="tokenResult">Click "Test Token Exchange" to test manual token exchange</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Log</h2>
+        <div id="testLog"></div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            CLOUDFRONT_DOMAIN: 'https://d39ank8zud5pbg.cloudfront.net',
+            COGNITO_DOMAIN: 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com',
+            CLIENT_ID: '26k0pnja579pdpb1pt6savs27e',
+            CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/',
+            AUTH_CALLBACK_URL: 'https://d39ank8zud5pbg.cloudfront.net/auth/callback'
+        };
+
+        // Logging functions
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('testLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            logDiv.appendChild(logEntry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+
+        // Display URL information
+        function displayUrlInfo() {
+            const urlInfo = {
+                href: window.location.href,
+                origin: window.location.origin,
+                pathname: window.location.pathname,
+                search: window.location.search,
+                hash: window.location.hash,
+                protocol: window.location.protocol,
+                host: window.location.host
+            };
+            document.getElementById('urlInfo').textContent = JSON.stringify(urlInfo, null, 2);
+            log('URL information displayed');
+        }
+
+        // Display OAuth parameters
+        function displayOAuthParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hashParams = new URLSearchParams(window.location.hash.substring(1));
+            
+            const params = {
+                queryParams: {},
+                hashParams: {},
+                hasAuthCode: false,
+                hasError: false
+            };
+            
+            // Process query parameters
+            for (const [key, value] of urlParams) {
+                params.queryParams[key] = value;
+                if (key === 'code') params.hasAuthCode = true;
+                if (key === 'error') params.hasError = true;
+            }
+            
+            // Process hash parameters
+            for (const [key, value] of hashParams) {
+                params.hashParams[key] = value;
+                if (key === 'access_token') params.hasAccessToken = true;
+            }
+            
+            document.getElementById('oauthParams').textContent = JSON.stringify(params, null, 2);
+            
+            if (params.hasAuthCode) {
+                log('Authorization code found in URL', 'success');
+            } else if (params.hasError) {
+                log(`OAuth error found: ${params.queryParams.error}`, 'error');
+            } else {
+                log('No OAuth parameters found', 'info');
+            }
+        }
+
+        // Check configuration status
+        function checkConfigStatus() {
+            const statusDiv = document.getElementById('configStatus');
+            const checks = [
+                { name: 'CloudFront Domain', value: CONFIG.CLOUDFRONT_DOMAIN, status: 'success' },
+                { name: 'Cognito Domain', value: CONFIG.COGNITO_DOMAIN, status: 'success' },
+                { name: 'Client ID', value: CONFIG.CLIENT_ID, status: 'success' },
+                { name: 'Callback URL', value: CONFIG.CALLBACK_URL, status: 'success' },
+                { name: 'Auth Callback URL', value: CONFIG.AUTH_CALLBACK_URL, status: 'success' }
+            ];
+
+            statusDiv.innerHTML = checks.map(check => 
+                `<div><span class="status-indicator status-${check.status}"></span>${check.name}: ${check.value}</div>`
+            ).join('');
+            
+            log('Configuration status checked', 'success');
+        }
+
+        // Test Cognito login
+        function testCognitoLogin() {
+            log('Starting Cognito login test...', 'info');
+            
+            const loginUrl = `${CONFIG.COGNITO_DOMAIN}/login?` + new URLSearchParams({
+                client_id: CONFIG.CLIENT_ID,
+                response_type: 'code',
+                scope: 'email openid profile',
+                redirect_uri: CONFIG.CALLBACK_URL
+            }).toString();
+            
+            log(`Redirecting to: ${loginUrl}`, 'info');
+            window.location.href = loginUrl;
+        }
+
+        // Test token exchange
+        async function testTokenExchange() {
+            const resultDiv = document.getElementById('tokenResult');
+            resultDiv.textContent = 'Testing token exchange...';
+            log('Starting token exchange test...', 'info');
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+
+            if (!authCode) {
+                const message = 'No authorization code found in URL. Please complete login first.';
+                resultDiv.textContent = message;
+                log(message, 'warning');
+                return;
+            }
+
+            try {
+                log(`Found authorization code: ${authCode.substring(0, 10)}...`, 'info');
+                
+                const tokenEndpoint = `${CONFIG.COGNITO_DOMAIN}/oauth2/token`;
+                
+                const params = new URLSearchParams({
+                    grant_type: 'authorization_code',
+                    client_id: CONFIG.CLIENT_ID,
+                    code: authCode,
+                    redirect_uri: CONFIG.CALLBACK_URL
+                });
+
+                log('Sending token exchange request...', 'info');
+                
+                const response = await fetch(tokenEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: params.toString()
+                });
+
+                log(`Token exchange response status: ${response.status}`, response.ok ? 'success' : 'error');
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    const errorMessage = `Token exchange failed: ${response.status}\n${errorText}`;
+                    resultDiv.textContent = errorMessage;
+                    log(errorMessage, 'error');
+                    return;
+                }
+
+                const tokens = await response.json();
+                const result = {
+                    success: true,
+                    hasAccessToken: !!tokens.access_token,
+                    hasIdToken: !!tokens.id_token,
+                    hasRefreshToken: !!tokens.refresh_token,
+                    tokenType: tokens.token_type,
+                    expiresIn: tokens.expires_in,
+                    scope: tokens.scope
+                };
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                log('Token exchange successful!', 'success');
+                
+                // Try to decode the ID token (if present)
+                if (tokens.id_token) {
+                    try {
+                        const idTokenPayload = JSON.parse(atob(tokens.id_token.split('.')[1]));
+                        log(`ID Token payload: ${JSON.stringify(idTokenPayload, null, 2)}`, 'info');
+                    } catch (decodeError) {
+                        log('Could not decode ID token', 'warning');
+                    }
+                }
+
+            } catch (error) {
+                const errorMessage = `Token exchange error: ${error.message}`;
+                resultDiv.textContent = errorMessage;
+                log(errorMessage, 'error');
+            }
+        }
+
+        // Navigation functions
+        function goToMainApp() {
+            log('Navigating to main app...', 'info');
+            window.location.href = '/';
+        }
+
+        function clearAllStorage() {
+            log('Clearing all storage...', 'warning');
+            
+            try {
+                localStorage.clear();
+                sessionStorage.clear();
+                
+                // Clear cookies
+                document.cookie.split(";").forEach(function(c) { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                
+                log('Storage cleared successfully', 'success');
+                alert('Storage cleared! Page will reload.');
+                location.reload();
+            } catch (error) {
+                log(`Error clearing storage: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-refresh functions
+        function autoRefresh() {
+            displayUrlInfo();
+            displayOAuthParams();
+        }
+
+        // Initialize page
+        function initializePage() {
+            log('Initializing OAuth test page...', 'info');
+            checkConfigStatus();
+            displayUrlInfo();
+            displayOAuthParams();
+            
+            // Check if this is a callback
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('code')) {
+                log('OAuth callback detected!', 'success');
+                // Auto-test token exchange
+                setTimeout(() => {
+                    testTokenExchange();
+                }, 1000);
+            } else if (urlParams.get('error')) {
+                log(`OAuth error detected: ${urlParams.get('error')}`, 'error');
+            }
+            
+            log('Page initialization complete', 'success');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializePage);
+        
+        // Auto-refresh every 5 seconds
+        setInterval(autoRefresh, 5000);
+    </script>
+</body>
+</html>

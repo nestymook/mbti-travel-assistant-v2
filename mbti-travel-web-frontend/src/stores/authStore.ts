@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore, getActivePinia } from 'pinia'
 import { cognitoAuth } from '@/services/cognitoAuthService'
 import type { UserContext, AuthToken } from '@/types/api'
 
@@ -22,10 +22,68 @@ export const useAuthStore = defineStore('auth', () => {
     return user.value.name || user.value.email || 'User'
   })
 
+  // Utility functions
+  function clearAllApplicationState(): void {
+    try {
+      // Clear all Pinia stores
+      const pinia = getActivePinia()
+      if (pinia) {
+        // Reset all stores to their initial state
+        pinia._s.forEach((store) => {
+          if (store.$id !== 'auth') { // Don't reset auth store as we're managing it manually
+            if (store.$reset) {
+              store.$reset()
+            }
+          }
+        })
+      }
+
+      // Clear browser storage
+      try {
+        localStorage.clear()
+      } catch (e) {
+        console.warn('Failed to clear localStorage:', e)
+      }
+
+      try {
+        sessionStorage.clear()
+      } catch (e) {
+        console.warn('Failed to clear sessionStorage:', e)
+      }
+
+      // Clear any cached data in memory
+      if (window.caches) {
+        window.caches.keys().then(cacheNames => {
+          cacheNames.forEach(cacheName => {
+            window.caches.delete(cacheName)
+          })
+        }).catch(e => {
+          console.warn('Failed to clear caches:', e)
+        })
+      }
+
+      // Clear any IndexedDB data if used
+      if (window.indexedDB) {
+        try {
+          // This is a more aggressive approach - in production you might want to be more selective
+          const databases = ['amplify-datastore', 'aws-amplify-cache', 'keyval-store']
+          databases.forEach(dbName => {
+            const deleteReq = window.indexedDB.deleteDatabase(dbName)
+            deleteReq.onerror = () => console.warn(`Failed to delete database: ${dbName}`)
+          })
+        } catch (e) {
+          console.warn('Failed to clear IndexedDB:', e)
+        }
+      }
+
+      console.log('Application state cleared successfully')
+    } catch (error) {
+      console.error('Error clearing application state:', error)
+    }
+  }
+
   // Actions
   async function initialize(): Promise<void> {
-    if (isInitialized.value) return
-
     try {
       isLoading.value = true
       error.value = null
@@ -40,47 +98,41 @@ export const useAuthStore = defineStore('auth', () => {
       const currentUser = await cognitoAuth.getCurrentUser()
       if (currentUser) {
         user.value = currentUser
+        console.log('User authenticated:', currentUser.email)
+      } else {
+        console.log('No authenticated user found')
+        user.value = null
       }
     } catch (err) {
       console.error('Auth initialization failed:', err)
       error.value = 'Failed to initialize authentication'
+      user.value = null
     } finally {
       isLoading.value = false
       isInitialized.value = true
     }
   }
 
-  async function login(email: string, password: string): Promise<void> {
+  // Login is now handled entirely through Cognito Hosted UI
+  // This method is kept for compatibility but redirects to Hosted UI
+  async function login(email?: string, password?: string): Promise<void> {
+    console.log('Redirecting to Cognito Hosted UI for authentication')
+    redirectToHostedUI()
+  }
+
+  async function loginWithHostedUI(): Promise<void> {
     try {
       isLoading.value = true
       error.value = null
 
-      // Use Cognito authentication if configured, otherwise use mock
       if (cognitoAuth.isConfigurationValid()) {
-        const userData = await cognitoAuth.login(email, password)
-        user.value = userData
+        // Redirect to Cognito Hosted UI
+        await cognitoAuth.signInWithHostedUI()
       } else {
-        // Mock authentication for demo
-        console.warn('Using mock authentication - Cognito not configured')
-        await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate delay
-        
-        if (!email || !password) {
-          throw new Error('Email and password are required')
-        }
-        
-        user.value = {
-          id: 'mock-user-123',
-          email: email,
-          name: email.split('@')[0],
-          roles: ['user'],
-          preferences: {
-            theme: 'light',
-            language: 'en'
-          }
-        }
+        throw new Error('Cognito not configured')
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Login failed'
+      const errorMessage = err instanceof Error ? err.message : 'Hosted UI login failed'
       error.value = errorMessage
       throw new Error(errorMessage)
     } finally {
@@ -88,18 +140,59 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  async function logout(): Promise<void> {
+  function redirectToHostedUI(): void {
     try {
       if (cognitoAuth.isConfigurationValid()) {
-        await cognitoAuth.logout()
+        const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
+        window.location.href = hostedUIUrl
+      } else {
+        // Fallback to login page if Cognito not configured
+        window.location.href = '/login'
       }
+    } catch (err) {
+      console.error('Failed to redirect to hosted UI:', err)
+      window.location.href = '/login'
+    }
+  }
+
+  async function logout(): Promise<void> {
+    try {
+      // Clear all application state first
+      clearAllApplicationState()
+      
+      // Clear auth store state
       user.value = null
       error.value = null
+      isInitialized.value = false
+      
+      // Sign out from Cognito using Hosted UI logout
+      if (cognitoAuth.isConfigurationValid()) {
+        // Use Cognito Hosted UI logout which will redirect to the logout URL
+        cognitoAuth.logoutWithHostedUI()
+      } else {
+        // If Cognito not configured, just redirect to login
+        redirectToLogin()
+      }
     } catch (err) {
       console.error('Logout failed:', err)
+      
       // Force clear state even if logout fails
+      clearAllApplicationState()
       user.value = null
       error.value = null
+      isInitialized.value = false
+      
+      // Try Cognito logout as fallback
+      if (cognitoAuth.isConfigurationValid()) {
+        try {
+          cognitoAuth.logoutWithHostedUI()
+        } catch (fallbackError) {
+          console.error('Fallback logout failed:', fallbackError)
+          redirectToLogin()
+        }
+      } else {
+        redirectToLogin()
+      }
     }
   }
 
@@ -121,8 +214,13 @@ export const useAuthStore = defineStore('auth', () => {
       console.error('Token refresh failed:', err)
       error.value = 'Session expired. Please log in again.'
       
-      // Clear auth state and redirect to login
-      await logout()
+      // Clear all application state when session expires
+      clearAllApplicationState()
+      user.value = null
+      error.value = null
+      isInitialized.value = false
+      
+      // Redirect to login
       redirectToLogin()
     } finally {
       isLoading.value = false
@@ -156,7 +254,11 @@ export const useAuthStore = defineStore('auth', () => {
       if (cognitoAuth.isConfigurationValid()) {
         const isValid = await cognitoAuth.validateSession()
         if (!isValid) {
-          await logout()
+          // Clear state when token is invalid
+          clearAllApplicationState()
+          user.value = null
+          error.value = null
+          isInitialized.value = false
           return false
         }
         return true
@@ -164,7 +266,12 @@ export const useAuthStore = defineStore('auth', () => {
       return user.value !== null // For mock auth
     } catch (err) {
       console.error('Token validation failed:', err)
-      await logout()
+      
+      // Clear state on validation error
+      clearAllApplicationState()
+      user.value = null
+      error.value = null
+      isInitialized.value = false
       return false
     }
   }
@@ -183,8 +290,41 @@ export const useAuthStore = defineStore('auth', () => {
     window.location.href = loginUrl
   }
 
+  // Handle browser close/refresh to clear sensitive data
+  function setupBrowserEventHandlers(): void {
+    // Clear sensitive data when browser is closing/refreshing
+    window.addEventListener('beforeunload', () => {
+      try {
+        // Only clear sensitive data, not all application state
+        // as user might just be refreshing the page
+        const sensitiveKeys = ['aws-amplify-cache', 'amplify-datastore']
+        sensitiveKeys.forEach(key => {
+          try {
+            localStorage.removeItem(key)
+            sessionStorage.removeItem(key)
+          } catch (e) {
+            // Ignore errors
+          }
+        })
+      } catch (error) {
+        // Ignore errors during cleanup
+      }
+    })
+
+    // Handle visibility change (tab switching, minimizing)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        // Optionally clear sensitive data when tab becomes hidden
+        // This is more aggressive and might not be desired for UX
+        // Uncomment if needed for high security requirements
+        // clearSensitiveData()
+      }
+    })
+  }
+
   // Auto-initialize when store is created
   initialize()
+  setupBrowserEventHandlers()
 
   return {
     // State
@@ -207,6 +347,8 @@ export const useAuthStore = defineStore('auth', () => {
     clearError,
     getAuthToken,
     validateCurrentToken,
-    redirectToLogin
+    redirectToLogin,
+    redirectToHostedUI,
+    clearAllApplicationState
   }
 })

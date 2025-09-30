@@ -8,17 +8,17 @@ import type {
   ApiAppError,
   ApiConfig
 } from '@/types'
-import { AuthService } from './authService'
+import { CognitoAuthService } from './cognitoAuthService'
 
 export class ApiService {
   private static instance: ApiService
   private client: AxiosInstance
-  private authService: AuthService
+  private authService: CognitoAuthService
   private retryAttempts: number = 3
   private retryDelay: number = 1000
 
   private constructor() {
-    this.authService = AuthService.getInstance()
+    this.authService = CognitoAuthService.getInstance()
     
     const config: ApiConfig = {
       baseURL: import.meta.env.VITE_API_BASE_URL || '', // Empty for same-origin requests (nginx proxy)
@@ -63,11 +63,15 @@ export class ApiService {
   private setupInterceptors(): void {
     // Request interceptor for adding auth token and request logging
     this.client.interceptors.request.use(
-      (config) => {
-        // Add JWT token to request headers
-        const token = this.authService.getToken()
-        if (token) {
-          config.headers.Authorization = `Bearer ${token}`
+      async (config) => {
+        // Add JWT token to request headers (async)
+        try {
+          const token = await this.authService.getAuthToken()
+          if (token) {
+            config.headers.Authorization = `Bearer ${token}`
+          }
+        } catch (error) {
+          console.warn('Failed to get auth token:', error)
         }
 
         // Add request ID for tracking

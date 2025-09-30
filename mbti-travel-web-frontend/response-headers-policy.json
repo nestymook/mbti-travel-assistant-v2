@@ -1,0 +1,67 @@
+{
+  "ResponseHeadersPolicyConfig": {
+    "Name": "mbti-travel-cors-policy-20250930",
+    "Comment": "CORS and security headers for MBTI Travel OAuth flow",
+    "CorsConfig": {
+      "AccessControlAllowOrigins": {
+        "Quantity": 2,
+        "Items": [
+          "https://d39ank8zud5pbg.cloudfront.net",
+          "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com"
+        ]
+      },
+      "AccessControlAllowHeaders": {
+        "Quantity": 6,
+        "Items": [
+          "Authorization",
+          "Content-Type",
+          "X-Amz-Date",
+          "X-Api-Key",
+          "X-Amz-Security-Token",
+          "X-Requested-With"
+        ]
+      },
+      "AccessControlAllowMethods": {
+        "Quantity": 7,
+        "Items": [
+          "GET",
+          "HEAD",
+          "OPTIONS",
+          "PUT",
+          "POST",
+          "PATCH",
+          "DELETE"
+        ]
+      },
+      "AccessControlAllowCredentials": true,
+      "AccessControlExposeHeaders": {
+        "Quantity": 3,
+        "Items": [
+          "Authorization",
+          "Content-Type",
+          "X-Amz-Request-Id"
+        ]
+      },
+      "AccessControlMaxAgeSec": 86400,
+      "OriginOverride": true
+    },
+    "SecurityHeadersConfig": {
+      "StrictTransportSecurity": {
+        "AccessControlMaxAgeSec": 31536000,
+        "IncludeSubdomains": true,
+        "Override": true
+      },
+      "ContentTypeOptions": {
+        "Override": true
+      },
+      "FrameOptions": {
+        "FrameOption": "DENY",
+        "Override": true
+      },
+      "ReferrerPolicy": {
+        "ReferrerPolicy": "strict-origin-when-cross-origin",
+        "Override": true
+      }
+    }
+  }
+}
