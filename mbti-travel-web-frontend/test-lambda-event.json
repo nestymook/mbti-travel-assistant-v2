@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "headers": {
+    "Authorization": "Bearer test-token",
+    "Content-Type": "application/json"
+  },
+  "body": "{\"MBTI_personality\":\"INFJ\",\"user_context\":{\"user_id\":\"test-user\",\"preferences\":{\"budget\":\"medium\",\"interests\":[\"culture\",\"food\",\"sightseeing\"],\"includeRestaurants\":true,\"includeTouristSpots\":true}},\"start_date\":\"2025-09-30\",\"special_requirements\":\"Test request from Lambda\"}"
+}

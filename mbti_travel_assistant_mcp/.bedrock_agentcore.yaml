@@ -26,11 +26,7 @@ agents:
       project_name: bedrock-agentcore-mbti_travel_assistant_mcp-builder
       execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e69df5f887
       source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
-    authorizer_configuration:
-      customJWTAuthorizer:
-        allowedClients:
-        - 4qi4m90hi389p8tabmejuau9td
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+    authorizer_configuration: null
     request_header_configuration: null
     oauth_configuration: null
   restaurant_search_mcp:

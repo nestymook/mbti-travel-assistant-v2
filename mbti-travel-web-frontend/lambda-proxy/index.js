@@ -56,7 +56,7 @@ exports.handler = async (event) => {
             };
         }
         
-        // Create BedrockAgentCore client
+        // Create BedrockAgentCore client with SigV4 authentication
         const client = new BedrockAgentCoreClient({
             region: AWS_REGION
         });
@@ -70,7 +70,7 @@ exports.handler = async (event) => {
         // Create payload as Uint8Array
         const payload = new TextEncoder().encode(inputText);
         
-        console.log('Making request to AgentCore:', {
+        console.log('Making request to AgentCore with SigV4:', {
             agentRuntimeArn: AGENT_RUNTIME_ARN,
             runtimeSessionId: runtimeSessionId,
             payloadSize: payload.length,
