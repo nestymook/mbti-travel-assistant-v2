@@ -1,0 +1,45 @@
+@import './base.css';
+@import '../styles/responsive.css';
+@import '../styles/themes/mbti-themes.css';
+@import '../styles/themes/personality-colors.css';
+@import '../styles/themes/colorful-personalities.css';
+@import '../styles/themes/warm-personalities.css';
+@import '../styles/components/input-form.css';
+@import '../styles/components/itinerary-table.css';
+@import '../styles/components/itinerary-header.css';
+@import '../styles/components/responsive-table.css';
+@import '../styles/components/responsive-navigation.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}

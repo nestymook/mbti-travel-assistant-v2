@@ -1,0 +1,111 @@
+/* Input form component styles */
+.input-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--mbti-background, #ffffff);
+}
+
+.input-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.input-form h1 {
+  color: var(--mbti-primary, #007bff);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.input-form h2 {
+  color: var(--mbti-secondary, #6c757d);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.mbti-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid var(--mbti-secondary, #6c757d);
+  border-radius: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.mbti-input:focus {
+  outline: none;
+  border-color: var(--mbti-primary, #007bff);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.mbti-input.error {
+  border-color: #dc3545;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: var(--mbti-primary, #007bff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: var(--mbti-accent, #28a745);
+}
+
+.submit-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.test-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.test-link a {
+  color: var(--mbti-primary, #007bff);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.test-link a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.loading-message {
+  color: var(--mbti-primary, #007bff);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}

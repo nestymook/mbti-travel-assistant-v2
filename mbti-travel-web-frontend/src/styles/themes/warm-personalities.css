@@ -1,0 +1,681 @@
+/* Warm Personality Type Customizations for ISFJ */
+
+/* =================================
+   WARM COLOR SCHEMES
+   ================================= */
+
+/* ISFJ - The Protector: Warm and nurturing */
+.mbti-isfj {
+  --mbti-primary: #d97706;
+  --mbti-secondary: #b45309;
+  --mbti-accent: #f59e0b;
+  --mbti-background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  --mbti-surface: #fffbeb;
+  --mbti-text: #92400e;
+  --mbti-border: #fbbf24;
+  --mbti-shadow: rgba(217, 119, 6, 0.15);
+  --mbti-hover: rgba(245, 158, 11, 0.1);
+  --mbti-focus: rgba(245, 158, 11, 0.25);
+  --mbti-theme-type: 'warm';
+  
+  /* Warm tone enhancements */
+  --mbti-warm-light: #fef3c7;
+  --mbti-warm-medium: #fed7aa;
+  --mbti-warm-dark: #ea580c;
+  --mbti-warm-accent: #dc2626;
+  --mbti-warm-neutral: #78350f;
+  
+  /* Comfort-focused colors */
+  --mbti-comfort-bg: #fff7ed;
+  --mbti-comfort-border: #fdba74;
+  --mbti-comfort-text: #9a3412;
+  --mbti-comfort-highlight: #fb923c;
+}
+
+/* Additional warm feeling personalities */
+.mbti-infj {
+  --mbti-primary: #7c2d12;
+  --mbti-secondary: #9a3412;
+  --mbti-accent: #ea580c;
+  --mbti-background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  --mbti-surface: #fffbfb;
+  --mbti-text: #7f1d1d;
+  --mbti-border: #fca5a5;
+  --mbti-shadow: rgba(124, 45, 18, 0.15);
+  --mbti-hover: rgba(234, 88, 12, 0.1);
+  --mbti-focus: rgba(234, 88, 12, 0.25);
+  --mbti-theme-type: 'warm';
+}
+
+.mbti-enfj {
+  --mbti-primary: #be123c;
+  --mbti-secondary: #9f1239;
+  --mbti-accent: #f43f5e;
+  --mbti-background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  --mbti-surface: #fefcff;
+  --mbti-text: #881337;
+  --mbti-border: #f9a8d4;
+  --mbti-shadow: rgba(190, 18, 60, 0.15);
+  --mbti-hover: rgba(244, 63, 94, 0.1);
+  --mbti-focus: rgba(244, 63, 94, 0.25);
+  --mbti-theme-type: 'warm';
+}
+
+.mbti-esfj {
+  --mbti-primary: #a16207;
+  --mbti-secondary: #92400e;
+  --mbti-accent: #f59e0b;
+  --mbti-background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  --mbti-surface: #fffef7;
+  --mbti-text: #78350f;
+  --mbti-border: #fcd34d;
+  --mbti-shadow: rgba(161, 98, 7, 0.15);
+  --mbti-hover: rgba(245, 158, 11, 0.1);
+  --mbti-focus: rgba(245, 158, 11, 0.25);
+  --mbti-theme-type: 'warm';
+}
+
+/* =================================
+   WARM THEME APPLICATIONS
+   ================================= */
+
+/* Base warm personality styling */
+.mbti-isfj,
+.mbti-infj,
+.mbti-enfj,
+.mbti-esfj {
+  background: var(--mbti-background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Warm gradient background overlay */
+.mbti-isfj::before,
+.mbti-infj::before,
+.mbti-enfj::before,
+.mbti-esfj::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    var(--mbti-warm-light) 0%,
+    transparent 50%
+  );
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content positioning */
+.mbti-isfj > *,
+.mbti-infj > *,
+.mbti-enfj > *,
+.mbti-esfj > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =================================
+   WARM COMPONENT STYLING
+   ================================= */
+
+/* Headers and titles with warm tones */
+.mbti-isfj .table-header h2,
+.mbti-infj .table-header h2,
+.mbti-enfj .table-header h2,
+.mbti-esfj .table-header h2 {
+  color: var(--mbti-primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.mbti-isfj .customizations-header h3,
+.mbti-infj .customizations-header h3,
+.mbti-enfj .customizations-header h3,
+.mbti-esfj .customizations-header h3 {
+  background: linear-gradient(
+    45deg,
+    var(--mbti-primary),
+    var(--mbti-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Table styling with warm enhancements */
+.mbti-isfj .itinerary-table th,
+.mbti-infj .itinerary-table th,
+.mbti-enfj .itinerary-table th,
+.mbti-esfj .itinerary-table th {
+  background: linear-gradient(
+    135deg,
+    var(--mbti-primary) 0%,
+    var(--mbti-secondary) 100%
+  );
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border: none;
+  position: relative;
+}
+
+.mbti-isfj .itinerary-table th::after,
+.mbti-infj .itinerary-table th::after,
+.mbti-enfj .itinerary-table th::after,
+.mbti-esfj .itinerary-table th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--mbti-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Warm table cell styling */
+.mbti-isfj .itinerary-table td,
+.mbti-infj .itinerary-table td,
+.mbti-enfj .itinerary-table td,
+.mbti-esfj .itinerary-table td {
+  background: var(--mbti-surface);
+  border: 1px solid var(--mbti-border);
+  transition: all 0.3s ease;
+}
+
+.mbti-isfj .itinerary-table td:hover,
+.mbti-infj .itinerary-table td:hover,
+.mbti-enfj .itinerary-table td:hover,
+.mbti-esfj .itinerary-table td:hover {
+  background: var(--mbti-hover);
+  border-color: var(--mbti-accent);
+  box-shadow: inset 0 0 0 1px var(--mbti-accent);
+}
+
+/* Combo box warm styling */
+.mbti-isfj .combo-box,
+.mbti-infj .combo-box,
+.mbti-enfj .combo-box,
+.mbti-esfj .combo-box {
+  background: var(--mbti-surface);
+  border: 2px solid var(--mbti-border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--mbti-shadow);
+}
+
+.mbti-isfj .combo-box:hover,
+.mbti-infj .combo-box:hover,
+.mbti-enfj .combo-box:hover,
+.mbti-esfj .combo-box:hover {
+  border-color: var(--mbti-accent);
+  box-shadow: 0 4px 8px var(--mbti-shadow);
+  background: var(--mbti-hover);
+}
+
+.mbti-isfj .combo-box:focus,
+.mbti-infj .combo-box:focus,
+.mbti-enfj .combo-box:focus,
+.mbti-esfj .combo-box:focus {
+  border-color: var(--mbti-accent);
+  box-shadow: 0 0 0 3px var(--mbti-focus), 0 4px 8px var(--mbti-shadow);
+  outline: none;
+}
+
+/* Recommendation details with warm styling */
+.mbti-isfj .recommendation-details,
+.mbti-infj .recommendation-details,
+.mbti-enfj .recommendation-details,
+.mbti-esfj .recommendation-details {
+  background: var(--mbti-surface);
+  border: 1px solid var(--mbti-border);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 2px 4px var(--mbti-shadow);
+}
+
+.mbti-isfj .recommendation-details::before,
+.mbti-infj .recommendation-details::before,
+.mbti-enfj .recommendation-details::before,
+.mbti-esfj .recommendation-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--mbti-primary),
+    var(--mbti-accent)
+  );
+  border-radius: 8px 8px 0 0;
+}
+
+/* =================================
+   FEELING PERSONALITY CUSTOMIZATIONS
+   ================================= */
+
+/* Warm styling for feeling personality customizations */
+.mbti-isfj .feeling-personality-customizations,
+.mbti-infj .feeling-personality-customizations,
+.mbti-enfj .feeling-personality-customizations,
+.mbti-esfj .feeling-personality-customizations {
+  background: var(--mbti-surface);
+  border: 2px solid var(--mbti-border);
+  box-shadow: 0 6px 12px var(--mbti-shadow);
+}
+
+/* Description sections with warm comfort styling */
+.mbti-isfj .day-descriptions,
+.mbti-infj .day-descriptions {
+  background: var(--mbti-comfort-bg);
+  border: 1px solid var(--mbti-comfort-border);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mbti-isfj .spot-description-item,
+.mbti-infj .spot-description-item {
+  background: var(--mbti-surface);
+  border: 1px solid var(--mbti-border);
+  transition: all 0.3s ease;
+}
+
+.mbti-isfj .spot-description-item:hover,
+.mbti-infj .spot-description-item:hover {
+  border-color: var(--mbti-accent);
+  box-shadow: 0 2px 8px var(--mbti-shadow);
+  transform: translateY(-1px);
+}
+
+.mbti-isfj .description-text,
+.mbti-infj .description-text {
+  color: var(--mbti-text);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Group notes with warm social styling */
+.mbti-enfj .day-group-notes,
+.mbti-esfj .day-group-notes {
+  background: var(--mbti-comfort-bg);
+  border: 1px solid var(--mbti-comfort-border);
+  position: relative;
+}
+
+.mbti-enfj .day-group-notes::before,
+.mbti-esfj .day-group-notes::before {
+  content: '👥';
+  position: absolute;
+  top: -10px;
+  right: 1rem;
+  background: var(--mbti-surface);
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  border: 2px solid var(--mbti-border);
+}
+
+.mbti-enfj .notes-textarea,
+.mbti-esfj .notes-textarea {
+  background: var(--mbti-surface);
+  border: 2px solid var(--mbti-border);
+  color: var(--mbti-text);
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+}
+
+.mbti-enfj .notes-textarea:focus,
+.mbti-esfj .notes-textarea:focus {
+  border-color: var(--mbti-accent);
+  box-shadow: 0 0 0 3px var(--mbti-focus);
+  background: var(--mbti-hover);
+}
+
+.mbti-enfj .notes-textarea:not(:placeholder-shown),
+.mbti-esfj .notes-textarea:not(:placeholder-shown) {
+  background: var(--mbti-hover);
+  border-color: var(--mbti-accent);
+}
+
+/* Share buttons with warm social styling */
+.mbti-enfj .share-button,
+.mbti-esfj .share-button {
+  background: var(--mbti-surface);
+  border: 2px solid var(--mbti-primary);
+  color: var(--mbti-primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mbti-enfj .share-button::before,
+.mbti-esfj .share-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.mbti-enfj .share-button:hover::before,
+.mbti-esfj .share-button:hover::before {
+  left: 100%;
+}
+
+.mbti-enfj .share-button:hover,
+.mbti-esfj .share-button:hover {
+  background: var(--mbti-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--mbti-shadow);
+}
+
+.mbti-enfj .share-button.primary,
+.mbti-esfj .share-button.primary {
+  background: var(--mbti-primary);
+  color: white;
+}
+
+.mbti-enfj .share-button.primary:hover,
+.mbti-esfj .share-button.primary:hover {
+  background: var(--mbti-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px var(--mbti-shadow);
+}
+
+/* =================================
+   WARM COMFORT ENHANCEMENTS
+   ================================= */
+
+/* Soft shadows and rounded corners for ISFJ comfort */
+.mbti-isfj .session-customization,
+.mbti-isfj .session-group-notes,
+.mbti-isfj .spot-description-item {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mbti-isfj .session-customization:hover,
+.mbti-isfj .session-group-notes:hover,
+.mbti-isfj .spot-description-item:hover {
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Warm glow effects */
+.mbti-isfj .time-input:focus,
+.mbti-isfj .notes-textarea:focus {
+  box-shadow: 
+    0 0 0 3px var(--mbti-focus),
+    0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Cozy typography for ISFJ */
+.mbti-isfj .description-text,
+.mbti-isfj .notes-textarea {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.7;
+}
+
+.mbti-isfj .customization-description,
+.mbti-isfj .section-description {
+  font-style: italic;
+  color: var(--mbti-warm-neutral);
+}
+
+/* =================================
+   WARM ANIMATIONS
+   ================================= */
+
+/* Gentle warm glow animation */
+@keyframes warm-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  }
+}
+
+.mbti-isfj .section-title {
+  animation: warm-glow 4s ease-in-out infinite;
+}
+
+/* Warm pulse for important elements */
+@keyframes warm-pulse {
+  0%, 100% {
+    background-color: var(--mbti-surface);
+  }
+  50% {
+    background-color: var(--mbti-hover);
+  }
+}
+
+.mbti-isfj .importance-checkbox,
+.mbti-enfj .share-preview,
+.mbti-esfj .share-preview {
+  animation: warm-pulse 6s ease-in-out infinite;
+}
+
+/* Gentle float animation for comfort */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.mbti-isfj .stat-value {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* =================================
+   RESPONSIVE WARM DESIGN
+   ================================= */
+
+@media (max-width: 768px) {
+  .mbti-isfj .feeling-personality-customizations,
+  .mbti-infj .feeling-personality-customizations,
+  .mbti-enfj .feeling-personality-customizations,
+  .mbti-esfj .feeling-personality-customizations {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .mbti-isfj .session-customization,
+  .mbti-isfj .session-group-notes,
+  .mbti-isfj .spot-description-item {
+    border-radius: 8px;
+  }
+  
+  .mbti-enfj .share-button,
+  .mbti-esfj .share-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mbti-isfj .customizations-header h3,
+  .mbti-infj .customizations-header h3,
+  .mbti-enfj .customizations-header h3,
+  .mbti-esfj .customizations-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .mbti-isfj .description-text,
+  .mbti-isfj .notes-textarea {
+    font-size: 0.875rem;
+  }
+}
+
+/* =================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================= */
+
+/* High contrast mode for warm themes */
+@media (prefers-contrast: high) {
+  .mbti-isfj,
+  .mbti-infj,
+  .mbti-enfj,
+  .mbti-esfj {
+    --mbti-border: #000000;
+    --mbti-shadow: rgba(0, 0, 0, 0.5);
+    --mbti-text: #000000;
+  }
+  
+  .mbti-isfj .time-input,
+  .mbti-isfj .notes-textarea,
+  .mbti-enfj .notes-textarea,
+  .mbti-esfj .notes-textarea {
+    border: 3px solid #000000;
+  }
+  
+  .mbti-enfj .share-button,
+  .mbti-esfj .share-button {
+    border: 3px solid #000000;
+    font-weight: 700;
+  }
+}
+
+/* Reduced motion for warm themes */
+@media (prefers-reduced-motion: reduce) {
+  .mbti-isfj .section-title,
+  .mbti-isfj .importance-checkbox,
+  .mbti-enfj .share-preview,
+  .mbti-esfj .share-preview,
+  .mbti-isfj .stat-value {
+    animation: none;
+  }
+  
+  .mbti-isfj .session-customization:hover,
+  .mbti-isfj .session-group-notes:hover,
+  .mbti-isfj .spot-description-item:hover,
+  .mbti-enfj .share-button:hover,
+  .mbti-esfj .share-button:hover {
+    transform: none;
+  }
+  
+  .mbti-enfj .share-button::before,
+  .mbti-esfj .share-button::before {
+    display: none;
+  }
+}
+
+/* Focus management for warm themes */
+.mbti-isfj .time-input:focus,
+.mbti-isfj .notes-textarea:focus,
+.mbti-enfj .notes-textarea:focus,
+.mbti-esfj .notes-textarea:focus,
+.mbti-enfj .share-button:focus,
+.mbti-esfj .share-button:focus {
+  outline: 3px solid var(--mbti-accent);
+  outline-offset: 2px;
+}
+
+/* Print styles for warm themes */
+@media print {
+  .mbti-isfj,
+  .mbti-infj,
+  .mbti-enfj,
+  .mbti-esfj {
+    background: white !important;
+  }
+  
+  .mbti-isfj::before,
+  .mbti-infj::before,
+  .mbti-enfj::before,
+  .mbti-esfj::before {
+    display: none;
+  }
+  
+  .mbti-isfj .feeling-personality-customizations,
+  .mbti-infj .feeling-personality-customizations,
+  .mbti-enfj .feeling-personality-customizations,
+  .mbti-esfj .feeling-personality-customizations {
+    background: white !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+  
+  .mbti-enfj .share-button,
+  .mbti-esfj .share-button {
+    background: white !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+}
+
+/* =================================
+   WARM THEME UTILITIES
+   ================================= */
+
+/* Warm background patterns */
+.warm-pattern-dots {
+  background-image: radial-gradient(circle, var(--mbti-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+.warm-pattern-lines {
+  background-image: linear-gradient(45deg, var(--mbti-border) 25%, transparent 25%);
+  background-size: 10px 10px;
+  opacity: 0.05;
+}
+
+/* Warm text utilities */
+.warm-text-primary {
+  color: var(--mbti-primary);
+}
+
+.warm-text-accent {
+  color: var(--mbti-accent);
+}
+
+.warm-text-comfort {
+  color: var(--mbti-comfort-text);
+}
+
+/* Warm background utilities */
+.warm-bg-surface {
+  background-color: var(--mbti-surface);
+}
+
+.warm-bg-comfort {
+  background-color: var(--mbti-comfort-bg);
+}
+
+.warm-bg-hover {
+  background-color: var(--mbti-hover);
+}
+
+/* Warm border utilities */
+.warm-border {
+  border: 1px solid var(--mbti-border);
+}
+
+.warm-border-accent {
+  border: 1px solid var(--mbti-accent);
+}
+
+.warm-border-comfort {
+  border: 1px solid var(--mbti-comfort-border);
+}

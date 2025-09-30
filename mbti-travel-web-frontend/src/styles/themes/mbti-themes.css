@@ -1,0 +1,345 @@
+/* MBTI personality-specific themes with comprehensive color palettes */
+
+:root {
+  /* Default theme variables */
+  --mbti-primary: #007bff;
+  --mbti-secondary: #6c757d;
+  --mbti-accent: #28a745;
+  --mbti-background: #ffffff;
+  --mbti-text: #212529;
+  --mbti-theme-type: 'default';
+  
+  /* Additional theme variables */
+  --mbti-surface: #f8f9fa;
+  --mbti-border: #dee2e6;
+  --mbti-shadow: rgba(0, 0, 0, 0.1);
+  --mbti-hover: rgba(0, 123, 255, 0.1);
+  --mbti-focus: rgba(0, 123, 255, 0.25);
+}
+
+/* =================================
+   STRUCTURED PERSONALITIES
+   Professional and organized themes
+   ================================= */
+
+/* INTJ - The Architect: Strategic and professional */
+.mbti-intj {
+  --mbti-primary: #2c3e50;
+  --mbti-secondary: #34495e;
+  --mbti-accent: #3498db;
+  --mbti-background: #ecf0f1;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #bdc3c7;
+  --mbti-shadow: rgba(44, 62, 80, 0.15);
+  --mbti-hover: rgba(52, 152, 219, 0.1);
+  --mbti-focus: rgba(52, 152, 219, 0.25);
+  --mbti-theme-type: 'structured';
+}
+
+/* ENTJ - The Commander: Bold and commanding */
+.mbti-entj {
+  --mbti-primary: #8e44ad;
+  --mbti-secondary: #9b59b6;
+  --mbti-accent: #e74c3c;
+  --mbti-background: #f8f9fa;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #d1a3d8;
+  --mbti-shadow: rgba(142, 68, 173, 0.15);
+  --mbti-hover: rgba(231, 76, 60, 0.1);
+  --mbti-focus: rgba(231, 76, 60, 0.25);
+  --mbti-theme-type: 'structured';
+}
+
+/* ISTJ - The Logistician: Reliable and traditional */
+.mbti-istj {
+  --mbti-primary: #34495e;
+  --mbti-secondary: #7f8c8d;
+  --mbti-accent: #27ae60;
+  --mbti-background: #ecf0f1;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #95a5a6;
+  --mbti-shadow: rgba(52, 73, 94, 0.15);
+  --mbti-hover: rgba(39, 174, 96, 0.1);
+  --mbti-focus: rgba(39, 174, 96, 0.25);
+  --mbti-theme-type: 'structured';
+}
+
+/* ESTJ - The Executive: Strong and decisive */
+.mbti-estj {
+  --mbti-primary: #c0392b;
+  --mbti-secondary: #e74c3c;
+  --mbti-accent: #f39c12;
+  --mbti-background: #fdf2e9;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #e8b4a0;
+  --mbti-shadow: rgba(192, 57, 43, 0.15);
+  --mbti-hover: rgba(243, 156, 18, 0.1);
+  --mbti-focus: rgba(243, 156, 18, 0.25);
+  --mbti-theme-type: 'structured';
+}
+
+/* =================================
+   FLEXIBLE PERSONALITIES
+   Casual and adaptable themes
+   ================================= */
+
+/* INTP - The Thinker: Clean and analytical */
+.mbti-intp {
+  --mbti-primary: #16a085;
+  --mbti-secondary: #1abc9c;
+  --mbti-accent: #3498db;
+  --mbti-background: #f0f8ff;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #7fb3d3;
+  --mbti-shadow: rgba(22, 160, 133, 0.15);
+  --mbti-hover: rgba(52, 152, 219, 0.1);
+  --mbti-focus: rgba(52, 152, 219, 0.25);
+  --mbti-theme-type: 'flexible';
+}
+
+/* ISTP - The Virtuoso: Practical and understated */
+.mbti-istp {
+  --mbti-primary: #7f8c8d;
+  --mbti-secondary: #95a5a6;
+  --mbti-accent: #e67e22;
+  --mbti-background: #f8f9fa;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #bdc3c7;
+  --mbti-shadow: rgba(127, 140, 141, 0.15);
+  --mbti-hover: rgba(230, 126, 34, 0.1);
+  --mbti-focus: rgba(230, 126, 34, 0.25);
+  --mbti-theme-type: 'flexible';
+}
+
+/* ESTP - The Entrepreneur: Dynamic and energetic */
+.mbti-estp {
+  --mbti-primary: #e74c3c;
+  --mbti-secondary: #c0392b;
+  --mbti-accent: #f1c40f;
+  --mbti-background: #fff5f5;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #f1948a;
+  --mbti-shadow: rgba(231, 76, 60, 0.15);
+  --mbti-hover: rgba(241, 196, 15, 0.1);
+  --mbti-focus: rgba(241, 196, 15, 0.25);
+  --mbti-theme-type: 'flexible-flashy';
+}
+
+/* =================================
+   COLORFUL PERSONALITIES
+   Vibrant and creative themes
+   ================================= */
+
+/* ENTP - The Debater: Creative and innovative */
+.mbti-entp {
+  --mbti-primary: #9b59b6;
+  --mbti-secondary: #8e44ad;
+  --mbti-accent: #f39c12;
+  --mbti-background: #fdf2e9;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #d7bde2;
+  --mbti-shadow: rgba(155, 89, 182, 0.15);
+  --mbti-hover: rgba(243, 156, 18, 0.1);
+  --mbti-focus: rgba(243, 156, 18, 0.25);
+  --mbti-theme-type: 'colorful';
+}
+
+/* INFP - The Mediator: Artistic and expressive */
+.mbti-infp {
+  --mbti-primary: #e91e63;
+  --mbti-secondary: #ad1457;
+  --mbti-accent: #ff9800;
+  --mbti-background: #fce4ec;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #f48fb1;
+  --mbti-shadow: rgba(233, 30, 99, 0.15);
+  --mbti-hover: rgba(255, 152, 0, 0.1);
+  --mbti-focus: rgba(255, 152, 0, 0.25);
+  --mbti-theme-type: 'colorful';
+}
+
+/* ENFP - The Campaigner: Enthusiastic and vibrant */
+.mbti-enfp {
+  --mbti-primary: #ff5722;
+  --mbti-secondary: #d84315;
+  --mbti-accent: #4caf50;
+  --mbti-background: #fff3e0;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #ffab91;
+  --mbti-shadow: rgba(255, 87, 34, 0.15);
+  --mbti-hover: rgba(76, 175, 80, 0.1);
+  --mbti-focus: rgba(76, 175, 80, 0.25);
+  --mbti-theme-type: 'colorful';
+}
+
+/* ISFP - The Adventurer: Gentle and artistic */
+.mbti-isfp {
+  --mbti-primary: #673ab7;
+  --mbti-secondary: #512da8;
+  --mbti-accent: #ff4081;
+  --mbti-background: #f3e5f5;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #b39ddb;
+  --mbti-shadow: rgba(103, 58, 183, 0.15);
+  --mbti-hover: rgba(255, 64, 129, 0.1);
+  --mbti-focus: rgba(255, 64, 129, 0.25);
+  --mbti-theme-type: 'colorful';
+}
+
+/* ESFP - The Entertainer: Cheerful and lively */
+.mbti-esfp {
+  --mbti-primary: #ffc107;
+  --mbti-secondary: #ff8f00;
+  --mbti-accent: #e91e63;
+  --mbti-background: #fffde7;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #fff176;
+  --mbti-shadow: rgba(255, 193, 7, 0.15);
+  --mbti-hover: rgba(233, 30, 99, 0.1);
+  --mbti-focus: rgba(233, 30, 99, 0.25);
+  --mbti-theme-type: 'colorful';
+}
+
+/* =================================
+   FEELING PERSONALITIES
+   Warm and harmonious themes
+   ================================= */
+
+/* INFJ - The Advocate: Thoughtful and inspiring */
+.mbti-infj {
+  --mbti-primary: #5e35b1;
+  --mbti-secondary: #4527a0;
+  --mbti-accent: #26a69a;
+  --mbti-background: #ede7f6;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #b39ddb;
+  --mbti-shadow: rgba(94, 53, 177, 0.15);
+  --mbti-hover: rgba(38, 166, 154, 0.1);
+  --mbti-focus: rgba(38, 166, 154, 0.25);
+  --mbti-theme-type: 'feeling';
+}
+
+/* ISFJ - The Protector: Warm and nurturing (special warm tones) */
+.mbti-isfj {
+  --mbti-primary: #d4a574;
+  --mbti-secondary: #f4e4bc;
+  --mbti-accent: #b8860b;
+  --mbti-background: #fdf5e6;
+  --mbti-surface: #ffffff;
+  --mbti-text: #8b4513;
+  --mbti-border: #deb887;
+  --mbti-shadow: rgba(212, 165, 116, 0.15);
+  --mbti-hover: rgba(184, 134, 11, 0.1);
+  --mbti-focus: rgba(184, 134, 11, 0.25);
+  --mbti-theme-type: 'feeling-warm';
+}
+
+/* ENFJ - The Protagonist: Inspiring and harmonious */
+.mbti-enfj {
+  --mbti-primary: #4caf50;
+  --mbti-secondary: #388e3c;
+  --mbti-accent: #ff9800;
+  --mbti-background: #e8f5e8;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #a5d6a7;
+  --mbti-shadow: rgba(76, 175, 80, 0.15);
+  --mbti-hover: rgba(255, 152, 0, 0.1);
+  --mbti-focus: rgba(255, 152, 0, 0.25);
+  --mbti-theme-type: 'feeling-warm';
+}
+
+/* ESFJ - The Consul: Friendly and welcoming */
+.mbti-esfj {
+  --mbti-primary: #ff7043;
+  --mbti-secondary: #d84315;
+  --mbti-accent: #4caf50;
+  --mbti-background: #fbe9e7;
+  --mbti-surface: #ffffff;
+  --mbti-text: #2c3e50;
+  --mbti-border: #ffab91;
+  --mbti-shadow: rgba(255, 112, 67, 0.15);
+  --mbti-hover: rgba(76, 175, 80, 0.1);
+  --mbti-focus: rgba(76, 175, 80, 0.25);
+  --mbti-theme-type: 'feeling-warm';
+}
+
+/* =================================
+   SPECIAL STYLING ENHANCEMENTS
+   ================================= */
+
+/* Flashy styling for ESTP */
+.mbti-estp.flashy-style {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--mbti-shadow);
+  }
+  50% { 
+    box-shadow: 0 0 15px var(--mbti-accent);
+  }
+}
+
+/* Warm tone enhancements */
+.mbti-isfj,
+.mbti-enfj,
+.mbti-esfj {
+  --mbti-warm-glow: rgba(255, 193, 7, 0.1);
+}
+
+/* Colorful personality enhancements */
+.mbti-entp,
+.mbti-infp,
+.mbti-enfp,
+.mbti-isfp,
+.mbti-esfp {
+  --mbti-gradient-start: var(--mbti-primary);
+  --mbti-gradient-end: var(--mbti-accent);
+}
+
+/* Theme transition animations */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-transition * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --mbti-shadow: rgba(0, 0, 0, 0.3);
+  }
+  
+  [class*="mbti-"] {
+    --mbti-border: #000000;
+    --mbti-text: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mbti-estp.flashy-style {
+    animation: none;
+  }
+  
+  .theme-transition * {
+    transition: none;
+  }
+}

@@ -1,0 +1,429 @@
+/* MBTI Personality Color Palettes and Utilities */
+
+/* =================================
+   COLOR PALETTE DEFINITIONS
+   ================================= */
+
+/* Structured Personalities - Professional Color Schemes */
+:root {
+  /* INTJ - The Architect */
+  --intj-primary: #2c3e50;
+  --intj-secondary: #34495e;
+  --intj-accent: #3498db;
+  --intj-background: #ecf0f1;
+  --intj-surface: #ffffff;
+  --intj-text: #2c3e50;
+  --intj-border: #bdc3c7;
+
+  /* ENTJ - The Commander */
+  --entj-primary: #8e44ad;
+  --entj-secondary: #9b59b6;
+  --entj-accent: #e74c3c;
+  --entj-background: #f8f9fa;
+  --entj-surface: #ffffff;
+  --entj-text: #2c3e50;
+  --entj-border: #d1a3d8;
+
+  /* ISTJ - The Logistician */
+  --istj-primary: #34495e;
+  --istj-secondary: #7f8c8d;
+  --istj-accent: #27ae60;
+  --istj-background: #ecf0f1;
+  --istj-surface: #ffffff;
+  --istj-text: #2c3e50;
+  --istj-border: #95a5a6;
+
+  /* ESTJ - The Executive */
+  --estj-primary: #c0392b;
+  --estj-secondary: #e74c3c;
+  --estj-accent: #f39c12;
+  --estj-background: #fdf2e9;
+  --estj-surface: #ffffff;
+  --estj-text: #2c3e50;
+  --estj-border: #e8b4a0;
+}
+
+/* Flexible Personalities - Casual Color Schemes */
+:root {
+  /* INTP - The Thinker */
+  --intp-primary: #16a085;
+  --intp-secondary: #1abc9c;
+  --intp-accent: #3498db;
+  --intp-background: #f0f8ff;
+  --intp-surface: #ffffff;
+  --intp-text: #2c3e50;
+  --intp-border: #7fb3d3;
+
+  /* ISTP - The Virtuoso */
+  --istp-primary: #7f8c8d;
+  --istp-secondary: #95a5a6;
+  --istp-accent: #e67e22;
+  --istp-background: #f8f9fa;
+  --istp-surface: #ffffff;
+  --istp-text: #2c3e50;
+  --istp-border: #bdc3c7;
+
+  /* ESTP - The Entrepreneur */
+  --estp-primary: #e74c3c;
+  --estp-secondary: #c0392b;
+  --estp-accent: #f1c40f;
+  --estp-background: #fff5f5;
+  --estp-surface: #ffffff;
+  --estp-text: #2c3e50;
+  --estp-border: #f1948a;
+}
+
+/* Colorful Personalities - Vibrant Color Schemes */
+:root {
+  /* ENTP - The Debater */
+  --entp-primary: #9b59b6;
+  --entp-secondary: #8e44ad;
+  --entp-accent: #f39c12;
+  --entp-background: #fdf2e9;
+  --entp-surface: #ffffff;
+  --entp-text: #2c3e50;
+  --entp-border: #d7bde2;
+
+  /* INFP - The Mediator */
+  --infp-primary: #e91e63;
+  --infp-secondary: #ad1457;
+  --infp-accent: #ff9800;
+  --infp-background: #fce4ec;
+  --infp-surface: #ffffff;
+  --infp-text: #2c3e50;
+  --infp-border: #f48fb1;
+
+  /* ENFP - The Campaigner */
+  --enfp-primary: #ff5722;
+  --enfp-secondary: #d84315;
+  --enfp-accent: #4caf50;
+  --enfp-background: #fff3e0;
+  --enfp-surface: #ffffff;
+  --enfp-text: #2c3e50;
+  --enfp-border: #ffab91;
+
+  /* ISFP - The Adventurer */
+  --isfp-primary: #673ab7;
+  --isfp-secondary: #512da8;
+  --isfp-accent: #ff4081;
+  --isfp-background: #f3e5f5;
+  --isfp-surface: #ffffff;
+  --isfp-text: #2c3e50;
+  --isfp-border: #b39ddb;
+
+  /* ESFP - The Entertainer */
+  --esfp-primary: #ffc107;
+  --esfp-secondary: #ff8f00;
+  --esfp-accent: #e91e63;
+  --esfp-background: #fffde7;
+  --esfp-surface: #ffffff;
+  --esfp-text: #2c3e50;
+  --esfp-border: #fff176;
+}
+
+/* Feeling Personalities - Warm Color Schemes */
+:root {
+  /* INFJ - The Advocate */
+  --infj-primary: #5e35b1;
+  --infj-secondary: #4527a0;
+  --infj-accent: #26a69a;
+  --infj-background: #ede7f6;
+  --infj-surface: #ffffff;
+  --infj-text: #2c3e50;
+  --infj-border: #b39ddb;
+
+  /* ISFJ - The Protector (Warm Tones) */
+  --isfj-primary: #d4a574;
+  --isfj-secondary: #f4e4bc;
+  --isfj-accent: #b8860b;
+  --isfj-background: #fdf5e6;
+  --isfj-surface: #ffffff;
+  --isfj-text: #8b4513;
+  --isfj-border: #deb887;
+
+  /* ENFJ - The Protagonist */
+  --enfj-primary: #4caf50;
+  --enfj-secondary: #388e3c;
+  --enfj-accent: #ff9800;
+  --enfj-background: #e8f5e8;
+  --enfj-surface: #ffffff;
+  --enfj-text: #2c3e50;
+  --enfj-border: #a5d6a7;
+
+  /* ESFJ - The Consul */
+  --esfj-primary: #ff7043;
+  --esfj-secondary: #d84315;
+  --esfj-accent: #4caf50;
+  --esfj-background: #fbe9e7;
+  --esfj-surface: #ffffff;
+  --esfj-text: #2c3e50;
+  --esfj-border: #ffab91;
+}
+
+/* =================================
+   UTILITY CLASSES
+   ================================= */
+
+/* Color category utilities */
+.color-structured {
+  --category-primary: var(--mbti-primary);
+  --category-secondary: var(--mbti-secondary);
+  --category-accent: var(--mbti-accent);
+}
+
+.color-flexible {
+  --category-primary: var(--mbti-primary);
+  --category-secondary: var(--mbti-secondary);
+  --category-accent: var(--mbti-accent);
+}
+
+.color-colorful {
+  --category-primary: var(--mbti-primary);
+  --category-secondary: var(--mbti-secondary);
+  --category-accent: var(--mbti-accent);
+  background: linear-gradient(135deg, var(--mbti-primary) 0%, var(--mbti-accent) 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.color-feeling {
+  --category-primary: var(--mbti-primary);
+  --category-secondary: var(--mbti-secondary);
+  --category-accent: var(--mbti-accent);
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);
+}
+
+/* Warm tone utilities */
+.warm-tones {
+  filter: sepia(0.1) saturate(1.1) hue-rotate(10deg);
+}
+
+.warm-glow {
+  box-shadow: 0 0 30px var(--mbti-warm-glow, rgba(255, 193, 7, 0.1));
+}
+
+/* Colorful personality utilities */
+.colorful-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--mbti-primary) 0%,
+    var(--mbti-secondary) 25%,
+    var(--mbti-accent) 50%,
+    var(--mbti-secondary) 75%,
+    var(--mbti-primary) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.colorful-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--mbti-primary), var(--mbti-accent)) 1;
+}
+
+/* Flashy styling for ESTP */
+.flashy-style {
+  animation: flashy-pulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.flashy-style::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: flashy-shine 3s linear infinite;
+  pointer-events: none;
+}
+
+/* =================================
+   ANIMATIONS
+   ================================= */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes flashy-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px var(--mbti-accent);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px var(--mbti-accent), 0 0 30px var(--mbti-primary);
+  }
+}
+
+@keyframes flashy-shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* =================================
+   COMPONENT-SPECIFIC UTILITIES
+   ================================= */
+
+/* Button styling */
+.btn-personality {
+  background-color: var(--mbti-primary);
+  color: var(--mbti-surface);
+  border: 1px solid var(--mbti-border);
+  transition: all 0.3s ease;
+}
+
+.btn-personality:hover {
+  background-color: var(--mbti-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--mbti-shadow);
+}
+
+.btn-personality:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px var(--mbti-shadow);
+}
+
+/* Card styling */
+.card-personality {
+  background-color: var(--mbti-surface);
+  border: 1px solid var(--mbti-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--mbti-shadow);
+  transition: all 0.3s ease;
+}
+
+.card-personality:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--mbti-shadow);
+}
+
+/* Input styling */
+.input-personality {
+  background-color: var(--mbti-surface);
+  border: 2px solid var(--mbti-border);
+  color: var(--mbti-text);
+  transition: border-color 0.3s ease;
+}
+
+.input-personality:focus {
+  border-color: var(--mbti-primary);
+  box-shadow: 0 0 0 3px var(--mbti-focus);
+  outline: none;
+}
+
+/* Text styling */
+.text-personality-primary {
+  color: var(--mbti-primary);
+}
+
+.text-personality-secondary {
+  color: var(--mbti-secondary);
+}
+
+.text-personality-accent {
+  color: var(--mbti-accent);
+}
+
+/* Background utilities */
+.bg-personality-primary {
+  background-color: var(--mbti-primary);
+}
+
+.bg-personality-secondary {
+  background-color: var(--mbti-secondary);
+}
+
+.bg-personality-accent {
+  background-color: var(--mbti-accent);
+}
+
+.bg-personality-surface {
+  background-color: var(--mbti-surface);
+}
+
+.bg-personality-background {
+  background-color: var(--mbti-background);
+}
+
+/* =================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================= */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --mbti-shadow: rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn-personality,
+  .card-personality,
+  .input-personality {
+    border-width: 2px;
+  }
+  
+  .text-personality-primary,
+  .text-personality-secondary,
+  .text-personality-accent {
+    font-weight: 600;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .colorful-gradient,
+  .flashy-style,
+  .flashy-style::before {
+    animation: none;
+  }
+  
+  .btn-personality,
+  .card-personality,
+  .input-personality {
+    transition: none;
+  }
+  
+  .btn-personality:hover,
+  .card-personality:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mbti-surface: #1a1a1a;
+    --mbti-shadow: rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-personality {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .input-personality {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #ffffff;
+  }
+}
