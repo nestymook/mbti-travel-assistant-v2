@@ -23,9 +23,9 @@ agents:
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E
       agent_session_id: null
     codebuild:
-      project_name: bedrock-agentcore-mbti_travel_assistant_mcp-builder
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-e69df5f887
-      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+      project_name: null
+      execution_role: null
+      source_bucket: null
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
