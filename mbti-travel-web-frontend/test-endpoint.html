@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgentCore Endpoint Test</title>
+</head>
+<body>
+    <h1>AgentCore Endpoint Test</h1>
+    <button onclick="testEndpoint()">Test Endpoint</button>
+    <div id="result"></div>
+
+    <script>
+        async function testEndpoint() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            const endpoints = [
+                'https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E/invocations',
+                'https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E',
+                'https://mbti_travel_assistant_mcp-skv6fd785E.bedrock-agentcore.us-east-1.amazonaws.com/invocations',
+                'https://mbti_travel_assistant_mcp-skv6fd785E.bedrock-agentcore.us-east-1.amazonaws.com'
+            ];
+            
+            for (const endpoint of endpoints) {
+                try {
+                    console.log(`Testing: ${endpoint}`);
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ test: 'ping' })
+                    });
+                    
+                    console.log(`${endpoint}: ${response.status} ${response.statusText}`);
+                    resultDiv.innerHTML += `<p>${endpoint}: ${response.status} ${response.statusText}</p>`;
+                    
+                } catch (error) {
+                    console.error(`${endpoint}: ${error.message}`);
+                    resultDiv.innerHTML += `<p>${endpoint}: ERROR - ${error.message}</p>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

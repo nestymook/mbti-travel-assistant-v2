@@ -71,8 +71,8 @@ export function getOptimizedImageUrl(
  */
 export function preloadCriticalAssets(): void {
   const criticalAssets = [
-    // Preload critical CSS
-    '/assets/styles/main.css',
+    // Preload critical CSS (main.css is bundled by Vite, no need to preload)
+    // '/assets/styles/main.css',
     // Preload critical fonts
     '/assets/fonts/inter-regular.woff2',
     '/assets/fonts/inter-medium.woff2',

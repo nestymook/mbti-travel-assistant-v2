@@ -73,5 +73,4 @@ const placeholders = ref<Placeholder[]>([
   font-size: 0.9rem;
   font-weight: 500;
 }
-</style>
-</template>
+</style>

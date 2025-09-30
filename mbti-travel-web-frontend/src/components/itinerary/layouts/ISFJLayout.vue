@@ -58,4 +58,3 @@ defineComponent({
   border: 1px solid rgba(139, 69, 19, 0.2);
 }
 </style>
-</template>

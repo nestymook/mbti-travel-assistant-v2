@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteLocationNormalized, NavigationGuardNext, RouteRecordNormalized } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
+import { CognitoAuthService } from '@/services/cognitoAuthService'
 
 // Route-based code splitting with lazy loading
 const InputPage = () => import('../views/InputPage.vue')
@@ -202,11 +203,20 @@ async function authGuard(
         // Clear any preserved state for security
         clearPreservedState()
         
-        next({
-          name: 'login',
-          query: { returnUrl: encodeURIComponent(returnUrl) },
-          replace: true // Replace history entry to prevent back button issues
-        })
+        // Redirect to Cognito Hosted UI instead of login page
+        try {
+          const cognitoAuth = CognitoAuthService.getInstance()
+          const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
+          window.location.href = hostedUIUrl
+        } catch (error) {
+          console.error('Failed to redirect to Cognito Hosted UI:', error)
+          // Fallback to login page if Cognito redirect fails
+          next({
+            name: 'login',
+            query: { returnUrl: encodeURIComponent(returnUrl) },
+            replace: true
+          })
+        }
         return
       }
     }
@@ -240,9 +250,16 @@ async function authGuard(
     next()
   } catch (error) {
     console.error('Navigation guard error:', error)
-    // On error, redirect to login or home based on auth requirement
+    // On error, redirect to Cognito Hosted UI or home based on auth requirement
     if (to.meta.requiresAuth) {
-      next({ name: 'login', replace: true })
+      try {
+        const cognitoAuth = CognitoAuthService.getInstance()
+        const hostedUIUrl = cognitoAuth.getHostedUILoginUrl()
+        window.location.href = hostedUIUrl
+      } catch (error) {
+        console.error('Failed to redirect to Cognito Hosted UI:', error)
+        next({ name: 'login', replace: true })
+      }
     } else {
       next({ name: 'home', replace: true })
     }

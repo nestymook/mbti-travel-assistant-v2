@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { AuthService } from '@/services/authService'
+import { cognitoAuth } from '@/services/cognitoAuthService'
 import type { UserContext, AuthToken } from '@/types/api'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -10,12 +10,9 @@ export const useAuthStore = defineStore('auth', () => {
   const error = ref<string | null>(null)
   const isInitialized = ref(false)
 
-  // Get AuthService instance
-  const authService = AuthService.getInstance()
-
   // Computed
   const isAuthenticated = computed(() => {
-    return authService.isAuthenticated() && user.value !== null
+    return user.value !== null
   })
 
   const hasError = computed(() => error.value !== null)
@@ -33,12 +30,16 @@ export const useAuthStore = defineStore('auth', () => {
       isLoading.value = true
       error.value = null
 
+      // Check if Cognito is configured
+      if (!cognitoAuth.isConfigurationValid()) {
+        console.warn('Cognito not configured. Using mock authentication.')
+        return
+      }
+
       // Check if user is already authenticated
-      if (authService.isAuthenticated()) {
-        const currentUser = authService.getCurrentUser()
-        if (currentUser) {
-          user.value = currentUser
-        }
+      const currentUser = await cognitoAuth.getCurrentUser()
+      if (currentUser) {
+        user.value = currentUser
       }
     } catch (err) {
       console.error('Auth initialization failed:', err)
@@ -54,8 +55,30 @@ export const useAuthStore = defineStore('auth', () => {
       isLoading.value = true
       error.value = null
 
-      const userData = await authService.login(email, password)
-      user.value = userData
+      // Use Cognito authentication if configured, otherwise use mock
+      if (cognitoAuth.isConfigurationValid()) {
+        const userData = await cognitoAuth.login(email, password)
+        user.value = userData
+      } else {
+        // Mock authentication for demo
+        console.warn('Using mock authentication - Cognito not configured')
+        await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate delay
+        
+        if (!email || !password) {
+          throw new Error('Email and password are required')
+        }
+        
+        user.value = {
+          id: 'mock-user-123',
+          email: email,
+          name: email.split('@')[0],
+          roles: ['user'],
+          preferences: {
+            theme: 'light',
+            language: 'en'
+          }
+        }
+      }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Login failed'
       error.value = errorMessage
@@ -65,9 +88,11 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  function logout(): void {
+  async function logout(): Promise<void> {
     try {
-      authService.logout()
+      if (cognitoAuth.isConfigurationValid()) {
+        await cognitoAuth.logout()
+      }
       user.value = null
       error.value = null
     } catch (err) {
@@ -83,20 +108,22 @@ export const useAuthStore = defineStore('auth', () => {
       isLoading.value = true
       error.value = null
 
-      await authService.refreshToken()
-      
-      // Update user data after token refresh
-      const currentUser = authService.getCurrentUser()
-      if (currentUser) {
-        user.value = currentUser
+      if (cognitoAuth.isConfigurationValid()) {
+        // Cognito handles token refresh automatically
+        const currentUser = await cognitoAuth.getCurrentUser()
+        if (currentUser) {
+          user.value = currentUser
+        } else {
+          throw new Error('Session expired')
+        }
       }
     } catch (err) {
       console.error('Token refresh failed:', err)
       error.value = 'Session expired. Please log in again.'
       
       // Clear auth state and redirect to login
-      logout()
-      authService.redirectToLogin()
+      await logout()
+      redirectToLogin()
     } finally {
       isLoading.value = false
     }
@@ -104,7 +131,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   function setAuthData(authToken: AuthToken, userData: UserContext): void {
     try {
-      authService.setToken(authToken, userData)
+      // For Cognito, tokens are managed automatically
       user.value = userData
       error.value = null
     } catch (err) {
@@ -117,31 +144,43 @@ export const useAuthStore = defineStore('auth', () => {
     error.value = null
   }
 
-  function getAuthToken(): string | null {
-    return authService.getToken()
+  async function getAuthToken(): Promise<string | null> {
+    if (cognitoAuth.isConfigurationValid()) {
+      return await cognitoAuth.getAuthToken()
+    }
+    return null
   }
 
   async function validateCurrentToken(): Promise<boolean> {
-    const token = authService.getToken()
-    if (!token) return false
-
     try {
-      const isValid = await authService.validateToken(token)
-      if (!isValid) {
-        // Token is invalid, clear auth state
-        logout()
-        return false
+      if (cognitoAuth.isConfigurationValid()) {
+        const isValid = await cognitoAuth.validateSession()
+        if (!isValid) {
+          await logout()
+          return false
+        }
+        return true
       }
-      return true
+      return user.value !== null // For mock auth
     } catch (err) {
       console.error('Token validation failed:', err)
-      logout()
+      await logout()
       return false
     }
   }
 
   function redirectToLogin(): void {
-    authService.redirectToLogin()
+    // Clear any existing auth data
+    user.value = null
+    error.value = null
+    
+    // Get current path to redirect back after login
+    const currentPath = window.location.pathname
+    const returnUrl = currentPath !== '/login' ? currentPath : '/'
+    
+    // Redirect to login with return URL
+    const loginUrl = `/login?returnUrl=${encodeURIComponent(returnUrl)}`
+    window.location.href = loginUrl
   }
 
   // Auto-initialize when store is created

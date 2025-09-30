@@ -68,5 +68,4 @@ function shareOn(platform: SocialPlatform) {
   color: white;
   cursor: pointer;
 }
-</style>
-</template>
+</style>

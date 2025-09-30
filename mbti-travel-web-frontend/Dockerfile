@@ -1,7 +1,5 @@
-# Multi-stage Dockerfile for MBTI Travel Frontend
-
-# Build stage
-FROM node:20.19.0-alpine AS builder
+# Multi-stage build for Vue.js frontend with nginx reverse proxy
+FROM node:18-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -10,45 +8,28 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci --only=production
 
 # Copy source code
 COPY . .
 
-# Build application
-ARG BUILD_MODE=production
-ENV NODE_ENV=production
-RUN npm run build:${BUILD_MODE}
+# Build the application for production
+RUN npm run build:production
 
-# Production stage
-FROM nginx:1.25-alpine AS production
-
-# Install security updates
-RUN apk update && apk upgrade && apk add --no-cache curl
+# Production stage with nginx
+FROM nginx:alpine
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy built application
+# Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy security headers configuration
-COPY --from=builder /app/dist/_headers /etc/nginx/conf.d/security-headers.conf
+# Create nginx user and set permissions
+RUN chown -R nginx:nginx /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html
 
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nextjs -u 1001 && \
-    chown -R nextjs:nodejs /usr/share/nginx/html && \
-    chown -R nextjs:nodejs /var/cache/nginx && \
-    chown -R nextjs:nodejs /var/log/nginx && \
-    chown -R nextjs:nodejs /etc/nginx/conf.d && \
-    touch /var/run/nginx.pid && \
-    chown -R nextjs:nodejs /var/run/nginx.pid
-
-# Switch to non-root user
-USER nextjs
-
-# Expose port
+# Expose port 8080 (nginx listens on this port)
 EXPOSE 8080
 
 # Health check

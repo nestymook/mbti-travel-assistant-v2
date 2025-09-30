@@ -100,6 +100,70 @@ export class AuthService {
   }
 
   /**
+   * Login with email and password (mock implementation)
+   */
+  async login(email: string, password: string): Promise<UserContext> {
+    try {
+      // Mock login for demo purposes
+      // In a real app, this would make an API call to authenticate
+      
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Mock validation - accept any email/password for demo
+      if (!email || !password) {
+        throw new Error('Email and password are required')
+      }
+      
+      // Create mock user data
+      const userData: UserContext = {
+        id: 'mock-user-123',
+        email: email,
+        name: email.split('@')[0], // Use email prefix as name
+        roles: ['user'],
+        preferences: {
+          theme: 'light',
+          language: 'en'
+        }
+      }
+      
+      // Create mock auth token
+      const authToken: AuthToken = {
+        accessToken: this.generateMockJWT(userData),
+        refreshToken: 'mock-refresh-token-' + Date.now(),
+        expiresIn: 3600, // 1 hour
+        tokenType: 'Bearer'
+      }
+      
+      // Store the token and user data
+      this.setToken(authToken, userData)
+      
+      return userData
+    } catch (error) {
+      console.error('Login failed:', error)
+      throw error
+    }
+  }
+
+  /**
+   * Generate a mock JWT token for demo purposes
+   */
+  private generateMockJWT(userData: UserContext): string {
+    const header = btoa(JSON.stringify({ alg: 'HS256', typ: 'JWT' }))
+    const payload = btoa(JSON.stringify({
+      sub: userData.id,
+      email: userData.email,
+      name: userData.name,
+      exp: Math.floor(Date.now() / 1000) + 3600, // 1 hour from now
+      iat: Math.floor(Date.now() / 1000),
+      iss: 'mbti-travel-demo'
+    }))
+    const signature = btoa('mock-signature-' + Date.now())
+    
+    return `${header}.${payload}.${signature}`
+  }
+
+  /**
    * Refresh the JWT token
    */
   async refreshToken(): Promise<string> {
@@ -197,6 +261,19 @@ export class AuthService {
    */
   getToken(): string | null {
     return this.token
+  }
+
+  /**
+   * Validate a JWT token
+   */
+  async validateToken(token: string): Promise<boolean> {
+    try {
+      // For mock implementation, just check if token is not expired
+      return this.isTokenValid(token)
+    } catch (error) {
+      console.error('Token validation failed:', error)
+      return false
+    }
   }
 
   /**

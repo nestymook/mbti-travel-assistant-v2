@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .loading {
+            text-align: center;
+        }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <h2>Hong Kong MBTI Travel Planner</h2>
+        <p>Loading your travel experience...</p>
+    </div>
+
+    <script>
+        // SPA routing fix for S3 static hosting
+        (function() {
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            
+            if (redirect && redirect !== location.href) {
+                // Redirect to the stored URL
+                history.replaceState(null, null, redirect);
+            } else {
+                // If no redirect, go to the current path without query params for SPA routing
+                var currentPath = location.pathname + location.search + location.hash;
+                if (currentPath !== '/') {
+                    history.replaceState(null, null, currentPath);
+                }
+            }
+            
+            // Redirect to index.html to let Vue Router handle the routing
+            location.replace('/');
+        })();
+    </script>
+</body>
+</html>

@@ -120,5 +120,4 @@ function updateDescriptions() {
   color: #6c757d;
   font-style: italic;
 }
-</style>
-</template>
+</style>

@@ -21,11 +21,23 @@ export class ApiService {
     this.authService = AuthService.getInstance()
     
     const config: ApiConfig = {
-      baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080',
+      baseURL: import.meta.env.VITE_API_BASE_URL || '', // Empty for same-origin requests (nginx proxy)
       timeout: 120000, // 2 minutes for itinerary generation
       retryAttempts: 3,
       retryDelay: 1000
     }
+
+    // Debug logging for API configuration
+    console.group('🔧 API Service Configuration')
+    console.log('Base URL:', config.baseURL)
+    console.log('Timeout:', config.timeout)
+    console.log('Retry Attempts:', config.retryAttempts)
+    console.log('Environment Variables:')
+    console.log('  VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL)
+    console.log('  VITE_API_TIMEOUT:', import.meta.env.VITE_API_TIMEOUT)
+    console.log('  NODE_ENV:', import.meta.env.NODE_ENV)
+    console.log('  MODE:', import.meta.env.MODE)
+    console.groupEnd()
 
     this.client = axios.create({
       baseURL: config.baseURL,
@@ -61,18 +73,22 @@ export class ApiService {
         // Add request ID for tracking
         config.headers['X-Request-ID'] = this.generateRequestId()
 
-        // Log request in development
-        if (import.meta.env.DEV) {
-          console.log(`[API Request] ${config.method?.toUpperCase()} ${config.url}`, {
-            headers: config.headers,
-            data: config.data
-          })
-        }
+        // Enhanced debug logging (always enabled for debugging network issues)
+        console.group(`🚀 API Request: ${config.method?.toUpperCase()} ${config.url}`)
+        console.log('Full URL:', `${config.baseURL}${config.url}`)
+        console.log('Headers:', config.headers)
+        console.log('Data:', config.data)
+        console.log('Timeout:', config.timeout)
+        console.groupEnd()
 
         return config
       },
       (error) => {
-        console.error('[API Request Error]', error)
+        console.group('❌ API Request Setup Error')
+        console.error('Error:', error)
+        console.error('Message:', error.message)
+        console.error('Stack:', error.stack)
+        console.groupEnd()
         return Promise.reject(error)
       }
     )
@@ -80,13 +96,14 @@ export class ApiService {
     // Response interceptor for error handling and response logging
     this.client.interceptors.response.use(
       (response: AxiosResponse) => {
-        // Log response in development
-        if (import.meta.env.DEV) {
-          console.log(`[API Response] ${response.status} ${response.config.url}`, {
-            data: response.data,
-            headers: response.headers
-          })
-        }
+        // Enhanced debug logging (always enabled for debugging)
+        console.group(`✅ API Response: ${response.status} ${response.config.url}`)
+        console.log('Status:', response.status)
+        console.log('Status Text:', response.statusText)
+        console.log('Headers:', response.headers)
+        console.log('Data:', response.data)
+        console.log('Response Time:', response.headers['x-response-time'] || 'N/A')
+        console.groupEnd()
 
         return response
       },
@@ -118,14 +135,37 @@ export class ApiService {
         // Handle other errors
         const apiError = this.handleApiError(error)
         
-        // Log error in development
-        if (import.meta.env.DEV) {
-          console.error('[API Response Error]', {
-            error: apiError,
-            originalError: error,
-            config: error.config
-          })
+        // Enhanced error logging (always enabled for debugging network issues)
+        console.group(`❌ API Response Error: ${error.config?.url}`)
+        console.error('Error Type:', error.name)
+        console.error('Error Message:', error.message)
+        console.error('Error Code:', error.code)
+        console.error('Request URL:', `${error.config?.baseURL}${error.config?.url}`)
+        console.error('Request Method:', error.config?.method?.toUpperCase())
+        console.error('Request Headers:', error.config?.headers)
+        console.error('Request Data:', error.config?.data)
+        
+        if (error.response) {
+          console.error('Response Status:', error.response.status)
+          console.error('Response Status Text:', error.response.statusText)
+          console.error('Response Headers:', error.response.headers)
+          console.error('Response Data:', error.response.data)
+        } else if (error.request) {
+          console.error('No Response Received')
+          console.error('Request Object:', error.request)
+        } else {
+          console.error('Request Setup Error')
         }
+        
+        console.error('Network Error Details:', {
+          timeout: error.config?.timeout,
+          baseURL: error.config?.baseURL,
+          url: error.config?.url,
+          fullURL: `${error.config?.baseURL}${error.config?.url}`
+        })
+        
+        console.error('Processed API Error:', apiError)
+        console.groupEnd()
 
         return Promise.reject(apiError)
       }
@@ -140,10 +180,10 @@ export class ApiService {
       // Validate request
       this.validateItineraryRequest(request)
 
-      // Make API call with retry logic
+      // Make API call with retry logic - nginx proxies to AgentCore
       const response = await this.makeRequestWithRetry<ItineraryResponse>({
         method: 'POST',
-        url: '/api/itinerary/generate',
+        url: '/api/itinerary/generate', // nginx proxies this to AgentCore
         data: request,
         timeout: 120000, // 2 minutes for itinerary generation
       })
@@ -423,5 +463,83 @@ export class ApiService {
    */
   private generateRequestId(): string {
     return `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+  }
+
+  /**
+   * Generate MBTI travel itinerary
+   */
+  async generateItinerary(request: ItineraryRequest): Promise<ItineraryResponse> {
+    try {
+      console.log('Generating itinerary for:', request.mbtiPersonality)
+      
+      // Prepare the request payload for the AgentCore endpoint
+      const payload = {
+        MBTI_personality: request.mbtiPersonality,
+        user_context: {
+          user_id: this.authService.getCurrentUser()?.id || 'anonymous',
+          preferences: {
+            budget: request.preferences?.budget || 'medium',
+            interests: request.preferences?.interests || ['culture', 'food', 'sightseeing'],
+            includeRestaurants: request.preferences?.includeRestaurants !== false,
+            includeTouristSpots: request.preferences?.includeTouristSpots !== false
+          }
+        },
+        start_date: new Date().toISOString().split('T')[0], // Today's date
+        special_requirements: request.preferences?.specialRequirements || 'First time visiting Hong Kong'
+      }
+
+      const response = await this.client.post('/generate-itinerary', payload)
+      
+      // Validate the response structure
+      this.validateItineraryResponse(response.data)
+      
+      return response.data as ItineraryResponse
+    } catch (error) {
+      console.error('Error generating itinerary:', error)
+      
+      if (error instanceof Error) {
+        throw error
+      }
+      
+      if (axios.isAxiosError(error)) {
+        const apiError = this.handleApiError(error)
+        throw new Error(apiError.message)
+      }
+      
+      throw new Error('Failed to generate itinerary. Please try again.')
+    }
+  }
+
+  /**
+   * Validate itinerary response structure
+   */
+  private validateItineraryResponse(response: any): void {
+    if (!response) {
+      throw new Error('Invalid response: empty response')
+    }
+
+    if (!response.main_itinerary) {
+      throw new Error('Invalid response: missing main_itinerary')
+    }
+
+    // Check for required days
+    const requiredDays = ['day_1', 'day_2', 'day_3']
+    for (const day of requiredDays) {
+      if (!response.main_itinerary[day]) {
+        throw new Error(`Invalid response: missing ${day} in main_itinerary`)
+      }
+    }
+
+    if (!response.candidate_tourist_spots) {
+      throw new Error('Invalid response: missing candidate_tourist_spots')
+    }
+
+    if (!response.candidate_restaurants) {
+      throw new Error('Invalid response: missing candidate_restaurants')
+    }
+
+    if (!response.metadata) {
+      throw new Error('Invalid response: missing metadata')
+    }
   }
 }

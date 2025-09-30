@@ -124,5 +124,4 @@ function updatePoints() {
   border-radius: 50%;
   cursor: pointer;
 }
-</style>
-</template>
+</style>

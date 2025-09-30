@@ -32,6 +32,7 @@
       <button 
         type="submit" 
         class="submit-button" 
+        :class="{ loading: isLoading }"
         :disabled="isLoading || !inputValue.trim()"
         :aria-label="isLoading ? 'Generating itinerary...' : 'Generate 3-day itinerary'"
       >
@@ -130,7 +131,7 @@ function clearError() {
 /* Mobile-first responsive input form */
 .mbti-input-form {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   background: var(--mbti-surface, #ffffff);
   padding: var(--spacing-lg, 1.5rem);
   border-radius: 16px;
@@ -180,13 +181,13 @@ function clearError() {
 
 .mbti-input {
   width: 100%;
-  padding: var(--spacing-lg, 1.5rem);
-  font-size: var(--font-size-xl, 1.25rem);
+  padding: var(--spacing-md, 1rem);
+  font-size: var(--font-size-base, 1rem);
   border: 3px solid var(--mbti-border, #dee2e6);
   border-radius: 12px;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   transition: all 0.3s ease;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
   font-weight: 700;
@@ -229,9 +230,9 @@ function clearError() {
 
 .submit-button {
   width: 100%;
-  padding: var(--spacing-lg, 1.5rem);
-  font-size: var(--font-size-lg, 1.125rem);
-  font-weight: 700;
+  padding: var(--spacing-md, 1rem);
+  font-size: var(--font-size-base, 1rem);
+  font-weight: 600;
   color: var(--mbti-surface, #ffffff);
   background: var(--mbti-primary, #007bff);
   border: none;
@@ -313,12 +314,12 @@ function clearError() {
   }
   
   .mbti-input {
-    font-size: var(--font-size-2xl, 1.5rem);
-    letter-spacing: 0.25em;
+    font-size: var(--font-size-lg, 1.125rem);
+    letter-spacing: 0.2em;
   }
   
   .submit-button {
-    font-size: var(--font-size-xl, 1.25rem);
+    font-size: var(--font-size-base, 1rem);
   }
 }
 
@@ -333,13 +334,13 @@ function clearError() {
   }
   
   .mbti-input {
-    padding: var(--spacing-xl, 2rem);
-    font-size: var(--font-size-2xl, 1.5rem);
+    padding: var(--spacing-lg, 1.5rem);
+    font-size: var(--font-size-lg, 1.125rem);
   }
   
   .submit-button {
-    padding: var(--spacing-xl, 2rem);
-    font-size: var(--font-size-xl, 1.25rem);
+    padding: var(--spacing-lg, 1.5rem);
+    font-size: var(--font-size-base, 1rem);
   }
   
   .test-link a {
@@ -350,7 +351,7 @@ function clearError() {
 /* Large devices (desktops, 1024px and up) */
 @media (min-width: 1024px) {
   .mbti-input-form {
-    max-width: 600px;
+    max-width: 900px;
   }
   
   .form-header h1 {
@@ -358,8 +359,15 @@ function clearError() {
   }
 }
 
-/* Loading state animation */
-.submit-button:disabled::after {
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .mbti-input-form {
+    max-width: 1000px;
+  }
+}
+
+/* Loading state animation - only show when actually loading */
+.submit-button.loading::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -397,7 +405,7 @@ function clearError() {
     transform: none;
   }
   
-  .submit-button:disabled::after {
+  .submit-button.loading::after {
     animation: none;
   }
 }

@@ -50,5 +50,4 @@
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
-</style>
-</template>
+</style>

@@ -192,6 +192,7 @@ function handleAction(action: ErrorNotificationAction): void {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 0.75rem;
+  justify-content: center;
 }
 
 .error-action-button {
@@ -213,23 +214,27 @@ function handleAction(action: ErrorNotificationAction): void {
 }
 
 .error-action-button--primary {
-  background: currentColor;
-  color: white;
+  background: #dc2626 !important;
+  color: white !important;
+  border-color: #dc2626 !important;
 }
 
 .error-action-button--primary:hover:not(:disabled) {
-  opacity: 0.9;
+  background: #b91c1c !important;
+  color: white !important;
+  transform: translateY(-1px);
 }
 
 .error-action-button--secondary {
-  background: transparent;
-  color: currentColor;
-  border-color: currentColor;
+  background: transparent !important;
+  color: #374151 !important;
+  border-color: #d1d5db !important;
 }
 
 .error-action-button--secondary:hover:not(:disabled) {
-  background: currentColor;
-  color: white;
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  transform: translateY(-1px);
 }
 
 .error-action-button--danger {

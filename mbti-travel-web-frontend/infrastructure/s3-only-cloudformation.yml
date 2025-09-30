@@ -1,0 +1,179 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'MBTI Travel Web Frontend Infrastructure (S3 Only - No CloudFront)'
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues: [staging, production]
+    Default: staging
+    Description: 'Deployment environment'
+  
+  DomainName:
+    Type: String
+    Description: 'Custom domain name (optional)'
+    Default: ''
+
+Conditions:
+  HasCustomDomain: !Not [!Equals [!Ref DomainName, '']]
+  IsProduction: !Equals [!Ref Environment, 'production']
+
+Resources:
+  # S3 Bucket for static hosting
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'mbti-travel-frontend-${Environment}-${AWS::AccountId}'
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders: ['*']
+            AllowedMethods: [GET, HEAD]
+            AllowedOrigins: ['*']
+            MaxAge: 3600
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldVersions
+            Status: Enabled
+            NoncurrentVersionExpirationInDays: 30
+      NotificationConfiguration:
+        CloudWatchConfigurations:
+          - Event: s3:ObjectCreated:*
+            CloudWatchConfiguration:
+              LogGroupName: !Ref WebsiteLogGroup
+      Tags:
+        - Key: Project
+          Value: MBTI-Travel-Frontend
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ManagedBy
+          Value: CloudFormation
+
+  # S3 Bucket Policy
+  WebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebsiteBucket
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub '${WebsiteBucket}/*'
+          - Sid: AllowDeploymentUser
+            Effect: Allow
+            Principal:
+              AWS: !GetAtt DeploymentUser.Arn
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:ListBucket
+            Resource:
+              - !Sub '${WebsiteBucket}/*'
+              - !Ref WebsiteBucket
+
+  # IAM User for deployment
+  DeploymentUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: !Sub 'mbti-travel-deployment-${Environment}'
+      Policies:
+        - PolicyName: S3DeploymentPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                  - s3:ListBucket
+                  - s3:GetBucketLocation
+                  - s3:GetBucketWebsite
+                  - s3:PutBucketWebsite
+                Resource:
+                  - !Sub '${WebsiteBucket}/*'
+                  - !Ref WebsiteBucket
+      Tags:
+        - Key: Project
+          Value: MBTI-Travel-Frontend
+        - Key: Environment
+          Value: !Ref Environment
+
+  # Access Keys for deployment
+  DeploymentUserAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref DeploymentUser
+
+  # CloudWatch Log Group for monitoring
+  WebsiteLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/s3/mbti-travel-frontend-${Environment}'
+      RetentionInDays: !If [IsProduction, 30, 7]
+
+  # Route 53 Record (if custom domain - requires manual DNS setup)
+  DNSRecord:
+    Type: AWS::Route53::RecordSet
+    Condition: HasCustomDomain
+    Properties:
+      HostedZoneName: !Sub '${DomainName}.'
+      Name: !Ref DomainName
+      Type: CNAME
+      TTL: 300
+      ResourceRecords:
+        - !GetAtt WebsiteBucket.RegionalDomainName
+
+Outputs:
+  WebsiteURL:
+    Description: 'S3 Website URL'
+    Value: !GetAtt WebsiteBucket.WebsiteURL
+    Export:
+      Name: !Sub '${AWS::StackName}-WebsiteURL'
+  
+  S3BucketName:
+    Description: 'S3 Bucket Name'
+    Value: !Ref WebsiteBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-S3BucketName'
+    
+  S3BucketDomainName:
+    Description: 'S3 Bucket Domain Name'
+    Value: !GetAtt WebsiteBucket.RegionalDomainName
+    Export:
+      Name: !Sub '${AWS::StackName}-S3BucketDomainName'
+  
+  DeploymentUserArn:
+    Description: 'Deployment User ARN'
+    Value: !GetAtt DeploymentUser.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-DeploymentUserArn'
+  
+  AccessKeyId:
+    Description: 'Access Key ID for deployment'
+    Value: !Ref DeploymentUserAccessKey
+    Export:
+      Name: !Sub '${AWS::StackName}-AccessKeyId'
+  
+  SecretAccessKey:
+    Description: 'Secret Access Key for deployment (store securely!)'
+    Value: !GetAtt DeploymentUserAccessKey.SecretAccessKey
+    Export:
+      Name: !Sub '${AWS::StackName}-SecretAccessKey'
+  
+  WebsiteEndpoint:
+    Description: 'Website Endpoint'
+    Value: !Sub 'http://${WebsiteBucket}.s3-website-${AWS::Region}.amazonaws.com'
+    Export:
+      Name: !Sub '${AWS::StackName}-WebsiteEndpoint'

@@ -9,6 +9,8 @@
   top: 0;
   z-index: 100;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-container {
@@ -16,7 +18,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-md, 1rem);
-  max-width: var(--container-xl, 1200px);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }

@@ -160,7 +160,7 @@ export function useErrorHandler() {
           })
         } else {
           actions.push({
-            label: 'Retry',
+            label: 'Try Again',
             action: () => retryLastOperation(),
             style: 'primary'
           })
@@ -170,16 +170,17 @@ export function useErrorHandler() {
       case 'api_error':
         if (error.retryable) {
           actions.push({
-            label: 'Retry',
+            label: 'Try Again',
             action: () => retryLastOperation(),
             style: 'primary'
           })
+        } else {
+          actions.push({
+            label: 'Refresh Page',
+            action: () => window.location.reload(),
+            style: 'primary'
+          })
         }
-        actions.push({
-          label: 'Refresh Page',
-          action: () => window.location.reload(),
-          style: 'secondary'
-        })
         break
 
       case 'auth_error':
@@ -191,7 +192,7 @@ export function useErrorHandler() {
           })
         } else if (error.action === 'refresh_token') {
           actions.push({
-            label: 'Retry',
+            label: 'Try Again',
             action: () => refreshTokenAndRetry(),
             style: 'primary'
           })
@@ -215,12 +216,13 @@ export function useErrorHandler() {
             action: () => retryLastOperation(),
             style: 'primary'
           })
+        } else {
+          actions.push({
+            label: 'Refresh Page',
+            action: () => window.location.reload(),
+            style: 'primary'
+          })
         }
-        actions.push({
-          label: 'Refresh Page',
-          action: () => window.location.reload(),
-          style: 'secondary'
-        })
         break
     }
 

@@ -92,5 +92,4 @@ function updateCheckedItems() {
 .checkbox-text {
   flex: 1;
 }
-</style>
-</template>
+</style>

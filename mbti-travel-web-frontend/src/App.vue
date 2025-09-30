@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, computed, ref, watch } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
+import { CognitoAuthService } from '@/services/cognitoAuthService'
 import ErrorNotificationSystem from '@/components/common/ErrorNotificationSystem.vue'
 import { usePerformanceMonitoring, useBundleOptimization, useMemoryManagement } from '@/composables/usePerformanceOptimizations'
 
@@ -24,7 +25,17 @@ const userDisplayName = computed(() => authStore.userDisplayName)
 // Methods
 function handleLogout(): void {
   closeMobileMenu()
-  authStore.logout()
+  
+  // Use Cognito Hosted UI for logout
+  try {
+    const cognitoAuth = CognitoAuthService.getInstance()
+    const hostedUILogoutUrl = cognitoAuth.getHostedUILogoutUrl()
+    window.location.href = hostedUILogoutUrl
+  } catch (error) {
+    console.error('Failed to redirect to Cognito Hosted UI logout:', error)
+    // Fallback to regular logout
+    authStore.logout()
+  }
 }
 
 function toggleMobileMenu(): void {
@@ -74,8 +85,8 @@ onMounted(async () => {
   try {
     await authStore.initialize()
     
-    // Preload critical resources
-    preloadResource('/assets/styles/main.css', 'style')
+    // Preload critical resources (main.css is already imported in main.ts)
+    // preloadResource('/assets/styles/main.css', 'style')
     
     // Preload common chunks
     await preloadChunk('vue-vendor', () => import('vue'))
@@ -107,8 +118,7 @@ onUnmounted(() => {
 
 <template>
   <div id="app">
-    <!-- Skip navigation link for accessibility -->
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     
     <!-- Responsive navigation header - only show when authenticated and not on login page -->
     <header v-if="isAuthenticated && !isLoginPage" class="responsive-nav" role="banner">
@@ -116,7 +126,7 @@ onUnmounted(() => {
         <div class="nav-logo">
           <RouterLink to="/" class="nav-logo-link">
             <span class="nav-logo-icon">🧭</span>
-            <span>MBTI Travel Planner</span>
+            <span>Hong Kong MBTI Travel Planner</span>
           </RouterLink>
         </div>
 
@@ -165,19 +175,17 @@ onUnmounted(() => {
             </RouterLink>
           </div>
           
-          <!-- User section in mobile menu -->
-          <div class="nav-user-section nav-menu-item">
-            <div class="nav-user-greeting">Hello, {{ userDisplayName }}!</div>
+          <!-- User section in mobile menu - Hidden to avoid duplicate -->
+          <!-- <div class="nav-user-section nav-menu-item">
             <button @click="handleLogout" class="nav-logout-btn">
               <span>👋</span>
               <span>Sign Out</span>
             </button>
-          </div>
+          </div> -->
         </nav>
 
         <!-- Desktop user section -->
         <div class="nav-user-section d-none d-md-flex">
-          <span class="nav-user-greeting">Hello, {{ userDisplayName }}!</span>
           <button @click="handleLogout" class="nav-logout-btn">
             Sign Out
           </button>
@@ -228,24 +236,7 @@ onUnmounted(() => {
   padding-top: 0;
 }
 
-/* Skip navigation link */
-.skip-nav {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--mbti-primary, #007bff);
-  color: var(--mbti-surface, #ffffff);
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 1000;
-  font-weight: 600;
-  font-size: var(--font-size-sm, 0.875rem);
-}
 
-.skip-nav:focus {
-  top: 6px;
-}
 
 /* Responsive navigation styles are imported from responsive-navigation.css */
 
@@ -299,9 +290,7 @@ onUnmounted(() => {
     display: none;
   }
   
-  .skip-nav {
-    display: none;
-  }
+
   
   .main-content {
     padding: 0;

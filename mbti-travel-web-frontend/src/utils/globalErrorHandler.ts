@@ -32,6 +32,18 @@ export function setupGlobalErrorHandling(app: App): void {
   window.addEventListener('unhandledrejection', (event) => {
     console.error('Unhandled Promise Rejection:', event.reason)
     
+    // Don't handle authentication errors globally - let them be handled by the auth components
+    if (event.reason && (
+      event.reason.message?.includes('login') ||
+      event.reason.message?.includes('auth') ||
+      event.reason.message?.includes('sign') ||
+      event.reason.name?.includes('Auth') ||
+      event.reason.name?.includes('Cognito')
+    )) {
+      console.log('Skipping global error handling for authentication error')
+      return
+    }
+    
     const context: Partial<ErrorContext> = {
       additionalData: {
         type: 'unhandledrejection',

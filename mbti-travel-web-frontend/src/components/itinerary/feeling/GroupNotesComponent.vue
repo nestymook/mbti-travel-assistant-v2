@@ -159,5 +159,4 @@ function formatDate(date: Date): string {
   font-family: inherit;
   resize: vertical;
 }
-</style>
-</template>
+</style>

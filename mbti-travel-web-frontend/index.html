@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Hong Kong MBTI Travel Planner</title>
+    <meta name="description" content="Discover Hong Kong with personalized travel itineraries based on your MBTI personality type">
+    
+    <!-- SPA routing support for S3 static hosting -->
+    <script>
+      // Store the current URL for SPA routing
+      (function() {
+        var redirect = location.search.match(/[?&]redirect=([^&]+)/);
+        if (redirect) {
+          sessionStorage.redirect = decodeURIComponent(redirect[1]);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    
+    <!-- Handle SPA routing after Vue app loads -->
+    <script>
+      // Restore the URL after Vue Router is ready
+      window.addEventListener('load', function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      });
+    </script>
   </body>
 </html>

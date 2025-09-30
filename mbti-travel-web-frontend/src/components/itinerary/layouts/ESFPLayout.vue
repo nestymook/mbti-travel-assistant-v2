@@ -62,4 +62,3 @@ defineComponent({
   60% { transform: translateY(-3px); }
 }
 </style>
-</template>

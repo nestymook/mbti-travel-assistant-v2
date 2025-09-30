@@ -55,5 +55,4 @@
   text-align: center;
   font-style: italic;
 }
-</style>
-</template>
+</style>

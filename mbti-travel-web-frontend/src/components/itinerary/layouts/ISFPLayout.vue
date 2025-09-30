@@ -55,4 +55,3 @@ defineComponent({
   line-height: 1.6;
 }
 </style>
-</template>
