@@ -1,0 +1,88 @@
+{
+  "status_check_system": {
+    "enabled": true,
+    "global_check_interval_seconds": 30,
+    "global_timeout_seconds": 10,
+    "max_concurrent_checks": 5,
+    "health_check_endpoint_enabled": true,
+    "metrics_retention_hours": 24,
+    "cloudwatch_metrics_enabled": true,
+    "cloudwatch_namespace": "MCP/StatusCheck"
+  },
+  "circuit_breaker_defaults": {
+    "failure_threshold": 5,
+    "recovery_threshold": 3,
+    "timeout_seconds": 60,
+    "half_open_max_calls": 3
+  },
+  "servers": {
+    "restaurant-search-mcp": {
+      "server_name": "restaurant-search-mcp",
+      "endpoint_url": "https://your-gateway-url/mcp/restaurant-search-mcp",
+      "check_interval_seconds": 30,
+      "timeout_seconds": 10,
+      "enabled": true,
+      "retry_attempts": 3,
+      "retry_delay_seconds": 1.0,
+      "exponential_backoff": true,
+      "max_retry_delay_seconds": 30.0,
+      "circuit_breaker": {
+        "failure_threshold": 5,
+        "recovery_threshold": 3,
+        "timeout_seconds": 60,
+        "half_open_max_calls": 3
+      },
+      "expected_tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type", 
+        "search_restaurants_combined"
+      ],
+      "priority": "high",
+      "description": "Core restaurant search functionality"
+    },
+    "restaurant-search-result-reasoning-mcp": {
+      "server_name": "restaurant-search-result-reasoning-mcp",
+      "endpoint_url": "https://your-gateway-url/mcp/restaurant-search-result-reasoning-mcp",
+      "check_interval_seconds": 30,
+      "timeout_seconds": 10,
+      "enabled": true,
+      "retry_attempts": 3,
+      "retry_delay_seconds": 1.0,
+      "exponential_backoff": true,
+      "max_retry_delay_seconds": 30.0,
+      "circuit_breaker": {
+        "failure_threshold": 5,
+        "recovery_threshold": 3,
+        "timeout_seconds": 60,
+        "half_open_max_calls": 3
+      },
+      "expected_tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "priority": "medium",
+      "description": "Restaurant recommendation and sentiment analysis"
+    }
+  },
+  "authentication": {
+    "jwt_token_source": "cognito",
+    "cognito_config_file": "config/cognito_config.json",
+    "token_refresh_threshold_minutes": 5,
+    "auth_retry_attempts": 2
+  },
+  "logging": {
+    "level": "INFO",
+    "log_health_checks": true,
+    "log_circuit_breaker_events": true,
+    "log_authentication_events": false,
+    "structured_logging": true
+  },
+  "alerting": {
+    "enabled": false,
+    "sns_topic_arn": null,
+    "alert_on_server_down": true,
+    "alert_on_circuit_breaker_open": true,
+    "alert_threshold_consecutive_failures": 3,
+    "cooldown_minutes": 15
+  }
+}

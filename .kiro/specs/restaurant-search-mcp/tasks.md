@@ -519,30 +519,87 @@
     - Test complete deployment with entrypoint integration
     - _Requirements: 19.7, 19.1_
 
-- [x] 20. Create comprehensive README and usage examples
+- [x] 20. Implement MCP Server Status Check System
 
 
 
 
 
+  - [x] 20.1 Create status check data models and configuration
+
+
+
+    - Implement ServerStatus, CircuitBreakerState, HealthCheckResult, and ServerMetrics models in models/status_models.py
+    - Create MCPStatusCheckConfig and CircuitBreakerConfig classes with server-specific configurations
+    - Configure status check settings for restaurant-search-mcp and restaurant-search-result-reasoning-mcp servers
+    - Add proper dataclass serialization for JSON status responses
+    - _Requirements: Design Section - MCP Server Status Check System_
+
+  - [x] 20.2 Implement MCP tools/list health check service
+
+
+
+    - Create HealthCheckService class in services/health_check_service.py using MCP tools/list requests
+    - Implement async health check loops with configurable intervals (30 seconds default)
+    - Add JWT Bearer token authentication for MCP Gateway endpoints
+    - Create proper MCP JSON-RPC 2.0 request formatting for tools/list method
+    - Add response validation to ensure MCP servers return valid tool lists
+    - _Requirements: Design Section - MCP Tools/List Status Check Method_
+
+  - [x] 20.3 Create circuit breaker and metrics tracking
+
+
+
+    - Implement CircuitBreaker class with failure/recovery thresholds and state management
+    - Create StatusCheckManager for centralized server status coordination
+    - Add ServerMetrics tracking for response times, success/failure rates, and uptime percentages
+    - Implement exponential backoff for retry attempts and circuit breaker recovery
+    - _Requirements: Design Section - Status Check Manager_
+
+  - [x] 20.4 Build status check endpoints and console integration
+
+
+
+    - Create status check REST endpoints (/status/health, /status/servers, /status/metrics) in api/status_endpoints.py
+    - Implement StatusConsoleIntegration class for JSON-formatted individual server status
+    - Add real-time status monitoring with proper error handling for 403 auth errors and timeouts
+    - Create comprehensive status dashboard integration with CloudWatch metrics
+    - _Requirements: Design Section - Status Check Endpoints, Console Integration_
+
+  - [x] 20.5 Write comprehensive status check tests
+
+
+
+    - Test MCP tools/list health check functionality with mocked MCP Gateway responses
+    - Test circuit breaker state transitions and failure/recovery scenarios
+    - Test status endpoint responses and console JSON formatting
+    - Test authentication error handling and timeout scenarios
+    - Validate metrics accuracy and status reporting consistency
+    - _Requirements: Design Section - MCP Server Status Check System_
+
+
+- [x] 21. Create comprehensive README and usage examples
 
 
 
 
-  - [x] 20.1 Write main project README.md
+  - [x] 21.1 Write main project README.md
 
 
-    - Create comprehensive project overview and architecture description including authentication and entrypoint integration
-    - Document installation and setup instructions for BedrockAgentCoreApp entrypoint with Cognito authentication
-    - Add usage examples for both MCP tools and natural language queries through entrypoint with authentication
-    - Include troubleshooting section and links to detailed guides including authentication and entrypoint issues
-    - _Requirements: 4.1, 4.2, 4.3, 9.1, 11.1, 14.1, 16.1, 19.1_
 
-  - [x] 20.2 Create MCP tool usage examples and integration patterns
+    - Create comprehensive project overview and architecture description including authentication, entrypoint integration, and status monitoring
+    - Document installation and setup instructions for BedrockAgentCoreApp entrypoint with Cognito authentication and status checks
+    - Add usage examples for MCP tools, natural language queries, and status monitoring endpoints
+    - Include troubleshooting section covering authentication, entrypoint, and status check issues
+    - _Requirements: 4.1, 4.2, 4.3, 9.1, 11.1, 14.1, 16.1, 19.1, Design Section - MCP Server Status Check System_
+
+  - [x] 21.2 Create MCP tool usage examples and integration patterns
 
 
-    - Write example code for integrating MCP tools with BedrockAgentCoreApp entrypoint including authentication
+
+    - Write example code for integrating MCP tools with BedrockAgentCoreApp entrypoint including authentication and status monitoring
     - Document parameter formats and expected response structures for all tools through entrypoint
     - Create sample queries and expected outputs for testing and validation with entrypoint integration
-    - Add examples of error handling and edge case management including authentication and entrypoint errors
-    - _Requirements: 4.1, 4.2, 4.3, 6.1, 6.2, 6.3, 18.1, 18.2, 19.1, 19.6_
+    - Add examples of error handling, status monitoring, and edge case management
+    - Document status check API usage and console integration patterns
+    - _Requirements: 4.1, 4.2, 4.3, 6.1, 6.2, 6.3, 18.1, 18.2, 19.1, 19.6, Design Section - Status Check Endpoints_

@@ -114,7 +114,7 @@ The application follows the Bedrock AgentCore conversational AI pattern with the
 
 #### Data Access Layer
 11. **Data Access Client**: Unified client for S3 restaurant data retrieval and local district configuration loading
-12. **S3 Client**: Manages AWS S3 data retrieval using boto3
+12. **S3 Client**: Manages AWS S3 data retrieval using boto3 from bucket `restaurant-data-209803798463-us-east-1`
 13. **Configuration Loader**: Loads and parses local district configuration files
 
 #### Infrastructure Layer
