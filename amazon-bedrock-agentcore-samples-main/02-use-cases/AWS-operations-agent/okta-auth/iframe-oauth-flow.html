@@ -433,7 +433,7 @@
                 };
 
                 // Test connectivity to Okta (optional - just check if domain resolves)
-                const testResponse = await fetch(`${oktaConfig.baseUrl}/.well-known/openid_configuration`, {
+                const testResponse = await fetch(`${oktaConfig.baseUrl}/.well-known/openid-configuration`, {
                     method: 'GET',
                     mode: 'cors'
                 }).catch(() => null);

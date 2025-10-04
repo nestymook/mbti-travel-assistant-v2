@@ -23,8 +23,8 @@
   "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
   "setup_timestamp": "us-east-1",
   "custom_domain": {
-    "domain_prefix": "restaurant-mcp-9cccf837",
-    "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
+    "domain_prefix": "mbti-travel-oidc-334662794",
+    "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
     "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
     "status": "ACTIVE"
   }

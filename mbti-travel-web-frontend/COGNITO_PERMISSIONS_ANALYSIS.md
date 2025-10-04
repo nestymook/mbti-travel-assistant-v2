@@ -7,7 +7,7 @@ Your application is using **Cognito User Pool only** for authentication, which i
 ### **What You Have:**
 - ✅ **Cognito User Pool**: `us-east-1_wBAxW7yd4`
 - ✅ **User Pool Client**: `26k0pnja579pdpb1pt6savs27e`
-- ✅ **Hosted UI Domain**: `restaurant-mcp-9cccf837`
+- ✅ **Hosted UI Domain**: `mbti-travel-oidc-334662794`
 - ✅ **OAuth Configuration**: Properly configured
 
 ### **What You DON'T Need:**
@@ -90,18 +90,18 @@ The issue is **NOT** related to Identity Pool permissions. The problem is in the
 
 ### **4. Cognito Domain Issues**
 - **Check**: Cognito domain is active and accessible
-- **Current**: `restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com`
+- **Current**: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 
 ## 🧪 **Debugging Steps**
 
 ### **Step 1: Verify Cognito Domain**
 ```bash
-curl -I https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration
+curl -I https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration
 ```
 
 ### **Step 2: Test Login URL Manually**
 ```
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 
 ### **Step 3: Check Browser Network Tab**
@@ -128,7 +128,7 @@ aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_wBAxW7yd4 --c
 
 ### **Check Cognito Domain**
 ```bash
-aws cognito-idp describe-user-pool-domain --domain restaurant-mcp-9cccf837 --region us-east-1
+aws cognito-idp describe-user-pool-domain --domain mbti-travel-oidc-334662794 --region us-east-1
 ```
 
 ## ✅ **Conclusion: Your Permissions Are Sufficient**

@@ -16,9 +16,9 @@
     "AWS_DEFAULT_REGION": "us-east-1",
     "ENVIRONMENT": "production",
     "DOCKER_CONTAINER": "1",
-    "AGENT_MODEL": "amazon.nova-pro-v1:0:300k",
+    "AGENT_MODEL": "amazon.nova-pro-v1:0",
     "AGENT_TEMPERATURE": "0.1",
-    "AGENT_MAX_TOKENS": "4096"
+    "AGENT_MAX_TOKENS": "2048"
   },
   "observability": {
     "enabled": true,

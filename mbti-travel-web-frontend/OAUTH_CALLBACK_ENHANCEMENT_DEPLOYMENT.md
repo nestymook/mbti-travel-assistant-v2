@@ -84,7 +84,7 @@ aws cognito-idp describe-user-pool-client \
 
 #### **Issue**: "Token exchange failed"
 **Solution**: Verify Cognito domain and client configuration
-- Domain: `restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com`
+- Domain: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 - Client ID: `26k0pnja579pdpb1pt6savs27e`
 - Callback URLs: Must include CloudFront URL
 
@@ -114,7 +114,7 @@ aws cognito-idp describe-user-pool-client \
 ```bash
 VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
 VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
-VITE_COGNITO_DOMAIN=restaurant-mcp-9cccf837
+VITE_COGNITO_DOMAIN=mbti-travel-oidc-334662794
 VITE_COGNITO_REDIRECT_SIGN_IN=https://d39ank8zud5pbg.cloudfront.net/
 VITE_COGNITO_REDIRECT_SIGN_OUT=https://d39ank8zud5pbg.cloudfront.net/
 ```
@@ -124,7 +124,7 @@ VITE_COGNITO_REDIRECT_SIGN_OUT=https://d39ank8zud5pbg.cloudfront.net/
 ### **Step 1: Login Initiation**
 ```
 User clicks "Sign In" → Redirects to Cognito Hosted UI
-URL: https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login
+URL: https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login
 ```
 
 ### **Step 2: OAuth Callback**
@@ -136,7 +136,7 @@ URL: https://d39ank8zud5pbg.cloudfront.net/?code=XXXXXX&state=XXXXXX
 ### **Step 3: Token Exchange**
 ```
 Application exchanges code for JWT tokens
-Endpoint: https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/oauth2/token
+Endpoint: https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/token
 ```
 
 ### **Step 4: Authentication Verification**

@@ -1,0 +1,22 @@
+{
+  "cognito_settings": {
+    "region": "us-east-1",
+    "user_pool_id": "us-east-1_KePRX24Bn",
+    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
+    "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+    "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+    "client_name": "mbti-travel-oidc-client",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+    "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+    "test_user": {
+      "username": "test@mbti-travel.com",
+      "email": "test@mbti-travel.com"
+    }
+  },
+  "agentcore_updates": {
+    "authorizer_configured": true,
+    "oauth_configured": true,
+    "headers_configured": true,
+    "region_updated": true
+  }
+}

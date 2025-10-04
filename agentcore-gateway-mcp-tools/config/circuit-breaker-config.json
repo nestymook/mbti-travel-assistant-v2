@@ -1,0 +1,509 @@
+{
+  "circuit_breaker_configuration": {
+    "version": "1.0.0",
+    "description": "Circuit breaker configuration for MCP server health monitoring and fault tolerance",
+    
+    "global_settings": {
+      "enabled": true,
+      "default_failure_threshold": 5,
+      "default_timeout_seconds": 30,
+      "default_retry_interval_seconds": 60,
+      "default_half_open_max_calls": 3,
+      "default_success_threshold": 2,
+      "monitoring_interval_seconds": 10,
+      "metrics_collection_enabled": true
+    },
+    
+    "server_specific_settings": {
+      "restaurant-search-mcp": {
+        "enabled": true,
+        "failure_threshold": 3,
+        "timeout_seconds": 20,
+        "retry_interval_seconds": 45,
+        "half_open_max_calls": 2,
+        "success_threshold": 2,
+        
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "timeout_seconds": 5,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy",
+              "server": "restaurant-search-mcp"
+            }
+          }
+        },
+        
+        "failure_conditions": [
+          {
+            "type": "response_timeout",
+            "threshold_seconds": 20,
+            "weight": 1.0
+          },
+          {
+            "type": "connection_error",
+            "weight": 2.0
+          },
+          {
+            "type": "mcp_protocol_error",
+            "error_codes": [-32700, -32600, -32601, -32602, -32603],
+            "weight": 1.5
+          },
+          {
+            "type": "tool_execution_error",
+            "consecutive_failures": 3,
+            "weight": 1.0
+          }
+        ],
+        
+        "recovery_conditions": [
+          {
+            "type": "successful_health_check",
+            "consecutive_successes": 2
+          },
+          {
+            "type": "successful_tool_call",
+            "consecutive_successes": 2
+          }
+        ],
+        
+        "fallback_behavior": {
+          "enabled": true,
+          "fallback_response": {
+            "jsonrpc": "2.0",
+            "error": {
+              "code": -32001,
+              "message": "Restaurant search service temporarily unavailable",
+              "data": {
+                "reason": "Circuit breaker open - service health issues detected",
+                "server": "restaurant-search-mcp",
+                "retry_after_seconds": 45,
+                "circuit_breaker_state": "open",
+                "alternative_suggestions": [
+                  "Try again in 45 seconds",
+                  "Use broader search criteria",
+                  "Contact support if problem persists"
+                ]
+              }
+            }
+          }
+        }
+      },
+      
+      "restaurant-reasoning-mcp": {
+        "enabled": true,
+        "failure_threshold": 5,
+        "timeout_seconds": 45,
+        "retry_interval_seconds": 60,
+        "half_open_max_calls": 3,
+        "success_threshold": 2,
+        
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "timeout_seconds": 8,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy",
+              "server": "restaurant-reasoning-mcp"
+            }
+          }
+        },
+        
+        "failure_conditions": [
+          {
+            "type": "response_timeout",
+            "threshold_seconds": 45,
+            "weight": 1.0
+          },
+          {
+            "type": "connection_error",
+            "weight": 2.0
+          },
+          {
+            "type": "mcp_protocol_error",
+            "error_codes": [-32700, -32600, -32601, -32602, -32603],
+            "weight": 1.5
+          },
+          {
+            "type": "sentiment_analysis_error",
+            "consecutive_failures": 3,
+            "weight": 1.2
+          },
+          {
+            "type": "recommendation_error",
+            "consecutive_failures": 4,
+            "weight": 1.0
+          }
+        ],
+        
+        "recovery_conditions": [
+          {
+            "type": "successful_health_check",
+            "consecutive_successes": 2
+          },
+          {
+            "type": "successful_recommendation",
+            "consecutive_successes": 2
+          },
+          {
+            "type": "successful_sentiment_analysis",
+            "consecutive_successes": 2
+          }
+        ],
+        
+        "fallback_behavior": {
+          "enabled": true,
+          "fallback_response": {
+            "jsonrpc": "2.0",
+            "error": {
+              "code": -32001,
+              "message": "Restaurant reasoning service temporarily unavailable",
+              "data": {
+                "reason": "Circuit breaker open - sentiment analysis service experiencing issues",
+                "server": "restaurant-reasoning-mcp",
+                "retry_after_seconds": 60,
+                "circuit_breaker_state": "open",
+                "alternative_suggestions": [
+                  "Try the request again in 60 seconds",
+                  "Use basic restaurant search without sentiment analysis",
+                  "Contact support for assistance"
+                ]
+              }
+            }
+          }
+        }
+      },
+      
+      "mbti-travel-assistant-mcp": {
+        "enabled": true,
+        "failure_threshold": 4,
+        "timeout_seconds": 120,
+        "retry_interval_seconds": 90,
+        "half_open_max_calls": 2,
+        "success_threshold": 2,
+        
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "timeout_seconds": 10,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy",
+              "server": "mbti-travel-assistant-mcp",
+              "knowledge_base_status": "connected"
+            }
+          }
+        },
+        
+        "failure_conditions": [
+          {
+            "type": "response_timeout",
+            "threshold_seconds": 120,
+            "weight": 1.0
+          },
+          {
+            "type": "connection_error",
+            "weight": 2.0
+          },
+          {
+            "type": "mcp_protocol_error",
+            "error_codes": [-32700, -32600, -32601, -32602, -32603],
+            "weight": 1.5
+          },
+          {
+            "type": "knowledge_base_error",
+            "consecutive_failures": 2,
+            "weight": 2.0
+          },
+          {
+            "type": "itinerary_generation_error",
+            "consecutive_failures": 3,
+            "weight": 1.5
+          },
+          {
+            "type": "mbti_validation_error",
+            "consecutive_failures": 5,
+            "weight": 0.5
+          }
+        ],
+        
+        "recovery_conditions": [
+          {
+            "type": "successful_health_check",
+            "consecutive_successes": 2
+          },
+          {
+            "type": "successful_itinerary_generation",
+            "consecutive_successes": 1
+          },
+          {
+            "type": "successful_knowledge_base_query",
+            "consecutive_successes": 2
+          }
+        ],
+        
+        "fallback_behavior": {
+          "enabled": true,
+          "fallback_response": {
+            "jsonrpc": "2.0",
+            "error": {
+              "code": -32001,
+              "message": "MBTI travel assistant service temporarily unavailable",
+              "data": {
+                "reason": "Circuit breaker open - itinerary generation service experiencing issues",
+                "server": "mbti-travel-assistant-mcp",
+                "retry_after_seconds": 90,
+                "circuit_breaker_state": "open",
+                "alternative_suggestions": [
+                  "Try the request again in 90 seconds",
+                  "Use simplified travel planning without MBTI matching",
+                  "Check MBTI personality code format (e.g., INFJ, ENFP)",
+                  "Contact support if knowledge base issues persist"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "circuit_breaker_states": {
+      "closed": {
+        "description": "Normal operation - requests are allowed through",
+        "behavior": "Forward all requests to MCP servers",
+        "monitoring": "Track failure rates and response times",
+        "transition_conditions": {
+          "to_open": "Failure threshold exceeded within monitoring window"
+        }
+      },
+      
+      "open": {
+        "description": "Circuit breaker is open - requests are blocked",
+        "behavior": "Return fallback responses immediately without calling MCP servers",
+        "monitoring": "Continue health checks in background",
+        "transition_conditions": {
+          "to_half_open": "Retry interval has elapsed and health check succeeds"
+        }
+      },
+      
+      "half_open": {
+        "description": "Testing if service has recovered - limited requests allowed",
+        "behavior": "Allow limited number of test requests through",
+        "monitoring": "Track success/failure of test requests",
+        "transition_conditions": {
+          "to_closed": "Success threshold met for test requests",
+          "to_open": "Any test request fails"
+        }
+      }
+    },
+    
+    "monitoring_and_metrics": {
+      "enabled": true,
+      
+      "metrics": {
+        "circuit_breaker_state": {
+          "type": "gauge",
+          "description": "Current circuit breaker state (0=closed, 1=open, 2=half-open)",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "failure_count": {
+          "type": "counter",
+          "description": "Number of failures detected",
+          "dimensions": ["server_name", "failure_type", "environment"]
+        },
+        
+        "success_count": {
+          "type": "counter",
+          "description": "Number of successful requests",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "circuit_breaker_trips": {
+          "type": "counter",
+          "description": "Number of times circuit breaker opened",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "fallback_responses": {
+          "type": "counter",
+          "description": "Number of fallback responses served",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "recovery_attempts": {
+          "type": "counter",
+          "description": "Number of recovery attempts made",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "health_check_duration": {
+          "type": "histogram",
+          "description": "Duration of health check requests",
+          "dimensions": ["server_name", "environment"]
+        }
+      },
+      
+      "alerting": {
+        "enabled": true,
+        "alert_conditions": [
+          {
+            "name": "circuit_breaker_open",
+            "condition": "circuit_breaker_state == 1",
+            "severity": "warning",
+            "description": "Circuit breaker is open for MCP server",
+            "notification_channels": ["cloudwatch", "sns"]
+          },
+          {
+            "name": "high_failure_rate",
+            "condition": "failure_rate > 0.5 for 5 minutes",
+            "severity": "warning",
+            "description": "High failure rate detected for MCP server",
+            "notification_channels": ["cloudwatch"]
+          },
+          {
+            "name": "frequent_circuit_breaker_trips",
+            "condition": "circuit_breaker_trips > 3 in 1 hour",
+            "severity": "critical",
+            "description": "Circuit breaker tripping frequently",
+            "notification_channels": ["cloudwatch", "sns", "email"]
+          }
+        ]
+      },
+      
+      "logging": {
+        "enabled": true,
+        "log_level": "INFO",
+        "log_events": [
+          "circuit_breaker_state_change",
+          "failure_threshold_exceeded",
+          "recovery_attempt",
+          "health_check_failure",
+          "fallback_response_served"
+        ],
+        "log_format": {
+          "timestamp": "ISO8601",
+          "level": "string",
+          "server_name": "string",
+          "event_type": "string",
+          "circuit_breaker_state": "string",
+          "failure_count": "integer",
+          "success_count": "integer",
+          "additional_context": "object"
+        }
+      }
+    },
+    
+    "load_balancing_integration": {
+      "enabled": true,
+      "description": "Integration with load balancer to route traffic away from unhealthy servers",
+      
+      "health_status_propagation": {
+        "enabled": true,
+        "update_interval_seconds": 5,
+        "health_check_endpoint": "/circuit-breaker/health",
+        "status_mapping": {
+          "closed": "healthy",
+          "half_open": "degraded",
+          "open": "unhealthy"
+        }
+      },
+      
+      "traffic_routing": {
+        "circuit_breaker_open": {
+          "action": "remove_from_pool",
+          "description": "Remove server from load balancer pool when circuit breaker is open"
+        },
+        "circuit_breaker_half_open": {
+          "action": "limited_traffic",
+          "traffic_percentage": 10,
+          "description": "Send limited traffic to server in half-open state"
+        },
+        "circuit_breaker_closed": {
+          "action": "full_traffic",
+          "description": "Send full traffic to healthy server"
+        }
+      }
+    },
+    
+    "testing_and_validation": {
+      "enabled": true,
+      
+      "test_scenarios": [
+        {
+          "name": "server_unavailable",
+          "description": "Test circuit breaker when MCP server is completely unavailable",
+          "simulation": {
+            "block_all_requests": true,
+            "duration_seconds": 120
+          },
+          "expected_behavior": {
+            "circuit_breaker_opens": true,
+            "fallback_responses_served": true,
+            "recovery_after_server_available": true
+          }
+        },
+        {
+          "name": "slow_responses",
+          "description": "Test circuit breaker with slow but successful responses",
+          "simulation": {
+            "add_response_delay": 60,
+            "duration_seconds": 180
+          },
+          "expected_behavior": {
+            "timeout_failures_detected": true,
+            "circuit_breaker_opens": true,
+            "recovery_when_responses_fast": true
+          }
+        },
+        {
+          "name": "intermittent_failures",
+          "description": "Test circuit breaker with intermittent failures",
+          "simulation": {
+            "failure_rate": 0.6,
+            "duration_seconds": 300
+          },
+          "expected_behavior": {
+            "failure_threshold_exceeded": true,
+            "circuit_breaker_opens": true,
+            "half_open_state_testing": true
+          }
+        }
+      ],
+      
+      "validation_checks": [
+        {
+          "name": "configuration_validation",
+          "checks": [
+            "failure_threshold > 0",
+            "timeout_seconds > 0",
+            "retry_interval_seconds > timeout_seconds",
+            "success_threshold > 0",
+            "half_open_max_calls > 0"
+          ]
+        },
+        {
+          "name": "health_check_validation",
+          "checks": [
+            "health_check_endpoint_accessible",
+            "expected_response_format_valid",
+            "health_check_timeout_reasonable"
+          ]
+        },
+        {
+          "name": "fallback_response_validation",
+          "checks": [
+            "fallback_response_valid_json",
+            "fallback_response_mcp_compliant",
+            "error_message_user_friendly"
+          ]
+        }
+      ]
+    }
+  }
+}

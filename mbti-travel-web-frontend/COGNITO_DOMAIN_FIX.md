@@ -4,7 +4,7 @@
 
 The "Failed to fetch" error reveals that your Cognito domain is **not accessible**:
 
-- **Domain**: `restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com`
+- **Domain**: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 - **Status in AWS**: `ACTIVE`
 - **Actual Status**: **404 Not Found**
 
@@ -15,11 +15,11 @@ This explains why you're getting "No authorization code" - the OAuth flow can't 
 ### **What We Found:**
 ```bash
 # Domain shows as ACTIVE in AWS
-aws cognito-idp describe-user-pool-domain --domain restaurant-mcp-9cccf837
+aws cognito-idp describe-user-pool-domain --domain mbti-travel-oidc-334662794
 Status: "ACTIVE"
 
 # But returns 404 when accessed
-curl https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration
+curl https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration
 HTTP 404 Not Found
 ```
 
@@ -36,7 +36,7 @@ Since the domain is corrupted, we need to delete and recreate it.
 ### **Step 1: Delete Current Domain**
 ```bash
 aws cognito-idp delete-user-pool-domain \
-  --domain restaurant-mcp-9cccf837 \
+  --domain mbti-travel-oidc-334662794 \
   --region us-east-1
 ```
 
@@ -44,7 +44,7 @@ aws cognito-idp delete-user-pool-domain \
 ```bash
 # Check deletion status (should return error when fully deleted)
 aws cognito-idp describe-user-pool-domain \
-  --domain restaurant-mcp-9cccf837 \
+  --domain mbti-travel-oidc-334662794 \
   --region us-east-1
 ```
 
@@ -72,7 +72,7 @@ echo "🔧 Fixing Cognito Domain..."
 # Step 1: Delete corrupted domain
 echo "📋 Deleting corrupted domain..."
 aws cognito-idp delete-user-pool-domain \
-  --domain restaurant-mcp-9cccf837 \
+  --domain mbti-travel-oidc-334662794 \
   --region us-east-1
 
 # Step 2: Wait for deletion
@@ -94,7 +94,7 @@ sleep 60
 
 # Step 5: Test new domain
 echo "🧪 Testing new domain..."
-curl -I "https://$NEW_DOMAIN.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration"
+curl -I "https://$NEW_DOMAIN.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration"
 
 echo "✅ New domain created: $NEW_DOMAIN"
 echo "📋 Update your .env.production file with: VITE_COGNITO_DOMAIN=$NEW_DOMAIN"
@@ -107,7 +107,7 @@ If you prefer to do it manually:
 ### **1. Delete Corrupted Domain**
 ```bash
 aws cognito-idp delete-user-pool-domain \
-  --domain restaurant-mcp-9cccf837 \
+  --domain mbti-travel-oidc-334662794 \
   --region us-east-1
 ```
 
@@ -124,7 +124,7 @@ aws cognito-idp create-user-pool-domain \
 Edit `mbti-travel-web-frontend/.env.production`:
 ```bash
 # Change from:
-VITE_COGNITO_DOMAIN=restaurant-mcp-9cccf837
+VITE_COGNITO_DOMAIN=mbti-travel-oidc-334662794
 
 # To:
 VITE_COGNITO_DOMAIN=restaurant-mcp-fixed-20250930
@@ -163,7 +163,7 @@ aws cloudfront create-invalidation \
 ### **1. Test New Domain**
 ```bash
 # Should return JSON configuration
-curl https://restaurant-mcp-fixed-20250930.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration
+curl https://restaurant-mcp-fixed-20250930.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration
 ```
 
 ### **2. Test Login URL**

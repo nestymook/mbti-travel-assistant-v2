@@ -874,7 +874,7 @@ class JWTValidator:
 auth_config = {
     "customJWTAuthorizer": {
         "allowedClients": [cognito_client_id],
-        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration"
+        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration"
     }
 }
 
@@ -1022,7 +1022,7 @@ class TokenValidator:
             return self.jwks_cache[kid]
             
         # Fetch JWKS from Cognito
-        jwks_url = f"{self.discovery_url.replace('/.well-known/openid_configuration', '')}/.well-known/jwks.json"
+        jwks_url = f"{self.discovery_url.replace('/.well-known/openid-configuration', '')}/.well-known/jwks.json"
         
         async with aiohttp.ClientSession() as session:
             async with session.get(jwks_url) as response:

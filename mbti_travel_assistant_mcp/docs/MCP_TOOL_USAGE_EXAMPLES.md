@@ -22,7 +22,7 @@ The Restaurant Search MCP system uses BedrockAgentCoreApp entrypoint integration
 
 ```python
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent, Tool
+from strands import Agent, tool
 
 # Initialize the BedrockAgentCoreApp
 app = BedrockAgentCoreApp()
@@ -1205,7 +1205,7 @@ if __name__ == "__main__":
 import asyncio
 import json
 from typing import List, Dict, Any, Optional
-from strands_agents import Agent, Tool, Workflow
+from strands import Agent, tool
 from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 from services.auth_service import CognitoAuthenticator
@@ -3886,7 +3886,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent, Tool
+from strands import Agent, tool
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

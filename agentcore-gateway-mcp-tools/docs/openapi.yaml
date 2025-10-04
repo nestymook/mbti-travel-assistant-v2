@@ -1,0 +1,796 @@
+openapi: 3.0.0
+info:
+  title: AgentCore Gateway MCP Tools API
+  description: |
+    RESTful API Gateway that exposes restaurant search and reasoning MCP tools through HTTP endpoints.
+    
+    This API provides access to Hong Kong restaurant data with search capabilities by district and meal type,
+    along with intelligent recommendation and sentiment analysis features.
+    
+    ## Authentication
+    All endpoints (except health and metadata) require JWT authentication using AWS Cognito User Pool tokens.
+    Include the JWT token in the Authorization header: `Bearer <jwt_token>`
+    
+    ## Rate Limiting
+    - 100 requests per minute per user
+    - 20 requests per 10 seconds burst limit
+    
+    ## Error Handling
+    All errors follow a consistent JSON format with success flag, error type, message, and details.
+  version: 1.0.0
+  contact:
+    name: AgentCore Gateway Support
+    url: https://github.com/your-org/agentcore-gateway-mcp-tools
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://your-gateway.amazonaws.com
+    description: Production server
+  - url: http://localhost:8080
+    description: Development server
+
+security:
+  - BearerAuth: []
+
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Check the health status of the Gateway and connected MCP servers
+      tags:
+        - System
+      security: []
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: "healthy"
+                timestamp: "2025-01-03T10:30:00Z"
+                version: "1.0.0"
+                services:
+                  mcp_search_server: "healthy"
+                  mcp_reasoning_server: "healthy"
+                  authentication: "healthy"
+                uptime_seconds: 3600
+
+  /metrics:
+    get:
+      summary: System Metrics
+      description: Get operational metrics and statistics
+      tags:
+        - System
+      security: []
+      responses:
+        '200':
+          description: System metrics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsResponse'
+
+  /tools/metadata:
+    get:
+      summary: Tool Metadata
+      description: Get comprehensive metadata about all available tools for foundation model integration
+      tags:
+        - Tools
+      security: []
+      responses:
+        '200':
+          description: Tool metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolMetadataResponse'
+
+  /api/v1/restaurants/search/district:
+    post:
+      summary: Search Restaurants by District
+      description: Search for restaurants in specific Hong Kong districts
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DistrictSearchRequest'
+            example:
+              districts: ["Central district", "Admiralty", "Causeway Bay"]
+      responses:
+        '200':
+          description: Successful search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/AuthenticationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/restaurants/search/meal-type:
+    post:
+      summary: Search Restaurants by Meal Type
+      description: Search for restaurants based on meal service times (breakfast, lunch, dinner)
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MealTypeSearchRequest'
+            example:
+              meal_types: ["breakfast", "lunch"]
+      responses:
+        '200':
+          description: Successful search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/AuthenticationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/restaurants/search/combined:
+    post:
+      summary: Combined Restaurant Search
+      description: Search restaurants using both district and meal type filters
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CombinedSearchRequest'
+            example:
+              districts: ["Central district", "Admiralty"]
+              meal_types: ["lunch", "dinner"]
+      responses:
+        '200':
+          description: Successful search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/AuthenticationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/restaurants/recommend:
+    post:
+      summary: Get Restaurant Recommendations
+      description: Get intelligent restaurant recommendations based on sentiment analysis
+      tags:
+        - Restaurant Reasoning
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendationRequest'
+            example:
+              restaurants:
+                - id: "rest_001"
+                  name: "Great Restaurant"
+                  sentiment:
+                    likes: 85
+                    dislikes: 10
+                    neutral: 5
+                  district: "Central district"
+              ranking_method: "sentiment_likes"
+      responses:
+        '200':
+          description: Successful recommendation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/AuthenticationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/restaurants/analyze:
+    post:
+      summary: Analyze Restaurant Sentiment
+      description: Analyze sentiment patterns across restaurant data
+      tags:
+        - Restaurant Reasoning
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SentimentAnalysisRequest'
+            example:
+              restaurants:
+                - id: "rest_001"
+                  name: "Restaurant A"
+                  sentiment:
+                    likes: 85
+                    dislikes: 10
+                    neutral: 5
+      responses:
+        '200':
+          description: Successful analysis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentAnalysisResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/AuthenticationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT token from AWS Cognito User Pool.
+        
+        **User Pool ID**: us-east-1_KePRX24Bn  
+        **Client ID**: 1ofgeckef3po4i3us4j1m4chvd  
+        **Region**: us-east-1
+        
+        Include the token in the Authorization header: `Bearer <jwt_token>`
+
+  schemas:
+    # Request Schemas
+    DistrictSearchRequest:
+      type: object
+      required:
+        - districts
+      properties:
+        districts:
+          type: array
+          items:
+            type: string
+            enum:
+              - "Central district"
+              - "Admiralty"
+              - "Causeway Bay"
+              - "Wan Chai"
+              - "Tsim Sha Tsui"
+              - "Mong Kok"
+              - "Yau Ma Tei"
+              - "Jordan"
+          minItems: 1
+          description: List of Hong Kong district names to search
+          example: ["Central district", "Admiralty"]
+
+    MealTypeSearchRequest:
+      type: object
+      required:
+        - meal_types
+      properties:
+        meal_types:
+          type: array
+          items:
+            type: string
+            enum:
+              - "breakfast"
+              - "lunch"
+              - "dinner"
+          minItems: 1
+          description: |
+            Meal types to search for:
+            - breakfast: 07:00-11:29
+            - lunch: 11:30-17:29
+            - dinner: 17:30-22:30
+          example: ["breakfast", "lunch"]
+
+    CombinedSearchRequest:
+      type: object
+      properties:
+        districts:
+          type: array
+          items:
+            type: string
+            enum:
+              - "Central district"
+              - "Admiralty"
+              - "Causeway Bay"
+              - "Wan Chai"
+              - "Tsim Sha Tsui"
+              - "Mong Kok"
+              - "Yau Ma Tei"
+              - "Jordan"
+          description: Optional district filter
+        meal_types:
+          type: array
+          items:
+            type: string
+            enum:
+              - "breakfast"
+              - "lunch"
+              - "dinner"
+          description: Optional meal type filter
+      anyOf:
+        - required: ["districts"]
+        - required: ["meal_types"]
+      example:
+        districts: ["Central district"]
+        meal_types: ["lunch", "dinner"]
+
+    RecommendationRequest:
+      type: object
+      required:
+        - restaurants
+      properties:
+        restaurants:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestaurantInput'
+          minItems: 1
+          description: List of restaurants to analyze for recommendations
+        ranking_method:
+          type: string
+          enum:
+            - "sentiment_likes"
+            - "combined_sentiment"
+          default: "sentiment_likes"
+          description: |
+            Ranking method:
+            - sentiment_likes: Rank by highest likes count
+            - combined_sentiment: Rank by (likes + neutral) percentage
+
+    SentimentAnalysisRequest:
+      type: object
+      required:
+        - restaurants
+      properties:
+        restaurants:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestaurantInput'
+          minItems: 1
+          description: List of restaurants to analyze
+
+    # Data Models
+    RestaurantInput:
+      type: object
+      required:
+        - id
+        - name
+        - sentiment
+      properties:
+        id:
+          type: string
+          description: Unique restaurant identifier
+        name:
+          type: string
+          description: Restaurant name
+        sentiment:
+          $ref: '#/components/schemas/SentimentData'
+        district:
+          type: string
+          description: Restaurant district
+        cuisine_type:
+          type: string
+          description: Type of cuisine
+        address:
+          type: string
+          description: Restaurant address
+        operating_hours:
+          type: object
+          additionalProperties:
+            type: string
+          description: Operating hours by day of week
+
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique restaurant identifier
+        name:
+          type: string
+          description: Restaurant name
+        district:
+          type: string
+          description: Restaurant district
+        address:
+          type: string
+          description: Restaurant address
+        cuisine_type:
+          type: string
+          description: Type of cuisine
+        price_range:
+          type: string
+          description: Price range indicator
+        operating_hours:
+          type: object
+          additionalProperties:
+            type: string
+          description: Operating hours by day of week
+        sentiment:
+          $ref: '#/components/schemas/SentimentData'
+        meal_availability:
+          type: array
+          items:
+            type: string
+          description: Available meal types
+
+    SentimentData:
+      type: object
+      required:
+        - likes
+        - dislikes
+        - neutral
+      properties:
+        likes:
+          type: integer
+          minimum: 0
+          description: Number of positive reviews
+        dislikes:
+          type: integer
+          minimum: 0
+          description: Number of negative reviews
+        neutral:
+          type: integer
+          minimum: 0
+          description: Number of neutral reviews
+
+    # Response Schemas
+    RestaurantSearchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            restaurants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Restaurant'
+            total_count:
+              type: integer
+              description: Total number of restaurants found
+            districts_searched:
+              type: array
+              items:
+                type: string
+              description: Districts included in search
+            meal_types_searched:
+              type: array
+              items:
+                type: string
+              description: Meal types included in search
+        metadata:
+          type: object
+          properties:
+            search_type:
+              type: string
+              description: Type of search performed
+            timestamp:
+              type: string
+              format: date-time
+              description: Search timestamp
+            processing_time_ms:
+              type: integer
+              description: Processing time in milliseconds
+
+    RecommendationResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            recommendation:
+              allOf:
+                - $ref: '#/components/schemas/Restaurant'
+                - type: object
+                  properties:
+                    recommendation_score:
+                      type: number
+                      format: float
+                      description: Recommendation score (0-1)
+                    ranking_position:
+                      type: integer
+                      description: Position in ranking
+            candidates:
+              type: array
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Restaurant'
+                  - type: object
+                    properties:
+                      ranking_position:
+                        type: integer
+                      sentiment_score:
+                        type: number
+                        format: float
+            ranking_method:
+              type: string
+              description: Ranking method used
+            analysis_summary:
+              type: object
+              properties:
+                total_restaurants:
+                  type: integer
+                average_sentiment_score:
+                  type: number
+                  format: float
+                recommendation_confidence:
+                  type: string
+                  enum: ["low", "medium", "high"]
+
+    SentimentAnalysisResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            sentiment_analysis:
+              type: object
+              properties:
+                average_likes:
+                  type: number
+                  format: float
+                average_dislikes:
+                  type: number
+                  format: float
+                average_neutral:
+                  type: number
+                  format: float
+                satisfaction_distribution:
+                  type: object
+                  properties:
+                    high_satisfaction:
+                      type: integer
+                    medium_satisfaction:
+                      type: integer
+                    low_satisfaction:
+                      type: integer
+                sentiment_trends:
+                  type: object
+                  properties:
+                    positive_trend:
+                      type: boolean
+                    overall_rating:
+                      type: string
+            restaurant_count:
+              type: integer
+            ranking_method:
+              type: string
+
+    ToolMetadataResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            tools:
+              type: array
+              items:
+                $ref: '#/components/schemas/ToolMetadata'
+            total_tools:
+              type: integer
+            categories:
+              type: array
+              items:
+                type: string
+
+    ToolMetadata:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Tool name
+        description:
+          type: string
+          description: Tool description
+        purpose:
+          type: string
+          description: Tool purpose
+        endpoint:
+          type: string
+          description: API endpoint
+        method:
+          type: string
+          description: HTTP method
+        parameters:
+          type: object
+          description: Parameter schema
+        response_format:
+          type: object
+          description: Response format description
+        use_cases:
+          type: array
+          items:
+            type: string
+          description: Use case scenarios
+        mbti_integration:
+          type: object
+          description: MBTI personality integration guidance
+        examples:
+          type: array
+          items:
+            type: object
+          description: Usage examples
+
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: ["healthy", "unhealthy"]
+        timestamp:
+          type: string
+          format: date-time
+        version:
+          type: string
+        services:
+          type: object
+          properties:
+            mcp_search_server:
+              type: string
+              enum: ["healthy", "unhealthy"]
+            mcp_reasoning_server:
+              type: string
+              enum: ["healthy", "unhealthy"]
+            authentication:
+              type: string
+              enum: ["healthy", "unhealthy"]
+        uptime_seconds:
+          type: integer
+
+    MetricsResponse:
+      type: object
+      properties:
+        requests_total:
+          type: integer
+          description: Total number of requests processed
+        requests_per_minute:
+          type: number
+          format: float
+          description: Current requests per minute
+        average_response_time_ms:
+          type: number
+          format: float
+          description: Average response time in milliseconds
+        error_rate_percentage:
+          type: number
+          format: float
+          description: Error rate percentage
+        authentication_success_rate:
+          type: number
+          format: float
+          description: Authentication success rate percentage
+        mcp_server_status:
+          type: object
+          properties:
+            search_server_healthy:
+              type: boolean
+            reasoning_server_healthy:
+              type: boolean
+
+    # Error Schemas
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+              description: Error type
+            message:
+              type: string
+              description: Error message
+            details:
+              type: object
+              description: Additional error details
+            timestamp:
+              type: string
+              format: date-time
+              description: Error timestamp
+            request_id:
+              type: string
+              description: Request identifier for debugging
+
+  responses:
+    ValidationError:
+      description: Request validation failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              type: "ValidationError"
+              message: "Invalid district names provided"
+              details:
+                invalid_districts: ["NonExistent District"]
+                available_districts: ["Central district", "Admiralty", "Causeway Bay"]
+              timestamp: "2025-01-03T10:30:00Z"
+              request_id: "req_12345"
+
+    AuthenticationError:
+      description: Authentication failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              type: "AuthenticationError"
+              message: "Invalid or expired JWT token"
+              details:
+                token_validation_failed: true
+                discovery_url: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
+              timestamp: "2025-01-03T10:30:00Z"
+              request_id: "req_12345"
+
+    ServiceUnavailable:
+      description: Service temporarily unavailable
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              type: "ServiceUnavailableError"
+              message: "Restaurant search service temporarily unavailable"
+              details:
+                service: "mcp_search_server"
+                retry_after_seconds: 30
+                estimated_recovery: "2025-01-03T10:35:00Z"
+              timestamp: "2025-01-03T10:30:00Z"
+              request_id: "req_12345"
+
+tags:
+  - name: System
+    description: System health and monitoring endpoints
+  - name: Tools
+    description: Tool metadata for foundation model integration
+  - name: Restaurant Search
+    description: Restaurant search operations by district and meal type
+  - name: Restaurant Reasoning
+    description: Restaurant recommendation and sentiment analysis
+
+externalDocs:
+  description: Complete API Documentation
+  url: https://github.com/your-org/agentcore-gateway-mcp-tools/docs

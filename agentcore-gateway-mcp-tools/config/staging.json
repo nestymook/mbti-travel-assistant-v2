@@ -1,0 +1,35 @@
+{
+  "name": "staging",
+  "log_level": "INFO",
+  "debug": false,
+  "enable_hot_reload": true,
+  "mcp_servers": {
+    "search": {
+      "name": "search",
+      "url": "http://restaurant-search-mcp-staging:8080",
+      "timeout": 30,
+      "max_retries": 3,
+      "retry_delay": 1.0,
+      "health_check_path": "/health",
+      "enabled": true,
+      "tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ]
+    },
+    "reasoning": {
+      "name": "reasoning", 
+      "url": "http://restaurant-reasoning-mcp-staging:8080",
+      "timeout": 30,
+      "max_retries": 3,
+      "retry_delay": 1.0,
+      "health_check_path": "/health",
+      "enabled": true,
+      "tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ]
+    }
+  }
+}

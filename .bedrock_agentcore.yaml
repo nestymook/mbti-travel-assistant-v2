@@ -1,0 +1,38 @@
+default_agent: agentcore_gateway_mcp_tools
+agents:
+  agentcore_gateway_mcp_tools:
+    name: agentcore_gateway_mcp_tools
+    entrypoint: main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-80e944969d
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-agentcore_gateway_mcp_tools
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: agentcore_gateway_mcp_tools-UspJsMG7Fi
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/agentcore_gateway_mcp_tools-UspJsMG7Fi
+      agent_session_id: edb04389-b40a-4b71-9af5-8a6aa012ba8a
+    codebuild:
+      project_name: bedrock-agentcore-agentcore_gateway_mcp_tools-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-80e944969d
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: agentcore_gateway_mcp_tools_mem-3YoGx35ufJ
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:memory/agentcore_gateway_mcp_tools_mem-3YoGx35ufJ
+      memory_name: agentcore_gateway_mcp_tools_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null

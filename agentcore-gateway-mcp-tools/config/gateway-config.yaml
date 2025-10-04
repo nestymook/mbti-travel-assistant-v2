@@ -1,0 +1,353 @@
+# AWS Bedrock AgentCore Gateway Configuration for Native MCP Protocol Routing
+# This configuration file defines the AgentCore Gateway that provides native MCP protocol
+# routing to existing MCP servers without requiring protocol conversion.
+
+apiVersion: bedrock-agentcore/v1
+kind: Gateway
+metadata:
+  name: agentcore-mcp-gateway
+  description: "AWS Bedrock AgentCore Gateway for native MCP protocol routing to restaurant search and reasoning tools"
+  labels:
+    environment: production
+    version: "1.0.0"
+    protocol: native-mcp
+    
+spec:
+  # Gateway type and protocol configuration
+  gateway_type: "bedrock_agentcore"
+  protocol: "native_mcp"
+  
+  # Console integration for management and monitoring
+  console_integration:
+    enabled: true
+    display_name: "Restaurant MCP Gateway"
+    description: "Native MCP routing for restaurant search and reasoning tools with MBTI travel planning integration"
+    tags:
+      - "restaurant-search"
+      - "sentiment-analysis"
+      - "mbti-travel"
+      - "native-mcp"
+  
+  # MCP server endpoints and tool routing mappings
+  mcp_servers:
+    - name: "restaurant-search-mcp"
+      endpoint: "restaurant-search-mcp:8080"
+      protocol: "native_mcp"
+      transport: "stdio"
+      health_check:
+        path: "/health"
+        interval: 30
+        timeout: 10
+        retries: 3
+      tools:
+        - name: "search_restaurants_by_district"
+          description: "Search for restaurants in specific Hong Kong districts"
+          schema_ref: "restaurant-search-mcp/search_by_district"
+        - name: "search_restaurants_by_meal_type"
+          description: "Search for restaurants by meal type based on operating hours"
+          schema_ref: "restaurant-search-mcp/search_by_meal_type"
+        - name: "search_restaurants_combined"
+          description: "Search for restaurants using both district and meal type filters"
+          schema_ref: "restaurant-search-mcp/search_combined"
+      metadata:
+        version: "1.0.0"
+        maintainer: "restaurant-search-team"
+        data_source: "s3://restaurant-data"
+        
+    - name: "restaurant-reasoning-mcp"
+      endpoint: "restaurant-reasoning-mcp:8080"
+      protocol: "native_mcp"
+      transport: "stdio"
+      health_check:
+        path: "/health"
+        interval: 30
+        timeout: 10
+        retries: 3
+      tools:
+        - name: "recommend_restaurants"
+          description: "Analyze restaurant sentiment data and provide intelligent recommendations"
+          schema_ref: "restaurant-reasoning-mcp/recommend_restaurants"
+        - name: "analyze_restaurant_sentiment"
+          description: "Analyze sentiment data for restaurants without providing recommendations"
+          schema_ref: "restaurant-reasoning-mcp/analyze_sentiment"
+      metadata:
+        version: "1.0.0"
+        maintainer: "restaurant-reasoning-team"
+        capabilities: ["sentiment-analysis", "recommendations"]
+        
+    - name: "mbti-travel-assistant-mcp"
+      endpoint: "mbti-travel-assistant-mcp:8080"
+      protocol: "native_mcp"
+      transport: "stdio"
+      health_check:
+        path: "/health"
+        interval: 30
+        timeout: 10
+        retries: 3
+      tools:
+        - name: "create_mbti_itinerary"
+          description: "Generate 3-day MBTI-based travel itinerary with personality-matched tourist spots"
+          schema_ref: "mbti-travel-assistant-mcp/create_itinerary"
+        - name: "get_personality_recommendations"
+          description: "Get personality-specific recommendations for travel planning"
+          schema_ref: "mbti-travel-assistant-mcp/personality_recommendations"
+        - name: "analyze_travel_preferences"
+          description: "Analyze travel preferences based on MBTI personality type"
+          schema_ref: "mbti-travel-assistant-mcp/analyze_preferences"
+      metadata:
+        version: "1.0.0"
+        maintainer: "mbti-travel-team"
+        capabilities: ["mbti-analysis", "itinerary-generation", "knowledge-base-integration"]
+        data_sources: ["bedrock-knowledge-base", "s3://restaurant-data"]
+  
+  # JWT authentication over MCP protocol headers
+  authentication:
+    type: "jwt_over_mcp"
+    enabled: true
+    jwt_validation:
+      cognito_user_pool_id: "us-east-1_KePRX24Bn"
+      client_id: "1ofgeckef3po4i3us4j1m4chvd"
+      region: "us-east-1"
+      discovery_url: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
+      token_validation:
+        verify_signature: true
+        verify_expiration: true
+        verify_audience: true
+        verify_issuer: true
+        leeway: 60  # seconds
+      mcp_header_mapping:
+        authorization_header: "Authorization"
+        user_context_header: "X-User-Context"
+        token_claims_header: "X-Token-Claims"
+    
+    # Authentication forwarding to MCP servers
+    forward_auth_context: true
+    auth_context_format: "mcp_metadata"
+    required_claims:
+      - "sub"
+      - "email"
+      - "cognito:username"
+  
+  # Circuit breaker configuration for MCP servers
+  circuit_breaker:
+    enabled: true
+    failure_threshold: 5
+    timeout: 30
+    retry_interval: 60
+    half_open_max_calls: 3
+    success_threshold: 2
+    
+    # Per-server circuit breaker settings
+    server_settings:
+      restaurant-search-mcp:
+        failure_threshold: 3
+        timeout: 20
+      restaurant-reasoning-mcp:
+        failure_threshold: 5
+        timeout: 45
+      mbti-travel-assistant-mcp:
+        failure_threshold: 4
+        timeout: 60
+  
+  # Load balancing configuration
+  load_balancing:
+    enabled: true
+    strategy: "round_robin"
+    health_check_interval: 30
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    
+    # Sticky sessions for stateful operations
+    sticky_sessions:
+      enabled: false  # MCP servers are stateless
+      session_affinity: "none"
+  
+  # Native MCP protocol configuration
+  mcp_protocol:
+    version: "2024-11-05"
+    jsonrpc_version: "2.0"
+    
+    # Request/response handling
+    request_handling:
+      max_concurrent_requests: 100
+      request_timeout: 300  # seconds
+      max_request_size: "10MB"
+      max_response_size: "50MB"
+    
+    # Tool discovery and metadata aggregation
+    tool_discovery:
+      enabled: true
+      cache_metadata: true
+      metadata_refresh_interval: 300  # seconds
+      include_examples: true
+      include_mbti_integration: true
+    
+    # Streaming support
+    streaming:
+      enabled: true
+      chunk_size: 8192
+      max_stream_duration: 600  # seconds
+    
+    # Error handling
+    error_handling:
+      forward_original_errors: true
+      add_gateway_context: true
+      include_retry_info: true
+      sanitize_error_details: false
+  
+  # Observability and monitoring
+  observability:
+    enabled: true
+    
+    # Metrics collection
+    metrics:
+      enabled: true
+      namespace: "AgentCore/MCP/Gateway"
+      dimensions:
+        - "Environment"
+        - "GatewayName"
+        - "MCPServer"
+        - "ToolName"
+      
+      # Custom metrics
+      custom_metrics:
+        - name: "MCPToolInvocations"
+          type: "counter"
+          description: "Number of MCP tool invocations"
+        - name: "MCPResponseTime"
+          type: "histogram"
+          description: "MCP tool response time in milliseconds"
+        - name: "MCPErrorRate"
+          type: "counter"
+          description: "MCP tool error rate"
+        - name: "CircuitBreakerState"
+          type: "gauge"
+          description: "Circuit breaker state (0=closed, 1=open, 2=half-open)"
+    
+    # Logging configuration
+    logging:
+      level: "INFO"
+      format: "json"
+      include_request_id: true
+      include_user_context: true
+      sanitize_sensitive_data: true
+      
+      # Log destinations
+      destinations:
+        - type: "cloudwatch"
+          log_group: "/aws/bedrock-agentcore/gateway/mcp"
+          log_stream: "gateway-{instance-id}"
+        - type: "console"
+          format: "structured"
+    
+    # Tracing
+    tracing:
+      enabled: true
+      service_name: "agentcore-mcp-gateway"
+      trace_sampling_rate: 0.1
+      include_mcp_protocol_details: true
+      
+      # X-Ray integration
+      xray:
+        enabled: true
+        segment_name: "MCP-Gateway"
+        subsegment_naming: "mcp-tool-{tool-name}"
+  
+  # Security configuration
+  security:
+    # Rate limiting
+    rate_limiting:
+      enabled: true
+      requests_per_minute: 1000
+      burst_capacity: 100
+      
+      # Per-user rate limiting
+      per_user_limits:
+        requests_per_minute: 60
+        burst_capacity: 10
+    
+    # Input validation
+    input_validation:
+      enabled: true
+      max_payload_size: "10MB"
+      validate_json_schema: true
+      sanitize_inputs: true
+    
+    # CORS configuration
+    cors:
+      enabled: true
+      allowed_origins:
+        - "https://*.amazonaws.com"
+        - "https://console.aws.amazon.com"
+      allowed_methods:
+        - "POST"
+        - "GET"
+        - "OPTIONS"
+      allowed_headers:
+        - "Authorization"
+        - "Content-Type"
+        - "X-User-Context"
+      max_age: 3600
+  
+  # Performance optimization
+  performance:
+    # Connection pooling
+    connection_pooling:
+      enabled: true
+      max_connections_per_server: 20
+      connection_timeout: 30
+      idle_timeout: 300
+      keep_alive: true
+    
+    # Caching
+    caching:
+      enabled: true
+      tool_metadata_cache_ttl: 300  # seconds
+      response_cache_ttl: 60  # seconds for cacheable responses
+      cache_size_limit: "100MB"
+    
+    # Compression
+    compression:
+      enabled: true
+      algorithms: ["gzip", "deflate"]
+      min_response_size: 1024  # bytes
+  
+  # Deployment configuration
+  deployment:
+    region: "us-east-1"
+    availability_zones:
+      - "us-east-1a"
+      - "us-east-1b"
+      - "us-east-1c"
+    
+    # Scaling configuration
+    scaling:
+      min_instances: 2
+      max_instances: 10
+      target_cpu_utilization: 70
+      target_memory_utilization: 80
+      scale_up_cooldown: 300
+      scale_down_cooldown: 600
+    
+    # Network configuration
+    network:
+      vpc_id: "vpc-default"
+      subnet_ids:
+        - "subnet-default-1"
+        - "subnet-default-2"
+      security_group_ids:
+        - "sg-agentcore-gateway"
+      
+      # Load balancer configuration
+      load_balancer:
+        type: "application"
+        scheme: "internal"
+        idle_timeout: 60
+        
+        # Health check configuration
+        health_check:
+          path: "/health"
+          interval: 30
+          timeout: 5
+          healthy_threshold: 2
+          unhealthy_threshold: 3

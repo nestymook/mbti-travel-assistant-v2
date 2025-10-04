@@ -58,7 +58,7 @@ aws cognito-idp update-user-pool-client \
 ### Cognito Configuration
 - **User Pool ID**: `us-east-1_wBAxW7yd4`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
-- **Domain**: `restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com`
+- **Domain**: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 - **Callback URLs**: 
   - `https://d39ank8zud5pbg.cloudfront.net/`
   - `https://d39ank8zud5pbg.cloudfront.net/auth/callback`
@@ -107,7 +107,7 @@ aws cognito-idp update-user-pool-client \
 ```
 User clicks "Sign In" → 
 Frontend redirects to Cognito Hosted UI →
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?
   client_id=26k0pnja579pdpb1pt6savs27e&
   response_type=code&
   scope=email+openid+profile&

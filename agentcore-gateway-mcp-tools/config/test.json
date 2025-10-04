@@ -1,0 +1,35 @@
+{
+  "name": "test",
+  "log_level": "DEBUG",
+  "debug": true,
+  "enable_hot_reload": false,
+  "mcp_servers": {
+    "search": {
+      "name": "search",
+      "url": "http://localhost:8081",
+      "timeout": 10,
+      "max_retries": 1,
+      "retry_delay": 0.1,
+      "health_check_path": "/health",
+      "enabled": true,
+      "tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type",
+        "search_restaurants_combined"
+      ]
+    },
+    "reasoning": {
+      "name": "reasoning",
+      "url": "http://localhost:8082",
+      "timeout": 10,
+      "max_retries": 1,
+      "retry_delay": 0.1,
+      "health_check_path": "/health",
+      "enabled": true,
+      "tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ]
+    }
+  }
+}

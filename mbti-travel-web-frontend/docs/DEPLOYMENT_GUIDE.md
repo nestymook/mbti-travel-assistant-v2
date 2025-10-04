@@ -1229,7 +1229,7 @@ async function checkApiHealth(): Promise<boolean> {
 async function checkAuthHealth(): Promise<boolean> {
   try {
     // Check if Cognito is accessible
-    const response = await fetch(`${environment.cognito.domain}/.well-known/openid_configuration`, {
+    const response = await fetch(`${environment.cognito.domain}/.well-known/openid-configuration`, {
       method: 'GET',
       timeout: 5000
     })

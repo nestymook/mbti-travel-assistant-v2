@@ -266,7 +266,7 @@ SECURITY_HEADERS_ENABLED={str(env_config['security']['security_headers_enabled']
                 "config": {
                     "customJWTAuthorizer": {
                         "allowedClients": [f"<cognito-client-id-{environment}>"],
-                        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/<user-pool-id>/.well-known/openid_configuration"
+                        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/<user-pool-id>/.well-known/openid-configuration"
                     }
                 }
             },

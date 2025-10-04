@@ -298,7 +298,7 @@ User Query → AgentCore Runtime → [MISSING: LLM Model] → MCP Server → S3 
 The JWT authentication deployment fails due to AgentCore Runtime's strict validation of Cognito discovery URLs:
 
 ```
-ValidationException: Value 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration' 
+ValidationException: Value 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration' 
 failed to satisfy constraint: Member must satisfy regular expression pattern: .+/\.well-known/openid-configuration
 ```
 
@@ -325,7 +325,7 @@ Add these permissions to your IAM policy:
 3. **App integration** tab → **Domain name** → **Actions** → **Create Cognito domain**
 4. **Domain prefix**: `restaurant-mcp-2025` (must be globally unique)
 5. **Create domain** and wait for **ACTIVE** status (15-60 minutes)
-6. **New Discovery URL**: `https://restaurant-mcp-2025.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration`
+6. **New Discovery URL**: `https://restaurant-mcp-2025.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration`
 
 ##### Step 3: Update Configuration
 ```bash
@@ -342,7 +342,7 @@ python execute_deployment.py
 auth_config = {
     "customJWTAuthorizer": {
         "allowedClients": [cognito_client_id],
-        "discoveryUrl": "https://[domain-prefix].auth.us-east-1.amazoncognito.com/.well-known/openid_configuration"
+        "discoveryUrl": "https://[domain-prefix].auth.us-east-1.amazoncognito.com/.well-known/openid-configuration"
     }
 }
 ```

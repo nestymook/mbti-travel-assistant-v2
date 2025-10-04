@@ -1,15 +1,15 @@
 """
-MBTI Travel Assistant Agent
+MBTI Travel Planner Agent
 
 A BedrockAgentCore runtime service that receives HTTP requests from web servers
-and uses an internal LLM agent to orchestrate MCP client calls to existing MCP servers.
+and uses the Amazon Nova Pro foundation model to make HTTP API calls to the agentcore-gateway-mcp-tools service.
 The system processes HTTP payloads containing district and meal time parameters,
-authenticates via JWT tokens, and employs an embedded foundation model to intelligently
+uses HTTP gateway integration, and employs the Nova Pro model to intelligently
 coordinate restaurant search and sentiment analysis.
 
-Version: 1.0.0
+Version: 2.0.0 (HTTP Gateway Integration)
 """
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __author__ = "MBTI Travel Planner Team"
-__description__ = "BedrockAgentCore runtime for intelligent restaurant recommendations"
+__description__ = "BedrockAgentCore runtime with HTTP gateway integration for intelligent restaurant recommendations"

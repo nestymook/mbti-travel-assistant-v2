@@ -106,7 +106,7 @@
             }
 
             try {
-                const tokenEndpoint = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/oauth2/token';
+                const tokenEndpoint = 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/token';
                 
                 const params = new URLSearchParams({
                     grant_type: 'authorization_code',
@@ -146,7 +146,7 @@
 
         // Test Cognito login
         function testCognitoLogin() {
-            const loginUrl = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?' + 
+            const loginUrl = 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?' + 
                 new URLSearchParams({
                     client_id: '26k0pnja579pdpb1pt6savs27e',
                     response_type: 'code',

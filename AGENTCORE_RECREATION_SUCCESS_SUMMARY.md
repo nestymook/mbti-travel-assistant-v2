@@ -15,9 +15,9 @@ Successfully recreated the AgentCore agent with OIDC authentication configuratio
 - **Runtime**: Docker with CodeBuild deployment
 
 ### 2. OIDC Authentication Configuration
-- **User Pool ID**: `us-east-1_TBRhQ79hS`
-- **Client ID**: `4qi4m90hi389p8tabmejuau9td`
-- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration`
+- **User Pool ID**: `us-east-1_KePRX24Bn`
+- **Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
+- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **OAuth Scopes**: `openid`, `email`, `profile`
 - **OAuth Flows**: Authorization Code + Implicit
 
@@ -50,7 +50,7 @@ Successfully recreated the AgentCore agent with OIDC authentication configuratio
 ### Test User Credentials
 - **Email**: `test@mbti-travel.com`
 - **Password**: `TestPass1234!`
-- **User Pool**: `us-east-1_TBRhQ79hS`
+- **User Pool**: `us-east-1_KePRX24Bn`
 - **Status**: Confirmed and ready
 
 ### Test URLs
@@ -77,8 +77,8 @@ agents:
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
-        - 4qi4m90hi389p8tabmejuau9td
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+        - 1ofgeckef3po4i3us4j1m4chvd
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
 ```
 
 ### Lambda Proxy Configuration
@@ -88,9 +88,9 @@ const AGENT_ID = 'main-DUQgnrHqCl';
 
 ### Frontend Configuration (`.env.production`)
 ```bash
-VITE_COGNITO_USER_POOL_ID=us-east-1_TBRhQ79hS
-VITE_COGNITO_CLIENT_ID=4qi4m90hi389p8tabmejuau9td
-VITE_COGNITO_DOMAIN=mbti-travel-oidc-1759241607
+VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
+VITE_COGNITO_DOMAIN=mbti-travel-oidc-334662794
 ```
 
 ## 🔍 Monitoring and Logs
@@ -161,7 +161,7 @@ If issues persist:
 
 2. **Verify OIDC Configuration**
    ```bash
-   curl https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+   curl https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
    ```
 
 3. **Test Lambda Proxy**

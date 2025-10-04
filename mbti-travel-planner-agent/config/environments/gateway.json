@@ -1,0 +1,54 @@
+{
+  "development": {
+    "base_url": "http://localhost:8080",
+    "timeout": 30,
+    "max_retries": 2,
+    "auth_required": false,
+    "connection_pool_size": 10,
+    "keep_alive_timeout": 30,
+    "health_check_endpoint": "/health",
+    "endpoints": {
+      "restaurant_search_district": "/api/v1/restaurants/search/district",
+      "restaurant_search_combined": "/api/v1/restaurants/search/combined",
+      "restaurant_recommend": "/api/v1/restaurants/recommend"
+    },
+    "description": "Local development environment with no authentication"
+  },
+  "staging": {
+    "base_url": "https://agentcore-gateway-mcp-tools-staging.bedrock-agentcore.us-east-1.amazonaws.com",
+    "timeout": 45,
+    "max_retries": 3,
+    "auth_required": true,
+    "connection_pool_size": 20,
+    "keep_alive_timeout": 60,
+    "health_check_endpoint": "/health",
+    "endpoints": {
+      "restaurant_search_district": "/api/v1/restaurants/search/district",
+      "restaurant_search_combined": "/api/v1/restaurants/search/combined",
+      "restaurant_recommend": "/api/v1/restaurants/recommend"
+    },
+    "description": "Staging environment for testing with JWT authentication"
+  },
+  "production": {
+    "base_url": "https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/main-DUQgnrHqCl",
+    "timeout": 60,
+    "max_retries": 3,
+    "auth_required": true,
+    "connection_pool_size": 50,
+    "keep_alive_timeout": 120,
+    "health_check_endpoint": "/health",
+    "endpoints": {
+      "restaurant_search_district": "/api/v1/restaurants/search/district",
+      "restaurant_search_meal_type": "/api/v1/restaurants/search/meal-type",
+      "restaurant_search_combined": "/api/v1/restaurants/search/combined",
+      "restaurant_recommend": "/api/v1/restaurants/recommend",
+      "restaurant_analyze": "/api/v1/restaurants/analyze"
+    },
+    "monitoring": {
+      "enable_metrics": true,
+      "enable_tracing": true,
+      "enable_health_checks": true
+    },
+    "description": "Production environment with full authentication and monitoring"
+  }
+}

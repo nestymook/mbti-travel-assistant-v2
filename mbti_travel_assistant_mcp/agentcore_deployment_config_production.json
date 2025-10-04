@@ -8,7 +8,7 @@
     "config": {
       "customJWTAuthorizer": {
         "allowedClients": [],
-        "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration"
+        "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
       }
     }
   },

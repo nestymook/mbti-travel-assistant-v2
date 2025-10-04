@@ -1,0 +1,82 @@
+default_agent: agentcore_gateway_mcp_tools
+agents:
+  main:
+    name: main
+    entrypoint: main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-0d6e4079e3
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-main
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: main-DUQgnrHqCl
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/main-DUQgnrHqCl
+      agent_session_id: 8d5c4480-6c9a-4802-a8d6-3c56fcb2d451
+    codebuild:
+      project_name: bedrock-agentcore-main-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-0d6e4079e3
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: main_mem-1DGs4G329L
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:memory/main_mem-1DGs4G329L
+      memory_name: main_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
+        allowedClients:
+        - 1ofgeckef3po4i3us4j1m4chvd
+    request_header_configuration: null
+    oauth_configuration: null
+  agentcore_gateway_mcp_tools:
+    name: agentcore_gateway_mcp_tools
+    entrypoint: C:/MBTI_Travel_Assistant/agentcore-gateway-mcp-tools/main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-80e944969d
+      execution_role_auto_create: false
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-agentcore_gateway_mcp_tools
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: agentcore_gateway_mcp_tools-oVYGDS244A
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/agentcore_gateway_mcp_tools-oVYGDS244A
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-agentcore_gateway_mcp_tools-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-80e944969d
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: agentcore_gateway_mcp_tools_mem-AIWGM65CtQ
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:memory/agentcore_gateway_mcp_tools_mem-AIWGM65CtQ
+      memory_name: agentcore_gateway_mcp_tools_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration:
+      customJWTAuthorizer:
+        allowedClients:
+        - 1ofgeckef3po4i3us4j1m4chvd
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
+    request_header_configuration: null
+    oauth_configuration: null

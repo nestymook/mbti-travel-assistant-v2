@@ -138,7 +138,7 @@ auth_config = {
         "allowedClients": [
             os.getenv("COGNITO_CLIENT_ID")
         ],
-        "discoveryUrl": f"https://{os.getenv('COGNITO_DOMAIN')}/.well-known/openid_configuration"
+        "discoveryUrl": f"https://{os.getenv('COGNITO_DOMAIN')}/.well-known/openid-configuration"
     }
 }
 

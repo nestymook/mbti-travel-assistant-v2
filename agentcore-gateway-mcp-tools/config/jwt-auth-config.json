@@ -1,0 +1,462 @@
+{
+  "jwt_authentication_configuration": {
+    "version": "1.0.0",
+    "description": "JWT authentication configuration for MCP protocol headers in AgentCore Gateway",
+    
+    "authentication_settings": {
+      "enabled": true,
+      "type": "jwt_over_mcp",
+      "description": "JWT authentication handled at MCP protocol level using headers/metadata",
+      
+      "cognito_configuration": {
+        "user_pool_id": "us-east-1_KePRX24Bn",
+        "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+        "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+        "region": "us-east-1",
+        "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+        "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn",
+        "audience": "1ofgeckef3po4i3us4j1m4chvd"
+      },
+      
+      "jwt_validation": {
+        "verify_signature": true,
+        "verify_expiration": true,
+        "verify_audience": true,
+        "verify_issuer": true,
+        "verify_not_before": true,
+        "clock_skew_leeway_seconds": 60,
+        "cache_jwks": true,
+        "jwks_cache_ttl_seconds": 3600,
+        "jwks_refresh_interval_seconds": 300
+      },
+      
+      "mcp_protocol_integration": {
+        "authentication_method": "mcp_headers",
+        "description": "JWT tokens are passed and validated within MCP protocol headers",
+        
+        "header_mapping": {
+          "authorization_header": "Authorization",
+          "user_context_header": "X-User-Context",
+          "token_claims_header": "X-Token-Claims",
+          "session_id_header": "X-Session-ID",
+          "request_id_header": "X-Request-ID"
+        },
+        
+        "token_extraction": {
+          "bearer_token_format": true,
+          "token_prefix": "Bearer ",
+          "fallback_headers": [
+            "X-Auth-Token",
+            "X-JWT-Token"
+          ],
+          "case_insensitive_headers": true
+        },
+        
+        "mcp_metadata_forwarding": {
+          "enabled": true,
+          "forward_user_context": true,
+          "forward_token_claims": true,
+          "forward_session_info": true,
+          "sanitize_sensitive_claims": true,
+          "metadata_format": "json"
+        }
+      }
+    },
+    
+    "user_context_extraction": {
+      "enabled": true,
+      "description": "Extract user context from JWT claims for forwarding to MCP servers",
+      
+      "required_claims": [
+        "sub",
+        "email",
+        "cognito:username"
+      ],
+      
+      "optional_claims": [
+        "given_name",
+        "family_name",
+        "email_verified",
+        "cognito:groups",
+        "custom:user_preferences"
+      ],
+      
+      "claim_mapping": {
+        "user_id": "sub",
+        "username": "cognito:username",
+        "email": "email",
+        "first_name": "given_name",
+        "last_name": "family_name",
+        "email_verified": "email_verified",
+        "user_groups": "cognito:groups",
+        "preferences": "custom:user_preferences"
+      },
+      
+      "user_context_format": {
+        "user_id": "string",
+        "username": "string",
+        "email": "string",
+        "first_name": "string",
+        "last_name": "string",
+        "email_verified": "boolean",
+        "user_groups": "array",
+        "preferences": "object",
+        "token_issued_at": "timestamp",
+        "token_expires_at": "timestamp",
+        "session_id": "string"
+      }
+    },
+    
+    "mcp_server_authentication_forwarding": {
+      "enabled": true,
+      "description": "Forward authentication context to MCP servers via native MCP protocol",
+      
+      "forwarding_methods": {
+        "mcp_metadata": {
+          "enabled": true,
+          "priority": 1,
+          "description": "Include auth context in MCP request metadata",
+          "metadata_keys": {
+            "user_context": "user_context",
+            "auth_token": "auth_token",
+            "session_info": "session_info"
+          }
+        },
+        
+        "mcp_headers": {
+          "enabled": true,
+          "priority": 2,
+          "description": "Include auth context in MCP protocol headers",
+          "header_mapping": {
+            "X-User-ID": "user_context.user_id",
+            "X-Username": "user_context.username",
+            "X-User-Email": "user_context.email",
+            "X-Session-ID": "session_info.session_id",
+            "X-Auth-Token": "auth_token"
+          }
+        }
+      },
+      
+      "server_specific_settings": {
+        "restaurant-search-mcp": {
+          "authentication_required": false,
+          "forward_user_context": true,
+          "forward_auth_token": false,
+          "allowed_without_auth": true,
+          "development_mode": true
+        },
+        
+        "restaurant-reasoning-mcp": {
+          "authentication_required": true,
+          "forward_user_context": true,
+          "forward_auth_token": true,
+          "allowed_without_auth": false,
+          "require_verified_email": true
+        },
+        
+        "mbti-travel-assistant-mcp": {
+          "authentication_required": false,
+          "forward_user_context": true,
+          "forward_auth_token": false,
+          "allowed_without_auth": true,
+          "development_mode": true
+        }
+      }
+    },
+    
+    "authentication_flow": {
+      "description": "Step-by-step authentication flow for MCP requests",
+      
+      "steps": [
+        {
+          "step": 1,
+          "name": "extract_token",
+          "description": "Extract JWT token from MCP protocol headers",
+          "actions": [
+            "Check Authorization header for Bearer token",
+            "Check fallback headers if Authorization not found",
+            "Validate token format and structure"
+          ],
+          "error_handling": {
+            "missing_token": {
+              "action": "check_server_auth_requirements",
+              "allow_anonymous": "server_dependent"
+            },
+            "invalid_format": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001
+            }
+          }
+        },
+        
+        {
+          "step": 2,
+          "name": "validate_jwt",
+          "description": "Validate JWT token against Cognito",
+          "actions": [
+            "Fetch JWKS from Cognito discovery URL",
+            "Verify token signature using public key",
+            "Validate token expiration and timing claims",
+            "Verify audience and issuer claims"
+          ],
+          "error_handling": {
+            "signature_invalid": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001,
+              "message": "Invalid token signature"
+            },
+            "token_expired": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001,
+              "message": "Token has expired"
+            },
+            "audience_mismatch": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001,
+              "message": "Invalid token audience"
+            }
+          }
+        },
+        
+        {
+          "step": 3,
+          "name": "extract_user_context",
+          "description": "Extract user context from validated JWT claims",
+          "actions": [
+            "Extract required claims from JWT payload",
+            "Map claims to user context structure",
+            "Validate required fields are present",
+            "Create session information"
+          ],
+          "error_handling": {
+            "missing_required_claims": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001,
+              "message": "Required user claims missing"
+            }
+          }
+        },
+        
+        {
+          "step": 4,
+          "name": "forward_auth_context",
+          "description": "Forward authentication context to target MCP server",
+          "actions": [
+            "Check target server authentication requirements",
+            "Format user context for MCP protocol",
+            "Add authentication metadata to MCP request",
+            "Forward request with auth context"
+          ],
+          "error_handling": {
+            "server_auth_required": {
+              "action": "return_mcp_auth_error",
+              "error_code": -32001,
+              "message": "Authentication required for this server"
+            }
+          }
+        }
+      ]
+    },
+    
+    "mcp_authentication_errors": {
+      "description": "Native MCP protocol error responses for authentication failures",
+      
+      "error_responses": {
+        "missing_token": {
+          "jsonrpc": "2.0",
+          "error": {
+            "code": -32001,
+            "message": "Authentication required",
+            "data": {
+              "error_type": "authentication_required",
+              "description": "JWT token required in MCP protocol headers",
+              "required_header": "Authorization",
+              "token_format": "Bearer <jwt_token>",
+              "cognito_info": {
+                "user_pool_id": "us-east-1_KePRX24Bn",
+                "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+                "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+                "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
+              }
+            }
+          }
+        },
+        
+        "invalid_token": {
+          "jsonrpc": "2.0",
+          "error": {
+            "code": -32001,
+            "message": "Invalid authentication token",
+            "data": {
+              "error_type": "invalid_token",
+              "description": "JWT token validation failed",
+              "validation_errors": [],
+              "cognito_info": {
+                "user_pool_id": "us-east-1_KePRX24Bn",
+                "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
+              }
+            }
+          }
+        },
+        
+        "token_expired": {
+          "jsonrpc": "2.0",
+          "error": {
+            "code": -32001,
+            "message": "Authentication token has expired",
+            "data": {
+              "error_type": "token_expired",
+              "description": "JWT token has expired and needs to be refreshed",
+              "expired_at": "2025-01-03T10:30:00Z",
+              "current_time": "2025-01-03T11:30:00Z",
+              "refresh_instructions": "Please obtain a new token from Cognito"
+            }
+          }
+        },
+        
+        "insufficient_permissions": {
+          "jsonrpc": "2.0",
+          "error": {
+            "code": -32001,
+            "message": "Insufficient permissions",
+            "data": {
+              "error_type": "insufficient_permissions",
+              "description": "User does not have required permissions for this operation",
+              "required_permissions": [],
+              "user_permissions": [],
+              "contact_admin": "Please contact administrator for access"
+            }
+          }
+        }
+      }
+    },
+    
+    "security_configuration": {
+      "token_security": {
+        "require_https": true,
+        "secure_token_storage": true,
+        "token_encryption_in_transit": true,
+        "log_token_usage": true,
+        "sanitize_logs": true
+      },
+      
+      "rate_limiting": {
+        "enabled": true,
+        "authentication_attempts": {
+          "max_attempts_per_minute": 60,
+          "max_attempts_per_hour": 1000,
+          "lockout_duration_minutes": 15
+        },
+        "per_user_limits": {
+          "max_requests_per_minute": 100,
+          "max_requests_per_hour": 5000
+        }
+      },
+      
+      "audit_logging": {
+        "enabled": true,
+        "log_successful_auth": true,
+        "log_failed_auth": true,
+        "log_token_validation": false,
+        "log_user_context_extraction": true,
+        "include_user_id": true,
+        "include_ip_address": false,
+        "include_user_agent": false
+      }
+    },
+    
+    "development_and_testing": {
+      "development_mode": {
+        "enabled": false,
+        "allow_unsigned_tokens": false,
+        "skip_expiration_check": false,
+        "mock_user_context": false,
+        "bypass_authentication": false
+      },
+      
+      "testing_configuration": {
+        "test_tokens": {
+          "enabled": false,
+          "valid_test_token": "test_jwt_token_valid",
+          "expired_test_token": "test_jwt_token_expired",
+          "invalid_test_token": "test_jwt_token_invalid"
+        },
+        
+        "test_user_contexts": {
+          "test_user_1": {
+            "user_id": "test-user-1",
+            "username": "testuser1",
+            "email": "test1@example.com",
+            "email_verified": true
+          },
+          "test_user_2": {
+            "user_id": "test-user-2",
+            "username": "testuser2",
+            "email": "test2@example.com",
+            "email_verified": false
+          }
+        }
+      }
+    },
+    
+    "monitoring_and_metrics": {
+      "enabled": true,
+      
+      "authentication_metrics": {
+        "successful_authentications": {
+          "type": "counter",
+          "description": "Number of successful JWT authentications",
+          "dimensions": ["server_name", "environment"]
+        },
+        
+        "failed_authentications": {
+          "type": "counter",
+          "description": "Number of failed JWT authentications",
+          "dimensions": ["server_name", "failure_reason", "environment"]
+        },
+        
+        "token_validation_duration": {
+          "type": "histogram",
+          "description": "Duration of JWT token validation",
+          "dimensions": ["environment"]
+        },
+        
+        "jwks_cache_hits": {
+          "type": "counter",
+          "description": "Number of JWKS cache hits",
+          "dimensions": ["environment"]
+        },
+        
+        "jwks_cache_misses": {
+          "type": "counter",
+          "description": "Number of JWKS cache misses",
+          "dimensions": ["environment"]
+        }
+      },
+      
+      "alerting": {
+        "enabled": true,
+        "alert_conditions": [
+          {
+            "name": "high_authentication_failure_rate",
+            "condition": "failed_authentications / (successful_authentications + failed_authentications) > 0.1 for 5 minutes",
+            "severity": "warning",
+            "description": "High authentication failure rate detected"
+          },
+          {
+            "name": "jwks_fetch_failures",
+            "condition": "jwks_cache_misses > 10 in 1 minute",
+            "severity": "critical",
+            "description": "Unable to fetch JWKS from Cognito"
+          },
+          {
+            "name": "slow_token_validation",
+            "condition": "token_validation_duration > 1000ms for 5 minutes",
+            "severity": "warning",
+            "description": "JWT token validation is slow"
+          }
+        ]
+      }
+    }
+  }
+}

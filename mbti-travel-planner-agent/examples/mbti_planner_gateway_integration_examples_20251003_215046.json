@@ -1,0 +1,101 @@
+{
+  "python_client_class": "\n# Production Gateway JWT Client for MBTI Travel Planner Agent\n\nimport httpx\nimport asyncio\nimport json\nimport time\nfrom typing import Dict, Any, List, Optional\n\nclass ProductionGatewayJWTClient:\n    \"\"\"Production gateway client with JWT authentication for restaurant services.\"\"\"\n    \n    def __init__(self, access_token: str, base_url: str = \"https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/main-DUQgnrHqCl\"):\n        self.access_token = access_token\n        self.base_url = base_url\n        self.timeout = httpx.Timeout(60)\n        \n    def _get_headers(self) -> Dict[str, str]:\n        return {\n            'Authorization': f'Bearer {self.access_token}',\n            'Content-Type': 'application/json',\n            'Accept': 'application/json'\n        }\n    \n    async def search_restaurants_by_district(self, districts: List[str]) -> Dict[str, Any]:\n        \"\"\"Search restaurants by district with JWT authentication.\"\"\"\n        async with httpx.AsyncClient(timeout=self.timeout) as client:\n            response = await client.post(\n                f\"{self.base_url}/api/v1/restaurants/search/district\",\n                json={\"districts\": districts},\n                headers=self._get_headers()\n            )\n            response.raise_for_status()\n            return response.json()\n    \n    async def search_restaurants_by_meal_type(self, meal_types: List[str]) -> Dict[str, Any]:\n        \"\"\"Search restaurants by meal type with JWT authentication.\"\"\"\n        async with httpx.AsyncClient(timeout=self.timeout) as client:\n            response = await client.post(\n                f\"{self.base_url}/api/v1/restaurants/search/meal-type\",\n                json={\"meal_types\": meal_types},\n                headers=self._get_headers()\n            )\n            response.raise_for_status()\n            return response.json()\n    \n    async def search_restaurants_combined(self, districts: List[str] = None, \n                                        meal_types: List[str] = None) -> Dict[str, Any]:\n        \"\"\"Search restaurants with combined criteria and JWT authentication.\"\"\"\n        payload = {}\n        if districts:\n            payload[\"districts\"] = districts\n        if meal_types:\n            payload[\"meal_types\"] = meal_types\n            \n        async with httpx.AsyncClient(timeout=self.timeout) as client:\n            response = await client.post(\n                f\"{self.base_url}/api/v1/restaurants/search/combined\",\n                json=payload,\n                headers=self._get_headers()\n            )\n            response.raise_for_status()\n            return response.json()\n    \n    async def recommend_restaurants(self, restaurants: List[Dict[str, Any]], \n                                  ranking_method: str = \"sentiment_likes\") -> Dict[str, Any]:\n        \"\"\"Get restaurant recommendations with JWT authentication.\"\"\"\n        async with httpx.AsyncClient(timeout=self.timeout) as client:\n            response = await client.post(\n                f\"{self.base_url}/api/v1/restaurants/recommend\",\n                json={\n                    \"restaurants\": restaurants,\n                    \"ranking_method\": ranking_method\n                },\n                headers=self._get_headers()\n            )\n            response.raise_for_status()\n            return response.json()\n    \n    async def health_check(self) -> Dict[str, Any]:\n        \"\"\"Check gateway health with JWT authentication.\"\"\"\n        async with httpx.AsyncClient(timeout=self.timeout) as client:\n            response = await client.get(\n                f\"{self.base_url}/health\",\n                headers=self._get_headers()\n            )\n            response.raise_for_status()\n            return response.json()\n\n# Usage Example:\n# client = ProductionGatewayJWTClient(access_token=\"your_jwt_token\")\n# restaurants = await client.search_restaurants_by_district([\"Central district\"])\n# recommendations = await client.recommend_restaurants(restaurants, \"sentiment_likes\")\n",
+  "integration_workflow": "\n# Complete Integration Workflow Example\n\nasync def mbti_restaurant_workflow(jwt_client: ProductionGatewayJWTClient, \n                                 mbti_type: str, districts: List[str]) -> Dict[str, Any]:\n    \"\"\"Complete MBTI-based restaurant recommendation workflow.\"\"\"\n    \n    # Step 1: Search restaurants in specified districts\n    district_restaurants = await jwt_client.search_restaurants_by_district(districts)\n    \n    # Step 2: Filter by meal preferences based on MBTI type\n    meal_preferences = get_mbti_meal_preferences(mbti_type)\n    meal_restaurants = await jwt_client.search_restaurants_by_meal_type(meal_preferences)\n    \n    # Step 3: Combine results with both criteria\n    combined_restaurants = await jwt_client.search_restaurants_combined(\n        districts=districts,\n        meal_types=meal_preferences\n    )\n    \n    # Step 4: Get personalized recommendations\n    recommendations = await jwt_client.recommend_restaurants(\n        combined_restaurants.get('restaurants', []),\n        ranking_method=\"sentiment_likes\"\n    )\n    \n    return {{\n        'mbti_type': mbti_type,\n        'districts': districts,\n        'meal_preferences': meal_preferences,\n        'district_count': len(district_restaurants.get('restaurants', [])),\n        'meal_count': len(meal_restaurants.get('restaurants', [])),\n        'combined_count': len(combined_restaurants.get('restaurants', [])),\n        'recommendations': recommendations\n    }}\n\ndef get_mbti_meal_preferences(mbti_type: str) -> List[str]:\n    \"\"\"Get meal preferences based on MBTI personality type.\"\"\"\n    preferences = {{\n        'ENFP': ['breakfast', 'lunch'],  # Energetic, social meals\n        'INFP': ['lunch', 'dinner'],     # Quiet, contemplative meals\n        'ENTJ': ['breakfast', 'lunch'],  # Efficient, business meals\n        'INTJ': ['dinner'],              # Focused, private meals\n        # Add more MBTI mappings...\n    }}\n    return preferences.get(mbti_type, ['lunch'])\n",
+  "configuration": {
+    "gateway_config": {
+      "base_url": "https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/main-DUQgnrHqCl",
+      "timeout": 60,
+      "max_retries": 3,
+      "auth_required": true,
+      "connection_pool_size": 50,
+      "keep_alive_timeout": 120,
+      "health_check_endpoint": "/health",
+      "endpoints": {
+        "restaurant_search_district": "/api/v1/restaurants/search/district",
+        "restaurant_search_combined": "/api/v1/restaurants/search/combined",
+        "restaurant_recommend": "/api/v1/restaurants/recommend"
+      },
+      "monitoring": {
+        "enable_metrics": true,
+        "enable_tracing": true,
+        "enable_health_checks": true
+      },
+      "description": "Production environment with full authentication and monitoring"
+    },
+    "cognito_config": {
+      "region": "us-east-1",
+      "user_pool": {
+        "user_pool_id": "us-east-1_KePRX24Bn",
+        "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
+        "creation_date": "2025-09-30T23:13:39.891114"
+      },
+      "app_client": {
+        "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+        "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+        "client_name": "mbti-travel-oidc-client"
+      },
+      "test_user": {
+        "username": "mbti-test-user@example.com",
+        "email": "mbti-test-user@example.com",
+        "password": "MBTITest123!",
+        "status": "CONFIRMED"
+      },
+      "oidc_configuration": {
+        "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+        "jwks_uri": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/jwks.json",
+        "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn",
+        "authorization_endpoint": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/authorize",
+        "token_endpoint": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/token",
+        "userinfo_endpoint": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/userInfo"
+      },
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "setup_timestamp": "2025-09-30T23:13:39.891114",
+      "custom_domain": {
+        "domain_prefix": "mbti-travel-oidc-334662794",
+        "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+        "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+        "status": "ACTIVE"
+      },
+      "oauth_flows": [
+        "code",
+        "implicit"
+      ],
+      "oauth_scopes": [
+        "openid",
+        "email",
+        "profile"
+      ]
+    },
+    "test_results_summary": {
+      "total_tests": 4,
+      "successful_tests": 0,
+      "success_rate_percent": 0.0,
+      "overall_success": false,
+      "environment": "production",
+      "gateway_url": "https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/main-DUQgnrHqCl",
+      "jwt_authentication": true,
+      "test_duration_seconds": 14.544919967651367
+    },
+    "performance_metrics": {
+      "total_requests": 10,
+      "successful_requests": 0,
+      "success_rate_percent": 0.0,
+      "avg_response_time_ms": 298.0181932449341,
+      "min_response_time_ms": 222.395658493042,
+      "max_response_time_ms": 965.9106731414795,
+      "response_times": [
+        965.9106731414795,
+        223.02651405334473,
+        225.70538520812988,
+        222.395658493042,
+        222.55420684814453,
+        223.40846061706543,
+        224.21836853027344,
+        223.74725341796875,
+        225.40855407714844,
+        223.80685806274414
+      ],
+      "errors": []
+    }
+  }
+}

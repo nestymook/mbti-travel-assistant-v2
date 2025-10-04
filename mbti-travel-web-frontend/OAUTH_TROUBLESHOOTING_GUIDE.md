@@ -28,11 +28,11 @@ This tool will help you identify exactly where the OAuth flow is breaking by tes
 
 #### **Step 1: Test Cognito Domain**
 - Verifies that Cognito domain is accessible
-- Tests: `https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com`
+- Tests: `https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 
 #### **Step 2: Test OIDC Configuration**
 - Verifies OAuth endpoints are working
-- Tests: `/.well-known/openid_configuration`
+- Tests: `/.well-known/openid-configuration`
 
 #### **Step 3: Generate Login URL**
 - Creates proper OAuth login URL
@@ -141,7 +141,7 @@ aws cognito-idp describe-user-pool-client \
 ### **Quick Test 1: Manual URL Test**
 Copy and paste this URL directly in browser:
 ```
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 
 **Expected**: Should redirect to Cognito login page
@@ -224,19 +224,19 @@ Test these URLs directly in browser:
 
 #### **1. Well-Known Configuration**:
 ```
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/.well-known/openid_configuration
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration
 ```
 **Expected**: JSON configuration response
 
 #### **2. Authorization Endpoint**:
 ```
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 **Expected**: Redirect to login page
 
 #### **3. Login Page**:
 ```
-https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 **Expected**: Cognito login form
 

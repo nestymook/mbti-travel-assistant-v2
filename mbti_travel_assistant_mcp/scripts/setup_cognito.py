@@ -206,7 +206,7 @@ class CognitoSetup:
         Returns:
             OIDC discovery URL.
         """
-        return f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration"
+        return f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration"
     
     def save_configuration(self, config: Dict[str, Any]) -> None:
         """Save Cognito configuration to JSON file.

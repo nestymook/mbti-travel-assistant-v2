@@ -19,7 +19,7 @@ The following example shows how to integrate the reasoning MCP tools with a Bedr
 ```py
 thon
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent
+from strands import Agent
 import json
 
 # Create BedrockAgentCore application
@@ -696,7 +696,7 @@ if __name__ == "__main__":
 
 ```python
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent
+from strands import Agent
 import json
 
 class RestaurantReasoningAgent:

@@ -51,7 +51,7 @@ class MBTITravelAssistantDeployment:
                     "app_client": {
                         "client_id": "placeholder"  # Will be retrieved from Cognito
                     },
-                    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid_configuration",
+                    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
                     "region": "us-east-1"
                 }
             

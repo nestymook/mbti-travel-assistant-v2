@@ -1,0 +1,716 @@
+{
+  "mcp_routing_configuration": {
+    "version": "1.0.0",
+    "description": "Native MCP protocol routing configuration for AgentCore Gateway",
+    "protocol": "native_mcp",
+    "jsonrpc_version": "2.0",
+    
+    "server_registry": {
+      "restaurant-search-mcp": {
+        "server_id": "restaurant-search-mcp",
+        "display_name": "Restaurant Search MCP Server",
+        "description": "Native MCP server for restaurant search operations in Hong Kong districts",
+        "endpoint": {
+          "host": "restaurant-search-mcp",
+          "port": 8080,
+          "protocol": "native_mcp",
+          "transport": "stdio",
+          "connection_string": "mcp://restaurant-search-mcp:8080"
+        },
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "interval_seconds": 30,
+          "timeout_seconds": 10,
+          "retry_attempts": 3,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy"
+            }
+          }
+        },
+        "tools": {
+          "search_restaurants_by_district": {
+            "tool_name": "search_restaurants_by_district",
+            "description": "Search for restaurants in specific Hong Kong districts",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "districts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "List of Hong Kong district names",
+                  "examples": [
+                    ["Central district"],
+                    ["Tsim Sha Tsui", "Causeway Bay"],
+                    ["Admiralty"]
+                  ]
+                }
+              },
+              "required": ["districts"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "success": {"type": "boolean"},
+                "query_type": {"type": "string"},
+                "districts": {"type": "array"},
+                "restaurant_count": {"type": "integer"},
+                "restaurants": {
+                  "type": "array",
+                  "items": {"$ref": "#/definitions/Restaurant"}
+                }
+              }
+            }
+          },
+          "search_restaurants_by_meal_type": {
+            "tool_name": "search_restaurants_by_meal_type",
+            "description": "Search for restaurants by meal type based on operating hours",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "meal_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["breakfast", "lunch", "dinner"]
+                  },
+                  "description": "List of meal types to search for",
+                  "examples": [
+                    ["breakfast"],
+                    ["lunch", "dinner"],
+                    ["breakfast", "lunch", "dinner"]
+                  ]
+                }
+              },
+              "required": ["meal_types"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "success": {"type": "boolean"},
+                "query_type": {"type": "string"},
+                "meal_types": {"type": "array"},
+                "restaurant_count": {"type": "integer"},
+                "restaurants": {
+                  "type": "array",
+                  "items": {"$ref": "#/definitions/Restaurant"}
+                }
+              }
+            }
+          },
+          "search_restaurants_combined": {
+            "tool_name": "search_restaurants_combined",
+            "description": "Search for restaurants using both district and meal type filters",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "districts": {
+                  "type": "array",
+                  "items": {"type": "string"},
+                  "description": "Optional list of Hong Kong district names"
+                },
+                "meal_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["breakfast", "lunch", "dinner"]
+                  },
+                  "description": "Optional list of meal types"
+                }
+              },
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "success": {"type": "boolean"},
+                "query_type": {"type": "string"},
+                "districts": {"type": "array"},
+                "meal_types": {"type": "array"},
+                "restaurant_count": {"type": "integer"},
+                "restaurants": {
+                  "type": "array",
+                  "items": {"$ref": "#/definitions/Restaurant"}
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "version": "1.0.0",
+          "maintainer": "restaurant-search-team",
+          "data_source": "s3://restaurant-data",
+          "supported_districts": [
+            "Admiralty", "Central district", "Causeway Bay", "Wan Chai",
+            "Tsim Sha Tsui", "Mong Kok", "Yau Ma Tei", "Jordan",
+            "Sha Tin", "Tsuen Wan", "Tai Po", "Tung Chung"
+          ],
+          "supported_meal_types": ["breakfast", "lunch", "dinner"],
+          "operating_hours_classification": {
+            "breakfast": "07:00-11:29",
+            "lunch": "11:30-17:29",
+            "dinner": "17:30-22:30"
+          }
+        }
+      },
+      
+      "restaurant-reasoning-mcp": {
+        "server_id": "restaurant-reasoning-mcp",
+        "display_name": "Restaurant Reasoning MCP Server",
+        "description": "Native MCP server for restaurant sentiment analysis and intelligent recommendations",
+        "endpoint": {
+          "host": "restaurant-reasoning-mcp",
+          "port": 8080,
+          "protocol": "native_mcp",
+          "transport": "stdio",
+          "connection_string": "mcp://restaurant-reasoning-mcp:8080"
+        },
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "interval_seconds": 30,
+          "timeout_seconds": 10,
+          "retry_attempts": 3,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy"
+            }
+          }
+        },
+        "tools": {
+          "recommend_restaurants": {
+            "tool_name": "recommend_restaurants",
+            "description": "Analyze restaurant sentiment data and provide intelligent recommendations",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "restaurants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "string"},
+                      "name": {"type": "string"},
+                      "sentiment": {
+                        "type": "object",
+                        "properties": {
+                          "likes": {"type": "integer", "minimum": 0},
+                          "dislikes": {"type": "integer", "minimum": 0},
+                          "neutral": {"type": "integer", "minimum": 0}
+                        },
+                        "required": ["likes", "dislikes", "neutral"]
+                      }
+                    },
+                    "required": ["id", "name", "sentiment"]
+                  },
+                  "minItems": 1
+                },
+                "ranking_method": {
+                  "type": "string",
+                  "enum": ["sentiment_likes", "combined_sentiment"],
+                  "default": "sentiment_likes",
+                  "description": "Method for ranking restaurants"
+                }
+              },
+              "required": ["restaurants"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "success": {"type": "boolean"},
+                "recommendation_type": {"type": "string"},
+                "ranking_method": {"type": "string"},
+                "total_restaurants": {"type": "integer"},
+                "candidates_count": {"type": "integer"},
+                "recommendation": {"$ref": "#/definitions/RecommendedRestaurant"},
+                "candidates": {
+                  "type": "array",
+                  "items": {"$ref": "#/definitions/RestaurantCandidate"}
+                },
+                "analysis_summary": {"type": "object"}
+              }
+            }
+          },
+          "analyze_restaurant_sentiment": {
+            "tool_name": "analyze_restaurant_sentiment",
+            "description": "Analyze sentiment data for restaurants without providing recommendations",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "restaurants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {"type": "string"},
+                      "name": {"type": "string"},
+                      "sentiment": {
+                        "type": "object",
+                        "properties": {
+                          "likes": {"type": "integer", "minimum": 0},
+                          "dislikes": {"type": "integer", "minimum": 0},
+                          "neutral": {"type": "integer", "minimum": 0}
+                        },
+                        "required": ["likes", "dislikes", "neutral"]
+                      }
+                    },
+                    "required": ["id", "name", "sentiment"]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": ["restaurants"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "success": {"type": "boolean"},
+                "analysis_type": {"type": "string"},
+                "total_restaurants_analyzed": {"type": "integer"},
+                "validation_errors": {"type": "array"},
+                "overall_statistics": {"type": "object"},
+                "restaurant_sentiment_scores": {"type": "array"}
+              }
+            }
+          }
+        },
+        "metadata": {
+          "version": "1.0.0",
+          "maintainer": "restaurant-reasoning-team",
+          "capabilities": ["sentiment-analysis", "recommendations", "data-validation"],
+          "ranking_methods": {
+            "sentiment_likes": "Ranks by highest number of customer likes",
+            "combined_sentiment": "Ranks by combined likes + neutral percentage"
+          },
+          "analysis_features": [
+            "Individual restaurant sentiment scores",
+            "Overall statistics across all restaurants",
+            "Validation results for data quality",
+            "Intelligent recommendation selection"
+          ]
+        }
+      },
+      
+      "mbti-travel-assistant-mcp": {
+        "server_id": "mbti-travel-assistant-mcp",
+        "display_name": "MBTI Travel Assistant MCP Server",
+        "description": "Native MCP server for MBTI-based travel planning and personality-matched recommendations",
+        "endpoint": {
+          "host": "mbti-travel-assistant-mcp",
+          "port": 8080,
+          "protocol": "native_mcp",
+          "transport": "stdio",
+          "connection_string": "mcp://mbti-travel-assistant-mcp:8080"
+        },
+        "health_check": {
+          "method": "mcp_ping",
+          "endpoint": "/health",
+          "interval_seconds": 30,
+          "timeout_seconds": 15,
+          "retry_attempts": 3,
+          "expected_response": {
+            "jsonrpc": "2.0",
+            "result": {
+              "status": "healthy"
+            }
+          }
+        },
+        "tools": {
+          "create_mbti_itinerary": {
+            "tool_name": "create_mbti_itinerary",
+            "description": "Generate 3-day MBTI-based travel itinerary with personality-matched tourist spots",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "mbti_personality": {
+                  "type": "string",
+                  "pattern": "^[IE][NS][FT][JP]$",
+                  "description": "4-character MBTI personality code",
+                  "examples": ["INFJ", "ENFP", "INTJ", "ESFP"]
+                },
+                "start_date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "Preferred start date for the itinerary"
+                },
+                "preferences": {
+                  "type": "object",
+                  "description": "Additional user preferences"
+                },
+                "special_requirements": {
+                  "type": "string",
+                  "description": "Special requirements or constraints"
+                }
+              },
+              "required": ["mbti_personality"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "main_itinerary": {
+                  "type": "object",
+                  "properties": {
+                    "day_1": {"$ref": "#/definitions/DayItinerary"},
+                    "day_2": {"$ref": "#/definitions/DayItinerary"},
+                    "day_3": {"$ref": "#/definitions/DayItinerary"}
+                  }
+                },
+                "candidate_tourist_spots": {
+                  "type": "object",
+                  "properties": {
+                    "day_1": {"type": "array"},
+                    "day_2": {"type": "array"},
+                    "day_3": {"type": "array"}
+                  }
+                },
+                "candidate_restaurants": {
+                  "type": "object",
+                  "properties": {
+                    "day_1": {"$ref": "#/definitions/DayRestaurants"},
+                    "day_2": {"$ref": "#/definitions/DayRestaurants"},
+                    "day_3": {"$ref": "#/definitions/DayRestaurants"}
+                  }
+                },
+                "metadata": {"$ref": "#/definitions/ItineraryMetadata"}
+              }
+            }
+          },
+          "get_personality_recommendations": {
+            "tool_name": "get_personality_recommendations",
+            "description": "Get personality-specific recommendations for travel planning",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "mbti_personality": {
+                  "type": "string",
+                  "pattern": "^[IE][NS][FT][JP]$",
+                  "description": "4-character MBTI personality code"
+                },
+                "recommendation_type": {
+                  "type": "string",
+                  "enum": ["tourist_spots", "restaurants", "activities", "general"],
+                  "default": "general"
+                }
+              },
+              "required": ["mbti_personality"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "personality_type": {"type": "string"},
+                "recommendations": {"type": "array"},
+                "personality_traits": {"type": "object"},
+                "travel_preferences": {"type": "object"}
+              }
+            }
+          },
+          "analyze_travel_preferences": {
+            "tool_name": "analyze_travel_preferences",
+            "description": "Analyze travel preferences based on MBTI personality type",
+            "method": "tools/call",
+            "parameters_schema": {
+              "type": "object",
+              "properties": {
+                "mbti_personality": {
+                  "type": "string",
+                  "pattern": "^[IE][NS][FT][JP]$",
+                  "description": "4-character MBTI personality code"
+                },
+                "travel_history": {
+                  "type": "array",
+                  "description": "Optional travel history for analysis"
+                }
+              },
+              "required": ["mbti_personality"],
+              "additionalProperties": false
+            },
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "personality_analysis": {"type": "object"},
+                "travel_preferences": {"type": "object"},
+                "recommended_activities": {"type": "array"},
+                "compatibility_scores": {"type": "object"}
+              }
+            }
+          }
+        },
+        "metadata": {
+          "version": "1.0.0",
+          "maintainer": "mbti-travel-team",
+          "capabilities": [
+            "mbti-analysis",
+            "itinerary-generation",
+            "knowledge-base-integration",
+            "personality-matching"
+          ],
+          "data_sources": [
+            "bedrock-knowledge-base",
+            "s3://restaurant-data",
+            "mbti-personality-profiles"
+          ],
+          "supported_personalities": [
+            "INTJ", "INTP", "ENTJ", "ENTP",
+            "INFJ", "INFP", "ENFJ", "ENFP",
+            "ISTJ", "ISFJ", "ESTJ", "ESFJ",
+            "ISTP", "ISFP", "ESTP", "ESFP"
+          ],
+          "itinerary_structure": {
+            "duration": "3 days",
+            "sessions_per_day": 3,
+            "meals_per_day": 3,
+            "personality_matching": "knowledge_base_powered"
+          }
+        }
+      }
+    },
+    
+    "routing_rules": {
+      "tool_routing": {
+        "search_restaurants_by_district": {
+          "target_server": "restaurant-search-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 30,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 1.5,
+            "initial_delay": 1
+          }
+        },
+        "search_restaurants_by_meal_type": {
+          "target_server": "restaurant-search-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 30,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 1.5,
+            "initial_delay": 1
+          }
+        },
+        "search_restaurants_combined": {
+          "target_server": "restaurant-search-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 30,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 1.5,
+            "initial_delay": 1
+          }
+        },
+        "recommend_restaurants": {
+          "target_server": "restaurant-reasoning-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 45,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 2.0,
+            "initial_delay": 2
+          }
+        },
+        "analyze_restaurant_sentiment": {
+          "target_server": "restaurant-reasoning-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 45,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 2.0,
+            "initial_delay": 2
+          }
+        },
+        "create_mbti_itinerary": {
+          "target_server": "mbti-travel-assistant-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 120,
+          "retry_policy": {
+            "max_retries": 1,
+            "backoff_multiplier": 2.0,
+            "initial_delay": 5
+          }
+        },
+        "get_personality_recommendations": {
+          "target_server": "mbti-travel-assistant-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 60,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 1.5,
+            "initial_delay": 2
+          }
+        },
+        "analyze_travel_preferences": {
+          "target_server": "mbti-travel-assistant-mcp",
+          "load_balancing": "round_robin",
+          "timeout": 60,
+          "retry_policy": {
+            "max_retries": 2,
+            "backoff_multiplier": 1.5,
+            "initial_delay": 2
+          }
+        }
+      },
+      
+      "fallback_routing": {
+        "enabled": true,
+        "fallback_servers": {
+          "restaurant-search-mcp": [],
+          "restaurant-reasoning-mcp": [],
+          "mbti-travel-assistant-mcp": []
+        },
+        "circuit_breaker_fallback": {
+          "enabled": true,
+          "fallback_response": {
+            "jsonrpc": "2.0",
+            "error": {
+              "code": -32001,
+              "message": "Service temporarily unavailable",
+              "data": {
+                "reason": "Circuit breaker open",
+                "retry_after": 60,
+                "alternative_endpoints": []
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "definitions": {
+      "Restaurant": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "address": {"type": "string"},
+          "district": {"type": "string"},
+          "meal_type": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "price_range": {"type": "string"},
+          "operating_hours": {
+            "type": "object",
+            "properties": {
+              "mon_fri": {"type": "string"},
+              "sat_sun": {"type": "string"},
+              "public_holiday": {"type": "string"}
+            }
+          },
+          "sentiment": {
+            "type": "object",
+            "properties": {
+              "likes": {"type": "integer"},
+              "dislikes": {"type": "integer"},
+              "neutral": {"type": "integer"}
+            }
+          }
+        }
+      },
+      
+      "RecommendedRestaurant": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "address": {"type": "string"},
+          "sentiment": {
+            "type": "object",
+            "properties": {
+              "likes": {"type": "integer"},
+              "dislikes": {"type": "integer"},
+              "neutral": {"type": "integer"},
+              "likes_percentage": {"type": "number"},
+              "combined_positive_percentage": {"type": "number"}
+            }
+          },
+          "meal_type": {"type": "array"},
+          "district": {"type": "string"},
+          "price_range": {"type": "string"}
+        }
+      },
+      
+      "RestaurantCandidate": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "sentiment_score": {"type": "number"},
+          "likes": {"type": "integer"},
+          "total_responses": {"type": "integer"}
+        }
+      },
+      
+      "DayItinerary": {
+        "type": "object",
+        "properties": {
+          "morning_session": {"$ref": "#/definitions/TouristSpot"},
+          "afternoon_session": {"$ref": "#/definitions/TouristSpot"},
+          "night_session": {"$ref": "#/definitions/TouristSpot"},
+          "breakfast": {"$ref": "#/definitions/Restaurant"},
+          "lunch": {"$ref": "#/definitions/Restaurant"},
+          "dinner": {"$ref": "#/definitions/Restaurant"}
+        }
+      },
+      
+      "DayRestaurants": {
+        "type": "object",
+        "properties": {
+          "breakfast": {
+            "type": "array",
+            "items": {"$ref": "#/definitions/Restaurant"}
+          },
+          "lunch": {
+            "type": "array",
+            "items": {"$ref": "#/definitions/Restaurant"}
+          },
+          "dinner": {
+            "type": "array",
+            "items": {"$ref": "#/definitions/Restaurant"}
+          }
+        }
+      },
+      
+      "TouristSpot": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "location": {"type": "string"},
+          "mbti_match": {"type": "object"},
+          "category": {"type": "string"},
+          "rating": {"type": "number"}
+        }
+      },
+      
+      "ItineraryMetadata": {
+        "type": "object",
+        "properties": {
+          "mbti_personality": {"type": "string"},
+          "generation_timestamp": {"type": "string"},
+          "total_spots_found": {"type": "integer"},
+          "total_restaurants_found": {"type": "integer"},
+          "processing_time_ms": {"type": "integer"},
+          "validation_status": {"type": "string"},
+          "knowledge_base_queries": {"type": "integer"}
+        }
+      }
+    }
+  }
+}

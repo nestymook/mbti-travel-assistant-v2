@@ -48,7 +48,7 @@ AgentCore supports multiple popular AI frameworks:
 
 ### Strands Agents
 ```python
-from strands_agents import Agent
+from strands import Agent
 from bedrock_agentcore import AgentCoreRuntime
 
 # Framework-specific integration patterns
@@ -105,7 +105,7 @@ auth_config = {
 jwt_config = {
     "customJWTAuthorizer": {
         "allowedClients": ["client-id-1", "client-id-2"],
-        "discoveryUrl": "https://your-domain.auth.region.amazoncognito.com/.well-known/openid_configuration"
+        "discoveryUrl": "https://your-domain.auth.region.amazoncognito.com/.well-known/openid-configuration"
     }
 }
 ```
@@ -339,7 +339,7 @@ observability:
 authentication:
   type: "jwt"
   config:
-    discovery_url: "https://cognito-domain/.well-known/openid_configuration"
+    discovery_url: "https://cognito-domain/.well-known/openid-configuration"
 ```
 
 ### Deployment Automation

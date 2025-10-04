@@ -638,7 +638,7 @@ class EnhancedAgentCoreDeployer:
                 "success": True,
                 "user_pool_id": user_pool_id,
                 "client_id": client_id,
-                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration",
+                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration",
                 "created": True
             }
             
@@ -684,7 +684,7 @@ class EnhancedAgentCoreDeployer:
                 "success": True,
                 "user_pool_id": user_pool_id,
                 "client_id": client_id,
-                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration",
+                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration",
                 "created": False
             }
             

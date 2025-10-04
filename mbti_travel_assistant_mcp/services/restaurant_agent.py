@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 # Strands Agents framework
 try:
-    from strands_agents import Agent
+    from strands import Agent
     from strands_agents.config import AgentConfig
     from strands_agents.models import ModelConfig
     STRANDS_AVAILABLE = True

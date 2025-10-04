@@ -12,8 +12,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent
-from strands_agents.tools import Tool
+from strands import Agent, tool
 
 from services.restaurant_service import RestaurantService
 from services.district_service import DistrictService
@@ -42,8 +41,8 @@ except Exception as e:
     raise
 
 
-def create_mcp_tools() -> list[Tool]:
-    """Create MCP tools for the Strands Agent."""
+def create_restaurant_search_functions():
+    """Create restaurant search functions for direct use."""
     
     def search_restaurants_by_district(districts: list[str]) -> str:
         """
@@ -151,90 +150,65 @@ def create_mcp_tools() -> list[Tool]:
             }
             return json.dumps(error_response, ensure_ascii=False, indent=2)
     
-    # Create Tool objects for Strands Agent with detailed schemas
+    # Create tool functions using strands @tool decorator
+    @tool
+    def search_restaurants_by_district_tool(districts: list[str]) -> str:
+        """
+        Search for restaurants in specific Hong Kong districts. 
+        Use this tool when users ask about restaurants in particular locations or areas.
+        Available districts include: Admiralty, Central district, Causeway Bay, Wan Chai, 
+        Tsim Sha Tsui, Mong Kok, Sha Tin, Tsuen Wan, and many others across Hong Kong Island, 
+        Kowloon, New Territories, and Lantau.
+        
+        Args:
+            districts: List of Hong Kong district names. Examples: ['Central district'], ['Tsim Sha Tsui', 'Causeway Bay'], ['Admiralty']
+        
+        Returns:
+            JSON string containing restaurant data and metadata
+        """
+        return search_restaurants_by_district(districts)
+    
+    @tool
+    def search_restaurants_by_meal_type_tool(meal_types: list[str]) -> str:
+        """
+        Search for restaurants by meal type based on their operating hours.
+        Use this tool when users ask about breakfast, lunch, or dinner places.
+        - Breakfast: 7:00-11:29 (morning dining)
+        - Lunch: 11:30-17:29 (midday dining) 
+        - Dinner: 17:30-22:30 (evening dining)
+        The tool analyzes restaurant operating hours to determine meal availability.
+        
+        Args:
+            meal_types: List of meal types to search for. Valid values: ["breakfast", "lunch", "dinner"]
+        
+        Returns:
+            JSON string containing restaurant data filtered by operating hours
+        """
+        return search_restaurants_by_meal_type(meal_types)
+    
+    @tool
+    def search_restaurants_combined_tool(districts: Optional[list[str]] = None, 
+                                        meal_types: Optional[list[str]] = None) -> str:
+        """
+        Search for restaurants using both district and meal type filters.
+        Use this tool when users specify both location and meal time preferences.
+        This is the most flexible search option that can filter by either or both criteria.
+        If only one parameter is provided, it will search by that single criterion.
+        
+        Args:
+            districts: Optional list of Hong Kong district names to filter by location
+            meal_types: Optional list of meal types to filter by dining time. Valid values: ["breakfast", "lunch", "dinner"]
+        
+        Returns:
+            JSON string containing filtered restaurant data
+        """
+        return search_restaurants_combined(districts, meal_types)
+    
+    # Return the decorated tool functions
     tools = [
-        Tool(
-            name="search_restaurants_by_district",
-            description="""Search for restaurants in specific Hong Kong districts. 
-            Use this tool when users ask about restaurants in particular locations or areas.
-            Available districts include: Admiralty, Central district, Causeway Bay, Wan Chai, 
-            Tsim Sha Tsui, Mong Kok, Sha Tin, Tsuen Wan, and many others across Hong Kong Island, 
-            Kowloon, New Territories, and Lantau.""",
-            function=search_restaurants_by_district,
-            parameters={
-                "type": "object",
-                "properties": {
-                    "districts": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "List of Hong Kong district names. Examples: ['Central district'], ['Tsim Sha Tsui', 'Causeway Bay'], ['Admiralty']",
-                        "minItems": 1
-                    }
-                },
-                "required": ["districts"],
-                "additionalProperties": False
-            }
-        ),
-        Tool(
-            name="search_restaurants_by_meal_type",
-            description="""Search for restaurants by meal type based on their operating hours.
-            Use this tool when users ask about breakfast, lunch, or dinner places.
-            - Breakfast: 7:00-11:29 (morning dining)
-            - Lunch: 11:30-17:29 (midday dining) 
-            - Dinner: 17:30-22:30 (evening dining)
-            The tool analyzes restaurant operating hours to determine meal availability.""",
-            function=search_restaurants_by_meal_type,
-            parameters={
-                "type": "object",
-                "properties": {
-                    "meal_types": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": ["breakfast", "lunch", "dinner"]
-                        },
-                        "description": "List of meal types to search for. Use 'breakfast' for morning (7:00-11:29), 'lunch' for midday (11:30-17:29), 'dinner' for evening (17:30-22:30)",
-                        "minItems": 1
-                    }
-                },
-                "required": ["meal_types"],
-                "additionalProperties": False
-            }
-        ),
-        Tool(
-            name="search_restaurants_combined",
-            description="""Search for restaurants using both district and meal type filters.
-            Use this tool when users specify both location and meal time preferences.
-            This is the most flexible search option that can filter by either or both criteria.
-            If only one parameter is provided, it will search by that single criterion.""",
-            function=search_restaurants_combined,
-            parameters={
-                "type": "object",
-                "properties": {
-                    "districts": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "Optional list of Hong Kong district names to filter by location",
-                        "minItems": 1
-                    },
-                    "meal_types": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": ["breakfast", "lunch", "dinner"]
-                        },
-                        "description": "Optional list of meal types to filter by dining time",
-                        "minItems": 1
-                    }
-                },
-                "additionalProperties": False,
-                "anyOf": [
-                    {"required": ["districts"]},
-                    {"required": ["meal_types"]},
-                    {"required": ["districts", "meal_types"]}
-                ]
-            }
-        )
+        search_restaurants_by_district_tool,
+        search_restaurants_by_meal_type_tool,
+        search_restaurants_combined_tool
     ]
     
     return tools
@@ -280,8 +254,8 @@ def create_strands_agent() -> Agent:
     
     Remember: Your goal is to help users find great dining experiences in Hong Kong!"""
     
-    # Create MCP tools
-    tools = create_mcp_tools()
+    # Create restaurant search tools
+    tools = create_restaurant_search_functions()
     
     # Configure Strands Agent with optimized parameters
     agent = Agent(

@@ -1,1 +1,6 @@
 /amazon-bedrock-agentcore-samples-main/
+
+#virtual environment
+.venv/
+
+tests/

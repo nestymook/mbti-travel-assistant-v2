@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 
 from bedrock_agentcore import BedrockAgentCoreApp
-from strands_agents import Agent
+from strands import Agent
 from strands_agents.tools import Tool
 
 from src.services.restaurant_service import RestaurantService

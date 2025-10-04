@@ -1,133 +1,17 @@
 default_agent: restaurant_reasoning_mcp
 agents:
-  restaurant_search_conversational_agent:
-    name: restaurant_search_conversational_agent
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-mcp/main.py
-    platform: linux/arm64
-    container_runtime: docker
-    aws:
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-edbe21d01d
-      execution_role_auto_create: false
-      account: '209803798463'
-      region: us-east-1
-      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_conversational_agent
-      ecr_auto_create: false
-      network_configuration:
-        network_mode: PUBLIC
-      protocol_configuration:
-        server_protocol: HTTP
-      observability:
-        enabled: true
-    bedrock_agentcore:
-      agent_id: restaurant_search_conversational_agent-dsuHTs5FJn
-      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_conversational_agent-dsuHTs5FJn
-      agent_session_id: 32c5821f-5ed6-4edc-97e1-012ce82d0254
-    codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
-    authorizer_configuration: null
-    request_header_configuration: null
-    oauth_configuration: null
-  restaurant_search_mcp:
-    name: restaurant_search_mcp
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-mcp/restaurant_mcp_server.py
-    platform: linux/arm64
-    container_runtime: docker
-    aws:
-      execution_role: null
-      execution_role_auto_create: true
-      account: '209803798463'
-      region: us-east-1
-      ecr_repository: null
-      ecr_auto_create: true
-      network_configuration:
-        network_mode: PUBLIC
-      protocol_configuration:
-        server_protocol: HTTP
-      observability:
-        enabled: true
-    bedrock_agentcore:
-      agent_id: restaurant_search_mcp-JZdACMALGo
-      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp-JZdACMALGo
-      agent_session_id: dfdb5271-565d-4d29-9c59-b9df328bd2d7
-    codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
-    authorizer_configuration: null
-    request_header_configuration: null
-    oauth_configuration: null
-  restaurant_search_mcp_no_auth:
-    name: restaurant_search_mcp_no_auth
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant_mcp_server.py
-    platform: linux/arm64
-    container_runtime: docker
-    aws:
-      execution_role: null
-      execution_role_auto_create: true
-      account: '209803798463'
-      region: us-east-1
-      ecr_repository: null
-      ecr_auto_create: true
-      network_configuration:
-        network_mode: PUBLIC
-      protocol_configuration:
-        server_protocol: MCP
-      observability:
-        enabled: true
-    bedrock_agentcore:
-      agent_id: restaurant_search_mcp_no_auth-QkpwVXBnQD
-      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp_no_auth-QkpwVXBnQD
-      agent_session_id: 3b7b5528-6805-4f81-955b-fef1f2075c92
-    codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
-    authorizer_configuration: null
-    request_header_configuration: null
-    oauth_configuration: null
-  restaurant_search_mcp_arm64:
-    name: restaurant_search_mcp_arm64
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant_mcp_server.py
-    platform: linux/arm64
-    container_runtime: docker
-    aws:
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-53c8e0f88f
-      execution_role_auto_create: false
-      account: '209803798463'
-      region: us-east-1
-      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_mcp_arm64
-      ecr_auto_create: false
-      network_configuration:
-        network_mode: PUBLIC
-      protocol_configuration:
-        server_protocol: MCP
-      observability:
-        enabled: true
-    bedrock_agentcore:
-      agent_id: restaurant_search_mcp_arm64-PHZTg7GFbx
-      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_mcp_arm64-PHZTg7GFbx
-      agent_session_id: null
-    codebuild:
-      project_name: bedrock-agentcore-restaurant_search_mcp_arm64-builder
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-53c8e0f88f
-      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
-    authorizer_configuration: null
-    request_header_configuration: null
-    oauth_configuration: null
   restaurant_reasoning_mcp:
     name: restaurant_reasoning_mcp
     entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2616b454f4
-      execution_role_auto_create: false
+      execution_role: null
+      execution_role_auto_create: true
       account: '209803798463'
       region: us-east-1
-      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_reasoning_mcp
-      ecr_auto_create: false
+      ecr_repository: null
+      ecr_auto_create: true
       network_configuration:
         network_mode: PUBLIC
       protocol_configuration:
@@ -139,13 +23,20 @@ agents:
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1
       agent_session_id: null
     codebuild:
-      project_name: bedrock-agentcore-restaurant_reasoning_mcp-builder
-      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-2616b454f4
-      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    memory:
+      mode: STM_AND_LTM
+      memory_id: restaurant_search_conversational_agent_mem-YbRhxj54Yd
+      memory_arn: null
+      memory_name: restaurant_reasoning_mcp_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
-        - 26k0pnja579pdpb1pt6savs27e
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration
+        - 1ofgeckef3po4i3us4j1m4chvd
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
     request_header_configuration: null
     oauth_configuration: null

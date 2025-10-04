@@ -33,7 +33,7 @@ Created a **CloudFront Distribution** to provide HTTPS access to the S3 static w
 
 ### 3. Frontend Configuration Updated
 - **Environment**: Production
-- **Cognito Domain**: `restaurant-mcp-9cccf837`
+- **Cognito Domain**: `mbti-travel-oidc-334662794`
 - **Redirect URLs**: Updated to use CloudFront HTTPS URLs
 - **Build**: Rebuilt and deployed to S3
 
@@ -48,8 +48,8 @@ App receives auth code → Exchange for JWT tokens → Authenticated!
 
 ### URLs:
 - **App URL**: `https://d39ank8zud5pbg.cloudfront.net` (HTTPS) ✅
-- **Cognito Login**: `https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/login`
-- **Cognito Logout**: `https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com/logout`
+- **Cognito Login**: `https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login`
+- **Cognito Logout**: `https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/logout`
 
 ## 🧪 Testing Status
 

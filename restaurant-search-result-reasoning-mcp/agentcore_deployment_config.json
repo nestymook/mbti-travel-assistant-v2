@@ -7,51 +7,39 @@
   "auth_config": {
     "customJWTAuthorizer": {
       "allowedClients": [
-        "26k0pnja579pdpb1pt6savs27e"
+        "1ofgeckef3po4i3us4j1m4chvd"
       ],
-      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
     }
   },
   "cognito_config": {
     "region": "us-east-1",
     "user_pool": {
-      "user_pool_id": "us-east-1_wBAxW7yd4",
-      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_wBAxW7yd4",
+      "user_pool_id": "us-east-1_KePRX24Bn",
+      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
       "creation_date": "2025-09-27T07:48:31.750000+09:00"
     },
     "app_client": {
-      "client_id": "26k0pnja579pdpb1pt6savs27e",
-      "client_name": "restaurant-search-mcp-client"
+      "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+      "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+      "client_name": "mbti-travel-oidc-client"
     },
     "test_user": {
-      "username": "testing_user@test.com.hk",
-      "email": "testing_user@test.com.hk",
+      "username": "test@mbti-travel.com",
+      "email": "test@mbti-travel.com",
       "status": "CONFIRMED",
       "password_updated": true
     },
-    "previous_test_user": {
-      "username": "nestymook@gmail.com",
-      "email": "nestymook@gmail.com",
-      "note": "Previous test user, kept for reference"
-    },
-    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
     "setup_timestamp": "us-east-1",
     "custom_domain": {
-      "domain_prefix": "restaurant-mcp-9cccf837",
-      "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
-      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+      "domain_prefix": "mbti-travel-oidc-334662794",
+      "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
       "status": "ACTIVE"
     }
   },
-  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1759037863.8614576,
-  "server_type": "reasoning",
-  "final_deployment_result": {
-    "configuration": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-    "launch": "mode='codebuild' tag='bedrock_agentcore-restaurant_reasoning_mcp:latest' env_vars=None port=None runtime=None ecr_uri='209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_reasoning_mcp' agent_id='restaurant_reasoning_mcp-UFz1VQCFu1' agent_arn='arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1' codebuild_id='bedrock-agentcore-restaurant_reasoning_mcp-builder:f6b7873d-c68d-4eaa-85be-3b4ffbc6eb82' build_output=None",
-    "final_status": "config=StatusConfigInfo(name='restaurant_reasoning_mcp', entrypoint='C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py', region='us-east-1', account='209803798463', execution_role='arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2616b454f4', ecr_repository='209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_reasoning_mcp', agent_id='restaurant_reasoning_mcp-UFz1VQCFu1', agent_arn='arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1') agent={'ResponseMetadata': {'RequestId': '612d9a78-903b-45f6-99c9-50d3e9869318', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 28 Sep 2025 05:38:36 GMT', 'content-type': 'application/json', 'content-length': '1115', 'connection': 'keep-alive', 'x-amzn-requestid': '612d9a78-903b-45f6-99c9-50d3e9869318', 'x-amzn-remapped-x-amzn-requestid': '37eea072-1050-4571-979e-7359a9096a4e', 'x-amzn-remapped-content-length': '1115', 'x-amzn-remapped-connection': 'keep-alive', 'x-amz-apigw-id': 'RmR6gEYAoAMEk9A=', 'x-amzn-trace-id': 'Root=1-68d8c9dc-279d5d6d1b5a23c0660d4902', 'x-amzn-remapped-date': 'Sun, 28 Sep 2025 05:38:36 GMT'}, 'RetryAttempts': 0}, 'agentRuntimeArn': 'arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1', 'workloadIdentityDetails': {'workloadIdentityArn': 'arn:aws:bedrock-agentcore:us-east-1:209803798463:workload-identity-directory/default/workload-identity/restaurant_reasoning_mcp-UFz1VQCFu1'}, 'agentRuntimeName': 'restaurant_reasoning_mcp', 'agentRuntimeId': 'restaurant_reasoning_mcp-UFz1VQCFu1', 'agentRuntimeVersion': '3', 'createdAt': datetime.datetime(2025, 9, 27, 20, 29, 2, 287717, tzinfo=tzutc()), 'lastUpdatedAt': datetime.datetime(2025, 9, 28, 5, 38, 31, 897641, tzinfo=tzutc()), 'roleArn': 'arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2616b454f4', 'agentRuntimeArtifact': {'containerConfiguration': {'containerUri': '209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_reasoning_mcp:latest'}}, 'networkConfiguration': {'networkMode': 'PUBLIC'}, 'protocolConfiguration': {'serverProtocol': 'MCP'}, 'authorizerConfiguration': {'customJWTAuthorizer': {'discoveryUrl': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration', 'allowedClients': ['26k0pnja579pdpb1pt6savs27e']}}, 'status': 'READY'} endpoint={'ResponseMetadata': {'RequestId': '3aef4984-6d98-4be6-acad-2b35b809ea92', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 28 Sep 2025 05:38:37 GMT', 'content-type': 'application/json', 'content-length': '421', 'connection': 'keep-alive', 'x-amzn-requestid': '3aef4984-6d98-4be6-acad-2b35b809ea92', 'x-amzn-remapped-x-amzn-requestid': 'd806f7d0-241f-4d2b-b2d5-3b1b3ff8cd48', 'x-amzn-remapped-content-length': '421', 'x-amzn-remapped-connection': 'keep-alive', 'x-amz-apigw-id': 'RmR6sEJeoAMEXbA=', 'x-amzn-trace-id': 'Root=1-68d8c9dd-50a06e4169e11f4459930849', 'x-amzn-remapped-date': 'Sun, 28 Sep 2025 05:38:37 GMT'}, 'RetryAttempts': 0}, 'liveVersion': '3', 'agentRuntimeEndpointArn': 'arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1/runtime-endpoint/DEFAULT', 'agentRuntimeArn': 'arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1', 'status': 'READY', 'createdAt': datetime.datetime(2025, 9, 27, 20, 29, 2, 712081, tzinfo=tzutc()), 'lastUpdatedAt': datetime.datetime(2025, 9, 28, 5, 38, 31, 897660, tzinfo=tzutc()), 'name': 'DEFAULT', 'id': 'DEFAULT'}",
-    "connectivity_test": false,
-    "deployment_successful": false
-  },
-  "completed_at": 1759037919.437696
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True memory_id=None",
+  "configured_at": 1759567453.010716,
+  "server_type": "reasoning"
 }

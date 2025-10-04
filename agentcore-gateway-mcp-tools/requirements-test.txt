@@ -1,0 +1,13 @@
+# Minimal requirements for testing MCP client manager
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+httpx
+aiohttp
+tenacity
+pytest
+pytest-asyncio
+pytest-mock
+pytest-httpx
+python-dotenv

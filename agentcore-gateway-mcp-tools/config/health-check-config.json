@@ -1,0 +1,624 @@
+{
+  "health_check_configuration": {
+    "version": "1.0.0",
+    "description": "Health check configuration for MCP servers with native MCP protocol monitoring",
+    
+    "global_settings": {
+      "enabled": true,
+      "default_interval_seconds": 30,
+      "default_timeout_seconds": 10,
+      "default_retry_attempts": 3,
+      "default_retry_delay_seconds": 5,
+      "concurrent_health_checks": true,
+      "health_check_jitter_percent": 10,
+      "failure_threshold_for_unhealthy": 3,
+      "success_threshold_for_healthy": 2
+    },
+    
+    "mcp_server_health_checks": {
+      "restaurant-search-mcp": {
+        "enabled": true,
+        "server_id": "restaurant-search-mcp",
+        "display_name": "Restaurant Search MCP Server",
+        
+        "health_check_methods": [
+          {
+            "method": "mcp_ping",
+            "priority": 1,
+            "description": "Native MCP ping to verify server responsiveness",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "method": "ping",
+              "params": {}
+            },
+            "expected_response": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "result": {
+                "status": "healthy"
+              }
+            },
+            "timeout_seconds": 5,
+            "retry_attempts": 2
+          },
+          {
+            "method": "mcp_tools_list",
+            "priority": 2,
+            "description": "Verify MCP server can list available tools",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_tools",
+              "method": "tools/list",
+              "params": {}
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "tools": {
+                  "type": "array",
+                  "minItems": 3,
+                  "expected_tools": [
+                    "search_restaurants_by_district",
+                    "search_restaurants_by_meal_type",
+                    "search_restaurants_combined"
+                  ]
+                }
+              }
+            },
+            "timeout_seconds": 8,
+            "retry_attempts": 2
+          },
+          {
+            "method": "mcp_tool_test",
+            "priority": 3,
+            "description": "Test a simple tool call to verify functionality",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_tool_test",
+              "method": "tools/call",
+              "params": {
+                "name": "search_restaurants_by_district",
+                "arguments": {
+                  "districts": ["Central district"]
+                }
+              }
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "content": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
+            },
+            "timeout_seconds": 15,
+            "retry_attempts": 1,
+            "frequency": "every_5_minutes"
+          }
+        ],
+        
+        "health_status_criteria": {
+          "healthy": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success"
+            ],
+            "description": "Server responds to ping and can list tools"
+          },
+          "degraded": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success",
+              "mcp_tool_test_failure"
+            ],
+            "description": "Server responds but tool execution may be impaired"
+          },
+          "unhealthy": {
+            "conditions": [
+              "mcp_ping_failure",
+              "connection_timeout",
+              "protocol_error"
+            ],
+            "description": "Server is not responding or has protocol issues"
+          }
+        },
+        
+        "monitoring_configuration": {
+          "interval_seconds": 30,
+          "timeout_seconds": 10,
+          "retry_attempts": 3,
+          "retry_delay_seconds": 5,
+          "jitter_percent": 15
+        }
+      },
+      
+      "restaurant-reasoning-mcp": {
+        "enabled": true,
+        "server_id": "restaurant-reasoning-mcp",
+        "display_name": "Restaurant Reasoning MCP Server",
+        
+        "health_check_methods": [
+          {
+            "method": "mcp_ping",
+            "priority": 1,
+            "description": "Native MCP ping to verify server responsiveness",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "method": "ping",
+              "params": {}
+            },
+            "expected_response": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "result": {
+                "status": "healthy"
+              }
+            },
+            "timeout_seconds": 5,
+            "retry_attempts": 2
+          },
+          {
+            "method": "mcp_tools_list",
+            "priority": 2,
+            "description": "Verify MCP server can list available reasoning tools",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_tools",
+              "method": "tools/list",
+              "params": {}
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "tools": {
+                  "type": "array",
+                  "minItems": 2,
+                  "expected_tools": [
+                    "recommend_restaurants",
+                    "analyze_restaurant_sentiment"
+                  ]
+                }
+              }
+            },
+            "timeout_seconds": 8,
+            "retry_attempts": 2
+          },
+          {
+            "method": "mcp_sentiment_analysis_test",
+            "priority": 3,
+            "description": "Test sentiment analysis functionality with sample data",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_sentiment_test",
+              "method": "tools/call",
+              "params": {
+                "name": "analyze_restaurant_sentiment",
+                "arguments": {
+                  "restaurants": [
+                    {
+                      "id": "health_test_restaurant",
+                      "name": "Health Check Restaurant",
+                      "sentiment": {
+                        "likes": 10,
+                        "dislikes": 2,
+                        "neutral": 3
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "content": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
+            },
+            "timeout_seconds": 20,
+            "retry_attempts": 1,
+            "frequency": "every_5_minutes"
+          }
+        ],
+        
+        "health_status_criteria": {
+          "healthy": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success"
+            ],
+            "description": "Server responds to ping and can list reasoning tools"
+          },
+          "degraded": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success",
+              "mcp_sentiment_analysis_test_failure"
+            ],
+            "description": "Server responds but sentiment analysis may be impaired"
+          },
+          "unhealthy": {
+            "conditions": [
+              "mcp_ping_failure",
+              "connection_timeout",
+              "protocol_error"
+            ],
+            "description": "Server is not responding or has protocol issues"
+          }
+        },
+        
+        "monitoring_configuration": {
+          "interval_seconds": 30,
+          "timeout_seconds": 12,
+          "retry_attempts": 3,
+          "retry_delay_seconds": 5,
+          "jitter_percent": 15
+        }
+      },
+      
+      "mbti-travel-assistant-mcp": {
+        "enabled": true,
+        "server_id": "mbti-travel-assistant-mcp",
+        "display_name": "MBTI Travel Assistant MCP Server",
+        
+        "health_check_methods": [
+          {
+            "method": "mcp_ping",
+            "priority": 1,
+            "description": "Native MCP ping to verify server responsiveness",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "method": "ping",
+              "params": {}
+            },
+            "expected_response": {
+              "jsonrpc": "2.0",
+              "id": "health_check_ping",
+              "result": {
+                "status": "healthy"
+              }
+            },
+            "timeout_seconds": 8,
+            "retry_attempts": 2
+          },
+          {
+            "method": "mcp_tools_list",
+            "priority": 2,
+            "description": "Verify MCP server can list available MBTI tools",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_tools",
+              "method": "tools/list",
+              "params": {}
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "tools": {
+                  "type": "array",
+                  "minItems": 2,
+                  "expected_tools": [
+                    "create_mbti_itinerary",
+                    "get_personality_recommendations",
+                    "analyze_travel_preferences"
+                  ]
+                }
+              }
+            },
+            "timeout_seconds": 10,
+            "retry_attempts": 2
+          },
+          {
+            "method": "knowledge_base_connectivity_test",
+            "priority": 3,
+            "description": "Test knowledge base connectivity for MBTI matching",
+            "request": {
+              "jsonrpc": "2.0",
+              "id": "health_check_kb_test",
+              "method": "tools/call",
+              "params": {
+                "name": "get_personality_recommendations",
+                "arguments": {
+                  "mbti_personality": "INFJ",
+                  "recommendation_type": "general"
+                }
+              }
+            },
+            "expected_response_validation": {
+              "jsonrpc": "2.0",
+              "result": {
+                "content": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
+            },
+            "timeout_seconds": 30,
+            "retry_attempts": 1,
+            "frequency": "every_10_minutes"
+          }
+        ],
+        
+        "health_status_criteria": {
+          "healthy": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success",
+              "knowledge_base_connectivity_test_success"
+            ],
+            "description": "Server responds, can list tools, and knowledge base is accessible"
+          },
+          "degraded": {
+            "conditions": [
+              "mcp_ping_success",
+              "mcp_tools_list_success",
+              "knowledge_base_connectivity_test_failure"
+            ],
+            "description": "Server responds but knowledge base connectivity may be impaired"
+          },
+          "unhealthy": {
+            "conditions": [
+              "mcp_ping_failure",
+              "connection_timeout",
+              "protocol_error"
+            ],
+            "description": "Server is not responding or has protocol issues"
+          }
+        },
+        
+        "monitoring_configuration": {
+          "interval_seconds": 45,
+          "timeout_seconds": 15,
+          "retry_attempts": 2,
+          "retry_delay_seconds": 10,
+          "jitter_percent": 20
+        }
+      }
+    },
+    
+    "health_check_aggregation": {
+      "enabled": true,
+      "description": "Aggregate health status across all MCP servers for gateway-level health",
+      
+      "gateway_health_criteria": {
+        "healthy": {
+          "condition": "all_servers_healthy_or_degraded",
+          "minimum_healthy_servers": 2,
+          "description": "Gateway is healthy when at least 2 servers are healthy or degraded"
+        },
+        "degraded": {
+          "condition": "some_servers_unhealthy",
+          "minimum_healthy_servers": 1,
+          "description": "Gateway is degraded when some servers are unhealthy but at least 1 is healthy"
+        },
+        "unhealthy": {
+          "condition": "all_servers_unhealthy",
+          "minimum_healthy_servers": 0,
+          "description": "Gateway is unhealthy when all servers are unhealthy"
+        }
+      },
+      
+      "health_status_propagation": {
+        "enabled": true,
+        "console_integration": {
+          "enabled": true,
+          "update_interval_seconds": 30,
+          "include_server_details": true,
+          "include_last_check_timestamp": true
+        },
+        "load_balancer_integration": {
+          "enabled": true,
+          "health_endpoint": "/health",
+          "detailed_endpoint": "/health/detailed",
+          "update_interval_seconds": 10
+        }
+      }
+    },
+    
+    "health_check_responses": {
+      "gateway_health_endpoint": {
+        "path": "/health",
+        "method": "GET",
+        "response_format": {
+          "healthy": {
+            "status_code": 200,
+            "response": {
+              "status": "healthy",
+              "timestamp": "2025-01-03T10:30:00Z",
+              "gateway_version": "1.0.0",
+              "mcp_servers": {
+                "total": 3,
+                "healthy": 3,
+                "degraded": 0,
+                "unhealthy": 0
+              }
+            }
+          },
+          "degraded": {
+            "status_code": 200,
+            "response": {
+              "status": "degraded",
+              "timestamp": "2025-01-03T10:30:00Z",
+              "gateway_version": "1.0.0",
+              "mcp_servers": {
+                "total": 3,
+                "healthy": 2,
+                "degraded": 1,
+                "unhealthy": 0
+              },
+              "warnings": [
+                "Some MCP servers are experiencing degraded performance"
+              ]
+            }
+          },
+          "unhealthy": {
+            "status_code": 503,
+            "response": {
+              "status": "unhealthy",
+              "timestamp": "2025-01-03T10:30:00Z",
+              "gateway_version": "1.0.0",
+              "mcp_servers": {
+                "total": 3,
+                "healthy": 0,
+                "degraded": 1,
+                "unhealthy": 2
+              },
+              "errors": [
+                "Multiple MCP servers are unavailable",
+                "Gateway functionality is severely impaired"
+              ]
+            }
+          }
+        }
+      },
+      
+      "detailed_health_endpoint": {
+        "path": "/health/detailed",
+        "method": "GET",
+        "response_format": {
+          "status": "healthy",
+          "timestamp": "2025-01-03T10:30:00Z",
+          "gateway_version": "1.0.0",
+          "overall_health": {
+            "status": "healthy",
+            "uptime_seconds": 86400,
+            "total_requests": 15420,
+            "successful_requests": 15380,
+            "failed_requests": 40,
+            "success_rate": 99.74
+          },
+          "mcp_servers": {
+            "restaurant-search-mcp": {
+              "status": "healthy",
+              "last_check": "2025-01-03T10:29:45Z",
+              "response_time_ms": 45,
+              "success_rate": 99.8,
+              "consecutive_successes": 120,
+              "consecutive_failures": 0,
+              "tools_available": 3,
+              "last_error": null
+            },
+            "restaurant-reasoning-mcp": {
+              "status": "healthy",
+              "last_check": "2025-01-03T10:29:50Z",
+              "response_time_ms": 78,
+              "success_rate": 99.5,
+              "consecutive_successes": 95,
+              "consecutive_failures": 0,
+              "tools_available": 2,
+              "last_error": null
+            },
+            "mbti-travel-assistant-mcp": {
+              "status": "degraded",
+              "last_check": "2025-01-03T10:29:30Z",
+              "response_time_ms": 1200,
+              "success_rate": 95.2,
+              "consecutive_successes": 5,
+              "consecutive_failures": 0,
+              "tools_available": 3,
+              "last_error": "Knowledge base query timeout",
+              "warnings": [
+                "Slow response times detected",
+                "Knowledge base connectivity intermittent"
+              ]
+            }
+          },
+          "circuit_breakers": {
+            "restaurant-search-mcp": "closed",
+            "restaurant-reasoning-mcp": "closed",
+            "mbti-travel-assistant-mcp": "half_open"
+          }
+        }
+      }
+    },
+    
+    "monitoring_and_alerting": {
+      "enabled": true,
+      
+      "metrics": {
+        "health_check_duration": {
+          "type": "histogram",
+          "description": "Duration of health check requests",
+          "dimensions": ["server_name", "check_method", "environment"]
+        },
+        "health_check_success_rate": {
+          "type": "gauge",
+          "description": "Success rate of health checks",
+          "dimensions": ["server_name", "environment"]
+        },
+        "server_health_status": {
+          "type": "gauge",
+          "description": "Current health status (0=unhealthy, 1=degraded, 2=healthy)",
+          "dimensions": ["server_name", "environment"]
+        },
+        "consecutive_health_check_failures": {
+          "type": "gauge",
+          "description": "Number of consecutive health check failures",
+          "dimensions": ["server_name", "environment"]
+        }
+      },
+      
+      "alerting": {
+        "enabled": true,
+        "alert_conditions": [
+          {
+            "name": "server_unhealthy",
+            "condition": "server_health_status == 0",
+            "severity": "critical",
+            "description": "MCP server is unhealthy",
+            "notification_channels": ["cloudwatch", "sns"]
+          },
+          {
+            "name": "server_degraded",
+            "condition": "server_health_status == 1",
+            "severity": "warning",
+            "description": "MCP server performance is degraded",
+            "notification_channels": ["cloudwatch"]
+          },
+          {
+            "name": "high_health_check_failure_rate",
+            "condition": "health_check_success_rate < 0.8 for 5 minutes",
+            "severity": "warning",
+            "description": "High health check failure rate detected",
+            "notification_channels": ["cloudwatch"]
+          },
+          {
+            "name": "gateway_unhealthy",
+            "condition": "all servers unhealthy",
+            "severity": "critical",
+            "description": "Gateway is completely unhealthy",
+            "notification_channels": ["cloudwatch", "sns", "email"]
+          }
+        ]
+      },
+      
+      "logging": {
+        "enabled": true,
+        "log_level": "INFO",
+        "log_events": [
+          "health_check_started",
+          "health_check_completed",
+          "health_check_failed",
+          "server_status_changed",
+          "gateway_status_changed"
+        ],
+        "log_format": {
+          "timestamp": "ISO8601",
+          "level": "string",
+          "server_name": "string",
+          "event_type": "string",
+          "health_status": "string",
+          "response_time_ms": "integer",
+          "error_message": "string",
+          "additional_context": "object"
+        }
+      }
+    }
+  }
+}

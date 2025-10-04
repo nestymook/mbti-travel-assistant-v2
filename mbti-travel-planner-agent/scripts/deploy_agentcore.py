@@ -22,6 +22,7 @@ import yaml
 from typing import Dict, Any, Optional, List
 import datetime
 from pathlib import Path
+import platform
 
 import boto3
 from botocore.exceptions import ClientError, NoCredentialsError
@@ -231,7 +232,29 @@ class AgentCoreDeployer:
     
     def _setup_ecr_repository(self, agent_name: str) -> str:
         """Create or verify ECR repository for container images."""
-        repository_name = agent_name.lower()
+        # First, try to get ECR repository from .bedrock_agentcore.yaml
+        bedrock_config_path = Path('.bedrock_agentcore.yaml')
+        repository_name = agent_name.lower()  # Default fallback
+        
+        if bedrock_config_path.exists():
+            try:
+                with open(bedrock_config_path, 'r') as f:
+                    bedrock_config = yaml.safe_load(f)
+                
+                # Extract ECR repository from bedrock config
+                agents_config = bedrock_config.get('agents', {})
+                agent_config = agents_config.get(agent_name, {})
+                aws_config = agent_config.get('aws', {})
+                
+                if 'ecr_repository' in aws_config:
+                    # Extract repository name from full URI
+                    ecr_repo_uri = aws_config['ecr_repository']
+                    repository_name = ecr_repo_uri.split('/')[-1]
+                    logger.info(f"Using ECR repository from .bedrock_agentcore.yaml: {repository_name}")
+                    
+            except Exception as e:
+                logger.warning(f"Could not read ECR repository from .bedrock_agentcore.yaml: {e}")
+                logger.info(f"Using default repository name: {repository_name}")
         
         try:
             # Check if repository exists

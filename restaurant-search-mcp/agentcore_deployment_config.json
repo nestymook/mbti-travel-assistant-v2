@@ -7,42 +7,37 @@
   "auth_config": {
     "customJWTAuthorizer": {
       "allowedClients": [
-        "26k0pnja579pdpb1pt6savs27e"
+        "1ofgeckef3po4i3us4j1m4chvd"
       ],
-      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
     }
   },
   "cognito_config": {
     "region": "us-east-1",
     "user_pool": {
-      "user_pool_id": "us-east-1_wBAxW7yd4",
-      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_wBAxW7yd4",
+      "user_pool_id": "us-east-1_KePRX24Bn",
+      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
       "creation_date": "2025-09-27T07:48:31.750000+09:00"
     },
     "app_client": {
-      "client_id": "26k0pnja579pdpb1pt6savs27e",
-      "client_name": "restaurant-search-mcp-client"
+      "client_id": "1ofgeckef3po4i3us4j1m4chvd","client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+      "client_name": "mbti-travel-oidc-client"
     },
     "test_user": {
-      "username": "testing_user@test.com.hk",
-      "email": "testing_user@test.com.hk",
+      "username": "test@mbti-travel.com",
+      "email": "test@mbti-travel.com",
       "status": "CONFIRMED",
       "password_updated": true
     },
-    "previous_test_user": {
-      "username": "nestymook@gmail.com",
-      "email": "nestymook@gmail.com",
-      "note": "Previous test user, kept for reference"
-    },
-    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
-    "setup_timestamp": "us-east-1",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+    "setup_timestamp": "2025-10-04T12:00:00Z",
     "custom_domain": {
-      "domain_prefix": "restaurant-mcp-9cccf837",
-      "domain_url": "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com",
-      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+      "domain_prefix": "mbti-travel-oidc-334662794",
+      "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
       "status": "ACTIVE"
     }
   },
-  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1759038422.9466827
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True memory_id=None",
+  "configured_at": 1759564875.0911133
 }

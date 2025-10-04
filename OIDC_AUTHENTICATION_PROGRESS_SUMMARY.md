@@ -6,12 +6,12 @@ Implement proper OIDC authentication flow to resolve the 403 Forbidden error whe
 ## ✅ Completed Tasks
 
 ### 1. OIDC-Enabled Cognito User Pool Creation
-- **Created new Cognito User Pool**: `us-east-1_TBRhQ79hS`
-- **App Client ID**: `4qi4m90hi389p8tabmejuau9td`
-- **Domain**: `mbti-travel-oidc-1759241607.auth.us-east-1.amazoncognito.com`
+- **Created new Cognito User Pool**: `us-east-1_KePRX24Bn`
+- **App Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
+- **Domain**: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 - **OAuth Flows**: Authorization Code + Implicit
 - **OAuth Scopes**: `openid`, `email`, `profile`
-- **OIDC Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration`
+- **OIDC Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 
 ### 2. Test User Creation
 - **Email**: `test@mbti-travel.com`
@@ -55,8 +55,8 @@ Implement proper OIDC authentication flow to resolve the 403 Forbidden error whe
 Based on the logs from `2025-09-30T14:26:20.943Z`, we can see:
 
 1. **✅ Correct Token**: The JWT token has `"token_use": "id"` and proper OIDC claims
-2. **✅ Correct Issuer**: `"iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS"`
-3. **✅ Correct Audience**: `"aud": "4qi4m90hi389p8tabmejuau9td"`
+2. **✅ Correct Issuer**: `"iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn"`
+3. **✅ Correct Audience**: `"aud": "1ofgeckef3po4i3us4j1m4chvd"`
 4. **✅ Lambda Proxy**: Successfully forwards request to AgentCore
 5. **❌ AgentCore Configuration**: AgentCore hasn't been updated with new OIDC settings
 
@@ -69,8 +69,8 @@ AgentCore needs to be redeployed with the updated OIDC configuration:
 authorizer_configuration:
   customJWTAuthorizer:
     allowedClients:
-    - 4qi4m90hi389p8tabmejuau9td
-    discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+    - 1ofgeckef3po4i3us4j1m4chvd
+    discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
 ```
 
 **Methods to Update AgentCore**:
@@ -82,14 +82,14 @@ authorizer_configuration:
 ### Option 2: Verify OIDC Discovery Endpoint
 Ensure AgentCore can access the OIDC discovery endpoint:
 ```bash
-curl https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+curl https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
 ```
 
 ## 📊 Test Results Summary
 
 ### OIDC Authentication Test
-- **User Pool**: `us-east-1_TBRhQ79hS` ✅
-- **Client ID**: `4qi4m90hi389p8tabmejuau9td` ✅
+- **User Pool**: `us-east-1_KePRX24Bn` ✅
+- **Client ID**: `1ofgeckef3po4i3us4j1m4chvd` ✅
 - **OAuth Flow**: Authorization Code with PKCE ✅
 - **ID Token Generation**: Working ✅
 - **Token Claims**: Correct format and content ✅
@@ -119,9 +119,9 @@ curl https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known
 {
   "sub": "04a854b8-20d1-7035-7c05-11aa74e9d6e0",
   "email_verified": true,
-  "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS",
+  "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn",
   "cognito:username": "04a854b8-20d1-7035-7c05-11aa74e9d6e0",
-  "aud": "4qi4m90hi389p8tabmejuau9td",
+  "aud": "1ofgeckef3po4i3us4j1m4chvd",
   "token_use": "id",
   "name": "MBTI Test User",
   "email": "test@mbti-travel.com"

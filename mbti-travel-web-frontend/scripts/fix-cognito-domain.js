@@ -6,7 +6,7 @@ import fs from 'fs';
 // Configuration
 const USER_POOL_ID = 'us-east-1_wBAxW7yd4';
 const CLIENT_ID = '26k0pnja579pdpb1pt6savs27e';
-const OLD_DOMAIN = 'restaurant-mcp-9cccf837';
+const OLD_DOMAIN = 'mbti-travel-oidc-334662794';
 const AWS_REGION = 'us-east-1';
 const CLOUDFRONT_DOMAIN = 'https://d39ank8zud5pbg.cloudfront.net';
 
@@ -19,7 +19,7 @@ async function fixCognitoDomain() {
     console.log('📋 Step 1: Testing current domain...');
     
     try {
-      const testResult = execSync(`curl -I "https://${OLD_DOMAIN}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid_configuration"`, {
+      const testResult = execSync(`curl -I "https://${OLD_DOMAIN}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid-configuration"`, {
         encoding: 'utf8',
         timeout: 10000
       });
@@ -125,7 +125,7 @@ async function fixCognitoDomain() {
     try {
       await new Promise(resolve => setTimeout(resolve, 30000)); // Wait 30 seconds for DNS
       
-      const testUrl = `https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid_configuration`;
+      const testUrl = `https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid-configuration`;
       console.log(`🧪 Testing: ${testUrl}`);
       
       const testResult = execSync(`curl -s "${testUrl}"`, {
@@ -187,7 +187,7 @@ async function fixCognitoDomain() {
     console.log(`📋 Old Domain: ${OLD_DOMAIN} (deleted)`);
     console.log(`📋 New Domain: ${newDomain}`);
     console.log(`🔗 New Login URL: https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/login`);
-    console.log(`🧪 Test URL: https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid_configuration`);
+    console.log(`🧪 Test URL: https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid-configuration`);
     
     console.log('\n📋 Next Steps:');
     console.log('1. ✅ Environment file updated (if found)');
@@ -203,7 +203,7 @@ async function fixCognitoDomain() {
     return {
       oldDomain: OLD_DOMAIN,
       newDomain: newDomain,
-      testUrl: `https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid_configuration`,
+      testUrl: `https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/.well-known/openid-configuration`,
       loginUrl: `https://${newDomain}.auth.${AWS_REGION}.amazoncognito.com/login`
     };
 

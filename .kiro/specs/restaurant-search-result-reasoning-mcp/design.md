@@ -872,7 +872,7 @@ cognito_config = {
 auth_config = {
     "customJWTAuthorizer": {
         "allowedClients": [cognito_client_id],
-        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration"
+        "discoveryUrl": f"https://cognito-idp.{region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration"
     }
 }
 ```

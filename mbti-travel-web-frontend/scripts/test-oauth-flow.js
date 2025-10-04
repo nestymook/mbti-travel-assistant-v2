@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 
 // Configuration
 const CLOUDFRONT_DOMAIN = 'https://d39ank8zud5pbg.cloudfront.net';
-const COGNITO_DOMAIN = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com';
+const COGNITO_DOMAIN = 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com';
 const CLIENT_ID = '26k0pnja579pdpb1pt6savs27e';
 const USER_POOL_ID = 'us-east-1_wBAxW7yd4';
 
@@ -45,7 +45,7 @@ async function testOAuthFlow() {
     // Test 2: Check Cognito Domain
     console.log('\n📋 Test 2: Checking Cognito Domain...');
     
-    const domainConfig = execSync(`aws cognito-idp describe-user-pool-domain --domain restaurant-mcp-9cccf837 --region us-east-1`, {
+    const domainConfig = execSync(`aws cognito-idp describe-user-pool-domain --domain mbti-travel-oidc-334662794 --region us-east-1`, {
       encoding: 'utf8'
     });
     
@@ -119,7 +119,7 @@ async function testOAuthFlow() {
     
     try {
       // Test Cognito well-known configuration
-      const wellKnownUrl = `${COGNITO_DOMAIN}/.well-known/openid_configuration`;
+      const wellKnownUrl = `${COGNITO_DOMAIN}/.well-known/openid-configuration`;
       console.log('Testing Cognito well-known configuration...');
       
       const wellKnownResult = execSync(`curl -s "${wellKnownUrl}"`, {

@@ -147,3 +147,6 @@ logs/
 *.tmp
 *.temp
 .tmp/
+
+#virtual environment
+.venv/

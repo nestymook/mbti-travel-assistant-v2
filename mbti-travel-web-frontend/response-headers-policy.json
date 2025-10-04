@@ -7,7 +7,7 @@
         "Quantity": 2,
         "Items": [
           "https://d39ank8zud5pbg.cloudfront.net",
-          "https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com"
+          "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com"
         ]
       },
       "AccessControlAllowHeaders": {

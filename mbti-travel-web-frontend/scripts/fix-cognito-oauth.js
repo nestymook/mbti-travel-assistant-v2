@@ -41,7 +41,7 @@ async function fixCognitoOAuth() {
         CorsConfig: {
           AccessControlAllowOrigins: {
             Quantity: 2,
-            Items: [CLOUDFRONT_DOMAIN, 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com']
+            Items: [CLOUDFRONT_DOMAIN, 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com']
           },
           AccessControlAllowHeaders: {
             Quantity: 6,
@@ -205,7 +205,7 @@ async function testOAuthConfig() {
   
   try {
     // Test Cognito domain
-    const cognitoDomain = 'https://restaurant-mcp-9cccf837.auth.us-east-1.amazoncognito.com';
+    const cognitoDomain = 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com';
     console.log(`📋 Cognito Domain: ${cognitoDomain}`);
     
     // Test login URL

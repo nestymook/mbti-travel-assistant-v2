@@ -188,7 +188,7 @@ class CognitoManager:
                 "user_pool_id": user_pool_id,
                 "client_id": client_id,
                 "region": self.region,
-                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration",
+                "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration",
                 "domain": f"https://{domain_name}.auth.{self.region}.amazoncognito.com"
             }
             
@@ -247,7 +247,7 @@ class CognitoManager:
             "user_pool_id": user_pool_id,
             "client_id": client_id,
             "region": self.region,
-            "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid_configuration"
+            "discovery_url": f"https://cognito-idp.{self.region}.amazonaws.com/{user_pool_id}/.well-known/openid-configuration"
         }
 
 
@@ -619,7 +619,7 @@ class AgentCoreDeployer:
     ) -> Dict[str, Any]:
         """Create AgentCore deployment configuration with environment-specific settings."""
         
-        discovery_url = f"https://cognito-idp.{self.region}.amazonaws.com/{cognito_user_pool_id}/.well-known/openid_configuration"
+        discovery_url = f"https://cognito-idp.{self.region}.amazonaws.com/{cognito_user_pool_id}/.well-known/openid-configuration"
         
         # Base configuration
         config = {

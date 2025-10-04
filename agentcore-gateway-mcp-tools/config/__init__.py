@@ -1,0 +1,1 @@
+# Configuration package for AgentCore Gateway MCP Tools

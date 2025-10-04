@@ -1,0 +1,45 @@
+{
+  "entrypoint": "main.py",
+  "agent_name": "agentcore_gateway_mcp_tools",
+  "requirements_file": "requirements.txt",
+  "region": "us-east-1",
+  "protocol": "HTTP",
+  "auth_config": {
+    "customJWTAuthorizer": {
+      "allowedClients": [
+        "1ofgeckef3po4i3us4j1m4chvd"
+      ],
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
+    }
+  },
+  "cognito_config": {
+    "region": "us-east-1",
+    "user_pool": {
+      "user_pool_id": "us-east-1_KePRX24Bn",
+      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
+      "creation_date": "2025-09-27T07:48:31.750000+09:00"
+    },
+    "app_client": {
+      "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+      "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+      "client_name": "mbti-travel-oidc-client"
+    },
+    "test_user": {
+      "username": "test@mbti-travel.com",
+      "email": "test@mbti-travel.com",
+      "status": "CONFIRMED",
+      "password_updated": true
+    },
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+    "setup_timestamp": "us-east-1",
+    "custom_domain": {
+      "domain_prefix": "mbti-travel-oidc-334662794",
+      "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "status": "ACTIVE"
+    }
+  },
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/agentcore-gateway-mcp-tools/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/agentcore-gateway-mcp-tools/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/agentcore-gateway-mcp-tools/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True memory_id=None",
+  "configured_at": 1759567901.5913792,
+  "server_type": "gateway"
+}

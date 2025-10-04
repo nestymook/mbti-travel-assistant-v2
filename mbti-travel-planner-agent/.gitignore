@@ -147,3 +147,9 @@ logs/
 *.tmp
 *.temp
 .tmp/
+
+#virtual environment
+.venv/
+
+tests/
+restaurant_data/
