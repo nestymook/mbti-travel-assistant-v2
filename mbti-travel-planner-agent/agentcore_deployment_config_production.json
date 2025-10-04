@@ -1,0 +1,44 @@
+{
+  "name": "mbti_travel_planner_agent-production",
+  "container_uri": "209803798463.dkr.ecr.us-east-1.amazonaws.com/mbti_travel_planner_agent:production-latest",
+  "platform": "linux/arm64",
+  "network_mode": "PUBLIC",
+  "authentication": {
+    "type": "jwt",
+    "config": {
+      "customJWTAuthorizer": {
+        "allowedClients": []
+      }
+    }
+  },
+  "environment": {
+    "AWS_REGION": "us-east-1",
+    "AWS_DEFAULT_REGION": "us-east-1",
+    "ENVIRONMENT": "production",
+    "DOCKER_CONTAINER": "1",
+    "AGENT_MODEL": "amazon.nova-pro-v1:0:300k",
+    "AGENT_TEMPERATURE": "0.1",
+    "AGENT_MAX_TOKENS": "4096"
+  },
+  "observability": {
+    "enabled": true,
+    "tracing": true,
+    "metrics": true,
+    "logs": true
+  },
+  "resources": {
+    "cpu": "2 vCPU",
+    "memory": "4 GB"
+  },
+  "scaling": {
+    "min_instances": 2,
+    "max_instances": 20,
+    "target_utilization": 70
+  },
+  "health_check": {
+    "path": "/health",
+    "interval": 30,
+    "timeout": 5,
+    "retries": 3
+  }
+}

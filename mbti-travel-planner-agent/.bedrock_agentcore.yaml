@@ -1,0 +1,42 @@
+default_agent: mbti_travel_planner_agent
+agents:
+  mbti_travel_planner_agent:
+    name: mbti_travel_planner_agent
+    entrypoint: main.py
+    platform: linux/arm64
+    container_runtime: docker
+    aws:
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-849e62e6e2
+      execution_role_auto_create: true
+      account: '209803798463'
+      region: us-east-1
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-mbti_travel_planner_agent
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: mbti_travel_planner_agent-5r9X25EFM2
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_planner_agent-5r9X25EFM2
+      agent_session_id: 78272894-6a0a-46c8-aa34-4bbdcb00ce1b
+    codebuild:
+      project_name: bedrock-agentcore-mbti_travel_planner_agent-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-849e62e6e2
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
+    memory:
+      mode: STM_AND_LTM
+      memory_id: mbti_travel_planner_agent_mem-pqXLs3D95M
+      memory_arn: null
+      memory_name: mbti_travel_planner_agent_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: true
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_TBRhQ79hS/.well-known/openid-configuration
+        allowedClients:
+        - 4qi4m90hi389p8tabmejuau9td
+    request_header_configuration: null
+    oauth_configuration: null
