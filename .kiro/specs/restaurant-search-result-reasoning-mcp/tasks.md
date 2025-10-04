@@ -525,7 +525,7 @@
     - Add examples of error handling and token refresh scenarios for reasoning operations
     - _Requirements: 12.1, 12.2, 13.4, 15.1, 15.2_
 
-- [-] 19. Create comprehensive README and usage examples for new reasoning server
+- [ ] 19. Create comprehensive README and usage examples for new reasoning server
 
 
 
@@ -535,7 +535,16 @@
 
 
 
-  - [ ] 19.1 Create main project README.md for reasoning functionality
+
+
+
+
+
+
+  - [x] 19.1 Create main project README.md for reasoning functionality
+
+
+
 
 
 
@@ -554,3 +563,105 @@
     - Create sample queries and expected outputs for reasoning testing and validation
     - Add examples of error handling for reasoning-specific edge cases and sentiment analysis errors
     - _Requirements: 4.1, 4.2, 2.1, 2.2, 15.1, 15.2, 16.1, 16.6_
+
+-  [x] 20. Implement MCP Server Status Check System for Reasoning Server
+
+
+
+
+
+
+
+
+
+
+  - [x] 20.1 Copy status check data models and configuration from restaurant-search-mcp
+
+
+
+
+
+
+
+
+
+    - Copy models/status_models.py with ServerStatus, CircuitBreakerState, HealthCheckResult, and ServerMetrics models
+    - Copy MCPStatusCheckConfig and CircuitBreakerConfig classes with server-specific configurations
+    - Update status check settings for restaurant-search-result-reasoning-mcp server endpoints
+    - Add proper dataclass serialization for JSON status responses in reasoning context
+    - _Requirements: Design Section - MCP Server Status Check System_
+
+
+  - [x] 20.2 Copy MCP tools/list health check service from restaurant-search-mcp
+
+
+
+
+    - Copy services/health_check_service.py with HealthCheckService class using MCP tools/list requests
+    - Adapt async health check loops with configurable intervals (30 seconds default) for reasoning server
+    - Copy JWT Bearer token authentication for MCP Gateway endpoints for reasoning server
+    - Copy proper MCP JSON-RPC 2.0 request formatting for tools/list method for reasoning tools
+    - Add response validation to ensure reasoning MCP server returns valid tool lists (recommend_restaurants, analyze_restaurant_sentiment)
+    - _Requirements: Design Section - MCP Tools/List Status Check Method_
+
+  - [x] 20.3 Copy circuit breaker and metrics tracking from restaurant-search-mcp
+
+
+
+
+
+    - Copy services/circuit_breaker.py with CircuitBreaker class with failure/recovery thresholds and state management
+    - Copy StatusCheckManager for centralized server status coordination for reasoning server
+    - Copy ServerMetrics tracking for response times, success/failure rates, and uptime percentages for reasoning operations
+    - Copy exponential backoff for retry attempts and circuit breaker recovery for reasoning server
+    - _Requirements: Design Section - Status Check Manager_
+
+  - [x] 20.4 Copy status check endpoints and console integration from restaurant-search-mcp
+
+
+
+
+
+    - Copy api/status_endpoints.py with status check REST endpoints (/status/health, /status/servers, /status/metrics)
+    - Copy StatusConsoleIntegration class for JSON-formatted individual server status for reasoning server
+    - Adapt real-time status monitoring with proper error handling for 403 auth errors and timeouts for reasoning server
+    - Copy comprehensive status dashboard integration with CloudWatch metrics for reasoning server
+    - _Requirements: Design Section - Status Check Endpoints, Console Integration_
+
+  - [x] 20.5 Copy status check configuration and adapt for reasoning server
+
+
+
+
+
+    - Copy config/status_check_config.json and adapt for restaurant-search-result-reasoning-mcp server
+    - Update endpoint URLs to point to reasoning server MCP Gateway endpoints
+    - Configure expected_tools list to include reasoning tools: ["recommend_restaurants", "analyze_restaurant_sentiment"]
+    - Copy services/status_config_loader.py and adapt for reasoning server configuration loading
+    - _Requirements: Design Section - MCP Server Status Check System_
+
+  - [x] 20.6 Write comprehensive status check tests for reasoning server
+
+
+
+
+
+    - Copy and adapt tests/test_status_check_integration.py for reasoning server functionality
+    - Test MCP tools/list health check functionality with mocked reasoning MCP Gateway responses
+    - Test circuit breaker state transitions and failure/recovery scenarios for reasoning server
+    - Test status endpoint responses and console JSON formatting for reasoning server
+    - Test authentication error handling and timeout scenarios for reasoning operations
+    - Validate metrics accuracy and status reporting consistency for reasoning server
+    - _Requirements: Design Section - MCP Server Status Check System_
+
+  - [x] 20.7 Integrate status check system with reasoning MCP server
+
+
+
+
+
+    - Update restaurant_reasoning_mcp_server.py to include status check endpoints
+    - Add status check service initialization and background task management for reasoning server
+    - Integrate status monitoring with existing authentication middleware for reasoning server
+    - Add proper startup and shutdown handling for status check services in reasoning server
+    - _Requirements: Design Section - MCP Server Status Check System_

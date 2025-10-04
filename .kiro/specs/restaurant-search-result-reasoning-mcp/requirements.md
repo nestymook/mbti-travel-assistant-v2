@@ -219,3 +219,22 @@ The application focuses on sentiment-based reasoning rather than search function
 8. IF payload structure is invalid THEN the entrypoint SHALL handle the error gracefully and return appropriate error messages
 9. IF the Strands Agent fails to process the message THEN the system SHALL return a fallback response with error details
 10. WHEN multiple MCP tool calls are needed THEN the agent SHALL orchestrate them appropriately to fulfill the user's request
+##
+# Requirement 17 - MCP Server Status Check System
+
+**User Story:** As a system administrator, I want to monitor the health and availability of the restaurant reasoning MCP server, so that I can ensure reliable service delivery and quickly identify issues.
+
+#### Acceptance Criteria
+
+1. WHEN the status check system is enabled THEN it SHALL perform health checks using MCP tools/list requests to validate server connectivity and tool availability
+2. WHEN performing health checks THEN the system SHALL send standard MCP JSON-RPC 2.0 requests with method "tools/list" to the reasoning server endpoint
+3. WHEN a successful health check occurs THEN the system SHALL validate that the response contains the expected reasoning tools: "recommend_restaurants" and "analyze_restaurant_sentiment"
+4. WHEN health check requests are made THEN they SHALL include proper JWT Bearer token authentication for AgentCore Gateway endpoints
+5. WHEN health checks fail THEN the system SHALL implement circuit breaker functionality to prevent cascading failures
+6. WHEN circuit breaker thresholds are exceeded THEN the system SHALL automatically open the circuit and stop sending requests until recovery conditions are met
+7. WHEN the system tracks metrics THEN it SHALL record response times, success/failure rates, uptime percentages, and consecutive failure counts
+8. WHEN status information is requested THEN the system SHALL provide REST API endpoints for health status, server metrics, and circuit breaker states
+9. WHEN authentication errors occur (403 Unauthorized) THEN the system SHALL handle them gracefully and attempt token refresh if configured
+10. WHEN timeout errors occur THEN the system SHALL implement exponential backoff retry logic with configurable maximum retry delays
+11. WHEN status checks are performed THEN they SHALL run continuously with configurable intervals (default 30 seconds) until explicitly stopped
+12. IF the reasoning MCP server is unavailable THEN the status system SHALL report appropriate error states and maintain historical metrics for troubleshooting

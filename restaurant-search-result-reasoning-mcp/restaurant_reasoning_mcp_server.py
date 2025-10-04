@@ -1,4 +1,4 @@
-"""Restaurant Reasoning MCP Server with Authentication.
+"""Restaurant Reasoning MCP Server with Authentication and Status Monitoring.
 
 This module implements a FastMCP server that provides restaurant sentiment analysis
 and recommendation tools for foundation models. It exposes MCP tools for analyzing
@@ -6,12 +6,14 @@ restaurant sentiment data and generating intelligent recommendations based on
 customer satisfaction metrics.
 
 The server follows Bedrock AgentCore patterns with stateless HTTP transport,
-JWT authentication via Cognito, and proper error handling for MCP tool integration.
+JWT authentication via Cognito, status monitoring system, and proper error handling 
+for MCP tool integration.
 """
 
 import json
 import logging
 import os
+import asyncio
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 
@@ -23,6 +25,12 @@ from services.restaurant_reasoning_service import RestaurantReasoningService
 from services.auth_middleware import AuthenticationMiddleware, AuthenticationConfig, AuthenticationHelper
 from models.restaurant_models import Restaurant, Sentiment, RecommendationResult, SentimentAnalysis
 from models.validation_models import ValidationResult, ValidationError
+
+# Status check system imports
+from services.circuit_breaker import get_reasoning_status_manager
+from services.status_config_loader import get_config_loader
+from services.health_check_service import HealthCheckService
+from api.status_endpoints import create_reasoning_status_endpoints
 
 
 # Configure logging
@@ -63,10 +71,10 @@ mcp = FastMCP("restaurant-reasoning-mcp")
 # Load authentication configuration
 cognito_config = load_cognito_config()
 
-# Configure authentication middleware with bypass for health check endpoints
+# Configure authentication middleware with bypass for health check and status endpoints
 auth_config = AuthenticationConfig(
     cognito_config=cognito_config,
-    bypass_paths=['/health', '/metrics', '/docs', '/openapi.json', '/'],
+    bypass_paths=['/health', '/metrics', '/docs', '/openapi.json', '/', '/status/*'],
     require_authentication=True,
     log_user_context=True
 )
@@ -81,6 +89,15 @@ reasoning_service = RestaurantReasoningService(
     random_seed=None,  # Use random seed for production
     strict_validation=False
 )
+
+# Initialize status check system components
+status_manager = get_reasoning_status_manager()
+config_loader = get_config_loader()
+health_service = None  # Will be initialized during startup
+
+# Background task for continuous health checks
+health_check_task = None
+health_check_stop_event = asyncio.Event()
 
 
 def validate_restaurant_list_parameter(restaurants: Any) -> tuple[bool, str]:
@@ -235,6 +252,116 @@ async def metrics_endpoint(request: Request) -> Response:
                 'server_type': 'reasoning_mcp'
             }
         )
+
+
+async def initialize_status_check_system():
+    """Initialize the status check system for reasoning server."""
+    global health_service, health_check_task
+    
+    try:
+        logger.info("Initializing reasoning status check system...")
+        
+        # Load server configurations
+        server_configs = config_loader.get_server_configs()
+        enabled_servers = config_loader.get_enabled_servers()
+        
+        logger.info(f"Found {len(server_configs)} reasoning server configs, {len(enabled_servers)} enabled")
+        
+        # Add enabled servers to status manager
+        for server_name, config in server_configs.items():
+            if config.enabled:
+                await status_manager.add_server(server_name, config.circuit_breaker)
+                logger.info(f"Added reasoning server '{server_name}' to status monitoring")
+        
+        # Initialize health check service
+        system_config = config_loader.get_system_config()
+        health_service = HealthCheckService(
+            timeout_seconds=system_config.get('global_timeout_seconds', 10),
+            max_concurrent_checks=system_config.get('max_concurrent_checks', 5)
+        )
+        
+        # Start continuous health checks if enabled
+        if system_config.get('enabled', True) and enabled_servers:
+            enabled_configs = [config for config in server_configs.values() if config.enabled]
+            
+            async def health_check_callback(results):
+                """Callback to handle health check results."""
+                for result in results:
+                    await status_manager.record_health_check_result(result)
+                    
+                    if result.success:
+                        logger.debug(f"Reasoning server '{result.server_name}' health check passed")
+                    else:
+                        logger.warning(f"Reasoning server '{result.server_name}' health check failed: {result.error_message}")
+            
+            # Start background health check task
+            health_check_task = asyncio.create_task(
+                health_service.run_continuous_health_checks(
+                    enabled_configs,
+                    health_check_callback,
+                    health_check_stop_event
+                )
+            )
+            
+            logger.info(f"Started continuous health checks for {len(enabled_configs)} reasoning servers")
+        
+        logger.info("Reasoning status check system initialized successfully")
+        
+    except Exception as e:
+        logger.error(f"Failed to initialize reasoning status check system: {e}")
+        # Don't fail server startup if status check system fails
+        pass
+
+
+async def shutdown_status_check_system():
+    """Shutdown the status check system for reasoning server."""
+    global health_check_task, health_service
+    
+    try:
+        logger.info("Shutting down reasoning status check system...")
+        
+        # Stop health check task
+        if health_check_task and not health_check_task.done():
+            health_check_stop_event.set()
+            try:
+                await asyncio.wait_for(health_check_task, timeout=5.0)
+            except asyncio.TimeoutError:
+                health_check_task.cancel()
+                logger.warning("Health check task did not stop gracefully, cancelled")
+        
+        # Close health service
+        if health_service:
+            await health_service._close_session()
+        
+        logger.info("Reasoning status check system shutdown complete")
+        
+    except Exception as e:
+        logger.error(f"Error during reasoning status check system shutdown: {e}")
+
+
+# Register status check endpoints
+try:
+    status_endpoints = create_reasoning_status_endpoints(mcp.app, status_manager)
+    logger.info("Registered reasoning status check endpoints")
+except Exception as e:
+    logger.error(f"Failed to register reasoning status check endpoints: {e}")
+
+
+# Add startup and shutdown event handlers
+@mcp.app.on_event("startup")
+async def startup_event():
+    """Handle server startup events."""
+    logger.info("Starting reasoning MCP server startup sequence...")
+    await initialize_status_check_system()
+    logger.info("Reasoning MCP server startup complete")
+
+
+@mcp.app.on_event("shutdown")
+async def shutdown_event():
+    """Handle server shutdown events."""
+    logger.info("Starting reasoning MCP server shutdown sequence...")
+    await shutdown_status_check_system()
+    logger.info("Reasoning MCP server shutdown complete")
 
 
 @mcp.tool()
@@ -516,13 +643,14 @@ def get_server_metrics() -> Dict[str, Any]:
 
 
 if __name__ == "__main__":
-    logger.info("Starting Restaurant Reasoning MCP Server with Authentication")
+    logger.info("Starting Restaurant Reasoning MCP Server with Authentication and Status Monitoring")
     
     # Log server configuration
     logger.info(f"Server configuration:")
     logger.info(f"  - Host: 0.0.0.0")
     logger.info(f"  - Stateless HTTP: True")
     logger.info(f"  - Authentication: Enabled (JWT via Cognito)")
+    logger.info(f"  - Status Monitoring: Enabled")
     logger.info(f"  - User Pool ID: {cognito_config.get('user_pool_id', 'Not configured')}")
     logger.info(f"  - Client ID: {cognito_config.get('client_id', 'Not configured')}")
     logger.info(f"  - Bypass paths: {auth_config.bypass_paths}")
@@ -547,15 +675,35 @@ if __name__ == "__main__":
         logger.error(f"Service initialization test failed: {e}")
         logger.warning("Server will start but some functionality may not work properly")
     
+    # Test status check system configuration
+    try:
+        system_config = config_loader.get_system_config()
+        server_configs = config_loader.get_server_configs()
+        enabled_servers = config_loader.get_enabled_servers()
+        
+        logger.info(f"Status check system configuration:")
+        logger.info(f"  - System enabled: {system_config.get('enabled', True)}")
+        logger.info(f"  - Check interval: {system_config.get('global_check_interval_seconds', 30)}s")
+        logger.info(f"  - Timeout: {system_config.get('global_timeout_seconds', 10)}s")
+        logger.info(f"  - Total servers configured: {len(server_configs)}")
+        logger.info(f"  - Enabled servers: {len(enabled_servers)}")
+        
+        if enabled_servers:
+            logger.info(f"  - Enabled server names: {', '.join(enabled_servers)}")
+        
+    except Exception as e:
+        logger.warning(f"Could not load status check configuration: {e}")
+    
     # Start the MCP server
     logger.info("Starting authenticated FastMCP server with stateless HTTP transport for AgentCore Runtime")
-    logger.info("Authentication endpoints:")
+    logger.info("Available endpoints:")
     logger.info(f"  - Health check (bypass): GET /health")
     logger.info(f"  - Metrics (bypass): GET /metrics")
+    logger.info(f"  - Status endpoints (bypass): GET /status/*")
     logger.info(f"  - MCP tools (authenticated): recommend_restaurants, analyze_restaurant_sentiment")
     
     try:
         mcp.run()
     except Exception as e:
-        logger.error(f"Failed to start authenticated MCP server: {e}")
+        logger.error(f"Failed to start authenticated reasoning MCP server: {e}")
         raise

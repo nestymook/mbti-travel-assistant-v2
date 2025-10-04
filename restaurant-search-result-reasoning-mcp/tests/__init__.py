@@ -1,1 +1,1 @@
-# Tests package
+"""Tests for restaurant reasoning MCP server status monitoring system."""
