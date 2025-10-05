@@ -20,7 +20,8 @@
       "creation_date": "2025-09-27T07:48:31.750000+09:00"
     },
     "app_client": {
-      "client_id": "1ofgeckef3po4i3us4j1m4chvd","client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+      "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+      "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
       "client_name": "mbti-travel-oidc-client"
     },
     "test_user": {
@@ -38,6 +39,6 @@
       "status": "ACTIVE"
     }
   },
-  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True memory_id=None",
-  "configured_at": 1759564875.0911133
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
+  "configured_at": 1759684228.925176
 }

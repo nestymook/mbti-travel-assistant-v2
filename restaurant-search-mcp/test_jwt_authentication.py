@@ -42,16 +42,176 @@ class RestaurantMCPJWTTester:
         
         self.test_results = []
         
-    def load_jwt_token(self) -> str:
-        """Load JWT token from file."""
+    def load_cognito_config(self) -> Dict[str, Any]:
+        """Load Cognito configuration."""
         try:
+            config_file = self.project_root / "cognito_config.json"
+            if config_file.exists():
+                with open(config_file, 'r') as f:
+                    return json.load(f)
+            else:
+                logger.warning("No cognito_config.json found")
+                return {}
+        except Exception as e:
+            logger.error(f"Failed to load Cognito config: {e}")
+            return {}
+    
+    def calculate_secret_hash(self, username: str, client_id: str, client_secret: str) -> str:
+        """Calculate SECRET_HASH for Cognito authentication."""
+        import hmac
+        import hashlib
+        import base64
+        
+        message = username + client_id
+        dig = hmac.new(
+            client_secret.encode('utf-8'),
+            message.encode('utf-8'),
+            hashlib.sha256
+        ).digest()
+        return base64.b64encode(dig).decode()
+    
+    def authenticate_with_cognito(self, cognito_config: Dict[str, Any]) -> Optional[str]:
+        """Authenticate with Cognito and get JWT token."""
+        try:
+            import boto3
+            import getpass
+            from botocore.exceptions import ClientError
+            
+            # Get username
+            default_username = cognito_config.get('test_user', {}).get('username', 'test@mbti-travel.com')
+            username = input(f"Enter username (default: {default_username}): ").strip()
+            if not username:
+                username = default_username
+            
+            # Get password
+            password = getpass.getpass(f"Enter password for {username}: ")
+            
+            logger.info(f"🔐 Authenticating with Cognito as: {username}")
+            
+            # Get client credentials
+            client_id = cognito_config['app_client']['client_id']
+            client_secret = cognito_config['app_client']['client_secret']
+            
+            # Calculate SECRET_HASH
+            secret_hash = self.calculate_secret_hash(username, client_id, client_secret)
+            
+            cognito_client = boto3.client('cognito-idp', region_name='us-east-1')
+            
+            # Prepare auth parameters with SECRET_HASH
+            auth_parameters = {
+                'USERNAME': username,
+                'PASSWORD': password,
+                'SECRET_HASH': secret_hash
+            }
+            
+            logger.info("🔑 Initiating authentication with SECRET_HASH...")
+            
+            response = cognito_client.initiate_auth(
+                ClientId=client_id,
+                AuthFlow='USER_PASSWORD_AUTH',
+                AuthParameters=auth_parameters
+            )
+            
+            access_token = response['AuthenticationResult']['AccessToken']
+            logger.info("✅ JWT Authentication successful")
+            logger.info(f"Token length: {len(access_token)} characters")
+            
+            return access_token
+            
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            error_message = e.response['Error']['Message']
+            logger.error(f"Cognito authentication failed: {error_code} - {error_message}")
+            
+            # Provide helpful error messages
+            if error_code == 'NotAuthorizedException':
+                logger.error("❌ Invalid username or password")
+            elif error_code == 'UserNotFoundException':
+                logger.error("❌ User not found")
+            elif error_code == 'InvalidParameterException':
+                logger.error("❌ Invalid parameters - check client configuration")
+            else:
+                logger.error(f"❌ Authentication error: {error_code}")
+            
+            return None
+        except Exception as e:
+            logger.error(f"Authentication error: {e}")
+            return None
+    
+    def load_jwt_token(self) -> str:
+        """Load JWT token from file, Cognito authentication, or user input."""
+        try:
+            # First try to load from file
             if self.jwt_token_file.exists():
                 token = self.jwt_token_file.read_text().strip()
                 if token and len(token) > 100:
-                    logger.info("✅ JWT token loaded successfully")
+                    logger.info("✅ JWT token loaded from file successfully")
                     return token
             
-            logger.error("❌ No valid JWT token found")
+            # Try Cognito authentication
+            logger.info("📝 No JWT token file found. Attempting Cognito authentication...")
+            cognito_config = self.load_cognito_config()
+            
+            if cognito_config:
+                print("\n" + "="*60)
+                print("🔐 Cognito Authentication for Restaurant Search MCP Testing")
+                print("="*60)
+                print("Attempting to authenticate with Cognito to get a fresh JWT token...")
+                print("-"*60)
+                
+                token = self.authenticate_with_cognito(cognito_config)
+                if token:
+                    # Save the token for future use
+                    try:
+                        self.jwt_token_file.parent.mkdir(parents=True, exist_ok=True)
+                        self.jwt_token_file.write_text(token)
+                        logger.info(f"✅ JWT token saved to {self.jwt_token_file}")
+                    except Exception as e:
+                        logger.warning(f"Could not save token: {e}")
+                    
+                    return token
+            
+            # If Cognito auth failed, prompt for manual input
+            logger.info("📝 Cognito authentication failed. Please provide JWT token manually.")
+            print("\n" + "="*60)
+            print("🔐 Manual JWT Token Input")
+            print("="*60)
+            print("Please paste your JWT token below:")
+            print("(The token should be a long string starting with 'eyJ')")
+            print("You can get a fresh token by running: python test_jwt_simple.py")
+            print("-"*60)
+            
+            token = input("JWT Token: ").strip()
+            
+            if not token:
+                logger.error("❌ No JWT token provided")
+                return None
+            
+            if len(token) < 100:
+                logger.error("❌ JWT token appears to be too short (should be several hundred characters)")
+                return None
+            
+            if not token.startswith('eyJ'):
+                logger.error("❌ JWT token should start with 'eyJ'")
+                return None
+            
+            logger.info("✅ JWT token provided by user")
+            
+            # Optionally save the token for future use
+            try:
+                save_token = input("\n💾 Save this token for future tests? (y/N): ").strip().lower()
+                if save_token in ['y', 'yes']:
+                    # Ensure parent directory exists
+                    self.jwt_token_file.parent.mkdir(parents=True, exist_ok=True)
+                    self.jwt_token_file.write_text(token)
+                    logger.info(f"✅ JWT token saved to {self.jwt_token_file}")
+            except Exception as e:
+                logger.warning(f"Could not save token: {e}")
+            
+            return token
+            
+        except KeyboardInterrupt:
+            logger.info("\n❌ User cancelled token input")
             return None
         except Exception as e:
             logger.error(f"Error loading JWT token: {e}")
@@ -229,8 +389,12 @@ class RestaurantMCPJWTTester:
         logger.info(f"Prompt: {prompt}")
         
         try:
-            # Load JWT token
-            token = self.load_jwt_token()
+            # Load JWT token (from provided token or file/user input)
+            if hasattr(self, 'provided_token') and self.provided_token:
+                token = self.provided_token
+            else:
+                token = self.load_jwt_token()
+            
             if not token:
                 return {
                     "test": test_name,
@@ -252,7 +416,7 @@ class RestaurantMCPJWTTester:
             
             try:
                 # Use the configured agent name
-                agent_name = "restaurant_search_conversational_agent"
+                agent_name = getattr(self, 'agent_name', "restaurant_search_conversational_agent")
                 
                 # Execute agentcore invoke
                 cmd = [
@@ -538,11 +702,54 @@ class RestaurantMCPJWTTester:
 
 def main():
     """Main test execution function."""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Test Restaurant Search MCP with JWT Authentication')
+    parser.add_argument('--token', '-t', help='JWT token for authentication')
+    parser.add_argument('--agent-name', default='restaurant_search_conversational_agent', 
+                       help='Agent name to test (default: restaurant_search_conversational_agent)')
+    parser.add_argument('--single-test', help='Run only a single test by name')
+    parser.add_argument('--quick', action='store_true', help='Run a quick test with just one prompt')
+    
+    args = parser.parse_args()
+    
     tester = RestaurantMCPJWTTester()
+    
+    # Override agent name if provided
+    if hasattr(args, 'agent_name') and args.agent_name:
+        tester.agent_name = args.agent_name
+    
+    # Override token loading if token provided via command line
+    if args.token:
+        tester.provided_token = args.token
+        logger.info("✅ JWT token provided via command line")
     
     try:
         # Run comprehensive tests
-        results = tester.run_comprehensive_tests()
+        if args.quick:
+            # Quick test with just one prompt
+            result = tester.test_agent_invocation(
+                "Find restaurants in Central district", 
+                "Quick Test"
+            )
+            results = {
+                "overall_status": "SUCCESS" if result["status"] == "success" else "FAILED",
+                "summary": {
+                    "total_tests": 1,
+                    "successful": 1 if result["status"] == "success" else 0,
+                    "failed": 0 if result["status"] == "success" else 1,
+                    "success_rate": 100.0 if result["status"] == "success" else 0.0,
+                    "excellent_responses": 1 if result.get("analysis", {}).get("response_quality") == "excellent" else 0,
+                    "good_responses": 1 if result.get("analysis", {}).get("response_quality") == "good" else 0,
+                    "tool_usage_success": 1 if result.get("analysis", {}).get("has_tool_usage") else 0,
+                    "restaurant_data_success": 1 if result.get("analysis", {}).get("has_restaurant_data") else 0,
+                    "tool_usage_rate": 100.0 if result.get("analysis", {}).get("has_tool_usage") else 0.0,
+                    "restaurant_data_rate": 100.0 if result.get("analysis", {}).get("has_restaurant_data") else 0.0
+                },
+                "tests": [result]
+            }
+        else:
+            results = tester.run_comprehensive_tests()
         
         # Generate and display report
         report = tester.generate_report(results)

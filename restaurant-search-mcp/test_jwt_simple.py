@@ -17,6 +17,20 @@ def load_cognito_config():
         print(f"✗ Failed to load Cognito config: {e}")
         return {}
 
+def calculate_secret_hash(username, client_id, client_secret):
+    """Calculate SECRET_HASH for Cognito authentication."""
+    import hmac
+    import hashlib
+    import base64
+    
+    message = username + client_id
+    dig = hmac.new(
+        client_secret.encode('utf-8'),
+        message.encode('utf-8'),
+        hashlib.sha256
+    ).digest()
+    return base64.b64encode(dig).decode()
+
 def authenticate_user(cognito_config):
     """Authenticate user and get JWT token."""
     try:
@@ -28,15 +42,28 @@ def authenticate_user(cognito_config):
         
         print(f"🔐 Authenticating with Cognito as: {username}")
         
+        # Get client credentials
+        client_id = cognito_config['app_client']['client_id']
+        client_secret = cognito_config['app_client']['client_secret']
+        
+        # Calculate SECRET_HASH
+        secret_hash = calculate_secret_hash(username, client_id, client_secret)
+        
         cognito_client = boto3.client('cognito-idp', region_name='us-east-1')
         
+        # Prepare auth parameters with SECRET_HASH
+        auth_parameters = {
+            'USERNAME': username,
+            'PASSWORD': password,
+            'SECRET_HASH': secret_hash
+        }
+        
+        print("🔑 Initiating authentication with SECRET_HASH...")
+        
         response = cognito_client.initiate_auth(
-            ClientId=cognito_config['app_client']['client_id'],
+            ClientId=client_id,
             AuthFlow='USER_PASSWORD_AUTH',
-            AuthParameters={
-                'USERNAME': username,
-                'PASSWORD': password
-            }
+            AuthParameters=auth_parameters
         )
         
         access_token = response['AuthenticationResult']['AccessToken']

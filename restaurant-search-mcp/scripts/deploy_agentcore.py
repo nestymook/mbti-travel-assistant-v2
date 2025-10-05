@@ -62,7 +62,21 @@ class AgentCoreDeployment:
                 if field not in config:
                     raise ValueError(f"Missing required field in Cognito config: {field}")
             
+            # Validate app_client has required fields including client_secret
+            app_client = config.get('app_client', {})
+            required_app_client_fields = ['client_id', 'client_secret']
+            for field in required_app_client_fields:
+                if field not in app_client:
+                    raise ValueError(f"Missing required app_client field in Cognito config: {field}")
+            
+            # Validate client_secret is not empty
+            client_secret = app_client.get('client_secret', '')
+            if not client_secret or len(client_secret) < 10:
+                raise ValueError("Invalid or missing client_secret in Cognito config. Client secret is required for authentication.")
+            
             print(f"✓ Loaded Cognito configuration from: {config_file}")
+            print(f"✓ Validated client_id: {app_client['client_id']}")
+            print(f"✓ Validated client_secret: {'*' * (len(client_secret) - 4)}{client_secret[-4:]}")
             return config
             
         except json.JSONDecodeError as e:
@@ -81,6 +95,7 @@ class AgentCoreDeployment:
             JWT authorizer configuration.
         """
         client_id = cognito_config['app_client']['client_id']
+        client_secret = cognito_config['app_client']['client_secret']
         discovery_url = cognito_config['discovery_url']
         
         auth_config = {
@@ -92,7 +107,9 @@ class AgentCoreDeployment:
         
         print(f"✓ Created JWT authorizer config:")
         print(f"  - Client ID: {client_id}")
+        print(f"  - Client Secret: {'*' * (len(client_secret) - 4)}{client_secret[-4:]} (required for authentication)")
         print(f"  - Discovery URL: {discovery_url}")
+        print(f"  - Note: Client secret is used for SECRET_HASH calculation during authentication")
         return auth_config
     
     def configure_agentcore_runtime(self, 
