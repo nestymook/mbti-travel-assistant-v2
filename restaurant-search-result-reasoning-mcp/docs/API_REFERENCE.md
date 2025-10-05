@@ -287,10 +287,10 @@ The server uses JWT authentication via Amazon Cognito:
 # Authentication configuration
 auth_config = AuthenticationConfig(
     cognito_config={
-        'user_pool_id': 'us-east-1_wBAxW7yd4',
+        'user_pool_id': 'us-east-1_KePRX24Bn',
         'client_id': '26k0pnja579pdpb1pt6savs27e', 
         'region': 'us-east-1',
-        'discovery_url': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration'
+        'discovery_url': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration'
     },
     bypass_paths=['/health', '/metrics', '/docs', '/openapi.json', '/'],
     require_authentication=True,

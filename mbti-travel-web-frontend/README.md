@@ -6,7 +6,7 @@ A Vue 3 + TypeScript web application that provides an interactive interface for 
 
 **Backend Status**: FULLY OPERATIONAL  
 **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
-**Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`  
+**Authentication**: JWT with Cognito User Pool `us-east-1_KePRX24Bn`  
 **Model**: Amazon Nova Pro 300K  
 **Ready for Frontend Integration**: ✅
 
@@ -62,9 +62,9 @@ VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti
 VITE_API_TIMEOUT=100000
 
 # Authentication (AWS Cognito) - ✅ CONFIGURED
-VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
 VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
-VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4
+VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 
 # External Services
 VITE_MBTI_TEST_URL=https://www.16personalities.com/free-personality-test
@@ -82,9 +82,9 @@ For production deployment, create `.env.production`:
 # ✅ PRODUCTION BACKEND DEPLOYED TO AWS AGENTCORE
 VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
 VITE_API_TIMEOUT=60000
-VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
 VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
-VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4
+VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 VITE_MBTI_TEST_URL=https://www.16personalities.com/free-personality-test
 VITE_ENABLE_ANALYTICS=true
 VITE_ENABLE_DEBUG_MODE=false

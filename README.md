@@ -453,7 +453,7 @@ aws logs tail /aws/bedrock-agentcore/runtimes/restaurant_search_mcp-JZdACMALGo-D
 - **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`
 - **Model**: Amazon Nova Pro 300K (`amazon.nova-pro-v1:0:300k`)
 - **Platform**: linux/arm64 (CodeBuild deployment)
-- **Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`
+- **Authentication**: JWT with Cognito User Pool `us-east-1_KePRX24Bn`
 - **Features**: 
   - 3-day itinerary generation for all 16 MBTI personality types
   - Knowledge base integration with tourist spot matching
@@ -509,9 +509,9 @@ aws logs tail /aws/bedrock-agentcore/runtimes/restaurant_search_mcp-JZdACMALGo-D
 ### 🔧 Infrastructure Details
 
 #### Authentication System
-- **Cognito User Pool ID**: `us-east-1_wBAxW7yd4`
+- **Cognito User Pool ID**: `us-east-1_KePRX24Bn`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
-- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration`
+- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **Token Validation**: Real-time JWT validation across all services
 
 #### Observability & Monitoring
@@ -531,9 +531,9 @@ aws logs tail /aws/bedrock-agentcore/runtimes/restaurant_search_mcp-JZdACMALGo-D
 ## 🔐 Authentication & Security
 
 ### AWS Cognito Configuration
-- **User Pool ID**: `us-east-1_wBAxW7yd4`
+- **User Pool ID**: `us-east-1_KePRX24Bn`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
-- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration`
+- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **Authentication Flow**: JWT Bearer tokens
 
 ### Security Features

@@ -3468,7 +3468,7 @@ ENTERPRISE_CONFIG = {
     'mcp_url': 'https://your-agentcore-endpoint.amazonaws.com',
     'environment': 'production',
     'cognito': {
-        'user_pool_id': 'us-east-1_wBAxW7yd4',
+        'user_pool_id': 'us-east-1_KePRX24Bn',
         'client_id': '26k0pnja579pdpb1pt6savs27e',
         'region': 'us-east-1'
     },

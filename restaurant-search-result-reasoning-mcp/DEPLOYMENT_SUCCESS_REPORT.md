@@ -25,9 +25,9 @@
 
 ### 🔐 **Authentication Setup**
 - **Method**: JWT with Amazon Cognito
-- **User Pool ID**: `us-east-1_wBAxW7yd4`
+- **User Pool ID**: `us-east-1_KePRX24Bn`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
-- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration`
+- **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **Test User**: `testing_user@test.com.hk` (CONFIRMED)
 
 ---

@@ -77,7 +77,7 @@
 **Solution**: Check if Cognito User Pool Client callback URLs are correct
 ```bash
 aws cognito-idp describe-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e \
   --region us-east-1
 ```
@@ -96,7 +96,7 @@ aws cognito-idp describe-user-pool-client \
 ### **Cognito User Pool Client**
 ```json
 {
-  "UserPoolId": "us-east-1_wBAxW7yd4",
+  "UserPoolId": "us-east-1_KePRX24Bn",
   "ClientId": "26k0pnja579pdpb1pt6savs27e",
   "CallbackURLs": [
     "https://d39ank8zud5pbg.cloudfront.net/",
@@ -112,7 +112,7 @@ aws cognito-idp describe-user-pool-client \
 
 ### **Environment Variables**
 ```bash
-VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
 VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
 VITE_COGNITO_DOMAIN=mbti-travel-oidc-334662794
 VITE_COGNITO_REDIRECT_SIGN_IN=https://d39ank8zud5pbg.cloudfront.net/

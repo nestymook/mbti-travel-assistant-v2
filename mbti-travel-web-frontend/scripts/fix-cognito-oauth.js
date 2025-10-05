@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 
 // Configuration
-const USER_POOL_ID = 'us-east-1_wBAxW7yd4';
+const USER_POOL_ID = 'us-east-1_KePRX24Bn';
 const CLIENT_ID = '26k0pnja579pdpb1pt6savs27e';
 const CLOUDFRONT_DOMAIN = 'https://d39ank8zud5pbg.cloudfront.net';
 const DISTRIBUTION_ID = 'E2OI88972BLL6O';

@@ -8,7 +8,7 @@
 **Solution**: Updated Cognito User Pool Client with correct callback URLs:
 ```bash
 aws cognito-idp update-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e \
   --callback-urls "https://d39ank8zud5pbg.cloudfront.net/" "https://d39ank8zud5pbg.cloudfront.net/auth/callback" \
   --logout-urls "https://d39ank8zud5pbg.cloudfront.net/" \
@@ -56,7 +56,7 @@ aws cognito-idp update-user-pool-client \
 ## Configuration Details
 
 ### Cognito Configuration
-- **User Pool ID**: `us-east-1_wBAxW7yd4`
+- **User Pool ID**: `us-east-1_KePRX24Bn`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
 - **Domain**: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
 - **Callback URLs**: 
@@ -185,7 +185,7 @@ API calls include authentication headers
 ```bash
 # Check Cognito configuration
 aws cognito-idp describe-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e
 
 # Check CloudFront distribution

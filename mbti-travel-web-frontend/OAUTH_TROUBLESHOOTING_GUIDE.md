@@ -106,7 +106,7 @@ This tool will help you identify exactly where the OAuth flow is breaking by tes
 **Check These Settings**:
 ```bash
 aws cognito-idp describe-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e \
   --region us-east-1
 ```

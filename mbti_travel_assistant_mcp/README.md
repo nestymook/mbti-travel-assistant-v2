@@ -129,7 +129,7 @@ python test_mbti_itinerary.py
 - **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`
 - **Region**: us-east-1
 - **Platform**: linux/arm64 (CodeBuild deployment)
-- **Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`
+- **Authentication**: JWT with Cognito User Pool `us-east-1_KePRX24Bn`
 - **Model**: Amazon Nova Pro 300K
 - **Observability**: Enabled with CloudWatch and X-Ray
 

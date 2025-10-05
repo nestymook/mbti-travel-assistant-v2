@@ -64,7 +64,7 @@ All tests require JWT authentication with Amazon Cognito:
 ### Test User Credentials
 - **Email:** `testing_user@test.com.hk`
 - **Password:** *Required user input (not stored)*
-- **User Pool:** `us-east-1_wBAxW7yd4`
+- **User Pool:** `us-east-1_KePRX24Bn`
 - **Client ID:** `26k0pnja579pdpb1pt6savs27e`
 
 ### Authentication Flow
@@ -96,7 +96,7 @@ python tests/test_aws_deployment_comprehensive.py
 ==================================================
 Test User Email: testing_user@test.com.hk
 AWS Region: us-east-1
-User Pool ID: us-east-1_wBAxW7yd4
+User Pool ID: us-east-1_KePRX24Bn
 Enter password for test user: [hidden input]
 ```
 

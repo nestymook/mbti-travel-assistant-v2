@@ -40,7 +40,7 @@ class MCPToolsTester:
         self.agent_arn = "arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1"
         self.region = "us-east-1"
         self.cognito_config = {
-            "user_pool_id": "us-east-1_wBAxW7yd4",
+            "user_pool_id": "us-east-1_KePRX24Bn",
             "client_id": "26k0pnja579pdpb1pt6savs27e",
             "region": "us-east-1"
         }

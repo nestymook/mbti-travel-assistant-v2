@@ -17,9 +17,9 @@
   },
   "authentication": {
     "type": "customJWTAuthorizer",
-    "cognito_user_pool_id": "us-east-1_wBAxW7yd4",
+    "cognito_user_pool_id": "us-east-1_KePRX24Bn",
     "client_id": "26k0pnja579pdpb1pt6savs27e",
-    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
   },
   "infrastructure": {
     "execution_role": "arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-2616b454f4",

@@ -1,8 +1,8 @@
 {
   "region": "us-east-1",
   "user_pool": {
-    "user_pool_id": "us-east-1_wBAxW7yd4",
-    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_wBAxW7yd4",
+    "user_pool_id": "us-east-1_KePRX24Bn",
+    "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
     "creation_date": "2025-09-27T07:48:31.750000+09:00"
   },
   "app_client": {
@@ -20,12 +20,12 @@
     "email": "nestymook@gmail.com",
     "note": "Previous test user, kept for reference"
   },
-  "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+  "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
   "setup_timestamp": "us-east-1",
   "custom_domain": {
     "domain_prefix": "mbti-travel-oidc-334662794",
     "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
-    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
     "status": "ACTIVE"
   }
 }

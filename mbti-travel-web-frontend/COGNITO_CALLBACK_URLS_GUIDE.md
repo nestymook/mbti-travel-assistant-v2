@@ -87,7 +87,7 @@ Run this command to add the login page as a logout URL:
 
 ```bash
 aws cognito-idp update-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e \
   --callback-urls "https://d39ank8zud5pbg.cloudfront.net/" "https://d39ank8zud5pbg.cloudfront.net/auth/callback" \
   --logout-urls "https://d39ank8zud5pbg.cloudfront.net/" "https://d39ank8zud5pbg.cloudfront.net/login" \

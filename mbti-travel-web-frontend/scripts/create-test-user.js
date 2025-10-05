@@ -3,7 +3,7 @@
 import { execSync } from 'child_process';
 
 // Configuration
-const USER_POOL_ID = 'us-east-1_wBAxW7yd4';
+const USER_POOL_ID = 'us-east-1_KePRX24Bn';
 const AWS_REGION = 'us-east-1';
 
 console.log('🔧 Creating Test User for Direct Authentication');

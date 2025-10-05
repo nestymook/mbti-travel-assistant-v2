@@ -51,10 +51,10 @@ class AWSDeploymentTester:
         self.runtime = None
         self.jwt_token = None
         self.cognito_config = {
-            "user_pool_id": "us-east-1_wBAxW7yd4",
+            "user_pool_id": "us-east-1_KePRX24Bn",
             "client_id": "26k0pnja579pdpb1pt6savs27e",
             "region": "us-east-1",
-            "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+            "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
         }
         self.test_user_email = "testing_user@test.com.hk"
         self.test_results = {

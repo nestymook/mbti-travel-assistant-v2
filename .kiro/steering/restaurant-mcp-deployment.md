@@ -298,7 +298,7 @@ User Query → AgentCore Runtime → [MISSING: LLM Model] → MCP Server → S3 
 The JWT authentication deployment fails due to AgentCore Runtime's strict validation of Cognito discovery URLs:
 
 ```
-ValidationException: Value 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration' 
+ValidationException: Value 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration' 
 failed to satisfy constraint: Member must satisfy regular expression pattern: .+/\.well-known/openid-configuration
 ```
 
@@ -321,7 +321,7 @@ Add these permissions to your IAM policy:
 ##### Step 2: Create Cognito Custom Domain
 **Manual Setup via AWS Console:**
 1. Go to **Amazon Cognito Console** → **User pools**
-2. Select: `restaurant-search-mcp-pool` (us-east-1_wBAxW7yd4)
+2. Select: `restaurant-search-mcp-pool` (us-east-1_KePRX24Bn)
 3. **App integration** tab → **Domain name** → **Actions** → **Create Cognito domain**
 4. **Domain prefix**: `restaurant-mcp-2025` (must be globally unique)
 5. **Create domain** and wait for **ACTIVE** status (15-60 minutes)

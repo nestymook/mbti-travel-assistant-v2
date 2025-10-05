@@ -46,12 +46,12 @@ class MBTITravelAssistantDeployment:
                 print("Using existing Cognito User Pool from restaurant MCP deployments")
                 return {
                     "user_pool": {
-                        "user_pool_id": "us-east-1_wBAxW7yd4"
+                        "user_pool_id": "us-east-1_KePRX24Bn"
                     },
                     "app_client": {
                         "client_id": "placeholder"  # Will be retrieved from Cognito
                     },
-                    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration",
+                    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
                     "region": "us-east-1"
                 }
             

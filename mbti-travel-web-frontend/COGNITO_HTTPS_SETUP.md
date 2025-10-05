@@ -20,7 +20,7 @@ Created a **CloudFront Distribution** to provide HTTPS access to the S3 static w
   - Global CDN distribution
 
 ### 2. Cognito User Pool Client Updated
-- **User Pool ID**: `us-east-1_wBAxW7yd4`
+- **User Pool ID**: `us-east-1_KePRX24Bn`
 - **Client ID**: `26k0pnja579pdpb1pt6savs27e`
 - **Callback URLs**: 
   - `https://d39ank8zud5pbg.cloudfront.net/` ✅
@@ -78,7 +78,7 @@ curl -I https://d39ank8zud5pbg.cloudfront.net
 
 ### Verify Cognito Configuration
 ```bash
-aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_wBAxW7yd4 --client-id 26k0pnja579pdpb1pt6savs27e --region us-east-1
+aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_KePRX24Bn --client-id 26k0pnja579pdpb1pt6savs27e --region us-east-1
 ```
 
 ## 🎉 Benefits Achieved

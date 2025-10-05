@@ -8,7 +8,7 @@
     "config": {
       "customJWTAuthorizer": {
         "allowedClients": [],
-        "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration"
+        "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
       }
     }
   },
@@ -16,7 +16,7 @@
     "AWS_REGION": "us-east-1",
     "AWS_DEFAULT_REGION": "us-east-1",
     "ENVIRONMENT": "production",
-    "COGNITO_USER_POOL_ID": "us-east-1_wBAxW7yd4",
+    "COGNITO_USER_POOL_ID": "us-east-1_KePRX24Bn",
     "COGNITO_REGION": "us-east-1",
     "DOCKER_CONTAINER": "1",
     "SEARCH_MCP_ENDPOINT": "https://restaurant_search_conversational_agent-dsuHTs5FJn.agentcore.us-east-1.amazonaws.com",

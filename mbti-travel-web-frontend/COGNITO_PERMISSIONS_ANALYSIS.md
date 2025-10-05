@@ -5,7 +5,7 @@
 Your application is using **Cognito User Pool only** for authentication, which is the right approach for your use case. You do **NOT** need a Cognito Identity Pool.
 
 ### **What You Have:**
-- ✅ **Cognito User Pool**: `us-east-1_wBAxW7yd4`
+- ✅ **Cognito User Pool**: `us-east-1_KePRX24Bn`
 - ✅ **User Pool Client**: `26k0pnja579pdpb1pt6savs27e`
 - ✅ **Hosted UI Domain**: `mbti-travel-oidc-334662794`
 - ✅ **OAuth Configuration**: Properly configured
@@ -118,12 +118,12 @@ https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client
 
 ### **Check User Pool Access**
 ```bash
-aws cognito-idp describe-user-pool --user-pool-id us-east-1_wBAxW7yd4 --region us-east-1
+aws cognito-idp describe-user-pool --user-pool-id us-east-1_KePRX24Bn --region us-east-1
 ```
 
 ### **Check User Pool Client**
 ```bash
-aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_wBAxW7yd4 --client-id 26k0pnja579pdpb1pt6savs27e --region us-east-1
+aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_KePRX24Bn --client-id 26k0pnja579pdpb1pt6savs27e --region us-east-1
 ```
 
 ### **Check Cognito Domain**

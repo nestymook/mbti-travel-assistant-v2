@@ -59,10 +59,10 @@ def load_cognito_config() -> Dict[str, Any]:
         logger.error(f"Failed to load Cognito configuration: {e}")
         # Return default config for development
         return {
-            'user_pool_id': 'us-east-1_wBAxW7yd4',
+            'user_pool_id': 'us-east-1_KePRX24Bn',
             'client_id': '26k0pnja579pdpb1pt6savs27e',
             'region': 'us-east-1',
-            'discovery_url': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration'
+            'discovery_url': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration'
         }
 
 # Create FastMCP server with AgentCore Runtime compatibility

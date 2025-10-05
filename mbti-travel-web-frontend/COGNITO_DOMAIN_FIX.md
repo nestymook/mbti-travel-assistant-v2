@@ -52,7 +52,7 @@ aws cognito-idp describe-user-pool-domain \
 ```bash
 aws cognito-idp create-user-pool-domain \
   --domain restaurant-mcp-fixed-$(date +%s) \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --region us-east-1
 ```
 
@@ -85,7 +85,7 @@ echo "📋 Creating new domain: $NEW_DOMAIN"
 
 aws cognito-idp create-user-pool-domain \
   --domain $NEW_DOMAIN \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --region us-east-1
 
 # Step 4: Wait for creation
@@ -116,7 +116,7 @@ aws cognito-idp delete-user-pool-domain \
 # Use a new unique name
 aws cognito-idp create-user-pool-domain \
   --domain restaurant-mcp-fixed-20250930 \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --region us-east-1
 ```
 
@@ -133,7 +133,7 @@ VITE_COGNITO_DOMAIN=restaurant-mcp-fixed-20250930
 ### **4. Update Callback URLs**
 ```bash
 aws cognito-idp update-user-pool-client \
-  --user-pool-id us-east-1_wBAxW7yd4 \
+  --user-pool-id us-east-1_KePRX24Bn \
   --client-id 26k0pnja579pdpb1pt6savs27e \
   --callback-urls "https://d39ank8zud5pbg.cloudfront.net/" "https://d39ank8zud5pbg.cloudfront.net/auth/callback" \
   --logout-urls "https://d39ank8zud5pbg.cloudfront.net/" \

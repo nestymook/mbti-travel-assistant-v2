@@ -6,7 +6,7 @@ This document provides comprehensive guidance for integrating with the MBTI Trav
 
 **Backend Status**: FULLY OPERATIONAL  
 **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
-**Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`  
+**Authentication**: JWT with Cognito User Pool `us-east-1_KePRX24Bn`  
 **Model**: Amazon Nova Pro 300K  
 **Deployment Date**: September 30, 2025
 
@@ -67,10 +67,10 @@ const API_CONFIG = {
 
 // AWS Cognito Configuration (Deployed)
 const COGNITO_CONFIG = {
-  userPoolId: 'us-east-1_wBAxW7yd4',
+  userPoolId: 'us-east-1_KePRX24Bn',
   clientId: '26k0pnja579pdpb1pt6savs27e',
-  domain: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4',
-  discoveryUrl: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4/.well-known/openid-configuration'
+  domain: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn',
+  discoveryUrl: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration'
 }
 
 ```typescript

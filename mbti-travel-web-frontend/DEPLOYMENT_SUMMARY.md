@@ -8,7 +8,7 @@ This document summarizes the production deployment configuration implemented for
 
 **Backend Status**: FULLY OPERATIONAL  
 **Agent ARN**: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/mbti_travel_assistant_mcp-skv6fd785E`  
-**Authentication**: JWT with Cognito User Pool `us-east-1_wBAxW7yd4`  
+**Authentication**: JWT with Cognito User Pool `us-east-1_KePRX24Bn`  
 **Model**: Amazon Nova Pro 300K  
 **Deployment Date**: September 30, 2025
 
@@ -139,9 +139,9 @@ docker-compose --profile staging up
 ```bash
 # ✅ DEPLOYED BACKEND CONFIGURATION
 VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
-VITE_COGNITO_USER_POOL_ID=us-east-1_wBAxW7yd4
+VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
 VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
-VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_wBAxW7yd4
+VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 ```
 
 ### Optional Optimizations
