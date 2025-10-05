@@ -9,7 +9,7 @@ The MBTI Travel Web Frontend now uses **AWS Cognito** for authentication, sharin
 - **User Pool Name**: `restaurant-search-mcp-pool`
 - **User Pool ID**: `us-east-1_KePRX24Bn`
 - **App Client Name**: `restaurant-search-mcp-client`
-- **App Client ID**: `26k0pnja579pdpb1pt6savs27e`
+- **App Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
 - **Region**: `us-east-1`
 
 ### Authentication Features
@@ -35,7 +35,7 @@ The production environment (`.env.production`) is configured with:
 ```bash
 # Authentication Configuration (Shared Restaurant Search MCP Pool)
 VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
-VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
 ```
 
 ### Authentication Flow

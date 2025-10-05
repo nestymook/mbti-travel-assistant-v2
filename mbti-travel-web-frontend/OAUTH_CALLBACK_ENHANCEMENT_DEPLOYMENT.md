@@ -78,14 +78,14 @@
 ```bash
 aws cognito-idp describe-user-pool-client \
   --user-pool-id us-east-1_KePRX24Bn \
-  --client-id 26k0pnja579pdpb1pt6savs27e \
+  --client-id 1ofgeckef3po4i3us4j1m4chvd \
   --region us-east-1
 ```
 
 #### **Issue**: "Token exchange failed"
 **Solution**: Verify Cognito domain and client configuration
 - Domain: `mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com`
-- Client ID: `26k0pnja579pdpb1pt6savs27e`
+- Client ID: `1ofgeckef3po4i3us4j1m4chvd`
 - Callback URLs: Must include CloudFront URL
 
 #### **Issue**: "Authentication failed after all attempts"
@@ -97,7 +97,7 @@ aws cognito-idp describe-user-pool-client \
 ```json
 {
   "UserPoolId": "us-east-1_KePRX24Bn",
-  "ClientId": "26k0pnja579pdpb1pt6savs27e",
+  "ClientId": "1ofgeckef3po4i3us4j1m4chvd",
   "CallbackURLs": [
     "https://d39ank8zud5pbg.cloudfront.net/",
     "https://d39ank8zud5pbg.cloudfront.net/auth/callback"
@@ -113,7 +113,7 @@ aws cognito-idp describe-user-pool-client \
 ### **Environment Variables**
 ```bash
 VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
-VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
 VITE_COGNITO_DOMAIN=mbti-travel-oidc-334662794
 VITE_COGNITO_REDIRECT_SIGN_IN=https://d39ank8zud5pbg.cloudfront.net/
 VITE_COGNITO_REDIRECT_SIGN_OUT=https://d39ank8zud5pbg.cloudfront.net/

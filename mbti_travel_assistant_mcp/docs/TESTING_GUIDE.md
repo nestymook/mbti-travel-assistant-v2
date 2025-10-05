@@ -35,7 +35,7 @@ python test_auth_prompt.py
 ```
 ✅ Authentication successful!
 Access token length: 1072
-Token client_id: 26k0pnja579pdpb1pt6savs27e
+Token client_id: 1ofgeckef3po4i3us4j1m4chvd
 Token username: 4428f438-20a1-7021-c626-786491287b40
 ```
 

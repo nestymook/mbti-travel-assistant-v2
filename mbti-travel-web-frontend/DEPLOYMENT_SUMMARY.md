@@ -140,7 +140,7 @@ docker-compose --profile staging up
 # ✅ DEPLOYED BACKEND CONFIGURATION
 VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
 VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
-VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
 VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 ```
 

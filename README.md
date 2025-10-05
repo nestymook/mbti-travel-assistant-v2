@@ -510,7 +510,7 @@ aws logs tail /aws/bedrock-agentcore/runtimes/restaurant_search_mcp-JZdACMALGo-D
 
 #### Authentication System
 - **Cognito User Pool ID**: `us-east-1_KePRX24Bn`
-- **Client ID**: `26k0pnja579pdpb1pt6savs27e`
+- **Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
 - **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **Token Validation**: Real-time JWT validation across all services
 
@@ -532,7 +532,7 @@ aws logs tail /aws/bedrock-agentcore/runtimes/restaurant_search_mcp-JZdACMALGo-D
 
 ### AWS Cognito Configuration
 - **User Pool ID**: `us-east-1_KePRX24Bn`
-- **Client ID**: `26k0pnja579pdpb1pt6savs27e`
+- **Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
 - **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 - **Authentication Flow**: JWT Bearer tokens
 

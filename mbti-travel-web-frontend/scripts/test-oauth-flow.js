@@ -5,7 +5,7 @@ import { execSync } from 'child_process';
 // Configuration
 const CLOUDFRONT_DOMAIN = 'https://d39ank8zud5pbg.cloudfront.net';
 const COGNITO_DOMAIN = 'https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com';
-const CLIENT_ID = '26k0pnja579pdpb1pt6savs27e';
+const CLIENT_ID = '1ofgeckef3po4i3us4j1m4chvd';
 const USER_POOL_ID = 'us-east-1_KePRX24Bn';
 
 console.log('🧪 Testing OAuth Flow Configuration...');

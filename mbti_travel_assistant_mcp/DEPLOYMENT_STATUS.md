@@ -23,7 +23,7 @@
 - **Model**: Amazon Nova Pro 300K (`amazon.nova-pro-v1:0:300k`)
 - **Authentication**: JWT with AWS Cognito User Pool
 - **User Pool ID**: `us-east-1_KePRX24Bn`
-- **Client ID**: `26k0pnja579pdpb1pt6savs27e`
+- **Client ID**: `1ofgeckef3po4i3us4j1m4chvd`
 - **Discovery URL**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
 
 ### Infrastructure

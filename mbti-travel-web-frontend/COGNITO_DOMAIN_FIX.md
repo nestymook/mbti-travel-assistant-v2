@@ -134,7 +134,7 @@ VITE_COGNITO_DOMAIN=restaurant-mcp-fixed-20250930
 ```bash
 aws cognito-idp update-user-pool-client \
   --user-pool-id us-east-1_KePRX24Bn \
-  --client-id 26k0pnja579pdpb1pt6savs27e \
+  --client-id 1ofgeckef3po4i3us4j1m4chvd \
   --callback-urls "https://d39ank8zud5pbg.cloudfront.net/" "https://d39ank8zud5pbg.cloudfront.net/auth/callback" \
   --logout-urls "https://d39ank8zud5pbg.cloudfront.net/" \
   --allowed-o-auth-flows "code" \
@@ -168,7 +168,7 @@ curl https://restaurant-mcp-fixed-20250930.auth.us-east-1.amazoncognito.com/.wel
 
 ### **2. Test Login URL**
 ```
-https://restaurant-mcp-fixed-20250930.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://restaurant-mcp-fixed-20250930.auth.us-east-1.amazoncognito.com/login?client_id=1ofgeckef3po4i3us4j1m4chvd&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 
 ### **3. Test OAuth Flow**

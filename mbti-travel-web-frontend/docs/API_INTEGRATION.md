@@ -68,7 +68,7 @@ const API_CONFIG = {
 // AWS Cognito Configuration (Deployed)
 const COGNITO_CONFIG = {
   userPoolId: 'us-east-1_KePRX24Bn',
-  clientId: '26k0pnja579pdpb1pt6savs27e',
+  clientId: '1ofgeckef3po4i3us4j1m4chvd',
   domain: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn',
   discoveryUrl: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration'
 }

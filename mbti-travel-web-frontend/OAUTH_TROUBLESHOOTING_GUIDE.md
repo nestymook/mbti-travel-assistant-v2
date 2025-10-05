@@ -107,7 +107,7 @@ This tool will help you identify exactly where the OAuth flow is breaking by tes
 ```bash
 aws cognito-idp describe-user-pool-client \
   --user-pool-id us-east-1_KePRX24Bn \
-  --client-id 26k0pnja579pdpb1pt6savs27e \
+  --client-id 1ofgeckef3po4i3us4j1m4chvd \
   --region us-east-1
 ```
 
@@ -141,7 +141,7 @@ aws cognito-idp describe-user-pool-client \
 ### **Quick Test 1: Manual URL Test**
 Copy and paste this URL directly in browser:
 ```
-https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=1ofgeckef3po4i3us4j1m4chvd&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 
 **Expected**: Should redirect to Cognito login page
@@ -230,13 +230,13 @@ https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/.well-known/
 
 #### **2. Authorization Endpoint**:
 ```
-https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=1ofgeckef3po4i3us4j1m4chvd&response_type=code&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 **Expected**: Redirect to login page
 
 #### **3. Login Page**:
 ```
-https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=1ofgeckef3po4i3us4j1m4chvd&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 **Expected**: Cognito login form
 

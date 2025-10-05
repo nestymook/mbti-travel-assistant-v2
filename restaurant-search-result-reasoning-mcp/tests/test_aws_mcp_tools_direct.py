@@ -41,7 +41,7 @@ class MCPToolsTester:
         self.region = "us-east-1"
         self.cognito_config = {
             "user_pool_id": "us-east-1_KePRX24Bn",
-            "client_id": "26k0pnja579pdpb1pt6savs27e",
+            "client_id": "1ofgeckef3po4i3us4j1m4chvd",
             "region": "us-east-1"
         }
         self.test_user_email = "testing_user@test.com.hk"

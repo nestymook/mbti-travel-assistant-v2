@@ -6,7 +6,7 @@ Your application is using **Cognito User Pool only** for authentication, which i
 
 ### **What You Have:**
 - ✅ **Cognito User Pool**: `us-east-1_KePRX24Bn`
-- ✅ **User Pool Client**: `26k0pnja579pdpb1pt6savs27e`
+- ✅ **User Pool Client**: `1ofgeckef3po4i3us4j1m4chvd`
 - ✅ **Hosted UI Domain**: `mbti-travel-oidc-334662794`
 - ✅ **OAuth Configuration**: Properly configured
 
@@ -101,7 +101,7 @@ curl -I https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/.wel
 
 ### **Step 2: Test Login URL Manually**
 ```
-https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=26k0pnja579pdpb1pt6savs27e&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
+https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com/login?client_id=1ofgeckef3po4i3us4j1m4chvd&response_type=code&scope=email+openid+profile&redirect_uri=https://d39ank8zud5pbg.cloudfront.net/
 ```
 
 ### **Step 3: Check Browser Network Tab**
@@ -123,7 +123,7 @@ aws cognito-idp describe-user-pool --user-pool-id us-east-1_KePRX24Bn --region u
 
 ### **Check User Pool Client**
 ```bash
-aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_KePRX24Bn --client-id 26k0pnja579pdpb1pt6savs27e --region us-east-1
+aws cognito-idp describe-user-pool-client --user-pool-id us-east-1_KePRX24Bn --client-id 1ofgeckef3po4i3us4j1m4chvd --region us-east-1
 ```
 
 ### **Check Cognito Domain**

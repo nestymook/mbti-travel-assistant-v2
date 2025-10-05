@@ -303,7 +303,7 @@ def select_candidates_and_recommend(ranked_restaurants, count=20):
 auth_config = AuthenticationConfig(
     cognito_config={
         'user_pool_id': 'us-east-1_KePRX24Bn',
-        'client_id': '26k0pnja579pdpb1pt6savs27e',
+        'client_id': '1ofgeckef3po4i3us4j1m4chvd',
         'region': 'us-east-1',
         'discovery_url': 'https://cognito-idp.us-east-1.amazonaws.com/...'
     },

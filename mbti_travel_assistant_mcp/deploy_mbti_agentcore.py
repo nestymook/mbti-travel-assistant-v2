@@ -77,7 +77,7 @@ class MBTITravelAssistantDeployment:
         discovery_url = cognito_config['discovery_url']
         
         # Get client ID from Cognito User Pool
-        client_id = cognito_config.get('app_client', {}).get('client_id', '26k0pnja579pdpb1pt6savs27e')
+        client_id = cognito_config.get('app_client', {}).get('client_id', '1ofgeckef3po4i3us4j1m4chvd')
         
         # Create JWT authorizer configuration with existing Cognito setup
         auth_config = {

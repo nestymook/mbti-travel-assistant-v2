@@ -10,7 +10,7 @@ async function updateCognitoLogoutRedirect() {
   const client = new CognitoIdentityProviderClient({ region: 'us-east-1' });
   
   const userPoolId = 'us-east-1_KePRX24Bn';
-  const clientId = '26k0pnja579pdpb1pt6savs27e';
+  const clientId = '1ofgeckef3po4i3us4j1m4chvd';
   const cloudfrontUrl = 'https://d39ank8zud5pbg.cloudfront.net';
   
   try {

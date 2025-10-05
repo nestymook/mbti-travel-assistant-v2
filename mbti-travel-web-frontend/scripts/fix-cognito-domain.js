@@ -5,7 +5,7 @@ import fs from 'fs';
 
 // Configuration
 const USER_POOL_ID = 'us-east-1_KePRX24Bn';
-const CLIENT_ID = '26k0pnja579pdpb1pt6savs27e';
+const CLIENT_ID = '1ofgeckef3po4i3us4j1m4chvd';
 const OLD_DOMAIN = 'mbti-travel-oidc-334662794';
 const AWS_REGION = 'us-east-1';
 const CLOUDFRONT_DOMAIN = 'https://d39ank8zud5pbg.cloudfront.net';

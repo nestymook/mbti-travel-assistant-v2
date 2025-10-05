@@ -63,7 +63,7 @@ VITE_API_TIMEOUT=100000
 
 # Authentication (AWS Cognito) - ✅ CONFIGURED
 VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
-VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
 VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 
 # External Services
@@ -83,7 +83,7 @@ For production deployment, create `.env.production`:
 VITE_API_BASE_URL=https://bedrock-agentcore.us-east-1.amazonaws.com/runtime/mbti_travel_assistant_mcp-skv6fd785E
 VITE_API_TIMEOUT=60000
 VITE_COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn
-VITE_COGNITO_CLIENT_ID=26k0pnja579pdpb1pt6savs27e
+VITE_COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd
 VITE_COGNITO_DOMAIN=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn
 VITE_MBTI_TEST_URL=https://www.16personalities.com/free-personality-test
 VITE_ENABLE_ANALYTICS=true

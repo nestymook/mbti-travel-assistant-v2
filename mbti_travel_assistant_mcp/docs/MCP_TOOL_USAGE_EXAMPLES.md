@@ -3469,7 +3469,7 @@ ENTERPRISE_CONFIG = {
     'environment': 'production',
     'cognito': {
         'user_pool_id': 'us-east-1_KePRX24Bn',
-        'client_id': '26k0pnja579pdpb1pt6savs27e',
+        'client_id': '1ofgeckef3po4i3us4j1m4chvd',
         'region': 'us-east-1'
     },
     'test_user': {

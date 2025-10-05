@@ -65,7 +65,7 @@ All tests require JWT authentication with Amazon Cognito:
 - **Email:** `testing_user@test.com.hk`
 - **Password:** *Required user input (not stored)*
 - **User Pool:** `us-east-1_KePRX24Bn`
-- **Client ID:** `26k0pnja579pdpb1pt6savs27e`
+- **Client ID:** `1ofgeckef3po4i3us4j1m4chvd`
 
 ### Authentication Flow
 1. User enters password securely (hidden input)
