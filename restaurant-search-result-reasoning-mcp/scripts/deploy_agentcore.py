@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-AgentCore Runtime Deployment Script for Restaurant Search MCP
+AgentCore Runtime Deployment Script for Restaurant Search Result Reasoning MCP Server
 
-This script configures and deploys the Restaurant Search MCP server to
+This script configures and deploys the Restaurant Search Result Reasoning MCP server to
 Amazon Bedrock AgentCore Runtime using the bedrock-agentcore-starter-toolkit.
+
+Note: MCP servers use protocol-based communication and do not require entrypoints.
+They expose tools via the Model Context Protocol rather than conversational interfaces.
 
 Requirements: 5.1, 5.2, 5.3, 8.1, 8.2, 8.3
 """
@@ -62,7 +65,20 @@ class AgentCoreDeployment:
                 if field not in config:
                     raise ValueError(f"Missing required field in Cognito config: {field}")
             
+            # Validate app_client has required fields including client_secret
+            app_client = config.get('app_client', {})
+            required_app_client_fields = ['client_id', 'client_secret']
+            for field in required_app_client_fields:
+                if field not in app_client:
+                    raise ValueError(f"Missing required field in app_client config: {field}")
+            
+            # Validate client_secret is not empty
+            client_secret = app_client.get('client_secret', '').strip()
+            if not client_secret:
+                raise ValueError("client_secret cannot be empty in Cognito configuration")
+            
             print(f"✓ Loaded Cognito configuration from: {config_file}")
+            print(f"✓ Validated client_secret is present and non-empty")
             return config
             
         except json.JSONDecodeError as e:
@@ -96,14 +112,14 @@ class AgentCoreDeployment:
         return auth_config
     
     def configure_agentcore_runtime(self, 
-                                   entrypoint: str = "main.py",
-                                   agent_name: str = "restaurant_search_conversational_agent",
+                                   entrypoint: str = "restaurant_reasoning_mcp_server.py",  # MCP server file
+                                   agent_name: str = "restaurant_search_result_reasoning_agent",
                                    requirements_file: str = "requirements.txt") -> Dict[str, Any]:
-        """Configure AgentCore Runtime deployment.
+        """Configure AgentCore Runtime deployment for MCP server.
         
         Args:
-            entrypoint: Python file to use as entrypoint.
-            agent_name: Name for the MCP agent.
+            entrypoint: MCP server file (default: restaurant_reasoning_mcp_server.py).
+            agent_name: Name for the MCP server.
             requirements_file: Path to requirements.txt file.
             
         Returns:
@@ -116,19 +132,19 @@ class AgentCoreDeployment:
             # Create JWT authorizer configuration
             auth_config = self.create_jwt_authorizer_config(cognito_config)
             
-            # Validate entrypoint file exists
-            if not os.path.exists(entrypoint):
-                raise FileNotFoundError(f"Entrypoint file not found: {entrypoint}")
-            
             # Validate requirements file exists
             if not os.path.exists(requirements_file):
                 raise FileNotFoundError(f"Requirements file not found: {requirements_file}")
             
-            print(f"🚀 Configuring AgentCore Runtime deployment...")
+            print(f"🚀 Configuring AgentCore Runtime deployment for MCP Server...")
             print(f"Entrypoint: {entrypoint}")
             print(f"Agent Name: {agent_name}")
             print(f"Requirements: {requirements_file}")
             print(f"Region: {self.region}")
+            
+            # Validate entrypoint file exists
+            if not os.path.exists(entrypoint):
+                raise FileNotFoundError(f"Entrypoint file not found: {entrypoint}")
             
             # Configure AgentCore Runtime
             response = self.agentcore_runtime.configure(
@@ -319,8 +335,16 @@ class AgentCoreDeployment:
             print(f"✗ Error loading deployment configuration: {e}")
             return {}
     
-    def deploy_complete_workflow(self) -> Dict[str, Any]:
+    def deploy_complete_workflow(self, 
+                                entrypoint: str = "restaurant_reasoning_mcp_server.py",
+                                agent_name: str = "restaurant_search_result_reasoning_agent",
+                                requirements_file: str = "requirements.txt") -> Dict[str, Any]:
         """Execute complete deployment workflow.
+        
+        Args:
+            entrypoint: MCP server file (default: restaurant_reasoning_mcp_server.py).
+            agent_name: Name for the MCP server.
+            requirements_file: Path to requirements.txt file.
         
         Returns:
             Final deployment status and configuration.
@@ -330,7 +354,11 @@ class AgentCoreDeployment:
             
             # Step 1: Configure runtime
             print("\n📋 Step 1: Configuring AgentCore Runtime...")
-            config_response = self.configure_agentcore_runtime()
+            config_response = self.configure_agentcore_runtime(
+                entrypoint=entrypoint,
+                agent_name=agent_name,
+                requirements_file=requirements_file
+            )
             
             # Step 2: Launch deployment
             print("\n🚀 Step 2: Launching deployment...")
@@ -397,10 +425,10 @@ def main():
     
     parser = argparse.ArgumentParser(description='Deploy Restaurant Search MCP to AgentCore Runtime')
     parser.add_argument('--region', default='us-east-1', help='AWS region (default: us-east-1)')
-    parser.add_argument('--entrypoint', default='main.py', 
-                       help='BedrockAgentCoreApp entrypoint (default: main.py)')
-    parser.add_argument('--agent-name', default='restaurant_search_conversational_agent',
-                       help='Agent name (default: restaurant_search_conversational_agent)')
+    parser.add_argument('--entrypoint', default='restaurant_reasoning_mcp_server.py', 
+                       help='MCP server entrypoint (default: restaurant_reasoning_mcp_server.py)')
+    parser.add_argument('--agent-name', default='restaurant_search_result_reasoning_agent',
+                       help='Agent name (default: restaurant_search_result_reasoning_agent)')
     parser.add_argument('--requirements', default='requirements.txt',
                        help='Requirements file (default: requirements.txt)')
     parser.add_argument('--configure-only', action='store_true',
@@ -450,7 +478,11 @@ def main():
         
         else:
             # Complete workflow
-            result = deployment.deploy_complete_workflow()
+            result = deployment.deploy_complete_workflow(
+                entrypoint=args.entrypoint,
+                agent_name=args.agent_name,
+                requirements_file=args.requirements
+            )
             
             print("\n📋 Deployment Summary:")
             print(f"Successful: {result['deployment_successful']}")

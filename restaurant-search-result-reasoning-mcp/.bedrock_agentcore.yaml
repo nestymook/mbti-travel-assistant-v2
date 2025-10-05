@@ -1,17 +1,17 @@
-default_agent: restaurant_reasoning_mcp
+default_agent: restaurant_search_result_reasoning_agent
 agents:
-  restaurant_reasoning_mcp:
-    name: restaurant_reasoning_mcp
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py
+  restaurant_search_result_reasoning_agent:
+    name: restaurant_search_result_reasoning_agent
+    entrypoint: restaurant_reasoning_mcp_server.py
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: null
-      execution_role_auto_create: true
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-86b9d22e10
+      execution_role_auto_create: false
       account: '209803798463'
       region: us-east-1
-      ecr_repository: null
-      ecr_auto_create: true
+      ecr_repository: 209803798463.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-restaurant_search_result_reasoning_agent
+      ecr_auto_create: false
       network_configuration:
         network_mode: PUBLIC
       protocol_configuration:
@@ -19,18 +19,18 @@ agents:
       observability:
         enabled: true
     bedrock_agentcore:
-      agent_id: restaurant_reasoning_mcp-UFz1VQCFu1
-      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_mcp-UFz1VQCFu1
+      agent_id: restaurant_search_result_reasoning_agent-MSns5D6SLE
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_result_reasoning_agent-MSns5D6SLE
       agent_session_id: null
     codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
+      project_name: bedrock-agentcore-restaurant_search_result_reasoning_agent-builder
+      execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-86b9d22e10
+      source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
     memory:
       mode: STM_AND_LTM
-      memory_id: restaurant_search_conversational_agent_mem-YbRhxj54Yd
+      memory_id: restaurant_search_result_reasoning_agent_mem-Qx7aMVDx42
       memory_arn: null
-      memory_name: restaurant_reasoning_mcp_memory
+      memory_name: restaurant_search_result_reasoning_agent_memory
       event_expiry_days: 30
       first_invoke_memory_check_done: false
     authorizer_configuration:

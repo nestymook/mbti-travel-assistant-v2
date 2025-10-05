@@ -1,8 +1,8 @@
-default_agent: restaurant_search_conversational_agent
+default_agent: restaurant_search_agent
 agents:
-  restaurant_search_mcp:
-    name: restaurant_search_mcp
-    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-mcp/main.py
+  restaurant_search_agent:
+    name: restaurant_search_agent
+    entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-mcp/restaurant_mcp_server.py
     platform: linux/arm64
     container_runtime: docker
     aws:
@@ -19,20 +19,13 @@ agents:
       observability:
         enabled: true
     bedrock_agentcore:
-      agent_id: null
-      agent_arn: null
+      agent_id: restaurant_search_agent-mN8bgq2Y1j
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_agent-mN8bgq2Y1j
       agent_session_id: null
     codebuild:
       project_name: null
       execution_role: null
       source_bucket: null
-    memory:
-      mode: STM_ONLY
-      memory_id: null
-      memory_arn: null
-      memory_name: null
-      event_expiry_days: 30
-      first_invoke_memory_check_done: false
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:
@@ -66,13 +59,6 @@ agents:
       project_name: null
       execution_role: null
       source_bucket: null
-    memory:
-      mode: STM_AND_LTM
-      memory_id: restaurant_search_conversational_agent_mem-YbRhxj54Yd
-      memory_arn: null
-      memory_name: restaurant_search_conversational_agent_memory
-      event_expiry_days: 30
-      first_invoke_memory_check_done: true
     authorizer_configuration: null
     request_header_configuration: null
     oauth_configuration: null

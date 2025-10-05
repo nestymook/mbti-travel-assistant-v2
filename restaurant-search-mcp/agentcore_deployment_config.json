@@ -1,6 +1,6 @@
 {
-  "entrypoint": "main.py",
-  "agent_name": "restaurant_search_conversational_agent",
+  "entrypoint": "restaurant_mcp_server.py",
+  "agent_name": "restaurant_search_agent",
   "requirements_file": "requirements.txt",
   "region": "us-east-1",
   "protocol": "MCP",
@@ -40,5 +40,5 @@
     }
   },
   "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1759684228.925176
+  "configured_at": 1759688056.8892643
 }

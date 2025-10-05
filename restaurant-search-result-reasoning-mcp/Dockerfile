@@ -8,8 +8,8 @@ ENV UV_SYSTEM_PYTHON=1 \
     DOCKER_CONTAINER=1 \
     AWS_REGION=us-east-1 \
     AWS_DEFAULT_REGION=us-east-1 \
-    BEDROCK_AGENTCORE_MEMORY_ID=restaurant_search_conversational_agent_mem-YbRhxj54Yd \
-    BEDROCK_AGENTCORE_MEMORY_NAME=restaurant_reasoning_mcp_memory
+    BEDROCK_AGENTCORE_MEMORY_ID=restaurant_search_result_reasoning_agent_mem-Qx7aMVDx42 \
+    BEDROCK_AGENTCORE_MEMORY_NAME=restaurant_search_result_reasoning_agent_mem
 
 
 

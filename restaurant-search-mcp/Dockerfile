@@ -1,13 +1,8 @@
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 WORKDIR /app
 
-# All environment variables in one layer
-ENV UV_SYSTEM_PYTHON=1 \
-    UV_COMPILE_BYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    DOCKER_CONTAINER=1 \
-    AWS_REGION=us-east-1 \
-    AWS_DEFAULT_REGION=us-east-1
+# Configure UV for container environment
+ENV UV_SYSTEM_PYTHON=1 UV_COMPILE_BYTECODE=1
 
 
 
@@ -42,4 +37,4 @@ COPY . .
 
 # Use the full module path
 
-CMD ["opentelemetry-instrument", "python", "-m", "main"]
+CMD ["opentelemetry-instrument", "python", "-m", "restaurant_mcp_server"]
