@@ -1,0 +1,83 @@
+{
+  "enhanced_status_check_system": {
+    "dual_monitoring_enabled": true,
+    "global_settings": {
+      "check_interval_seconds": 60,
+      "max_concurrent_checks": 2,
+      "retry_attempts": 1,
+      "circuit_breaker_enabled": false
+    },
+    "servers": [
+      {
+        "server_name": "simple-mcp-server",
+        "mcp_endpoint_url": "http://localhost:8080/mcp",
+        "rest_health_endpoint_url": "http://localhost:8080/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 30,
+        "mcp_retry_attempts": 1,
+        "rest_enabled": true,
+        "rest_timeout_seconds": 20,
+        "rest_retry_attempts": 1,
+        "mcp_priority_weight": 0.5,
+        "rest_priority_weight": 0.5,
+        "require_both_success": false
+      }
+    ],
+    "mcp_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 30,
+      "tools_list_validation": false,
+      "expected_tools_validation": false,
+      "json_rpc_version": "2.0",
+      "connection_pool_size": 2,
+      "keep_alive_enabled": false,
+      "retry_policy": {
+        "max_attempts": 1,
+        "backoff_multiplier": 1.0,
+        "initial_delay_seconds": 1.0
+      }
+    },
+    "rest_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 20,
+      "health_endpoint_path": "/status/health",
+      "expected_status_codes": [200],
+      "connection_pool_size": 2,
+      "retry_policy": {
+        "max_attempts": 1,
+        "backoff_multiplier": 1.0,
+        "initial_delay_seconds": 1.0
+      }
+    },
+    "result_aggregation": {
+      "mcp_priority_weight": 0.5,
+      "rest_priority_weight": 0.5,
+      "require_both_success_for_healthy": false,
+      "degraded_on_single_failure": false,
+      "health_score_calculation": "simple_average",
+      "failure_threshold_percentage": 100
+    },
+    "authentication": {
+      "jwt_enabled": false,
+      "token_refresh_enabled": false,
+      "custom_headers": {}
+    },
+    "circuit_breaker": {
+      "enabled": false
+    },
+    "metrics_collection": {
+      "enabled": true,
+      "collection_interval_seconds": 60,
+      "max_history_entries": 10,
+      "cleanup_interval_seconds": 3600
+    },
+    "observability": {
+      "logging_level": "INFO",
+      "debug_mode": false,
+      "request_response_logging": false,
+      "metrics_enabled": true,
+      "prometheus_enabled": false,
+      "health_check_endpoint": "/health"
+    }
+  }
+}

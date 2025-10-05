@@ -1,0 +1,57 @@
+{
+  "system": {
+    "name": "mcp-status-check",
+    "version": "0.9.0"
+  },
+  "mcp": {
+    "enabled": true,
+    "timeout": 10,
+    "retry_attempts": 3,
+    "validate_tools": true,
+    "validate_expected_tools": true,
+    "expected_tools": [
+      "search_restaurants_by_district",
+      "recommend_restaurants"
+    ]
+  },
+  "rest": {
+    "enabled": true,
+    "timeout": 8,
+    "retry_attempts": 2,
+    "health_path": "/status/health",
+    "metrics_path": "/status/metrics"
+  },
+  "circuit_breaker": {
+    "enabled": true,
+    "failure_threshold": 5,
+    "recovery_timeout": 60
+  },
+  "servers": [
+    {
+      "name": "restaurant-search-mcp",
+      "mcp_url": "http://localhost:8080/mcp",
+      "rest_url": "http://localhost:8080/status/health",
+      "mcp_enabled": true,
+      "rest_enabled": true,
+      "mcp_timeout": 10,
+      "rest_timeout": 8,
+      "expected_tools": [
+        "search_restaurants_by_district",
+        "search_restaurants_by_meal_type"
+      ]
+    },
+    {
+      "name": "restaurant-reasoning-mcp",
+      "mcp_url": "http://localhost:8081/mcp",
+      "rest_url": "http://localhost:8081/status/health",
+      "mcp_enabled": true,
+      "rest_enabled": true,
+      "mcp_timeout": 12,
+      "rest_timeout": 10,
+      "expected_tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ]
+    }
+  ]
+}

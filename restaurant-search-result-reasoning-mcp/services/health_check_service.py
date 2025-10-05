@@ -3,6 +3,7 @@ MCP server health check service using tools/list requests for reasoning server.
 
 This service performs health checks on the restaurant reasoning MCP server by sending tools/list
 JSON-RPC 2.0 requests and validating the responses for reasoning tools.
+Enhanced with dual monitoring support for MCP tools/list and REST health checks.
 """
 
 import asyncio
@@ -20,6 +21,15 @@ from models.status_models import (
     MCPStatusCheckConfig,
     ServerMetrics
 )
+
+# Enhanced monitoring integration
+try:
+    from services.enhanced_reasoning_status_service import get_enhanced_reasoning_status_service
+    ENHANCED_REASONING_MONITORING_AVAILABLE = True
+except ImportError:
+    ENHANCED_REASONING_MONITORING_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Enhanced reasoning monitoring not available, using legacy health checks only")
 
 
 @dataclass
@@ -593,3 +603,327 @@ async def validate_reasoning_mcp_server_connectivity(
             return True, None, result.tools_count
         else:
             return False, result.error_message, None
+# E
+nhanced reasoning monitoring integration functions
+
+async def perform_enhanced_reasoning_health_check(
+    server_name: str = "restaurant-search-result-reasoning-mcp"
+) -> Dict[str, Any]:
+    """
+    Perform enhanced reasoning health check using dual monitoring if available.
+    
+    Args:
+        server_name: Name of the reasoning server to check
+        
+    Returns:
+        Dict containing enhanced reasoning health check results
+    """
+    if not ENHANCED_REASONING_MONITORING_AVAILABLE:
+        # Fallback to legacy health check
+        logger.info("Enhanced reasoning monitoring not available, using legacy health check")
+        return await _perform_legacy_reasoning_health_check(server_name)
+    
+    try:
+        # Get enhanced reasoning status service
+        enhanced_service = await get_enhanced_reasoning_status_service()
+        
+        # Perform enhanced reasoning health check
+        enhanced_status = await enhanced_service.get_enhanced_reasoning_status()
+        
+        return {
+            "enhanced_monitoring": True,
+            "timestamp": datetime.now().isoformat(),
+            "server_name": server_name,
+            "service_type": "reasoning_and_sentiment_analysis",
+            "status": enhanced_status,
+            "monitoring_type": "dual_mcp_rest_reasoning"
+        }
+        
+    except Exception as e:
+        logger.error(f"Enhanced reasoning health check failed, falling back to legacy: {e}")
+        return await _perform_legacy_reasoning_health_check(server_name)
+
+
+async def _perform_legacy_reasoning_health_check(server_name: str) -> Dict[str, Any]:
+    """
+    Perform legacy reasoning health check as fallback.
+    
+    Args:
+        server_name: Name of the reasoning server to check
+        
+    Returns:
+        Dict containing legacy reasoning health check results
+    """
+    try:
+        # Create a basic configuration for reasoning self-check
+        config = MCPStatusCheckConfig(
+            server_name=server_name,
+            endpoint_url="http://localhost:8080/mcp",  # Default local endpoint
+            timeout_seconds=12,  # Longer timeout for reasoning operations
+            expected_tools=["recommend_restaurants", "analyze_restaurant_sentiment"]
+        )
+        
+        async with HealthCheckService() as service:
+            result = await service.check_server_health(config)
+            
+            return {
+                "enhanced_monitoring": False,
+                "timestamp": datetime.now().isoformat(),
+                "server_name": server_name,
+                "service_type": "reasoning_and_sentiment_analysis",
+                "status": {
+                    "success": result.success,
+                    "response_time_ms": result.response_time_ms,
+                    "tools_count": result.tools_count,
+                    "error_message": result.error_message,
+                    "reasoning_tools_available": result.tools_count >= 2 if result.tools_count else False
+                },
+                "monitoring_type": "legacy_mcp_reasoning_only"
+            }
+            
+    except Exception as e:
+        logger.error(f"Legacy reasoning health check failed: {e}")
+        return {
+            "enhanced_monitoring": False,
+            "timestamp": datetime.now().isoformat(),
+            "server_name": server_name,
+            "service_type": "reasoning_and_sentiment_analysis",
+            "status": {
+                "success": False,
+                "error_message": f"Reasoning health check failed: {str(e)}"
+            },
+            "monitoring_type": "error"
+        }
+
+
+async def get_reasoning_health_check_capabilities() -> Dict[str, Any]:
+    """
+    Get information about available reasoning health check capabilities.
+    
+    Returns:
+        Dict containing reasoning capability information
+    """
+    capabilities = {
+        "legacy_mcp_reasoning_monitoring": True,
+        "enhanced_dual_reasoning_monitoring": ENHANCED_REASONING_MONITORING_AVAILABLE,
+        "reasoning_tools_validation": True,
+        "sentiment_analysis_validation": True,
+        "timestamp": datetime.now().isoformat()
+    }
+    
+    if ENHANCED_REASONING_MONITORING_AVAILABLE:
+        try:
+            enhanced_service = await get_enhanced_reasoning_status_service()
+            enhanced_capabilities = await enhanced_service.get_reasoning_capabilities_status()
+            capabilities["enhanced_reasoning_capabilities"] = enhanced_capabilities
+        except Exception as e:
+            logger.error(f"Error getting enhanced reasoning capabilities: {e}")
+            capabilities["enhanced_reasoning_monitoring_error"] = str(e)
+    
+    return capabilities
+
+
+class EnhancedReasoningHealthCheckService(HealthCheckService):
+    """
+    Enhanced Reasoning Health Check Service that integrates with dual monitoring.
+    
+    Extends the base HealthCheckService to provide enhanced reasoning monitoring
+    capabilities when available, with graceful fallback to legacy monitoring.
+    """
+    
+    def __init__(self, *args, **kwargs):
+        """Initialize enhanced reasoning health check service."""
+        super().__init__(*args, **kwargs)
+        self._enhanced_reasoning_service = None
+        self._enhanced_reasoning_available = ENHANCED_REASONING_MONITORING_AVAILABLE
+    
+    async def __aenter__(self):
+        """Async context manager entry with enhanced reasoning monitoring setup."""
+        await super().__aenter__()
+        
+        if self._enhanced_reasoning_available:
+            try:
+                self._enhanced_reasoning_service = await get_enhanced_reasoning_status_service()
+                self.logger.info("Enhanced reasoning monitoring service connected")
+            except Exception as e:
+                self.logger.warning(f"Enhanced reasoning monitoring not available: {e}")
+                self._enhanced_reasoning_available = False
+        
+        return self
+    
+    async def check_reasoning_server_health_enhanced(
+        self,
+        config: MCPStatusCheckConfig,
+        request_id: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """
+        Perform enhanced reasoning health check with dual monitoring if available.
+        
+        Args:
+            config: Server configuration
+            request_id: Optional request ID
+            
+        Returns:
+            Dict containing enhanced reasoning health check results
+        """
+        if self._enhanced_reasoning_available and self._enhanced_reasoning_service:
+            try:
+                # Use enhanced dual reasoning monitoring
+                enhanced_result = await self._enhanced_reasoning_service.perform_reasoning_health_check()
+                
+                return {
+                    "monitoring_type": "enhanced_dual_reasoning",
+                    "timestamp": datetime.now().isoformat(),
+                    "server_name": config.server_name,
+                    "service_type": "reasoning_and_sentiment_analysis",
+                    "enhanced_result": enhanced_result.to_dict(),
+                    "reasoning_validation": {
+                        "sentiment_analysis_available": enhanced_result.mcp_success,
+                        "recommendation_algorithm_available": enhanced_result.mcp_success,
+                        "tools_validated": enhanced_result.mcp_result.tools_count if enhanced_result.mcp_result else 0
+                    },
+                    "legacy_compatible": {
+                        "success": enhanced_result.overall_success,
+                        "response_time_ms": enhanced_result.combined_response_time_ms,
+                        "status": enhanced_result.overall_status.value
+                    }
+                }
+                
+            except Exception as e:
+                self.logger.error(f"Enhanced reasoning health check failed: {e}")
+                # Fall back to legacy
+        
+        # Use legacy reasoning health check
+        legacy_result = await self.check_server_health(config, request_id)
+        
+        return {
+            "monitoring_type": "legacy_mcp_reasoning",
+            "timestamp": datetime.now().isoformat(),
+            "server_name": config.server_name,
+            "service_type": "reasoning_and_sentiment_analysis",
+            "legacy_result": {
+                "success": legacy_result.success,
+                "response_time_ms": legacy_result.response_time_ms,
+                "tools_count": legacy_result.tools_count,
+                "error_message": legacy_result.error_message,
+                "status_code": legacy_result.status_code,
+                "reasoning_tools_available": legacy_result.tools_count >= 2 if legacy_result.tools_count else False
+            }
+        }
+    
+    async def get_comprehensive_reasoning_status(self) -> Dict[str, Any]:
+        """
+        Get comprehensive reasoning status including both legacy and enhanced monitoring.
+        
+        Returns:
+            Dict containing comprehensive reasoning status information
+        """
+        status = {
+            "timestamp": datetime.now().isoformat(),
+            "service_type": "reasoning_and_sentiment_analysis",
+            "server_name": "restaurant-search-result-reasoning-mcp",
+            "monitoring_capabilities": {
+                "legacy_mcp_reasoning": True,
+                "enhanced_dual_reasoning": self._enhanced_reasoning_available
+            }
+        }
+        
+        # Add enhanced reasoning status if available
+        if self._enhanced_reasoning_available and self._enhanced_reasoning_service:
+            try:
+                enhanced_status = await self._enhanced_reasoning_service.get_enhanced_reasoning_status()
+                reasoning_capabilities = await self._enhanced_reasoning_service.get_reasoning_capabilities_status()
+                
+                status["enhanced_status"] = enhanced_status
+                status["reasoning_capabilities"] = reasoning_capabilities
+            except Exception as e:
+                self.logger.error(f"Error getting enhanced reasoning status: {e}")
+                status["enhanced_status_error"] = str(e)
+        
+        # Add legacy reasoning health check capabilities
+        status["legacy_capabilities"] = {
+            "mcp_reasoning_tools_validation": True,
+            "sentiment_analysis_tools_check": True,
+            "recommendation_algorithm_check": True,
+            "json_rpc_2_0_support": True,
+            "concurrent_health_checks": True,
+            "retry_with_backoff": True,
+            "circuit_breaker_integration": True
+        }
+        
+        return status
+    
+    async def record_reasoning_operation_metrics(
+        self,
+        operation_type: str,
+        success: bool,
+        duration_ms: float,
+        metadata: Optional[Dict[str, Any]] = None
+    ):
+        """
+        Record reasoning operation metrics if enhanced monitoring is available.
+        
+        Args:
+            operation_type: Type of reasoning operation
+            success: Whether the operation was successful
+            duration_ms: Duration of the operation in milliseconds
+            metadata: Optional metadata about the operation
+        """
+        if self._enhanced_reasoning_available and self._enhanced_reasoning_service:
+            try:
+                await self._enhanced_reasoning_service.record_reasoning_operation(
+                    operation_type=operation_type,
+                    success=success,
+                    duration_ms=duration_ms,
+                    metadata=metadata
+                )
+            except Exception as e:
+                self.logger.error(f"Error recording reasoning operation metrics: {e}")
+        else:
+            # Log for legacy monitoring
+            self.logger.info(f"Reasoning operation: {operation_type}, "
+                           f"success={success}, duration={duration_ms}ms")
+
+
+# Reasoning-specific utility functions
+
+async def validate_reasoning_capabilities(
+    endpoint_url: str,
+    jwt_token: Optional[str] = None,
+    timeout_seconds: int = 12
+) -> Dict[str, Any]:
+    """
+    Validate reasoning capabilities of an MCP server.
+    
+    Args:
+        endpoint_url: MCP server endpoint URL
+        jwt_token: Optional JWT token for authentication
+        timeout_seconds: Request timeout
+        
+    Returns:
+        Dict containing reasoning capability validation results
+    """
+    expected_reasoning_tools = ["recommend_restaurants", "analyze_restaurant_sentiment"]
+    
+    is_connected, error_message, tools_count = await validate_reasoning_mcp_server_connectivity(
+        endpoint_url=endpoint_url,
+        jwt_token=jwt_token,
+        timeout_seconds=timeout_seconds,
+        expected_tools=expected_reasoning_tools
+    )
+    
+    return {
+        "timestamp": datetime.now().isoformat(),
+        "endpoint_url": endpoint_url,
+        "connectivity": {
+            "connected": is_connected,
+            "error_message": error_message,
+            "tools_count": tools_count
+        },
+        "reasoning_capabilities": {
+            "sentiment_analysis": is_connected and tools_count >= 1,
+            "recommendation_algorithm": is_connected and tools_count >= 2,
+            "expected_tools": expected_reasoning_tools,
+            "validation_passed": is_connected and tools_count >= len(expected_reasoning_tools)
+        }
+    }

@@ -1,0 +1,129 @@
+{
+  "enhanced_status_check_system": {
+    "dual_monitoring_enabled": true,
+    "global_settings": {
+      "check_interval_seconds": 15,
+      "max_concurrent_checks": 10,
+      "retry_attempts": 3,
+      "circuit_breaker_enabled": true
+    },
+    "servers": [
+      {
+        "server_name": "staging-restaurant-search",
+        "mcp_endpoint_url": "https://restaurant-search.staging.company.com/mcp",
+        "rest_health_endpoint_url": "https://restaurant-search.staging.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 12,
+        "mcp_expected_tools": [
+          "search_restaurants_by_district",
+          "search_restaurants_by_meal_type",
+          "recommend_restaurants"
+        ],
+        "mcp_retry_attempts": 3,
+        "rest_enabled": true,
+        "rest_timeout_seconds": 10,
+        "rest_retry_attempts": 2,
+        "jwt_token": "${STAGING_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${STAGING_JWT_TOKEN}",
+          "X-API-Key": "${STAGING_API_KEY}",
+          "User-Agent": "Enhanced-MCP-Status-Check-Staging/1.0"
+        },
+        "mcp_priority_weight": 0.6,
+        "rest_priority_weight": 0.4,
+        "require_both_success": false
+      },
+      {
+        "server_name": "staging-reasoning-service",
+        "mcp_endpoint_url": "https://reasoning.staging.company.com/mcp",
+        "rest_health_endpoint_url": "https://reasoning.staging.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 15,
+        "mcp_expected_tools": [
+          "analyze_restaurant_results",
+          "generate_recommendations"
+        ],
+        "rest_enabled": true,
+        "rest_timeout_seconds": 12,
+        "jwt_token": "${STAGING_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${STAGING_JWT_TOKEN}",
+          "X-API-Key": "${STAGING_API_KEY}"
+        },
+        "mcp_priority_weight": 0.7,
+        "rest_priority_weight": 0.3,
+        "require_both_success": false
+      }
+    ],
+    "mcp_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 12,
+      "tools_list_validation": true,
+      "expected_tools_validation": true,
+      "json_rpc_version": "2.0",
+      "connection_pool_size": 8,
+      "keep_alive_enabled": true,
+      "retry_policy": {
+        "max_attempts": 3,
+        "backoff_multiplier": 1.8,
+        "initial_delay_seconds": 0.8
+      }
+    },
+    "rest_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 10,
+      "health_endpoint_path": "/status/health",
+      "metrics_endpoint_path": "/status/metrics",
+      "expected_status_codes": [200],
+      "connection_pool_size": 12,
+      "retry_policy": {
+        "max_attempts": 2,
+        "backoff_multiplier": 1.5,
+        "initial_delay_seconds": 0.5
+      }
+    },
+    "result_aggregation": {
+      "mcp_priority_weight": 0.6,
+      "rest_priority_weight": 0.4,
+      "require_both_success_for_healthy": false,
+      "degraded_on_single_failure": true,
+      "health_score_calculation": "weighted_average",
+      "failure_threshold_percentage": 40
+    },
+    "authentication": {
+      "jwt_enabled": true,
+      "jwt_discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "jwt_audience": "1ofgeckef3po4i3us4j1m4chvd",
+      "jwt_issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn",
+      "token_refresh_enabled": true,
+      "token_cache_ttl_seconds": 1800,
+      "api_key_header": "X-API-Key",
+      "custom_headers": {
+        "User-Agent": "Enhanced-MCP-Status-Check-Staging/1.0",
+        "X-Environment": "staging"
+      }
+    },
+    "circuit_breaker": {
+      "enabled": true,
+      "failure_threshold": 5,
+      "success_threshold": 3,
+      "timeout_seconds": 120,
+      "half_open_max_calls": 2
+    },
+    "metrics_collection": {
+      "enabled": true,
+      "collection_interval_seconds": 15,
+      "max_history_entries": 1000,
+      "cleanup_interval_seconds": 600
+    },
+    "observability": {
+      "logging_level": "INFO",
+      "debug_mode": false,
+      "request_response_logging": true,
+      "metrics_enabled": true,
+      "prometheus_enabled": true,
+      "health_check_endpoint": "/health",
+      "metrics_endpoint": "/metrics"
+    }
+  }
+}

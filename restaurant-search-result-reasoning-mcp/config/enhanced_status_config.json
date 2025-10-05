@@ -1,0 +1,88 @@
+{
+  "enhanced_status_check_system": {
+    "system_name": "restaurant-reasoning-mcp-enhanced",
+    "version": "1.0.0",
+    "dual_monitoring_enabled": true,
+    "mcp_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 12,
+      "default_retry_attempts": 3,
+      "tools_list_validation": true,
+      "expected_tools_validation": true,
+      "default_expected_tools": [
+        "recommend_restaurants",
+        "analyze_restaurant_sentiment"
+      ],
+      "request_timeout_ms": 35000,
+      "connection_pool_size": 8,
+      "jwt_auth_enabled": true,
+      "jwt_discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "jwt_audience": "1ofgeckef3po4i3us4j1m4chvd"
+    },
+    "rest_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 10,
+      "default_retry_attempts": 2,
+      "health_endpoint_path": "/status/health",
+      "metrics_endpoint_path": "/status/metrics",
+      "expected_status_codes": [200, 201, 202],
+      "retry_backoff_factor": 1.5,
+      "max_retry_delay_seconds": 30,
+      "connection_pool_size": 15,
+      "validate_response_format": true,
+      "required_health_fields": ["status", "timestamp", "reasoning_capabilities"],
+      "auth_type": "bearer",
+      "auth_header_name": "Authorization"
+    },
+    "result_aggregation": {
+      "mcp_priority_weight": 0.8,
+      "rest_priority_weight": 0.2,
+      "require_both_success_for_healthy": false,
+      "degraded_on_single_failure": true,
+      "health_score_calculation": "weighted_average",
+      "failure_threshold": 0.3,
+      "degraded_threshold": 0.6
+    },
+    "circuit_breaker": {
+      "enabled": true,
+      "failure_threshold": 4,
+      "recovery_timeout_seconds": 90,
+      "half_open_max_calls": 2,
+      "mcp_circuit_breaker_enabled": true,
+      "rest_circuit_breaker_enabled": true,
+      "independent_circuit_breakers": true
+    },
+    "monitoring": {
+      "enabled": true,
+      "metrics_collection_enabled": true,
+      "health_check_interval_seconds": 45,
+      "metrics_retention_hours": 48,
+      "concurrent_health_checks": true,
+      "max_concurrent_checks": 8
+    },
+    "servers": [
+      {
+        "server_name": "restaurant-search-result-reasoning-mcp",
+        "mcp_endpoint_url": "https://your-gateway-url/mcp/restaurant-search-result-reasoning-mcp",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 12,
+        "mcp_expected_tools": [
+          "recommend_restaurants",
+          "analyze_restaurant_sentiment"
+        ],
+        "mcp_retry_attempts": 3,
+        "rest_health_endpoint_url": "https://your-gateway-url/mcp/restaurant-search-result-reasoning-mcp/status/health",
+        "rest_enabled": true,
+        "rest_timeout_seconds": 10,
+        "rest_retry_attempts": 2,
+        "jwt_token": null,
+        "auth_headers": {},
+        "mcp_priority_weight": 0.8,
+        "rest_priority_weight": 0.2,
+        "require_both_success": false,
+        "priority": "high",
+        "description": "Restaurant recommendation and sentiment analysis reasoning with enhanced dual monitoring"
+      }
+    ]
+  }
+}

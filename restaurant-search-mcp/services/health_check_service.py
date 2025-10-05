@@ -3,6 +3,7 @@ MCP server health check service using tools/list requests.
 
 This service performs health checks on MCP servers by sending tools/list
 JSON-RPC 2.0 requests and validating the responses.
+Enhanced with dual monitoring support for MCP tools/list and REST health checks.
 """
 
 import asyncio
@@ -20,6 +21,15 @@ from models.status_models import (
     MCPStatusCheckConfig,
     ServerMetrics
 )
+
+# Enhanced monitoring integration
+try:
+    from services.enhanced_status_service import get_enhanced_status_service
+    ENHANCED_MONITORING_AVAILABLE = True
+except ImportError:
+    ENHANCED_MONITORING_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Enhanced monitoring not available, using legacy health checks only")
 
 
 @dataclass
@@ -569,3 +579,231 @@ async def validate_mcp_server_connectivity(
             return True, None, result.tools_count
         else:
             return False, result.error_message, None
+
+# Enhanced monitoring integration functions
+
+async def perform_enhanced_health_check(
+    server_name: str = "restaurant-search-mcp"
+) -> Dict[str, Any]:
+    """
+    Perform enhanced health check using dual monitoring if available.
+    
+    Args:
+        server_name: Name of the server to check
+        
+    Returns:
+        Dict containing enhanced health check results
+    """
+    if not ENHANCED_MONITORING_AVAILABLE:
+        # Fallback to legacy health check
+        logger.info("Enhanced monitoring not available, using legacy health check")
+        return await _perform_legacy_health_check(server_name)
+    
+    try:
+        # Get enhanced status service
+        enhanced_service = await get_enhanced_status_service()
+        
+        # Perform enhanced health check
+        enhanced_status = await enhanced_service.get_enhanced_status()
+        
+        return {
+            "enhanced_monitoring": True,
+            "timestamp": datetime.now().isoformat(),
+            "server_name": server_name,
+            "status": enhanced_status,
+            "monitoring_type": "dual_mcp_rest"
+        }
+        
+    except Exception as e:
+        logger.error(f"Enhanced health check failed, falling back to legacy: {e}")
+        return await _perform_legacy_health_check(server_name)
+
+
+async def _perform_legacy_health_check(server_name: str) -> Dict[str, Any]:
+    """
+    Perform legacy health check as fallback.
+    
+    Args:
+        server_name: Name of the server to check
+        
+    Returns:
+        Dict containing legacy health check results
+    """
+    try:
+        # Create a basic configuration for self-check
+        config = MCPStatusCheckConfig(
+            server_name=server_name,
+            endpoint_url="http://localhost:8080/mcp",  # Default local endpoint
+            timeout_seconds=10
+        )
+        
+        async with HealthCheckService() as service:
+            result = await service.check_server_health(config)
+            
+            return {
+                "enhanced_monitoring": False,
+                "timestamp": datetime.now().isoformat(),
+                "server_name": server_name,
+                "status": {
+                    "success": result.success,
+                    "response_time_ms": result.response_time_ms,
+                    "tools_count": result.tools_count,
+                    "error_message": result.error_message
+                },
+                "monitoring_type": "legacy_mcp_only"
+            }
+            
+    except Exception as e:
+        logger.error(f"Legacy health check failed: {e}")
+        return {
+            "enhanced_monitoring": False,
+            "timestamp": datetime.now().isoformat(),
+            "server_name": server_name,
+            "status": {
+                "success": False,
+                "error_message": f"Health check failed: {str(e)}"
+            },
+            "monitoring_type": "error"
+        }
+
+
+async def get_health_check_capabilities() -> Dict[str, Any]:
+    """
+    Get information about available health check capabilities.
+    
+    Returns:
+        Dict containing capability information
+    """
+    capabilities = {
+        "legacy_mcp_monitoring": True,
+        "enhanced_dual_monitoring": ENHANCED_MONITORING_AVAILABLE,
+        "timestamp": datetime.now().isoformat()
+    }
+    
+    if ENHANCED_MONITORING_AVAILABLE:
+        try:
+            enhanced_service = await get_enhanced_status_service()
+            enhanced_capabilities = await enhanced_service.get_monitoring_capabilities()
+            capabilities["enhanced_capabilities"] = enhanced_capabilities
+        except Exception as e:
+            logger.error(f"Error getting enhanced capabilities: {e}")
+            capabilities["enhanced_monitoring_error"] = str(e)
+    
+    return capabilities
+
+
+class EnhancedHealthCheckService(HealthCheckService):
+    """
+    Enhanced Health Check Service that integrates with dual monitoring.
+    
+    Extends the base HealthCheckService to provide enhanced monitoring
+    capabilities when available, with graceful fallback to legacy monitoring.
+    """
+    
+    def __init__(self, *args, **kwargs):
+        """Initialize enhanced health check service."""
+        super().__init__(*args, **kwargs)
+        self._enhanced_service = None
+        self._enhanced_available = ENHANCED_MONITORING_AVAILABLE
+    
+    async def __aenter__(self):
+        """Async context manager entry with enhanced monitoring setup."""
+        await super().__aenter__()
+        
+        if self._enhanced_available:
+            try:
+                self._enhanced_service = await get_enhanced_status_service()
+                self.logger.info("Enhanced monitoring service connected")
+            except Exception as e:
+                self.logger.warning(f"Enhanced monitoring not available: {e}")
+                self._enhanced_available = False
+        
+        return self
+    
+    async def check_server_health_enhanced(
+        self,
+        config: MCPStatusCheckConfig,
+        request_id: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """
+        Perform enhanced health check with dual monitoring if available.
+        
+        Args:
+            config: Server configuration
+            request_id: Optional request ID
+            
+        Returns:
+            Dict containing enhanced health check results
+        """
+        if self._enhanced_available and self._enhanced_service:
+            try:
+                # Use enhanced dual monitoring
+                enhanced_result = await self._enhanced_service.perform_self_health_check()
+                
+                return {
+                    "monitoring_type": "enhanced_dual",
+                    "timestamp": datetime.now().isoformat(),
+                    "server_name": config.server_name,
+                    "enhanced_result": enhanced_result.to_dict(),
+                    "legacy_compatible": {
+                        "success": enhanced_result.overall_success,
+                        "response_time_ms": enhanced_result.combined_response_time_ms,
+                        "status": enhanced_result.overall_status.value
+                    }
+                }
+                
+            except Exception as e:
+                self.logger.error(f"Enhanced health check failed: {e}")
+                # Fall back to legacy
+        
+        # Use legacy health check
+        legacy_result = await self.check_server_health(config, request_id)
+        
+        return {
+            "monitoring_type": "legacy_mcp",
+            "timestamp": datetime.now().isoformat(),
+            "server_name": config.server_name,
+            "legacy_result": {
+                "success": legacy_result.success,
+                "response_time_ms": legacy_result.response_time_ms,
+                "tools_count": legacy_result.tools_count,
+                "error_message": legacy_result.error_message,
+                "status_code": legacy_result.status_code
+            }
+        }
+    
+    async def get_comprehensive_status(self) -> Dict[str, Any]:
+        """
+        Get comprehensive status including both legacy and enhanced monitoring.
+        
+        Returns:
+            Dict containing comprehensive status information
+        """
+        status = {
+            "timestamp": datetime.now().isoformat(),
+            "service_type": "restaurant_search_mcp",
+            "monitoring_capabilities": {
+                "legacy_mcp": True,
+                "enhanced_dual": self._enhanced_available
+            }
+        }
+        
+        # Add enhanced status if available
+        if self._enhanced_available and self._enhanced_service:
+            try:
+                enhanced_status = await self._enhanced_service.get_enhanced_status()
+                status["enhanced_status"] = enhanced_status
+            except Exception as e:
+                self.logger.error(f"Error getting enhanced status: {e}")
+                status["enhanced_status_error"] = str(e)
+        
+        # Add legacy health check capabilities
+        status["legacy_capabilities"] = {
+            "mcp_tools_list_validation": True,
+            "json_rpc_2_0_support": True,
+            "concurrent_health_checks": True,
+            "retry_with_backoff": True,
+            "circuit_breaker_integration": True
+        }
+        
+        return status

@@ -1,0 +1,187 @@
+# Enhanced MCP Status Check System - Staging Deployment Configuration
+
+deployment:
+  environment: "staging"
+  deployment_id: "enhanced-status-staging"
+  region: "us-east-1"
+  
+enhanced_status_check_system:
+  dual_monitoring_enabled: true
+  
+  # MCP Health Check Configuration
+  mcp_health_checks:
+    enabled: true
+    default_timeout_seconds: 10
+    tools_list_validation: true
+    expected_tools_validation: true
+    retry_attempts: 2
+    
+  # REST Health Check Configuration  
+  rest_health_checks:
+    enabled: true
+    default_timeout_seconds: 8
+    health_endpoint_path: "/status/health"
+    metrics_endpoint_path: "/status/metrics"
+    retry_attempts: 2
+    
+  # Result Aggregation Configuration
+  result_aggregation:
+    mcp_priority_weight: 0.6
+    rest_priority_weight: 0.4
+    require_both_success_for_healthy: false
+    degraded_on_single_failure: true
+    
+  # Staging Server Configuration
+  servers:
+    - server_name: "restaurant-search-mcp-staging"
+      mcp_endpoint_url: "https://staging-restaurant-search.example.com/mcp"
+      rest_health_endpoint_url: "https://staging-restaurant-search.example.com/status/health"
+      mcp_enabled: true
+      rest_enabled: true
+      mcp_timeout_seconds: 10
+      rest_timeout_seconds: 8
+      mcp_expected_tools:
+        - "search_restaurants_by_district"
+        - "search_restaurants_by_meal_type"
+        - "search_restaurants_combined"
+      mcp_retry_attempts: 2
+      rest_retry_attempts: 2
+      mcp_priority_weight: 0.6
+      rest_priority_weight: 0.4
+      require_both_success: false
+      
+    - server_name: "restaurant-reasoning-mcp-staging"
+      mcp_endpoint_url: "https://staging-restaurant-reasoning.example.com/mcp"
+      rest_health_endpoint_url: "https://staging-restaurant-reasoning.example.com/status/health"
+      mcp_enabled: true
+      rest_enabled: true
+      mcp_timeout_seconds: 12
+      rest_timeout_seconds: 10
+      mcp_expected_tools:
+        - "search_restaurants_by_district"
+        - "recommend_restaurants"
+        - "analyze_restaurant_results"
+      mcp_retry_attempts: 3
+      rest_retry_attempts: 2
+      mcp_priority_weight: 0.7
+      rest_priority_weight: 0.3
+      require_both_success: false
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8080
+  workers: 2
+  cors_enabled: true
+  cors_origins:
+    - "https://staging-console.example.com"
+    - "http://localhost:3000"
+  
+# Authentication Configuration (Staging)
+authentication:
+  type: "jwt"
+  config:
+    customJWTAuthorizer:
+      allowedClients: 
+        - "staging-client-id"
+      discoveryUrl: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_STAGING/.well-known/openid-configuration"
+      
+# Monitoring Configuration
+monitoring:
+  metrics:
+    enabled: true
+    collection_interval: 30  # More frequent for staging
+    retention_days: 7  # Shorter retention for staging
+    storage_path: "data/staging/metrics"
+    aggregation_intervals: [60, 300, 900]  # 1min, 5min, 15min
+    export_formats: ["json"]
+    
+  alerts:
+    enabled: true
+    check_interval: 15  # More frequent checking for staging
+    email_notifications:
+      enabled: true
+      smtp_server: "smtp.example.com"
+      smtp_port: 587
+      from_address: "staging-alerts@example.com"
+      to_addresses:
+        - "dev-team@example.com"
+        - "staging-ops@example.com"
+    webhook_notifications:
+      enabled: true
+      webhook_url: "https://hooks.slack.com/services/staging/webhook"
+      timeout: 10
+      retry_attempts: 2
+      
+    # Staging-specific alert rules (more sensitive)
+    alert_rules:
+      - name: "staging_server_down"
+        description: "Staging server is completely down"
+        condition: "overall_success == false"
+        severity: "warning"  # Less critical in staging
+        cooldown: 120  # 2 minutes
+        enabled: true
+        
+      - name: "staging_dual_monitoring_degraded"
+        description: "One monitoring method failed in staging"
+        condition: "overall_success == true AND (mcp_success == false OR rest_success == false)"
+        severity: "info"
+        cooldown: 300  # 5 minutes
+        enabled: true
+        
+      - name: "staging_high_response_time"
+        description: "Response time is high in staging"
+        condition: "combined_response_time_ms > 3000"  # Lower threshold for staging
+        severity: "info"
+        cooldown: 180
+        enabled: true
+        
+  dashboards:
+    enabled: true
+    refresh_interval: 15  # More frequent refresh for staging
+    data_retention: 12  # hours
+    charts:
+      - "server_health_status"
+      - "response_times"
+      - "success_rates"
+      - "dual_monitoring_comparison"
+      - "staging_deployment_metrics"
+      
+# Logging Configuration
+logging:
+  level: "DEBUG"  # More verbose logging for staging
+  file_rotation: true
+  max_file_size: "5MB"
+  backup_count: 3
+  log_to_file: true
+  log_to_console: true
+  structured_logging: true
+  
+# Circuit Breaker Configuration
+circuit_breaker:
+  failure_threshold: 3  # Lower threshold for staging
+  recovery_timeout: 30  # Faster recovery for staging
+  half_open_max_calls: 2
+  
+# Performance Configuration
+performance:
+  connection_pool_size: 5  # Smaller pool for staging
+  max_concurrent_checks: 10
+  request_timeout: 15
+  
+# Deployment Validation
+validation:
+  enabled: true
+  health_check_timeout: 30
+  required_endpoints:
+    - "/status/health"
+    - "/status/metrics"
+    - "/status/dual-check"
+  expected_response_codes: [200]
+  
+# Rollback Configuration
+rollback:
+  enabled: true
+  backup_retention_days: 3
+  automatic_rollback_on_failure: true
+  rollback_timeout: 300  # 5 minutes

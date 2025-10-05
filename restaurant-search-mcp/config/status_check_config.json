@@ -7,7 +7,16 @@
     "health_check_endpoint_enabled": true,
     "metrics_retention_hours": 24,
     "cloudwatch_metrics_enabled": true,
-    "cloudwatch_namespace": "MCP/StatusCheck"
+    "cloudwatch_namespace": "MCP/StatusCheck",
+    "enhanced_monitoring_enabled": true,
+    "dual_monitoring_support": true,
+    "backward_compatibility": true
+  },
+  "enhanced_monitoring": {
+    "enabled": true,
+    "config_file": "config/enhanced_status_config.json",
+    "fallback_to_legacy": true,
+    "integration_mode": "hybrid"
   },
   "circuit_breaker_defaults": {
     "failure_threshold": 5,

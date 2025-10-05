@@ -4,11 +4,13 @@ Main entrypoint for Restaurant Reasoning MCP using BedrockAgentCoreApp.
 This module implements the BedrockAgentCoreApp entrypoint that processes user prompts
 and restaurant data, using Strands Agent to automatically select and execute MCP tools 
 for restaurant sentiment analysis and intelligent recommendations.
+Enhanced with dual monitoring capabilities using MCP tools/list and REST health checks.
 """
 
 import json
 import logging
 import traceback
+import asyncio
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
@@ -21,6 +23,10 @@ from services.sentiment_service import SentimentAnalysisService
 from services.recommendation_service import RecommendationAlgorithm
 from services.validation_service import RestaurantDataValidator
 from models.restaurant_models import Restaurant, Sentiment, RecommendationResult
+from services.enhanced_reasoning_status_service import (
+    initialize_enhanced_reasoning_status_service, 
+    start_enhanced_reasoning_status_service
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -712,7 +718,26 @@ def process_reasoning_request(payload: Dict[str, Any]) -> str:
         )
 
 
+async def startup_enhanced_reasoning_monitoring():
+    """Initialize and start enhanced reasoning monitoring services."""
+    try:
+        logger.info("Initializing enhanced reasoning status monitoring")
+        await initialize_enhanced_reasoning_status_service()
+        await start_enhanced_reasoning_status_service()
+        logger.info("Enhanced reasoning status monitoring started successfully")
+    except Exception as e:
+        logger.error(f"Failed to start enhanced reasoning monitoring: {e}")
+        # Continue without enhanced monitoring
+        pass
+
+
 if __name__ == "__main__":
+    # Initialize enhanced reasoning monitoring
+    try:
+        asyncio.run(startup_enhanced_reasoning_monitoring())
+    except Exception as e:
+        logger.warning(f"Enhanced reasoning monitoring initialization failed: {e}")
+    
     # Run the BedrockAgentCore application for reasoning
-    logger.info("Starting Restaurant Reasoning MCP EntryPoint")
+    logger.info("Starting Restaurant Reasoning MCP EntryPoint with Enhanced Monitoring")
     app.run()

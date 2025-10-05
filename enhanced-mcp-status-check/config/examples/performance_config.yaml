@@ -1,0 +1,278 @@
+# Performance Optimization Configuration
+# This file contains configuration settings for performance optimization features
+# Requirements: 10.1, 10.2, 10.3, 10.4, 10.5
+
+performance_optimization:
+  # Connection Pool Configuration
+  connection_pools:
+    # Maximum total connections across all pools
+    max_connections: 100
+    
+    # Maximum connections per host
+    max_connections_per_host: 30
+    
+    # Keep-alive timeout in seconds
+    keepalive_timeout: 30
+    
+    # Connection timeout in seconds
+    connection_timeout: 10
+    
+    # Read timeout in seconds
+    read_timeout: 30
+    
+    # Pool cleanup interval in seconds
+    pool_cleanup_interval: 300
+    
+    # Separate pool configurations
+    mcp_pool:
+      enabled: true
+      max_connections: 50
+      max_connections_per_host: 15
+      
+    rest_pool:
+      enabled: true
+      max_connections: 50
+      max_connections_per_host: 15
+
+  # Resource Limits Configuration
+  resource_limits:
+    # Maximum concurrent health checks
+    max_concurrent_checks: 50
+    
+    # Maximum memory usage in MB
+    max_memory_usage_mb: 512
+    
+    # Maximum CPU usage percentage
+    max_cpu_usage_percent: 80.0
+    
+    # Maximum queue size for pending checks
+    max_queue_size: 1000
+    
+    # Resource monitoring check interval in seconds
+    check_interval_seconds: 5
+    
+    # Enable resource monitoring
+    monitoring_enabled: true
+    
+    # Resource monitoring thresholds
+    thresholds:
+      memory_warning_percent: 80
+      cpu_warning_percent: 70
+      queue_warning_percent: 80
+
+  # Caching Configuration
+  caching:
+    # Enable caching
+    enabled: true
+    
+    # Cache TTL settings (in seconds)
+    ttl:
+      config_cache: 300      # 5 minutes
+      auth_token_cache: 3600 # 1 hour
+      dns_cache: 600         # 10 minutes
+      result_cache: 60       # 1 minute
+      
+    # Maximum cache size (number of items)
+    max_cache_size: 1000
+    
+    # Cache cleanup interval in seconds
+    cleanup_interval: 60
+    
+    # Cache categories configuration
+    categories:
+      config:
+        enabled: true
+        max_size: 100
+        
+      auth_tokens:
+        enabled: true
+        max_size: 200
+        
+      dns:
+        enabled: true
+        max_size: 500
+        
+      results:
+        enabled: true
+        max_size: 200
+
+  # Batch Processing Configuration
+  batch_processing:
+    # Enable batch processing
+    enabled: true
+    
+    # Maximum batch size
+    max_batch_size: 10
+    
+    # Batch timeout in seconds
+    batch_timeout: 5
+    
+    # Enable priority-based batching
+    priority_batching: true
+    
+    # Batch processing intervals
+    processing_interval: 1
+    
+    # Maximum batches to process concurrently
+    max_concurrent_batches: 5
+
+  # Concurrent Execution Configuration
+  concurrent_execution:
+    # Default maximum concurrent operations
+    default_max_concurrent: 20
+    
+    # Per-server concurrent limits
+    per_server_limits:
+      restaurant-search-mcp: 10
+      restaurant-reasoning-mcp: 10
+      mbti-travel-assistant: 15
+      
+    # Execution timeouts
+    timeouts:
+      health_check: 30
+      batch_processing: 60
+      
+    # Retry configuration
+    retry:
+      max_attempts: 3
+      backoff_factor: 2.0
+      max_backoff: 30
+
+  # Performance Monitoring Configuration
+  monitoring:
+    # Enable performance monitoring
+    enabled: true
+    
+    # Metrics collection interval in seconds
+    collection_interval: 10
+    
+    # Metrics retention period in seconds
+    retention_period: 3600  # 1 hour
+    
+    # Enable detailed metrics
+    detailed_metrics: true
+    
+    # Metrics to collect
+    metrics:
+      - response_times
+      - throughput
+      - error_rates
+      - resource_usage
+      - cache_performance
+      - connection_pool_stats
+      
+    # Performance alerts
+    alerts:
+      enabled: true
+      thresholds:
+        high_response_time: 5000  # ms
+        low_throughput: 1.0       # requests/second
+        high_error_rate: 0.05     # 5%
+        high_memory_usage: 0.8    # 80%
+        high_cpu_usage: 0.8       # 80%
+
+# Benchmarking Configuration
+benchmarking:
+  # Default benchmark settings
+  defaults:
+    duration_seconds: 60
+    warmup_duration: 10
+    cooldown_duration: 5
+    iterations: 3
+    
+  # Concurrent user configurations for testing
+  concurrent_users:
+    - 1
+    - 5
+    - 10
+    - 20
+    - 50
+    - 100
+    
+  # Server count configurations for testing
+  server_counts:
+    - 1
+    - 5
+    - 10
+    - 25
+    - 50
+    
+  # Load test scenarios
+  scenarios:
+    light_load:
+      concurrent_users: 5
+      duration_seconds: 30
+      ramp_up_seconds: 5
+      
+    normal_load:
+      concurrent_users: 20
+      duration_seconds: 60
+      ramp_up_seconds: 10
+      
+    heavy_load:
+      concurrent_users: 50
+      duration_seconds: 120
+      ramp_up_seconds: 20
+      
+    stress_test:
+      concurrent_users: 100
+      duration_seconds: 300
+      ramp_up_seconds: 60
+      
+  # Output configuration
+  output:
+    directory: "benchmark_results"
+    formats:
+      - json
+      - csv
+      - html
+      
+    # Chart generation
+    charts:
+      enabled: true
+      formats:
+        - png
+        - svg
+        
+    # Report generation
+    reports:
+      enabled: true
+      include_charts: true
+      include_recommendations: true
+
+# Environment-specific overrides
+environments:
+  development:
+    performance_optimization:
+      resource_limits:
+        max_concurrent_checks: 10
+        max_memory_usage_mb: 256
+      connection_pools:
+        max_connections: 20
+      caching:
+        max_cache_size: 100
+        
+  staging:
+    performance_optimization:
+      resource_limits:
+        max_concurrent_checks: 30
+        max_memory_usage_mb: 384
+      connection_pools:
+        max_connections: 60
+      caching:
+        max_cache_size: 500
+        
+  production:
+    performance_optimization:
+      resource_limits:
+        max_concurrent_checks: 100
+        max_memory_usage_mb: 1024
+      connection_pools:
+        max_connections: 200
+      caching:
+        max_cache_size: 2000
+      monitoring:
+        collection_interval: 5
+        detailed_metrics: true
+        alerts:
+          enabled: true

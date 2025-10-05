@@ -7,7 +7,19 @@
     "health_check_endpoint_enabled": true,
     "metrics_retention_hours": 24,
     "cloudwatch_metrics_enabled": true,
-    "cloudwatch_namespace": "MCP/ReasoningStatusCheck"
+    "cloudwatch_namespace": "MCP/ReasoningStatusCheck",
+    "enhanced_monitoring_enabled": true,
+    "dual_monitoring_support": true,
+    "reasoning_specific_monitoring": true,
+    "backward_compatibility": true
+  },
+  "enhanced_reasoning_monitoring": {
+    "enabled": true,
+    "config_file": "config/enhanced_status_config.json",
+    "fallback_to_legacy": true,
+    "integration_mode": "hybrid",
+    "reasoning_capabilities_validation": true,
+    "sentiment_analysis_monitoring": true
   },
   "circuit_breaker_defaults": {
     "failure_threshold": 5,

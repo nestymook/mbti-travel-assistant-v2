@@ -1,0 +1,1 @@
+# Tests package for enhanced MCP status check system

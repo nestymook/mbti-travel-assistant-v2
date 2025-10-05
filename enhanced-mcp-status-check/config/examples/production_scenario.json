@@ -1,0 +1,210 @@
+{
+  "enhanced_status_check_system": {
+    "dual_monitoring_enabled": true,
+    "global_settings": {
+      "check_interval_seconds": 30,
+      "max_concurrent_checks": 20,
+      "retry_attempts": 5,
+      "circuit_breaker_enabled": true
+    },
+    "servers": [
+      {
+        "server_name": "prod-restaurant-search-primary",
+        "mcp_endpoint_url": "https://restaurant-search.prod.company.com/mcp",
+        "rest_health_endpoint_url": "https://restaurant-search.prod.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 15,
+        "mcp_expected_tools": [
+          "search_restaurants_by_district",
+          "search_restaurants_by_meal_type",
+          "search_restaurants_combined",
+          "recommend_restaurants"
+        ],
+        "mcp_retry_attempts": 3,
+        "rest_enabled": true,
+        "rest_timeout_seconds": 10,
+        "rest_retry_attempts": 3,
+        "jwt_token": "${PROD_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${PROD_JWT_TOKEN}",
+          "X-API-Key": "${PROD_API_KEY}",
+          "X-Service-Version": "v1",
+          "User-Agent": "Enhanced-MCP-Status-Check-Prod/1.0"
+        },
+        "mcp_priority_weight": 0.7,
+        "rest_priority_weight": 0.3,
+        "require_both_success": true
+      },
+      {
+        "server_name": "prod-restaurant-search-secondary",
+        "mcp_endpoint_url": "https://restaurant-search-backup.prod.company.com/mcp",
+        "rest_health_endpoint_url": "https://restaurant-search-backup.prod.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 20,
+        "mcp_expected_tools": [
+          "search_restaurants_by_district",
+          "search_restaurants_by_meal_type",
+          "recommend_restaurants"
+        ],
+        "rest_enabled": true,
+        "rest_timeout_seconds": 15,
+        "jwt_token": "${PROD_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${PROD_JWT_TOKEN}",
+          "X-API-Key": "${PROD_API_KEY}"
+        },
+        "mcp_priority_weight": 0.6,
+        "rest_priority_weight": 0.4,
+        "require_both_success": false
+      },
+      {
+        "server_name": "prod-reasoning-service",
+        "mcp_endpoint_url": "https://reasoning.prod.company.com/mcp",
+        "rest_health_endpoint_url": "https://reasoning.prod.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 25,
+        "mcp_expected_tools": [
+          "analyze_restaurant_results",
+          "generate_recommendations",
+          "rank_restaurants"
+        ],
+        "rest_enabled": true,
+        "rest_timeout_seconds": 20,
+        "jwt_token": "${PROD_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${PROD_JWT_TOKEN}",
+          "X-API-Key": "${PROD_API_KEY}"
+        },
+        "mcp_priority_weight": 0.8,
+        "rest_priority_weight": 0.2,
+        "require_both_success": true
+      },
+      {
+        "server_name": "prod-mbti-travel-assistant",
+        "mcp_endpoint_url": "https://mbti-travel.prod.company.com/mcp",
+        "rest_health_endpoint_url": "https://mbti-travel.prod.company.com/status/health",
+        "mcp_enabled": true,
+        "mcp_timeout_seconds": 30,
+        "mcp_expected_tools": [
+          "get_mbti_recommendations",
+          "analyze_personality_preferences",
+          "generate_travel_itinerary"
+        ],
+        "rest_enabled": true,
+        "rest_timeout_seconds": 25,
+        "jwt_token": "${PROD_JWT_TOKEN}",
+        "auth_headers": {
+          "Authorization": "Bearer ${PROD_JWT_TOKEN}",
+          "X-API-Key": "${PROD_API_KEY}"
+        },
+        "mcp_priority_weight": 0.7,
+        "rest_priority_weight": 0.3,
+        "require_both_success": true
+      }
+    ],
+    "mcp_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 20,
+      "tools_list_validation": true,
+      "expected_tools_validation": true,
+      "json_rpc_version": "2.0",
+      "connection_pool_size": 15,
+      "keep_alive_enabled": true,
+      "retry_policy": {
+        "max_attempts": 3,
+        "backoff_multiplier": 2.0,
+        "initial_delay_seconds": 1.0,
+        "max_delay_seconds": 30.0
+      }
+    },
+    "rest_health_checks": {
+      "enabled": true,
+      "default_timeout_seconds": 15,
+      "health_endpoint_path": "/status/health",
+      "metrics_endpoint_path": "/status/metrics",
+      "expected_status_codes": [200, 201],
+      "connection_pool_size": 25,
+      "retry_policy": {
+        "max_attempts": 3,
+        "backoff_multiplier": 1.8,
+        "initial_delay_seconds": 0.8,
+        "max_delay_seconds": 20.0
+      }
+    },
+    "result_aggregation": {
+      "mcp_priority_weight": 0.7,
+      "rest_priority_weight": 0.3,
+      "require_both_success_for_healthy": false,
+      "degraded_on_single_failure": true,
+      "health_score_calculation": "weighted_average",
+      "failure_threshold_percentage": 30
+    },
+    "authentication": {
+      "jwt_enabled": true,
+      "jwt_discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "jwt_audience": "1ofgeckef3po4i3us4j1m4chvd",
+      "jwt_issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn",
+      "token_refresh_enabled": true,
+      "token_cache_ttl_seconds": 3600,
+      "api_key_header": "X-API-Key",
+      "custom_headers": {
+        "User-Agent": "Enhanced-MCP-Status-Check-Prod/1.0",
+        "X-Environment": "production",
+        "X-Service-Name": "enhanced-mcp-status-check"
+      }
+    },
+    "circuit_breaker": {
+      "enabled": true,
+      "failure_threshold": 10,
+      "success_threshold": 5,
+      "timeout_seconds": 300,
+      "half_open_max_calls": 3,
+      "failure_rate_threshold": 0.5,
+      "minimum_requests": 20
+    },
+    "metrics_collection": {
+      "enabled": true,
+      "collection_interval_seconds": 30,
+      "max_history_entries": 10000,
+      "cleanup_interval_seconds": 3600,
+      "detailed_metrics": true,
+      "performance_metrics": true
+    },
+    "observability": {
+      "logging_level": "INFO",
+      "debug_mode": false,
+      "request_response_logging": false,
+      "metrics_enabled": true,
+      "prometheus_enabled": true,
+      "health_check_endpoint": "/health",
+      "metrics_endpoint": "/metrics",
+      "tracing_enabled": true,
+      "alerting_enabled": true
+    },
+    "performance_optimization": {
+      "connection_pooling": true,
+      "request_batching": true,
+      "response_caching": {
+        "enabled": true,
+        "ttl_seconds": 60,
+        "max_cache_size": 1000
+      },
+      "async_processing": true,
+      "resource_limits": {
+        "max_memory_mb": 512,
+        "max_cpu_percent": 80
+      }
+    },
+    "alerting": {
+      "enabled": true,
+      "webhook_url": "${SLACK_WEBHOOK_URL}",
+      "pagerduty_integration_key": "${PAGERDUTY_KEY}",
+      "alert_thresholds": {
+        "critical_failure_rate": 0.8,
+        "warning_failure_rate": 0.5,
+        "response_time_warning_ms": 5000,
+        "response_time_critical_ms": 10000
+      }
+    }
+  }
+}

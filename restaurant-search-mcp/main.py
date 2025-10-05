@@ -3,11 +3,13 @@ Main entrypoint for Restaurant Search MCP using BedrockAgentCoreApp.
 
 This module implements the BedrockAgentCoreApp entrypoint that processes user prompts
 and uses Strands Agent to automatically select and execute MCP tools for restaurant search.
+Enhanced with dual monitoring capabilities using MCP tools/list and REST health checks.
 """
 
 import json
 import logging
 import traceback
+import asyncio
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
@@ -18,6 +20,7 @@ from services.restaurant_service import RestaurantService
 from services.district_service import DistrictService
 from services.time_service import TimeService
 from services.data_access import DataAccessClient
+from services.enhanced_status_service import initialize_enhanced_status_service, start_enhanced_status_service
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -561,7 +564,26 @@ def process_request(payload: Dict[str, Any]) -> str:
         )
 
 
+async def startup_enhanced_monitoring():
+    """Initialize and start enhanced monitoring services."""
+    try:
+        logger.info("Initializing enhanced status monitoring")
+        await initialize_enhanced_status_service()
+        await start_enhanced_status_service()
+        logger.info("Enhanced status monitoring started successfully")
+    except Exception as e:
+        logger.error(f"Failed to start enhanced monitoring: {e}")
+        # Continue without enhanced monitoring
+        pass
+
+
 if __name__ == "__main__":
+    # Initialize enhanced monitoring
+    try:
+        asyncio.run(startup_enhanced_monitoring())
+    except Exception as e:
+        logger.warning(f"Enhanced monitoring initialization failed: {e}")
+    
     # Run the BedrockAgentCore application
-    logger.info("Starting Restaurant Search MCP EntryPoint")
+    logger.info("Starting Restaurant Search MCP EntryPoint with Enhanced Monitoring")
     app.run()
