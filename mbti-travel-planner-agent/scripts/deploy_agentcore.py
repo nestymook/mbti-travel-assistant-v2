@@ -73,16 +73,90 @@ class EnvironmentConfig:
         return self.config.get(key, default)
     
 
+class CognitoConfigLoader:
+    """Loads and manages Cognito configuration from JSON file."""
+    
+    def __init__(self, config_path: str = "config/cognito_config.json"):
+        """
+        Initialize Cognito configuration loader.
+        
+        Args:
+            config_path: Path to cognito_config.json file
+        """
+        self.config_path = Path(config_path)
+        self.config = self._load_cognito_config()
+    
+    def _load_cognito_config(self) -> Dict[str, Any]:
+        """Load Cognito configuration from JSON file."""
+        if not self.config_path.exists():
+            raise FileNotFoundError(f"Cognito configuration not found: {self.config_path}")
+        
+        try:
+            with open(self.config_path, 'r', encoding="utf-8") as f:
+                config = json.load(f)
+            
+            logger.info(f"Loaded Cognito configuration from {self.config_path}")
+            return config
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON in Cognito configuration file: {e}")
+        except Exception as e:
+            raise RuntimeError(f"Failed to load Cognito configuration: {e}")
+    
+    def get_discovery_url(self) -> str:
+        """Get OIDC discovery URL."""
+        return self.config.get("discovery_url", "")
+    
+    def get_client_id(self) -> str:
+        """Get Cognito app client ID."""
+        return self.config.get("app_client", {}).get("client_id", "")
+    
+    def get_user_pool_id(self) -> str:
+        """Get Cognito User Pool ID."""
+        return self.config.get("user_pool", {}).get("user_pool_id", "")
+    
+    def get_region(self) -> str:
+        """Get AWS region."""
+        return self.config.get("region", "us-east-1")
+    
+    def validate_config(self) -> bool:
+        """Validate that required Cognito configuration is present."""
+        required_fields = [
+            ("discovery_url", self.get_discovery_url()),
+            ("client_id", self.get_client_id()),
+            ("user_pool_id", self.get_user_pool_id()),
+            ("region", self.get_region())
+        ]
+        
+        missing_fields = []
+        for field_name, field_value in required_fields:
+            if not field_value:
+                missing_fields.append(field_name)
+        
+        if missing_fields:
+            logger.error(f"Missing required Cognito configuration fields: {missing_fields}")
+            return False
+        
+        # Validate discovery URL format for AgentCore compatibility
+        discovery_url = self.get_discovery_url()
+        if not discovery_url.endswith("/.well-known/openid-configuration"):
+            logger.error(f"Discovery URL must end with '/.well-known/openid-configuration': {discovery_url}")
+            return False
+        
+        logger.info("✅ Cognito configuration validation passed")
+        return True
+
+
 class AgentCoreDeployer:
     """Handles deployment of MBTI Travel Assistant to AgentCore."""
     
-    def __init__(self, region: str = "us-east-1", environment: str = "development"):
+    def __init__(self, region: str = "us-east-1", environment: str = "development", cognito_config_path: str = "config/cognito_config.json"):
         """
         Initialize the deployer.
         
         Args:
             region: AWS region for deployment
             environment: Environment (development, staging, production)
+            cognito_config_path: Path to Cognito configuration JSON file
         """
         self.region = region
         self.environment = environment
@@ -90,6 +164,9 @@ class AgentCoreDeployer:
         
         # Load environment configuration
         self.env_config = EnvironmentConfig(environment)
+        
+        # Load Cognito configuration
+        self.cognito_config = CognitoConfigLoader(cognito_config_path)
         
         # Initialize AWS clients
         try:
@@ -128,12 +205,25 @@ class AgentCoreDeployer:
         """
         logger.info(f"Starting deployment of {agent_name} to {self.environment}")
         
+        # Log Cognito configuration being used
+        logger.info("🔐 Using Cognito Configuration:")
+        logger.info(f"  - User Pool ID: {self.cognito_config.get_user_pool_id()}")
+        logger.info(f"  - Client ID: {self.cognito_config.get_client_id()}")
+        logger.info(f"  - Discovery URL: {self.cognito_config.get_discovery_url()}")
+        logger.info(f"  - Region: {self.cognito_config.get_region()}")
+        
         deployment_config = {
             "agent_name": agent_name,
             "environment": self.environment,
             "timestamp": datetime.datetime.now(datetime.UTC),
             "region": self.region,
             "account_id": self.account_id,
+            "cognito_config": {
+                "user_pool_id": self.cognito_config.get_user_pool_id(),
+                "client_id": self.cognito_config.get_client_id(),
+                "discovery_url": self.cognito_config.get_discovery_url(),
+                "region": self.cognito_config.get_region()
+            }
         }
         
         try:
@@ -166,6 +256,10 @@ class AgentCoreDeployer:
                 container_uri,
             )
             deployment_config["agentcore_config"] = agentcore_config
+            
+            # Step 5.5: Update .bedrock_agentcore.yaml with Cognito configuration
+            self._update_bedrock_agentcore_yaml()
+            deployment_config["bedrock_agentcore_updated"] = True
             
             # Step 6: Deploy to AgentCore
             agent_arn = self._deploy_to_agentcore(agentcore_config)
@@ -217,6 +311,10 @@ class AgentCoreDeployer:
         except (subprocess.CalledProcessError, FileNotFoundError):
             raise RuntimeError("Docker is not available. Please install Docker.")
         
+        # Validate Cognito configuration
+        if not self.cognito_config.validate_config():
+            raise ValueError("Cognito configuration validation failed. Please check config/cognito_config.json")
+        
         # Validate AgentCore configuration file
         agentcore_config_file = Path(".bedrock_agentcore.yaml")
         if not agentcore_config_file.exists():
@@ -228,7 +326,7 @@ class AgentCoreDeployer:
         except yaml.YAMLError as e:
             raise ValueError(f"Invalid AgentCore configuration YAML: {e}")
         
-        logger.info("Configuration validation completed successfully")
+        logger.info("✅ Configuration validation completed successfully")
     
     def _setup_ecr_repository(self, agent_name: str) -> str:
         """Create or verify ECR repository for container images."""
@@ -434,6 +532,10 @@ class AgentCoreDeployer:
     ) -> Dict[str, Any]:
         """Create AgentCore deployment configuration with environment-specific settings."""
                 
+        # Validate Cognito configuration before deployment
+        if not self.cognito_config.validate_config():
+            raise ValueError("Invalid Cognito configuration. Please check config/cognito_config.json")
+        
         # Base configuration
         config = {
             "name": f"{agent_name}-{self.environment}",
@@ -444,7 +546,8 @@ class AgentCoreDeployer:
                 "type": "jwt",
                 "config": {
                     "customJWTAuthorizer": {
-                        "allowedClients": []
+                        "discoveryUrl": self.cognito_config.get_discovery_url(),
+                        "allowedClients": [self.cognito_config.get_client_id()]
                     }
                 }
             },
@@ -522,6 +625,42 @@ class AgentCoreDeployer:
         logger.info(f"Created AgentCore configuration: {config_filename}")
         return config
     
+    def _update_bedrock_agentcore_yaml(self) -> None:
+        """Update .bedrock_agentcore.yaml with Cognito configuration from JSON file."""
+        agentcore_config_file = Path(".bedrock_agentcore.yaml")
+        
+        if not agentcore_config_file.exists():
+            logger.warning("⚠️  .bedrock_agentcore.yaml not found, skipping update")
+            return
+        
+        try:
+            # Load existing configuration
+            with open(agentcore_config_file, 'r', encoding="utf-8") as f:
+                config = yaml.safe_load(f)
+            
+            # Update authentication configuration with Cognito data
+            if 'agents' in config:
+                for agent_name, agent_config in config['agents'].items():
+                    if 'authorizer_configuration' not in agent_config:
+                        agent_config['authorizer_configuration'] = {}
+                    
+                    agent_config['authorizer_configuration']['customJWTAuthorizer'] = {
+                        'discoveryUrl': self.cognito_config.get_discovery_url(),
+                        'allowedClients': [self.cognito_config.get_client_id()]
+                    }
+                    
+                    logger.info(f"✅ Updated authentication config for agent: {agent_name}")
+            
+            # Save updated configuration
+            with open(agentcore_config_file, 'w', encoding="utf-8") as f:
+                yaml.dump(config, f, default_flow_style=False, indent=2)
+            
+            logger.info("✅ Updated .bedrock_agentcore.yaml with Cognito configuration")
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to update .bedrock_agentcore.yaml: {e}")
+            raise RuntimeError(f"Failed to update AgentCore configuration file: {e}")
+    
     def _deploy_to_agentcore(self, config: Dict[str, Any]) -> str:
         """Deploy to AgentCore runtime (placeholder implementation)."""
         """agentcore configure -e my_agent.py --region us-west-2 --agent-name mbti-travel-planner-agent"""
@@ -587,6 +726,12 @@ Examples:
   
   # Skip container build (use existing image)
   python deploy_agentcore.py --environment production --skip-container-build
+  
+  # Use custom Cognito configuration file
+  python deploy_agentcore.py --cognito-config custom/cognito.json
+  
+  # Deploy with verbose logging and custom Cognito config
+  python deploy_agentcore.py --verbose --cognito-config config/prod_cognito.json
         """
     )
     
@@ -603,6 +748,8 @@ Examples:
                        help='Only validate configuration without deploying')
     parser.add_argument('--verbose', '-v', action='store_true',
                        help='Enable verbose logging')
+    parser.add_argument('--cognito-config', default='config/cognito_config.json',
+                       help='Path to Cognito configuration JSON file')
     
     args = parser.parse_args()
     
@@ -611,7 +758,11 @@ Examples:
         logging.getLogger().setLevel(logging.DEBUG)
     
     try:
-        deployer = AgentCoreDeployer(region=args.region, environment=args.environment)
+        deployer = AgentCoreDeployer(
+            region=args.region, 
+            environment=args.environment,
+            cognito_config_path=args.cognito_config
+        )
         
         result = deployer.deploy(
             agent_name=args.agent_name,

@@ -90,7 +90,7 @@ class CognitoSetup:
             raise
     
     def create_user_pool_client(self, user_pool_id: str, 
-                               client_name: str = "restaurant-search-mcp-client") -> Dict[str, Any]:
+                               client_name: str = "mbti-travel-oidc-client") -> Dict[str, Any]:
         """Create User Pool App Client for JWT authentication.
         
         Args:

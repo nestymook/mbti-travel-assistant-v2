@@ -94,7 +94,7 @@ print(f"User Pool ID: {user_pool_id}")
 ```python
 client_response = cognito_client.create_user_pool_client(
     UserPoolId=user_pool_id,
-    ClientName='restaurant-search-mcp-client',
+    ClientName='mbti-travel-oidc-client',
     GenerateSecret=False,  # Public client for JWT tokens
     RefreshTokenValidity=30,  # 30 days
     AccessTokenValidity=60,   # 60 minutes
@@ -157,7 +157,7 @@ The setup process creates a `cognito_config.json` file with the following struct
   },
   "app_client": {
     "client_id": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
-    "client_name": "restaurant-search-mcp-client"
+    "client_name": "mbti-travel-oidc-client"
   },
   "test_user": {
     "username": "test@example.com",

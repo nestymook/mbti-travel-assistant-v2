@@ -7,11 +7,12 @@
   },
   "app_client": {
     "client_id": "1ofgeckef3po4i3us4j1m4chvd",
-    "client_name": "restaurant-search-mcp-client"
+    "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+    "client_name": "mbti-travel-oidc-client"
   },
   "test_user": {
-    "username": "testing_user@test.com.hk",
-    "email": "testing_user@test.com.hk",
+    "username": "test@mbti-travel.com",
+    "email": "test@mbti-travel.com",
     "status": "CONFIRMED",
     "password_updated": true
   },
