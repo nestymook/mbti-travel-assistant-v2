@@ -1,31 +1,34 @@
 # Core AgentCore dependencies
 bedrock-agentcore
 strands-agents
-boto3
+boto3>=1.34.0
+botocore>=1.34.0
 
-# HTTP client dependencies for gateway communication
-httpx>=0.25.0
+# AgentCore Runtime API client dependencies
 pydantic>=2.0.0
-aiohttp
+aiohttp>=3.8.0
 
 # Data processing and validation
 pandas
-requests
 
 # AWS services and observability
 aws-opentelemetry-distro>=0.10.1
 
-# Authentication and JWT (for gateway authentication if needed)
-pyjwt
-cryptography
+# Authentication and JWT (for AgentCore authentication)
+pyjwt>=2.8.0
+cryptography>=41.0.0
 
 # Configuration parsing
-pyyaml
-python-dotenv
+pyyaml>=6.0
+python-dotenv>=1.0.0
 
 # Logging and utilities
-python-dateutil
-structlog
+python-dateutil>=2.8.0
+structlog>=23.0.0
 
 # Performance and monitoring
-psutil
+psutil>=5.9.0
+
+# Additional dependencies for AgentCore integration
+asyncio-throttle>=1.0.2
+tenacity>=8.2.0

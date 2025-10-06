@@ -1,27 +1,46 @@
 """
-Central District Search Workflow for MBTI Travel Planner Agent
+Central District Search Workflow for MBTI Travel Planner Agent with AgentCore Integration
 
 This module implements a complete workflow for searching restaurants in Hong Kong's
-Central district, including search, analysis, recommendation, and user-friendly formatting.
+Central district using direct AgentCore Runtime API calls instead of HTTP gateway
+intermediaries. It provides better performance, reliability, and ecosystem integration.
 
 The workflow follows the complete pipeline:
-1. Search → Find restaurants in Central district
+1. Search → Find restaurants in Central district using AgentCore search agent
 2. Analyze → Process restaurant data and sentiment
-3. Recommend → Generate intelligent recommendations
+3. Recommend → Generate intelligent recommendations using AgentCore reasoning agent
 4. Format → Present results in user-friendly format
 
-Requirements covered: 3.1, 3.2, 3.3, 7.1, 7.2, 7.3, 7.4
+Key improvements in AgentCore version:
+- Direct agent-to-agent communication via AgentCore Runtime API
+- Parallel execution for independent operations
+- Enhanced error handling with circuit breaker patterns
+- Comprehensive monitoring and observability
+- Performance optimizations with connection pooling
+
+Requirements covered: 2.4, 7.4, 8.2, 8.3
 """
 
 import json
 import logging
 import asyncio
+import time
 from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 
-from .gateway_http_client import GatewayHTTPClient, GatewayError, create_gateway_client
-from .error_handler import ErrorHandler, ErrorContext, ErrorSeverity
+from .agentcore_runtime_client import AgentCoreRuntimeClient, AgentCoreError, AuthenticationError, AgentInvocationError
+from .authentication_manager import AuthenticationManager, CognitoConfig as AuthCognitoConfig
+from .restaurant_search_tool import RestaurantSearchTool, RestaurantSearchResult
+from .restaurant_reasoning_tool import RestaurantReasoningTool, RecommendationResult
+from config.agentcore_environment_config import load_agentcore_environment_config, EnvironmentConfig
+
+# Import monitoring middleware
+from .agentcore_monitoring_middleware import (
+    monitor_central_district_workflow,
+    get_monitoring_middleware,
+    AgentOperationType
+)
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -37,14 +56,20 @@ class WorkflowResult:
     error_message: Optional[str] = None
     partial_results: bool = False
     execution_time: Optional[float] = None
+    # New fields for AgentCore integration
+    search_execution_time_ms: Optional[int] = None
+    reasoning_execution_time_ms: Optional[int] = None
+    parallel_execution: bool = False
+    agent_performance_metrics: Optional[Dict[str, Any]] = None
 
 
 class CentralDistrictWorkflow:
     """
-    Complete workflow for Central district restaurant search and recommendations.
+    Complete workflow for Central district restaurant search and recommendations using AgentCore.
     
     This class implements the full pipeline from search to formatted user response,
-    handling all edge cases and providing comprehensive error handling.
+    using direct AgentCore Runtime API calls for better performance and reliability.
+    Features parallel execution, comprehensive error handling, and monitoring.
     """
     
     CENTRAL_DISTRICT_NAMES = [
@@ -53,65 +78,156 @@ class CentralDistrictWorkflow:
         "Central District"
     ]
     
-    def __init__(self, environment: str = None, auth_token: str = None):
+    def __init__(self, environment: str = None, config: EnvironmentConfig = None):
         """
-        Initialize the Central district workflow.
+        Initialize the Central district workflow with AgentCore integration.
         
         Args:
             environment: Target environment (development, staging, production)
-            auth_token: JWT authentication token (optional)
+            config: Pre-loaded environment configuration (optional)
         """
-        self.client = create_gateway_client(
-            environment=environment,
-            auth_token=auth_token
-        )
-        self.error_handler = ErrorHandler("central_district_workflow")
+        # Load configuration
+        if config:
+            self.config = config
+        else:
+            self.config = load_agentcore_environment_config(environment)
         
-        logger.info(f"Central District Workflow initialized for {self.client.environment.value} environment")
+        # Convert environment config's CognitoConfig to authentication manager's CognitoConfig
+        auth_cognito_config = AuthCognitoConfig(
+            user_pool_id=self.config.cognito.user_pool_id,
+            client_id=self.config.cognito.client_id,
+            client_secret=self.config.cognito.client_secret,
+            region=self.config.cognito.region,
+            discovery_url=self.config.cognito.discovery_url
+        )
+        
+        # Initialize authentication manager
+        self.auth_manager = AuthenticationManager(auth_cognito_config)
+        
+        # Initialize AgentCore Runtime client
+        from .agentcore_runtime_client import RetryConfig, ConnectionConfig
+        
+        retry_config = RetryConfig(
+            max_retries=self.config.agentcore.max_retries,
+            base_delay=1.0,
+            max_delay=60.0
+        )
+        
+        connection_config = ConnectionConfig(
+            timeout_seconds=self.config.agentcore.timeout_seconds,
+            max_connections=self.config.performance.max_connections,
+            max_connections_per_host=self.config.performance.max_connections_per_host
+        )
+        
+        self.runtime_client = AgentCoreRuntimeClient(
+            region=self.config.agentcore.region,
+            retry_config=retry_config,
+            connection_config=connection_config
+        )
+        
+        # Initialize tools
+        self.search_tool = RestaurantSearchTool(
+            runtime_client=self.runtime_client,
+            search_agent_arn=self.config.agentcore.restaurant_search_agent_arn,
+            auth_manager=self.auth_manager
+        )
+        
+        self.reasoning_tool = RestaurantReasoningTool(
+            runtime_client=self.runtime_client,
+            reasoning_agent_arn=self.config.agentcore.restaurant_reasoning_agent_arn,
+            auth_manager=self.auth_manager
+        )
+        
+        # Initialize monitoring middleware
+        self.monitoring_middleware = get_monitoring_middleware()
+        
+        # Performance tracking (legacy - now handled by monitoring service)
+        self.workflow_call_count = 0
+        self.workflow_error_count = 0
+        self.total_workflow_time = 0.0
+        
+        logger.info(f"Central District Workflow initialized for {self.config.environment} environment")
+        logger.info(f"Using search agent: {self.config.agentcore.restaurant_search_agent_arn}")
+        logger.info(f"Using reasoning agent: {self.config.agentcore.restaurant_reasoning_agent_arn}")
     
-    def set_auth_token(self, token: str) -> None:
-        """Set the JWT authentication token."""
-        self.client.set_auth_token(token)
+    async def initialize_authentication(self) -> None:
+        """Initialize authentication for AgentCore agents."""
+        try:
+            # Ensure authentication manager has valid token
+            await self.auth_manager.get_valid_token()
+            logger.info("Authentication initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize authentication: {e}")
+            raise AuthenticationError(f"Authentication initialization failed: {e}")
     
     async def execute_complete_workflow(self, 
                                       meal_types: Optional[List[str]] = None,
                                       include_recommendations: bool = True,
-                                      max_results: int = 20) -> WorkflowResult:
+                                      max_results: int = 20,
+                                      mbti_type: Optional[str] = None,
+                                      preferences: Optional[Dict[str, Any]] = None,
+                                      user_id: Optional[str] = None,
+                                      session_id: Optional[str] = None,
+                                      request_id: Optional[str] = None,
+                                      correlation_id: Optional[str] = None) -> WorkflowResult:
         """
-        Execute the complete Central district search workflow.
+        Execute the complete Central district search workflow using AgentCore agents.
         
-        This method implements the full pipeline:
-        1. Search for restaurants in Central district
+        This method implements the full pipeline with parallel execution where possible:
+        1. Search for restaurants in Central district using AgentCore search agent
         2. Optionally filter by meal types
-        3. Analyze sentiment data
-        4. Generate recommendations
-        5. Format user-friendly response
+        3. Generate recommendations using AgentCore reasoning agent (parallel when possible)
+        4. Format user-friendly response with comprehensive monitoring
         
         Args:
             meal_types: Optional meal type filters (breakfast, lunch, dinner)
             include_recommendations: Whether to generate recommendations
             max_results: Maximum number of results to process
+            mbti_type: Optional MBTI personality type for personalized recommendations
+            preferences: Optional user preferences for recommendations
+            user_id: Optional user ID for error context
+            session_id: Optional session ID for error context
+            request_id: Optional request ID for error context
+            correlation_id: Optional correlation ID for request tracing
             
         Returns:
-            WorkflowResult with complete pipeline results
+            WorkflowResult with complete pipeline results and performance metrics
         """
-        start_time = datetime.now()
-        
-        try:
-            logger.info(f"Starting Central district workflow with meal_types={meal_types}")
+        # Use monitoring context manager for comprehensive observability
+        async with self.monitoring_middleware.monitoring_context(
+            operation_type=AgentOperationType.CENTRAL_DISTRICT_WORKFLOW,
+            agent_arn="central_district_workflow",
+            user_id=user_id,
+            session_id=session_id,
+            request_id=request_id,
+            correlation_id=correlation_id
+        ) as context:
+            start_time = time.time()
+            workflow_start = datetime.now()
+            
+            try:
+            # Initialize authentication
+            await self.initialize_authentication()
+            
+            # Update performance tracking
+            self.workflow_call_count += 1
+            
+            logger.info(f"Starting AgentCore Central district workflow with meal_types={meal_types} [correlation_id: {context.correlation_id}]")
+            logger.info(f"Parallel execution enabled: {self.config.performance.enable_parallel_execution}")
             
             # Step 1: Search for restaurants in Central district
-            search_result = await self._search_central_restaurants(meal_types)
+            search_result = await self._search_central_restaurants_agentcore(meal_types)
             
-            if not search_result["success"]:
+            if not search_result.success:
                 return WorkflowResult(
                     success=False,
                     restaurants_found=0,
-                    error_message=search_result.get("error_message", "Search failed"),
-                    execution_time=(datetime.now() - start_time).total_seconds()
+                    error_message=search_result.error_message,
+                    execution_time=(datetime.now() - workflow_start).total_seconds(),
+                    search_execution_time_ms=search_result.execution_time_ms
                 )
             
-            restaurants = search_result.get("restaurants", [])
+            restaurants = search_result.restaurants
             
             # Handle no results case
             if not restaurants:
@@ -120,21 +236,32 @@ class CentralDistrictWorkflow:
                     success=True,
                     restaurants_found=0,
                     formatted_response=formatted_response,
-                    execution_time=(datetime.now() - start_time).total_seconds()
+                    execution_time=(datetime.now() - workflow_start).total_seconds(),
+                    search_execution_time_ms=search_result.execution_time_ms
                 )
             
             # Limit results if needed
+            partial_results = False
             if len(restaurants) > max_results:
                 restaurants = restaurants[:max_results]
                 partial_results = True
                 logger.info(f"Limited results to {max_results} restaurants")
-            else:
-                partial_results = False
             
             # Step 2: Generate recommendations if requested
             recommendations = None
+            reasoning_result = None
+            
             if include_recommendations and restaurants:
-                recommendations = await self._generate_recommendations(restaurants)
+                reasoning_result = await self._generate_recommendations_agentcore(
+                    restaurants, mbti_type, preferences
+                )
+                if reasoning_result.success:
+                    recommendations = {
+                        "recommendation": reasoning_result.recommendations[0] if reasoning_result.recommendations else None,
+                        "analysis_summary": reasoning_result.mbti_analysis,
+                        "reasoning": reasoning_result.reasoning,
+                        "confidence_score": reasoning_result.confidence_score
+                    }
             
             # Step 3: Format user-friendly response
             formatted_response = self._format_complete_response(
@@ -142,12 +269,27 @@ class CentralDistrictWorkflow:
                 recommendations=recommendations,
                 meal_types=meal_types,
                 partial_results=partial_results,
-                search_metadata=search_result.get("metadata", {})
+                search_metadata=search_result.search_metadata
             )
             
-            execution_time = (datetime.now() - start_time).total_seconds()
+            execution_time = (datetime.now() - workflow_start).total_seconds()
+            total_time_ms = int((time.time() - start_time) * 1000)
             
-            logger.info(f"Central district workflow completed successfully in {execution_time:.2f}s")
+            # Update performance tracking
+            self.total_workflow_time += total_time_ms
+            
+            # Collect performance metrics
+            performance_metrics = {
+                "search_tool_metrics": self.search_tool.get_performance_metrics(),
+                "reasoning_tool_metrics": self.reasoning_tool.get_performance_metrics() if reasoning_result else None,
+                "workflow_metrics": {
+                    "total_calls": self.workflow_call_count,
+                    "total_errors": self.workflow_error_count,
+                    "average_execution_time_ms": self.total_workflow_time / max(self.workflow_call_count, 1)
+                }
+            }
+            
+            logger.info(f"AgentCore Central district workflow completed successfully in {execution_time:.2f}s")
             logger.info(f"Found {len(restaurants)} restaurants, recommendations: {bool(recommendations)}")
             
             return WorkflowResult(
@@ -156,28 +298,18 @@ class CentralDistrictWorkflow:
                 recommendations=recommendations,
                 formatted_response=formatted_response,
                 partial_results=partial_results,
-                execution_time=execution_time
+                execution_time=execution_time,
+                search_execution_time_ms=search_result.execution_time_ms,
+                reasoning_execution_time_ms=reasoning_result.execution_time_ms if reasoning_result else None,
+                parallel_execution=self.config.performance.enable_parallel_execution,
+                agent_performance_metrics=performance_metrics
             )
             
         except Exception as e:
-            execution_time = (datetime.now() - start_time).total_seconds()
-            logger.error(f"Central district workflow failed after {execution_time:.2f}s: {e}")
+            execution_time = (datetime.now() - workflow_start).total_seconds()
+            self.workflow_error_count += 1
             
-            # Log error with context
-            self.error_handler.log_error(
-                error=e,
-                context=ErrorContext(
-                    operation="execute_complete_workflow",
-                    environment=self.client.environment.value,
-                    additional_data={
-                        "meal_types": meal_types,
-                        "include_recommendations": include_recommendations,
-                        "max_results": max_results,
-                        "execution_time": execution_time
-                    }
-                ),
-                severity=ErrorSeverity.HIGH
-            )
+            logger.error(f"AgentCore Central district workflow failed after {execution_time:.2f}s: {e}")
             
             # Create fallback response
             fallback_response = self._format_error_response(e, meal_types)
@@ -190,71 +322,78 @@ class CentralDistrictWorkflow:
                 execution_time=execution_time
             )
     
-    async def _search_central_restaurants(self, meal_types: Optional[List[str]] = None) -> Dict[str, Any]:
+    async def _search_central_restaurants_agentcore(self, meal_types: Optional[List[str]] = None) -> RestaurantSearchResult:
         """
-        Search for restaurants in Central district with optional meal type filtering.
+        Search for restaurants in Central district using AgentCore search agent.
         
         Args:
             meal_types: Optional meal type filters
             
         Returns:
-            Search results dictionary
+            RestaurantSearchResult object
         """
         try:
             if meal_types:
                 # Use combined search with both district and meal type filters
-                logger.info("Performing combined search for Central district with meal type filters")
-                result = await self.client.search_restaurants_combined(
+                logger.info("Performing AgentCore combined search for Central district with meal type filters")
+                result = await self.search_tool.search_restaurants_combined(
                     districts=self.CENTRAL_DISTRICT_NAMES,
-                    meal_types=meal_types
+                    meal_types=meal_types,
+                    user_id=user_id,
+                    session_id=session_id,
+                    request_id=request_id,
+                    correlation_id=context.correlation_id
                 )
             else:
                 # Use district-only search
-                logger.info("Performing district search for Central district")
-                result = await self.client.search_restaurants_by_district(
-                    districts=self.CENTRAL_DISTRICT_NAMES
+                logger.info("Performing AgentCore district search for Central district")
+                result = await self.search_tool.search_restaurants_by_district(
+                    districts=self.CENTRAL_DISTRICT_NAMES,
+                    user_id=user_id,
+                    session_id=session_id,
+                    request_id=request_id,
+                    correlation_id=context.correlation_id
                 )
             
-            # Validate result structure
-            if not isinstance(result, dict):
-                raise ValueError("Invalid search result format")
+            logger.info(f"AgentCore search completed: found {result.total_count} restaurants")
             
-            if not result.get("success", True):
-                error_info = result.get("error", {})
-                raise GatewayError(f"Search failed: {error_info.get('message', 'Unknown error')}")
-            
-            restaurants = result.get("restaurants", [])
-            metadata = result.get("metadata", {})
-            
-            logger.info(f"Search completed: found {len(restaurants)} restaurants")
-            
-            return {
-                "success": True,
-                "restaurants": restaurants,
-                "metadata": metadata
-            }
+            return result
             
         except Exception as e:
-            logger.error(f"Error searching Central district restaurants: {e}")
-            return {
-                "success": False,
-                "error_message": str(e),
-                "restaurants": [],
-                "metadata": {}
-            }
+            logger.error(f"Error in AgentCore Central district restaurant search: {e}")
+            return RestaurantSearchResult(
+                restaurants=[],
+                total_count=0,
+                search_metadata={
+                    'error': str(e),
+                    'districts_searched': self.CENTRAL_DISTRICT_NAMES,
+                    'meal_types_searched': meal_types,
+                    'operation': 'search_central_restaurants_agentcore'
+                },
+                execution_time_ms=0,
+                success=False,
+                error_message=str(e)
+            )
     
-    async def _generate_recommendations(self, restaurants: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    async def _generate_recommendations_agentcore(
+        self, 
+        restaurants: List[Dict[str, Any]], 
+        mbti_type: Optional[str] = None,
+        preferences: Optional[Dict[str, Any]] = None
+    ) -> RecommendationResult:
         """
-        Generate intelligent recommendations from restaurant data.
+        Generate intelligent recommendations using AgentCore reasoning agent.
         
         Args:
             restaurants: List of restaurant objects with sentiment data
+            mbti_type: Optional MBTI personality type for personalized recommendations
+            preferences: Optional user preferences
             
         Returns:
-            Recommendations dictionary or None if failed
+            RecommendationResult object
         """
         try:
-            logger.info(f"Generating recommendations for {len(restaurants)} restaurants")
+            logger.info(f"Generating AgentCore recommendations for {len(restaurants)} restaurants")
             
             # Validate restaurant data has sentiment information
             valid_restaurants = []
@@ -266,24 +405,212 @@ class CentralDistrictWorkflow:
             
             if not valid_restaurants:
                 logger.warning("No restaurants with valid sentiment data for recommendations")
-                return None
+                return RecommendationResult(
+                    recommendations=[],
+                    reasoning="No restaurants with valid sentiment data available for analysis",
+                    confidence_score=0.0,
+                    mbti_analysis={},
+                    execution_time_ms=0,
+                    success=False,
+                    error_message="No valid restaurant data for recommendations"
+                )
             
-            # Generate recommendations using sentiment_likes method
-            result = await self.client.recommend_restaurants(
-                restaurants=valid_restaurants,
-                ranking_method="sentiment_likes"
-            )
+            # Choose recommendation method based on available data
+            if mbti_type and preferences:
+                # Use MBTI-based recommendations
+                logger.info(f"Using MBTI-based recommendations for type: {mbti_type}")
+                result = await self.reasoning_tool.get_recommendations(
+                    restaurants=valid_restaurants,
+                    mbti_type=mbti_type,
+                    preferences=preferences or {},
+                    ranking_method="sentiment_likes",
+                    user_id=user_id,
+                    session_id=session_id,
+                    request_id=request_id,
+                    correlation_id=context.correlation_id
+                )
+            else:
+                # Use sentiment-based recommendations
+                logger.info("Using sentiment-based recommendations")
+                result = await self.reasoning_tool.analyze_restaurant_sentiment(
+                    restaurants=valid_restaurants,
+                    ranking_method="sentiment_likes",
+                    user_id=user_id,
+                    session_id=session_id,
+                    request_id=request_id,
+                    correlation_id=context.correlation_id
+                )
             
-            if not result.get("success", True):
-                logger.warning("Recommendation generation failed")
-                return None
+            if result.success:
+                logger.info("AgentCore recommendations generated successfully")
+            else:
+                logger.warning(f"AgentCore recommendation generation failed: {result.error_message}")
             
-            logger.info("Recommendations generated successfully")
             return result
             
         except Exception as e:
-            logger.error(f"Error generating recommendations: {e}")
-            return None
+            logger.error(f"Error generating AgentCore recommendations: {e}")
+            return RecommendationResult(
+                recommendations=[],
+                reasoning=f"Error generating recommendations: {str(e)}",
+                confidence_score=0.0,
+                mbti_analysis={},
+                execution_time_ms=0,
+                success=False,
+                error_message=str(e)
+            )
+    
+    async def execute_parallel_workflow(
+        self, 
+        meal_types: Optional[List[str]] = None,
+        mbti_type: Optional[str] = None,
+        preferences: Optional[Dict[str, Any]] = None,
+        max_results: int = 20
+    ) -> WorkflowResult:
+        """
+        Execute workflow with parallel optimization where possible.
+        
+        This method attempts to parallelize independent operations for better performance.
+        Currently, search and reasoning are sequential due to data dependency, but this
+        method provides a framework for future parallel optimizations.
+        
+        Args:
+            meal_types: Optional meal type filters
+            mbti_type: Optional MBTI personality type
+            preferences: Optional user preferences
+            max_results: Maximum number of results to process
+            
+        Returns:
+            WorkflowResult with parallel execution metadata
+        """
+        if not self.config.performance.enable_parallel_execution:
+            logger.info("Parallel execution disabled, falling back to sequential workflow")
+            return await self.execute_complete_workflow(
+                meal_types=meal_types,
+                include_recommendations=True,
+                max_results=max_results,
+                mbti_type=mbti_type,
+                preferences=preferences
+            )
+        
+        start_time = time.time()
+        workflow_start = datetime.now()
+        
+        try:
+            # Initialize authentication
+            await self.initialize_authentication()
+            
+            logger.info("Starting parallel AgentCore workflow execution")
+            
+            # Step 1: Search (must be first due to data dependency)
+            search_result = await self._search_central_restaurants_agentcore(meal_types)
+            
+            if not search_result.success or not search_result.restaurants:
+                # Handle search failure or no results
+                return await self.execute_complete_workflow(
+                    meal_types=meal_types,
+                    include_recommendations=True,
+                    max_results=max_results,
+                    mbti_type=mbti_type,
+                    preferences=preferences
+                )
+            
+            restaurants = search_result.restaurants
+            if len(restaurants) > max_results:
+                restaurants = restaurants[:max_results]
+            
+            # Step 2: Parallel operations (currently only reasoning, but framework for future expansion)
+            tasks = []
+            
+            # Add reasoning task
+            if mbti_type or preferences:
+                reasoning_task = asyncio.create_task(
+                    self._generate_recommendations_agentcore(restaurants, mbti_type, preferences),
+                    name="reasoning_task"
+                )
+                tasks.append(("reasoning", reasoning_task))
+            
+            # Future: Add other parallel tasks here (e.g., additional analysis, caching, etc.)
+            
+            # Execute parallel tasks
+            if tasks:
+                logger.info(f"Executing {len(tasks)} parallel tasks")
+                results = await asyncio.gather(*[task for _, task in tasks], return_exceptions=True)
+                
+                # Process results
+                reasoning_result = None
+                for i, (task_name, _) in enumerate(tasks):
+                    if task_name == "reasoning":
+                        if isinstance(results[i], Exception):
+                            logger.error(f"Reasoning task failed: {results[i]}")
+                            reasoning_result = RecommendationResult(
+                                recommendations=[],
+                                reasoning=f"Parallel reasoning failed: {str(results[i])}",
+                                confidence_score=0.0,
+                                mbti_analysis={},
+                                execution_time_ms=0,
+                                success=False,
+                                error_message=str(results[i])
+                            )
+                        else:
+                            reasoning_result = results[i]
+            else:
+                # No parallel tasks, use basic sentiment analysis
+                reasoning_result = await self._generate_recommendations_agentcore(restaurants)
+            
+            # Format recommendations
+            recommendations = None
+            if reasoning_result and reasoning_result.success:
+                recommendations = {
+                    "recommendation": reasoning_result.recommendations[0] if reasoning_result.recommendations else None,
+                    "analysis_summary": reasoning_result.mbti_analysis,
+                    "reasoning": reasoning_result.reasoning,
+                    "confidence_score": reasoning_result.confidence_score
+                }
+            
+            # Format response
+            formatted_response = self._format_complete_response(
+                restaurants=restaurants,
+                recommendations=recommendations,
+                meal_types=meal_types,
+                partial_results=len(search_result.restaurants) > max_results,
+                search_metadata=search_result.search_metadata
+            )
+            
+            execution_time = (datetime.now() - workflow_start).total_seconds()
+            
+            logger.info(f"Parallel AgentCore workflow completed in {execution_time:.2f}s")
+            
+            return WorkflowResult(
+                success=True,
+                restaurants_found=len(restaurants),
+                recommendations=recommendations,
+                formatted_response=formatted_response,
+                partial_results=len(search_result.restaurants) > max_results,
+                execution_time=execution_time,
+                search_execution_time_ms=search_result.execution_time_ms,
+                reasoning_execution_time_ms=reasoning_result.execution_time_ms if reasoning_result else None,
+                parallel_execution=True,
+                agent_performance_metrics={
+                    "search_tool_metrics": self.search_tool.get_performance_metrics(),
+                    "reasoning_tool_metrics": self.reasoning_tool.get_performance_metrics(),
+                    "parallel_tasks_executed": len(tasks)
+                }
+            )
+            
+        except Exception as e:
+            execution_time = (datetime.now() - workflow_start).total_seconds()
+            logger.error(f"Parallel workflow failed after {execution_time:.2f}s: {e}")
+            
+            # Fallback to sequential workflow
+            logger.info("Falling back to sequential workflow due to parallel execution error")
+            return await self.execute_complete_workflow(
+                meal_types=meal_types,
+                include_recommendations=True,
+                max_results=max_results,
+                mbti_type=mbti_type,
+                preferences=preferences
+            )
     
     def _format_complete_response(self, 
                                 restaurants: List[Dict[str, Any]],
@@ -629,35 +956,251 @@ class CentralDistrictWorkflow:
             response_parts.append(f"... and {count - 5} more restaurants")
         
         return "\n".join(response_parts)
+    
+    def get_workflow_health_status(self) -> Dict[str, Any]:
+        """
+        Get comprehensive health status of the workflow and its components.
+        
+        Returns:
+            Dictionary with health status information
+        """
+        try:
+            # Get tool performance metrics
+            search_metrics = self.search_tool.get_performance_metrics()
+            reasoning_metrics = self.reasoning_tool.get_performance_metrics()
+            
+            # Calculate workflow health scores
+            search_health = "healthy" if search_metrics["error_rate"] < 0.1 else "degraded" if search_metrics["error_rate"] < 0.3 else "unhealthy"
+            reasoning_health = "healthy" if reasoning_metrics["error_rate"] < 0.1 else "degraded" if reasoning_metrics["error_rate"] < 0.3 else "unhealthy"
+            
+            # Overall workflow health
+            workflow_error_rate = self.workflow_error_count / max(self.workflow_call_count, 1)
+            workflow_health = "healthy" if workflow_error_rate < 0.1 else "degraded" if workflow_error_rate < 0.3 else "unhealthy"
+            
+            return {
+                "overall_health": workflow_health,
+                "timestamp": datetime.now().isoformat(),
+                "environment": self.config.environment,
+                "components": {
+                    "search_agent": {
+                        "health": search_health,
+                        "agent_arn": self.config.agentcore.restaurant_search_agent_arn,
+                        "metrics": search_metrics
+                    },
+                    "reasoning_agent": {
+                        "health": reasoning_health,
+                        "agent_arn": self.config.agentcore.restaurant_reasoning_agent_arn,
+                        "metrics": reasoning_metrics
+                    },
+                    "workflow": {
+                        "health": workflow_health,
+                        "total_calls": self.workflow_call_count,
+                        "total_errors": self.workflow_error_count,
+                        "error_rate": workflow_error_rate,
+                        "average_execution_time_ms": self.total_workflow_time / max(self.workflow_call_count, 1)
+                    }
+                },
+                "configuration": {
+                    "parallel_execution_enabled": self.config.performance.enable_parallel_execution,
+                    "caching_enabled": self.config.performance.enable_caching,
+                    "monitoring_enabled": self.config.monitoring.enable_metrics,
+                    "debug_mode": self.config.debug_mode
+                }
+            }
+            
+        except Exception as e:
+            logger.error(f"Error getting workflow health status: {e}")
+            return {
+                "overall_health": "unknown",
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    async def validate_agent_connectivity(self) -> Dict[str, Any]:
+        """
+        Validate connectivity to both AgentCore agents.
+        
+        Returns:
+            Dictionary with connectivity test results
+        """
+        results = {
+            "timestamp": datetime.now().isoformat(),
+            "environment": self.config.environment,
+            "tests": {}
+        }
+        
+        try:
+            # Test search agent connectivity
+            logger.info("Testing search agent connectivity")
+            search_test_start = time.time()
+            
+            try:
+                search_test_result = await self.search_tool.search_restaurants_by_district(["Central district"])
+                search_test_time = int((time.time() - search_test_start) * 1000)
+                
+                results["tests"]["search_agent"] = {
+                    "status": "success" if search_test_result.success else "failed",
+                    "response_time_ms": search_test_time,
+                    "agent_arn": self.config.agentcore.restaurant_search_agent_arn,
+                    "error": search_test_result.error_message if not search_test_result.success else None
+                }
+            except Exception as e:
+                search_test_time = int((time.time() - search_test_start) * 1000)
+                results["tests"]["search_agent"] = {
+                    "status": "error",
+                    "response_time_ms": search_test_time,
+                    "agent_arn": self.config.agentcore.restaurant_search_agent_arn,
+                    "error": str(e)
+                }
+            
+            # Test reasoning agent connectivity
+            logger.info("Testing reasoning agent connectivity")
+            reasoning_test_start = time.time()
+            
+            try:
+                # Create minimal test data
+                test_restaurants = [{
+                    "name": "Test Restaurant",
+                    "sentiment": {"likes": 10, "dislikes": 2, "neutral": 3}
+                }]
+                
+                reasoning_test_result = await self.reasoning_tool.analyze_restaurant_sentiment(
+                    restaurants=test_restaurants,
+                    ranking_method="sentiment_likes"
+                )
+                reasoning_test_time = int((time.time() - reasoning_test_start) * 1000)
+                
+                results["tests"]["reasoning_agent"] = {
+                    "status": "success" if reasoning_test_result.success else "failed",
+                    "response_time_ms": reasoning_test_time,
+                    "agent_arn": self.config.agentcore.restaurant_reasoning_agent_arn,
+                    "error": reasoning_test_result.error_message if not reasoning_test_result.success else None
+                }
+            except Exception as e:
+                reasoning_test_time = int((time.time() - reasoning_test_start) * 1000)
+                results["tests"]["reasoning_agent"] = {
+                    "status": "error",
+                    "response_time_ms": reasoning_test_time,
+                    "agent_arn": self.config.agentcore.restaurant_reasoning_agent_arn,
+                    "error": str(e)
+                }
+            
+            # Overall connectivity status
+            search_ok = results["tests"]["search_agent"]["status"] == "success"
+            reasoning_ok = results["tests"]["reasoning_agent"]["status"] == "success"
+            
+            if search_ok and reasoning_ok:
+                results["overall_status"] = "all_agents_healthy"
+            elif search_ok or reasoning_ok:
+                results["overall_status"] = "partial_connectivity"
+            else:
+                results["overall_status"] = "no_connectivity"
+            
+            logger.info(f"Agent connectivity test completed: {results['overall_status']}")
+            
+        except Exception as e:
+            logger.error(f"Error during agent connectivity validation: {e}")
+            results["overall_status"] = "test_failed"
+            results["error"] = str(e)
+        
+        return results
+    
+    def reset_performance_metrics(self) -> None:
+        """Reset workflow performance metrics."""
+        self.workflow_call_count = 0
+        self.workflow_error_count = 0
+        self.total_workflow_time = 0.0
+        logger.info("Workflow performance metrics reset")
 
 
-# Convenience function for easy workflow execution
-async def search_central_district_restaurants(meal_types: Optional[List[str]] = None,
-                                            include_recommendations: bool = True,
-                                            environment: str = None,
-                                            auth_token: str = None) -> WorkflowResult:
+# Convenience functions for easy workflow execution
+async def search_central_district_restaurants(
+    meal_types: Optional[List[str]] = None,
+    include_recommendations: bool = True,
+    environment: str = None,
+    mbti_type: Optional[str] = None,
+    preferences: Optional[Dict[str, Any]] = None,
+    max_results: int = 20,
+    use_parallel_execution: bool = None
+) -> WorkflowResult:
     """
-    Convenience function to execute the Central district search workflow.
+    Convenience function to execute the Central district search workflow using AgentCore.
     
     Args:
         meal_types: Optional meal type filters (breakfast, lunch, dinner)
         include_recommendations: Whether to generate recommendations
         environment: Target environment (development, staging, production)
-        auth_token: JWT authentication token (optional)
+        mbti_type: Optional MBTI personality type for personalized recommendations
+        preferences: Optional user preferences for recommendations
+        max_results: Maximum number of results to process
+        use_parallel_execution: Override parallel execution setting (None = use config)
         
     Returns:
-        WorkflowResult with complete pipeline results
+        WorkflowResult with complete pipeline results and performance metrics
     """
-    workflow = CentralDistrictWorkflow(environment=environment, auth_token=auth_token)
-    return await workflow.execute_complete_workflow(
-        meal_types=meal_types,
-        include_recommendations=include_recommendations
-    )
+    workflow = CentralDistrictWorkflow(environment=environment)
+    
+    # Override parallel execution setting if specified
+    if use_parallel_execution is not None:
+        workflow.config.performance.enable_parallel_execution = use_parallel_execution
+    
+    if workflow.config.performance.enable_parallel_execution and (mbti_type or preferences):
+        # Use parallel execution for better performance
+        return await workflow.execute_parallel_workflow(
+            meal_types=meal_types,
+            mbti_type=mbti_type,
+            preferences=preferences,
+            max_results=max_results
+        )
+    else:
+        # Use sequential execution
+        return await workflow.execute_complete_workflow(
+            meal_types=meal_types,
+            include_recommendations=include_recommendations,
+            max_results=max_results,
+            mbti_type=mbti_type,
+            preferences=preferences
+        )
+
+
+async def validate_central_district_workflow_health(environment: str = None) -> Dict[str, Any]:
+    """
+    Convenience function to validate the health of the Central district workflow.
+    
+    Args:
+        environment: Target environment (development, staging, production)
+        
+    Returns:
+        Dictionary with comprehensive health status
+    """
+    try:
+        workflow = CentralDistrictWorkflow(environment=environment)
+        
+        # Get health status
+        health_status = workflow.get_workflow_health_status()
+        
+        # Validate agent connectivity
+        connectivity_results = await workflow.validate_agent_connectivity()
+        
+        return {
+            "health_status": health_status,
+            "connectivity_tests": connectivity_results,
+            "validation_timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Error validating workflow health: {e}")
+        return {
+            "error": str(e),
+            "validation_timestamp": datetime.now().isoformat(),
+            "status": "validation_failed"
+        }
 
 
 # Export main classes and functions
 __all__ = [
     'CentralDistrictWorkflow',
     'WorkflowResult',
-    'search_central_district_restaurants'
+    'search_central_district_restaurants',
+    'validate_central_district_workflow_health'
 ]

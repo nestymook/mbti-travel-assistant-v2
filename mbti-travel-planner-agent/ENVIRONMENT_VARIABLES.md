@@ -1,6 +1,6 @@
 # Environment Variables Documentation
 
-This document describes all environment variables used by the MBTI Travel Planner Agent with HTTP Gateway Integration.
+This document describes all environment variables used by the MBTI Travel Planner Agent with AgentCore Runtime Integration.
 
 ## Core Application Settings
 
@@ -16,58 +16,91 @@ This document describes all environment variables used by the MBTI Travel Planne
 - **Required**: Yes
 - **Example**: `AWS_REGION=us-east-1`
 
-## Gateway HTTP Client Configuration
+## AgentCore Runtime Configuration
 
-### GATEWAY_BASE_URL
-- **Description**: Base URL for the agentcore-gateway-mcp-tools service
-- **Default**: Environment-specific (see gateway.json)
-- **Required**: No (uses environment defaults)
+### RESTAURANT_SEARCH_AGENT_ARN
+- **Description**: ARN of the restaurant search AgentCore agent
+- **Default**: Environment-specific
+- **Required**: Yes
 - **Examples**:
-  - Development: `http://localhost:8080`
-  - Staging: `https://agentcore-gateway-mcp-tools-staging.bedrock-agentcore.us-east-1.amazonaws.com`
-  - Production: `https://agentcore_gateway_mcp_tools-UspJsMG7Fi.bedrock-agentcore.us-east-1.amazonaws.com`
+  - Development: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_agent-dev`
+  - Production: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_agent-mN8bgq2Y1j`
 
-### GATEWAY_TIMEOUT
-- **Description**: HTTP request timeout in seconds
+### RESTAURANT_REASONING_AGENT_ARN
+- **Description**: ARN of the restaurant reasoning AgentCore agent
+- **Default**: Environment-specific
+- **Required**: Yes
+- **Examples**:
+  - Development: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_reasoning_agent-dev`
+  - Production: `arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_result_reasoning_agent-MSns5D6SLE`
+
+### AGENTCORE_REGION
+- **Description**: AWS region for AgentCore Runtime API calls
+- **Default**: `us-east-1`
+- **Required**: No
+- **Example**: `AGENTCORE_REGION=us-east-1`
+
+### AGENTCORE_TIMEOUT
+- **Description**: AgentCore agent invocation timeout in seconds
 - **Default**: Environment-specific (30/45/60)
 - **Required**: No
-- **Example**: `GATEWAY_TIMEOUT=60`
+- **Example**: `AGENTCORE_TIMEOUT=60`
 
-### GATEWAY_MAX_RETRIES
-- **Description**: Maximum number of retry attempts for failed requests
+### AGENTCORE_MAX_RETRIES
+- **Description**: Maximum number of retry attempts for failed agent calls
 - **Default**: Environment-specific (2/3/3)
 - **Required**: No
-- **Example**: `GATEWAY_MAX_RETRIES=3`
+- **Example**: `AGENTCORE_MAX_RETRIES=3`
 
-### GATEWAY_AUTH_REQUIRED
-- **Description**: Whether gateway authentication is required
-- **Default**: Environment-specific (false/true/true)
-- **Required**: No
-- **Example**: `GATEWAY_AUTH_REQUIRED=true`
-
-### GATEWAY_AUTH_TOKEN
-- **Description**: Authentication token for gateway requests (if required)
-- **Default**: None
-- **Required**: Only if GATEWAY_AUTH_REQUIRED=true
-- **Example**: `GATEWAY_AUTH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
-
-### GATEWAY_CONNECTION_POOL_SIZE
-- **Description**: HTTP connection pool size for gateway client
+### AGENTCORE_CONNECTION_POOL_SIZE
+- **Description**: Connection pool size for AgentCore Runtime client
 - **Default**: Environment-specific (10/20/50)
 - **Required**: No
-- **Example**: `GATEWAY_CONNECTION_POOL_SIZE=20`
+- **Example**: `AGENTCORE_CONNECTION_POOL_SIZE=20`
 
-### GATEWAY_KEEP_ALIVE_TIMEOUT
-- **Description**: Keep-alive timeout for HTTP connections in seconds
+### AGENTCORE_KEEP_ALIVE_TIMEOUT
+- **Description**: Keep-alive timeout for AgentCore connections in seconds
 - **Default**: Environment-specific (30/60/120)
 - **Required**: No
-- **Example**: `GATEWAY_KEEP_ALIVE_TIMEOUT=60`
+- **Example**: `AGENTCORE_KEEP_ALIVE_TIMEOUT=60`
 
-### GATEWAY_HEALTH_CHECK_ENDPOINT
-- **Description**: Health check endpoint path on gateway service
-- **Default**: `/health`
+## Cognito Authentication Configuration
+
+### COGNITO_USER_POOL_ID
+- **Description**: Cognito User Pool ID for JWT authentication
+- **Default**: `us-east-1_KePRX24Bn`
+- **Required**: Yes
+- **Example**: `COGNITO_USER_POOL_ID=us-east-1_KePRX24Bn`
+
+### COGNITO_CLIENT_ID
+- **Description**: Cognito App Client ID
+- **Default**: `1ofgeckef3po4i3us4j1m4chvd`
+- **Required**: Yes
+- **Example**: `COGNITO_CLIENT_ID=1ofgeckef3po4i3us4j1m4chvd`
+
+### COGNITO_CLIENT_SECRET
+- **Description**: Cognito App Client Secret for authentication
+- **Default**: None
+- **Required**: Yes
+- **Example**: `COGNITO_CLIENT_SECRET=t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9`
+
+### COGNITO_REGION
+- **Description**: AWS region for Cognito service
+- **Default**: `us-east-1`
 - **Required**: No
-- **Example**: `GATEWAY_HEALTH_CHECK_ENDPOINT=/health`
+- **Example**: `COGNITO_REGION=us-east-1`
+
+### COGNITO_DISCOVERY_URL
+- **Description**: OIDC discovery URL for JWT validation
+- **Default**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
+- **Required**: No
+- **Example**: `COGNITO_DISCOVERY_URL=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration`
+
+### JWT_TOKEN_REFRESH_BUFFER
+- **Description**: Buffer time in seconds before token expiry to refresh
+- **Default**: `300` (5 minutes)
+- **Required**: No
+- **Example**: `JWT_TOKEN_REFRESH_BUFFER=300`
 
 ## Agent Model Configuration
 
@@ -143,23 +176,55 @@ This document describes all environment variables used by the MBTI Travel Planne
 
 ## Performance Configuration
 
-### HTTP_CLIENT_POOL_CONNECTIONS
-- **Description**: Number of connection pools for HTTP client
+### ENABLE_RESPONSE_CACHING
+- **Description**: Enable response caching for repeated queries
+- **Default**: Environment-specific (false/true/true)
+- **Required**: No
+- **Example**: `ENABLE_RESPONSE_CACHING=true`
+
+### RESPONSE_CACHE_TTL
+- **Description**: Response cache time-to-live in seconds
+- **Default**: `300` (5 minutes)
+- **Required**: No
+- **Example**: `RESPONSE_CACHE_TTL=300`
+
+### ENABLE_PARALLEL_EXECUTION
+- **Description**: Enable parallel execution for independent agent calls
+- **Default**: Environment-specific (false/true/true)
+- **Required**: No
+- **Example**: `ENABLE_PARALLEL_EXECUTION=true`
+
+### CONNECTION_POOL_MAX_SIZE
+- **Description**: Maximum size of AgentCore connection pool
 - **Default**: Environment-specific (10/20/50)
 - **Required**: No
-- **Example**: `HTTP_CLIENT_POOL_CONNECTIONS=20`
+- **Example**: `CONNECTION_POOL_MAX_SIZE=20`
 
-### HTTP_CLIENT_POOL_MAXSIZE
-- **Description**: Maximum size of each connection pool
-- **Default**: Environment-specific (10/20/50)
-- **Required**: No
-- **Example**: `HTTP_CLIENT_POOL_MAXSIZE=20`
-
-### HTTP_CLIENT_MAX_KEEPALIVE_CONNECTIONS
-- **Description**: Maximum keep-alive connections
+### CONNECTION_POOL_MAX_OVERFLOW
+- **Description**: Maximum overflow connections beyond pool size
 - **Default**: Environment-specific (5/10/25)
 - **Required**: No
-- **Example**: `HTTP_CLIENT_MAX_KEEPALIVE_CONNECTIONS=10`
+- **Example**: `CONNECTION_POOL_MAX_OVERFLOW=10`
+
+## Circuit Breaker Configuration
+
+### CIRCUIT_BREAKER_FAILURE_THRESHOLD
+- **Description**: Number of failures before circuit breaker opens
+- **Default**: `5`
+- **Required**: No
+- **Example**: `CIRCUIT_BREAKER_FAILURE_THRESHOLD=5`
+
+### CIRCUIT_BREAKER_RECOVERY_TIMEOUT
+- **Description**: Time in seconds before attempting to close circuit breaker
+- **Default**: `60`
+- **Required**: No
+- **Example**: `CIRCUIT_BREAKER_RECOVERY_TIMEOUT=60`
+
+### CIRCUIT_BREAKER_EXPECTED_EXCEPTION
+- **Description**: Exception type that triggers circuit breaker
+- **Default**: `AgentInvocationError`
+- **Required**: No
+- **Example**: `CIRCUIT_BREAKER_EXPECTED_EXCEPTION=AgentInvocationError`
 
 ## Monitoring Configuration (Staging/Production Only)
 
@@ -169,11 +234,17 @@ This document describes all environment variables used by the MBTI Travel Planne
 - **Required**: No
 - **Example**: `ENABLE_PERFORMANCE_MONITORING=true`
 
-### ENABLE_REQUEST_TRACING
-- **Description**: Enable HTTP request tracing
+### ENABLE_AGENTCORE_REQUEST_TRACING
+- **Description**: Enable AgentCore API request tracing
 - **Default**: `false` (development), `true` (staging/production)
 - **Required**: No
-- **Example**: `ENABLE_REQUEST_TRACING=true`
+- **Example**: `ENABLE_AGENTCORE_REQUEST_TRACING=true`
+
+### ENABLE_JWT_DEBUG_LOGGING
+- **Description**: Enable detailed JWT authentication logging
+- **Default**: `false`
+- **Required**: No
+- **Example**: `ENABLE_JWT_DEBUG_LOGGING=true`
 
 ### ENABLE_METRICS_COLLECTION
 - **Description**: Enable comprehensive metrics collection
@@ -197,39 +268,43 @@ This document describes all environment variables used by the MBTI Travel Planne
 
 ## Environment-Specific Configuration Files
 
-The agent supports three deployment environments, each with its own configuration:
+The agent supports three deployment environments, each with its own AgentCore configuration:
 
 ### Development Environment
-- **File**: `config/environments/development.env`
-- **Gateway**: Local development server (http://localhost:8080)
-- **Authentication**: Disabled
+- **File**: `config/environments/agentcore_development.env`
+- **Agents**: Development AgentCore agents
+- **Authentication**: Cognito JWT with development settings
 - **Logging**: Debug level, human-readable format
-- **Monitoring**: Basic health checks only
+- **Monitoring**: Basic health checks and connectivity tests
+- **Performance**: Basic connection pooling
 
 ### Staging Environment
-- **File**: `config/environments/staging.env`
-- **Gateway**: Staging deployment on AgentCore
-- **Authentication**: JWT required
+- **File**: `config/environments/agentcore_staging.env`
+- **Agents**: Staging AgentCore agents
+- **Authentication**: Full Cognito JWT authentication
 - **Logging**: Info level, JSON format
-- **Monitoring**: Performance monitoring enabled
+- **Monitoring**: Performance monitoring and circuit breaker tracking
+- **Performance**: Enhanced connection pooling and caching
 
 ### Production Environment
-- **File**: `config/environments/production.env`
-- **Gateway**: Production deployment on AgentCore
-- **Authentication**: JWT required
-- **Logging**: Info level, JSON format, structured
-- **Monitoring**: Full monitoring and metrics collection
-- **Security**: Request/response validation enabled
+- **File**: `config/environments/agentcore_production.env`
+- **Agents**: Production AgentCore agents (mN8bgq2Y1j, MSns5D6SLE)
+- **Authentication**: Full Cognito JWT with automatic refresh
+- **Logging**: Info level, JSON format, structured with correlation IDs
+- **Monitoring**: Full monitoring, metrics collection, and observability
+- **Performance**: Optimized connection pooling, caching, and parallel execution
+- **Security**: Circuit breaker patterns and graceful fallback responses
 
 ## Configuration Loading Priority
 
 The agent loads configuration in the following order (later values override earlier ones):
 
 1. Default values in code
-2. Environment-specific configuration file (`config/environments/{ENVIRONMENT}.env`)
-3. Gateway configuration file (`config/environments/gateway.json`)
-4. Environment variables
-5. Runtime configuration (if applicable)
+2. Environment-specific configuration file (`config/environments/agentcore_{ENVIRONMENT}.env`)
+3. AgentCore configuration file (`config/agentcore_environment_config.py`)
+4. Cognito configuration file (`config/cognito_config.json`)
+5. Environment variables
+6. Runtime configuration (if applicable)
 
 ## Example Configuration
 
@@ -237,7 +312,8 @@ The agent loads configuration in the following order (later values override earl
 ```bash
 export ENVIRONMENT=development
 export LOG_LEVEL=DEBUG
-export GATEWAY_TIMEOUT=30
+export COGNITO_CLIENT_SECRET="your-dev-client-secret"
+export ENABLE_JWT_DEBUG_LOGGING=true
 export ENABLE_JSON_LOGGING=false
 ```
 
@@ -245,29 +321,47 @@ export ENABLE_JSON_LOGGING=false
 ```bash
 export ENVIRONMENT=production
 export LOG_LEVEL=INFO
-export GATEWAY_AUTH_TOKEN="your-jwt-token-here"
+export COGNITO_CLIENT_SECRET="your-production-client-secret"
 export ENABLE_PERFORMANCE_MONITORING=true
 export ENABLE_METRICS_COLLECTION=true
+export ENABLE_RESPONSE_CACHING=true
+export ENABLE_PARALLEL_EXECUTION=true
 ```
 
 ## Validation
 
 The agent validates all configuration on startup and will fail with clear error messages if:
 
-- Required environment variables are missing
-- Configuration values are invalid (e.g., negative timeouts)
-- Gateway endpoints are unreachable
-- Authentication tokens are invalid (if required)
+- Required environment variables are missing (agent ARNs, Cognito settings)
+- Configuration values are invalid (e.g., negative timeouts, invalid ARNs)
+- AgentCore agents are unreachable or invalid
+- Cognito authentication configuration is invalid
+- JWT token refresh fails
 
-## Migration from MCP Client
+## Migration from HTTP Gateway
 
-When migrating from the previous MCP client implementation, the following environment variables are **no longer needed**:
+When migrating from the previous HTTP gateway implementation, the following environment variables are **no longer needed**:
 
-- `MCP_SERVER_URL`
-- `MCP_AUTH_TOKEN`
-- `COGNITO_USER_POOL_ID`
-- `COGNITO_CLIENT_ID`
+- `GATEWAY_BASE_URL`
+- `GATEWAY_AUTH_TOKEN`
+- `GATEWAY_TIMEOUT`
+- `GATEWAY_MAX_RETRIES`
+- `GATEWAY_AUTH_REQUIRED`
+- `GATEWAY_CONNECTION_POOL_SIZE`
+- `GATEWAY_KEEP_ALIVE_TIMEOUT`
+- `GATEWAY_HEALTH_CHECK_ENDPOINT`
+
+These have been replaced with the AgentCore Runtime configuration described above.
+
+### New Required Variables for AgentCore Integration
+
+- `RESTAURANT_SEARCH_AGENT_ARN`
+- `RESTAURANT_REASONING_AGENT_ARN`
 - `COGNITO_CLIENT_SECRET`
-- `JWT_DISCOVERY_URL`
 
-These have been replaced with the simpler HTTP gateway configuration described above.
+### Enhanced Variables for Better Performance
+
+- `ENABLE_RESPONSE_CACHING`
+- `ENABLE_PARALLEL_EXECUTION`
+- `CIRCUIT_BREAKER_FAILURE_THRESHOLD`
+- `ENABLE_AGENTCORE_REQUEST_TRACING`
