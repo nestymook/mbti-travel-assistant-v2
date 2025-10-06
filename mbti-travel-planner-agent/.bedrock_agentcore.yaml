@@ -26,17 +26,6 @@ agents:
       project_name: null
       execution_role: null
       source_bucket: null
-    memory:
-      mode: STM_ONLY
-      memory_id: null
-      memory_arn: null
-      memory_name: mbti_travel_planner_agent_memory
-      event_expiry_days: 30
-      first_invoke_memory_check_done: false
-    authorizer_configuration:
-      customJWTAuthorizer:
-        allowedClients:
-        - 1ofgeckef3po4i3us4j1m4chvd
-        discoveryUrl: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration
+    authorizer_configuration: null
     request_header_configuration: null
     oauth_configuration: null

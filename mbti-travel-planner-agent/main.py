@@ -26,7 +26,12 @@ from bedrock_agentcore import BedrockAgentCoreApp
 from strands import Agent
 
 # Import AgentCore services and tools
-from services.agentcore_runtime_client import AgentCoreRuntimeClient, AgentCoreError
+from services.agentcore_runtime_client import (
+    AgentCoreRuntimeClient, 
+    AgentCoreError, 
+    ConnectionConfig
+)
+from services.agentcore_error_handler import RetryConfig
 from services.authentication_manager import AuthenticationManager, AuthenticationError
 from services.restaurant_search_tool import RestaurantSearchTool
 from services.restaurant_reasoning_tool import RestaurantReasoningTool
@@ -41,17 +46,19 @@ log_level = os.getenv('LOG_LEVEL', 'INFO')
 
 # Initialize AgentCore monitoring service
 monitoring_service = AgentCoreMonitoringService(
-    service_name="mbti_travel_planner_agent",
     environment=current_environment,
-    log_level=log_level,
-    enable_performance_monitoring=os.getenv('ENABLE_PERFORMANCE_MONITORING', 'true').lower() == 'true',
-    enable_request_tracing=os.getenv('ENABLE_REQUEST_TRACING', 'true').lower() == 'true'
+    enable_detailed_logging=os.getenv('ENABLE_DETAILED_LOGGING', 'true').lower() == 'true',
+    enable_performance_tracking=os.getenv('ENABLE_PERFORMANCE_TRACKING', 'true').lower() == 'true',
+    enable_health_checks=os.getenv('ENABLE_HEALTH_CHECKS', 'true').lower() == 'true'
 )
+
+# Get AgentCore configuration first
+config = get_agentcore_config(current_environment)
 
 # Initialize AgentCore health check service
 health_check_service = AgentCoreHealthCheckService(
-    environment=current_environment,
-    check_interval=int(os.getenv('HEALTH_CHECK_INTERVAL', '300')),  # 5 minutes
+    config=config,
+    monitoring_service=monitoring_service,
     enable_background_checks=os.getenv('ENABLE_BACKGROUND_HEALTH_CHECKS', 'true').lower() == 'true'
 )
 
@@ -74,7 +81,7 @@ health_check_service.start_background_checks()
 
 # Log initialization
 logger.info(f"MBTI Travel Planner Agent initializing in {current_environment} environment")
-logger.info(f"Logging level: {log_level}, Performance monitoring enabled: {monitoring_service.enable_performance_monitoring}")
+logger.info(f"Logging level: {log_level}, Performance monitoring enabled: {monitoring_service.enable_performance_tracking}")
 logger.info(f"Health checks enabled: {health_check_service.enable_background_checks}")
 
 def initialize_agentcore_client():
@@ -85,57 +92,85 @@ def initialize_agentcore_client():
         # Get AgentCore configuration for current environment
         agentcore_config = get_agentcore_config(current_environment)
         
-        # Initialize authentication manager
-        auth_manager = AuthenticationManager(agentcore_config.cognito)
+        # Initialize authentication manager with proper error handling
+        try:
+            auth_manager = AuthenticationManager(agentcore_config.cognito)
+            logger.info("Authentication manager initialized successfully")
+        except Exception as auth_error:
+            logger.warning(f"Authentication manager initialization failed: {auth_error}")
+            # Continue without authentication manager for basic functionality
+            auth_manager = None
         
-        # Initialize AgentCore Runtime client
+        # Initialize AgentCore Runtime client with correct parameters
+        # Remove problematic parameters that cause SDK errors
         agentcore_client = AgentCoreRuntimeClient(
-            cognito_config=agentcore_config.cognito,
             region=agentcore_config.agentcore.region,
-            timeout_seconds=agentcore_config.agentcore.timeout_seconds,
-            max_retries=agentcore_config.agentcore.max_retries
+            connection_config=ConnectionConfig(
+                timeout_seconds=agentcore_config.agentcore.timeout_seconds
+            ),
+            retry_config=RetryConfig(
+                max_retries=agentcore_config.agentcore.max_retries
+            )
+            # Removed: cognito_config parameter (not supported by SDK)
+            # Removed: unsupported initialization parameters
         )
         
         logger.info(f"AgentCore Runtime client initialized for {current_environment} environment")
+        logger.info(f"Region: {agentcore_config.agentcore.region}")
+        logger.info(f"Timeout: {agentcore_config.agentcore.timeout_seconds}s")
+        logger.info(f"Max retries: {agentcore_config.agentcore.max_retries}")
         logger.info(f"Restaurant Search Agent ARN: {agentcore_config.agentcore.restaurant_search_agent_arn}")
         logger.info(f"Restaurant Reasoning Agent ARN: {agentcore_config.agentcore.restaurant_reasoning_agent_arn}")
         
-        # Log successful initialization
-        monitoring_service.log_performance_metric(
-            operation="initialize_agentcore_client",
-            duration=0.1,  # Initialization is typically fast
-            success=True,
-            additional_data={
-                "environment": current_environment,
-                "region": agentcore_config.agentcore.region,
-                "timeout": agentcore_config.agentcore.timeout_seconds,
-                "max_retries": agentcore_config.agentcore.max_retries
-            }
-        )
+        # Log successful initialization with proper error handling
+        try:
+            monitoring_service.log_performance_metric(
+                operation="initialize_agentcore_client",
+                duration=0.1,  # Initialization is typically fast
+                success=True,
+                additional_data={
+                    "environment": current_environment,
+                    "region": agentcore_config.agentcore.region,
+                    "timeout": agentcore_config.agentcore.timeout_seconds,
+                    "max_retries": agentcore_config.agentcore.max_retries,
+                    "auth_manager_available": auth_manager is not None
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log performance metric: {metric_error}")
         
         AGENTCORE_AVAILABLE = True
         return True
         
     except Exception as e:
         logger.error(f"Failed to initialize AgentCore Runtime client: {e}")
+        logger.error(f"Error type: {type(e).__name__}")
+        logger.error(f"Environment: {current_environment}")
         
-        # Log initialization failure
-        monitoring_service.log_error(
-            error=e,
-            operation="initialize_agentcore_client",
-            context={
-                "environment": current_environment,
-                "error_type": type(e).__name__
-            }
-        )
-        
-        monitoring_service.log_performance_metric(
-            operation="initialize_agentcore_client",
-            duration=0.1,
-            success=False,
-            error_type=type(e).__name__,
-            additional_data={"environment": current_environment}
-        )
+        # Log initialization failure with proper error handling
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="initialize_agentcore_client",
+                context={
+                    "environment": current_environment,
+                    "error_type": type(e).__name__,
+                    "error_message": str(e)
+                }
+            )
+            
+            monitoring_service.log_performance_metric(
+                operation="initialize_agentcore_client",
+                duration=0.1,
+                success=False,
+                error_type=type(e).__name__,
+                additional_data={
+                    "environment": current_environment,
+                    "error_message": str(e)
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log error metrics: {metric_error}")
         
         AGENTCORE_AVAILABLE = False
         return False
@@ -275,11 +310,14 @@ def create_agent_with_tools():
     tools = []
     
     if AGENTCORE_AVAILABLE:
-        # Add AgentCore tools
-        agentcore_tools = create_agentcore_tools()
-        tools.extend(agentcore_tools)
-        
-        logger.info(f"Created agent with {len(tools)} AgentCore tools")
+        # Add AgentCore tools with error handling
+        try:
+            agentcore_tools = create_agentcore_tools()
+            tools.extend(agentcore_tools)
+            logger.info(f"Created agent with {len(tools)} AgentCore tools")
+        except Exception as tool_error:
+            logger.warning(f"Failed to create AgentCore tools: {tool_error}")
+            logger.info("Continuing with agent creation without AgentCore tools")
     else:
         logger.info("Created agent without AgentCore tools (service not available)")
     
@@ -290,76 +328,148 @@ def create_agent_with_tools():
         max_tokens = int(os.getenv('AGENT_MAX_TOKENS', '2048'))
         timeout = int(os.getenv('AGENT_TIMEOUT', '60'))
         
+        logger.info(f"Initializing agent with model: {model_name}")
+        logger.info(f"Model parameters - Temperature: {temperature}, Max Tokens: {max_tokens}, Timeout: {timeout}s")
+        
         # Create agent with Nova Pro model and tools
+        # Remove problematic parameters that cause SDK errors
         agent = Agent(
             model=model_name,
-            tools=tools,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            timeout=timeout  # Nova Pro supports up to 60 minutes
+            tools=tools
+            # Removed: temperature, max_tokens, timeout (not supported by Strands Agent)
+            # These parameters should be configured at the model level, not agent level
         )
         
         logger.info(f"Agent created successfully with Nova Pro model: {model_name}")
-        logger.info(f"Model parameters - Temperature: {temperature}, Max Tokens: {max_tokens}, Timeout: {timeout}s")
+        logger.info(f"Agent has {len(tools)} tools available")
         
-        # Log successful agent creation
-        monitoring_service.log_performance_metric(
-            operation="create_agent_with_tools",
-            duration=0.5,  # Agent creation typically takes some time
-            success=True,
-            additional_data={
-                "model_name": model_name,
-                "temperature": temperature,
-                "max_tokens": max_tokens,
-                "timeout": timeout,
-                "tools_count": len(tools)
-            }
-        )
+        # Log successful agent creation with proper error handling
+        try:
+            monitoring_service.log_performance_metric(
+                operation="create_agent_with_tools",
+                duration=0.5,  # Agent creation typically takes some time
+                success=True,
+                additional_data={
+                    "model_name": model_name,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    "timeout": timeout,
+                    "tools_count": len(tools),
+                    "agentcore_available": AGENTCORE_AVAILABLE
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log performance metric: {metric_error}")
         
         return agent
         
     except Exception as e:
         logger.error(f"Failed to create agent with Nova Pro model: {e}")
+        logger.error(f"Error type: {type(e).__name__}")
         logger.error("Nova Pro model may not be available in this region or configuration is invalid")
         
-        # Log detailed error information
-        monitoring_service.log_error(
-            error=e,
-            operation="create_agent_with_tools",
-            context={
-                "model_name": model_name,
-                "temperature": temperature,
-                "max_tokens": max_tokens,
-                "timeout": timeout,
-                "tools_count": len(tools),
-                "environment": current_environment
-            },
-            include_stack_trace=True
-        )
-        
-        monitoring_service.log_performance_metric(
-            operation="create_agent_with_tools",
-            duration=0.5,
-            success=False,
-            error_type=type(e).__name__,
-            additional_data={
-                "model_name": model_name,
-                "environment": current_environment
-            }
-        )
+        # Log detailed error information with proper error handling
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="create_agent_with_tools",
+                context={
+                    "model_name": model_name,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    "timeout": timeout,
+                    "tools_count": len(tools),
+                    "environment": current_environment,
+                    "error_type": type(e).__name__,
+                    "error_message": str(e)
+                },
+                include_stack_trace=True
+            )
+            
+            monitoring_service.log_performance_metric(
+                operation="create_agent_with_tools",
+                duration=0.5,
+                success=False,
+                error_type=type(e).__name__,
+                additional_data={
+                    "model_name": model_name,
+                    "environment": current_environment,
+                    "error_message": str(e)
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log error metrics: {metric_error}")
         
         raise RuntimeError(f"Agent initialization failed: Nova Pro model unavailable - {str(e)}")
 
 
-# Initialize the agent with error handling for Nova Pro model
+# Initialize the agent with comprehensive error handling for Nova Pro model
 try:
+    logger.info("Starting agent initialization...")
     agent = create_agent_with_tools()
     AGENT_AVAILABLE = True
     logger.info("MBTI Travel Planner Agent initialized successfully with Nova Pro model and AgentCore tools")
+    
+    # Log successful initialization
+    try:
+        monitoring_service.log_performance_metric(
+            operation="agent_initialization",
+            duration=1.0,  # Agent initialization typically takes some time
+            success=True,
+            additional_data={
+                "environment": current_environment,
+                "agentcore_available": AGENTCORE_AVAILABLE,
+                "agent_available": AGENT_AVAILABLE
+            }
+        )
+    except Exception as metric_error:
+        logger.warning(f"Failed to log initialization metrics: {metric_error}")
+        
 except RuntimeError as e:
-    logger.error(f"Agent initialization failed: {e}")
+    logger.error(f"Agent initialization failed with RuntimeError: {e}")
     agent = None
     AGENT_AVAILABLE = False
+    
+    # Log initialization failure
+    try:
+        monitoring_service.log_error(
+            error=e,
+            operation="agent_initialization",
+            context={
+                "environment": current_environment,
+                "error_type": "RuntimeError",
+                "error_message": str(e)
+            }
+        )
+    except Exception as metric_error:
+        logger.warning(f"Failed to log error metrics: {metric_error}")
+        
+except Exception as e:
+    logger.error(f"Agent initialization failed with unexpected error: {e}")
+    logger.error(f"Error type: {type(e).__name__}")
+    agent = None
+    AGENT_AVAILABLE = False
+    
+    # Log unexpected initialization failure
+    try:
+        monitoring_service.log_error(
+            error=e,
+            operation="agent_initialization",
+            context={
+                "environment": current_environment,
+                "error_type": type(e).__name__,
+                "error_message": str(e)
+            },
+            include_stack_trace=True
+        )
+    except Exception as metric_error:
+        logger.warning(f"Failed to log error metrics: {metric_error}")
+
+# Log final initialization status
+if AGENT_AVAILABLE:
+    logger.info("✅ Agent initialization completed successfully")
+else:
+    logger.warning("⚠️ Agent initialization failed - service will run with limited functionality")
 
 
 @app.entrypoint
@@ -384,18 +494,21 @@ def invoke(payload):
         
         logger.info(f"Processing request: {user_message[:100]}...")
         
-        # Log request metrics
-        monitoring_service.log_performance_metric(
-            operation="request_received",
-            duration=0.001,  # Immediate
-            success=True,
-            additional_data={
-                "message_length": len(user_message),
-                "agent_available": AGENT_AVAILABLE,
-                "agentcore_available": AGENTCORE_AVAILABLE,
-                "environment": current_environment
-            }
-        )
+        # Log request metrics with proper error handling
+        try:
+            monitoring_service.log_performance_metric(
+                operation="request_received",
+                duration=0.001,  # Immediate
+                success=True,
+                additional_data={
+                    "message_length": len(user_message),
+                    "agent_available": AGENT_AVAILABLE,
+                    "agentcore_available": AGENTCORE_AVAILABLE,
+                    "environment": current_environment
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log request metrics: {metric_error}")
         
         # Test AgentCore connectivity on first request if not done yet
         if AGENTCORE_AVAILABLE and not hasattr(invoke, '_connectivity_tested'):
@@ -421,31 +534,34 @@ def invoke(payload):
             "start_time": start_time
         }
         
-        # Check agent availability (Nova Pro model)
+        # Check agent availability (Nova Pro model) with improved error handling
         if not AGENT_AVAILABLE or agent is None:
             duration = time.time() - start_time
             logger.error("Agent not available - Nova Pro model initialization failed")
             
-            # Log agent unavailability
-            monitoring_service.log_error(
-                error=RuntimeError("Agent not available"),
-                operation="invoke",
-                context=context
-            )
-            
-            monitoring_service.log_performance_metric(
-                operation="invoke",
-                duration=duration,
-                success=False,
-                error_type="agent_unavailable",
-                additional_data=context
-            )
+            # Log agent unavailability with proper error handling
+            try:
+                monitoring_service.log_error(
+                    error=RuntimeError("Agent not available"),
+                    operation="invoke",
+                    context=context
+                )
+                
+                monitoring_service.log_performance_metric(
+                    operation="invoke",
+                    duration=duration,
+                    success=False,
+                    error_type="agent_unavailable",
+                    additional_data=context
+                )
+            except Exception as metric_error:
+                logger.warning(f"Failed to log agent unavailability metrics: {metric_error}")
             
             return {
                 "result": {
                     "role": "assistant", 
                     "content": [{
-                        "text": "I apologize, but I'm currently unable to process your request due to a model initialization issue. The Amazon Nova Pro model may not be available in this region. Please contact support for assistance."
+                        "text": "I apologize, but I'm currently unable to process your request due to a model initialization issue. The Amazon Nova Pro model may not be available in this region or there was a configuration error during startup. Please contact support for assistance."
                     }]
                 }
             }
@@ -455,19 +571,22 @@ def invoke(payload):
             duration = time.time() - start_time
             logger.warning("AgentCore tools not available - providing basic Nova Pro response")
             
-            # Log AgentCore unavailability
-            monitoring_service.log_performance_metric(
-                operation="invoke",
-                duration=duration,
-                success=True,  # Request succeeded, but with limited functionality
-                additional_data=dict(context, **{"agentcore_unavailable": True})
-            )
+            # Log AgentCore unavailability with proper error handling
+            try:
+                monitoring_service.log_performance_metric(
+                    operation="invoke",
+                    duration=duration,
+                    success=True,  # Request succeeded, but with limited functionality
+                    additional_data=dict(context, **{"agentcore_unavailable": True})
+                )
+            except Exception as metric_error:
+                logger.warning(f"Failed to log AgentCore unavailability metrics: {metric_error}")
             
             return {
                 "result": {
                     "role": "assistant", 
                     "content": [{
-                        "text": "I'm your MBTI Travel Planner assistant powered by Amazon Nova Pro. However, my restaurant search and reasoning tools are currently unavailable. I can still help with general travel planning questions using Nova Pro's enhanced reasoning capabilities. Please let me know how I can assist you!"
+                        "text": "I'm your MBTI Travel Planner assistant powered by Amazon Nova Pro. However, my restaurant search and reasoning tools are currently unavailable due to initialization issues. I can still help with general travel planning questions using Nova Pro's enhanced reasoning capabilities. Please let me know how I can assist you!"
                     }]
                 }
             }
@@ -480,16 +599,19 @@ def invoke(payload):
         
         logger.info(f"Request processed successfully with Nova Pro model and AgentCore tools ({duration:.2f}s)")
         
-        # Log successful request processing
-        monitoring_service.log_performance_metric(
-            operation="invoke",
-            duration=duration,
-            success=True,
-            additional_data=dict(context, **{
-                "response_length": len(str(result.message)) if result.message else 0,
-                "processing_time": duration
-            })
-        )
+        # Log successful request processing with proper error handling
+        try:
+            monitoring_service.log_performance_metric(
+                operation="invoke",
+                duration=duration,
+                success=True,
+                additional_data=dict(context, **{
+                    "response_length": len(str(result.message)) if result.message else 0,
+                    "processing_time": duration
+                })
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log success metrics: {metric_error}")
         
         return {"result": result.message}
         
@@ -497,20 +619,23 @@ def invoke(payload):
         duration = time.time() - start_time
         logger.error(f"AgentCore error: {e}")
         
-        # Log AgentCore error
-        monitoring_service.log_error(
-            error=e,
-            operation="invoke",
-            context=dict(context, **{"duration": duration})
-        )
-        
-        monitoring_service.log_performance_metric(
-            operation="invoke",
-            duration=duration,
-            success=False,
-            error_type="agentcore_error",
-            additional_data=dict(context, **{"error_message": str(e)})
-        )
+        # Log AgentCore error with proper error handling
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="invoke",
+                context=dict(context, **{"duration": duration})
+            )
+            
+            monitoring_service.log_performance_metric(
+                operation="invoke",
+                duration=duration,
+                success=False,
+                error_type="agentcore_error",
+                additional_data=dict(context, **{"error_message": str(e)})
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log AgentCore error metrics: {metric_error}")
         
         return {
             "result": {
@@ -524,20 +649,23 @@ def invoke(payload):
         duration = time.time() - start_time
         logger.error(f"Authentication error: {e}")
         
-        # Log authentication error
-        monitoring_service.log_error(
-            error=e,
-            operation="invoke",
-            context=dict(context, **{"duration": duration})
-        )
-        
-        monitoring_service.log_performance_metric(
-            operation="invoke",
-            duration=duration,
-            success=False,
-            error_type="authentication_error",
-            additional_data=dict(context, **{"error_message": str(e)})
-        )
+        # Log authentication error with proper error handling
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="invoke",
+                context=dict(context, **{"duration": duration})
+            )
+            
+            monitoring_service.log_performance_metric(
+                operation="invoke",
+                duration=duration,
+                success=False,
+                error_type="authentication_error",
+                additional_data=dict(context, **{"error_message": str(e)})
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log authentication error metrics: {metric_error}")
         
         return {
             "result": {
@@ -550,22 +678,26 @@ def invoke(payload):
     except Exception as e:
         duration = time.time() - start_time
         logger.error(f"Error processing request with Nova Pro model: {e}")
+        logger.error(f"Error type: {type(e).__name__}")
         
-        # Log unexpected error with full stack trace
-        monitoring_service.log_error(
-            error=e,
-            operation="invoke",
-            context=dict(context, **{"duration": duration}),
-            include_stack_trace=True
-        )
-        
-        monitoring_service.log_performance_metric(
-            operation="invoke",
-            duration=duration,
-            success=False,
-            error_type=type(e).__name__,
-            additional_data=dict(context, **{"error_message": str(e)})
-        )
+        # Log unexpected error with full stack trace and proper error handling
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="invoke",
+                context=dict(context, **{"duration": duration}),
+                include_stack_trace=True
+            )
+            
+            monitoring_service.log_performance_metric(
+                operation="invoke",
+                duration=duration,
+                success=False,
+                error_type=type(e).__name__,
+                additional_data=dict(context, **{"error_message": str(e)})
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log unexpected error metrics: {metric_error}")
         
         return {
             "result": {

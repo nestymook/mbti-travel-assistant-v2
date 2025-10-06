@@ -128,6 +128,37 @@ async def test_tool_creation():
         return False
 
 
+async def test_health_check_service():
+    """Test AgentCore health check service."""
+    try:
+        from config.agentcore_environment_config import get_agentcore_config
+        from services.agentcore_health_check_service import AgentCoreHealthCheckService
+        
+        # Load configuration
+        config = get_agentcore_config('development')
+        
+        # Initialize health check service
+        health_service = AgentCoreHealthCheckService(
+            config=config,
+            enable_background_checks=False  # Disable for testing
+        )
+        logger.info("✅ AgentCore health check service initialized")
+        
+        # Test listing agent runtimes
+        agent_runtimes = await health_service.list_agent_runtimes()
+        logger.info(f"✅ Listed {len(agent_runtimes)} agent runtimes")
+        
+        # Test overall health status
+        overall_status = health_service.get_overall_health_status()
+        logger.info(f"✅ Overall health status: {overall_status['overall_status']}")
+        
+        return True
+        
+    except Exception as e:
+        logger.error(f"❌ Health check service test failed: {e}")
+        return False
+
+
 async def test_main_agent_initialization():
     """Test main agent initialization with AgentCore tools."""
     try:
@@ -203,6 +234,7 @@ async def run_all_tests():
         ("Configuration Loading", test_agentcore_configuration),
         ("Client Initialization", test_agentcore_client_initialization),
         ("Tool Creation", test_tool_creation),
+        ("Health Check Service", test_health_check_service),
         ("Main Agent Initialization", test_main_agent_initialization)
     ]
     

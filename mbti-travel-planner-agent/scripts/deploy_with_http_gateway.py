@@ -153,7 +153,7 @@ class HTTPGatewayDeployer:
         
         # Monitoring (for staging/production)
         if self.environment in ['staging', 'production']:
-            env_vars['ENABLE_PERFORMANCE_MONITORING'] = 'true'
+            env_vars['ENABLE_PERFORMANCE_TRACKING'] = 'true'
             env_vars['ENABLE_REQUEST_TRACING'] = 'true'
             
             if self.environment == 'production':

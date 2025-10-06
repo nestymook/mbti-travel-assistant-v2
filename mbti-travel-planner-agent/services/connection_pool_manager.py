@@ -52,12 +52,12 @@ class ConnectionConfig:
     enable_connection_validation: bool = True
     enable_health_monitoring: bool = True
     
-    # Boto3 client configuration
+    # Boto3 client configuration with AgentCore optimizations
     boto3_config: Dict[str, Any] = field(default_factory=lambda: {
         'max_pool_connections': 50,
-        'retries': {'max_attempts': 1, 'mode': 'standard'},
-        'read_timeout': 30,
-        'connect_timeout': 10
+        'retries': {'max_attempts': 3, 'mode': 'adaptive'},  # Enhanced retry for AgentCore
+        'read_timeout': 60,  # Increased timeout for AgentCore operations
+        'connect_timeout': 15  # Increased connect timeout
     })
 
 
@@ -218,11 +218,26 @@ class PooledConnection:
             return True
         
         try:
-            # Simple health check - list foundation models
-            await asyncio.get_event_loop().run_in_executor(
-                None,
-                lambda: self.client.list_foundation_models()
-            )
+            # AgentCore-specific health check
+            if 'agentcore' in self.client._service_model.service_name.lower():
+                # For AgentCore, try to list agent runtimes
+                await asyncio.get_event_loop().run_in_executor(
+                    None,
+                    lambda: self.client.list_agent_runtimes()
+                )
+            else:
+                # For other services, use appropriate health check
+                if hasattr(self.client, 'list_foundation_models'):
+                    await asyncio.get_event_loop().run_in_executor(
+                        None,
+                        lambda: self.client.list_foundation_models()
+                    )
+                else:
+                    # Generic health check - just verify the client is responsive
+                    await asyncio.get_event_loop().run_in_executor(
+                        None,
+                        lambda: self.client.meta.service_model.service_name
+                    )
             
             with self._lock:
                 self.metrics.last_health_check = datetime.utcnow()
@@ -353,13 +368,13 @@ class ConnectionPool:
         self._connection_counter += 1
         connection_id = f"{self.region}-{self.service_name}-{self._connection_counter}"
         
-        # Create boto3 config
+        # Create boto3 config with AgentCore-specific optimizations
         boto3_config = Config(
             region_name=self.region,
             **self.config.boto3_config
         )
         
-        # Create client
+        # Create client with correct service name for AgentCore
         client = boto3.client(self.service_name, config=boto3_config)
         
         # Create pooled connection
@@ -539,10 +554,38 @@ class ConnectionPoolManager:
         
         with self._lock:
             if pool_key not in self._pools:
-                self._pools[pool_key] = ConnectionPool(region, service_name, self.config)
+                # Use AgentCore-optimized config for AgentCore services
+                config = self._get_service_config(service_name)
+                self._pools[pool_key] = ConnectionPool(region, service_name, config)
                 logger.debug(f"Created new connection pool: {region}/{service_name}")
             
             return self._pools[pool_key]
+    
+    def _get_service_config(self, service_name: str) -> ConnectionConfig:
+        """Get service-specific configuration."""
+        if 'agentcore' in service_name.lower():
+            # AgentCore-specific configuration
+            agentcore_config = ConnectionConfig(
+                max_connections_per_pool=15,  # Higher limit for AgentCore
+                min_connections_per_pool=3,   # More minimum connections
+                max_idle_time_seconds=600,    # Longer idle time for AgentCore
+                connection_timeout_seconds=60, # Longer timeout for AgentCore operations
+                health_check_interval_seconds=120, # Less frequent health checks
+                max_connection_age_seconds=7200,   # Longer connection age
+                enable_connection_validation=True,
+                enable_health_monitoring=True,
+                boto3_config={
+                    'max_pool_connections': 75,
+                    'retries': {'max_attempts': 5, 'mode': 'adaptive'},  # More retries for AgentCore
+                    'read_timeout': 120,  # Longer read timeout for AgentCore
+                    'connect_timeout': 20
+                }
+            )
+            logger.debug("Using AgentCore-optimized connection configuration")
+            return agentcore_config
+        else:
+            # Use default configuration for other services
+            return self.config
     
     @asynccontextmanager
     async def get_client(
@@ -554,7 +597,7 @@ class ConnectionPoolManager:
         Get pooled client for service and region.
         
         Args:
-            service_name: AWS service name (e.g., 'bedrock-agent-runtime')
+            service_name: AWS service name (e.g., 'bedrock-agentcore-control')
             region: AWS region
             
         Yields:
@@ -565,10 +608,38 @@ class ConnectionPoolManager:
         async with pool.get_connection() as connection:
             yield connection.client
     
+    @asynccontextmanager
+    async def get_agentcore_client(
+        self, 
+        region: str = "us-east-1"
+    ) -> AsyncContextManager[Any]:
+        """
+        Get pooled AgentCore client for region.
+        
+        Args:
+            region: AWS region
+            
+        Yields:
+            Boto3 AgentCore client instance
+        """
+        # Use the correct AgentCore service name
+        service_name = "bedrock-agentcore-control"
+        pool = self._get_or_create_pool(region, service_name)
+        
+        async with pool.get_connection() as connection:
+            yield connection.client
+    
     def ensure_minimum_connections(self, region: str, service_name: str):
         """Ensure minimum connections for specific pool."""
         pool = self._get_or_create_pool(region, service_name)
         pool.ensure_minimum_connections()
+    
+    def ensure_agentcore_connections(self, region: str = "us-east-1"):
+        """Ensure minimum connections for AgentCore service."""
+        service_name = "bedrock-agentcore-control"
+        pool = self._get_or_create_pool(region, service_name)
+        pool.ensure_minimum_connections()
+        logger.debug(f"Ensured minimum AgentCore connections for region: {region}")
     
     def get_pool_statistics(self) -> Dict[str, Any]:
         """Get statistics for all pools."""

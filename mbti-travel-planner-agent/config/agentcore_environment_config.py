@@ -17,6 +17,11 @@ from dotenv import load_dotenv
 logger = logging.getLogger(__name__)
 
 
+class ConfigurationError(Exception):
+    """Custom exception for configuration-related errors."""
+    pass
+
+
 @dataclass
 class AgentCoreConfig:
     """Configuration for AgentCore integration."""
@@ -192,6 +197,284 @@ class EnvironmentConfig:
         valid_environments = ['development', 'staging', 'production']
         if self.environment not in valid_environments:
             logger.warning(f"Unknown environment: {self.environment}. Valid options: {valid_environments}")
+    
+    def get_connection_config(self) -> 'ConnectionConfig':
+        """
+        Get connection configuration for AgentCore Runtime client.
+        
+        Returns:
+            ConnectionConfig object with settings from environment configuration
+            
+        Raises:
+            ValueError: If configuration values are invalid
+            ImportError: If ConnectionConfig cannot be imported
+            ConfigurationError: If configuration is missing or malformed
+        """
+        # Log the start of connection configuration creation with structured logging
+        logger.debug(
+            "Starting connection configuration creation",
+            extra={
+                "operation": "get_connection_config",
+                "environment": self.environment,
+                "agentcore_region": self.agentcore.region,
+                "debug_mode": self.debug_mode
+            }
+        )
+        
+        # Handle ImportError for ConnectionConfig import gracefully
+        try:
+            # Import ConnectionConfig with lazy loading to avoid circular dependencies
+            from services.agentcore_runtime_client import ConnectionConfig
+            logger.debug(
+                "Successfully imported ConnectionConfig from services.agentcore_runtime_client",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "import_connection_config",
+                    "status": "success"
+                }
+            )
+        except ImportError as e:
+            error_msg = (
+                f"Failed to import ConnectionConfig: {e}. "
+                f"Please ensure the AgentCore runtime client service is properly installed and available."
+            )
+            logger.error(
+                "ConnectionConfig import failed",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "import_connection_config",
+                    "status": "error",
+                    "error_type": "ImportError",
+                    "error_message": str(e),
+                    "troubleshooting": "Check if services.agentcore_runtime_client module is available"
+                }
+            )
+            raise ImportError(error_msg) from e
+        
+        # Log the start of validation process with current values
+        logger.debug(
+            "Starting connection configuration validation",
+            extra={
+                "operation": "get_connection_config",
+                "step": "validation_start",
+                "input_values": {
+                    "timeout_seconds": self.agentcore.timeout_seconds,
+                    "timeout_seconds_type": type(self.agentcore.timeout_seconds).__name__,
+                    "max_connections": self.performance.max_connections,
+                    "max_connections_type": type(self.performance.max_connections).__name__,
+                    "max_connections_per_host": self.performance.max_connections_per_host,
+                    "max_connections_per_host_type": type(self.performance.max_connections_per_host).__name__
+                },
+                "validation_rules": {
+                    "timeout_range": "1-300 seconds",
+                    "connections_min": "positive integers",
+                    "per_host_constraint": "must not exceed total max_connections"
+                }
+            }
+        )
+        
+        # Comprehensive validation with clear error messages
+        validation_errors = []
+        
+        # Validate timeout_seconds to ensure it's between 1-300 seconds
+        if not isinstance(self.agentcore.timeout_seconds, int):
+            validation_errors.append(
+                f"timeout_seconds must be an integer, got {type(self.agentcore.timeout_seconds).__name__}: {self.agentcore.timeout_seconds}"
+            )
+        elif self.agentcore.timeout_seconds <= 0:
+            validation_errors.append(
+                f"timeout_seconds must be positive, got: {self.agentcore.timeout_seconds}. "
+                f"Recommended range: 5-60 seconds for most use cases."
+            )
+        elif self.agentcore.timeout_seconds > 300:
+            validation_errors.append(
+                f"timeout_seconds cannot exceed 300 seconds, got: {self.agentcore.timeout_seconds}. "
+                f"Maximum allowed: 300 seconds (5 minutes)."
+            )
+        
+        # Validate max_connections to ensure it's positive
+        if not isinstance(self.performance.max_connections, int):
+            validation_errors.append(
+                f"max_connections must be an integer, got {type(self.performance.max_connections).__name__}: {self.performance.max_connections}"
+            )
+        elif self.performance.max_connections <= 0:
+            validation_errors.append(
+                f"max_connections must be positive, got: {self.performance.max_connections}. "
+                f"Recommended range: 10-200 connections depending on load requirements."
+            )
+        elif self.performance.max_connections > 1000:
+            validation_errors.append(
+                f"max_connections is very high ({self.performance.max_connections}), "
+                f"which may cause resource exhaustion. Consider using a value below 500."
+            )
+        
+        # Validate max_connections_per_host to ensure it's positive and not greater than max_connections
+        if not isinstance(self.performance.max_connections_per_host, int):
+            validation_errors.append(
+                f"max_connections_per_host must be an integer, got {type(self.performance.max_connections_per_host).__name__}: {self.performance.max_connections_per_host}"
+            )
+        elif self.performance.max_connections_per_host <= 0:
+            validation_errors.append(
+                f"max_connections_per_host must be positive, got: {self.performance.max_connections_per_host}. "
+                f"Recommended range: 5-50 connections per host."
+            )
+        elif (isinstance(self.performance.max_connections, int) and 
+              isinstance(self.performance.max_connections_per_host, int) and
+              self.performance.max_connections_per_host > self.performance.max_connections):
+            validation_errors.append(
+                f"max_connections_per_host ({self.performance.max_connections_per_host}) "
+                f"cannot exceed max_connections ({self.performance.max_connections}). "
+                f"Adjust max_connections_per_host to be <= {self.performance.max_connections}."
+            )
+        
+        # Additional validation for reasonable ratios
+        if (isinstance(self.performance.max_connections, int) and 
+            isinstance(self.performance.max_connections_per_host, int) and
+            self.performance.max_connections > 0 and 
+            self.performance.max_connections_per_host > 0):
+            
+            ratio = self.performance.max_connections / self.performance.max_connections_per_host
+            if ratio < 2:
+                logger.warning(
+                    f"Connection pool ratio is low (total/per_host = {ratio:.1f}). "
+                    f"Consider increasing max_connections or decreasing max_connections_per_host "
+                    f"for better load distribution across multiple hosts."
+                )
+        
+        # Log successful validation completion
+        if not validation_errors:
+            logger.debug(
+                "Connection configuration validation completed successfully",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "validation_complete",
+                    "status": "success",
+                    "validated_values": {
+                        "timeout_seconds": self.agentcore.timeout_seconds,
+                        "max_connections": self.performance.max_connections,
+                        "max_connections_per_host": self.performance.max_connections_per_host
+                    },
+                    "validation_summary": {
+                        "timeout_valid": f"✓ {self.agentcore.timeout_seconds}s within 1-300s range",
+                        "connections_valid": f"✓ {self.performance.max_connections} connections > 0",
+                        "per_host_valid": f"✓ {self.performance.max_connections_per_host} per host <= {self.performance.max_connections} total"
+                    }
+                }
+            )
+        
+        # If there are validation errors, raise a comprehensive error message
+        if validation_errors:
+            error_msg = (
+                f"Connection configuration validation failed with {len(validation_errors)} error(s):\n" +
+                "\n".join(f"  - {error}" for error in validation_errors) +
+                f"\n\nCurrent values: timeout_seconds={self.agentcore.timeout_seconds}, "
+                f"max_connections={self.performance.max_connections}, "
+                f"max_connections_per_host={self.performance.max_connections_per_host}"
+            )
+            # Add ERROR level logging for validation failures with structured format
+            logger.error(
+                "Connection configuration validation failed",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "validation",
+                    "status": "error",
+                    "error_type": "ValidationError",
+                    "error_count": len(validation_errors),
+                    "validation_errors": validation_errors,
+                    "current_values": {
+                        "timeout_seconds": self.agentcore.timeout_seconds,
+                        "max_connections": self.performance.max_connections,
+                        "max_connections_per_host": self.performance.max_connections_per_host
+                    },
+                    "environment": self.environment,
+                    "troubleshooting": "Review configuration values and ensure they meet the specified constraints"
+                }
+            )
+            raise ValueError(error_msg)
+        
+        try:
+            # Create ConnectionConfig with validated values
+            config = ConnectionConfig(
+                timeout_seconds=self.agentcore.timeout_seconds,
+                max_connections=self.performance.max_connections,
+                max_connections_per_host=self.performance.max_connections_per_host,
+                keepalive_timeout=30,  # Reasonable default as specified
+                enable_cleanup_closed=True  # Recommended setting as specified
+            )
+            
+            # Add DEBUG level logging when connection config is created successfully
+            # Log the configuration values being used with structured logging format
+            logger.debug(
+                "Successfully created ConnectionConfig with validated values",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "connection_config_creation",
+                    "status": "success",
+                    "config_values": {
+                        "timeout_seconds": config.timeout_seconds,
+                        "max_connections": config.max_connections,
+                        "max_connections_per_host": config.max_connections_per_host,
+                        "keepalive_timeout": config.keepalive_timeout,
+                        "enable_cleanup_closed": config.enable_cleanup_closed
+                    },
+                    "environment_context": {
+                        "environment": self.environment,
+                        "agentcore_region": self.agentcore.region,
+                        "debug_mode": self.debug_mode
+                    },
+                    "performance_settings": {
+                        "enable_caching": self.performance.enable_caching,
+                        "enable_connection_pooling": self.performance.enable_connection_pooling,
+                        "enable_parallel_execution": self.performance.enable_parallel_execution
+                    }
+                }
+            )
+            
+            # Log additional context for debugging and observability
+            logger.debug(
+                "Connection configuration context and recommendations",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "context_logging",
+                    "recommendations": {
+                        "timeout_range": "5-60 seconds for most use cases",
+                        "connection_pool_ratio": f"{self.performance.max_connections / self.performance.max_connections_per_host:.1f}:1 (total:per_host)",
+                        "optimal_ratio": "Recommended ratio is 4:1 to 10:1 for good load distribution"
+                    },
+                    "monitoring_enabled": self.monitoring.enable_health_checks,
+                    "health_check_interval": self.monitoring.health_check_interval_seconds
+                }
+            )
+            
+            return config
+            
+        except Exception as e:
+            # Handle any unexpected errors during ConnectionConfig creation
+            error_msg = (
+                f"Failed to create ConnectionConfig object: {e}. "
+                f"This may indicate an issue with the ConnectionConfig class implementation."
+            )
+            # Add ERROR level logging for unexpected creation failures with structured format
+            logger.error(
+                "Unexpected error during ConnectionConfig creation",
+                extra={
+                    "operation": "get_connection_config",
+                    "step": "connection_config_creation",
+                    "status": "error",
+                    "error_type": type(e).__name__,
+                    "error_message": str(e),
+                    "attempted_values": {
+                        "timeout_seconds": self.agentcore.timeout_seconds,
+                        "max_connections": self.performance.max_connections,
+                        "max_connections_per_host": self.performance.max_connections_per_host,
+                        "keepalive_timeout": 30,
+                        "enable_cleanup_closed": True
+                    },
+                    "environment": self.environment,
+                    "troubleshooting": "Check ConnectionConfig class implementation and constructor parameters"
+                }
+            )
+            raise ValueError(error_msg) from e
 
 
 class AgentCoreEnvironmentConfigManager:

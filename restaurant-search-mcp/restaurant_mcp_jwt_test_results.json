@@ -1,0 +1,23 @@
+{
+  "overall_status": "FAILED",
+  "summary": {
+    "total_tests": 1,
+    "successful": 0,
+    "failed": 1,
+    "success_rate": 0.0,
+    "excellent_responses": 0,
+    "good_responses": 0,
+    "tool_usage_success": 0,
+    "restaurant_data_success": 0,
+    "tool_usage_rate": 0.0,
+    "restaurant_data_rate": 0.0
+  },
+  "tests": [
+    {
+      "test": "Quick Test",
+      "status": "failed",
+      "error": "",
+      "stdout": "+------------------------- mbti_travel_planner_agent -------------------------+\n| Invoke information unavailable                                              |\n+---------------------------------------"
+    }
+  ]
+}

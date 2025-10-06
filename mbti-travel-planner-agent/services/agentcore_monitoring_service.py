@@ -394,7 +394,8 @@ class AgentCoreMonitoringService:
                  environment: str = "production",
                  enable_detailed_logging: bool = True,
                  enable_performance_tracking: bool = True,
-                 enable_health_checks: bool = True):
+                 enable_health_checks: bool = True,
+                 config: Optional[Any] = None):
         """
         Initialize the AgentCore monitoring service.
         
@@ -403,11 +404,29 @@ class AgentCoreMonitoringService:
             enable_detailed_logging: Whether to enable detailed logging
             enable_performance_tracking: Whether to track performance metrics
             enable_health_checks: Whether to perform health checks
+            config: Optional EnvironmentConfig object for backward compatibility
         """
-        self.environment = environment
-        self.enable_detailed_logging = enable_detailed_logging
-        self.enable_performance_tracking = enable_performance_tracking
-        self.enable_health_checks = enable_health_checks
+        # Handle config parameter for backward compatibility
+        if config is not None:
+            self.config = config
+            self.environment = config.environment if hasattr(config, 'environment') else environment
+            
+            # Use config values if available, otherwise use defaults
+            if hasattr(config, 'monitoring'):
+                monitoring_config = config.monitoring
+                self.enable_detailed_logging = getattr(monitoring_config, 'enable_metrics', enable_detailed_logging)
+                self.enable_performance_tracking = getattr(monitoring_config, 'enable_metrics', enable_performance_tracking)
+                self.enable_health_checks = getattr(monitoring_config, 'enable_health_checks', enable_health_checks)
+            else:
+                self.enable_detailed_logging = enable_detailed_logging
+                self.enable_performance_tracking = enable_performance_tracking
+                self.enable_health_checks = enable_health_checks
+        else:
+            self.config = None
+            self.environment = environment
+            self.enable_detailed_logging = enable_detailed_logging
+            self.enable_performance_tracking = enable_performance_tracking
+            self.enable_health_checks = enable_health_checks
         
         # Initialize services
         self.logging_service = get_logging_service()
@@ -666,7 +685,7 @@ class AgentCoreMonitoringService:
                                         runtime_client: "AgentCoreRuntimeClient",
                                         test_input: str = "health check") -> AgentHealthCheckResult:
         """
-        Perform a health check on an AgentCore agent.
+        Perform a health check on an AgentCore agent using proper AgentCore APIs.
         
         Args:
             agent_arn: ARN of the agent to check
@@ -680,8 +699,43 @@ class AgentCoreMonitoringService:
         start_time = time.time()
         correlation_id = self.generate_correlation_id()
         
+        # Step 1: Try to get agent runtime status first
         try:
-            # Attempt to invoke the agent with minimal input
+            agent_status_response = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: runtime_client.bedrock_agentcore.get_agent_runtime(
+                    agentRuntimeArn=agent_arn
+                )
+            )
+            
+            agent_status = agent_status_response.get('status', 'UNKNOWN')
+            self.logger.debug(f"Agent {agent_name} status: {agent_status}")
+            
+            if agent_status != 'READY':
+                # Agent is not ready, return unhealthy status immediately
+                response_time_ms = (time.time() - start_time) * 1000
+                result = AgentHealthCheckResult(
+                    agent_arn=agent_arn,
+                    agent_name=agent_name,
+                    status="unhealthy",
+                    response_time_ms=response_time_ms,
+                    timestamp=datetime.utcnow(),
+                    test_input="agent_status_check",
+                    test_output=None,
+                    error_message=f"Agent status is not READY: {agent_status}",
+                    authentication_status="unknown"
+                )
+                
+                self._log_health_check_result(result, correlation_id)
+                return result
+                
+        except Exception as e:
+            # If get_agent_runtime fails, log warning but continue with invocation test
+            self.logger.warning(f"Failed to get agent runtime status for {agent_name}: {e}")
+        
+        # Step 2: Perform agent invocation test using invoke_agent_runtime
+        try:
+            # Use invoke_agent_runtime for connectivity test
             response = await runtime_client.invoke_agent(
                 agent_arn=agent_arn,
                 input_text=test_input,
@@ -690,7 +744,7 @@ class AgentCoreMonitoringService:
             
             response_time_ms = (time.time() - start_time) * 1000
             
-            # Determine health status based on response
+            # Determine health status based on response and timing
             if response and response.output_text:
                 if response_time_ms < 5000:  # Less than 5 seconds
                     status = "healthy"
@@ -699,9 +753,11 @@ class AgentCoreMonitoringService:
                 else:
                     status = "unhealthy"
                 error_message = None
+                test_output = response.output_text[:200] if response.output_text else None
             else:
                 status = "unhealthy"
-                error_message = "Empty or invalid response"
+                error_message = "Empty or invalid response from agent"
+                test_output = None
             
             result = AgentHealthCheckResult(
                 agent_arn=agent_arn,
@@ -710,7 +766,7 @@ class AgentCoreMonitoringService:
                 response_time_ms=response_time_ms,
                 timestamp=datetime.utcnow(),
                 test_input=test_input,
-                test_output=response.output_text[:200] if response else None,  # Truncate for logging
+                test_output=test_output,
                 error_message=error_message,
                 authentication_status="valid"  # If we got here, auth worked
             )
@@ -718,56 +774,86 @@ class AgentCoreMonitoringService:
         except Exception as e:
             response_time_ms = (time.time() - start_time) * 1000
             
-            # Determine authentication status from error
+            # Enhanced error handling for AgentCore-specific exceptions
             auth_status = "unknown"
+            error_message = str(e)
+            status = "unhealthy"
+            
             if isinstance(e, AgentCoreError):
-                if "authentication" in str(e).lower() or "unauthorized" in str(e).lower():
+                # Handle specific AgentCore errors
+                if "ResourceNotFoundException" in error_message:
+                    error_message = f"Agent not found: {agent_arn}"
+                elif "AccessDeniedException" in error_message:
+                    error_message = f"Access denied for agent: {agent_arn}"
                     auth_status = "invalid"
-                elif "expired" in str(e).lower():
+                elif "ThrottlingException" in error_message:
+                    error_message = f"Agent is being throttled: {agent_arn}"
+                    status = "degraded"  # Throttling is degraded, not unhealthy
+                elif "ServiceUnavailableException" in error_message:
+                    error_message = f"AgentCore service unavailable: {error_message}"
+                elif "authentication" in error_message.lower() or "unauthorized" in error_message.lower():
+                    auth_status = "invalid"
+                elif "expired" in error_message.lower():
                     auth_status = "expired"
+            elif "timeout" in error_message.lower():
+                error_message = f"Health check timed out: {error_message}"
             
             result = AgentHealthCheckResult(
                 agent_arn=agent_arn,
                 agent_name=agent_name,
-                status="unhealthy",
+                status=status,
                 response_time_ms=response_time_ms,
                 timestamp=datetime.utcnow(),
                 test_input=test_input,
                 test_output=None,
-                error_message=str(e),
+                error_message=error_message,
                 authentication_status=auth_status
             )
         
         # Log the health check result
+        self._log_health_check_result(result, correlation_id)
+        
+        return result
+    
+    def _log_health_check_result(self, result: AgentHealthCheckResult, correlation_id: str) -> None:
+        """
+        Log health check result with comprehensive information.
+        
+        Args:
+            result: Health check result to log
+            correlation_id: Correlation ID for tracing
+        """
+        # Log the health check result
         self.logger.info(
-            f"AgentCore health check completed for {agent_name}",
+            f"AgentCore health check completed for {result.agent_name}",
             extra={
                 "event_type": "agent_health_check",
-                "agent_arn": agent_arn,
-                "agent_name": agent_name,
+                "agent_arn": result.agent_arn,
+                "agent_name": result.agent_name,
                 "status": result.status,
                 "response_time_ms": result.response_time_ms,
                 "authentication_status": result.authentication_status,
-                "correlation_id": correlation_id
+                "correlation_id": correlation_id,
+                "error_message": result.error_message,
+                "test_input": result.test_input
             }
         )
         
-        # Log to existing health check service
+        # Log to existing health check service if available
         if self.health_check_service:
             self.logging_service.log_health_check(
-                service_name=agent_name,
-                endpoint=agent_arn,
+                service_name=result.agent_name,
+                endpoint=result.agent_arn,
                 status=result.status,
                 response_time_ms=result.response_time_ms,
                 error_message=result.error_message,
                 additional_info={
                     "authentication_status": result.authentication_status,
-                    "test_input": test_input,
-                    "correlation_id": correlation_id
+                    "test_input": result.test_input,
+                    "correlation_id": correlation_id,
+                    "test_output": result.test_output
                 }
             )
-        
-        return result
     
     def get_agent_performance_summary(self, agent_arn: str, window_minutes: int = 60) -> Dict[str, Any]:
         """
@@ -854,6 +940,102 @@ class AgentCoreMonitoringService:
             report["health_status"] = self.health_check_service.get_overall_health_status()
         
         return report
+    
+    def log_error(self, error: Exception, operation: str, context: Optional[Dict[str, Any]] = None, include_stack_trace: bool = False) -> None:
+        """
+        Log an error with comprehensive context information.
+        
+        Args:
+            error: The exception that occurred
+            operation: The operation that failed
+            context: Additional context information
+            include_stack_trace: Whether to include the full stack trace
+        """
+        import traceback
+        
+        correlation_id = self.get_correlation_id()
+        
+        error_info = {
+            "event_type": "error",
+            "operation": operation,
+            "error_type": type(error).__name__,
+            "error_message": str(error),
+            "correlation_id": correlation_id,
+            "timestamp": datetime.utcnow().isoformat(),
+            "environment": self.environment
+        }
+        
+        if context:
+            error_info.update(context)
+        
+        if include_stack_trace:
+            error_info["stack_trace"] = traceback.format_exc()
+        
+        # Log using the standard logger
+        self.logger.error(
+            f"AgentCore operation failed: {operation} - {str(error)}",
+            extra=error_info
+        )
+        
+        # Also log to the logging service if available
+        if self.logging_service:
+            try:
+                self.logging_service.log_error(
+                    error=error,
+                    operation=operation,
+                    context=error_info,
+                    include_stack_trace=include_stack_trace
+                )
+            except Exception as log_error:
+                # Fallback if logging service has different interface
+                self.logger.warning(f"Could not log to logging service: {log_error}")
+    
+    def log_performance_metric(self, operation: str, duration: float, success: bool, 
+                             error_type: Optional[str] = None, additional_data: Optional[Dict[str, Any]] = None) -> None:
+        """
+        Log a performance metric for an operation.
+        
+        Args:
+            operation: The operation name
+            duration: Duration in seconds
+            success: Whether the operation was successful
+            error_type: Type of error if unsuccessful
+            additional_data: Additional metric data
+        """
+        correlation_id = self.get_correlation_id()
+        
+        metric_data = {
+            "event_type": "performance_metric",
+            "operation": operation,
+            "duration_seconds": duration,
+            "duration_ms": duration * 1000,
+            "success": success,
+            "correlation_id": correlation_id,
+            "timestamp": datetime.utcnow().isoformat(),
+            "environment": self.environment
+        }
+        
+        if error_type:
+            metric_data["error_type"] = error_type
+        
+        if additional_data:
+            metric_data.update(additional_data)
+        
+        # Log the performance metric
+        self.logger.info(
+            f"Performance metric: {operation} - {duration:.3f}s - {'success' if success else 'failed'}",
+            extra=metric_data
+        )
+        
+        # Also log to the logging service if available
+        if self.logging_service and self.enable_performance_tracking:
+            self.logging_service.log_performance_metric(
+                operation=operation,
+                duration=duration,  # Use duration in seconds
+                success=success,
+                error_type=error_type,
+                additional_data=metric_data
+            )
 
 
 # Global monitoring service instance

@@ -4,7 +4,7 @@ agents:
     name: restaurant_search_agent
     entrypoint: C:/MBTI_Travel_Assistant/restaurant-search-mcp/restaurant_mcp_server.py
     platform: linux/arm64
-    container_runtime: docker
+    container_runtime: none
     aws:
       execution_role: null
       execution_role_auto_create: true

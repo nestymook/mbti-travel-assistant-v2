@@ -51,7 +51,7 @@ class PerformanceOptimizationConfig:
     refresh_config: RefreshConfig = field(default_factory=RefreshConfig)
     
     # Performance monitoring
-    enable_performance_monitoring: bool = True
+    enable_performance_tracking: bool = True
     performance_metrics_interval_seconds: int = 60
     
     # Environment-specific settings
@@ -141,7 +141,7 @@ class PerformanceOptimizationConfig:
                 enable_usage_prediction=False
             ),
             
-            enable_performance_monitoring=True,
+            enable_performance_tracking=True,
             performance_metrics_interval_seconds=30
         )
     
@@ -162,7 +162,7 @@ class PerformanceOptimizationConfig:
                 enable_retries=False  # Faster test execution
             ),
             
-            enable_performance_monitoring=False
+            enable_performance_tracking=False
         )
     
     @classmethod
@@ -202,7 +202,7 @@ class PerformanceOptimizationConfig:
                 enable_usage_prediction=True
             ),
             
-            enable_performance_monitoring=True,
+            enable_performance_tracking=True,
             performance_metrics_interval_seconds=60
         )
     
@@ -256,7 +256,7 @@ class PerformanceOptimizationConfig:
                 refresh_rate_limit_per_minute=10
             ),
             
-            enable_performance_monitoring=True,
+            enable_performance_tracking=True,
             performance_metrics_interval_seconds=60
         )
     
@@ -302,7 +302,7 @@ class PerformanceOptimizationConfig:
                 refresh_rate_limit_per_minute=20
             ),
             
-            enable_performance_monitoring=True,
+            enable_performance_tracking=True,
             performance_metrics_interval_seconds=30
         )
     
@@ -349,7 +349,7 @@ class PerformanceOptimizationConfig:
                 enable_usage_prediction=True
             ),
             
-            enable_performance_monitoring=True,
+            enable_performance_tracking=True,
             performance_metrics_interval_seconds=30
         )
     
@@ -386,7 +386,7 @@ class PerformanceOptimizationConfig:
                 refresh_rate_limit_per_minute=5
             ),
             
-            enable_performance_monitoring=False,  # Reduce overhead
+            enable_performance_tracking=False,  # Reduce overhead
             performance_metrics_interval_seconds=300
         )
     
@@ -430,8 +430,8 @@ class PerformanceOptimizationConfig:
             )
         
         # Performance monitoring
-        self.enable_performance_monitoring = self._get_bool_env(
-            'ENABLE_PERFORMANCE_MONITORING', self.enable_performance_monitoring
+        self.enable_performance_tracking = self._get_bool_env(
+            'ENABLE_PERFORMANCE_TRACKING', self.enable_performance_tracking
         )
     
     def _get_bool_env(self, key: str, default: bool) -> bool:
@@ -482,7 +482,7 @@ class PerformanceOptimizationConfig:
                 "enable_usage_prediction": self.refresh_config.enable_usage_prediction,
             },
             "monitoring": {
-                "enable_performance_monitoring": self.enable_performance_monitoring,
+                "enable_performance_tracking": self.enable_performance_tracking,
                 "performance_metrics_interval_seconds": self.performance_metrics_interval_seconds,
             }
         }

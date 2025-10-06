@@ -39,6 +39,6 @@
       "status": "ACTIVE"
     }
   },
-  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
-  "configured_at": 1759688056.8892643
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/restaurant-search-mcp/.dockerignore') runtime='None' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True",
+  "configured_at": 1759768836.88827
 }

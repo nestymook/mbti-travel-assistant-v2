@@ -635,3 +635,41 @@ python test_agent.py
 **Version**: 1.0.0  
 **Source**: Amazon Bedrock AgentCore Developer Guide  
 **Keywords**: AgentCore, authentication, observability, MCP, gateway tools, identity management, OAuth 2.0, JWT, code interpreter, browser tool, monitoring, CloudWatch, X-Ray, security, deployment
+
+### Problem diagnose commands
+**How to list all installed agents**: aws bedrock-agentcore-control list-agent-runtimes
+
+## Invoke Bedrock AgentCore Runtime
+### **Sample Code**
+**Note**: Please replace header with JWT for __Cognitos Authentication__
+
+import requests
+import json
+
+jwt_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."  # Your JWT
+session_id = "unique-session-123"
+user_id = "test@mbti-travel.com"
+
+url = "https://bedrock-agentcore-runtime.us-east-1.amazonaws.com/invoke-agent-runtime"
+headers = {
+    "Authorization": f"Bearer {jwt_token}",
+    "X-Amzn-Bedrock-AgentCore-Runtime-User-Id": user_id,
+    "Content-Type": "application/json"
+}
+body = {
+    "prompt": "Explain machine learning in simple terms",
+    "sessionId": session_id,
+    "enableTrace": True
+}
+
+response = requests.post(url, headers=headers, json=body, stream=True)
+if response.status_code == 200:
+    for line in response.iter_lines(decode_unicode=True):
+        if line.startswith("data: "):
+            chunk = json.loads(line[6:])  # Parse SSE data
+            if "completion" in chunk:
+                print(chunk["completion"]["bytes"].decode("utf-8"), end="")
+            elif "trace" in chunk:
+                print(f"Trace: {chunk['trace']}")
+else:
+    print(f"Error: {response.status_code} - {response.text}")

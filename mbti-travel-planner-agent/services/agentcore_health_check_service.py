@@ -12,6 +12,8 @@ Features:
 - Integration with monitoring service
 """
 
+from __future__ import annotations
+
 import asyncio
 import json
 import logging
@@ -22,8 +24,8 @@ from dataclasses import dataclass, field
 from enum import Enum
 import threading
 
-# Lazy import to avoid circular dependency
-# from .agentcore_runtime_client import AgentCoreRuntimeClient, AgentResponse
+# Import AgentCore runtime client
+from .agentcore_runtime_client import AgentCoreRuntimeClient, AgentResponse
 from .authentication_manager import AuthenticationManager
 from .agentcore_monitoring_service import (
     AgentCoreMonitoringService,
@@ -165,9 +167,9 @@ class AgentCoreHealthCheckService:
     
     def __init__(self,
                  config: EnvironmentConfig,
-                 runtime_client: Optional[AgentCoreRuntimeClient] = None,
-                 auth_manager: Optional[AuthenticationManager] = None,
-                 monitoring_service: Optional[AgentCoreMonitoringService] = None,
+                 runtime_client: Optional['AgentCoreRuntimeClient'] = None,
+                 auth_manager: Optional['AuthenticationManager'] = None,
+                 monitoring_service: Optional['AgentCoreMonitoringService'] = None,
                  enable_background_checks: bool = True):
         """
         Initialize the AgentCore health check service.
@@ -309,16 +311,48 @@ class AgentCoreHealthCheckService:
                 auth_status = "invalid"
                 self.logger.warning(f"Authentication check failed for {config.agent_name}: {e}")
         
-        # Perform agent invocation test
+        # Step 1: Use get_agent_runtime to verify agent exists and is ready
+        try:
+            agent_status_response = await self._get_agent_runtime_status(agent_arn)
+            agent_ready = agent_status_response.get('status') == 'READY'
+            
+            if not agent_ready:
+                # Agent is not ready, return unhealthy status
+                response_time_ms = (time.time() - start_time) * 1000
+                result = AgentHealthCheckResult(
+                    agent_arn=agent_arn,
+                    agent_name=config.agent_name,
+                    status=AgentHealthStatus.UNHEALTHY.value,
+                    response_time_ms=response_time_ms,
+                    timestamp=datetime.utcnow(),
+                    test_input="agent_status_check",
+                    test_output=None,
+                    error_message=f"Agent status is not READY: {agent_status_response.get('status', 'UNKNOWN')}",
+                    authentication_status=auth_status
+                )
+                
+                # Update health history
+                with self._check_lock:
+                    self.health_history[agent_arn].add_result(result)
+                
+                return result
+                
+        except Exception as e:
+            # If get_agent_runtime fails, log but continue with invocation test
+            self.logger.warning(f"Failed to get agent runtime status for {config.agent_name}: {e}")
+        
+        # Step 2: Perform agent invocation test using invoke_agent_runtime
         test_input = config.test_inputs[0] if config.test_inputs else "health check"
         
         try:
-            # Use monitoring service to perform the health check
-            result = await self.monitoring_service.perform_agent_health_check(
+            # Use the updated health check method with proper AgentCore APIs
+            result = await self._perform_agentcore_health_check(
                 agent_arn=agent_arn,
                 agent_name=config.agent_name,
-                runtime_client=self.runtime_client,
-                test_input=test_input
+                test_input=test_input,
+                timeout_seconds=config.timeout_seconds,
+                healthy_threshold_ms=config.healthy_threshold_ms,
+                degraded_threshold_ms=config.degraded_threshold_ms
             )
             
             # Override authentication status if we checked it
@@ -332,20 +366,34 @@ class AgentCoreHealthCheckService:
         except Exception as e:
             response_time_ms = (time.time() - start_time) * 1000
             
+            # Handle AgentCore-specific exceptions
+            error_message = str(e)
+            status = AgentHealthStatus.UNHEALTHY.value
+            
+            if isinstance(e, AgentCoreError):
+                if "ResourceNotFoundException" in error_message:
+                    error_message = f"Agent not found: {agent_arn}"
+                elif "AccessDeniedException" in error_message:
+                    error_message = f"Access denied for agent: {agent_arn}"
+                    auth_status = "invalid"
+                elif "ThrottlingException" in error_message:
+                    error_message = f"Agent is being throttled: {agent_arn}"
+                    status = AgentHealthStatus.DEGRADED.value
+            
             # Create error result
             result = AgentHealthCheckResult(
                 agent_arn=agent_arn,
                 agent_name=config.agent_name,
-                status=AgentHealthStatus.UNHEALTHY.value,
+                status=status,
                 response_time_ms=response_time_ms,
                 timestamp=datetime.utcnow(),
                 test_input=test_input,
                 test_output=None,
-                error_message=str(e),
+                error_message=error_message,
                 authentication_status=auth_status
             )
             
-            self.logger.error(f"Health check failed for {config.agent_name}: {e}")
+            self.logger.error(f"Health check failed for {config.agent_name}: {error_message}")
         
         # Update health history
         with self._check_lock:
@@ -505,6 +553,227 @@ class AgentCoreHealthCheckService:
             self._background_task.join(timeout=30)
             self.logger.info("Stopped background AgentCore health checks")
     
+    async def list_agent_runtimes(self) -> List[Dict[str, Any]]:
+        """
+        List all agent runtimes using bedrock-agentcore-control list_agent_runtimes API.
+        
+        Returns:
+            List of agent runtime information dictionaries
+        """
+        try:
+            # Create bedrock-agentcore-control client for management operations
+            import boto3
+            bedrock_agentcore_control = boto3.client('bedrock-agentcore-control', region_name=self.config.agentcore.region)
+            
+            # Use the bedrock-agentcore-control service to list agent runtimes
+            response = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: bedrock_agentcore_control.list_agent_runtimes()
+            )
+            
+            agent_runtimes = response.get('agentRuntimeSummaries', [])
+            
+            self.logger.info(f"Found {len(agent_runtimes)} agent runtimes")
+            
+            return [
+                {
+                    'agent_runtime_id': runtime.get('agentRuntimeId'),
+                    'agent_runtime_name': runtime.get('agentRuntimeName'),
+                    'status': runtime.get('status'),
+                    'creation_time': runtime.get('creationTime'),
+                    'last_updated': runtime.get('lastUpdatedTime')
+                }
+                for runtime in agent_runtimes
+            ]
+            
+        except Exception as e:
+            self.logger.error(f"Failed to list agent runtimes: {e}")
+            return []
+
+    async def _get_agent_runtime_status(self, agent_arn: str) -> Dict[str, Any]:
+        """
+        Get agent runtime status using bedrock-agentcore-control get_agent_runtime API.
+        
+        Args:
+            agent_arn: ARN of the agent
+            
+        Returns:
+            Dictionary with agent status information
+        """
+        try:
+            # Extract agent runtime ID from ARN for the API call
+            # ARN format: arn:aws:bedrock-agentcore:region:account:runtime/agent_name-id
+            agent_runtime_id = agent_arn.split('/')[-1] if '/' in agent_arn else agent_arn
+            
+            # Create bedrock-agentcore-control client for management operations
+            import boto3
+            bedrock_agentcore_control = boto3.client('bedrock-agentcore-control', region_name=self.config.agentcore.region)
+            
+            # Use the bedrock-agentcore-control service to get agent runtime status
+            response = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: bedrock_agentcore_control.get_agent_runtime(
+                    agentRuntimeId=agent_runtime_id
+                )
+            )
+            
+            return {
+                'status': response.get('status', 'UNKNOWN'),
+                'agent_arn': agent_arn,
+                'agent_runtime_id': agent_runtime_id,
+                'last_updated': response.get('lastUpdatedTime'),
+                'creation_time': response.get('creationTime'),
+                'runtime_config': response.get('runtimeConfig', {})
+            }
+            
+        except Exception as e:
+            self.logger.warning(f"Failed to get agent runtime status: {e}")
+            return {
+                'status': 'UNKNOWN',
+                'agent_arn': agent_arn,
+                'error': str(e)
+            }
+    
+    async def _perform_agentcore_health_check(
+        self,
+        agent_arn: str,
+        agent_name: str,
+        test_input: str,
+        timeout_seconds: float,
+        healthy_threshold_ms: float,
+        degraded_threshold_ms: float
+    ) -> AgentHealthCheckResult:
+        """
+        Perform AgentCore-specific health check using invoke_agent_runtime.
+        
+        Args:
+            agent_arn: ARN of the agent
+            agent_name: Name of the agent
+            test_input: Test input for the health check
+            timeout_seconds: Timeout for the health check
+            healthy_threshold_ms: Threshold for healthy response time
+            degraded_threshold_ms: Threshold for degraded response time
+            
+        Returns:
+            AgentHealthCheckResult with the check results
+        """
+        start_time = time.time()
+        
+        try:
+            # Use invoke_agent_runtime for connectivity test
+            response = await self.runtime_client.invoke_agent(
+                agent_arn=agent_arn,
+                input_text=test_input,
+                session_id=f"health_check_{int(time.time())}"
+            )
+            
+            response_time_ms = (time.time() - start_time) * 1000
+            
+            # Determine health status based on response and timing
+            if response and response.output_text:
+                if response_time_ms < healthy_threshold_ms:
+                    status = AgentHealthStatus.HEALTHY.value
+                elif response_time_ms < degraded_threshold_ms:
+                    status = AgentHealthStatus.DEGRADED.value
+                else:
+                    status = AgentHealthStatus.UNHEALTHY.value
+                error_message = None
+                test_output = response.output_text[:200] if response.output_text else None
+            else:
+                status = AgentHealthStatus.UNHEALTHY.value
+                error_message = "Empty or invalid response from agent"
+                test_output = None
+            
+            result = AgentHealthCheckResult(
+                agent_arn=agent_arn,
+                agent_name=agent_name,
+                status=status,
+                response_time_ms=response_time_ms,
+                timestamp=datetime.utcnow(),
+                test_input=test_input,
+                test_output=test_output,
+                error_message=error_message,
+                authentication_status="valid"  # If we got here, auth worked
+            )
+            
+            self.logger.debug(f"AgentCore health check successful for {agent_name}: {status} in {response_time_ms:.2f}ms")
+            return result
+            
+        except AgentTimeoutError as e:
+            response_time_ms = (time.time() - start_time) * 1000
+            return AgentHealthCheckResult(
+                agent_arn=agent_arn,
+                agent_name=agent_name,
+                status=AgentHealthStatus.UNHEALTHY.value,
+                response_time_ms=response_time_ms,
+                timestamp=datetime.utcnow(),
+                test_input=test_input,
+                test_output=None,
+                error_message=f"Health check timed out after {timeout_seconds}s",
+                authentication_status="unknown"
+            )
+            
+        except AuthenticationError as e:
+            response_time_ms = (time.time() - start_time) * 1000
+            auth_status = "expired" if "expired" in str(e).lower() else "invalid"
+            return AgentHealthCheckResult(
+                agent_arn=agent_arn,
+                agent_name=agent_name,
+                status=AgentHealthStatus.AUTHENTICATION_FAILED.value,
+                response_time_ms=response_time_ms,
+                timestamp=datetime.utcnow(),
+                test_input=test_input,
+                test_output=None,
+                error_message=f"Authentication failed: {str(e)}",
+                authentication_status=auth_status
+            )
+            
+        except AgentCoreError as e:
+            response_time_ms = (time.time() - start_time) * 1000
+            
+            # Map AgentCore errors to appropriate health statuses
+            if "ResourceNotFoundException" in str(e):
+                status = AgentHealthStatus.UNHEALTHY.value
+                error_message = f"Agent not found: {agent_arn}"
+            elif "AccessDeniedException" in str(e):
+                status = AgentHealthStatus.AUTHENTICATION_FAILED.value
+                error_message = f"Access denied for agent: {agent_arn}"
+            elif "ThrottlingException" in str(e):
+                status = AgentHealthStatus.DEGRADED.value
+                error_message = f"Agent is being throttled: {agent_arn}"
+            elif "ServiceUnavailableException" in str(e):
+                status = AgentHealthStatus.UNHEALTHY.value
+                error_message = f"AgentCore service unavailable: {str(e)}"
+            else:
+                status = AgentHealthStatus.UNHEALTHY.value
+                error_message = f"AgentCore error: {str(e)}"
+            
+            return AgentHealthCheckResult(
+                agent_arn=agent_arn,
+                agent_name=agent_name,
+                status=status,
+                response_time_ms=response_time_ms,
+                timestamp=datetime.utcnow(),
+                test_input=test_input,
+                test_output=None,
+                error_message=error_message,
+                authentication_status="unknown"
+            )
+            
+        except Exception as e:
+            response_time_ms = (time.time() - start_time) * 1000
+            return AgentHealthCheckResult(
+                agent_arn=agent_arn,
+                agent_name=agent_name,
+                status=AgentHealthStatus.UNHEALTHY.value,
+                response_time_ms=response_time_ms,
+                timestamp=datetime.utcnow(),
+                test_input=test_input,
+                test_output=None,
+                error_message=f"Unexpected error: {str(e)}",
+                authentication_status="unknown"
+            )
+
     def _background_check_loop(self) -> None:
         """Background thread loop for periodic health checks."""
         self.logger.info("Background AgentCore health check loop started")
@@ -517,11 +786,30 @@ class AgentCoreHealthCheckService:
                 
                 results = loop.run_until_complete(self.check_all_agents())
                 
-                # Log summary
+                # Log summary with improved accuracy
                 healthy_count = sum(1 for r in results.values() if r.status == AgentHealthStatus.HEALTHY.value)
+                degraded_count = sum(1 for r in results.values() if r.status == AgentHealthStatus.DEGRADED.value)
+                unhealthy_count = sum(1 for r in results.values() if r.status in [
+                    AgentHealthStatus.UNHEALTHY.value, 
+                    AgentHealthStatus.AUTHENTICATION_FAILED.value
+                ])
                 total_count = len(results)
                 
-                self.logger.info(f"Background AgentCore health check completed: {healthy_count}/{total_count} agents healthy")
+                self.logger.info(
+                    f"Background AgentCore health check completed: "
+                    f"{healthy_count}/{total_count} healthy, "
+                    f"{degraded_count} degraded, "
+                    f"{unhealthy_count} unhealthy"
+                )
+                
+                # Log individual agent statuses for debugging
+                for agent_arn, result in results.items():
+                    config = self.agent_configs.get(agent_arn)
+                    agent_name = config.agent_name if config else "unknown"
+                    self.logger.debug(
+                        f"Agent {agent_name}: {result.status} "
+                        f"({result.response_time_ms:.2f}ms) - {result.error_message or 'OK'}"
+                    )
                 
                 loop.close()
                 

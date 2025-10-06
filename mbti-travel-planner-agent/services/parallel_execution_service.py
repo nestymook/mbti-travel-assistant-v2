@@ -156,7 +156,7 @@ class ExecutionConfig:
     retry_delay_seconds: float = 1.0
     enable_dependency_resolution: bool = True
     fail_on_circular_dependencies: bool = True
-    enable_performance_monitoring: bool = True
+    enable_performance_tracking: bool = True
 
 
 class ParallelExecutionService:
