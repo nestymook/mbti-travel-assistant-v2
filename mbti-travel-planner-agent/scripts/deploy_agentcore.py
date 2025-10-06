@@ -1,803 +1,519 @@
 """
 AgentCore Deployment Script for MBTI Travel Planner Agent
 
-This script handles the deployment of the MBTI Travel Assistant to Amazon Bedrock AgentCore,
-including container building, authentication setup, runtime configuration, and environment-specific
-deployment configurations.
+This script handles the deployment of the MBTI Travel Planner Agent to Amazon Bedrock AgentCore
+using the bedrock-agentcore-starter-toolkit and agentcore CLI commands.
 
 Features:
-- Environment-specific deployment (development, staging, production)
-- ECR repository management and ARM64 container building
-- AgentCore runtime deployment with observability
-- Configuration validation and deployment verification
+- AgentCore CLI integration (configure, launch, status)
+- JWT authentication with Cognito
+- Environment-specific deployment configurations
+- Comprehensive deployment monitoring and validation
 """
 
 import json
 import os
 import sys
-import logging
-import subprocess
-import base64
-import yaml
-from typing import Dict, Any, Optional, List
-import datetime
+import time
+from typing import Dict, Any, Optional
 from pathlib import Path
-import platform
 
 import boto3
-from botocore.exceptions import ClientError, NoCredentialsError
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+from botocore.exceptions import ClientError
+from bedrock_agentcore_starter_toolkit import Runtime
 
 
-class EnvironmentConfig:
-    """Manages environment-specific configuration."""
+class AgentCoreDeployment:
+    """Deploy MBTI Travel Planner Agent to Bedrock AgentCore Runtime."""
     
-    def __init__(self, environment: str, config_dir: str = "config/environments"):
-        """
-        Initialize environment configuration.
+    def __init__(self, region: str = "us-east-1", environment: str = "production"):
+        """Initialize AgentCore deployment.
         
         Args:
-            environment: Environment name (development, staging, production)
-            config_dir: Directory containing environment configuration files
-        """
-        self.environment = environment
-        self.config_dir = Path(config_dir)
-        self.config = self._load_environment_config()
-    
-    def _load_environment_config(self) -> Dict[str, str]:
-        """Load environment-specific configuration from .env file."""
-        env_file = self.config_dir / f"{self.environment}.env"
-        
-        if not env_file.exists():
-            raise FileNotFoundError(f"Environment configuration not found: {env_file}")
-        
-        config = {}
-        with open(env_file, 'r', encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith('#') and '=' in line:
-                    key, value = line.split('=', 1)
-                    config[key.strip()] = value.strip()
-        
-        logger.info(f"Loaded {len(config)} configuration items for {self.environment}")
-        return config
-    
-    def get(self, key: str, default: Optional[str] = None) -> Optional[str]:
-        """Get configuration value."""
-        return self.config.get(key, default)
-    
-
-class CognitoConfigLoader:
-    """Loads and manages Cognito configuration from JSON file."""
-    
-    def __init__(self, config_path: str = "config/cognito_config.json"):
-        """
-        Initialize Cognito configuration loader.
-        
-        Args:
-            config_path: Path to cognito_config.json file
-        """
-        self.config_path = Path(config_path)
-        self.config = self._load_cognito_config()
-    
-    def _load_cognito_config(self) -> Dict[str, Any]:
-        """Load Cognito configuration from JSON file."""
-        if not self.config_path.exists():
-            raise FileNotFoundError(f"Cognito configuration not found: {self.config_path}")
-        
-        try:
-            with open(self.config_path, 'r', encoding="utf-8") as f:
-                config = json.load(f)
-            
-            logger.info(f"Loaded Cognito configuration from {self.config_path}")
-            return config
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in Cognito configuration file: {e}")
-        except Exception as e:
-            raise RuntimeError(f"Failed to load Cognito configuration: {e}")
-    
-    def get_discovery_url(self) -> str:
-        """Get OIDC discovery URL."""
-        return self.config.get("discovery_url", "")
-    
-    def get_client_id(self) -> str:
-        """Get Cognito app client ID."""
-        return self.config.get("app_client", {}).get("client_id", "")
-    
-    def get_user_pool_id(self) -> str:
-        """Get Cognito User Pool ID."""
-        return self.config.get("user_pool", {}).get("user_pool_id", "")
-    
-    def get_region(self) -> str:
-        """Get AWS region."""
-        return self.config.get("region", "us-east-1")
-    
-    def validate_config(self) -> bool:
-        """Validate that required Cognito configuration is present."""
-        required_fields = [
-            ("discovery_url", self.get_discovery_url()),
-            ("client_id", self.get_client_id()),
-            ("user_pool_id", self.get_user_pool_id()),
-            ("region", self.get_region())
-        ]
-        
-        missing_fields = []
-        for field_name, field_value in required_fields:
-            if not field_value:
-                missing_fields.append(field_name)
-        
-        if missing_fields:
-            logger.error(f"Missing required Cognito configuration fields: {missing_fields}")
-            return False
-        
-        # Validate discovery URL format for AgentCore compatibility
-        discovery_url = self.get_discovery_url()
-        if not discovery_url.endswith("/.well-known/openid-configuration"):
-            logger.error(f"Discovery URL must end with '/.well-known/openid-configuration': {discovery_url}")
-            return False
-        
-        logger.info("✅ Cognito configuration validation passed")
-        return True
-
-
-class AgentCoreDeployer:
-    """Handles deployment of MBTI Travel Assistant to AgentCore."""
-    
-    def __init__(self, region: str = "us-east-1", environment: str = "development", cognito_config_path: str = "config/cognito_config.json"):
-        """
-        Initialize the deployer.
-        
-        Args:
-            region: AWS region for deployment
-            environment: Environment (development, staging, production)
-            cognito_config_path: Path to Cognito configuration JSON file
+            region: AWS region for deployment.
+            environment: Environment (development, staging, production).
         """
         self.region = region
         self.environment = environment
-        self.session = boto3.Session()
-        
-        # Load environment configuration
-        self.env_config = EnvironmentConfig(environment)
-        
-        # Load Cognito configuration
-        self.cognito_config = CognitoConfigLoader(cognito_config_path)
-        
-        # Initialize AWS clients
-        try:
-            self.sts_client = self.session.client('sts', region_name=region)
-            self.ecr_client = self.session.client('ecr', region_name=region)
-            self.cloudwatch_client = self.session.client('cloudwatch', region_name=region)
-            
-            # Verify AWS credentials
-            self.account_id = self.sts_client.get_caller_identity()['Account']
-            logger.info(f"Deploying to AWS account: {self.account_id} in region: {region}")
-            logger.info(f"Environment: {environment}")
-            
-        except NoCredentialsError:
-            logger.error("AWS credentials not found. Please configure your credentials.")
-            sys.exit(1)
-        except Exception as e:
-            logger.error(f"Failed to initialize AWS clients: {str(e)}")
-            sys.exit(1)
+        self.session = boto3.Session(region_name=region)
+        self.agentcore_runtime = Runtime()
+        self.deployment_config_file = f"agentcore_deployment_config_{environment}.json"
     
-    def deploy(
-        self,
-        agent_name: str = "mbti-travel-planner-agent",
-        skip_container_build: bool = False,
-        validate_only: bool = False
-    ) -> Dict[str, Any]:
-        """
-        Deploy the MBTI Travel Assistant to AgentCore.
+
+    def load_cognito_config(self, config_file: str = "config/cognito_config.json") -> Dict[str, Any]:
+        """Load Cognito configuration from setup.
         
         Args:
-            agent_name: Name for the AgentCore runtime
-            skip_container_build: Skip container building step
-            validate_only: Only validate configuration without deploying
+            config_file: Path to Cognito configuration file.
             
         Returns:
-            Deployment result dictionary
+            Cognito configuration dictionary.
+            
+        Raises:
+            FileNotFoundError: If Cognito config file doesn't exist.
+            ValueError: If Cognito config is invalid.
         """
-        logger.info(f"Starting deployment of {agent_name} to {self.environment}")
-        
-        # Log Cognito configuration being used
-        logger.info("🔐 Using Cognito Configuration:")
-        logger.info(f"  - User Pool ID: {self.cognito_config.get_user_pool_id()}")
-        logger.info(f"  - Client ID: {self.cognito_config.get_client_id()}")
-        logger.info(f"  - Discovery URL: {self.cognito_config.get_discovery_url()}")
-        logger.info(f"  - Region: {self.cognito_config.get_region()}")
-        
-        deployment_config = {
-            "agent_name": agent_name,
-            "environment": self.environment,
-            "timestamp": datetime.datetime.now(datetime.UTC),
-            "region": self.region,
-            "account_id": self.account_id,
-            "cognito_config": {
-                "user_pool_id": self.cognito_config.get_user_pool_id(),
-                "client_id": self.cognito_config.get_client_id(),
-                "discovery_url": self.cognito_config.get_discovery_url(),
-                "region": self.cognito_config.get_region()
-            }
-        }
-        
         try:
-            # Step 1: Validate configuration
-            self._validate_configuration()
-            deployment_config["configuration_valid"] = True
-            
-            if validate_only:
-                logger.info("Configuration validation completed successfully")
-                deployment_config["status"] = "validated"
-                self._save_deployment_config(deployment_config)
-                return deployment_config
-            
-            # Step 2: Create or verify ECR repository
-            ecr_uri = self._setup_ecr_repository(agent_name)
-            deployment_config["ecr_repository"] = ecr_uri
-            
-            # Step 3: Build and push container (if not skipped)
-            if not skip_container_build:
-                container_uri = self._build_and_push_container(agent_name, ecr_uri)
-                deployment_config["container_uri"] = container_uri
-            else:
-                container_uri = f"{ecr_uri}:latest"
-                deployment_config["container_uri"] = container_uri
-                logger.info(f"Skipping container build, using: {container_uri}")
-            
-            # Step 5: Create AgentCore configuration
-            agentcore_config = self._create_agentcore_config(
-                agent_name,
-                container_uri,
-            )
-            deployment_config["agentcore_config"] = agentcore_config
-            
-            # Step 5.5: Update .bedrock_agentcore.yaml with Cognito configuration
-            self._update_bedrock_agentcore_yaml()
-            deployment_config["bedrock_agentcore_updated"] = True
-            
-            # Step 6: Deploy to AgentCore
-            agent_arn = self._deploy_to_agentcore(agentcore_config)
-            deployment_config["agent_arn"] = agent_arn
-            
-            # Step 7: Setup monitoring and observability
-            self._setup_monitoring(agent_name, agent_arn)
-            deployment_config["monitoring_configured"] = True
-            
-            # Step 8: Verify deployment
-            self._verify_deployment(agent_arn)
-            deployment_config["status"] = "success"
-            
-            logger.info(f"Successfully deployed {agent_name}")
-            logger.info(f"Agent ARN: {agent_arn}")
-            
-            # Save deployment configuration
-            self._save_deployment_config(deployment_config)
-            
-            return deployment_config
-            
-        except Exception as e:
-            logger.error(f"Deployment failed: {str(e)}")
-            deployment_config["status"] = "failed"
-            deployment_config["error"] = str(e)
-            self._save_deployment_config(deployment_config)
-            raise
-    
-    def _validate_configuration(self) -> None:
-        """Validate deployment configuration and prerequisites."""
-        logger.info("Validating deployment configuration...")
-        
-        # Check required environment variables
-        required_vars = [
-            "AGENT_MODEL"
-        ]
-        
-        missing_vars = []
-        for var in required_vars:
-            if not self.env_config.get(var):
-                missing_vars.append(var)
-        
-        if missing_vars:
-            raise ValueError(f"Missing required environment variables: {missing_vars}")
-        
-        # Check Docker availability
-        try:
-            subprocess.run(['docker', '--version'], check=True, capture_output=True)
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            raise RuntimeError("Docker is not available. Please install Docker.")
-        
-        # Validate Cognito configuration
-        if not self.cognito_config.validate_config():
-            raise ValueError("Cognito configuration validation failed. Please check config/cognito_config.json")
-        
-        # Validate AgentCore configuration file
-        agentcore_config_file = Path(".bedrock_agentcore.yaml")
-        if not agentcore_config_file.exists():
-            raise FileNotFoundError("AgentCore configuration file not found: .bedrock_agentcore.yaml")
-        
-        try:
-            with open(agentcore_config_file, 'r', encoding="utf-8") as f:
-                yaml.safe_load(f)
-        except yaml.YAMLError as e:
-            raise ValueError(f"Invalid AgentCore configuration YAML: {e}")
-        
-        logger.info("✅ Configuration validation completed successfully")
-    
-    def _setup_ecr_repository(self, agent_name: str) -> str:
-        """Create or verify ECR repository for container images."""
-        # First, try to get ECR repository from .bedrock_agentcore.yaml
-        bedrock_config_path = Path('.bedrock_agentcore.yaml')
-        repository_name = agent_name.lower()  # Default fallback
-        
-        if bedrock_config_path.exists():
-            try:
-                with open(bedrock_config_path, 'r') as f:
-                    bedrock_config = yaml.safe_load(f)
-                
-                # Extract ECR repository from bedrock config
-                agents_config = bedrock_config.get('agents', {})
-                agent_config = agents_config.get(agent_name, {})
-                aws_config = agent_config.get('aws', {})
-                
-                if 'ecr_repository' in aws_config:
-                    # Extract repository name from full URI
-                    ecr_repo_uri = aws_config['ecr_repository']
-                    repository_name = ecr_repo_uri.split('/')[-1]
-                    logger.info(f"Using ECR repository from .bedrock_agentcore.yaml: {repository_name}")
-                    
-            except Exception as e:
-                logger.warning(f"Could not read ECR repository from .bedrock_agentcore.yaml: {e}")
-                logger.info(f"Using default repository name: {repository_name}")
-        
-        try:
-            # Check if repository exists
-            response = self.ecr_client.describe_repositories(
-                repositoryNames=[repository_name]
-            )
-            repository_uri = response['repositories'][0]['repositoryUri']
-            logger.info(f"Using existing ECR repository: {repository_uri}")
-            
-        except ClientError as e:
-            if e.response['Error']['Code'] == 'RepositoryNotFoundException':
-                # Create new repository
-                logger.info(f"Creating ECR repository: {repository_name}")
-                response = self.ecr_client.create_repository(
-                    repositoryName=repository_name,
-                    imageScanningConfiguration={'scanOnPush': True}
+            if not os.path.exists(config_file):
+                raise FileNotFoundError(
+                    f"Cognito configuration file not found: {config_file}. "
+                    "Please ensure cognito_config.json exists."
                 )
-                repository_uri = response['repository']['repositoryUri']
-                logger.info(f"Created ECR repository: {repository_uri}")
-            else:
-                raise
-        
-        return repository_uri
-    
-    def _build_and_push_container(self, agent_name: str, ecr_uri: str) -> str:
-        """Build ARM64 container and push to ECR."""
-        logger.info("Building ARM64 container for AgentCore")
-        
-        # Get ECR login token
-        token_response = self.ecr_client.get_authorization_token()
-        token = token_response['authorizationData'][0]['authorizationToken']
-        endpoint = token_response['authorizationData'][0]['proxyEndpoint']
-        
-        # Decode token and login to ECR
-        username, password = base64.b64decode(token).decode().split(':')
-        
-        try:
-            # Docker login
-            subprocess.run([
-                'docker', 'login', '--username', username, '--password-stdin', endpoint
-            ], input=password.encode(), check=True, capture_output=True)
             
-            # Build ARM64 container with environment-specific tag
-            image_tag = f"{ecr_uri}:{self.environment}-latest"
-            build_args = [
-                'docker', 'build', 
-                '--platform', 'linux/arm64',
-                '--build-arg', f'ENVIRONMENT={self.environment}',
-                '--build-arg', f'AWS_REGION={self.region}',
-                '-t', image_tag,
-                '.'
-            ]
+            with open(config_file, 'r') as f:
+                config = json.load(f)
             
-            logger.info(f"Building container with tag: {image_tag}")
-            result = subprocess.run(build_args, check=True, capture_output=True, text=True)
-            logger.debug(f"Docker build output: {result.stdout}")
+            # Validate required fields
+            required_fields = ['user_pool', 'app_client', 'discovery_url']
+            for field in required_fields:
+                if field not in config:
+                    raise ValueError(f"Missing required field in Cognito config: {field}")
             
-            # Also tag as latest for the environment
-            latest_tag = f"{ecr_uri}:latest"
-            subprocess.run(['docker', 'tag', image_tag, latest_tag], check=True)
+            # Validate app_client has required fields including client_secret
+            app_client = config.get('app_client', {})
+            required_app_client_fields = ['client_id', 'client_secret']
+            for field in required_app_client_fields:
+                if field not in app_client:
+                    raise ValueError(f"Missing required app_client field in Cognito config: {field}")
             
-            # Push both tags
-            subprocess.run(['docker', 'push', image_tag], check=True)
-            subprocess.run(['docker', 'push', latest_tag], check=True)
+            # Validate client_secret is not empty
+            client_secret = app_client.get('client_secret', '')
+            if not client_secret or len(client_secret) < 10:
+                raise ValueError("Invalid or missing client_secret in Cognito config. Client secret is required for authentication.")
             
-            logger.info(f"Successfully pushed container: {image_tag}")
-            return image_tag
+            print(f"✓ Loaded Cognito configuration from: {config_file}")
+            print(f"✓ Validated client_id: {app_client['client_id']}")
+            print(f"✓ Validated client_secret: {'*' * (len(client_secret) - 4)}{client_secret[-4:]}")
+            return config
             
-        except subprocess.CalledProcessError as e:
-            logger.error(f"Container build/push failed: {e}")
-            if hasattr(e, 'stderr') and e.stderr:
-                logger.error(f"Error details: {e.stderr}")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON in Cognito config file: {e}")
+        except Exception as e:
+            print(f"✗ Error loading Cognito configuration: {e}")
             raise
-    
-    def _setup_monitoring(self, agent_name: str, agent_arn: str) -> None:
-        """Setup CloudWatch monitoring and observability."""
-        logger.info("Setting up monitoring and observability...")
+
+
+    def create_jwt_authorizer_config(self, cognito_config: Dict[str, Any]) -> Dict[str, Any]:
+        """Create JWT authorizer configuration for AgentCore Runtime.
         
-        try:
-            # Create CloudWatch dashboard
-            dashboard_name = f"{agent_name}-{self.environment}-dashboard"
+        Args:
+            cognito_config: Cognito configuration dictionary.
             
-            dashboard_body = {
-                "widgets": [
-                    {
-                        "type": "metric",
-                        "properties": {
-                            "metrics": [
-                                ["AWS/BedrockAgentCore", "Invocations", "AgentName", agent_name],
-                                [".", "Errors", ".", "."],
-                                [".", "Duration", ".", "."]
-                            ],
-                            "period": 300,
-                            "stat": "Sum",
-                            "region": self.region,
-                            "title": f"{agent_name} Metrics"
-                        }
-                    },
-                    {
-                        "type": "log",
-                        "properties": {
-                            "query": f"SOURCE '/aws/bedrock-agentcore/{agent_name}'\n| fields @timestamp, @message\n| sort @timestamp desc\n| limit 100",
-                            "region": self.region,
-                            "title": f"{agent_name} Logs"
-                        }
-                    }
-                ]
+        Returns:
+            JWT authorizer configuration.
+        """
+        client_id = cognito_config['app_client']['client_id']
+        client_secret = cognito_config['app_client']['client_secret']
+        discovery_url = cognito_config['discovery_url']
+        
+        auth_config = {
+            "customJWTAuthorizer": {
+                "allowedClients": [client_id],
+                "discoveryUrl": discovery_url,
             }
+        }
+        
+        print(f"✓ Created JWT authorizer config:")
+        print(f"  - Client ID: {client_id}")
+        print(f"  - Client Secret: {'*' * (len(client_secret) - 4)}{client_secret[-4:]} (required for authentication)")
+        print(f"  - Discovery URL: {discovery_url}")
+        print(f"  - Note: Client secret is used for SECRET_HASH calculation during authentication")
+        return auth_config
+    
+    def configure_agentcore_runtime(self, 
+                                   entrypoint: str = "main.py",
+                                   agent_name: str = "mbti_travel_planner_agent",
+                                   requirements_file: str = "requirements.txt") -> Dict[str, Any]:
+        """Configure AgentCore Runtime deployment for MBTI Travel Planner Agent.
+        
+        Args:
+            entrypoint: Agent entrypoint file (default: main.py).
+            agent_name: Name for the agent.
+            requirements_file: Path to requirements.txt file.
             
-            self.cloudwatch_client.put_dashboard(
-                DashboardName=dashboard_name,
-                DashboardBody=json.dumps(dashboard_body)
+        Returns:
+            Configuration response from AgentCore Runtime.
+        """
+        try:
+            # Load Cognito configuration
+            cognito_config = self.load_cognito_config()
+            
+            # Create JWT authorizer configuration
+            auth_config = self.create_jwt_authorizer_config(cognito_config)
+            
+            # Validate requirements file exists
+            if not os.path.exists(requirements_file):
+                raise FileNotFoundError(f"Requirements file not found: {requirements_file}")
+            
+            print(f"🚀 Configuring AgentCore Runtime deployment for MBTI Travel Planner Agent...")
+            print(f"Entrypoint: {entrypoint}")
+            print(f"Agent Name: {agent_name}")
+            print(f"Requirements: {requirements_file}")
+            print(f"Region: {self.region}")
+            print(f"Environment: {self.environment}")
+            
+            # Validate entrypoint file exists
+            if not os.path.exists(entrypoint):
+                raise FileNotFoundError(f"Entrypoint file not found: {entrypoint}")
+            
+            # Configure AgentCore Runtime
+            response = self.agentcore_runtime.configure(
+                entrypoint=entrypoint,
+                auto_create_execution_role=True,
+                auto_create_ecr=True,
+                requirements_file=requirements_file,
+                region=self.region,
+                authorizer_configuration=auth_config,
+                agent_name=agent_name
             )
             
-            logger.info(f"Created CloudWatch dashboard: {dashboard_name}")
+            print("✓ AgentCore Runtime configuration completed")
             
-            # Create CloudWatch alarms
-            self._create_cloudwatch_alarms(agent_name)
+            # Save configuration for reference
+            config_data = {
+                'entrypoint': entrypoint,
+                'agent_name': agent_name,
+                'requirements_file': requirements_file,
+                'region': self.region,
+                'environment': self.environment,
+                'auth_config': auth_config,
+                'cognito_config': cognito_config,
+                'configuration_response': response,
+                'configured_at': time.time()
+            }
             
-        except Exception as e:
-            logger.warning(f"Failed to setup monitoring: {e}")
-    
-    def _create_cloudwatch_alarms(self, agent_name: str) -> None:
-        """Create CloudWatch alarms for monitoring."""
-        alarms = [
-            {
-                "AlarmName": f"{agent_name}-{self.environment}-high-error-rate",
-                "ComparisonOperator": "GreaterThanThreshold",
-                "EvaluationPeriods": 2,
-                "MetricName": "Errors",
-                "Namespace": "AWS/BedrockAgentCore",
-                "Period": 300,
-                "Statistic": "Sum",
-                "Threshold": 10.0,
-                "ActionsEnabled": True,
-                "AlarmDescription": f"High error rate for {agent_name}",
-                "Dimensions": [
-                    {
-                        "Name": "AgentName",
-                        "Value": agent_name
-                    }
-                ],
-                "Unit": "Count"
-            },
-            {
-                "AlarmName": f"{agent_name}-{self.environment}-high-duration",
-                "ComparisonOperator": "GreaterThanThreshold",
-                "EvaluationPeriods": 2,
-                "MetricName": "Duration",
-                "Namespace": "AWS/BedrockAgentCore",
-                "Period": 300,
-                "Statistic": "Average",
-                "Threshold": 30000.0,  # 30 seconds
-                "ActionsEnabled": True,
-                "AlarmDescription": f"High response time for {agent_name}",
-                "Dimensions": [
-                    {
-                        "Name": "AgentName",
-                        "Value": agent_name
-                    }
-                ],
-                "Unit": "Milliseconds"
-            }
-        ]
-        
-        for alarm in alarms:
-            try:
-                self.cloudwatch_client.put_metric_alarm(**alarm)
-                logger.info(f"Created CloudWatch alarm: {alarm['AlarmName']}")
-            except Exception as e:
-                logger.warning(f"Failed to create alarm {alarm['AlarmName']}: {e}")
-    
-    def _create_agentcore_config(
-        self,
-        agent_name: str,
-        container_uri: str
-    ) -> Dict[str, Any]:
-        """Create AgentCore deployment configuration with environment-specific settings."""
-                
-        # Validate Cognito configuration before deployment
-        if not self.cognito_config.validate_config():
-            raise ValueError("Invalid Cognito configuration. Please check config/cognito_config.json")
-        
-        # Base configuration
-        config = {
-            "name": f"{agent_name}-{self.environment}",
-            "container_uri": container_uri,
-            "platform": "linux/arm64",
-            "network_mode": "PUBLIC",
-            "authentication": {
-                "type": "jwt",
-                "config": {
-                    "customJWTAuthorizer": {
-                        "discoveryUrl": self.cognito_config.get_discovery_url(),
-                        "allowedClients": [self.cognito_config.get_client_id()]
-                    }
-                }
-            },
-            "environment": {
-                "AWS_REGION": self.region,
-                "AWS_DEFAULT_REGION": self.region,
-                "ENVIRONMENT": self.environment,
-                "DOCKER_CONTAINER": "1"
-            },
-            "observability": {
-                "enabled": True,
-                "tracing": True,
-                "metrics": True,
-                "logs": True
-            }
-        }
-        
-        # Add environment-specific configuration
-        env_vars = {
-            "AGENT_MODEL": self.env_config.get("AGENT_MODEL"),
-            "AGENT_TEMPERATURE": self.env_config.get("AGENT_TEMPERATURE", "0.1"),
-            "AGENT_MAX_TOKENS": self.env_config.get("AGENT_MAX_TOKENS", "4096"),
-        }
-        
-        # Add non-null environment variables
-        for key, value in env_vars.items():
-            if value is not None:
-                config["environment"][key] = value
-        
-        # Environment-specific resource configuration
-        if self.environment == "production":
-            config["resources"] = {
-                "cpu": "2 vCPU",
-                "memory": "4 GB"
-            }
-            config["scaling"] = {
-                "min_instances": 2,
-                "max_instances": 20,
-                "target_utilization": 70
-            }
-        elif self.environment == "staging":
-            config["resources"] = {
-                "cpu": "1 vCPU",
-                "memory": "2 GB"
-            }
-            config["scaling"] = {
-                "min_instances": 1,
-                "max_instances": 10,
-                "target_utilization": 70
-            }
-        else:  # development
-            config["resources"] = {
-                "cpu": "0.5 vCPU",
-                "memory": "1 GB"
-            }
-            config["scaling"] = {
-                "min_instances": 1,
-                "max_instances": 3,
-                "target_utilization": 80
-            }
-        
-        # Health check configuration
-        config["health_check"] = {
-            "path": "/health",
-            "interval": 30,
-            "timeout": 5,
-            "retries": 3
-        }
-        
-        # Save configuration
-        config_filename = f"agentcore_deployment_config_{self.environment}.json"
-        with open(config_filename, 'w', encoding="utf-8") as f:
-            json.dump(config, f, indent=2)
-        
-        logger.info(f"Created AgentCore configuration: {config_filename}")
-        return config
-    
-    def _update_bedrock_agentcore_yaml(self) -> None:
-        """Update .bedrock_agentcore.yaml with Cognito configuration from JSON file."""
-        agentcore_config_file = Path(".bedrock_agentcore.yaml")
-        
-        if not agentcore_config_file.exists():
-            logger.warning("⚠️  .bedrock_agentcore.yaml not found, skipping update")
-            return
-        
-        try:
-            # Load existing configuration
-            with open(agentcore_config_file, 'r', encoding="utf-8") as f:
-                config = yaml.safe_load(f)
+            self.save_deployment_config(config_data)
             
-            # Update authentication configuration with Cognito data
-            if 'agents' in config:
-                for agent_name, agent_config in config['agents'].items():
-                    if 'authorizer_configuration' not in agent_config:
-                        agent_config['authorizer_configuration'] = {}
-                    
-                    agent_config['authorizer_configuration']['customJWTAuthorizer'] = {
-                        'discoveryUrl': self.cognito_config.get_discovery_url(),
-                        'allowedClients': [self.cognito_config.get_client_id()]
-                    }
-                    
-                    logger.info(f"✅ Updated authentication config for agent: {agent_name}")
-            
-            # Save updated configuration
-            with open(agentcore_config_file, 'w', encoding="utf-8") as f:
-                yaml.dump(config, f, default_flow_style=False, indent=2)
-            
-            logger.info("✅ Updated .bedrock_agentcore.yaml with Cognito configuration")
+            return response
             
         except Exception as e:
-            logger.error(f"❌ Failed to update .bedrock_agentcore.yaml: {e}")
-            raise RuntimeError(f"Failed to update AgentCore configuration file: {e}")
+            print(f"✗ Error configuring AgentCore Runtime: {e}")
+            raise
     
-    def _deploy_to_agentcore(self, config: Dict[str, Any]) -> str:
-        """Deploy to AgentCore runtime (placeholder implementation)."""
-        """agentcore configure -e my_agent.py --region us-west-2 --agent-name mbti-travel-planner-agent"""
-        deploy_args = [
-            'agentcore', 'configure', 
-            '-e', f'main.py',
-            '--region', f'us-east-1',
-            '--agent-name', f'mbti-travel-planner-agent'
-        ]
+    def launch_deployment(self) -> Dict[str, Any]:
+        """Launch the agent deployment to AgentCore Runtime.
         
-        # Check Docker availability
+        Returns:
+            Launch response from AgentCore Runtime.
+        """
         try:
-            subprocess.run(deploy_args, check=True, capture_output=True)
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            raise RuntimeError("main.py is not available. Please check.")
+            print("🚀 Launching deployment to AgentCore Runtime...")
+            
+            # Launch deployment
+            launch_response = self.agentcore_runtime.launch()
+            
+            print("✓ Deployment launch initiated")
+            print(f"Launch Response: {launch_response}")
+            
+            return launch_response
+            
+        except Exception as e:
+            print(f"✗ Error launching deployment: {e}")
+            raise
+    
+    def monitor_deployment_status(self, timeout_minutes: int = 15) -> Dict[str, Any]:
+        """Monitor deployment status until READY or timeout.
+        
+        Args:
+            timeout_minutes: Maximum time to wait for deployment.
+            
+        Returns:
+            Final deployment status.
+        """
+        try:
+            print(f"⏳ Monitoring deployment status (timeout: {timeout_minutes} minutes)...")
+            
+            start_time = time.time()
+            timeout_seconds = timeout_minutes * 60
+            
+            while True:
+                try:
+                    status_response = self.agentcore_runtime.status()
+                    
+                    # Get agent name from deployment config
+                    deployment_config = self.load_deployment_config()
+                    agent_name = deployment_config.get('agent_name', 'mbti_travel_planner_agent')
+                    print(f"Retrieved Bedrock AgentCore status for: {agent_name}")
+                    
+                    # Check endpoint status first (primary indicator)
+                    endpoint_status = 'UNKNOWN'
+                    agent_status = 'UNKNOWN'
+                    
+                    if hasattr(status_response, 'endpoint') and status_response.endpoint:
+                        endpoint_status = status_response.endpoint.get('status', 'UNKNOWN')
+                        print(f"Endpoint Status: {endpoint_status}")
+                    
+                    if hasattr(status_response, 'agent') and status_response.agent:
+                        agent_status = status_response.agent.get('status', 'UNKNOWN')
+                        print(f"Agent Status: {agent_status}")
+                    
+                    # Check if deployment is ready (both endpoint and agent should be READY)
+                    if endpoint_status == 'READY' and agent_status == 'READY':
+                        print("🎉 Deployment is READY! (Both endpoint and agent are ready)")
+                        return status_response
+                    elif endpoint_status == 'READY':
+                        print("🎉 Deployment is READY! (Endpoint is ready)")
+                        return status_response
+                    elif agent_status == 'READY':
+                        print("🎉 Deployment is READY! (Agent is ready)")
+                        return status_response
+                    elif endpoint_status in ['CREATE_FAILED', 'UPDATE_FAILED'] or agent_status in ['CREATE_FAILED', 'UPDATE_FAILED']:
+                        print(f"💥 Deployment failed - Endpoint: {endpoint_status}, Agent: {agent_status}")
+                        return status_response
+                    
+                    print(f"⏳ Still waiting - Endpoint: {endpoint_status}, Agent: {agent_status}")
+                    
+                    # Check timeout
+                    elapsed = time.time() - start_time
+                    if elapsed > timeout_seconds:
+                        print(f"⏰ Timeout reached ({timeout_minutes} minutes)")
+                        return status_response
+                    
+                    # Wait before next check
+                    time.sleep(30)
+                    
+                except Exception as e:
+                    print(f"⚠️ Error checking status: {e}")
+                    time.sleep(30)
+                    
+        except KeyboardInterrupt:
+            print("\n⏹️ Monitoring interrupted by user")
+            return self.agentcore_runtime.status()
+    
+    def test_deployment_connectivity(self) -> bool:
+        """Test connectivity to deployed agent.
+        
+        Returns:
+            True if connectivity test passes, False otherwise.
+        """
+        try:
+            print("🔍 Testing deployment connectivity...")
+            
+            # Get deployment status
+            status_response = self.agentcore_runtime.status()
+            
+            if 'endpoint' not in status_response:
+                print("✗ No endpoint information available")
+                return False
+            
+            endpoint_info = status_response['endpoint']
+            endpoint_status = endpoint_info.get('status', 'UNKNOWN')
+            
+            if endpoint_status != 'READY':
+                print(f"✗ Endpoint not ready. Status: {endpoint_status}")
+                return False
+            
+            # Extract endpoint URL if available
+            if 'url' in endpoint_info:
+                endpoint_url = endpoint_info['url']
+                print(f"✓ Endpoint URL: {endpoint_url}")
+            
+            print("✓ Deployment connectivity test passed")
+            return True
+            
+        except Exception as e:
+            print(f"✗ Connectivity test failed: {e}")
+            return False
+    
+    def save_deployment_config(self, config: Dict[str, Any]) -> None:
+        """Save deployment configuration to JSON file.
+        
+        Args:
+            config: Configuration dictionary to save.
+        """
+        try:
+            with open(self.deployment_config_file, 'w') as f:
+                json.dump(config, f, indent=2, default=str)
+            print(f"✓ Deployment configuration saved to: {self.deployment_config_file}")
+        except Exception as e:
+            print(f"✗ Error saving deployment configuration: {e}")
+            raise
+    
+    def load_deployment_config(self) -> Dict[str, Any]:
+        """Load existing deployment configuration.
+        
+        Returns:
+            Configuration dictionary or empty dict if not found.
+        """
+        try:
+            if os.path.exists(self.deployment_config_file):
+                with open(self.deployment_config_file, 'r') as f:
+                    return json.load(f)
+            return {}
+        except Exception as e:
+            print(f"✗ Error loading deployment configuration: {e}")
+            return {}
+    
+    def deploy_complete_workflow(self, 
+                                entrypoint: str = "main.py",
+                                agent_name: str = "mbti_travel_planner_agent",
+                                requirements_file: str = "requirements.txt") -> Dict[str, Any]:
+        """Execute complete deployment workflow.
+        
+        Args:
+            entrypoint: Agent entrypoint file (default: main.py).
+            agent_name: Name for the agent.
+            requirements_file: Path to requirements.txt file.
+        
+        Returns:
+            Final deployment status and configuration.
+        """
+        try:
+            print("🚀 Starting complete AgentCore Runtime deployment workflow...")
+            print(f"Environment: {self.environment}")
+            
+            # Step 1: Configure runtime
+            print("\n📋 Step 1: Configuring AgentCore Runtime...")
+            config_response = self.configure_agentcore_runtime(
+                entrypoint=entrypoint,
+                agent_name=agent_name,
+                requirements_file=requirements_file
+            )
+            
+            # Step 2: Launch deployment
+            print("\n🚀 Step 2: Launching deployment...")
+            launch_response = self.launch_deployment()
+            
+            # Step 3: Monitor deployment status
+            print("\n⏳ Step 3: Monitoring deployment status...")
+            status_response = self.monitor_deployment_status()
+            
+            # Step 4: Test connectivity
+            print("\n🔍 Step 4: Testing deployment connectivity...")
+            connectivity_ok = self.test_deployment_connectivity()
+            
+            # Compile final results
+            # Check deployment success based on status response structure
+            deployment_successful = False
+            endpoint_ready = False
+            agent_ready = False
+            
+            if hasattr(status_response, 'endpoint') and status_response.endpoint:
+                endpoint_ready = status_response.endpoint.get('status') == 'READY'
+            
+            if hasattr(status_response, 'agent') and status_response.agent:
+                agent_ready = status_response.agent.get('status') == 'READY'
+            
+            # Deployment is successful if either endpoint or agent is ready and connectivity test passes
+            deployment_successful = (endpoint_ready or agent_ready) and connectivity_ok
+            
+            final_result = {
+                'configuration': config_response,
+                'launch': launch_response,
+                'final_status': status_response,
+                'connectivity_test': connectivity_ok,
+                'deployment_successful': deployment_successful,
+                'environment': self.environment
+            }
+            
+            # Update deployment config with final results
+            deployment_config = self.load_deployment_config()
+            deployment_config.update({
+                'final_deployment_result': final_result,
+                'completed_at': time.time()
+            })
+            self.save_deployment_config(deployment_config)
+            
+            if final_result['deployment_successful']:
+                print("\n🎉 Deployment completed successfully!")
+                print("✓ MBTI Travel Planner Agent is deployed and ready")
+                print("✓ Authentication is configured")
+                print("✓ Connectivity test passed")
+            else:
+                print("\n⚠️ Deployment completed with issues")
+                print("Please check the logs and status for details")
+            
+            return final_result
+            
+        except Exception as e:
+            print(f"\n💥 Deployment workflow failed: {e}")
+            raise
+    
 
-        logger.info("Deploying to AgentCore runtime...")
-        
-        # Placeholder implementation
-        # In actual implementation, this would use:
-        # from bedrock_agentcore_starter_toolkit import AgentCoreDeployer
-        # deployer = AgentCoreDeployer()
-        # result = deployer.deploy(config)
-        
-        # For now, return a mock ARN
-        mock_agent_arn = f"arn:aws:bedrock-agentcore:{self.region}:{self.account_id}:agent/{config['name']}"
-        
-        logger.info(f"AgentCore deployment completed (mock): {mock_agent_arn}")
-        return mock_agent_arn
-    
-    def _verify_deployment(self, agent_arn: str) -> None:
-        """Verify the deployment is successful."""
-        # TODO: Implement actual deployment verification
-        # This would check the agent status and health
-        
-        logger.info(f"Verifying deployment: {agent_arn}")
-        logger.info("Deployment verification completed (mock)")
-    
-    def _save_deployment_config(self, config: Dict[str, Any]) -> None:
-        """Save deployment configuration to file."""
-        filename = f"deployment_execution_summary.json"
-        
-        with open(filename, 'w', encoding="utf-8") as f:
-            json.dump(config, f, indent=2, default=str)
-        
-        logger.info(f"Deployment configuration saved to: {filename}")
 
 
 def main():
-    """Main deployment function."""
+    """Main function to run AgentCore deployment."""
     import argparse
     
-    parser = argparse.ArgumentParser(
-        description='Deploy MBTI Travel Assistant to AgentCore',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  # Deploy to development environment
-  python deploy_agentcore.py --environment development
-    
-  # Validate configuration only
-  python deploy_agentcore.py --environment staging --validate-only
-  
-  # Skip container build (use existing image)
-  python deploy_agentcore.py --environment production --skip-container-build
-  
-  # Use custom Cognito configuration file
-  python deploy_agentcore.py --cognito-config custom/cognito.json
-  
-  # Deploy with verbose logging and custom Cognito config
-  python deploy_agentcore.py --verbose --cognito-config config/prod_cognito.json
-        """
-    )
-    
-    parser.add_argument('--agent-name', default='mbti_travel_planner_agent',
-                       help='Name for the AgentCore runtime')
-    parser.add_argument('--environment', default='development',
+    parser = argparse.ArgumentParser(description='Deploy MBTI Travel Planner Agent to AgentCore Runtime')
+    parser.add_argument('--region', default='us-east-1', help='AWS region (default: us-east-1)')
+    parser.add_argument('--environment', default='production', 
                        choices=['development', 'staging', 'production'],
-                       help='Deployment environment')
-    parser.add_argument('--region', default='us-east-1',
-                       help='AWS region for deployment')
-    parser.add_argument('--skip-container-build', action='store_true',
-                       help='Skip container building step')
-    parser.add_argument('--validate-only', action='store_true',
-                       help='Only validate configuration without deploying')
-    parser.add_argument('--verbose', '-v', action='store_true',
-                       help='Enable verbose logging')
-    parser.add_argument('--cognito-config', default='config/cognito_config.json',
-                       help='Path to Cognito configuration JSON file')
+                       help='Environment (default: production)')
+    parser.add_argument('--entrypoint', default='main.py', 
+                       help='Agent entrypoint (default: main.py)')
+    parser.add_argument('--agent-name', default='mbti_travel_planner_agent',
+                       help='Agent name (default: mbti_travel_planner_agent)')
+    parser.add_argument('--requirements', default='requirements.txt',
+                       help='Requirements file (default: requirements.txt)')
+    parser.add_argument('--configure-only', action='store_true',
+                       help='Only configure, do not launch deployment')
+    parser.add_argument('--launch-only', action='store_true',
+                       help='Only launch (assumes already configured)')
+    parser.add_argument('--status-only', action='store_true',
+                       help='Only check deployment status')
     
     args = parser.parse_args()
     
-    # Configure logging level
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-    
     try:
-        deployer = AgentCoreDeployer(
-            region=args.region, 
-            environment=args.environment,
-            cognito_config_path=args.cognito_config
-        )
+        # Initialize deployment
+        deployment = AgentCoreDeployment(region=args.region, environment=args.environment)
         
-        result = deployer.deploy(
-            agent_name=args.agent_name,
-            skip_container_build=args.skip_container_build,
-            validate_only=args.validate_only
-        )
+        if args.status_only:
+            # Just check status
+            deployment.configure_agentcore_runtime(
+                entrypoint=args.entrypoint,
+                agent_name=args.agent_name,
+                requirements_file=args.requirements
+            )
+            status = deployment.agentcore_runtime.status()
+            print(f"Deployment Status: {json.dumps(status, indent=2, default=str)}")
+            return 0
         
-        print("\n" + "="*60)
-        if args.validate_only:
-            print("CONFIGURATION VALIDATION SUCCESSFUL")
+        elif args.configure_only:
+            # Only configure
+            config_response = deployment.configure_agentcore_runtime(
+                entrypoint=args.entrypoint,
+                agent_name=args.agent_name,
+                requirements_file=args.requirements
+            )
+            print(f"Configuration completed: {config_response}")
+            return 0
+        
+        elif args.launch_only:
+            # Only launch
+            launch_response = deployment.launch_deployment()
+            status_response = deployment.monitor_deployment_status()
+            connectivity_ok = deployment.test_deployment_connectivity()
+            
+            print(f"Launch Response: {launch_response}")
+            print(f"Final Status: {status_response}")
+            print(f"Connectivity OK: {connectivity_ok}")
+            return 0
+        
         else:
-            print("DEPLOYMENT SUCCESSFUL")
-        print("="*60)
-        print(f"Agent Name: {result['agent_name']}")
-        print(f"Environment: {result['environment']}")
-        print(f"Region: {result['region']}")
-        
-        if not args.validate_only:
-            print(f"Agent ARN: {result.get('agent_arn', 'N/A')}")
-            print(f"Container URI: {result.get('container_uri', 'N/A')}")
-        
-        print("="*60)
-        
-        if not args.validate_only:
-            print("\nNext steps:")
-            print("1. Test the deployed agent using the test scripts")
-            print("2. Monitor the agent using CloudWatch dashboard")
-            print("3. Check logs for any issues")
+            # Complete workflow
+            result = deployment.deploy_complete_workflow(
+                entrypoint=args.entrypoint,
+                agent_name=args.agent_name,
+                requirements_file=args.requirements
+            )
+            
+            print("\n📋 Deployment Summary:")
+            print(f"Environment: {result.get('environment', 'unknown')}")
+            print(f"Successful: {result['deployment_successful']}")
+            if 'endpoint' in result.get('final_status', {}):
+                endpoint_info = result['final_status']['endpoint']
+                print(f"Status: {endpoint_info.get('status', 'UNKNOWN')}")
+                if 'url' in endpoint_info:
+                    print(f"URL: {endpoint_info['url']}")
+            
+            return 0 if result['deployment_successful'] else 1
         
     except Exception as e:
-        print(f"\nDEPLOYMENT FAILED: {str(e)}")
-        if args.verbose:
-            import traceback
-            traceback.print_exc()
-        sys.exit(1)
+        print(f"\n💥 Deployment failed: {e}")
+        return 1
 
 
 if __name__ == "__main__":

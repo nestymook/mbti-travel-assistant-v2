@@ -9,7 +9,7 @@ ENV UV_SYSTEM_PYTHON=1 \
     AWS_REGION=us-east-1 \
     AWS_DEFAULT_REGION=us-east-1 \
     BEDROCK_AGENTCORE_MEMORY_ID=mbti_travel_planner_agent_mem-pqXLs3D95M \
-    BEDROCK_AGENTCORE_MEMORY_NAME=mbti_travel_planner_agent_memory
+    BEDROCK_AGENTCORE_MEMORY_NAME=mbti_travel_planner_agent_mem
 
 
 

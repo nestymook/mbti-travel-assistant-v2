@@ -1,44 +1,49 @@
 {
-  "name": "mbti_travel_planner_agent-production",
-  "container_uri": "209803798463.dkr.ecr.us-east-1.amazonaws.com/mbti_travel_planner_agent:production-latest",
-  "platform": "linux/arm64",
-  "network_mode": "PUBLIC",
-  "authentication": {
-    "type": "jwt",
-    "config": {
-      "customJWTAuthorizer": {
-        "allowedClients": []
-      }
+  "entrypoint": "main.py",
+  "agent_name": "mbti_travel_planner_agent",
+  "requirements_file": "requirements.txt",
+  "region": "us-east-1",
+  "environment": "production",
+  "auth_config": {
+    "customJWTAuthorizer": {
+      "allowedClients": [
+        "1ofgeckef3po4i3us4j1m4chvd"
+      ],
+      "discoveryUrl": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration"
     }
   },
-  "environment": {
-    "AWS_REGION": "us-east-1",
-    "AWS_DEFAULT_REGION": "us-east-1",
-    "ENVIRONMENT": "production",
-    "DOCKER_CONTAINER": "1",
-    "AGENT_MODEL": "amazon.nova-pro-v1:0",
-    "AGENT_TEMPERATURE": "0.1",
-    "AGENT_MAX_TOKENS": "2048"
+  "cognito_config": {
+    "region": "us-east-1",
+    "user_pool": {
+      "user_pool_id": "us-east-1_KePRX24Bn",
+      "user_pool_arn": "arn:aws:cognito-idp:us-east-1:209803798463:userpool/us-east-1_KePRX24Bn",
+      "creation_date": "2025-09-27T07:48:31.750000+09:00"
+    },
+    "app_client": {
+      "client_id": "1ofgeckef3po4i3us4j1m4chvd",
+      "client_secret": "t69uogl8jl9qu9nvsrpifu0gpruj02l9q8rnoci36bipc8me4r9",
+      "client_name": "mbti-travel-oidc-client"
+    },
+    "test_user": {
+      "username": "test@mbti-travel.com",
+      "email": "test@mbti-travel.com",
+      "status": "CONFIRMED",
+      "password_updated": true
+    },
+    "previous_test_user": {
+      "username": "nestymook@gmail.com",
+      "email": "nestymook@gmail.com",
+      "note": "Previous test user, kept for reference"
+    },
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+    "setup_timestamp": "us-east-1",
+    "custom_domain": {
+      "domain_prefix": "mbti-travel-oidc-334662794",
+      "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",
+      "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
+      "status": "ACTIVE"
+    }
   },
-  "observability": {
-    "enabled": true,
-    "tracing": true,
-    "metrics": true,
-    "logs": true
-  },
-  "resources": {
-    "cpu": "2 vCPU",
-    "memory": "4 GB"
-  },
-  "scaling": {
-    "min_instances": 2,
-    "max_instances": 20,
-    "target_utilization": 70
-  },
-  "health_check": {
-    "path": "/health",
-    "interval": 30,
-    "timeout": 5,
-    "retries": 3
-  }
+  "configuration_response": "config_path=WindowsPath('C:/MBTI_Travel_Assistant/mbti-travel-planner-agent/.bedrock_agentcore.yaml') dockerfile_path=WindowsPath('C:/MBTI_Travel_Assistant/mbti-travel-planner-agent/Dockerfile') dockerignore_path=WindowsPath('C:/MBTI_Travel_Assistant/mbti-travel-planner-agent/.dockerignore') runtime='Docker' region='us-east-1' account_id='209803798463' execution_role=None ecr_repository=None auto_create_ecr=True memory_id=None",
+  "configured_at": 1759723575.17265
 }
