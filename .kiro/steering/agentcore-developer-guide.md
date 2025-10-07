@@ -640,17 +640,30 @@ python test_agent.py
 **How to list all installed agents**: aws bedrock-agentcore-control list-agent-runtimes
 
 ## Invoke Bedrock AgentCore Runtime
+### **Important concepts**
+- The URL format is a combination of: 
+    - https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/
+    - agent arn with URL encode, such as urllib.parse.quote(f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}", safe='')
+    - /invocations?qualifier=DEFAULT
+- The service class must contain function annotated with @app.entrypoint to handle the invocation
+
 ### **Sample Code**
 **Note**: Please replace header with JWT for __Cognitos Authentication__
 
 import requests
 import json
+import urllib.parse
 
 jwt_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."  # Your JWT
 session_id = "unique-session-123"
 user_id = "test@mbti-travel.com"
 
-url = "https://bedrock-agentcore-runtime.us-east-1.amazonaws.com/invoke-agent-runtime"
+agent_base_url = "https://bedrock-agentcore.us-east-1.amazonaws.com"
+agent_id = "mbti_travel_planner_agent-JPTzWT3IZp"
+# URL encode the agent ARN
+agent_arn = urllib.parse.quote(f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}", safe='')
+agent_endpoint = f"{self.agent_base_url}/runtimes/{self.agent_arn}/invocations?qualifier=DEFAULT"
+
 headers = {
     "Authorization": f"Bearer {jwt_token}",
     "X-Amzn-Bedrock-AgentCore-Runtime-User-Id": user_id,
@@ -662,7 +675,7 @@ body = {
     "enableTrace": True
 }
 
-response = requests.post(url, headers=headers, json=body, stream=True)
+response = requests.post(agent_endpoint, headers=headers, json=body, stream=True)
 if response.status_code == 200:
     for line in response.iter_lines(decode_unicode=True):
         if line.startswith("data: "):

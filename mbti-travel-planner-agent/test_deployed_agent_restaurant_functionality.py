@@ -22,6 +22,7 @@ import boto3
 from botocore.exceptions import ClientError
 from datetime import datetime
 from pathlib import Path
+import urllib.parse
 from typing import Dict, Any, Optional
 
 # Configure logging
@@ -84,8 +85,10 @@ class DeployedAgentTester:
         # AgentCore HTTP endpoint (corrected)
         self.agent_base_url = "https://bedrock-agentcore.us-east-1.amazonaws.com"
         self.agent_id = "mbti_travel_planner_agent-JPTzWT3IZp"
-        self.agent_arn = f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}"
-        self.agent_endpoint = f"{self.agent_base_url}/runtime/{self.agent_id}/invocations"
+        # URL encode the agent ARN
+        self.agent_arn = urllib.parse.quote(f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}", safe='')
+
+        self.agent_endpoint = f"{self.agent_base_url}/runtimes/{self.agent_arn}/invocations?qualifier=DEFAULT"
         
         # Test user configuration (default user)
         self.default_username = "test@mbti-travel.com"
