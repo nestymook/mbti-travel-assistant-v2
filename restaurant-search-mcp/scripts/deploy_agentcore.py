@@ -234,12 +234,18 @@ class AgentCoreDeployment:
                     endpoint_status = 'UNKNOWN'
                     agent_status = 'UNKNOWN'
                     
-                    if hasattr(status_response, 'endpoint') and status_response.endpoint:
-                        endpoint_status = status_response.endpoint.get('status', 'UNKNOWN')
+                    # Convert to dict if it's a Pydantic model
+                    if hasattr(status_response, 'model_dump'):
+                        status_dict = status_response.model_dump()
+                    else:
+                        status_dict = status_response
+                    
+                    if 'endpoint' in status_dict and status_dict['endpoint']:
+                        endpoint_status = status_dict['endpoint'].get('status', 'UNKNOWN')
                         print(f"Endpoint Status: {endpoint_status}")
                     
-                    if hasattr(status_response, 'agent') and status_response.agent:
-                        agent_status = status_response.agent.get('status', 'UNKNOWN')
+                    if 'agent' in status_dict and status_dict['agent']:
+                        agent_status = status_dict['agent'].get('status', 'UNKNOWN')
                         print(f"Agent Status: {agent_status}")
                     
                     # Check if deployment is ready (both endpoint and agent should be READY)
@@ -287,21 +293,41 @@ class AgentCoreDeployment:
             # Get deployment status
             status_response = self.agentcore_runtime.status()
             
-            if 'endpoint' not in status_response:
+            # Convert to dict if it's a Pydantic model
+            if hasattr(status_response, 'model_dump'):
+                status_dict = status_response.model_dump()
+            else:
+                status_dict = status_response
+            
+            if 'endpoint' not in status_dict:
                 print("✗ No endpoint information available")
                 return False
             
-            endpoint_info = status_response['endpoint']
+            endpoint_info = status_dict['endpoint']
             endpoint_status = endpoint_info.get('status', 'UNKNOWN')
             
             if endpoint_status != 'READY':
                 print(f"✗ Endpoint not ready. Status: {endpoint_status}")
                 return False
             
-            # Extract endpoint URL if available
-            if 'url' in endpoint_info:
-                endpoint_url = endpoint_info['url']
-                print(f"✓ Endpoint URL: {endpoint_url}")
+            # Extract endpoint ARN and other info
+            endpoint_arn = endpoint_info.get('agentRuntimeEndpointArn', 'N/A')
+            endpoint_name = endpoint_info.get('name', 'DEFAULT')
+            
+            print(f"✓ Endpoint ARN: {endpoint_arn}")
+            print(f"✓ Endpoint Name: {endpoint_name}")
+            print(f"✓ Endpoint Status: {endpoint_status}")
+            
+            # Check agent status too
+            agent_info = status_dict.get('agent', {})
+            agent_status = agent_info.get('status', 'UNKNOWN')
+            agent_arn = agent_info.get('agentRuntimeArn', 'N/A')
+            
+            print(f"✓ Agent ARN: {agent_arn}")
+            print(f"✓ Agent Status: {agent_status}")
+            
+            if agent_status != 'READY':
+                print(f"⚠️ Agent status is {agent_status}, but endpoint is ready")
             
             print("✓ Deployment connectivity test passed")
             return True

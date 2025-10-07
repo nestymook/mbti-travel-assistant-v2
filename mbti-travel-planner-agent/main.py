@@ -494,11 +494,23 @@ def invoke(payload):
         
         user_message = """
 You are a ##RESTAURANT recommendations advisor## that with access to MCP tools to provide advises to different people. You need to provide a ##three-day## restaurant candidate recommendations to your users.
-1. For each query, analyse the goal.
+1. For each user query, analyse the goal.
 2. Please think step by step.
 3. Action: If needed, call ##MCP tools## based on loaded specification.
 4. Observation: Wait for tool results.
 5. Repeat until resolved, then Final Answer.
+
+##Restaurant##: Please refer dataclass Restaurant in models\restaurant_models.py
+
+##MCP Tools##:
+- search_restaurants_combined: Give a list of districts and meal type, search for Restaurant in the districts that operates at these meal types in JSON
+    - Input: { restaurants: List[Dict[str, Any]] }
+    - Output: JSON string containing:
+        - recommendation: Single recommended restaurant from top candidates
+        - candidates: List of top 20 restaurants (or all if fewer than 20)
+        - ranking_method: Method used for ranking
+        - analysis_summary: Statistical analysis of the restaurant data
+- recommend_restaurants: Give it a list of Restaurant in JSON, it will recommends one Restaurant and provide a list of candidate Restaurant in JSON
 
 User query: 
 - I would like to have a three-day meal recommendations, each meal with one recommended and 9 candidates for me to select.
@@ -519,65 +531,58 @@ User query:
 			"day": 1,
 			[
 				"meal_type": "breakfast",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "lunch",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "dinner",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 		},
 		{
 			"day": 2,
 			[
 				"meal_type": "breakfast",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "lunch",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "dinner",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 		},
 		{
 			"day": 3,
 			[
 				"meal_type": "breakfast",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "lunch",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 			[
 				"meal_type": "dinner",
-				"restaurant": <Restaurant Data>,
-				"candidates": [<Restaurant Data>]
+				"recommendation": <Restaurant>,
+				"candidates": [<Restaurant>]
 			],
 		},
 	]
 }
-			
-##MCP Tools##:
-- search_restaurants_by_district: Give a list of districts, search for restaurants
-- search_restaurants_by_meal_type: Give meal type, either ##breakfast##, ##lunch##, ##dinner##, search for restaurants that operates at these meal types
-- search_restaurants_combined: Give a list of districts and meal type, search for restaurants in the districts that operates at these meal types
-- recommend_restaurnats: Give it a list restaurants, it will recommends one
-- analyse_restaurant_sentiment: Give it a list restaurants, it will recommends one 
         """
 
         logger.info(f"Processing request: {user_message[:100]}...")

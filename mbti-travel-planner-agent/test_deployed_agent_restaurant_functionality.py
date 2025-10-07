@@ -19,6 +19,7 @@ import hashlib
 import asyncio
 import getpass
 import boto3
+from botocore.exceptions import ClientError
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -80,13 +81,14 @@ class DeployedAgentTester:
         """Initialize the tester."""
         self.region_name = region_name
         
-        # AgentCore HTTP endpoint
-        self.agent_endpoint = "https://bedrock-agentcore-runtime.us-east-1.amazonaws.com"
+        # AgentCore HTTP endpoint (corrected)
+        self.agent_base_url = "https://bedrock-agentcore.us-east-1.amazonaws.com"
         self.agent_id = "mbti_travel_planner_agent-JPTzWT3IZp"
         self.agent_arn = f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}"
+        self.agent_endpoint = f"{self.agent_base_url}/runtime/{self.agent_id}/invocations"
         
-        # Test user configuration
-        self.test_username = "test@mbti-travel.com"
+        # Test user configuration (default user)
+        self.default_username = "test@mbti-travel.com"
         
         # JWT token file
         self.jwt_token_file = Path("fresh_jwt.txt")
@@ -100,6 +102,7 @@ class DeployedAgentTester:
         
         logger.info(f"Initialized tester for agent: {self.agent_id}")
         logger.info(f"AgentCore endpoint: {self.agent_endpoint}")
+        logger.info(f"Agent ID: {self.agent_id}")
     
     def load_cognito_config(self) -> Dict[str, Any]:
         """Load Cognito configuration."""
@@ -125,74 +128,177 @@ class DeployedAgentTester:
         ).digest()
         return base64.b64encode(dig).decode()
     
-    def get_jwt_token(self) -> Optional[str]:
-        """Get a valid JWT token for authentication."""
-        # Try to load from file first
-        if self.jwt_token_file.exists():
-            token = self.jwt_token_file.read_text().strip()
-            if token and len(token) > 100:
-                logger.info("✅ JWT token loaded from file")
-                return token
-        
-        # Try environment variable
-        token = os.getenv('JWT_TOKEN')
-        if token:
-            logger.info("✅ JWT token loaded from environment")
-            return token
-        
-        # Try Cognito authentication
-        if self.cognito_config:
-            try:
-                import boto3
-                from botocore.exceptions import ClientError
-                
-                client_id = self.cognito_config.get('app_client', {}).get('client_id')
-                client_secret = self.cognito_config.get('app_client', {}).get('client_secret')
-                
-                if not client_id or not client_secret:
-                    logger.error("Missing Cognito client credentials")
-                    return None
-                
-                # Prompt for password
-                username = "test@mbti-travel.com"
-                logger.info("🔐 Please enter password for authentication.")
+    def authenticate_with_cognito(self, username: str = None, password: str = None) -> Optional[str]:
+        """Authenticate with Cognito and get JWT token."""
+        try:
+            import boto3
+            import getpass
+            from botocore.exceptions import ClientError
+            
+            # Use default username if not provided
+            if not username:
+                username = self.default_username
+            
+            # Get password if not provided
+            if not password:
                 password = getpass.getpass(f"Enter password for {username}: ")
-                
-                # Calculate SECRET_HASH
-                secret_hash = self.calculate_secret_hash(username, client_id, client_secret)
-                
-                cognito_client = boto3.client('cognito-idp', region_name='us-east-1')
-                
-                # Get user pool ID from config
-                user_pool_id = self.cognito_config.get('user_pool', {}).get('user_pool_id', 'us-east-1_KePRX24Bn')
-                
-                response = cognito_client.admin_initiate_auth(
-                    UserPoolId=user_pool_id,
-                    ClientId=client_id,
-                    AuthFlow='ADMIN_NO_SRP_AUTH',
-                    AuthParameters={
-                        'USERNAME': username,
-                        'PASSWORD': password,
-                        'SECRET_HASH': secret_hash
-                    }
-                )
-                
-                token = response['AuthenticationResult']['IdToken']
-                logger.info("✅ JWT token obtained from Cognito")
-                
-                # Save token for future use
-                try:
-                    self.jwt_token_file.write_text(token)
-                except Exception as e:
-                    logger.warning(f"Could not save token: {e}")
-                
-                return token
-                
-            except Exception as e:
-                logger.error(f"Cognito authentication failed: {e}")
+            
+            logger.info(f"🔐 Authenticating with Cognito as: {username}")
+            
+            # Get client credentials
+            client_id = self.cognito_config['app_client']['client_id']
+            client_secret = self.cognito_config['app_client']['client_secret']
+            
+            # Calculate SECRET_HASH
+            secret_hash = self.calculate_secret_hash(username, client_id, client_secret)
+            
+            cognito_client = boto3.client('cognito-idp', region_name='us-east-1')
+            
+            # Prepare auth parameters with SECRET_HASH
+            auth_parameters = {
+                'USERNAME': username,
+                'PASSWORD': password,
+                'SECRET_HASH': secret_hash
+            }
+            
+            logger.info("🔑 Initiating authentication with SECRET_HASH...")
+            
+            response = cognito_client.initiate_auth(
+                ClientId=client_id,
+                AuthFlow='USER_PASSWORD_AUTH',
+                AuthParameters=auth_parameters
+            )
+            
+            access_token = response['AuthenticationResult']['AccessToken']
+            logger.info("✅ JWT Authentication successful")
+            logger.info(f"Token length: {len(access_token)} characters")
+            
+            return access_token
+            
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            error_message = e.response['Error']['Message']
+            logger.error(f"Cognito authentication failed: {error_code} - {error_message}")
+            
+            # Provide helpful error messages
+            if error_code == 'NotAuthorizedException':
+                logger.error("❌ Invalid username or password")
+            elif error_code == 'UserNotFoundException':
+                logger.error("❌ User not found")
+            elif error_code == 'InvalidParameterException':
+                logger.error("❌ Invalid parameters - check client configuration")
+            else:
+                logger.error(f"❌ Authentication error: {error_code}")
+            
+            return None
+        except Exception as e:
+            logger.error(f"Authentication error: {e}")
+            return None
+
+    def force_token_refresh(self) -> Optional[str]:
+        """Force a fresh JWT token by removing the existing file and re-authenticating."""
+        logger.info("🔄 Forcing JWT token refresh...")
         
-        logger.error("❌ Could not obtain JWT token")
-        return None
+        # Remove existing token file if it exists
+        if self.jwt_token_file.exists():
+            try:
+                self.jwt_token_file.unlink()
+                logger.info("🗑️ Removed existing JWT token file")
+            except Exception as e:
+                logger.warning(f"Could not remove existing token file: {e}")
+        
+        # Get fresh token
+        return self.get_jwt_token()
+
+    def validate_jwt_token(self, token: str) -> bool:
+        """Validate if JWT token is properly formatted and not expired."""
+        try:
+            if not token or len(token) < 100:
+                return False
+            
+            if not token.startswith('eyJ'):
+                return False
+            
+            # Basic JWT structure validation (header.payload.signature)
+            parts = token.split('.')
+            if len(parts) != 3:
+                return False
+            
+            # Try to decode the payload to check expiration
+            import json
+            import base64
+            from datetime import datetime
+            
+            # Add padding if needed for base64 decoding
+            payload = parts[1]
+            padding = len(payload) % 4
+            if padding:
+                payload += '=' * (4 - padding)
+            
+            decoded_payload = base64.urlsafe_b64decode(payload)
+            payload_data = json.loads(decoded_payload)
+            
+            # Check if token is expired
+            if 'exp' in payload_data:
+                exp_timestamp = payload_data['exp']
+                current_timestamp = datetime.utcnow().timestamp()
+                if current_timestamp >= exp_timestamp:
+                    logger.warning("⚠️ JWT token has expired")
+                    return False
+            
+            return True
+            
+        except Exception as e:
+            logger.warning(f"JWT token validation failed: {e}")
+            return False
+
+    def get_jwt_token(self) -> Optional[str]:
+        """Get a valid JWT token for authentication with per-request handling."""
+        logger.info("🔐 Starting JWT token authentication process...")
+        
+        # Step 1: Try to load from file first (if exists)
+        if self.jwt_token_file.exists():
+            logger.info("📄 Found existing JWT token file, attempting to use it...")
+            token = self.jwt_token_file.read_text().strip()
+            
+            if self.validate_jwt_token(token):
+                logger.info("✅ JWT token from file is valid")
+                return token
+            else:
+                logger.warning("⚠️ JWT token from file is invalid or expired")
+        else:
+            logger.info("📄 No existing JWT token file found")
+        
+        # Step 2: If file doesn't exist or token is invalid, authenticate with Cognito
+        if not self.cognito_config:
+            logger.error("❌ No Cognito configuration available")
+            sys.exit(1)
+        
+        logger.info("🔐 Attempting Cognito authentication...")
+        print("\n" + "="*60)
+        print("🔐 JWT Authentication Required")
+        print("="*60)
+        print(f"Default user: {self.default_username}")
+        print("Please enter your password to authenticate:")
+        print("-"*60)
+        
+        # Authenticate with default user
+        token = self.authenticate_with_cognito(username=self.default_username)
+        
+        if token:
+            # Step 3: Save the new token to file (overwrite)
+            try:
+                self.jwt_token_file.parent.mkdir(parents=True, exist_ok=True)
+                self.jwt_token_file.write_text(token)
+                logger.info(f"✅ Fresh JWT token saved to {self.jwt_token_file}")
+            except Exception as e:
+                logger.warning(f"Could not save token: {e}")
+            
+            return token
+        else:
+            # Step 4: If authentication failed, exit the application
+            logger.error("❌ Authentication failed. Exiting application.")
+            sys.exit(1)
     
     def invoke_agent_with_auth(self, 
                               prompt: str,
@@ -228,7 +334,7 @@ class DeployedAgentTester:
             # Prepare headers
             headers = {
                 'Authorization': f'Bearer {jwt_token}',
-                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': self.test_username,
+                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': self.default_username,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
@@ -240,8 +346,8 @@ class DeployedAgentTester:
                 "enableTrace": True
             }
             
-            # AgentCore invoke endpoint
-            url = f"{self.agent_endpoint}/invoke-agent-runtime"
+            # AgentCore invoke endpoint (corrected)
+            url = self.agent_endpoint
             
             logger.info(f"Invoking agent via HTTP: {url}")
             logger.info(f"Session ID: {runtime_session_id} (length: {len(runtime_session_id)})")

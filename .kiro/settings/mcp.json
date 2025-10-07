@@ -20,7 +20,7 @@
     "restaurant-reasoning-mcp": {
       "command": "python",
       "args": [
-        "restaurant-search-result-reasoning-mcp/minimal_server.py"
+        "restaurant-search-result-reasoning-mcp/restaurant_reasoning_mcp_server.py"
       ],
       "env": {
         "REQUIRE_AUTHENTICATION": "false",
