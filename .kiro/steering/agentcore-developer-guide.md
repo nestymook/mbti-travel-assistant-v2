@@ -661,8 +661,8 @@ user_id = "test@mbti-travel.com"
 agent_base_url = "https://bedrock-agentcore.us-east-1.amazonaws.com"
 agent_id = "mbti_travel_planner_agent-JPTzWT3IZp"
 # URL encode the agent ARN
-agent_arn = urllib.parse.quote(f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}", safe='')
-agent_endpoint = f"{self.agent_base_url}/runtimes/{self.agent_arn}/invocations?qualifier=DEFAULT"
+agent_arn = urllib.parse.quote(f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{agent_id}", safe='')
+agent_endpoint = f"{agent_base_url}/runtimes/{agent_arn}/invocations?qualifier=DEFAULT"
 
 headers = {
     "Authorization": f"Bearer {jwt_token}",
