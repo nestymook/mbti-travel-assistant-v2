@@ -16,6 +16,9 @@ import os
 import base64
 import hmac
 import hashlib
+import asyncio
+import getpass
+import boto3
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -23,6 +26,52 @@ from typing import Dict, Any, Optional
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+class JWTAuthenticator:
+    """Handle JWT authentication with Cognito."""
+    
+    def __init__(self, cognito_config: dict):
+        """Initialize JWT authenticator."""
+        self.cognito_config = cognito_config
+        self.region = cognito_config["region"]
+        self.user_pool_id = cognito_config["user_pool"]["user_pool_id"]
+        self.client_id = cognito_config["app_client"]["client_id"]
+        self.client_secret = cognito_config["app_client"]["client_secret"]
+        self.cognito_client = boto3.client('cognito-idp', region_name=self.region)
+        
+    def calculate_secret_hash(self, username: str) -> str:
+        """Calculate SECRET_HASH for Cognito authentication."""
+        message = username + self.client_id
+        dig = hmac.new(
+            self.client_secret.encode('utf-8'),
+            message.encode('utf-8'),
+            hashlib.sha256
+        ).digest()
+        return base64.b64encode(dig).decode()
+    
+    def authenticate_user(self, username: str, password: str) -> str:
+        """Authenticate user and return JWT token."""
+        try:
+            secret_hash = self.calculate_secret_hash(username)
+            
+            response = self.cognito_client.admin_initiate_auth(
+                UserPoolId=self.user_pool_id,
+                ClientId=self.client_id,
+                AuthFlow='ADMIN_NO_SRP_AUTH',
+                AuthParameters={
+                    'USERNAME': username,
+                    'PASSWORD': password,
+                    'SECRET_HASH': secret_hash
+                }
+            )
+            
+            if 'AuthenticationResult' in response:
+                return response['AuthenticationResult']['IdToken']
+            else:
+                raise Exception("Authentication failed - no token returned")
+                
+        except Exception as e:
+            raise Exception(f"Authentication failed: {str(e)}")
 
 class DeployedAgentTester:
     """Test deployed AgentCore agent functionality via HTTP requests."""
@@ -34,6 +83,7 @@ class DeployedAgentTester:
         # AgentCore HTTP endpoint
         self.agent_endpoint = "https://bedrock-agentcore-runtime.us-east-1.amazonaws.com"
         self.agent_id = "mbti_travel_planner_agent-JPTzWT3IZp"
+        self.agent_arn = f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}"
         
         # Test user configuration
         self.test_username = "test@mbti-travel.com"
@@ -43,6 +93,10 @@ class DeployedAgentTester:
         
         # Load Cognito configuration
         self.cognito_config = self.load_cognito_config()
+        
+        # Initialize JWT authenticator
+        self.jwt_auth = JWTAuthenticator(self.cognito_config)
+        self.jwt_token = None
         
         logger.info(f"Initialized tester for agent: {self.agent_id}")
         logger.info(f"AgentCore endpoint: {self.agent_endpoint}")
@@ -92,25 +146,30 @@ class DeployedAgentTester:
                 import boto3
                 from botocore.exceptions import ClientError
                 
-                client_id = self.cognito_config.get('client_id')
-                client_secret = self.cognito_config.get('client_secret')
+                client_id = self.cognito_config.get('app_client', {}).get('client_id')
+                client_secret = self.cognito_config.get('app_client', {}).get('client_secret')
                 
                 if not client_id or not client_secret:
                     logger.error("Missing Cognito client credentials")
                     return None
                 
-                # Use test credentials
+                # Prompt for password
                 username = "test@mbti-travel.com"
-                password = "TestPass1234!"
+                logger.info("🔐 Please enter password for authentication.")
+                password = getpass.getpass(f"Enter password for {username}: ")
                 
                 # Calculate SECRET_HASH
                 secret_hash = self.calculate_secret_hash(username, client_id, client_secret)
                 
                 cognito_client = boto3.client('cognito-idp', region_name='us-east-1')
                 
-                response = cognito_client.initiate_auth(
+                # Get user pool ID from config
+                user_pool_id = self.cognito_config.get('user_pool', {}).get('user_pool_id', 'us-east-1_KePRX24Bn')
+                
+                response = cognito_client.admin_initiate_auth(
+                    UserPoolId=user_pool_id,
                     ClientId=client_id,
-                    AuthFlow='USER_PASSWORD_AUTH',
+                    AuthFlow='ADMIN_NO_SRP_AUTH',
                     AuthParameters={
                         'USERNAME': username,
                         'PASSWORD': password,
@@ -118,7 +177,7 @@ class DeployedAgentTester:
                     }
                 )
                 
-                token = response['AuthenticationResult']['AccessToken']
+                token = response['AuthenticationResult']['IdToken']
                 logger.info("✅ JWT token obtained from Cognito")
                 
                 # Save token for future use

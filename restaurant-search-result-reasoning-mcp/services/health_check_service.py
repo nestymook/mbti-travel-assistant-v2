@@ -603,8 +603,8 @@ async def validate_reasoning_mcp_server_connectivity(
             return True, None, result.tools_count
         else:
             return False, result.error_message, None
-# E
-nhanced reasoning monitoring integration functions
+
+# Enhanced reasoning monitoring integration functions
 
 async def perform_enhanced_reasoning_health_check(
     server_name: str = "restaurant-search-result-reasoning-mcp"

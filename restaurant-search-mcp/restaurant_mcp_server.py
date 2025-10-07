@@ -283,6 +283,79 @@ def log_mcp_tool_invocation(tool_name: str, parameters: Dict[str, Any]) -> None:
     except Exception as e:
         logger.error(f"Failed to log MCP tool invocation: {e}")
 
+
+def normalize_district_names(districts: List[str]) -> List[str]:
+    """Normalize district names to match the configuration format.
+    
+    This function handles common variations in district names to ensure
+    consistent matching with the district configuration data.
+    
+    Args:
+        districts: List of district names to normalize
+        
+    Returns:
+        List of normalized district names
+    """
+    if not districts:
+        return districts
+    
+    # District name normalization mapping
+    district_mapping = {
+        # Central variations
+        "Central": "Central district",
+        "central": "Central district", 
+        "CENTRAL": "Central district",
+        "Central District": "Central district",
+        "central district": "Central district",
+        "CENTRAL DISTRICT": "Central district",
+        
+        # Western variations  
+        "Western": "Western District",
+        "western": "Western District",
+        "WESTERN": "Western District", 
+        "Western district": "Western District",
+        "western district": "Western District",
+        "WESTERN DISTRICT": "Western District",
+        
+        # Admiralty variations (keep as is, but handle case)
+        "admiralty": "Admiralty",
+        "ADMIRALTY": "Admiralty",
+        
+        # Causeway Bay variations
+        "causeway bay": "Causeway Bay",
+        "CAUSEWAY BAY": "Causeway Bay",
+        "Causeway bay": "Causeway Bay",
+        
+        # Wan Chai variations
+        "wan chai": "Wan Chai",
+        "WAN CHAI": "Wan Chai",
+        "Wan chai": "Wan Chai",
+        
+        # Tsim Sha Tsui variations
+        "tsim sha tsui": "Tsim Sha Tsui",
+        "TSIM SHA TSUI": "Tsim Sha Tsui",
+        "Tsim sha tsui": "Tsim Sha Tsui",
+        
+        # Sheung Wan variations
+        "sheung wan": "Sheung Wan",
+        "SHEUNG WAN": "Sheung Wan",
+        "Sheung wan": "Sheung Wan"
+    }
+    
+    normalized_districts = []
+    for district in districts:
+        # First check if there's a direct mapping
+        if district in district_mapping:
+            normalized_district = district_mapping[district]
+            logger.info(f"Normalized district '{district}' to '{normalized_district}'")
+            normalized_districts.append(normalized_district)
+        else:
+            # Keep the original if no mapping found
+            normalized_districts.append(district)
+    
+    return normalized_districts
+
+
 @mcp.tool()
 def search_restaurants_by_district(districts: List[str]) -> str:
     """Search for restaurants in specific districts.
@@ -327,16 +400,22 @@ def search_restaurants_by_district(districts: List[str]) -> str:
                     "ValidationError"
                 )
         
+        # Normalize district names to handle common variations
+        normalized_districts = normalize_district_names(districts)
+        logger.info(f"Original districts: {districts}")
+        logger.info(f"Normalized districts: {normalized_districts}")
+        
         # Search for restaurants
-        restaurants = restaurant_service.search_by_districts(districts)
+        restaurants = restaurant_service.search_by_districts(normalized_districts)
         
         # Get additional metadata
         available_districts = restaurant_service.get_available_districts()
-        district_counts = restaurant_service.get_restaurant_count_by_district(districts)
+        district_counts = restaurant_service.get_restaurant_count_by_district(normalized_districts)
         
         metadata = {
             'search_criteria': {
                 'districts': districts,
+                'normalized_districts': normalized_districts,
                 'search_type': 'district'
             },
             'district_counts': district_counts,
@@ -577,13 +656,21 @@ def search_restaurants_combined(districts: Optional[List[str]] = None,
                     details
                 )
         
+        # Normalize district names if provided
+        normalized_districts = None
+        if districts:
+            normalized_districts = normalize_district_names(districts)
+            logger.info(f"Original districts: {districts}")
+            logger.info(f"Normalized districts: {normalized_districts}")
+        
         # Perform combined search
-        restaurants = restaurant_service.search_combined(districts, meal_types)
+        restaurants = restaurant_service.search_combined(normalized_districts, meal_types)
         
         # Build comprehensive metadata
         metadata = {
             'search_criteria': {
                 'districts': districts,
+                'normalized_districts': normalized_districts,
                 'meal_types': meal_types,
                 'search_type': 'combined'
             }
@@ -593,7 +680,7 @@ def search_restaurants_combined(districts: Optional[List[str]] = None,
         if districts:
             try:
                 available_districts = restaurant_service.get_available_districts()
-                district_counts = restaurant_service.get_restaurant_count_by_district(districts)
+                district_counts = restaurant_service.get_restaurant_count_by_district(normalized_districts)
                 metadata['district_info'] = {
                     'available_districts': available_districts,
                     'district_counts': district_counts

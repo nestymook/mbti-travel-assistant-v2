@@ -492,6 +492,94 @@ def invoke(payload):
     try:
         user_message = payload.get("prompt", "Hello! I'm your MBTI Travel Planner powered by Amazon Nova Pro with access to restaurant search and reasoning tools via AgentCore Runtime API. How can I help you find the perfect restaurants and plan your trip?")
         
+        user_message = """
+You are a ##RESTAURANT recommendations advisor## that with access to MCP tools to provide advises to different people. You need to provide a ##three-day## restaurant candidate recommendations to your users.
+1. For each query, analyse the goal.
+2. Please think step by step.
+3. Action: If needed, call ##MCP tools## based on loaded specification.
+4. Observation: Wait for tool results.
+5. Repeat until resolved, then Final Answer.
+
+User query: 
+- I would like to have a three-day meal recommendations, each meal with one recommended and 9 candidates for me to select.
+- Each meal I will provide you one or two districts for your to search in your tools.
+	- First day breakfast: Wan Chai district
+	- First day lunch: Wan Chai district, Central district
+	- First day dinner: Central district
+	- Second day breakfast: Tsim Sha Tsui district
+	- Second day lunch: Tsim Sha Tsui district, Yau Ma Tei district
+	- Second day dinner: Yau Ma Tei district, Mong Kok district
+	- Third day breakfast: Causeway Bay district
+	- Third day lunch: Causeway Bay district, Repulse Bay district
+	- Third day dinner: Repulse Bay district, Admiralty district
+- After get this meals, return the result in a JSON format: 
+{
+	[
+		{
+			"day": 1,
+			[
+				"meal_type": "breakfast",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "lunch",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "dinner",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+		},
+		{
+			"day": 2,
+			[
+				"meal_type": "breakfast",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "lunch",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "dinner",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+		},
+		{
+			"day": 3,
+			[
+				"meal_type": "breakfast",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "lunch",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+			[
+				"meal_type": "dinner",
+				"restaurant": <Restaurant Data>,
+				"candidates": [<Restaurant Data>]
+			],
+		},
+	]
+}
+			
+##MCP Tools##:
+- search_restaurants_by_district: Give a list of districts, search for restaurants
+- search_restaurants_by_meal_type: Give meal type, either ##breakfast##, ##lunch##, ##dinner##, search for restaurants that operates at these meal types
+- search_restaurants_combined: Give a list of districts and meal type, search for restaurants in the districts that operates at these meal types
+- recommend_restaurnats: Give it a list restaurants, it will recommends one
+- analyse_restaurant_sentiment: Give it a list restaurants, it will recommends one 
+        """
+
         logger.info(f"Processing request: {user_message[:100]}...")
         
         # Log request metrics with proper error handling
