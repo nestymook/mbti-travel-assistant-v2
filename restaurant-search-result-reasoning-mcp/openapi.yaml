@@ -1,0 +1,699 @@
+openapi: 3.0.3
+info:
+  title: Restaurant Reasoning MCP API
+  description: |
+    Model Context Protocol (MCP) server for restaurant sentiment analysis and intelligent recommendations.
+    
+    This API provides advanced restaurant recommendation capabilities based on customer sentiment
+    analysis and data-driven ranking algorithms. The service processes restaurant data with
+    sentiment metrics to provide intelligent recommendations and detailed sentiment analysis.
+    
+    ## Key Features
+    - Intelligent restaurant recommendations based on sentiment analysis
+    - Multiple ranking algorithms (sentiment likes, combined sentiment)
+    - Comprehensive sentiment data analysis and statistics
+    - Data validation and quality assessment
+    - Candidate selection with random recommendation from top performers
+    
+    ## MCP Tools Available
+    - `recommend_restaurants`: Analyze sentiment data and provide intelligent recommendations
+    - `analyze_restaurant_sentiment`: Perform sentiment analysis without recommendations
+    
+    ## Ranking Methods
+    - **sentiment_likes**: Ranks restaurants by highest number of customer likes
+    - **combined_sentiment**: Ranks by combined likes + neutral percentage (more inclusive)
+    
+    ## Data Requirements
+    Restaurant data must include sentiment information with likes, dislikes, and neutral counts.
+    The system validates data structure and provides detailed error feedback for invalid data.
+  version: 1.0.0
+  contact:
+    name: MBTI Travel Assistant
+    description: Restaurant reasoning component of the MBTI Travel Planning system
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://restaurant-reasoning-mcp.example.com
+    description: Production MCP Server
+  - url: http://localhost:8081
+    description: Local Development Server
+
+paths:
+  /mcp/tools/recommend_restaurants:
+    post:
+      summary: Analyze restaurant sentiment data and provide intelligent recommendations
+      description: |
+        Analyze restaurant sentiment data and provide intelligent recommendations based on
+        customer satisfaction metrics. The tool analyzes sentiment data (likes, dislikes, neutral)
+        to rank restaurants and provides both a list of top candidates and a single recommended restaurant.
+        
+        ## Ranking Methods:
+        - **sentiment_likes**: Ranks by highest number of likes (focuses on popularity)
+        - **combined_sentiment**: Ranks by combined likes + neutral percentage (more inclusive approach)
+        
+        ## Output:
+        - Returns top 20 candidates based on ranking method
+        - Randomly selects 1 recommendation from the top candidates
+        - Provides detailed sentiment analysis and statistics
+      operationId: recommendRestaurants
+      tags:
+        - Restaurant Recommendations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                restaurants:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/RestaurantInput'
+                  description: List of restaurant objects with sentiment data
+                  minItems: 1
+                ranking_method:
+                  type: string
+                  enum: ["sentiment_likes", "combined_sentiment"]
+                  default: "sentiment_likes"
+                  description: |
+                    Method for ranking restaurants:
+                    - sentiment_likes: Rank by likes count
+                    - combined_sentiment: Rank by likes + neutral percentage
+              required:
+                - restaurants
+            examples:
+              sentiment_likes_ranking:
+                summary: Recommend using sentiment likes ranking
+                value:
+                  restaurants:
+                    - id: "rest_001"
+                      name: "Dim Sum Palace"
+                      address: "123 Central Road, Central, Hong Kong"
+                      sentiment:
+                        likes: 85
+                        dislikes: 10
+                        neutral: 5
+                      meal_type: ["Dim Sum", "Cantonese"]
+                      district: "Central district"
+                      price_range: "$$"
+                    - id: "rest_002"
+                      name: "Noodle House"
+                      address: "456 Nathan Road, Tsim Sha Tsui, Hong Kong"
+                      sentiment:
+                        likes: 70
+                        dislikes: 15
+                        neutral: 15
+                      meal_type: ["Noodles", "Local"]
+                      district: "Tsim Sha Tsui"
+                      price_range: "$"
+                  ranking_method: "sentiment_likes"
+              combined_sentiment_ranking:
+                summary: Recommend using combined sentiment ranking
+                value:
+                  restaurants:
+                    - id: "rest_003"
+                      name: "Fine Dining Restaurant"
+                      address: "789 Queen's Road, Admiralty, Hong Kong"
+                      sentiment:
+                        likes: 60
+                        dislikes: 5
+                        neutral: 35
+                      meal_type: ["Western", "Fine Dining"]
+                      district: "Admiralty"
+                      price_range: "$$$$"
+                  ranking_method: "combined_sentiment"
+      responses:
+        '200':
+          description: Successful recommendation analysis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationResponse'
+              examples:
+                successful_recommendation:
+                  summary: Successful recommendation with analysis
+                  value:
+                    success: true
+                    recommendation_type: "intelligent_analysis"
+                    ranking_method: "sentiment_likes"
+                    total_restaurants: 2
+                    candidates_count: 2
+                    recommendation:
+                      id: "rest_001"
+                      name: "Dim Sum Palace"
+                      address: "123 Central Road, Central, Hong Kong"
+                      sentiment:
+                        likes: 85
+                        dislikes: 10
+                        neutral: 5
+                        likes_percentage: 85.0
+                        combined_positive_percentage: 90.0
+                      meal_type: ["Dim Sum", "Cantonese"]
+                      district: "Central district"
+                      price_range: "$$"
+                    candidates:
+                      - id: "rest_001"
+                        name: "Dim Sum Palace"
+                        sentiment_score: 85.0
+                        likes: 85
+                        total_responses: 100
+                      - id: "rest_002"
+                        name: "Noodle House"
+                        sentiment_score: 70.0
+                        likes: 70
+                        total_responses: 100
+                    analysis_summary:
+                      total_restaurants: 2
+                      average_likes: 77.5
+                      average_sentiment_score: 77.5
+                      top_score: 85.0
+                      bottom_score: 70.0
+        '400':
+          description: Invalid restaurant data or parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                invalid_sentiment_data:
+                  summary: Invalid sentiment data structure
+                  value:
+                    success: false
+                    error:
+                      message: "Restaurant data validation failed: missing sentiment data"
+                      type: "validation_error"
+                    suggestions:
+                      - "Ensure each restaurant has 'id', 'name', and 'sentiment' fields"
+                      - "Sentiment data should include 'likes', 'dislikes', and 'neutral' as integers"
+
+  /mcp/tools/analyze_restaurant_sentiment:
+    post:
+      summary: Analyze sentiment data for restaurants without providing recommendations
+      description: |
+        Analyze sentiment data for a list of restaurants without providing specific recommendations.
+        Use this tool when you want to understand sentiment patterns, statistics, or analysis
+        of restaurant customer satisfaction without needing a specific recommendation.
+        
+        ## Provides:
+        - Individual restaurant sentiment scores and percentages
+        - Overall statistics across all restaurants
+        - Validation results for data quality
+        - Likes percentage and combined positive (likes + neutral) percentage
+      operationId: analyzeRestaurantSentiment
+      tags:
+        - Sentiment Analysis
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                restaurants:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/RestaurantInput'
+                  description: List of restaurant objects with sentiment data for analysis
+                  minItems: 1
+              required:
+                - restaurants
+            examples:
+              sentiment_analysis:
+                summary: Analyze sentiment for multiple restaurants
+                value:
+                  restaurants:
+                    - id: "rest_001"
+                      name: "Popular Restaurant"
+                      sentiment:
+                        likes: 150
+                        dislikes: 20
+                        neutral: 30
+                    - id: "rest_002"
+                      name: "Average Restaurant"
+                      sentiment:
+                        likes: 80
+                        dislikes: 40
+                        neutral: 30
+                    - id: "rest_003"
+                      name: "New Restaurant"
+                      sentiment:
+                        likes: 25
+                        dislikes: 5
+                        neutral: 20
+      responses:
+        '200':
+          description: Successful sentiment analysis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentAnalysisResponse'
+              examples:
+                successful_analysis:
+                  summary: Comprehensive sentiment analysis results
+                  value:
+                    success: true
+                    analysis_type: "sentiment_analysis"
+                    total_restaurants_analyzed: 3
+                    validation_errors: []
+                    overall_statistics:
+                      total_likes: 255
+                      total_dislikes: 65
+                      total_neutral: 80
+                      total_responses: 400
+                      average_likes_percentage: 63.75
+                      average_combined_positive_percentage: 83.75
+                    restaurant_sentiment_scores:
+                      - restaurant_id: "rest_001"
+                        restaurant_name: "Popular Restaurant"
+                        likes: 150
+                        dislikes: 20
+                        neutral: 30
+                        total_responses: 200
+                        likes_percentage: 75.0
+                        combined_positive_percentage: 90.0
+                      - restaurant_id: "rest_002"
+                        restaurant_name: "Average Restaurant"
+                        likes: 80
+                        dislikes: 40
+                        neutral: 30
+                        total_responses: 150
+                        likes_percentage: 53.33
+                        combined_positive_percentage: 73.33
+        '400':
+          description: Invalid restaurant data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Check the health status of the reasoning MCP server
+      operationId: healthCheck
+      tags:
+        - System
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                  capabilities:
+                    type: array
+                    items:
+                      type: string
+                    example: ["sentiment_analysis", "intelligent_recommendations", "ranking_algorithms", "data_validation"]
+        '503':
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "unhealthy"
+                  errors:
+                    type: array
+                    items:
+                      type: string
+
+components:
+  schemas:
+    RestaurantInput:
+      type: object
+      description: Restaurant input data with required sentiment information
+      properties:
+        id:
+          type: string
+          description: Unique restaurant identifier
+          example: "rest_001"
+        name:
+          type: string
+          description: Restaurant name
+          example: "Dim Sum Palace"
+        address:
+          type: string
+          description: Restaurant address (optional)
+          example: "123 Central Road, Central, Hong Kong"
+        meal_type:
+          type: array
+          items:
+            type: string
+          description: List of cuisine types (optional)
+          example: ["Dim Sum", "Cantonese"]
+        sentiment:
+          $ref: '#/components/schemas/SentimentInput'
+        district:
+          type: string
+          description: District name (optional)
+          example: "Central district"
+        price_range:
+          type: string
+          description: Price range (optional)
+          example: "$$"
+        location_category:
+          type: string
+          description: Location category (optional)
+          example: "Shopping District"
+        operating_hours:
+          $ref: '#/components/schemas/OperatingHours'
+      required:
+        - id
+        - name
+        - sentiment
+
+    SentimentInput:
+      type: object
+      description: Customer sentiment data input
+      properties:
+        likes:
+          type: integer
+          minimum: 0
+          description: Number of positive reviews
+          example: 85
+        dislikes:
+          type: integer
+          minimum: 0
+          description: Number of negative reviews
+          example: 10
+        neutral:
+          type: integer
+          minimum: 0
+          description: Number of neutral reviews
+          example: 5
+      required:
+        - likes
+        - dislikes
+        - neutral
+
+    SentimentOutput:
+      type: object
+      description: Enhanced sentiment data with calculated metrics
+      allOf:
+        - $ref: '#/components/schemas/SentimentInput'
+        - type: object
+          properties:
+            total_responses:
+              type: integer
+              description: Total number of sentiment responses
+              example: 100
+            likes_percentage:
+              type: number
+              format: float
+              description: Percentage of likes out of total responses
+              example: 85.0
+            combined_positive_percentage:
+              type: number
+              format: float
+              description: Percentage of likes + neutral out of total responses
+              example: 90.0
+
+    OperatingHours:
+      type: object
+      description: Restaurant operating hours (optional)
+      properties:
+        weekday_open:
+          type: string
+          example: "11:00"
+        weekday_close:
+          type: string
+          example: "22:00"
+        weekend_open:
+          type: string
+          example: "10:00"
+        weekend_close:
+          type: string
+          example: "23:00"
+
+    RestaurantOutput:
+      type: object
+      description: Restaurant data with enhanced sentiment metrics
+      properties:
+        id:
+          type: string
+          example: "rest_001"
+        name:
+          type: string
+          example: "Dim Sum Palace"
+        address:
+          type: string
+          example: "123 Central Road, Central, Hong Kong"
+        meal_type:
+          type: array
+          items:
+            type: string
+          example: ["Dim Sum", "Cantonese"]
+        sentiment:
+          $ref: '#/components/schemas/SentimentOutput'
+        district:
+          type: string
+          example: "Central district"
+        price_range:
+          type: string
+          example: "$$"
+        location_category:
+          type: string
+          example: "Shopping District"
+
+    CandidateRestaurant:
+      type: object
+      description: Restaurant candidate with ranking information
+      properties:
+        id:
+          type: string
+          example: "rest_001"
+        name:
+          type: string
+          example: "Dim Sum Palace"
+        sentiment_score:
+          type: number
+          format: float
+          description: Calculated sentiment score based on ranking method
+          example: 85.0
+        likes:
+          type: integer
+          description: Number of likes
+          example: 85
+        total_responses:
+          type: integer
+          description: Total sentiment responses
+          example: 100
+
+    RecommendationResponse:
+      type: object
+      description: Response from restaurant recommendation analysis
+      properties:
+        success:
+          type: boolean
+          example: true
+        recommendation_type:
+          type: string
+          example: "intelligent_analysis"
+        ranking_method:
+          type: string
+          enum: ["sentiment_likes", "combined_sentiment"]
+          example: "sentiment_likes"
+        total_restaurants:
+          type: integer
+          description: Total number of restaurants analyzed
+          example: 10
+        candidates_count:
+          type: integer
+          description: Number of top candidates identified
+          example: 5
+        recommendation:
+          $ref: '#/components/schemas/RestaurantOutput'
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateRestaurant'
+          description: Top candidate restaurants (up to 10 shown)
+        analysis_summary:
+          type: object
+          properties:
+            total_restaurants:
+              type: integer
+            average_likes:
+              type: number
+              format: float
+            average_sentiment_score:
+              type: number
+              format: float
+            top_score:
+              type: number
+              format: float
+            bottom_score:
+              type: number
+              format: float
+        timestamp:
+          type: string
+          format: date-time
+      required:
+        - success
+        - recommendation_type
+        - ranking_method
+        - total_restaurants
+        - recommendation
+        - candidates
+        - analysis_summary
+
+    SentimentAnalysisResponse:
+      type: object
+      description: Response from sentiment analysis without recommendations
+      properties:
+        success:
+          type: boolean
+          example: true
+        analysis_type:
+          type: string
+          example: "sentiment_analysis"
+        total_restaurants_analyzed:
+          type: integer
+          example: 5
+        validation_errors:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              restaurant_id:
+                type: string
+              errors:
+                type: array
+                items:
+                  type: string
+          description: Data validation errors (if any)
+        overall_statistics:
+          type: object
+          properties:
+            total_likes:
+              type: integer
+              example: 425
+            total_dislikes:
+              type: integer
+              example: 75
+            total_neutral:
+              type: integer
+              example: 100
+            total_responses:
+              type: integer
+              example: 600
+            average_likes_percentage:
+              type: number
+              format: float
+              example: 70.83
+            average_combined_positive_percentage:
+              type: number
+              format: float
+              example: 87.5
+        restaurant_sentiment_scores:
+          type: array
+          items:
+            type: object
+            properties:
+              restaurant_id:
+                type: string
+              restaurant_name:
+                type: string
+              likes:
+                type: integer
+              dislikes:
+                type: integer
+              neutral:
+                type: integer
+              total_responses:
+                type: integer
+              likes_percentage:
+                type: number
+                format: float
+              combined_positive_percentage:
+                type: number
+                format: float
+        timestamp:
+          type: string
+          format: date-time
+      required:
+        - success
+        - analysis_type
+        - total_restaurants_analyzed
+        - overall_statistics
+        - restaurant_sentiment_scores
+
+    ErrorResponse:
+      type: object
+      description: Error response format
+      properties:
+        success:
+          type: boolean
+          description: Always false for error responses
+          example: false
+        response:
+          type: string
+          description: User-friendly error message
+          example: "I need restaurant data with sentiment information to perform analysis."
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Technical error message
+            type:
+              type: string
+              description: Error type classification
+              enum: ["validation_error", "reasoning_error", "data_error", "system_error"]
+            user_message:
+              type: string
+              description: User-friendly error explanation
+        timestamp:
+          type: string
+          format: date-time
+        agent_type:
+          type: string
+          example: "restaurant_reasoning_assistant"
+        suggestions:
+          type: array
+          items:
+            type: string
+          description: Helpful suggestions for the user
+          example:
+            - "Ensure each restaurant has 'id', 'name', and 'sentiment' fields"
+            - "Sentiment data should include 'likes', 'dislikes', and 'neutral' as integers"
+      required:
+        - success
+        - response
+        - error
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token for MCP server authentication
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Restaurant Recommendations
+    description: Intelligent restaurant recommendation operations based on sentiment analysis
+  - name: Sentiment Analysis
+    description: Restaurant sentiment data analysis and statistics
+  - name: System
+    description: System health and status endpoints
+
+externalDocs:
+  description: MCP Protocol Documentation
+  url: https://modelcontextprotocol.io/docs

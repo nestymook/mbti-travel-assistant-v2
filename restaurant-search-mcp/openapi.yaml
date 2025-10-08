@@ -1,0 +1,523 @@
+openapi: 3.0.3
+info:
+  title: Restaurant Search MCP API
+  description: |
+    Model Context Protocol (MCP) server for restaurant search functionality in Hong Kong.
+    
+    This API provides comprehensive restaurant search capabilities across Hong Kong districts
+    with meal type filtering based on operating hours. The service integrates with S3-based
+    restaurant data and provides intelligent search tools for AI agents.
+    
+    ## Key Features
+    - District-based restaurant search across Hong Kong Island, Kowloon, New Territories, and Lantau
+    - Meal type filtering (breakfast, lunch, dinner) based on operating hours analysis
+    - Combined search with both district and meal type criteria
+    - Comprehensive restaurant data including sentiment analysis, pricing, and operating hours
+    
+    ## MCP Tools Available
+    - `search_restaurants_by_district_tool`: Search by Hong Kong districts
+    - `search_restaurants_by_meal_type_tool`: Search by meal times
+    - `search_restaurants_combined_tool`: Combined district and meal type search
+    
+    ## Data Sources
+    Restaurant data is sourced from S3 storage with real-time access to:
+    - Restaurant details (name, address, cuisine types)
+    - Operating hours for different day types
+    - Customer sentiment data (likes, dislikes, neutral)
+    - Pricing and location information
+  version: 1.0.0
+  contact:
+    name: MBTI Travel Assistant
+    description: Restaurant search component of the MBTI Travel Planning system
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://restaurant-search-mcp.example.com
+    description: Production MCP Server
+  - url: http://localhost:8080
+    description: Local Development Server
+
+paths:
+  /mcp/tools/search_restaurants_by_district:
+    post:
+      summary: Search restaurants by Hong Kong districts
+      description: |
+        Search for restaurants in specific Hong Kong districts. This tool covers all major
+        districts across Hong Kong Island, Kowloon, New Territories, and Lantau Island.
+        
+        Available districts include but are not limited to:
+        - Hong Kong Island: Admiralty, Central district, Causeway Bay, Wan Chai
+        - Kowloon: Tsim Sha Tsui, Mong Kok, Yau Ma Tei, Jordan
+        - New Territories: Sha Tin, Tsuen Wan, Tai Po, Tuen Mun
+        - Lantau: Tung Chung, Discovery Bay
+      operationId: searchRestaurantsByDistrict
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                districts:
+                  type: array
+                  items:
+                    type: string
+                  description: List of Hong Kong district names to search
+                  example: ["Central district", "Tsim Sha Tsui", "Causeway Bay"]
+                  minItems: 1
+              required:
+                - districts
+            examples:
+              single_district:
+                summary: Search in Central district
+                value:
+                  districts: ["Central district"]
+              multiple_districts:
+                summary: Search in multiple districts
+                value:
+                  districts: ["Central district", "Tsim Sha Tsui", "Causeway Bay"]
+      responses:
+        '200':
+          description: Successful restaurant search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+              examples:
+                successful_search:
+                  summary: Successful search with results
+                  value:
+                    success: true
+                    query_type: "district_search"
+                    districts: ["Central district"]
+                    restaurant_count: 25
+                    restaurants:
+                      - id: "rest_001"
+                        name: "Dim Sum Palace"
+                        address: "123 Central Road, Central, Hong Kong"
+                        mealType: ["Dim Sum", "Cantonese"]
+                        sentiment:
+                          likes: 85
+                          dislikes: 10
+                          neutral: 5
+                        locationCategory: "Shopping District"
+                        district: "Central district"
+                        priceRange: "$$"
+                        operatingHours:
+                          "Mon - Fri": ["11:00 - 15:00", "18:00 - 22:00"]
+                          "Sat - Sun": ["10:00 - 15:00", "18:00 - 22:30"]
+                          "Public Holiday": ["10:00 - 15:00"]
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                invalid_districts:
+                  summary: Invalid district names
+                  value:
+                    success: false
+                    error:
+                      message: "Invalid districts: ['InvalidDistrict']. Available districts: ['Central district', 'Tsim Sha Tsui', ...]"
+                      type: "validation_error"
+                    suggestions:
+                      - "Try asking about restaurants in a specific Hong Kong district"
+                      - "Use district names like 'Central district' or 'Tsim Sha Tsui'"
+
+  /mcp/tools/search_restaurants_by_meal_type:
+    post:
+      summary: Search restaurants by meal type based on operating hours
+      description: |
+        Search for restaurants that serve specific meal types based on their operating hours.
+        The system analyzes restaurant operating hours to determine meal availability:
+        
+        - **Breakfast**: 7:00-11:29 (morning dining, cafes, dim sum)
+        - **Lunch**: 11:30-17:29 (business lunch, casual dining)
+        - **Dinner**: 17:30-22:30 (evening dining, fine dining)
+      operationId: searchRestaurantsByMealType
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_types:
+                  type: array
+                  items:
+                    type: string
+                    enum: ["breakfast", "lunch", "dinner"]
+                  description: List of meal types to search for
+                  example: ["lunch", "dinner"]
+                  minItems: 1
+              required:
+                - meal_types
+            examples:
+              lunch_search:
+                summary: Search for lunch places
+                value:
+                  meal_types: ["lunch"]
+              multiple_meals:
+                summary: Search for lunch and dinner
+                value:
+                  meal_types: ["lunch", "dinner"]
+      responses:
+        '200':
+          description: Successful meal type search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+        '400':
+          description: Invalid meal type parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /mcp/tools/search_restaurants_combined:
+    post:
+      summary: Combined search by district and meal type
+      description: |
+        Flexible search that combines district and meal type filters. You can specify
+        either districts, meal types, or both. If both are provided, restaurants must
+        match both criteria to be included in results.
+      operationId: searchRestaurantsCombined
+      tags:
+        - Restaurant Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                districts:
+                  type: array
+                  items:
+                    type: string
+                  description: Optional list of Hong Kong district names
+                  example: ["Central district", "Admiralty"]
+                meal_types:
+                  type: array
+                  items:
+                    type: string
+                    enum: ["breakfast", "lunch", "dinner"]
+                  description: Optional list of meal types
+                  example: ["lunch"]
+              anyOf:
+                - required: ["districts"]
+                - required: ["meal_types"]
+            examples:
+              district_and_meal:
+                summary: Search Central district for lunch
+                value:
+                  districts: ["Central district"]
+                  meal_types: ["lunch"]
+              district_only:
+                summary: Search multiple districts
+                value:
+                  districts: ["Central district", "Tsim Sha Tsui"]
+              meal_only:
+                summary: Search for breakfast places
+                value:
+                  meal_types: ["breakfast"]
+      responses:
+        '200':
+          description: Successful combined search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantSearchResponse'
+        '400':
+          description: Invalid search parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Check the health status of the MCP server and its dependencies
+      operationId: healthCheck
+      tags:
+        - System
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                  services:
+                    type: object
+                    properties:
+                      district_service:
+                        type: boolean
+                      s3_connection:
+                        type: boolean
+                      time_service:
+                        type: boolean
+        '503':
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "unhealthy"
+                  errors:
+                    type: array
+                    items:
+                      type: string
+
+components:
+  schemas:
+    Restaurant:
+      type: object
+      description: Complete restaurant record with all associated data
+      properties:
+        id:
+          type: string
+          description: Unique restaurant identifier
+          example: "rest_001"
+        name:
+          type: string
+          description: Restaurant name
+          example: "Dim Sum Palace"
+        address:
+          type: string
+          description: Full restaurant address
+          example: "123 Central Road, Central, Hong Kong"
+        mealType:
+          type: array
+          items:
+            type: string
+          description: List of cuisine types/categories
+          example: ["Dim Sum", "Cantonese", "Traditional"]
+        sentiment:
+          $ref: '#/components/schemas/Sentiment'
+        locationCategory:
+          type: string
+          description: Category of location (e.g., Shopping District, Business Area)
+          example: "Shopping District"
+        district:
+          type: string
+          description: Hong Kong district name
+          example: "Central district"
+        priceRange:
+          type: string
+          description: Price range indicator
+          example: "$$"
+          enum: ["$", "$$", "$$$", "$$$$"]
+        operatingHours:
+          $ref: '#/components/schemas/OperatingHours'
+        metadata:
+          $ref: '#/components/schemas/RestaurantMetadata'
+      required:
+        - id
+        - name
+        - address
+        - mealType
+        - sentiment
+        - district
+
+    Sentiment:
+      type: object
+      description: Customer sentiment analysis data
+      properties:
+        likes:
+          type: integer
+          minimum: 0
+          description: Number of positive reviews
+          example: 85
+        dislikes:
+          type: integer
+          minimum: 0
+          description: Number of negative reviews
+          example: 10
+        neutral:
+          type: integer
+          minimum: 0
+          description: Number of neutral reviews
+          example: 5
+      required:
+        - likes
+        - dislikes
+        - neutral
+
+    OperatingHours:
+      type: object
+      description: Operating hours for different day types
+      properties:
+        "Mon - Fri":
+          type: array
+          items:
+            type: string
+          description: Operating hours for Monday to Friday
+          example: ["11:00 - 15:00", "18:00 - 22:00"]
+        "Sat - Sun":
+          type: array
+          items:
+            type: string
+          description: Operating hours for Saturday and Sunday
+          example: ["10:00 - 15:00", "18:00 - 22:30"]
+        "Public Holiday":
+          type: array
+          items:
+            type: string
+          description: Operating hours for public holidays
+          example: ["10:00 - 15:00"]
+      required:
+        - "Mon - Fri"
+        - "Sat - Sun"
+        - "Public Holiday"
+
+    RestaurantMetadata:
+      type: object
+      description: Metadata for restaurant records
+      properties:
+        dataQuality:
+          type: string
+          description: Quality assessment of the data
+          example: "high"
+        version:
+          type: string
+          description: Version of the restaurant data
+          example: "1.2.0"
+        qualityScore:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Numeric quality score
+          example: 95
+
+    RestaurantSearchResponse:
+      type: object
+      description: Response from restaurant search operations
+      properties:
+        success:
+          type: boolean
+          description: Whether the search was successful
+          example: true
+        query_type:
+          type: string
+          description: Type of search performed
+          enum: ["district_search", "meal_type_search", "combined_search"]
+          example: "district_search"
+        districts:
+          type: array
+          items:
+            type: string
+          description: Districts that were searched (if applicable)
+          example: ["Central district"]
+        meal_types:
+          type: array
+          items:
+            type: string
+          description: Meal types that were searched (if applicable)
+          example: ["lunch"]
+        restaurant_count:
+          type: integer
+          minimum: 0
+          description: Number of restaurants found
+          example: 25
+        restaurants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Restaurant'
+          description: List of matching restaurants
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the search
+        agent_type:
+          type: string
+          description: Type of agent that processed the request
+          example: "restaurant_search_assistant"
+      required:
+        - success
+        - query_type
+        - restaurant_count
+        - restaurants
+
+    ErrorResponse:
+      type: object
+      description: Error response format
+      properties:
+        success:
+          type: boolean
+          description: Always false for error responses
+          example: false
+        response:
+          type: string
+          description: User-friendly error message
+          example: "I don't recognize that district name. Could you try a well-known Hong Kong district?"
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Technical error message
+            type:
+              type: string
+              description: Error type classification
+              enum: ["validation_error", "processing_error", "system_error"]
+            user_message:
+              type: string
+              description: User-friendly error explanation
+        timestamp:
+          type: string
+          format: date-time
+        agent_type:
+          type: string
+          example: "restaurant_search_assistant"
+        suggestions:
+          type: array
+          items:
+            type: string
+          description: Helpful suggestions for the user
+          example:
+            - "Try asking about restaurants in a specific Hong Kong district"
+            - "Use district names like 'Central district' or 'Tsim Sha Tsui'"
+      required:
+        - success
+        - response
+        - error
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token for MCP server authentication
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Restaurant Search
+    description: Restaurant search operations by district and meal type
+  - name: System
+    description: System health and status endpoints
+
+externalDocs:
+  description: MCP Protocol Documentation
+  url: https://modelcontextprotocol.io/docs

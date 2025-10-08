@@ -16,15 +16,14 @@ import json
 import logging
 import time
 import uuid
+import urllib.parse
 from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, AsyncIterator, List
 from dataclasses import dataclass, field
 from enum import Enum
 
-import boto3
 import aiohttp
-from botocore.exceptions import ClientError, BotoCoreError
-from botocore.config import Config
+import requests
 
 # Import the comprehensive error handling system
 from .agentcore_error_handler import (
@@ -137,10 +136,12 @@ class AgentCoreRuntimeClient:
         enable_parallel_execution: bool = True,
         cache_config: Optional[Any] = None,
         pool_config: Optional[Any] = None,
-        execution_config: Optional[Any] = None
+        execution_config: Optional[Any] = None,
+        jwt_token: Optional[str] = None,
+        authentication_manager: Optional[Any] = None
     ):
         """
-        Initialize AgentCore Runtime client with performance optimizations.
+        Initialize AgentCore Runtime client with JWT authentication and performance optimizations.
         
         Args:
             region: AWS region
@@ -153,11 +154,20 @@ class AgentCoreRuntimeClient:
             cache_config: Cache configuration
             pool_config: Connection pool configuration
             execution_config: Parallel execution configuration
+            jwt_token: JWT token for authentication
+            authentication_manager: Authentication manager for token management
         """
         self.region = region
         self.retry_config = retry_config or RetryConfig()
         self.circuit_breaker_config = circuit_breaker_config or CircuitBreakerConfig()
         self.connection_config = connection_config or ConnectionConfig()
+        
+        # JWT Authentication
+        self.jwt_token = jwt_token
+        self.authentication_manager = authentication_manager
+        
+        # AgentCore HTTP endpoint configuration
+        self.agent_base_url = f"https://bedrock-agentcore.{region}.amazonaws.com"
         
         # Performance optimization flags
         self.enable_caching = enable_caching
@@ -199,10 +209,7 @@ class AgentCoreRuntimeClient:
             except ImportError as e:
                 logger.warning(f"Could not enable parallel execution: {e}")
         
-        # Initialize AWS client with optimized configuration
-        self._init_aws_client()
-        
-        # Initialize HTTP session for additional HTTP calls if needed
+        # Initialize HTTP session for AgentCore API calls
         self._init_http_session()
         
         # Initialize comprehensive error handler
@@ -214,35 +221,7 @@ class AgentCoreRuntimeClient:
         self.total_response_time = 0.0
         self.last_health_check: Optional[datetime] = None
         
-        logger.info(f"AgentCore Runtime client initialized for region: {region} with performance optimizations")
-    
-    def _init_aws_client(self):
-        """Initialize AWS Bedrock Agent Runtime client with optimized configuration."""
-        # Configure boto3 with connection pooling and retry settings
-        config = Config(
-            region_name=self.region,
-            retries={
-                'max_attempts': 1,  # We handle retries ourselves
-                'mode': 'standard'
-            },
-            max_pool_connections=self.connection_config.max_connections,
-            read_timeout=self.connection_config.timeout_seconds,
-            connect_timeout=10,  # Separate connect timeout
-        )
-        
-        # Use bedrock-agentcore (data plane) for agent invocations
-        self.bedrock_agentcore = boto3.client(
-            'bedrock-agentcore',
-            config=config
-        )
-        
-        # Use bedrock-agentcore-control (control plane) for management operations
-        self.bedrock_agentcore_control = boto3.client(
-            'bedrock-agentcore-control',
-            config=config
-        )
-        
-        logger.debug("AWS Bedrock AgentCore client initialized")
+        logger.info(f"AgentCore Runtime client initialized for region: {region} with JWT authentication and performance optimizations")
     
     def _init_http_session(self):
         """Initialize HTTP session for additional HTTP calls."""
@@ -260,6 +239,25 @@ class AgentCoreRuntimeClient:
         self.http_session = None  # Will be initialized when needed
         
         logger.debug("HTTP session configuration prepared")
+    
+    async def _get_jwt_token(self) -> str:
+        """
+        Get valid JWT token for authentication.
+        
+        Returns:
+            Valid JWT token string
+            
+        Raises:
+            AuthenticationError: If token cannot be obtained
+        """
+        if self.authentication_manager:
+            # Use authentication manager for automatic token refresh
+            return await self.authentication_manager.get_valid_token()
+        elif self.jwt_token:
+            # Use provided JWT token
+            return self.jwt_token
+        else:
+            raise AuthenticationError("No JWT token or authentication manager provided")
     
     def _get_http_session(self):
         """Get or create HTTP session."""
@@ -364,15 +362,7 @@ class AgentCoreRuntimeClient:
         try:
             # Use comprehensive error handling with circuit breaker and retry
             async def protected_call():
-                if self.enable_connection_pooling and self.connection_pool_manager:
-                    # Use connection pooling with correct AgentCore service name
-                    async with self.connection_pool_manager.get_agentcore_client(
-                        self.region
-                    ) as client:
-                        return await self._invoke_agent_with_request(client, agentcore_request)
-                else:
-                    # Use direct client
-                    return await self._invoke_agent_direct_with_request(agentcore_request)
+                return await self._invoke_agent_http_with_request(agentcore_request)
             
             raw_response = await self.error_handler.execute_with_protection(protected_call, context)
             
@@ -418,33 +408,12 @@ class AgentCoreRuntimeClient:
                     agent_arn
                 ) from e
     
-    async def _invoke_agent_direct(
-        self,
-        agent_arn: str,
-        input_text: str,
-        session_id: str
-    ) -> Dict[str, Any]:
-        """
-        Direct agent invocation without retry logic (handled by error handler).
-        
-        Args:
-            agent_arn: ARN of the target agent
-            input_text: Input text for the agent
-            session_id: Session ID
-            
-        Returns:
-            Raw response from agent
-        """
-        return await self._invoke_agent_with_client(
-            self.bedrock_agentcore, agent_arn, input_text, session_id
-        )
-    
-    async def _invoke_agent_direct_with_request(
+    async def _invoke_agent_http_with_request(
         self,
         request: AgentCoreInvocationRequest
     ) -> Dict[str, Any]:
         """
-        Direct agent invocation using AgentCore request model.
+        Invoke agent using HTTP requests with JWT authentication.
         
         Args:
             request: AgentCore invocation request with proper parameter mapping
@@ -452,75 +421,130 @@ class AgentCoreRuntimeClient:
         Returns:
             Raw response from agent
         """
-        return await self._invoke_agent_with_request(
-            self.bedrock_agentcore, request
-        )
-    
-    async def _invoke_agent_with_request(
-        self,
-        client: Any,
-        request: AgentCoreInvocationRequest
-    ) -> Dict[str, Any]:
-        """
-        Invoke agent with AgentCore request model for proper parameter mapping.
-        
-        Args:
-            client: Boto3 client instance
-            request: AgentCore invocation request
-            
-        Returns:
-            Raw response from agent
-        """
         try:
-            # Get properly formatted API parameters
-            api_params = request.to_api_params()
+            # Get JWT token
+            jwt_token = await self._get_jwt_token()
             
+            # Extract agent ID from ARN
+            agent_arn = request.agent_runtime_arn
+            if "runtime/" in agent_arn:
+                agent_id = agent_arn.split("runtime/")[-1]
+            else:
+                agent_id = agent_arn.split("/")[-1]
+            
+            # URL encode the agent ARN
+            encoded_agent_arn = urllib.parse.quote(agent_arn, safe='')
+            
+            # Construct AgentCore endpoint URL
+            agent_endpoint = f"{self.agent_base_url}/runtimes/{encoded_agent_arn}/invocations?qualifier=DEFAULT"
+            
+            # Prepare headers
+            headers = {
+                'Authorization': f'Bearer {jwt_token}',
+                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': 'agentcore-client',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+            
+            # Prepare payload
+            payload = {
+                "prompt": request.input_text,
+                "sessionId": request.session_id,
+                "enableTrace": True
+            }
+            
+            logger.debug(f"Invoking agent via HTTP: {agent_endpoint}")
+            logger.debug(f"Session ID: {request.session_id}")
+            
+            # Make HTTP request using requests library for synchronous call
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
-                lambda: client.invoke_agent_runtime(**api_params)
+                lambda: requests.post(
+                    agent_endpoint,
+                    headers=headers,
+                    json=payload,
+                    timeout=self.connection_config.timeout_seconds,
+                    stream=True
+                )
             )
             
-            # Return raw response for processing by AgentCoreInvocationResponse
-            return response
-            
-        except ClientError as e:
-            error_code = e.response.get('Error', {}).get('Code', 'Unknown')
-            status_code = e.response.get('ResponseMetadata', {}).get('HTTPStatusCode', 500)
-            
-            if error_code in ['UnauthorizedOperation', 'AccessDenied', 'InvalidUserPoolConfigurationException']:
-                raise AuthenticationError(
-                    f"Authentication failed: {str(e)}",
-                    auth_type="AWS",
-                    details={"error_code": error_code, "status_code": status_code}
-                )
-            elif error_code in ['ThrottlingException', 'TooManyRequestsException']:
-                retry_after = e.response.get('Error', {}).get('RetryAfterSeconds', 60)
-                raise AgentUnavailableError(
-                    f"Agent is throttled: {str(e)}",
-                    request.agent_runtime_arn,
-                    retry_after
-                )
-            elif status_code == 408 or 'timeout' in str(e).lower():
-                raise AgentTimeoutError(
-                    f"Agent call timed out: {str(e)}",
-                    timeout_duration=self.connection_config.timeout_seconds,
-                    agent_arn=request.agent_runtime_arn
-                )
+            if response.status_code == 200:
+                # Handle streaming response
+                response_text = ""
+                for line in response.iter_lines(decode_unicode=True):
+                    if line.startswith("data: "):
+                        try:
+                            chunk = json.loads(line[6:])  # Parse SSE data
+                            if "completion" in chunk:
+                                response_text += chunk["completion"]["bytes"].decode("utf-8")
+                            elif "trace" in chunk:
+                                logger.debug(f"Trace: {chunk['trace']}")
+                        except json.JSONDecodeError:
+                            continue
+                
+                # Return response in expected format
+                return {
+                    'output': response_text,
+                    'metadata': {
+                        'agent_id': agent_id,
+                        'session_id': request.session_id,
+                        'status_code': response.status_code
+                    }
+                }
             else:
-                raise AgentInvocationError(
-                    f"Agent invocation failed: {str(e)}",
-                    request.agent_runtime_arn,
-                    status_code,
-                    e.response.get('Error', {})
-                )
-        
-        except asyncio.TimeoutError as e:
+                # Handle HTTP errors
+                error_text = response.text
+                logger.error(f"HTTP request failed: {response.status_code} - {error_text}")
+                
+                if response.status_code == 401:
+                    raise AuthenticationError(
+                        f"Authentication failed: {error_text}",
+                        auth_type="JWT",
+                        details={"status_code": response.status_code}
+                    )
+                elif response.status_code == 403:
+                    raise AuthenticationError(
+                        f"Access denied: {error_text}",
+                        auth_type="JWT",
+                        details={"status_code": response.status_code}
+                    )
+                elif response.status_code == 408 or response.status_code == 504:
+                    raise AgentTimeoutError(
+                        f"Agent call timed out: {error_text}",
+                        timeout_duration=self.connection_config.timeout_seconds,
+                        agent_arn=agent_arn
+                    )
+                elif response.status_code == 429:
+                    raise AgentUnavailableError(
+                        f"Agent is throttled: {error_text}",
+                        agent_arn
+                    )
+                else:
+                    raise AgentInvocationError(
+                        f"Agent invocation failed: HTTP {response.status_code} - {error_text}",
+                        agent_arn,
+                        response.status_code,
+                        {"error_text": error_text}
+                    )
+                    
+        except requests.exceptions.Timeout as e:
             raise AgentTimeoutError(
                 f"Agent call timed out: {str(e)}",
                 timeout_duration=self.connection_config.timeout_seconds,
                 agent_arn=request.agent_runtime_arn
             )
-        
+        except requests.exceptions.ConnectionError as e:
+            raise AgentUnavailableError(
+                f"Agent is unavailable: {str(e)}",
+                request.agent_runtime_arn
+            )
+        except requests.exceptions.RequestException as e:
+            raise AgentInvocationError(
+                f"HTTP request failed: {str(e)}",
+                request.agent_runtime_arn
+            )
+        except AuthenticationError:
+            raise
         except Exception as e:
             # Check for specific error patterns
             error_str = str(e).lower()
@@ -541,154 +565,7 @@ class AgentCoreRuntimeClient:
                     request.agent_runtime_arn
                 )
     
-    async def _invoke_agent_with_client(
-        self,
-        client: Any,
-        agent_arn: str,
-        input_text: str,
-        session_id: str
-    ) -> Dict[str, Any]:
-        """
-        Invoke agent with specific client (for connection pooling).
-        
-        Args:
-            client: Boto3 client instance
-            agent_arn: ARN of the target agent
-            input_text: Input text for the agent
-            session_id: Session ID
-            
-        Returns:
-            Raw response from agent
-        """
-        try:
-            # Ensure session ID is at least 33 characters as required by AgentCore
-            if len(session_id) < 33:
-                session_id = f"{session_id}_{'x' * (33 - len(session_id))}"
-            
-            # Prepare payload in the correct format
-            payload = json.dumps({
-                "input": {"prompt": input_text}
-            })
-            
-            response = await asyncio.get_event_loop().run_in_executor(
-                None,
-                lambda: client.invoke_agent_runtime(
-                    agentRuntimeArn=agent_arn,
-                    runtimeSessionId=session_id,
-                    payload=payload,
-                    qualifier="DEFAULT"
-                )
-            )
-            
-            # Parse response
-            return self._parse_agent_response(response)
-            
-        except ClientError as e:
-            error_code = e.response.get('Error', {}).get('Code', 'Unknown')
-            status_code = e.response.get('ResponseMetadata', {}).get('HTTPStatusCode', 500)
-            
-            if error_code in ['UnauthorizedOperation', 'AccessDenied', 'InvalidUserPoolConfigurationException']:
-                raise AuthenticationError(
-                    f"Authentication failed: {str(e)}",
-                    auth_type="AWS",
-                    details={"error_code": error_code, "status_code": status_code}
-                )
-            elif error_code in ['ThrottlingException', 'TooManyRequestsException']:
-                retry_after = e.response.get('Error', {}).get('RetryAfterSeconds', 60)
-                raise AgentUnavailableError(
-                    f"Agent is throttled: {str(e)}",
-                    agent_arn,
-                    retry_after
-                )
-            elif status_code == 408 or 'timeout' in str(e).lower():
-                raise AgentTimeoutError(
-                    f"Agent call timed out: {str(e)}",
-                    timeout_duration=self.connection_config.timeout_seconds,
-                    agent_arn=agent_arn
-                )
-            else:
-                raise AgentInvocationError(
-                    f"Agent invocation failed: {str(e)}",
-                    agent_arn,
-                    status_code,
-                    e.response.get('Error', {})
-                )
-        
-        except asyncio.TimeoutError as e:
-            raise AgentTimeoutError(
-                f"Agent call timed out: {str(e)}",
-                timeout_duration=self.connection_config.timeout_seconds,
-                agent_arn=agent_arn
-            )
-        
-        except Exception as e:
-            # Check for specific error patterns
-            error_str = str(e).lower()
-            if 'timeout' in error_str:
-                raise AgentTimeoutError(
-                    f"Agent call timed out: {str(e)}",
-                    timeout_duration=self.connection_config.timeout_seconds,
-                    agent_arn=agent_arn
-                )
-            elif 'connection' in error_str or 'network' in error_str:
-                raise AgentUnavailableError(
-                    f"Agent is unavailable: {str(e)}",
-                    agent_arn
-                )
-            else:
-                raise AgentInvocationError(
-                    f"Agent invocation failed: {str(e)}",
-                    agent_arn
-                )
-    
 
-    
-    def _parse_agent_response(self, response: Dict[str, Any]) -> Dict[str, Any]:
-        """Parse raw AgentCore agent response."""
-        try:
-            # AgentCore returns a streaming response body
-            if 'response' in response:
-                response_body = response['response'].read()
-                response_data = json.loads(response_body)
-                
-                # Extract the actual response content
-                if 'output' in response_data:
-                    return {
-                        'output': response_data.get('output', ''),
-                        'metadata': response_data.get('metadata', {})
-                    }
-                elif 'result' in response_data:
-                    return {
-                        'output': str(response_data.get('result', '')),
-                        'metadata': response_data.get('metadata', {})
-                    }
-                else:
-                    # Fallback: return the entire response as output
-                    return {
-                        'output': str(response_data),
-                        'metadata': {}
-                    }
-            elif 'output' in response:
-                # Direct output format
-                return {
-                    'output': response.get('output', ''),
-                    'metadata': response.get('metadata', {})
-                }
-            else:
-                # Fallback: try to extract any text content
-                output_text = str(response.get('result', response.get('response', '')))
-                return {
-                    'output': output_text,
-                    'metadata': response.get('metadata', {})
-                }
-                
-        except Exception as e:
-            logger.error(f"Failed to parse AgentCore agent response: {str(e)}")
-            logger.error(f"Raw response: {response}")
-            return {
-                'output': '',
-                'metadata': {'parse_error': str(e), 'raw_response': str(response)}
-            }
     
     def create_fallback_response(self, operation: str, agent_arn: str, 
                                user_id: Optional[str] = None, 
@@ -731,31 +608,77 @@ class AgentCoreRuntimeClient:
         agentcore_request.validate()
         
         try:
-            # Get properly formatted API parameters
-            api_params = agentcore_request.to_api_params()
+            # Get JWT token
+            jwt_token = await self._get_jwt_token()
             
+            # Extract agent ID from ARN
+            agent_arn = agentcore_request.agent_runtime_arn
+            if "runtime/" in agent_arn:
+                agent_id = agent_arn.split("runtime/")[-1]
+            else:
+                agent_id = agent_arn.split("/")[-1]
+            
+            # URL encode the agent ARN
+            encoded_agent_arn = urllib.parse.quote(agent_arn, safe='')
+            
+            # Construct AgentCore endpoint URL
+            agent_endpoint = f"{self.agent_base_url}/runtimes/{encoded_agent_arn}/invocations?qualifier=DEFAULT"
+            
+            # Prepare headers
+            headers = {
+                'Authorization': f'Bearer {jwt_token}',
+                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': 'agentcore-client',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+            
+            # Prepare payload
+            payload = {
+                "prompt": agentcore_request.input_text,
+                "sessionId": agentcore_request.session_id,
+                "enableTrace": True
+            }
+            
+            logger.debug(f"Invoking agent with streaming via HTTP: {agent_endpoint}")
+            
+            # Make HTTP request for streaming
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
-                lambda: self.bedrock_agentcore.invoke_agent_runtime(**api_params)
+                lambda: requests.post(
+                    agent_endpoint,
+                    headers=headers,
+                    json=payload,
+                    timeout=self.connection_config.timeout_seconds,
+                    stream=True
+                )
             )
             
-            chunk_index = 0
-            
-            if 'completion' in response:
-                completion_stream = response['completion']
+            if response.status_code == 200:
+                chunk_index = 0
                 
-                for event in completion_stream:
-                    if 'chunk' in event:
-                        # Use new streaming response model
-                        streaming_response = AgentCoreStreamingResponse.from_stream_chunk(
-                            chunk_data=event,
-                            session_id=agentcore_request.session_id,
-                            chunk_index=chunk_index
-                        )
-                        yield streaming_response
-                        chunk_index += 1
+                # Process streaming response
+                for line in response.iter_lines(decode_unicode=True):
+                    if line.startswith("data: "):
+                        try:
+                            chunk = json.loads(line[6:])  # Parse SSE data
+                            if "completion" in chunk:
+                                chunk_text = chunk["completion"]["bytes"].decode("utf-8")
+                                
+                                # Use new streaming response model
+                                streaming_response = AgentCoreStreamingResponse(
+                                    chunk_text=chunk_text,
+                                    session_id=agentcore_request.session_id,
+                                    is_final=False,
+                                    chunk_index=chunk_index
+                                )
+                                yield streaming_response
+                                chunk_index += 1
+                            elif "trace" in chunk:
+                                logger.debug(f"Trace: {chunk['trace']}")
+                        except json.JSONDecodeError:
+                            continue
                 
-                # Send final chunk using new model
+                # Send final chunk
                 final_response = AgentCoreStreamingResponse(
                     chunk_text="",
                     session_id=agentcore_request.session_id,
@@ -763,6 +686,13 @@ class AgentCoreRuntimeClient:
                     chunk_index=chunk_index
                 )
                 yield final_response
+            else:
+                # Handle HTTP errors for streaming
+                error_text = response.text
+                raise AgentInvocationError(
+                    f"Streaming invocation failed: HTTP {response.status_code} - {error_text}",
+                    agent_arn
+                )
             
         except Exception as e:
             logger.error(f"Streaming invocation failed: {agent_arn} - {str(e)}")
@@ -1076,6 +1006,52 @@ class AgentCoreRuntimeClient:
         await self.close()
 
 
+def create_agentcore_client_with_jwt(
+    jwt_token: str,
+    region: str = "us-east-1",
+    **kwargs
+) -> AgentCoreRuntimeClient:
+    """
+    Create AgentCore Runtime client with JWT token.
+    
+    Args:
+        jwt_token: JWT token for authentication
+        region: AWS region
+        **kwargs: Additional client configuration
+        
+    Returns:
+        Configured AgentCore Runtime client
+    """
+    return AgentCoreRuntimeClient(
+        region=region,
+        jwt_token=jwt_token,
+        **kwargs
+    )
+
+
+def create_agentcore_client_with_auth_manager(
+    authentication_manager: Any,
+    region: str = "us-east-1",
+    **kwargs
+) -> AgentCoreRuntimeClient:
+    """
+    Create AgentCore Runtime client with authentication manager.
+    
+    Args:
+        authentication_manager: Authentication manager instance
+        region: AWS region
+        **kwargs: Additional client configuration
+        
+    Returns:
+        Configured AgentCore Runtime client
+    """
+    return AgentCoreRuntimeClient(
+        region=region,
+        authentication_manager=authentication_manager,
+        **kwargs
+    )
+
+
 # Export main classes
 __all__ = [
     'AgentCoreRuntimeClient',
@@ -1089,5 +1065,7 @@ __all__ = [
     'AgentCoreError',
     'AuthenticationError',
     'AgentInvocationError',
-    'ConfigurationError'
+    'ConfigurationError',
+    'create_agentcore_client_with_jwt',
+    'create_agentcore_client_with_auth_manager'
 ]
