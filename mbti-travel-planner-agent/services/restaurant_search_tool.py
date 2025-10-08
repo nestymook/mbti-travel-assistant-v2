@@ -551,12 +551,12 @@ class RestaurantSearchTool:
         """
         try:
             # Try to parse as JSON first
-            if response.output_text.strip().startswith('{'):
-                return json.loads(response.output_text)
+            if response.response_text.strip().startswith('{'):
+                return json.loads(response.response_text)
             
             # If not JSON, try to extract JSON from text
             import re
-            json_match = re.search(r'\{.*\}', response.output_text, re.DOTALL)
+            json_match = re.search(r'\{.*\}', response.response_text, re.DOTALL)
             if json_match:
                 return json.loads(json_match.group())
             
@@ -564,7 +564,7 @@ class RestaurantSearchTool:
             return {
                 'restaurants': [],
                 'metadata': {
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }
@@ -576,7 +576,7 @@ class RestaurantSearchTool:
                 'restaurants': [],
                 'metadata': {
                     'parse_error': str(e),
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }
@@ -587,7 +587,7 @@ class RestaurantSearchTool:
                 'restaurants': [],
                 'metadata': {
                     'error': str(e),
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }

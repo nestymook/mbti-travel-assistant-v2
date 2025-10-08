@@ -1,0 +1,2121 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T03:47:42.479Z",
+    "version": "1.0.0",
+    "district": "Western District",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 61,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.856Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "e4fd5738-cfc6-4df1-9702-eb1b827abba0",
+      "name": "gastronomy 焗釀芒果三色藜麥",
+      "address": "Shop 4&7, 2/F, Grand Fortune Mansion, 1 Davis Street, Kennedy Town",
+      "mealType": [
+        "American",
+        "hamburger",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "65bd752d-6821-424c-9e8a-29e2aa92f822",
+      "name": "color focusing Causa",
+      "address": "Shop 13, 2/F, 83 First Street, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 464,
+        "dislikes": 14,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8dcebb1-d01a-4d13-a86e-813a94469cca",
+      "name": "67A institution (Sugar+)",
+      "address": "1/F, 537A Des Voeux Road West, Shek Tong Tsui",
+      "mealType": [
+        "Curry",
+        "Thai",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 275,
+        "dislikes": 2,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ee8bbe0a-db6f-4811-a600-e0c35d0f1ab1",
+      "name": "sushi 布甸蛋撻 畢業於中華廚藝學院的「師妹」，毅然辭去會景餐廳廚師一職，跑到長洲經營甜品店，堅持用最好的材料炮製甜品。 鹿兒島黑豚荔枝卷串燒",
+      "address": "3/F, SoHo 189, 189 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "spanish",
+        "western district",
+        "Mediterranean"
+      ],
+      "sentiment": {
+        "likes": 766,
+        "dislikes": 14,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f3d9a4f-d51b-4bff-a13a-201f7c0dd649",
+      "name": "themselves 1900s",
+      "address": "Shop A & B, 2/F, Lai Yin Court, 80-86 High Street, Sai Ying Pun",
+      "mealType": [
+        "Izakaya",
+        "western district",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 208,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "704f2f3d-87b7-4565-b054-57e65eacc5da",
+      "name": "美式什扒 Mussels uni steakhouses 香辣牛肉麵",
+      "address": "Shop 5, 1/F, One • ArtLane, 8 Chung Ching Street, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "western district",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 334,
+        "dislikes": 14,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "87aef76d-2b5c-4171-b55d-c3021d539197",
+      "name": "explosion",
+      "address": "Shop A, 2/F, 2 Second Street, Sai Ying Pun",
+      "mealType": [
+        "cake",
+        "western district",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 21,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0678f526-a7ae-4a29-90c6-1ceb8cf1ae91",
+      "name": "hidden Tom 香煎比目魚配檸檬牛油汁伴意粉",
+      "address": "Shop A-E, 1/F, Tung Fat Building, 1B-1C New Praya, Kennedy Town",
+      "mealType": [
+        "Italian",
+        "French",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 327,
+        "dislikes": 21,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "84266886-7ad8-483d-86a5-f2db0eebd54b",
+      "name": "find",
+      "address": "2/F, 56 Hill Road, Shek Tong Tsui",
+      "mealType": [
+        "Coffee Shop",
+        "western district",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 127,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "312d8888-9daf-487a-a885-8ed8d13dfb45",
+      "name": "蒲燒鰻魚飯 Milan HAND",
+      "address": "5/F, Eco Tree Hotel, 156-160 Des Voeux Road West, Sai Ying Pun",
+      "mealType": [
+        "roast meat",
+        "skewer",
+        "Hunan"
+      ],
+      "sentiment": {
+        "likes": 115,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd35baa4-f9bb-45e7-87a1-e2d3eb8e059a",
+      "name": "lights Kok dim balances open",
+      "address": "Shop C&D, 3/F, Rockson Mansion, 371-379 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "western district",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 632,
+        "dislikes": 13,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "043b892c-46ac-464b-a625-5996af48789e",
+      "name": "流心焦糖蛋撻",
+      "address": "Shop 3, 1/F, Island Crest, 8 First Street, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 0,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8ee461f4-6bd0-4dcf-8f6c-a1c58ab71e59",
+      "name": "煙三文魚牛油果炒蛋貝果 郊外油菜 香脆小酥肉 Monastery",
+      "address": "2/F, 9-28 Clarence Terrace, Shek Tong Tsui",
+      "mealType": [
+        "American",
+        "western district",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 165,
+        "dislikes": 8,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b7db218e-534a-4c3f-8ad6-bf7ef5e0cd9e",
+      "name": "莓莓角酪",
+      "address": "Shop 8, 4/F, 25 New Praya, Kennedy Town",
+      "mealType": [
+        "Pet Friendly",
+        "western district",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 246,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44d4675e-c471-4606-bad3-edea86daa395",
+      "name": "鹽焗本灣馬友 麻辣香鍋",
+      "address": "Shop B, 9/F, Nice Garden, 513 Queen's Road West, Shek Tong Tsui",
+      "mealType": [
+        "Malaysian",
+        "malaysian",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 177,
+        "dislikes": 9,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ede41fcf-b10a-43b3-a137-80738c1cb34f",
+      "name": "招牌水果茶 鮮奶油多士 蔥油豬扒蛋飯",
+      "address": "Shop D, E, & F, 7/F, Johnson Mansion, 428-440 Queen’s Road West, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "western district",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a29da6e0-d3e4-447d-a7a1-2a881f02dd6c",
+      "name": "rooftop charcoal-grilled 黯然銷魂飯 211",
+      "address": "11/F, 2 First Street, Sai Ying Pun",
+      "mealType": [
+        "western district",
+        "Steak House",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 239,
+        "dislikes": 8,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "214d6194-4b0f-4cb1-ad23-95119e80e11e",
+      "name": "grain-finished 厚燒玉子",
+      "address": "Shop D, 13/F, 59 High Street, Sai Ying Pun",
+      "mealType": [
+        "korean fried chicken",
+        "western district",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 166,
+        "dislikes": 10,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "925dbe11-33a6-47ab-80f4-0da2124507da",
+      "name": "Circuit Instagram",
+      "address": "2/F, Best Western Plus Hotel, 308 Des Voeux Road West, Sai Ying Pun",
+      "mealType": [
+        "guangdong",
+        "western district",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 195,
+        "dislikes": 12,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04c7e369-d56e-4e61-adb8-036508609bb5",
+      "name": "Zagin BTS equipments",
+      "address": "Shop A, 4/F & Shop AB, 1/F, Sik On House, 54-66 Hill Road, Shek Tong Tsui",
+      "mealType": [
+        "chicken hot pot",
+        "Hot Pot",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 159,
+        "dislikes": 7,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7d21dc68-71c7-465d-90ee-bd099c350111",
+      "name": "法式龍蝦湯 FOR slices Plate",
+      "address": "1/F, 203 Queen’s Road West, Sai Ying Pun",
+      "mealType": [
+        "Western",
+        "cake",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 5,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1fb7fea6-6db2-4ab3-8ca5-e73473c0bb67",
+      "name": "chaat City’n",
+      "address": "9/F, 44 North Street, Kennedy Town",
+      "mealType": [
+        "Dim Sum",
+        "western district",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 210,
+        "dislikes": 29,
+        "neutral": 76
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a2c1d5a-a505-457f-8fea-95f1f4e414eb",
+      "name": "海膽壽司 Rêveri",
+      "address": "2/F, 47 South Lane, Shek Tong Tsui",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8ff7d7d-1d9c-46c5-8873-93900369c264",
+      "name": "don saffron 日式牛肉湯",
+      "address": "3/F, 47 Centre Street, Sai Ying Pun",
+      "mealType": [
+        "Stir Fry",
+        "western district",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 337,
+        "dislikes": 9,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8c5bc03-8b29-4dd5-ab7d-b43acb9fe6a9",
+      "name": "招牌自選香鍋",
+      "address": "Shop 1, 20/F, Grand Fortune Mansion, 1 Davis Street, Kennedy Town",
+      "mealType": [
+        "French",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 388,
+        "dislikes": 7,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9577efaa-2139-4d6c-8b03-cb086cf69e31",
+      "name": "Hei 龍蝦湯泡飯 alfresco",
+      "address": "9/F, 909 Des Voeux Road West, Shek Tong Tsui",
+      "mealType": [
+        "western district",
+        "noodles rice noodles",
+        "Guangxi"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 5,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "26bfcc26-0b68-441d-bd68-aba217e00363",
+      "name": "blacksmiths carte 華樂冰室's",
+      "address": "2/F, 69 North Street, Kennedy Town",
+      "mealType": [
+        "Taiwan",
+        "western district",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 224,
+        "dislikes": 23,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb29b2fe-a5b8-4077-9cf9-15978316715b",
+      "name": "雞蛋羮",
+      "address": "9/F, 98 Water Street, Sai Ying Pun",
+      "mealType": [
+        "dessert",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 122,
+        "dislikes": 6,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "361a1788-7f07-43c1-ac4f-8c99a7ac556e",
+      "name": "Sung",
+      "address": "5/F, 864 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "hong kong style",
+        "western district",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 100,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c9e4e20-703e-418f-9388-60d07a4d8925",
+      "name": "Feast doughs 紅米腸粉 Etsu",
+      "address": "Shop F, 2/F, Yen Shun Mansion, 142-150 Third Street, Sai Ying Pun",
+      "mealType": [
+        "western district",
+        "dessert",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 142,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bce6437-1446-4435-822a-e6e9b510ce82",
+      "name": "methods\nInfluenced 2 Pappardelle",
+      "address": "Shop 1, 2/F, Grand Fortune Mansion, 1 Davis Street, Kennedy Town",
+      "mealType": [
+        "western district",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 306,
+        "dislikes": 6,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb9813d0-e282-4dd6-847e-87f163798af3",
+      "name": "Pad Chew 黃金蝦球",
+      "address": "Shop 0, 1/F, New Fortune House, 3-5 New Praya, Kennedy Town",
+      "mealType": [
+        "western district",
+        "International",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 1,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7da4126d-72f6-4d94-b18d-d6a04f5446b7",
+      "name": "香煎鴨肝配黑松露菌意大利飯",
+      "address": "Shop 6, 3-6, 2/F, Soho 189, 189 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "philippines",
+        "western district",
+        "Philippines"
+      ],
+      "sentiment": {
+        "likes": 52,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c94d1994-cac5-4ac2-9a99-d38333ce9654",
+      "name": "酥脆鹽酥雞",
+      "address": "Shop 1, Wo Yick Mansion, 263 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "western district",
+        "Guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 244,
+        "dislikes": 31,
+        "neutral": 55
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c68e77cc-e978-4e2c-b068-e3dd78ff0e8e",
+      "name": "Yuan",
+      "address": "5/F, 15 Centre Street, Sai Ying Pun",
+      "mealType": [
+        "Hong Kong Style",
+        "food stall noodles",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b4516379-b098-4fb4-92c4-17a4ab139b86",
+      "name": "德福茶餐廳's",
+      "address": "3/F, 06 Whitty Street, Shek Tong Tsui",
+      "mealType": [
+        "Japanese",
+        "western district",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 59,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a7f7957-eb5c-4bea-819d-cb812ccdfa55",
+      "name": "鱈魚",
+      "address": "7/F, 9 David Lane, Sai Ying Pun",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 103,
+        "dislikes": 3,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca582d42-b4d5-4850-9d2a-6737d12bcd62",
+      "name": "Fritta 688 Celebrating",
+      "address": "Shop C, 2/F, Man Kwong Court, 12 Smithfield, Kennedy Town",
+      "mealType": [
+        "guangdong",
+        "wonton dumpling",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 223,
+        "dislikes": 5,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dfea6018-8a0a-4371-b071-31279ee2e401",
+      "name": "Guangdong-style 廈門風味潤餅",
+      "address": "1/F, Yen Oi Garden, 9-15 Po Tuck Street, Shek Tong Tsui",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 132,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f9557619-f227-4325-af5b-9be263db8e29",
+      "name": "two 炭火叉燒飯 sparkling",
+      "address": "Shop C, 3/F, 8 Smithfield Road, Kennedy Town",
+      "mealType": [
+        "western district",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 13,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60880b90-2a02-407f-80be-9cb75f752ea2",
+      "name": "syrup",
+      "address": "Shop 2B, 1/F, Upton, 180 Connaught Road West, Shek Tong Tsui",
+      "mealType": [
+        "Stir Fry",
+        "Hunan",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "618197dd-398f-4f3f-9771-9c526cca32b1",
+      "name": "味辛黑梅螺 Serves",
+      "address": "7/F, The Hudson, 11 Davis Street, Kennedy Town",
+      "mealType": [
+        "western district",
+        "Bar",
+        "Mexican"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 8,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "478e0a58-a527-4a1c-8095-e018c8f1444a",
+      "name": "spread",
+      "address": "Shop B, 1/F, Hing Wah House, 69-73 Third Street, Sai Ying Pun",
+      "mealType": [
+        "International",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 48,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0c938daf-164e-4e1c-b915-69becc91c82f",
+      "name": "原條燒茄子 ambiance 16",
+      "address": "Shop 8, 4/F, 25 New Praya, Kennedy Town",
+      "mealType": [
+        "Seafood",
+        "British",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 179,
+        "dislikes": 11,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "95ea208d-eea5-434b-bd36-37c2b7c34782",
+      "name": "蒜泥台灣水蓮 variety pot; 古法東山羊腩煲 great",
+      "address": "1/F, Yick Fung Garden, 3 Belcher's Street, Shek Tong Tsui",
+      "mealType": [
+        "western district",
+        "Stir Fry",
+        "chiu chow"
+      ],
+      "sentiment": {
+        "likes": 200,
+        "dislikes": 19,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "734d2c55-04c7-4e8a-a2c7-b8ddfe6a77f2",
+      "name": "檸檬燒牛肉",
+      "address": "Shop 7, 3/F, Jadeview Court, 38 Hill Road, Shek Tong Tsui",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e2d49c6-7d6d-4a24-96ec-c37261c2b426",
+      "name": "油渣麵 in 集會脆麵",
+      "address": "2/F, 188 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "Taiwan",
+        "western district",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d405002b-fc25-49a3-b776-e838048cd716",
+      "name": "手打五寶丸 Grouper",
+      "address": "Shop 8, 2/F, Fung Yu Building, 182-190 Third Street, Shek Tong Tsui",
+      "mealType": [
+        "skewer",
+        "western district",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 46,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3595be67-8002-42d5-881a-ff7536ac4022",
+      "name": "Iberico market",
+      "address": "1/F, Tai Yik House, 27-29 First Street, Sai Ying Pun",
+      "mealType": [
+        "American",
+        "western district",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 303,
+        "dislikes": 9,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7edf0de7-a6d1-4807-be6c-0bb15251f212",
+      "name": "蠔白湯拉麵 office BBQ's",
+      "address": "Shop A, 7/F, 39-41 Cadogan Street, Kennedy Town",
+      "mealType": [
+        "western district",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1845f65f-4e98-4783-b38e-f29d987e9826",
+      "name": "grill 潮周人粉麵店 oysters pigs",
+      "address": "Shop C, 2/F, Piu Chun Building, 316-320 Des Voeux Road West, Sai Ying Pun",
+      "mealType": [
+        "Shanghai",
+        "western district",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 5,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c958c4d4-7f57-4490-911c-fc411f34602a",
+      "name": "Dale Moon",
+      "address": "3/F, 93 High Street, Sai Ying Pun",
+      "mealType": [
+        "pizza",
+        "western district",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 7,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c2171c9f-da94-4705-9426-152b6d7ab9db",
+      "name": "招牌牛肉牛骨原湯拉麵 Lockcha",
+      "address": "7/F, Kam Ho Court, 144-148 Belcher's Street, Kennedy Town",
+      "mealType": [
+        "pizza",
+        "western district",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 2,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "52df27b3-f355-4568-9906-03ba5fef3fdf",
+      "name": "101 shallots Renowned",
+      "address": "2/F, Rear Block, 425J Queen's Road West, Shek Tong Tsui",
+      "mealType": [
+        "Hong Kong Style",
+        "noodles rice noodles",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "838a6f0d-2c0c-4585-9795-0306da3b21ae",
+      "name": "Braised Kebab O'rm's",
+      "address": "Shop 6, 3/F, Bohemian House, 321 Des Voeux Road West, Sai Ying Pun",
+      "mealType": [
+        "British",
+        "Australian",
+        "Family Friendly"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 5,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "da351340-bcd4-48c6-8f9f-f5e755c15dd9",
+      "name": "reserve 即炸魚皮",
+      "address": "7/F, 163M Queen's Road West, Shek Tong Tsui",
+      "mealType": [
+        "Western",
+        "hamburger",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 67,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d6e4cbbd-2a02-4c7b-99f5-e43a966a4aa7",
+      "name": "immersive",
+      "address": "1/F, Cheong Fai Building, 21 Catchick Street, Kennedy Town",
+      "mealType": [
+        "hamburger",
+        "western district",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "040d77fc-a94e-40dc-a922-78183d9bf387",
+      "name": "performing 至尊波奇 Lime",
+      "address": "Shop B, 2/F, Kenbo Commercial Building, 335-339 Queen's Road West, Sai Ying Pun",
+      "mealType": [
+        "International",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36e1998f-eb9a-4be0-99d9-0f1e83537382",
+      "name": "牛肝菌蘑菇意大利飯",
+      "address": "9/F, 41 Fuk Sau Lane, Sai Ying Pun",
+      "mealType": [
+        "Indian",
+        "French",
+        "western district"
+      ],
+      "sentiment": {
+        "likes": 48,
+        "dislikes": 7,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7a9de41-6385-4420-bca2-883b5d6ef0fe",
+      "name": "Nagasaki Bonds",
+      "address": "Shop 2C, 3/F, New Fortune House, 4-8 North Street, Kennedy Town",
+      "mealType": [
+        "Western",
+        "All Day Breakfast",
+        "belgian"
+      ],
+      "sentiment": {
+        "likes": 165,
+        "dislikes": 22,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d14eea87-96a4-443c-9643-af8cdbf8b536",
+      "name": "LKF",
+      "address": "2/F, Hang Yu Building, 45-55 Cadogan Street, Kennedy Town",
+      "mealType": [
+        "western district",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Western District",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

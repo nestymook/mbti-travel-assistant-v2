@@ -471,23 +471,23 @@ class RestaurantReasoningTool:
         """
         try:
             # Try to parse as JSON first
-            if response.output_text.strip().startswith('{'):
-                return json.loads(response.output_text)
+            if response.response_text.strip().startswith('{'):
+                return json.loads(response.response_text)
             
             # If not JSON, try to extract JSON from text
             import re
-            json_match = re.search(r'\{.*\}', response.output_text, re.DOTALL)
+            json_match = re.search(r'\{.*\}', response.response_text, re.DOTALL)
             if json_match:
                 return json.loads(json_match.group())
             
             # If no JSON found, create a structured response
             return {
                 'recommendations': [],
-                'reasoning': response.output_text,
+                'reasoning': response.response_text,
                 'confidence_score': 0.0,
                 'mbti_analysis': {},
                 'metadata': {
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }
@@ -497,12 +497,12 @@ class RestaurantReasoningTool:
             logger.warning(f"Failed to parse agent response as JSON: {e}")
             return {
                 'recommendations': [],
-                'reasoning': response.output_text,
+                'reasoning': response.response_text,
                 'confidence_score': 0.0,
                 'mbti_analysis': {},
                 'metadata': {
                     'parse_error': str(e),
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }
@@ -516,7 +516,7 @@ class RestaurantReasoningTool:
                 'mbti_analysis': {},
                 'metadata': {
                     'error': str(e),
-                    'raw_response': response.output_text,
+                    'raw_response': response.response_text,
                     'session_id': response.session_id,
                     'agent_metadata': response.metadata
                 }

@@ -1,0 +1,1138 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T18:07:02.234Z",
+    "version": "1.0.0",
+    "district": "Wong Tai Sin",
+    "locationCategory": "Kowloon",
+    "recordCount": 32,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.990Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "d67f5d6c-e610-42ad-bb46-e73653eba728",
+      "name": "Satay popcorn",
+      "address": "Shop LG57, LG/F, Temple Mall North, 136 Lung Cheung Road",
+      "mealType": [
+        "Shanghai",
+        "wong tai sin",
+        "shanghai"
+      ],
+      "sentiment": {
+        "likes": 199,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f305d875-5186-4b7b-86ed-dfdd1c185503",
+      "name": "Waterfront PIZZA Lun rare 香煎鯧魚",
+      "address": "Shop LG91, LG/F, Temple Mall South, 103 Ching Tak Street",
+      "mealType": [
+        "wong tai sin",
+        "korean bbq",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 302,
+        "dislikes": 15,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc3b0c92-82ed-412b-b5b6-e0e28b258ebf",
+      "name": "Here 海膽飯",
+      "address": "Shop G71A, G/F, Temple Mall South, 103 Ching Tak Street",
+      "mealType": [
+        "Japanese",
+        "wong tai sin",
+        "udon"
+      ],
+      "sentiment": {
+        "likes": 975,
+        "dislikes": 18,
+        "neutral": 59
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4565dfcf-1aae-414f-936d-d3316fa7873b",
+      "name": "brings A5 Restoran",
+      "address": "Shop G31A-G10B, G/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "Snack Shop & Deli",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 94,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5307cbc7-4beb-43b7-981d-de1f79f311ff",
+      "name": "Pokfulam 牛五花",
+      "address": "2/F, Hsin Kuang Centre, 120 Lung Cheung Road",
+      "mealType": [
+        "Hot Pot",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 24,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f57d3e21-7ebe-43de-89cd-c5fc2d3dcc6c",
+      "name": "Photos",
+      "address": "Shop 8, G4/F, Tropicana Gardens, 110 Lung Cheung Road",
+      "mealType": [
+        "wong tai sin",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 10,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbcccc77-46fa-4622-b99d-de8b807fa14c",
+      "name": "makes shows 多士",
+      "address": "Shop UG96, UG/F, Temple Mall South, 103 Ching Tak Street",
+      "mealType": [
+        "hong kong style",
+        "congee",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1e88fdba-4a6d-46c0-bdda-d43dae664b43",
+      "name": "法式芝心",
+      "address": "G/F, 42 Sheung Fung Street, Fung Wong San Tsuen, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "wonton dumpling",
+        "congee"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36aa7d82-42ab-46cd-a4fe-72627abb43f6",
+      "name": "converted medicines",
+      "address": "G/F, 11 Fei Fung Street",
+      "mealType": [
+        "Stir Fry",
+        "wong tai sin",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "455c5021-b000-422a-b907-d07bbc5dd52f",
+      "name": "Coco",
+      "address": "G/F, 61 Wan Fung Street, Fung Wong San Tsuen",
+      "mealType": [
+        "shanghai",
+        "Shanghai",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2034cbd4-91eb-46c4-a9dd-421fe9ce81ad",
+      "name": "neck 1/F 牛舌芯",
+      "address": "G/F, 16 Ngan Fung Street",
+      "mealType": [
+        "Sweets",
+        "wong tai sin",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad981130-7523-4b59-bdc7-6da6f99cac2a",
+      "name": "鳳爪",
+      "address": "G/F, 09 Fei Fung Street",
+      "mealType": [
+        "shanghai",
+        "wong tai sin",
+        "shanghai hairy crab"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 13,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "754f0abb-bc12-45f3-8389-34f61b4344fc",
+      "name": "Fun’",
+      "address": "Shop 3-4, G/F, Lions Rise Mall, 8 Muk Lun Street",
+      "mealType": [
+        "Japanese",
+        "wong tai sin",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd739d47-53ec-437c-8d45-54100cf46ac2",
+      "name": "芒果雪冰 Pool",
+      "address": "Shop 518, 1/F, Temple Mall South, 103 Ching Tak Street",
+      "mealType": [
+        "wong tai sin",
+        "Stir Fry",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "477b14c2-b0c2-4874-935a-9c5b5feafa76",
+      "name": "盛合 MY",
+      "address": "Shop G7B, G/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "roast meat",
+        "wong tai sin",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2df92d0c-394f-4780-9798-521480652a65",
+      "name": "Kong's",
+      "address": "Shop N514-N134, 1/F, Temple Mall North, 136 Lung Cheung Road, Wong Tai Sin",
+      "mealType": [
+        "hunan",
+        "wong tai sin",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59c406f2-d9e1-4ff6-b565-b41f1d80163a",
+      "name": "Big",
+      "address": "Shop G08, G/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 6,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "db20343f-6701-431f-b065-48198a0e6868",
+      "name": "3 House's",
+      "address": "Shop 18&30A, LG/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "bakery",
+        "wong tai sin",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0a89f38b-8873-442b-b59c-2df88115324a",
+      "name": "Saigon Master 冬甩",
+      "address": "Shop N967, L1/F, Temple Mall North, 136 Lung Cheung Road, Wong Tai Sin",
+      "mealType": [
+        "Western",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 7,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c30fd8b6-2721-4554-9da2-5008a9f94fca",
+      "name": "330's",
+      "address": "Shop 9A, Cooked Food Stall, Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "chiu chow",
+        "Dai Pai Dong",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5742708-2cc5-4c40-a64a-58ccc2eb6ee7",
+      "name": "Online Kissaten 雞煲 New",
+      "address": "G/F, Fung Wong Sun Chuen, 24-28 Wan Fung Street, Wong Tai Sin",
+      "mealType": [
+        "noodles rice noodles",
+        "Takeaway",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 2,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4c327740-1ef3-46a9-baf3-af1f118fd362",
+      "name": "Café@WM",
+      "address": "Shop 4, Cooked Food Stall, Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "chiu chow",
+        "Dai Pai Dong",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 4,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e45e85c1-0385-44bc-b017-1e9a118135cf",
+      "name": "dishes 酥炸魷魚鬚",
+      "address": "Shop 3A, Cheung Ying Alley, G3/F, Tropicana Gardens, 110 Lung Cheung Road, Wong Tai Sin",
+      "mealType": [
+        "Coffee Shop",
+        "wong tai sin",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "12707d4a-06b3-4ce3-8a0e-b8d30b1fc780",
+      "name": "腐乳通菜",
+      "address": "Shop G4D, G/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "hamburger",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbebb000-e751-440b-8346-1b9bead5655c",
+      "name": "S002",
+      "address": "Shop 2-7, Commercial Building Block 2, Choi Wan Estate (1), 45 Clear Water Bay Road, Wong Tai Sin",
+      "mealType": [
+        "chiu chow",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad96499f-ee68-493a-b095-b5b844fc0ee9",
+      "name": "HK",
+      "address": "Shop LG6, LG/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "taiwan",
+        "wong tai sin",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cc8cdce6-8d08-4422-9d0d-f9dd39274a19",
+      "name": "香煎鯧魚",
+      "address": "Shop LG88&07, LG/F, Temple Mall North, 136 Lung Cheung Road, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "roast meat",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6b555ca9-c9df-4047-83fa-3bec01c5dbca",
+      "name": "COCK 地瓜 巴馬火腿",
+      "address": "G/F, 35 Ming Fung Street, Fung Wong New Village, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "food stall noodles",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7b5752a-d457-4dfc-b2c5-1d6a9d83cf11",
+      "name": "setting",
+      "address": "Shop G07, G/F, Temple Mall North, 136 Lung Cheung Road, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "bakery",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be66fde0-f66d-4969-9b41-e23b79f83f08",
+      "name": "rolls",
+      "address": "G/F, 08A Ngan Fung Street, Wong Tai Sin",
+      "mealType": [
+        "food stall noodles",
+        "hong kong style",
+        "wong tai sin"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "149e7922-8104-4a52-b139-e8ccb6821a3b",
+      "name": "POPO was",
+      "address": "Shop 51-27, UG/F, Temple Mall South, 103 Ching Tak Street, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 12,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94f34096-dac9-498a-9e89-1fad954e3f89",
+      "name": "Portion 意粉",
+      "address": "CF 9, Lower Wong Tai Sin Estate Lung Lok House, Wong Tai Sin",
+      "mealType": [
+        "wong tai sin",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Tai Sin",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

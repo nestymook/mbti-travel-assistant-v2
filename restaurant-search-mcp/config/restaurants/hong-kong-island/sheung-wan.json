@@ -1,0 +1,4014 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T08:49:46.804Z",
+    "version": "1.0.0",
+    "district": "Sheung Wan",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 115,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.605Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "e7f5e22c-db85-4a34-a08f-4ca81188da97",
+      "name": "box” 炭燒豬肉串燒",
+      "address": "12/F, CS Tower, 50 Wing Lok Street",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 1103,
+        "dislikes": 23,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "408f437e-d4ab-411b-9dbc-1a052b385db8",
+      "name": "chaan 麻辣牛筋",
+      "address": "8/F, 567 Jervois Street",
+      "mealType": [
+        "sheung wan",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 413,
+        "dislikes": 9,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "464d4aab-8c9c-432d-8c3a-078de1ae6ec8",
+      "name": "soft-shell Flowers",
+      "address": "Shop D, 6/F, 126-128 Jervois Street",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "omakase"
+      ],
+      "sentiment": {
+        "likes": 550,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a58d007-d80f-4799-8022-42cdc11e691c",
+      "name": "Yè",
+      "address": "3/F, 815 Queen's Road Central",
+      "mealType": [
+        "Singaporean",
+        "sheung wan",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 309,
+        "dislikes": 5,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9e3c65ed-dea6-4c32-8f40-c1b7af3825db",
+      "name": "牛肉鍋 豬扒酸辣米線 lunchtime after",
+      "address": "5/F, 5 Sai Street",
+      "mealType": [
+        "spanish",
+        "sheung wan",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 307,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea5039f2-cdd8-4494-9468-ec62691bca7b",
+      "name": "意大利辣肉醬 cater new 溫泉蛋牛丼",
+      "address": "7/F, 48-52 Upper Station Street",
+      "mealType": [
+        "sheung wan",
+        "French",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 423,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "12dcef99-705c-4ee8-a90c-e3c4883730fc",
+      "name": "醬油拉麵 Hall",
+      "address": "Shop A, 4/F, Kai Tak Commercial Building, 317-321 Des Voeux Road Central",
+      "mealType": [
+        "spanish",
+        "sheung wan",
+        "Spanish"
+      ],
+      "sentiment": {
+        "likes": 252,
+        "dislikes": 6,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1452a5e-f34d-414d-ad8b-46f5f4a5806f",
+      "name": "put McDonald's ROYAL",
+      "address": "4/F, The Pemberton, 22-26 Bonham Strand",
+      "mealType": [
+        "wine",
+        "Stir Fry",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 451,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cfb2d10f-9558-470e-bde8-67e7ecd5f6cf",
+      "name": "Gaylord cold",
+      "address": "6/F, 600-891 Des Voeux Road Central",
+      "mealType": [
+        "sheung wan",
+        "Dim Sum",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 263,
+        "dislikes": 7,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e6b344e-a194-42fc-8fa9-1c304c3418c4",
+      "name": "generous Dolce",
+      "address": "2/F, 15 burd street",
+      "mealType": [
+        "International",
+        "noodles rice noodles",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 217,
+        "dislikes": 11,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4b891c8-9cd3-4918-b2ee-b2a41c9ce816",
+      "name": "LUNG cuisines",
+      "address": "5/F, 53 Jervois Street",
+      "mealType": [
+        "Thai",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 191,
+        "dislikes": 12,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7d687a80-d2dc-432a-ad67-4dda719249a3",
+      "name": "Western-Japanese 咖哩和牛 和牛拉麵 水煮大烏賊",
+      "address": "5/F, San Toi Building, 137-139 Connaught Road Central",
+      "mealType": [
+        "nepalese",
+        "certified halal food",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 391,
+        "dislikes": 2,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "395cb810-d197-4ee8-97c7-266dbf1adbf1",
+      "name": "烤雞肉卷",
+      "address": "Shop E, 2/F, Fu Tai Commercial Building, 27 Hillier Street",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 165,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "584f8c36-167b-4210-91c2-d8973b221197",
+      "name": "up-close",
+      "address": "0/F, 67-96 Queen's Road West",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 185,
+        "dislikes": 6,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c546824a-c163-448f-a052-1ae1e0e85ace",
+      "name": "trained",
+      "address": "7/F, 71 Wing Lok Street",
+      "mealType": [
+        "sheung wan",
+        "Italian",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 147,
+        "dislikes": 5,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0cc7759-6e4a-404a-85db-b53bc633a364",
+      "name": "抹茶豆乳",
+      "address": "6/F, 178 Wing Lok Street",
+      "mealType": [
+        "noodles rice noodles",
+        "shanghai",
+        "Shanghai"
+      ],
+      "sentiment": {
+        "likes": 103,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "03a1e877-7689-43bc-85df-39c03b76b1b4",
+      "name": "Kyoto",
+      "address": "7/F, 3 Mercer Street",
+      "mealType": [
+        "Japanese",
+        "skewer",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 222,
+        "dislikes": 25,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2728e6a3-0375-413d-ab41-53d006f9f5b9",
+      "name": "Chik 30",
+      "address": "Shop D, 3/F, Fu Fai Commercial Centre, 27 Hillier Street",
+      "mealType": [
+        "sheung wan",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 181,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75a10bd4-010e-4827-90f4-a1af361eb0cb",
+      "name": "Toe",
+      "address": "11/F, 10 Bonham Strand",
+      "mealType": [
+        "noodles rice noodles",
+        "Shanghai",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 105,
+        "dislikes": 10,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c983dd64-5fc2-45ab-b08e-4b4521c5ec07",
+      "name": "Centrale frites Crispy",
+      "address": "8-9/F, 58-50 Des Voeux Road West",
+      "mealType": [
+        "sheung wan",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 8,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1ba4a409-88c5-4745-bca9-d238dd5af971",
+      "name": "flags OWO",
+      "address": "6/F, Alliance Building, 130-136 Connaught Road Central",
+      "mealType": [
+        "sheung wan",
+        "shanghai",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 159,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1764777-7911-43b4-ab04-2386c75e4bc2",
+      "name": "imagine",
+      "address": "6/F, 37 Queen Street",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f56fb1d1-ea66-4bb7-b764-9545f0c2f8af",
+      "name": "Hazelnut bubble box”",
+      "address": "22/F, 1 Bonham Strand",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 59,
+        "dislikes": 6,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "919d4674-06c3-43fe-b988-15e0ec94044d",
+      "name": "Bauhinia",
+      "address": "Shop A&B, 1/F, Fu Fai Commercial Centre, 27 Hillier Street",
+      "mealType": [
+        "Vietnamese",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 8,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "314399d5-6004-4fa8-85cb-1f150aaa1399",
+      "name": "80’s",
+      "address": "Shop B, 2/F, Lam’s Building, 6-10 Kau U Fong",
+      "mealType": [
+        "sheung wan",
+        "Japanese",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 100,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "01903a9e-a407-431a-9985-7ef8d712a1f8",
+      "name": "韓式雞蛋卷 北京烤鴨 Hyatt",
+      "address": "Shop 2, 7/F, Nam Wo Hong Building, 148 Wing Lok Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e81fc7ef-cf32-4372-9bda-f6ab93576b1b",
+      "name": "GRILL powder 沙爹牛肉米 all-beef",
+      "address": "9/F, Connaught Marina, 48 Connaught Road West",
+      "mealType": [
+        "Brunch",
+        "Upper floor Cafe",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 139,
+        "dislikes": 20,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "50ce1c8e-2f77-4927-a3fc-051083da196c",
+      "name": "蟹肉 意粉",
+      "address": "3/F, 98 Bonham Strand",
+      "mealType": [
+        "sheung wan",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 105,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4ffa5f6d-2a43-40c5-af05-255fc0b51a93",
+      "name": "蛋包蝦",
+      "address": "8/F, 6 Pound Lane",
+      "mealType": [
+        "sheung wan",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 103,
+        "dislikes": 11,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04681134-6a60-4445-8988-d8cfed4710a5",
+      "name": "Inner",
+      "address": "5/F, 260 Hollywood Road",
+      "mealType": [
+        "sheung wan",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 5,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ef948dc-b857-481b-9515-d0e2ed73db69",
+      "name": "滷肉 Nine",
+      "address": "6/F, 041 Jervois Street",
+      "mealType": [
+        "guangdong",
+        "sheung wan",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b8247192-1844-4a7f-a55a-a5ec58db6e33",
+      "name": "interpretation 脆香雞堡",
+      "address": "Shop 2591, Macau Square, 3/F, Shun Tak Centre, 168-200 Connaught Road Central",
+      "mealType": [
+        "Chinese",
+        "guangdong",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 7,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "76d0f634-7116-4241-9049-6d77a2d5af87",
+      "name": "Uogashi coastal",
+      "address": "Shop A, 3/F, Pong Fai Building, 2-8 Lok Ku Road",
+      "mealType": [
+        "sheung wan",
+        "sandwich",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2f6fdb00-4e66-42f8-b3a3-7725625f6d55",
+      "name": "bali 1A-1B buns",
+      "address": "Shop A & B & C, 2/F, Grandview Garden, 18 Bridges Street",
+      "mealType": [
+        "All Day Breakfast",
+        "Italian",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 48,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4de860f-7363-40f4-a796-c6789a450708",
+      "name": "黎恩 Flower 蝦多士",
+      "address": "Shop 7, 1/F, 287-299 Queen's Road Central",
+      "mealType": [
+        "shanghai",
+        "Shanghai",
+        "Crab Specialty"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e021452b-41ad-4605-b75e-270d557461f3",
+      "name": "육미정담 Court Restaurant’s hand-shaken",
+      "address": "2/F, 63 Po Hing Fong",
+      "mealType": [
+        "Coffee Shop",
+        "sheung wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 4,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "58eaf67c-2a60-47d4-a91f-ac0b315724b5",
+      "name": "Factory",
+      "address": "Shop 093, 2/F, Infinitus Plaza, 199 Des Voeux Road Central, Sheung Wan",
+      "mealType": [
+        "sheung wan",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 81,
+        "dislikes": 1,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b8cc11b0-6183-4d9b-a240-e1418e800c93",
+      "name": "Mandarin Mikoto 7-12 煎蛋飯",
+      "address": "6/F, Kong Ling Building, 102 Jervois Street",
+      "mealType": [
+        "sheung wan",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 8,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a2882cc-0167-4137-9f4a-fa600aaffa49",
+      "name": "‘living BAR Conrad",
+      "address": "Shop 16, Cooked Food Centre, 2/F, Sheung Wan Municipal Services Building, 345 Queen's Road Central",
+      "mealType": [
+        "Hong Kong Style",
+        "Nostalgic",
+        "Cooked Food Center"
+      ],
+      "sentiment": {
+        "likes": 384,
+        "dislikes": 20,
+        "neutral": 126
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c88f856-9a13-4814-b1fe-e69b3a22df65",
+      "name": "Pomfret",
+      "address": "Shop 10, 1/F, Tung Lee Commercial Building, 93 Jervois Street",
+      "mealType": [
+        "International",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 177,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "17b99ebd-43b0-46ce-9ced-8090cdabe7fe",
+      "name": "是日燉湯 Octopus",
+      "address": "Shop 9, 9/F, Manhattan Avenue, 255 Queen's Road Central",
+      "mealType": [
+        "sheung wan",
+        "roast meat",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 121,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8a344196-2a3c-43e4-ada2-62f5b48546ce",
+      "name": "them it’s 炸花枝丸 Crush",
+      "address": "Shop A, 11/F, The Putman, 202 Queen's Road Central",
+      "mealType": [
+        "Western",
+        "argentinian",
+        "Argentinian"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3f09fe79-fb19-4cc2-ba72-6b532efa5b5f",
+      "name": "Famous",
+      "address": "Shop 5, 5/F, Mandarin Building, 35-45B Bonham Strand",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 7,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d95b7bed-68f7-477d-9014-1142fd6c6ac2",
+      "name": "OH 優格 香蕉烤餅 Pigeon all-you-can-eat 大烏賊 Iron 安格斯牛小排",
+      "address": "9/F, 889-558 Wing Lok Street, Sheung Wan",
+      "mealType": [
+        "Japanese",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 8,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "db9996cd-16ff-48ca-a78c-6926808ecce8",
+      "name": "Roasted",
+      "address": "1/F, 52 Upper Station Street",
+      "mealType": [
+        "Bar",
+        "Western",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 0,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "62a8b0f5-28df-4fed-b841-a72673a9c959",
+      "name": "香辣雞翼 意大利",
+      "address": "Shop D, 7/F, Cheong Tai Commercial Building, 60 Wing Lok Street",
+      "mealType": [
+        "sheung wan",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "960ad67a-c154-4c5b-b35a-c2ea57bbbad3",
+      "name": "四寶丸串燒",
+      "address": "Shop 377-103, 2/F, Low Block, Grand Millennium Plaza, 181 Queen's Road Central",
+      "mealType": [
+        "sheung wan",
+        "teppanyaki",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 67,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0706e08-7c59-4dd2-b70a-49c73e923e68",
+      "name": "RUE Li",
+      "address": "2/F, Wah Koon Building, 26 Upper Lascar Row",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 4,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "440384c6-1272-46ca-b3d2-6452f38e7151",
+      "name": "ninety 安格斯 A.B.C.P Canal",
+      "address": "9 Tai Ping Shan Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 0,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d503c50c-db09-4725-b566-165023e99294",
+      "name": "羅宋湯 17 Tussauds",
+      "address": "Shop 6-5, 1/F, Nan Fung Place, 173 Des Voeux Road Central",
+      "mealType": [
+        "sheung wan",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 98,
+        "dislikes": 5,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6782fb6d-28e2-4ed0-bb2f-b3d2cf60612d",
+      "name": "Little",
+      "address": "Shop 0588, 13/F, Cheung's Building, 1-3 Wing Lok Street",
+      "mealType": [
+        "sheung wan",
+        "International",
+        "Upper floor Cafe"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d96ff068-b613-4541-99ac-476c09ad425b",
+      "name": "意粉 Lane",
+      "address": "12/F, 49-93 Mercer Street",
+      "mealType": [
+        "sheung wan",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 13,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "960906c6-9b77-4dc1-aab1-7b121e0eb1d4",
+      "name": "spiny",
+      "address": "G/F, 61 Hillier Street",
+      "mealType": [
+        "Hong Kong Style",
+        "sheung wan",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 132,
+        "dislikes": 9,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a6bfe7ba-8877-4687-b9a6-168973b55771",
+      "name": "Beans 馬沙拉雞",
+      "address": "G/F, 37 Upper Lascar Row",
+      "mealType": [
+        "Japanese",
+        "sheung wan",
+        "robatayaki"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "51523171-6b6d-4a72-8f50-6e9d842c3aaf",
+      "name": "convivial",
+      "address": "G/F, 0A Wing Lok Street",
+      "mealType": [
+        "chinese buns",
+        "jingchuanhu",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9734719-2546-4baf-942e-f00770a14c3e",
+      "name": "滷雞翼",
+      "address": "62/F, Connaught Marina, 48 Connaught Road West",
+      "mealType": [
+        "sheung wan",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3086d480-7dd9-411e-8246-ee22b2a73421",
+      "name": "There 美國牛頸脊 醋香黑豚肉 buffets",
+      "address": "G/F, 08 Jervois Street",
+      "mealType": [
+        "ramen",
+        "sheung wan",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 219,
+        "dislikes": 9,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f43229a2-ea97-4dae-b020-a13045290004",
+      "name": "豆腐沙律",
+      "address": "G/F, 85 Upper Station Street",
+      "mealType": [
+        "Fine Dining",
+        "sheung wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4c5ae1e2-acba-4fcc-8005-683da2a7eab8",
+      "name": "333-335 脆脆野菌腸",
+      "address": "Shop CF2, 1/F, Queen Street Cooked Food Market, 38 Des Voeux Road West",
+      "mealType": [
+        "sheung wan",
+        "Dai Pai Dong",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 155,
+        "dislikes": 16,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4516641a-a868-48fb-b056-d08aa5e4b01c",
+      "name": "Isono 美式豬肋骨 季節燒魚",
+      "address": "Shop G, 2/F, 27 Hillier Street",
+      "mealType": [
+        "sheung wan",
+        "british",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce257bff-a64b-47db-8443-349fa57bdc90",
+      "name": "Caramel 鮮奶油多士 Shiki 酸辣米綫 Luard 11-12",
+      "address": "G/F, 37 Gough Street",
+      "mealType": [
+        "ice cream yogurt",
+        "cake",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e63c8cfb-8743-492d-894b-276a0108b840",
+      "name": "share 海南雞 Butterscotch Juices Mom's",
+      "address": "G/F, 89 Jervois Street",
+      "mealType": [
+        "sheung wan",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a401fc0-5553-47bc-a857-103342a20780",
+      "name": "和牛濃湯河",
+      "address": "Shop A&B, 2/F, Tower II Tern Centre, 251 Queen’s Road Central",
+      "mealType": [
+        "cake",
+        "French",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4b6240b5-e62f-4fcb-a7f6-a5ea81aa0e22",
+      "name": "花蓮小食拼盤 豉椒炒蟶子",
+      "address": "9/F, CS Tower, 50 Wing Lok Street",
+      "mealType": [
+        "sushi sashimi",
+        "sheung wan",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "080c67ad-2430-414a-bacb-da3d8a9f88b5",
+      "name": "檳城肉骨茶 街頭生牛肉湯粉 Using strive rich 豚骨湯拉麵",
+      "address": "6/F, CS Tower, 50 Wing Lok Street",
+      "mealType": [
+        "Steak House",
+        "sheung wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b7fe89a0-1992-4ee8-b2bc-2c8cc2ef474c",
+      "name": "Chairman SOUTH",
+      "address": "3/F, Grand Millennium Plaza, 181 Queen's Road Central",
+      "mealType": [
+        "Coffee Shop",
+        "Italian",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 13,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c1b8c7b-3388-4d3a-a541-ae1d20b6cdda",
+      "name": "INN service” 開心果雪糕 mosaics",
+      "address": "Shop F, 1/F, 126 Jervois Street",
+      "mealType": [
+        "Western",
+        "All Day Breakfast",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "efdb618c-4ad6-41dd-bfde-1407a7d26453",
+      "name": "Ippaiki 招牌三色拉麵",
+      "address": "Shop 131-323, 3/F, Shun Tak Centre, 168-200 Connaugh Road Central",
+      "mealType": [
+        "sheung wan",
+        "noodles rice noodles",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3f501599-2f9b-4f60-aad3-5e2d17a82bc1",
+      "name": "prepare Saigon",
+      "address": "Shop 258-673, 2/F, Shuk Tak Centre, 168-200 Connaught Road Central",
+      "mealType": [
+        "Japanese",
+        "roast meat",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 2,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "67228a86-4c9b-430f-9be2-c9aa4d0e04fa",
+      "name": "香酥排骨便當 法式薄餅 Tuscan November+",
+      "address": "Shop B, 2/F, Lai Yan Lau, 42-56 Queen's Road West",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 46,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "938f00f6-5de9-4c6d-b97f-79b62fcac9d9",
+      "name": "holes",
+      "address": "G/F, 10 Upper Station Street",
+      "mealType": [
+        "French",
+        "sheung wan",
+        "Fine Dining"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ff2dba09-a5c7-420e-9bb7-90f180dfeb8e",
+      "name": "hop 燒鵝五寶飯 山水清湯腩 清真牛肉餅 排骨麵",
+      "address": "G/F, 13 Upper Station Street",
+      "mealType": [
+        "Thai",
+        "Curry",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 4,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75f2ddcb-3c79-428b-9879-7d4fc044a8bf",
+      "name": "Coast",
+      "address": "6/F, The Pemberton, 22-26 Bonham Strand",
+      "mealType": [
+        "French",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 159,
+        "dislikes": 9,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a100298d-9b4c-49c5-9699-f6e44029a621",
+      "name": "Victorian-era",
+      "address": "G/F, 81 Gough Street",
+      "mealType": [
+        "sheung wan",
+        "ice cream yogurt",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0dad8010-6db0-47ca-88a5-f7d505bd90b1",
+      "name": "太古美國牛肩胛",
+      "address": "Room 136, 2/F, Cheung's Building, 1-3 Wing Lok Street",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c1b109b8-24ef-43e5-808e-6fee5aac55b7",
+      "name": "長洲座位",
+      "address": "G/F, 5 Pound Lane",
+      "mealType": [
+        "Western",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "789d606b-f290-47a4-b130-8d19595ee137",
+      "name": "Cheuk",
+      "address": "3/F, Kim Tak Building, 20-24 Mercer Street, Sheung Wan",
+      "mealType": [
+        "Fine Dining",
+        "sheung wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "79fd526c-d42e-4190-a61f-543f5531c23e",
+      "name": "辣子雞 灣",
+      "address": "Shop 0, G/F, 22-24 Jervois Street",
+      "mealType": [
+        "food stall noodles",
+        "hong kong style",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 9,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8d988cb3-51e3-417d-bbd4-7e3f99590bb9",
+      "name": "gastronomic choice;",
+      "address": "90/F, The Wellington, 198 Wellington Street",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "72a6acfe-cd71-490e-9608-1dfa3cffb965",
+      "name": "Siam",
+      "address": "G/F, 61 Upper Lascar Row",
+      "mealType": [
+        "sheung wan",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0a8b99fa-9df6-4419-8121-3bfaa16a26ae",
+      "name": "Switzerland intimate",
+      "address": "G/F, 01 Tung Street",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 8,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f4ed9ae-c083-4269-bfed-9d221d3d38c1",
+      "name": "布甸撻 retaining Ethiopia",
+      "address": "4/F, Yardley Commercial Building, 3 Connaught Road West",
+      "mealType": [
+        "Dim Sum",
+        "guangdong",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 45,
+        "dislikes": 8,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8ee36f85-39c1-414f-9b08-41fd2e3e9e21",
+      "name": "薑蔥生煎鹽香雞 Edgar Plate",
+      "address": "G/F, 7-4 Burd Street",
+      "mealType": [
+        "guangdong",
+        "congee",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 205,
+        "dislikes": 21,
+        "neutral": 70
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9f57089-33ec-401c-b7b9-b92d6a380527",
+      "name": "Victorian-era Its",
+      "address": "G/F, 8 Shin Hing Street",
+      "mealType": [
+        "Italian",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c652fdee-bddb-4e2f-abbd-28df5d0d38f8",
+      "name": "Phoenix",
+      "address": "Shop A, 2/F, Shing Hing Commercial Building, 21-27 Wing Kut Street",
+      "mealType": [
+        "hong kong style",
+        "Private Kitchen",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e618bd29-fa9b-4f84-8022-1a92aa0c57a7",
+      "name": "紅糖 鰻魚蛋包飯",
+      "address": "Room 742, 1/F, Cheungs Building, 3 Wing Lok Street",
+      "mealType": [
+        "skewer",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eebdd766-f76e-4566-88d0-263733c02cd9",
+      "name": "大街精選拼盤",
+      "address": "G/F, 917 Jervois Street",
+      "mealType": [
+        "Western",
+        "sheung wan",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 76,
+        "dislikes": 4,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7d1f1e7e-1372-4cae-bdf8-0972a09fd9ca",
+      "name": "Lady 泰式燒牛柳",
+      "address": "Shop 2, 3/F, FWD Financial Centre, 308 Des Voeux Road Central",
+      "mealType": [
+        "sheung wan",
+        "Vietnamese",
+        "sandwich"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60423fad-adcf-44e7-b041-164763950362",
+      "name": "蔥油餅 box",
+      "address": "Shop 305, 3/F, 33 Hillier Street",
+      "mealType": [
+        "sheung wan",
+        "All Day Breakfast",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2f8fb665-d345-4f01-81ca-e60617b5e92b",
+      "name": "牛油金菇 led same",
+      "address": "Shop 155, 1/F, Cheungs Building, 1-3 Wing Lok Street",
+      "mealType": [
+        "Indian",
+        "sheung wan",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2ec70a7a-c9ce-49e0-941d-d857b1b1cb6e",
+      "name": "Appetite",
+      "address": "G/F, 75 Wing Lok Street",
+      "mealType": [
+        "yunnan",
+        "sheung wan",
+        "Yunnan"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 10,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "01feea57-3361-4061-9b4c-e1a5cc4c0ff8",
+      "name": "part 雞湯 authentically resort",
+      "address": "Shop B, 2/F, 38 Bonham Strand",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 23,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a9391585-4ca2-43bf-86d1-df77d86a7571",
+      "name": "STARBUCKS Daap Gagahoho",
+      "address": "8/F, 7-7A Upper Station Street",
+      "mealType": [
+        "sheung wan",
+        "wonton dumpling",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 111,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "31fbddbd-9943-454b-a421-d577716e6a6b",
+      "name": "Tempt CITIC",
+      "address": "G/F, 76 Hillier Street",
+      "mealType": [
+        "hong kong style",
+        "chinese bbq",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 3,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b5f5be2f-7d63-4a21-a388-ff28ecd60dc3",
+      "name": "รูปอาหาร @ABC",
+      "address": "Shop 1, 3/F, Queen Street Cooked Food Market, 38 Des Voeux Road West",
+      "mealType": [
+        "Snack Shop & Deli",
+        "Chiu Chow",
+        "chiu chow"
+      ],
+      "sentiment": {
+        "likes": 155,
+        "dislikes": 5,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4424c614-2cff-4b5d-bf21-5e15885fb8c6",
+      "name": "潮州滷水車仔麵 Brewing",
+      "address": "8/F, Fung Woo Building, 279 Des Voeux Road Central",
+      "mealType": [
+        "Private Kitchen",
+        "sheung wan",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f1f33521-88b6-4fd7-9cc7-fa2430ec2eaa",
+      "name": "Gingko 九份飽",
+      "address": "G/F, 11 Bridges Street",
+      "mealType": [
+        "omakase",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "52b60e14-60cd-4f05-a62d-bfc2c03e6b06",
+      "name": "忌廉布丁撻 tasteSome Belgium",
+      "address": "Shop 4A, G/F, Kamcourt Building, 60 Bonham Strand",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38a2e3be-d8cf-450e-9a46-f2440c1d35f9",
+      "name": "combining Ginger 蝦仁炒飯 appropriateness",
+      "address": "Shop 2, G/F, Po Wan Building, 6 Tai Ping Shan Street",
+      "mealType": [
+        "sheung wan",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 1,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe9483c3-d131-4d09-8c7e-277b4e0ef4a3",
+      "name": "Somersby works Tsukiau",
+      "address": "9/F, Hollywood Centre, 233 Hollywood Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 5,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c854cb86-d185-4f4d-84ca-31d0039d54f5",
+      "name": "Ethiopia",
+      "address": "8/F, 79 Tung Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 7,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "183b9aaf-40f5-49af-95fb-f4a6cb1adf3c",
+      "name": "酸辣土豆絲 BEE",
+      "address": "Shop 425, 1/F, Infinitus Plaza, 199 Des Voeux Road Central",
+      "mealType": [
+        "Japanese",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d33df4bf-8e45-43a2-8cc2-1ebef67f6adf",
+      "name": "Space\" 馳名煎蠔餅 EXPRESS",
+      "address": "G/F, 517 Jervois Street",
+      "mealType": [
+        "Hong Kong Style",
+        "noodles rice noodles",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13276c30-7b48-427a-8f41-ae941c824560",
+      "name": "heights",
+      "address": "10/F, Hua Qin International Building, 25 Lok Ku Road",
+      "mealType": [
+        "sheung wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "302bcf9a-c95c-40cd-9503-84b29fa11eea",
+      "name": "1963 天婦羅盛合",
+      "address": "Shop 01, G/F, Fook Sing Court, 378 Queen's Road Central",
+      "mealType": [
+        "sheung wan",
+        "Japanese",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 42,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "03ebe36f-65d6-4719-9b7c-a54532370ec1",
+      "name": "凱撒沙律 Jeju Mansons",
+      "address": "G/F, 6 Morrison Street",
+      "mealType": [
+        "sheung wan",
+        "cake",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 312,
+        "dislikes": 1,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cda85970-877e-4dd8-ba94-598eb4407575",
+      "name": "“al 大堂酒吧",
+      "address": "Shop B, 1/F, Hollywood Centre, 77-91 Queen's Road West",
+      "mealType": [
+        "Coffee Shop",
+        "sheung wan",
+        "cake"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aed426f1-78ff-4e8c-ba9c-80ca2d89a695",
+      "name": "Zafferano",
+      "address": "G/F, 5&1 On Wo Lane",
+      "mealType": [
+        "Korean",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d1f2e97-51dd-4dcb-b69d-3b79b8a75154",
+      "name": "snow Obsession 芝士蛋糕 Arthur includes 豆腐",
+      "address": "Shop 875-330, 2/F, Shun Tak Centre, 168-200 Connaught Road Central",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "sheung wan"
+      ],
+      "sentiment": {
+        "likes": 189,
+        "dislikes": 12,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b1b78894-9073-4029-996e-0f366df11812",
+      "name": "bottle Shin Tacu",
+      "address": "G/F, 353 Hollywood Road",
+      "mealType": [
+        "sheung wan",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d74184b6-2f4b-4e34-9f0e-6a20466ef518",
+      "name": "meat Pissaladière Hei",
+      "address": "G/F, 569 Hollywood Road",
+      "mealType": [
+        "wine",
+        "sheung wan",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce890d86-4374-4e38-99ab-a61eac7be292",
+      "name": "蟹粉鍋巴 PARMA",
+      "address": "G/F, 35 Tung Street",
+      "mealType": [
+        "sheung wan",
+        "American",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f0d727b-ea89-4620-bc0d-ec6f1cf7aaa4",
+      "name": "明太子意大利粉 eating",
+      "address": "8-3/F, Loon Kee Building, 267-275 Des Voeux Road Central",
+      "mealType": [
+        "sheung wan",
+        "Stir Fry",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 10,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "84cdb8bc-d176-46bf-a075-59c07cfc9be2",
+      "name": "curry 淨清湯牛腩",
+      "address": "G/F, 00 Shing Wong Street",
+      "mealType": [
+        "sheung wan",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 4,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa2d76c9-cfb6-478a-89b7-309e13a57057",
+      "name": "Beer",
+      "address": "Shop A, G/F, 1 U Lam Terrace",
+      "mealType": [
+        "sheung wan",
+        "International",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 88,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sheung Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

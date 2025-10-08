@@ -1,0 +1,2221 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T05:27:55.521Z",
+    "version": "1.0.0",
+    "district": "Central district",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 63,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.424Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "d218e465-9439-4676-91a1-4bf6af021ddd",
+      "name": "materials",
+      "address": "Shop HG68-HG75, G/F, Block B Hollywood, PMQ, 35 Aberdeen Street",
+      "mealType": [
+        "central",
+        "certified halal food",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 7,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6efe2585-8f7b-4364-8224-a6a519eaa30f",
+      "name": "凱撒雞肉沙律 香港迪士尼樂酒店宴會廳Hong kong 招牌滷水鵝 台式鹽水荳乾有機本地沙葛杞子麵 Tom",
+      "address": "11/F, Kai Tak Commercial Building, 66-72 Stanley Street",
+      "mealType": [
+        "Chinese",
+        "central",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 921,
+        "dislikes": 38,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e0d9fec3-e65e-4eb6-83b0-6c41046e8a58",
+      "name": "RICE's reasonably KonFusion Michael's",
+      "address": "Shop 6, 5/F, Crawford House, 19 Stanley Street",
+      "mealType": [
+        "All Day Breakfast",
+        "Western",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 556,
+        "dislikes": 7,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad54fa13-cd4f-4a82-b6dc-b723f1ac90fb",
+      "name": "OYSTER 雞肉金邊粉 青雪商店",
+      "address": "6/F, LKF52, 29 Wyndham Street",
+      "mealType": [
+        "International",
+        "wine",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 616,
+        "dislikes": 4,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "41535751-5037-4d92-ad34-1235a5e51ac5",
+      "name": "蔥花雞蛋腸粉 黃金炸薯條 went Poke 台式小食 和牛拼盤",
+      "address": "4/F, Carfield Commercial Building, 75-77 Wyndham Street",
+      "mealType": [
+        "Lebanon",
+        "middle eastern",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 792,
+        "dislikes": 11,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c2f7e29-5e95-4589-9948-8755b48193fa",
+      "name": "Disney’s Community Gai 起司肉鬆蛋餅 特色小食拼盤",
+      "address": "87/F, Stanley 11, 11 Stanley Street",
+      "mealType": [
+        "Japanese",
+        "omakase",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 463,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "69dcaa4f-2e1d-45ae-831b-f715e0f008f5",
+      "name": "Joys 吉列炸蝦豬扒定食",
+      "address": "Shop 2172, 21/F, ifc mall, 8 Finance Street",
+      "mealType": [
+        "fujian",
+        "Coffee Shop",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 507,
+        "dislikes": 9,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c3c1c47-3edb-4196-8f80-5c67d656ca8c",
+      "name": "selections",
+      "address": "8/F, Carfield Commercial Building, 75-77 Wyndham Street",
+      "mealType": [
+        "Indian",
+        "Curry",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 557,
+        "dislikes": 5,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "04dffb6a-b42e-44aa-92cf-937b9f6fabc8",
+      "name": "also Dukbokki Mong",
+      "address": "7/F, Stanley 11, 11 Stanley Street",
+      "mealType": [
+        "Izakaya",
+        "teppanyaki",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 387,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f186f66f-4d89-4ff0-bab6-32f165ccaa77",
+      "name": "腐竹薏米 Gambas",
+      "address": "96/F, M06, Wellington Place, 2-8 Wellington Street",
+      "mealType": [
+        "spanish",
+        "Mediterranean",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 436,
+        "dislikes": 8,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cd65317f-4ac7-42db-8408-9c9338baefe8",
+      "name": "Indonesia HIANG's",
+      "address": "Shop G3, G/F, Baskerville House, 13 Duddell Street",
+      "mealType": [
+        "Italian",
+        "central",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 489,
+        "dislikes": 6,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d797c8c-ede2-4e77-82d3-2b71bd106379",
+      "name": "architectural",
+      "address": "3/F, Carfield Commercial Building, 75-77 Wyndham Street",
+      "mealType": [
+        "central",
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 247,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cf61b1cd-e740-4274-a30e-e5a0d95cb682",
+      "name": "House Tempura Forrest’s",
+      "address": "1/F, Carfield Commercial Building, 77 Wyndham Street",
+      "mealType": [
+        "Argentinian",
+        "wine",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 519,
+        "dislikes": 10,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e242b151-c3ea-429b-aba6-c891465d8c02",
+      "name": "Flint part",
+      "address": "Shop 825, 8/F, Yip Fung Building, 12 D'Aguilar Street, Lan Kwai Fong",
+      "mealType": [
+        "central",
+        "Western",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 766,
+        "dislikes": 12,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e80b0409-09de-4dbb-be91-f160223ff52f",
+      "name": "HIANG 天后雞煲",
+      "address": "Shop A, 13/F, On Hing Terrace, 1 On Hing Terrace",
+      "mealType": [
+        "skewer",
+        "central",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 320,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "770a19dc-d355-4677-bc3e-525e49ad704f",
+      "name": "Ways",
+      "address": "3/F, 4 Gough Street",
+      "mealType": [
+        "Spanish",
+        "central",
+        "spanish"
+      ],
+      "sentiment": {
+        "likes": 277,
+        "dislikes": 6,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a4953be7-58e6-4516-b2f4-ad1903e01d63",
+      "name": "resembles",
+      "address": "3/F, 13 Elgin Street, Soho",
+      "mealType": [
+        "International",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 448,
+        "dislikes": 11,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4d188166-04b7-499f-b00b-cde73be5759c",
+      "name": "merging",
+      "address": "Shop C&D, G/F, Grand Progress Building, 58-62 D'Aguilar Street, Lan Kwai Fong",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 8,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c838542-e1af-4849-9a4e-79f06ab497f3",
+      "name": "小小世界雪糕屋Small Solar",
+      "address": "76/F, M70, Wellington Place, 2-8 Wellington Street",
+      "mealType": [
+        "spanish",
+        "central",
+        "Spanish"
+      ],
+      "sentiment": {
+        "likes": 1043,
+        "dislikes": 51,
+        "neutral": 94
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "512a70a3-8674-4e19-881d-61a80bea0067",
+      "name": "PHOENIX",
+      "address": "G/F, 12-13 Kau U Fong",
+      "mealType": [
+        "central",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 319,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dfcfaca3-d51d-422a-b706-a520cfce0ca2",
+      "name": "黑松露燒賣 玫瑰凍鴿 item",
+      "address": "G/F, 1 Wo On Lane",
+      "mealType": [
+        "Thai",
+        "central",
+        "meatless menu"
+      ],
+      "sentiment": {
+        "likes": 974,
+        "dislikes": 4,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca5d1e6d-9bf0-4371-9c59-a03217cc9d11",
+      "name": "201-202 黑門水產すいさん 香蒜牛油雞翼",
+      "address": "12/F, Police Headquarters Block, Block 01, Tai Kwun, 10 Hollywood Road",
+      "mealType": [
+        "guangdong",
+        "Dim Sum",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 4,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2dc9c6da-493c-4457-8571-a0a353dfb09d",
+      "name": "鹹蛋單骨雞翼",
+      "address": "Shop 0490-0497, G/F, ifc mall, 8 Finance Street",
+      "mealType": [
+        "certified halal food",
+        "guangdong",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 255,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d02a9d0-c810-479a-816d-9088dd396c11",
+      "name": "stationed",
+      "address": "3/F, Car Po Commercial Building, 18-20 Lyndhurst Terrace",
+      "mealType": [
+        "peruvian",
+        "Izakaya",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 340,
+        "dislikes": 13,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7602f36e-3206-43f2-b7bc-f8f11a7ab734",
+      "name": "II",
+      "address": "04/F, Manning House, 38 Queen’s Road Central",
+      "mealType": [
+        "Club House",
+        "central",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 586,
+        "dislikes": 6,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "582c1159-1976-4847-a8a3-f4c7dcacb72e",
+      "name": "Pier",
+      "address": "Shop SG40-SG44, G/F, Block A Staunton, PMQ, 35 Aberdeen Street",
+      "mealType": [
+        "Curry",
+        "Thai",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 407,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c97aa29-2ecc-45dd-8e0f-08b7914a7cbd",
+      "name": "Pairing 鮑魚海鮮船 Station\" 香煎日本刺身帶子伴三文魚籽",
+      "address": "3/F, Cheung Hing Commercial Building, 37-43 Cochrane Street, Central",
+      "mealType": [
+        "all you can eat",
+        "central",
+        "korean fried chicken"
+      ],
+      "sentiment": {
+        "likes": 580,
+        "dislikes": 3,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d86986d3-ce10-43c9-9c3a-15b95b080b08",
+      "name": "Guacamole Mango 開心果麻糬蛋撻",
+      "address": "G/F, 40B Wellington Street",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 643,
+        "dislikes": 15,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c2255409-3ee3-40fb-8a28-f86f63449aa4",
+      "name": "Cotton yet 炒你帶子沙嗲香港製造蝦籽撈麵 groups 高湯蒸蛋 典型巴黎小酒館的優雅氛圍，主打法國菜系，款式精緻。 泡菜黑豚腩鍋 Knuckle 北海道帶子 Tung 弘大玫瑰炒年糕 Café的獨家味道。\n\n餐廳搜羅具南越特色的街頭美食及飲料，不惜工本於菜式注入嶄新概念，融入各地具代表性的食材，注入讓人驚喜的活潑元素， venue",
+      "address": "G/F, 29 Lyndhurst Terrace, Central",
+      "mealType": [
+        "All Day Breakfast",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 530,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5245643a-2fdd-452c-9ef1-7a5f1663a9be",
+      "name": "14-28",
+      "address": "9/F, Police Headquarters Block, Block 01, Tai Kwun, 10 Hollywood Road",
+      "mealType": [
+        "Italian",
+        "Brunch",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 8,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a279bdf3-88fc-4906-9d2e-79afda752d57",
+      "name": "權發小廚 Steaks",
+      "address": "G/F, Yuen Yick Building, 27-29 Wellington Street",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 523,
+        "dislikes": 33,
+        "neutral": 93
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6d0d9fcf-730a-4e32-b064-4396a194ed0c",
+      "name": "Rural 免治雞肉棒",
+      "address": "G/F, 82 Wellington Street",
+      "mealType": [
+        "omakase",
+        "central",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 167,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "626aaf57-77d3-4e87-8ee0-d3baefd863c5",
+      "name": "everyone! Langosta BEE",
+      "address": "Shop 744, 7/F, Central Market, 93 Queen's Road Central",
+      "mealType": [
+        "Thai",
+        "cake",
+        "Takeaway"
+      ],
+      "sentiment": {
+        "likes": 272,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d780482c-d1b7-4b1f-b87e-6dc201745f05",
+      "name": "花廚特色菌菇湯(配法包)",
+      "address": "G/F, 44 Elgin Street",
+      "mealType": [
+        "central",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 177,
+        "dislikes": 0,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "886ef366-7378-472a-b14a-d30295a2b976",
+      "name": "décor 麻辣鴨血",
+      "address": "G/F, 6 Queen Victoria Street",
+      "mealType": [
+        "central",
+        "Taiwan",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 556,
+        "dislikes": 21,
+        "neutral": 47
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ff7c8ab1-2f0c-463b-a378-58f65f9351be",
+      "name": "江户前玉子燒 雞皮仙貝",
+      "address": "G/F, 12 Staunton Street, Soho",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 123,
+        "dislikes": 8,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "da8a035e-e6b6-4a5b-8a27-e2b91d5e39d6",
+      "name": "五福臨門 金絲和田玉 牛油果華道夫沙律 新森林為一間以焗飯麵為招牌菜的西餐廳，款式眾多，另外亦有小菜及拉麵供選擇。",
+      "address": "Shop E, 3/F, 36-36B Staunton Street, Soho",
+      "mealType": [
+        "International",
+        "Pet Friendly",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 380,
+        "dislikes": 10,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8f30b2b-97c0-4bc6-b617-901045197042",
+      "name": "1935 casts Delights Roe",
+      "address": "G/F, Kar Ho Building, 35-39 Graham Street",
+      "mealType": [
+        "skewer",
+        "sushi sashimi",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 261,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc157e3d-ba6a-4416-9330-fb1119cbe47e",
+      "name": "蕃茄濃湯海鮮鍋 黑蒜燒賣 Kaya",
+      "address": "G/F, 40 Aberdeen Street",
+      "mealType": [
+        "ramen",
+        "central",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 271,
+        "dislikes": 17,
+        "neutral": 70
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "270a035a-4311-46b4-b85f-8fbc0355f336",
+      "name": "many Loren 火焰牛柳 Kagoshima",
+      "address": "Shop L&M, 3/F, Block B, Winner Building, 18-22 Wing Wah Lane",
+      "mealType": [
+        "central",
+        "wine",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 408,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "92ac56b5-0e82-4982-9af6-f922ac9bd8a5",
+      "name": "Fantasia lanterns related",
+      "address": "G/F, 47 Wellington Street",
+      "mealType": [
+        "Stir Fry",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 375,
+        "dislikes": 6,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e2966dc-f5a4-4258-b98e-4b59ab50b0b1",
+      "name": "鮮奶油多士 沙嗲素串燒",
+      "address": "Shop 103, 1/F, Car Po Commercial Building, 18-20 Lyndhurst Terrace",
+      "mealType": [
+        "wine",
+        "central",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 147,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e32cd8f-39f2-4e69-ad86-8d9820468c67",
+      "name": "tart reasonably 火焰橙酒可麗餅",
+      "address": "Rear Portion, G/F, 166 Wellington Street",
+      "mealType": [
+        "Taiwan",
+        "central",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 294,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d6a47dd0-6f57-40be-91be-51c4ebbda151",
+      "name": "椒香鮑魚",
+      "address": "Shop A, G/F, 6-10 Kau U Fong",
+      "mealType": [
+        "skewer",
+        "Japanese",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 198,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "45d83a10-f975-437a-bb1f-d3cab52f7f0b",
+      "name": "天虹炒飯 Uni",
+      "address": "Shop 1A, G/F, Graham Street, Soho",
+      "mealType": [
+        "wine",
+        "central",
+        "British"
+      ],
+      "sentiment": {
+        "likes": 176,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "67b336f8-3c01-4cd4-8a6b-2601c78a6025",
+      "name": "\"Rye",
+      "address": "13/F, The Landmark Mandarin Oriental, 15 Queen's Road Central",
+      "mealType": [
+        "wine",
+        "meatless menu",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 328,
+        "dislikes": 14,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "43698bf9-eb52-4ad5-bad2-3cb639e236bc",
+      "name": "角酪卷",
+      "address": "G/F, 03 Wyndham Street",
+      "mealType": [
+        "meatless menu",
+        "International",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 206,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5034fd42-e1f4-46f3-8918-f7d5b1ec4ab6",
+      "name": "2011",
+      "address": "Basement, Yu Yuet Lai Building, 43-55 Wyndham Street, Central",
+      "mealType": [
+        "Curry",
+        "Vegetarian",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 171,
+        "dislikes": 9,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "33956431-825d-4b3b-bac6-8b05b0dcc8d9",
+      "name": "番薯芝士吉列豬扒 preserve",
+      "address": "G/F, 2 Gough Street",
+      "mealType": [
+        "central",
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 317,
+        "dislikes": 9,
+        "neutral": 65
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8f16cbb9-e46d-4e66-8644-c5b676570243",
+      "name": "Hawk",
+      "address": "G/F, 73-43 Aberdeen Street, Soho",
+      "mealType": [
+        "central",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 229,
+        "dislikes": 9,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c56e2a8-3668-4370-9910-c664fc56b8d5",
+      "name": "Torieki 烤栗子湯配香煎羊肚菌",
+      "address": "LG/F, 87 Cochrane Street",
+      "mealType": [
+        "cake",
+        "central",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 148,
+        "dislikes": 4,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "69fc57c6-01e9-48f5-b48a-441a41281fa9",
+      "name": "hand-cut encourage",
+      "address": "G/F, 04 Gough Street",
+      "mealType": [
+        "ice cream yogurt",
+        "Taiwan",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 215,
+        "dislikes": 3,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "27e06684-2344-461b-97fc-950c001657a8",
+      "name": "蜜瓜雪冰 higher",
+      "address": "G/F, 21 Elgin Street, Soho",
+      "mealType": [
+        "Spanish",
+        "central",
+        "spanish"
+      ],
+      "sentiment": {
+        "likes": 195,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "92fa150b-a975-406c-84eb-fb2c56490201",
+      "name": "soya Hei's Karaage LKF",
+      "address": "3/F, California Tower, 30-32 D'Aguilar Street, Lan Kwai Fong",
+      "mealType": [
+        "Bar",
+        "Italian",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 280,
+        "dislikes": 4,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0959b53a-7543-49a3-84f1-6ad90b316a1e",
+      "name": "Ginger",
+      "address": "G/F, 45 Peel Street",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 342,
+        "dislikes": 2,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b8fddf6d-8893-426e-8c63-0a2960330ae8",
+      "name": "迷你朱古力糖果溫室 sums",
+      "address": "Shop 28, 2/F, Central Market, 93 Queen's Road Central",
+      "mealType": [
+        "central",
+        "noodles rice noodles",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 127,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "89dc768e-a23b-4740-8f90-34b16d005315",
+      "name": "พร้อมเมนู 老火湯 Solar 1830",
+      "address": "1/F, The Galleria, 9 Queen's Road Central",
+      "mealType": [
+        "Seafood",
+        "American",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 149,
+        "dislikes": 6,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e5fc42c-207a-4d43-ab26-6b83f15ac609",
+      "name": "黑松露什菇墨西哥薄餅 Somersby Thai",
+      "address": "4/F, H Queen’s, 80 Queen's Road Central",
+      "mealType": [
+        "central",
+        "Western",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 211,
+        "dislikes": 6,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "edf21a16-bd43-45c9-9956-edfe612ca2f8",
+      "name": "至尊天九牛腩頭",
+      "address": "2/F, 53 Wing Kut Street",
+      "mealType": [
+        "central",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 150,
+        "dislikes": 12,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "06708fbb-e0fa-42a2-abb0-f938ce4ea2f7",
+      "name": "火焰牛油果班戟 Tiramisu",
+      "address": "7/F, Jade Centre, 98 Wellington Street",
+      "mealType": [
+        "Thai",
+        "dessert",
+        "Upper floor Cafe"
+      ],
+      "sentiment": {
+        "likes": 252,
+        "dislikes": 16,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d775172c-68e9-48fa-9c6f-880d1a4320ad",
+      "name": "招牌椰皇凍 support side Concept 雞叉燒味玉雞白湯拉麵",
+      "address": "1/F, 2 Wo On Lane",
+      "mealType": [
+        "hong kong style",
+        "central",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 165,
+        "dislikes": 10,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6faf825c-fd54-401e-8ddd-5ec7a5b6606d",
+      "name": "D ale",
+      "address": "Shop B23, B2/F, Central Market, 93 Queen's Road Central",
+      "mealType": [
+        "Taiwan",
+        "taiwan",
+        "central"
+      ],
+      "sentiment": {
+        "likes": 123,
+        "dislikes": 11,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "266f3aab-dca2-4b8e-86a0-8c94ee1625ac",
+      "name": "big 特上牛小排 “wakaran”",
+      "address": "G/F, 19 Elgin Street, Soho",
+      "mealType": [
+        "central",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 118,
+        "dislikes": 3,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

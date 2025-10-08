@@ -1,0 +1,2639 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T02:55:02.359Z",
+    "version": "1.0.0",
+    "district": "Tuen Mun",
+    "locationCategory": "New Territories",
+    "recordCount": 75,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.552Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "a6497a22-7607-435f-9177-6323039298d5",
+      "name": "意粉 JUNO",
+      "address": "Shop UG13, UG/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "tuen mun",
+        "Korean",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 14,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3e2978fb-1743-44a5-8f37-301fbfb3b788",
+      "name": "Tubetti Ne's 鹽燒雞皮",
+      "address": "Shop G06, G/F, Tung Wai Court, 3 Tsing Ling Path",
+      "mealType": [
+        "Coffee Shop",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 240,
+        "dislikes": 8,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9b1cb48-caac-47fa-9657-5736bcea6434",
+      "name": "reminiscent Take",
+      "address": "Shop 31B, G/F, Kam Fat Building, 9 Tseng Choi Street",
+      "mealType": [
+        "ramen",
+        "tuen mun",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 328,
+        "dislikes": 8,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bf951645-cd3e-4e48-87c2-cf83218c5122",
+      "name": "Sour 金葉庭炒飯",
+      "address": "Shop 245, 1/F, Eight Regency, 8 Leung Tak Street",
+      "mealType": [
+        "Hong Kong Style",
+        "tuen mun",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 351,
+        "dislikes": 10,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "127632e3-bb19-4a6c-a4c9-fc053c33e154",
+      "name": "70’s",
+      "address": "Shop 1-6, G/F, Lakeshore Building, 7 Tesng Choi Street",
+      "mealType": [
+        "Taiwan",
+        "tuen mun",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 404,
+        "dislikes": 14,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ee2f21e-9605-4e26-9a39-8c4962908001",
+      "name": "indigenous",
+      "address": "Shop 6, G/F, ORI, 3 Leung Tak Street",
+      "mealType": [
+        "Western",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 320,
+        "dislikes": 16,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d6799844-5e35-408e-a1f7-11afd4bb103a",
+      "name": "Karaage OYSTER fun notable",
+      "address": "Shop 166-706, 3/F, K-Point, 1 Tuen Lung Street",
+      "mealType": [
+        "singaporean",
+        "Singaporean",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 170,
+        "dislikes": 3,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1df42255-83d6-401b-9bdd-4042d6cee01d",
+      "name": "unique 151-161",
+      "address": "Shop 73, G/F, Block A, Rainbow Garden, 351 Castle Peak Road - Castle Peak Bay",
+      "mealType": [
+        "hong kong style",
+        "roast meat",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "133653cd-08ad-4f92-bfbf-6d6a025baa94",
+      "name": "culture Tea",
+      "address": "Shop 559, 3/F, K-Point, 1 Tuen Lung Street",
+      "mealType": [
+        "bakery",
+        "salad",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 150,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d49a50f4-9247-40f2-ae26-4277a551c7e2",
+      "name": "招牌香鍋 瓦煲豉油雞",
+      "address": "2/F, Hotel COZi‧Resort, 4 Kin Fung Circuit",
+      "mealType": [
+        "Buffet",
+        "International",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 319,
+        "dislikes": 8,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c7f3d145-5065-4b20-bd27-f41cfb0a2520",
+      "name": "Neighbor (差館上街)",
+      "address": "Shop L8-6B, 1/F, V City, 83 Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "Thai",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 6,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a959158f-639b-400a-9a1a-228db47f9bb8",
+      "name": "206B Nho",
+      "address": "Shop 48-32, G/F, Hong King Garden, 38 Tsing Sin Street",
+      "mealType": [
+        "Izakaya",
+        "skewer",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 290,
+        "dislikes": 9,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47ebf608-4f4f-4fa4-9fb3-ab43af48e0f1",
+      "name": "FRITES 冷麵 reception 自選雞蛋仔 DE",
+      "address": "Shop 75&85-17A, 1/F, tmtplaza Phase 2, 3 Tuen Lung Street",
+      "mealType": [
+        "roast meat",
+        "tuen mun",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 282,
+        "dislikes": 21,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f94bdc93-cacc-43dc-9002-6aea81ce0117",
+      "name": "蝦棗拼蟹棗 順。生牛肉牛肉丸湯河 Karaage",
+      "address": "Shop 19-02, G/F, Fung Yu Hse, Sam Shing Estate",
+      "mealType": [
+        "Seafood",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 313,
+        "dislikes": 9,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c353f927-d23d-4a42-b618-132e00c553cb",
+      "name": "Express's",
+      "address": "Shop 8, G/F, Kam Men Mansion, 15 Tseng Choi Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Sweets",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 248,
+        "dislikes": 7,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2d931af3-230d-4601-9848-004d205eea23",
+      "name": "自家製沙嗲牛肉三文治 CITIC",
+      "address": "Shop 4031-2033, 2/F, Ttmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "Italian",
+        "pizza",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 180,
+        "dislikes": 1,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "72809b2d-0719-42d0-9058-642b5153ba2a",
+      "name": "80 film week succulent 即刨黑松露帶子扁意粉",
+      "address": "Kiosk 3, 1/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "Coffee Shop",
+        "tuen mun",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 309,
+        "dislikes": 10,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d8048ff6-4ce5-406b-83bd-43931685c0ec",
+      "name": "蟹肉南瓜湯",
+      "address": "Shop 103, G/F, Tuen King Building, 8 Tsing Hoi Circuit",
+      "mealType": [
+        "Stir Fry",
+        "chicken hot pot",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 107,
+        "dislikes": 7,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9eec0814-abaf-424c-983d-7189e9a5401c",
+      "name": "ribeye macaroni",
+      "address": "Shop 8376, 3/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "tuen mun",
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 302,
+        "dislikes": 40,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "48e48e14-172c-4881-ba85-2e10feddbeda",
+      "name": "牛油果可麗餅 end 焦糖脆皮香蕉梳乎厘班戟 PHOENIX",
+      "address": "Shop 4, G/F, Kim Bo Building, 5 Tsing Min Path, Tuen Mun",
+      "mealType": [
+        "tuen mun",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 423,
+        "dislikes": 13,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42966a66-0ac9-4337-a335-3be9a71e4613",
+      "name": "桂花麻糬傳統班戟 47",
+      "address": "Shop 93A-C, 1/F, Gold Coast Piazza, 1 Castle Peak Road - So Kwun Wat",
+      "mealType": [
+        "teppanyaki",
+        "tuen mun",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "764e0826-2c86-4f0e-b1dc-11df5d2fc920",
+      "name": "長沙臭豆腐",
+      "address": "Shop 98, L2/F, Trend Plaza North Wing, 2 Tuen Lung Street",
+      "mealType": [
+        "salad",
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 5,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "86ff1ab7-2f5b-4c59-879c-cc18562835cd",
+      "name": "十八秒牛肉 瑞士芝士安格斯牛漢堡",
+      "address": "Shop 4, G/F, Hing Tai Building, 45 Yan Oi Tong Circuit",
+      "mealType": [
+        "Guangdong",
+        "Hot Pot",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6d1e4b33-580a-4419-934d-b601ba9420a1",
+      "name": "You ICHIJUISSAI 和牛沾麵",
+      "address": "Shop G856, G/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "Hong Kong Style",
+        "Western",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 127,
+        "dislikes": 16,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dfbe56dd-b9bf-4b45-a498-a04575c04bec",
+      "name": "醬油雞清湯拉麵 芝士溶岩極上和牛漢堡 Phase) 捌加廿陸天婦羅居酒屋 冰淋醬烤骨 權發小廚's northern OKINAWA",
+      "address": "Shop 8670, 3/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 228,
+        "dislikes": 5,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8e09fefc-28b2-45e0-96b3-5da609a1abf8",
+      "name": "alfresco",
+      "address": "Shop 139C, 2/F, Chelsea Heights, 1 Shek Pai Tau Path",
+      "mealType": [
+        "tuen mun",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0e4f2d80-f265-4076-801e-e9602112951c",
+      "name": "Maru Egglettes COSHA",
+      "address": "Shop 6, G/F, Rainbow Garden, 351 Castle Peak Road - Castle Peak Bay",
+      "mealType": [
+        "skewer",
+        "Japanese",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 234,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94c41cda-627e-4839-83b8-68255150a289",
+      "name": "日式胡麻涼麵 while",
+      "address": "Shop A417, 1/F, Zone A, H.A.N.D.S, 2A Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 98,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c965b529-1d50-4cfd-b55c-3a2ad0c471fe",
+      "name": "寶蓮寺小食亭's",
+      "address": "Shop 08, UG/F, Dorboa building, 9 Tsing Chui Path",
+      "mealType": [
+        "tuen mun",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 109,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a495b2e3-df5a-4509-bf37-a4a9500a067d",
+      "name": "shiso",
+      "address": "Shop G27, G/F, Eldo Court Shopping Centre, 112-140 Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "Japanese",
+        "udon",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 138,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "810d64b5-a8b5-461c-8822-17c3492cc63c",
+      "name": "龍蝦濃湯 marbled",
+      "address": "Shop L2-02, 1/F, V City, 83 Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "tuen mun",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 164,
+        "dislikes": 10,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f06b7dcc-e08c-47d2-b728-8d19b75cf748",
+      "name": "PizzaExpress SUPPA",
+      "address": "Shop S49, 1/F, Go Go Mall, 112-140 Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "Malaysian",
+        "malaysian",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 2,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb62683c-53df-44bf-96e6-a56080bf3fa6",
+      "name": "HIANG's Izakaya’s 村爺爺龍蝦湯.泡飯.燉湯專家",
+      "address": "Shop 0A, G/F, Man Cheong Building, 5 Tsing To Path",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 218,
+        "dislikes": 13,
+        "neutral": 49
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "57377354-2df0-4d6d-947a-37f8a79c65b7",
+      "name": "Stone",
+      "address": "Shop 82-81, L2/F, Trend Plaza South Wing, 2 Tuen Hop Street",
+      "mealType": [
+        "Guangdong",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 162,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "49870e9d-2b17-458e-9a48-b23e96fa4bb1",
+      "name": "Panna Cotta 日式生炸BB乳鴿",
+      "address": "Shop 8, G/F, Hong King Garden, 28 Tsing Sin Street",
+      "mealType": [
+        "tuen mun",
+        "wine",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8f166dc-638f-424a-998a-97a217685925",
+      "name": "momo 京蔥羊肉",
+      "address": "Shop 0694, 1/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "Japanese",
+        "dessert",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 108,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "099c70a8-9e17-48f8-9b37-41fd38e84d47",
+      "name": "prawn",
+      "address": "Shop 308, 3/F, Wah Hing Mansion, 7 Tsing Ling Path",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 61,
+        "dislikes": 12,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "786ed1d8-08a1-4987-85e4-995dcc573cd9",
+      "name": "燉湯 \"Rye great 雞嘆撈",
+      "address": "Shop 55-98, G/F, Lakeshore Building, 7 Tseng Choi Street",
+      "mealType": [
+        "International",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 8,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "020a2940-4ee7-4821-a2a5-407ca03b7d3a",
+      "name": "鳳尾蝦炒金邊粉 藝彩廚Ink 季節沙律",
+      "address": "Shop G87, G/F, Eight Regency, 8 Leung Tak Street",
+      "mealType": [
+        "Japanese",
+        "tuen mun",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7657fc1-f6bc-407f-8562-b421e5ebe496",
+      "name": "高湯杞子浸菜苗 Tsat",
+      "address": "Shop 0A5, G/F, Richland Shopping Arcade, 138 Wu Chui Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 146,
+        "dislikes": 5,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "61d577fd-b75f-4f5b-a4d1-108b80387e83",
+      "name": "rare",
+      "address": "Golden Beach, 18.5miles, Castle Peak Road",
+      "mealType": [
+        "tuen mun",
+        "French",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 3,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9778999-fe4c-42c1-b87f-48754efd3b8f",
+      "name": "芝麻雞翼",
+      "address": "Shop L006, 1/F, Tai Hing Commercial Centre, 1 Tai Hing Street",
+      "mealType": [
+        "tuen mun",
+        "wonton dumpling",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 8,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbfe7be2-5b19-4d65-80cb-e4be48f213b9",
+      "name": "Main Sky",
+      "address": "Shop F, 2/F, Florence Mansion, 6 Tsing Ling Path",
+      "mealType": [
+        "noodles rice noodles",
+        "tuen mun",
+        "Yunnan"
+      ],
+      "sentiment": {
+        "likes": 147,
+        "dislikes": 6,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d293ddcf-1cdc-4c43-9db2-7da783895b90",
+      "name": "@wellwellwell's 黑熊拉麵",
+      "address": "Shop 2, 5/F, Hip Pont Building, 21 Tseng Choi Street",
+      "mealType": [
+        "Western",
+        "dessert",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a2bc382-a778-478c-ba4b-0289651cc072",
+      "name": "1201-1202 (駱克駅) Yokukawa",
+      "address": "Shop 8B-0C, LG/F, Victory Building, 3 Tsing Min Path",
+      "mealType": [
+        "tuen mun",
+        "hamburger",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 115,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "773cf02b-75de-4f54-aa60-1cb2c52db4b2",
+      "name": "Lee 星月樓Sky branded 京香餃Home",
+      "address": "Shop 24, G/F, Rainbow Garden, 351 Castle Peak Road - Castle Peak Bay",
+      "mealType": [
+        "pizza",
+        "Curry",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8b7da45a-9f2a-4c7d-810f-5611d6a5f49a",
+      "name": "Kuki park 薑汁撞奶",
+      "address": "Shop 4A, G/F, Gold Coast Piazza, 1 Castle Peak Road - So Kwun Wat",
+      "mealType": [
+        "tuen mun",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "19e937f2-410a-4b9f-924a-f613ff8fdd3a",
+      "name": "8Five2 Caffe leg Hyogo 搽茶居Herb 明水然．樂 自家製月見日本免治雞肉棒 multidisciplinary 韓風柚子蜜糖炸雞髀 TEAHOUSE/BARHOUSE loaf 魚柳包",
+      "address": "Shop 2141, 2/F, tmtplaza Phase 1, 1 Tuen Shun Street, Tuen Mun",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 182,
+        "dislikes": 8,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d8683881-930c-4c35-b675-10929132678d",
+      "name": "There Sunday",
+      "address": "Shop B, G/F, Florence Mansion, 6 Tsing Ling Path, Tuen Mun",
+      "mealType": [
+        "tuen mun",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 3,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8e744594-f90a-45c3-8e98-58e51fe5afad",
+      "name": "熱玫瑰岩鹽鮮奶咖啡 G09",
+      "address": "Shop 36, L3/F, Trend Plaza North Wing, 2 Tuen Lung Street",
+      "mealType": [
+        "all you can eat",
+        "tuen mun",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 8,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "49012ff3-5062-43e3-a8c5-cd8796ba456a",
+      "name": "conservatory recipe",
+      "address": "AEON, 4/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "tuen mun",
+        "Japanese",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 75,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "37f9783a-4e24-4fe8-b309-0f08cec113d2",
+      "name": "門西淋牛豬仁雞 桑寄生蓮子蛋茶",
+      "address": "Shop TUM 04, Tuen Mun MTR Station",
+      "mealType": [
+        "Japanese",
+        "tuen mun",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 67,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "61ca012e-fa26-4237-8788-7081cee05d51",
+      "name": "UNDERPASS",
+      "address": "Shop 801, 8/F, Kin Wing Cooked Food Market, 32 Kin Wing Street",
+      "mealType": [
+        "tuen mun",
+        "Guangdong",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 181,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "718f1297-3f63-4e34-9bb3-55edf49cd6f5",
+      "name": "上海雲吞刀削麵 fast porks",
+      "address": "Shop 2742, 3/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "pizza",
+        "American",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 2,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "952868be-2a2a-4dc1-86b7-33e0086a126d",
+      "name": "Crêpe wines",
+      "address": "Shop 00, L3/F, Trend Plaza South Wing, 2 Tuen Hop Street, Tuen Mun",
+      "mealType": [
+        "tuen mun",
+        "Japanese",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 11,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "718b10b0-917f-49aa-acce-d50d690c62d1",
+      "name": "50s Kong-limited 尖椒皮蛋",
+      "address": "Shop N-344, 2/F, Zone N, H.A.N.D.S, 2A Tuen Mun Heung Sze Wui Road",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 8,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2499d6fa-8fd6-4e2f-8179-bc4ec8b21be2",
+      "name": "會安烤乳豬 meaty Gwee that",
+      "address": "355 Tai Lam Tung Road",
+      "mealType": [
+        "Hong Kong Style",
+        "tuen mun",
+        "BBQ Ground"
+      ],
+      "sentiment": {
+        "likes": 121,
+        "dislikes": 17,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "700e1e01-9a28-46ae-893a-73f617db9018",
+      "name": "Y congees",
+      "address": "Shop 1319, 3/F, tmtplaza Phase 1, 1 Tuen Shun Street, Tuen Mun",
+      "mealType": [
+        "roast meat",
+        "tuen mun",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "58ff1c8a-93f7-4218-9575-26aeed4fd987",
+      "name": "平安包 drink",
+      "address": "Shop 37-73, L1/F, Trend Plaza North Wing, 2 Tuen Lung Street, Tuen Mun",
+      "mealType": [
+        "korean fried chicken",
+        "tuen mun",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 13,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3939f311-f3db-4682-a6ff-4cdf8b1c3c51",
+      "name": "橋香園雲南過橋小鍋米線's Pavillion",
+      "address": "Shop 10, 3/F, Look Yuen, 6 Tsing Pak Path",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 52,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d60c7cc7-4185-47c0-85cc-5871d7d25404",
+      "name": "蜘蛛 imported Enjoy 皇牌3+2撈檬 Number 白松露蟹肉沙律 Roast 泡菜黑豚腩鍋 乜蟹都有丼 自家製免治雞肉蓋",
+      "address": "Shop 0290, 2/F, tmtplaza Phase 1, 1 Tuen Shun Street, Tuen Mun",
+      "mealType": [
+        "tuen mun",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 94,
+        "dislikes": 4,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a7c4ea1-0863-4a8e-b839-f017a5ca497b",
+      "name": "all-day special kitchens goal emotions sunlight 7th seven 牛油金菇包 即炸魚皮 海膽蟹味噌甲羅燒 Causa",
+      "address": "Shop 18, L1/F, Trend Plaza South Wing, 2 Tuen Hop Street, Tuen Mun",
+      "mealType": [
+        "taiwan",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 13,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "740cc634-499c-40fb-8177-a60f14dd57ab",
+      "name": "台灣3Q餅 叉燒煎雙蛋飯",
+      "address": "11/F, On Chuen Building, 10 Ming Ngai Street",
+      "mealType": [
+        "Bar",
+        "wine",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 162,
+        "dislikes": 8,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "84fb2075-b7cd-4948-ae71-c9942e005278",
+      "name": "黃金南瓜 蘋果批配雪糕 memories",
+      "address": "12/F, Block 2, 33 San Hui Village, San Hui Path",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 1,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f3625998-3641-42d0-9523-506067aa8246",
+      "name": "Number",
+      "address": "Shop 6824-1111, 1/F, tmtplaza Phase 1, 1 Tuen Shun Street",
+      "mealType": [
+        "Japanese",
+        "tuen mun",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 3,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c4e414ab-c2ba-4585-80d4-9fbb5712eeb1",
+      "name": "Northern",
+      "address": "17/F, Hip Pont Building, 21 Tseng Choi Street",
+      "mealType": [
+        "sushi sashimi",
+        "tuen mun",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 136,
+        "dislikes": 5,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ecf23ee9-f98c-46cd-af93-af85b60f7e57",
+      "name": "Waso travelled Bonds cacti checkered",
+      "address": "Shop 66-31, L3/F, Trend Plaza North Wing, 2 Tuen Lung Street",
+      "mealType": [
+        "Taiwan",
+        "tuen mun",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 197,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d179934f-4c81-46c1-9fb7-72d0b362448e",
+      "name": "Dubois",
+      "address": "Shop 80, G/F, Gold Coast Piazza, 1 Castle Peak Road - So Kwun Wat",
+      "mealType": [
+        "Japanese",
+        "Coffee Shop",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 9,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "031543f0-3a2f-4c87-ab11-6a0bc5bf38f0",
+      "name": "燒醬油黑毛豬白切肉紫蘇飯 HONG",
+      "address": "8/F, Hong Kong Gold Coast Hotel, 1 Castle Peak Road - Castle Peak Bay",
+      "mealType": [
+        "Western",
+        "Brunch",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 258,
+        "dislikes": 42,
+        "neutral": 96
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f6f1908-64ab-4d59-8519-80ba2bd87dd2",
+      "name": "Ngai (荷李活商業中心)",
+      "address": "Shop 33, G/F, Rainbow Garden, 351 Castle Peak Road - Castle Peak Bay",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "43f6ea4c-c0dd-400c-acb8-861cb214323c",
+      "name": "Daily stationed",
+      "address": "Shop 4, G/F, NOVO WALK, 8 Yan Po Road",
+      "mealType": [
+        "hamburger",
+        "tuen mun",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e991126-8068-4c80-9d89-9785156f28c3",
+      "name": "courses rooted",
+      "address": "Shop 1-31, G/F, Blossom Garden Shopping Arcade, 11 Leung Tak Street",
+      "mealType": [
+        "tuen mun",
+        "udon",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 127,
+        "dislikes": 7,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3dc06dab-d848-4f3c-81eb-1d867d8d3b5d",
+      "name": "Solar Lucciola",
+      "address": "Shop 00-41, G/F, Rich Building, 6 Tsing Min Path, Tuen Mun",
+      "mealType": [
+        "Hot Pot",
+        "hong kong style",
+        "tuen mun"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1f79c24c-f888-488e-8d9b-8261c6962548",
+      "name": "凱撒沙律 Together personal",
+      "address": "Shop 06, G/F, Lucky Building, 24 Tat Yan Square",
+      "mealType": [
+        "tuen mun",
+        "Vietnamese",
+        "sandwich"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7921821b-406a-4943-8661-70f545ee109e",
+      "name": "鯖節豬骨白湯拉麵 7 竹炭流沙包",
+      "address": "Shop 1-1, G/F, Regency Bay, 23 Hoi Wong Road",
+      "mealType": [
+        "hong kong style",
+        "food stall noodles",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tuen Mun",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

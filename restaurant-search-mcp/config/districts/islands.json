@@ -1,0 +1,205 @@
+{
+  "name": "Islands",
+  "category": "Islands",
+  "priority": 4,
+  "districts": [
+    {
+      "name": "Lantau Island",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4001
+    },
+    {
+      "name": "Chek Lap Kok",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4002
+    },
+    {
+      "name": "Peng Chau",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4003
+    },
+    {
+      "name": "Cheung Chau",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4004
+    },
+    {
+      "name": "Lamma Island",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4005
+    },
+    {
+      "name": "Discovery Bay",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4006
+    },
+    {
+      "name": "Tung Chung",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4009
+    },
+    {
+      "name": "Tai O",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4010
+    },
+    {
+      "name": "Po Toi",
+      "priority": 6,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 4011
+    }
+  ]
+}

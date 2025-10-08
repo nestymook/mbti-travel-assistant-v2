@@ -1,0 +1,2198 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T21:07:56.092Z",
+    "version": "1.0.0",
+    "district": "Tsuen Wan",
+    "locationCategory": "New Territories",
+    "recordCount": 63,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:06.256Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "a4a6de2c-e254-4526-b299-b8f08fcf4a83",
+      "name": "Lo EATTON 雪糕",
+      "address": "Shop 5918-2032, 2/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "Korean",
+        "tsuen wan",
+        "korean fried chicken"
+      ],
+      "sentiment": {
+        "likes": 411,
+        "dislikes": 9,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b2f190e-1a2a-4347-8104-5d9db261e744",
+      "name": "Lao 梅菜扣肉 eat",
+      "address": "Shop 5723, 3/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "tsuen wan",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 714,
+        "dislikes": 34,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5c6c1bcc-5924-4ca5-8414-308871a50601",
+      "name": "豆腐 room",
+      "address": "G/F, Wing On House, 34 Shiu Wo Street",
+      "mealType": [
+        "Italian",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 1308,
+        "dislikes": 19,
+        "neutral": 61
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "079dc71b-da59-4645-879f-8d42f77f6d73",
+      "name": "小廚 surprise leisurely",
+      "address": "Shop A&B, G/F, Kapok Mansion, 125-133 Castle Peak Road - Tsuen Wan",
+      "mealType": [
+        "hong kong style",
+        "Hot Pot",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 544,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c5fbf85e-0b15-4fe1-a04f-8df69578ef7a",
+      "name": "Ribs 鴨血 花膠雞麵 Inn 法國田螺 A-D",
+      "address": "Shop 66A, G/F, Dao Shing Building, 43-59 Heung Wo Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 614,
+        "dislikes": 11,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "993feeef-c8de-4a37-954a-ad80b0f3dc58",
+      "name": "Washoku HIKARI Mong",
+      "address": "G/F & 9/F, Optimall, 118 Chuen Lung Street",
+      "mealType": [
+        "Dai Pai Dong",
+        "guangdong",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 412,
+        "dislikes": 20,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c105ee98-bcb1-431c-be05-347ebc9d91e5",
+      "name": "hand-pulled",
+      "address": "Shop 450, 1/F, Citywalk, 1 Yeung Uk Road",
+      "mealType": [
+        "Izakaya",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 643,
+        "dislikes": 6,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a7dfc05e-10cf-4da2-835a-fdb2567b0610",
+      "name": "Landmark air Booking",
+      "address": "Shop D, G/F, Dao Shing Building, 49 Heung Wo Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Vietnamese",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 549,
+        "dislikes": 31,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f85dddbc-f26b-4f11-82d6-8fefbd9cb9ba",
+      "name": "Gui",
+      "address": "Shop E2, G/F, Dao Shing Building, 53 Heung Wo Street",
+      "mealType": [
+        "skewer",
+        "tsuen wan",
+        "bbq"
+      ],
+      "sentiment": {
+        "likes": 189,
+        "dislikes": 2,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e653ae0d-2dad-4392-9bb9-781f812f1f64",
+      "name": "皮餃子",
+      "address": "G/F, 52 Tai Pa Street",
+      "mealType": [
+        "Western",
+        "tsuen wan",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 924,
+        "dislikes": 12,
+        "neutral": 65
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a9e4c64d-adea-4674-877f-ceba92e3728f",
+      "name": "麥當",
+      "address": "Shop 1837-1026, 1/F, D‧PARK, 398 Castle Peak Road - Tsuen Wan",
+      "mealType": [
+        "Japanese",
+        "tsuen wan",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 702,
+        "dislikes": 8,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "adfc903f-4f0b-4af7-9bb9-98c5a8d61df3",
+      "name": "打冷小廚",
+      "address": "Shop 8091, 1/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "tsuen wan",
+        "French",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 646,
+        "dislikes": 22,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "46a27e12-5e38-49b9-928a-841be57366ad",
+      "name": "KAKURA street 粒",
+      "address": "Shop G47, G/F, NINA MALL 1, 8 Yueng Uk Road",
+      "mealType": [
+        "salad",
+        "Coffee Shop",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 565,
+        "dislikes": 6,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c1500029-b5e5-4e12-aa00-b34c11a1c94b",
+      "name": "There casual",
+      "address": "Shop 281-723, 3/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "tsuen wan",
+        "Japanese",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 350,
+        "dislikes": 6,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0566b9e-c481-46a6-80ee-3f363359adae",
+      "name": "their",
+      "address": "Shop F, G/F, Wah Tat Building, 22 Hoi Pa Street",
+      "mealType": [
+        "Japanese",
+        "Yoshoku",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 945,
+        "dislikes": 31,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60b10852-50fd-44e7-a141-d6e32dc9f195",
+      "name": "Lo items",
+      "address": "Shop 7209-1007, 1/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "Western",
+        "tsuen wan",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 607,
+        "dislikes": 33,
+        "neutral": 101
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bdec8e7-d35d-440a-b63c-015c7af4ebec",
+      "name": "Tea 肩卷",
+      "address": "05/F, Tai Hung Fai (Tsuen Wan) Centre, 55 Chung On Street",
+      "mealType": [
+        "Taiwan",
+        "taiwan",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 851,
+        "dislikes": 15,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "572f5ecd-3fac-402d-805a-c8d4f5433ed0",
+      "name": "marble forget traditional minimalist red Four",
+      "address": "G/F, 99 Tso Kung Square",
+      "mealType": [
+        "Curry",
+        "Thai",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 701,
+        "dislikes": 22,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "07557ae7-97b5-4cf9-8105-05840f5ef3e3",
+      "name": "up le",
+      "address": "G/F, 17 Luen Yan Street",
+      "mealType": [
+        "skewer",
+        "tsuen wan",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 364,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abbdbeeb-8d08-444e-a118-4609af9492d8",
+      "name": "ChaTraMue Sichuan",
+      "address": "Shop G40, G/F, 328 Plaza, 328 Sha Tsui Road",
+      "mealType": [
+        "tsuen wan",
+        "noodles rice noodles",
+        "Yunnan"
+      ],
+      "sentiment": {
+        "likes": 621,
+        "dislikes": 26,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6c2a2afc-e950-4051-8247-d1174548bc1f",
+      "name": "荳腐花 hugely WARM",
+      "address": "G/F, On Hong Building, 29 Tai Pa Street",
+      "mealType": [
+        "Chinese",
+        "tsuen wan",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 362,
+        "dislikes": 7,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36673ea2-7a75-4991-a7df-315aa66b8e5d",
+      "name": "Calamari",
+      "address": "Shop 66-96, 1/F, Cheong Ning Building, 202-216 Sai Lau Kok Road",
+      "mealType": [
+        "ramen",
+        "Japanese",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 449,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1d06cfd8-2f39-4ef7-a165-07134ada2252",
+      "name": "Pasta Cuisine 203",
+      "address": "Shop 9253, 2/F, Ocean Pride, 100 Tai Ho Road",
+      "mealType": [
+        "tsuen wan",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 430,
+        "dislikes": 23,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0eca2c16-d944-48a6-ab52-8c245119de9a",
+      "name": "Up",
+      "address": "G/F, 13 Tai Pa Street",
+      "mealType": [
+        "taiwan",
+        "tsuen wan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 427,
+        "dislikes": 23,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe13c7c2-c200-44c3-816b-c7c7af9f146f",
+      "name": "Three arched",
+      "address": "G/F, 301 Sha Tsui Road",
+      "mealType": [
+        "Dim Sum",
+        "tsuen wan",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 312,
+        "dislikes": 9,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "337e9e72-ddbd-401b-8b6e-a9e7334a663c",
+      "name": "麵包 Rise",
+      "address": "Shop 722-830B, L6/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "guangdong",
+        "Hot Pot",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 408,
+        "dislikes": 12,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e5ab37d8-d18d-4e97-8eaa-2b38c0f1bbbc",
+      "name": "Bin",
+      "address": "Shop 1395, 3/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "tsuen wan",
+        "Japanese",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 220,
+        "dislikes": 6,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb286d3c-23f9-4e68-9191-39fc27e9326d",
+      "name": "fine",
+      "address": "Shop 115, 2/F, NINA MALL 1, 8 Yeung Uk Road",
+      "mealType": [
+        "Western",
+        "tsuen wan",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 224,
+        "dislikes": 11,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fac173b8-913c-40f1-bc91-a98a40c7feca",
+      "name": "Ming 酥皮湯",
+      "address": "Shop 060, 1/F, The Mills, 45 Pak Tin Par Street",
+      "mealType": [
+        "International",
+        "tsuen wan",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 182,
+        "dislikes": 2,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a43224fb-a137-48ed-b22f-b180de5f4ddb",
+      "name": "Latte Café@WM",
+      "address": "48/F, Optimall, 118 Chuen Lung Street",
+      "mealType": [
+        "Japanese",
+        "bbq",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 514,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "64ec9178-2f7b-4e1e-ba9b-aece90c0e724",
+      "name": "discount 飯 2 Pay 蒜蓉 BEANS Satay 多士",
+      "address": "57/F, Tai Hung Fai (Tsuen Wan) Centre, 55 Chung On Street",
+      "mealType": [
+        "tsuen wan",
+        "taiwan",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 947,
+        "dislikes": 12,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cfc8843f-f9c7-490e-8503-cb44f37db7b6",
+      "name": "Wah Oyster 蒜泥咸豬手",
+      "address": "G/F, 06 Hoi Pa Street",
+      "mealType": [
+        "korean fried chicken",
+        "tsuen wan",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 9,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1ea6ba07-c481-4338-be5c-207dc59c2b02",
+      "name": "Vienna 抄手",
+      "address": "Shop 830-923, 3/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "Japanese",
+        "tsuen wan",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 335,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a576b4f-4200-4da7-82cd-a6afeb351c74",
+      "name": "at",
+      "address": "G/F, 25 Hoi Pa Street",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 179,
+        "dislikes": 14,
+        "neutral": 54
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba446516-9bf1-41af-bf79-14361f259f66",
+      "name": "128 酥皮湯",
+      "address": "Shop 0866, 2/F, KOLOUR • Tsuen Wan I, 68 Chung On Street",
+      "mealType": [
+        "Taiwan",
+        "Hot Pot",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 393,
+        "dislikes": 19,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "93530f66-4438-41fb-90ef-aa86828aa7b3",
+      "name": "Tappas (D‧PARK) mix",
+      "address": "Shop 373-907, 1/F, NINA MALL 1, 8 Yeung Uk Road",
+      "mealType": [
+        "taiwan",
+        "tsuen wan",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 347,
+        "dislikes": 26,
+        "neutral": 59
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2f072141-48fc-4915-9ddc-22a8165b4d86",
+      "name": "肥牛 backdrop paintings Roll",
+      "address": "G/F, Lau Keung Building, 42 Hau Tei Square",
+      "mealType": [
+        "Japanese",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 115,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "572a730e-2bde-4641-8ae7-4e066d482b47",
+      "name": "Coffee's",
+      "address": "Shop B551-B110, B1/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "pizza",
+        "wine",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 875,
+        "dislikes": 20,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e307b1a-1e12-4720-af58-a54abec8dc8c",
+      "name": "leisurely",
+      "address": "Shop 4, G/F, Heung Shing Building, 5-7 Heung Wo Street",
+      "mealType": [
+        "sushi sashimi",
+        "tsuen wan",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 303,
+        "dislikes": 8,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9f2f8231-ef50-4e66-8b9e-3e5120f3500f",
+      "name": "tripe 心太軟 大碗麵 CYM performed",
+      "address": "Shop D1, G/F, 49 Heung Wo Street",
+      "mealType": [
+        "Japanese",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 520,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c116caef-0430-44d8-a692-f1154a7431f7",
+      "name": "da roast",
+      "address": "Shop B518-B113, B1/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "Japanese",
+        "wine",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 139,
+        "dislikes": 8,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d6020483-e89c-4dec-b557-2d5d75d53944",
+      "name": "關東煮 Online Sea 剉冰",
+      "address": "Shop 463-345, L3/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "tsuen wan",
+        "Western",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 163,
+        "dislikes": 8,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5d63ace2-b0a1-4648-8676-b736e23c40ef",
+      "name": "鴨腿",
+      "address": "Shop F7, G/F, Fullytech Centre, 18 Tak Hoi Street",
+      "mealType": [
+        "hong kong style",
+        "skewer",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ab41e1ca-24a9-4a37-994a-0cf6bd334b7e",
+      "name": "handmade use service",
+      "address": "Shop 86, 4/F, Waldorf Centre, 170-184 Sai Lau Kok Road",
+      "mealType": [
+        "noodles rice noodles",
+        "taiwan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 276,
+        "dislikes": 6,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eb08219c-2d14-42a6-bd66-ccaeafa09cee",
+      "name": "yakiniku pre-ordered 排骨 三文治",
+      "address": "Shop 501, L4/F, Tsuen Wan Plaza, 4-30 Tai Pa Street",
+      "mealType": [
+        "fujian",
+        "Seafood",
+        "fine dried seafood"
+      ],
+      "sentiment": {
+        "likes": 432,
+        "dislikes": 13,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ebe2be0-5d91-4b03-8238-8bb46398281e",
+      "name": "特色燒飯團 燒鴨",
+      "address": "Shop UG65&30, UG/F, Citywalk, 1 Yeung Uk Road",
+      "mealType": [
+        "pizza",
+        "Korean",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 384,
+        "dislikes": 9,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "53c04156-f46f-40ab-8b75-8b8e09cc1ddf",
+      "name": "made treats",
+      "address": "Shop J31-88, Ichimoncho, G/F, Citywalk 2, 18 Yeung Uk Road",
+      "mealType": [
+        "tsuen wan",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "83e5e5f8-bcb4-4159-9662-5ecaf2a8376d",
+      "name": "Buff Bleu",
+      "address": "Shop 43, 2/F, Waldorf Centre, 170-184 Sai Lau Kok Road",
+      "mealType": [
+        "American",
+        "hamburger",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 268,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "df74a6cf-0898-47ae-95cb-85e3bbe80a29",
+      "name": "100 black",
+      "address": "Shop F5, G/F, Tin Po Building, 91 Tai Ho Road",
+      "mealType": [
+        "Hot Pot",
+        "tsuen wan",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 343,
+        "dislikes": 10,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4b91fccd-a727-4f74-8a1b-51d0cd06dc86",
+      "name": "the 豉油王蝦 features Rapeseed takeaway",
+      "address": "G/F, 71 Tai Pa Street",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 256,
+        "dislikes": 6,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c5af936-fabe-4322-b2cc-b586f87ffa9b",
+      "name": "whisky 826 1987 Kong",
+      "address": "38/F, Tai Hung Fai (Tsuen Wan) Centre, 55 Chung On Street",
+      "mealType": [
+        "Hot Pot",
+        "Dim Sum",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 282,
+        "dislikes": 32,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2b34932d-be54-41f8-a4bb-11a78cc75f64",
+      "name": "big 頂級霜降牛小排 Prohibition Sem",
+      "address": "21/F, Optimall, 118 Chuen Lung Street",
+      "mealType": [
+        "tsuen wan",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 284,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d56522a9-a902-4e40-b30e-eced5054efe1",
+      "name": "Chammakee claimed",
+      "address": "06/F, Tai Hung Fai (Tsuen Wan) Centre, 55 Chung On Street",
+      "mealType": [
+        "hong kong style",
+        "Stir Fry",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 406,
+        "dislikes": 15,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ead6d95b-9375-4bfa-b7e8-faf80e4ceb3f",
+      "name": "Memory up",
+      "address": "Shop 0A, G/F, Heung Shing Building, 8 Heung Wo Street",
+      "mealType": [
+        "Japanese",
+        "Yoshoku",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 177,
+        "dislikes": 11,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "18645bf4-788c-4f37-847f-8297c9391185",
+      "name": "131 鹽酥雞 Fratelli Sheung",
+      "address": "Shop 2861A, 1/F, D‧PARK, 398 Castle Peak Road - Tsuen Wan",
+      "mealType": [
+        "tsuen wan",
+        "Family Friendly",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 202,
+        "dislikes": 6,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5ec64ed8-80f8-48e6-a3f7-82b739ba91fe",
+      "name": "its Noir?'s",
+      "address": "Shop 6, G/F, Block 2, Harmony Garden, 28 Luen Yan Street",
+      "mealType": [
+        "Western",
+        "roast meat",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 255,
+        "dislikes": 5,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e7940527-a869-48d1-b252-10fa373df569",
+      "name": "Chengtu beautifully",
+      "address": "Shop 955, 2/F, Panda Place, 3 Tsuen Wah Street",
+      "mealType": [
+        "all you can eat",
+        "tsuen wan",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 727,
+        "dislikes": 28,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0593605a-3597-4628-80d2-190915bbabca",
+      "name": "安格斯牛小排 Kitchen's Tachi",
+      "address": "Shop 4380-2028, 2/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "Western",
+        "tsuen wan",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7252fd90-ee57-45ad-bf6b-daa24994ac24",
+      "name": "La YAKINIKU",
+      "address": "Shop 2642A, 1/F, KOLOUR • Tsuen Wan I, 68 Chung On Street",
+      "mealType": [
+        "Singaporean",
+        "singaporean",
+        "Malaysian"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 9,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "64ee4bda-fa0c-479b-89d0-4031efa7b230",
+      "name": "Hoi",
+      "address": "Shop 51-11, 3/F, Heung Che Street Market, 8 Tso Kung Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Yunnan",
+        "yunnan"
+      ],
+      "sentiment": {
+        "likes": 366,
+        "dislikes": 44,
+        "neutral": 126
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38943c6c-ae9a-4349-9133-f83dc57db838",
+      "name": "Yakiniku 招牌去骨海南雞 7-11",
+      "address": "G/F, 46-83 Yeung Uk Road",
+      "mealType": [
+        "Thai",
+        "tsuen wan"
+      ],
+      "sentiment": {
+        "likes": 208,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8db9581f-3639-4653-8299-44cbaa626931",
+      "name": "無骨海南雞飯",
+      "address": "27/F, Tai Hung Fai (Tsuen Wan) Centre, 55 Chung On Street",
+      "mealType": [
+        "guangdong",
+        "tsuen wan",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 811,
+        "dislikes": 11,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "91b9ca87-8899-4973-b14e-66f7045c2df1",
+      "name": "Tau Area 招牌麻椒雞 散水餅 Pad COCK",
+      "address": "Shop 8003, 2/F, OP Mall, 100 Tai Ho Road",
+      "mealType": [
+        "Stir Fry",
+        "northeastern",
+        "Northeastern"
+      ],
+      "sentiment": {
+        "likes": 294,
+        "dislikes": 47,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsuen Wan",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

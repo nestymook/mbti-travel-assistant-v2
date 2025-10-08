@@ -1,0 +1,2079 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T17:57:54.391Z",
+    "version": "1.0.0",
+    "district": "Causeway Bay",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 86,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.324Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "946770b3-7185-441d-930f-78551b740e47",
+      "name": "鵝肝多士",
+      "address": "8/F, Kyoto Plaza, 491-499 Lockhart Road",
+      "mealType": [
+        "all you can eat",
+        "causeway bay",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 515,
+        "dislikes": 12,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c83b6eb1-057a-494e-bb21-4b1d910a8084",
+      "name": "classic 伯爵茶麻糬班戟 家鄉手撕雞",
+      "address": "6/F, Bartlock Centre, 3 Yiu Wa Street",
+      "mealType": [
+        "Thai",
+        "roast meat",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 1480,
+        "dislikes": 14,
+        "neutral": 57
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abe1ed48-4104-4c36-8528-13b1698a77e8",
+      "name": "your",
+      "address": "Shop 8898A-B, 8/F, Bartlock Centre, 3 Yiu Wa Street",
+      "mealType": [
+        "causeway bay",
+        "Upper floor Cafe",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 560,
+        "dislikes": 6,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d0b3ff74-da5f-417d-b9dd-aeea9846c735",
+      "name": "by",
+      "address": "Room A, 2/F, Top View Mansion, 10 Canal Road West",
+      "mealType": [
+        "causeway bay",
+        "International",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 759,
+        "dislikes": 9,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "58643596-0c47-4ea4-9960-9ef7326d94fd",
+      "name": "appearances",
+      "address": "Shop 303, 3/F, Fashion Walk, 5-7 Cleveland Street",
+      "mealType": [
+        "Japanese",
+        "Seafood",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 235,
+        "dislikes": 14,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b6b7a130-57b5-484f-8605-8e9879bb8e29",
+      "name": "supporting layered Culinary",
+      "address": "G/F, President Cinema, 517 Jaffe Road",
+      "mealType": [
+        "causeway bay",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 824,
+        "dislikes": 68,
+        "neutral": 105
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ff9bfc36-98ea-4f8a-9801-8242edfb4904",
+      "name": "Now 斑蘭椰啡 海南雞飯 Officers",
+      "address": "Shop 9248-03, 9/F, Bartlock Centre, 3 Yiu Wa Street",
+      "mealType": [
+        "causeway bay",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 646,
+        "dislikes": 15,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "33f6fdd3-2aa1-4a4a-abbb-cf1905095fec",
+      "name": "CAFÉ",
+      "address": "8/F, L H'art, 487-489 Lockhart Road",
+      "mealType": [
+        "Bar",
+        "Seafood",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 498,
+        "dislikes": 7,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5bb73674-b478-4971-85fe-9b747aa0f114",
+      "name": "Yummy",
+      "address": "Shop 301, 3/F, Tang Fai Building, 36-48 Tang Lung Street",
+      "mealType": [
+        "hong kong style",
+        "Chinese",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 144,
+        "dislikes": 10,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8c72df7d-09ac-4811-b403-a8baa7a67176",
+      "name": "Ibérico Xiamen",
+      "address": "13/F, Circle Tower, 28 Tang Lung Street",
+      "mealType": [
+        "Izakaya",
+        "skewer",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 266,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59f4c074-604a-469f-bd13-cf5f63b3562d",
+      "name": "和風醬油大蝦煙肉扁意粉 松露是蛋炒配煎薯餅 fabrics",
+      "address": "12/F, Way On Commercial Building, 500 Jaffe Road",
+      "mealType": [
+        "Hot Pot",
+        "Hong Kong Style",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 917,
+        "dislikes": 16,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fda4ce9c-e08c-4306-85e6-8b8b60f54f14",
+      "name": "Fall",
+      "address": "55/F, The L. Square, 459-461 Lockhart Road",
+      "mealType": [
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 531,
+        "dislikes": 16,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7384ce15-974d-41a3-8871-c869573b3327",
+      "name": "umami Ginseng Lot BreakfastCoffee roastery portions",
+      "address": "2/F, The L Square, 459-461 Lockhart Road",
+      "mealType": [
+        "Western",
+        "Bar",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 1158,
+        "dislikes": 2,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4de96e07-bf20-4c38-844f-e1bf68a2fa07",
+      "name": "grocery",
+      "address": "23/F, Universal House, 229-230 Gloucester Road",
+      "mealType": [
+        "causeway bay",
+        "International",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 400,
+        "dislikes": 6,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "520d8e70-25b4-4a0c-b457-541b19428712",
+      "name": "Akagai Shokudo Hong Belgium",
+      "address": "19/F, Causeway Bay Plaza 1, 489 Hennessy Road",
+      "mealType": [
+        "all you can eat",
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 936,
+        "dislikes": 30,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "82e4d806-8fed-4cb4-915d-658892dbfa5c",
+      "name": "merging There 澎湖花枝丸",
+      "address": "Shop 103D, 1/F, Food Street, Fashion Walk, 50-56 Paterson Street",
+      "mealType": [
+        "Fast Food",
+        "American",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 1545,
+        "dislikes": 73,
+        "neutral": 143
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c30493bd-a264-4dce-9fc1-686b8aa77b8f",
+      "name": "龍華寺素卷 multicultural",
+      "address": "Shop 818-814, 8/F, Windsor House, 311 Gloucester Road",
+      "mealType": [
+        "Brunch",
+        "International",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 472,
+        "dislikes": 13,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd14c175-6e8b-4ce5-8576-f2eeb78e5375",
+      "name": "焦糖鵝肝燉蛋",
+      "address": "Shop 102, 1/F, Dragon Rise, 9-11 Pennington Street",
+      "mealType": [
+        "Singaporean",
+        "causeway bay",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 873,
+        "dislikes": 39,
+        "neutral": 71
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f35a389a-3f39-4228-9c88-a29b436b986f",
+      "name": "青醬磨菇馬鈴薯丸子 布甸蛋撻 1999 Mensen Punch milkshakes",
+      "address": "7/F, World Trade Centre, 280 Gloucester Road",
+      "mealType": [
+        "causeway bay",
+        "International",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 646,
+        "dislikes": 87,
+        "neutral": 98
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c0df6aea-fdc1-4ea1-9e90-2d22406101ff",
+      "name": "grass-fed",
+      "address": "6/F, Kyoto Plaza, 491-499 Lockhart Road",
+      "mealType": [
+        "Stir Fry",
+        "causeway bay",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 838,
+        "dislikes": 13,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44ab4437-dd0f-4aaf-a66f-34298f99e931",
+      "name": "themselves",
+      "address": "Shop 8566, 8/F, World Trade Center, 280 Gloucester Road",
+      "mealType": [
+        "Fine Dining",
+        "causeway bay",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 567,
+        "dislikes": 10,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dffb14df-a97c-4a0d-8f8e-ca000cc46984",
+      "name": "瑞士雞脾",
+      "address": "8/F, Jardine Center, 50 Jardine's Bazaar",
+      "mealType": [
+        "causeway bay",
+        "Japanese",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 822,
+        "dislikes": 14,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75948f53-4eaf-44fe-b0de-94c42a271512",
+      "name": "claimed Sadayama's",
+      "address": "86/F, L'Hart, 487-489 Lockhart Road",
+      "mealType": [
+        "Japanese",
+        "causeway bay",
+        "omakase"
+      ],
+      "sentiment": {
+        "likes": 618,
+        "dislikes": 8,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f28f056-71ca-4181-a995-e5aa8dc24518",
+      "name": "魯肉飯 Transcending",
+      "address": "8/F, 76 Pennington Street",
+      "mealType": [
+        "teppanyaki",
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 317,
+        "dislikes": 5,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9a949be-6225-4f68-82be-0d4ecb07afe8",
+      "name": "芒果大合奏",
+      "address": "52/F, Circle Tower, 28 Tang Lung Street",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 158,
+        "dislikes": 3,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "690ec638-a2de-443f-bbcd-133b028a97f6",
+      "name": "自家製山楂雪梨水 韓國烤肉芝加哥 dining",
+      "address": "12/F, Soundwill Plaza II - Midtown, 1-29 Tang Lung Street",
+      "mealType": [
+        "hong kong style",
+        "causeway bay",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 662,
+        "dislikes": 21,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5c01cc3d-e4d0-4318-9ffb-eb91408bf51e",
+      "name": "moist",
+      "address": "26/F, Macau Yat Yuen Centre, 525 Hennessy Road",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 1234,
+        "dislikes": 18,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "52fc9a95-b114-462b-9920-c136badbe004",
+      "name": "pattern 星野抹茶巴斯克配豆腐忌廉",
+      "address": "87/F, Circle Plaza, 499 Hennessy Road",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 338,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cd5ec0b5-1673-4d23-9a0d-f95bfb518148",
+      "name": "evening",
+      "address": "Shop B330, B3/F, URBANHOOD, Hysan Place, 500 Hennessy Road",
+      "mealType": [
+        "udon",
+        "sushi sashimi",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 174,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6a78712c-2dc8-4207-85af-0d584d9beb97",
+      "name": "tableware",
+      "address": "3/F, The L. Square, 459-461 Lockhart Road",
+      "mealType": [
+        "Western",
+        "Italian",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 547,
+        "dislikes": 6,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "469941cf-25d2-45e5-934b-8fbd79884343",
+      "name": "Aged SHALOM's ULURU Most",
+      "address": "57/F, Macau Yat Yuen Centre, 525 Hennessy Road",
+      "mealType": [
+        "teppanyaki",
+        "Japanese",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 774,
+        "dislikes": 10,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e233925d-da88-4e66-aab0-842235c82df0",
+      "name": "potatoes tmtplaza",
+      "address": "78/F, L'Hart, 487-489 Lockhart Road",
+      "mealType": [
+        "causeway bay",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 448,
+        "dislikes": 5,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2600751d-7b97-410a-bce1-727d24ab73a7",
+      "name": "牛肉麵 芽莊越式料理Nha FRITES",
+      "address": "G/F, HDH Centre, 8 Pennington Street",
+      "mealType": [
+        "Japanese",
+        "causeway bay",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "39c44646-0825-4661-8440-217724ab3e0b",
+      "name": "Europe moves",
+      "address": "95/F, Macau Yat Yuen Centre, 525 Hennessy Road",
+      "mealType": [
+        "Seafood",
+        "causeway bay",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 1139,
+        "dislikes": 14,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3624c301-d1ff-435a-9b23-33d32c70601e",
+      "name": "tantalise",
+      "address": "Shop L, 3/F, Po Ming Building, 2-6 Foo Ming Street",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "Upper floor Cafe"
+      ],
+      "sentiment": {
+        "likes": 323,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5ada2682-a043-42cf-9390-031777a95d48",
+      "name": "Mirage",
+      "address": "G/F, 845 Jaffe Road",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 725,
+        "dislikes": 10,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b64492ef-4ae5-42d7-b4d5-f0133bf8ba5a",
+      "name": "南印度烤帶子伴茄子菠蘿果醬 Pitt Chap's Garden's Pepperoni",
+      "address": "2/F, Circle Tower, 28 Tang Lung Street",
+      "mealType": [
+        "Hot Pot",
+        "hong kong style",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 591,
+        "dislikes": 17,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2d47b4d5-cc91-489d-a183-016e8fd11dfa",
+      "name": "3 Supermarket",
+      "address": "G/F, 42 Haven Street",
+      "mealType": [
+        "Western",
+        "causeway bay",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 217,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "86c169ea-7ea3-40f0-b21f-e46e9a1716df",
+      "name": "Sky",
+      "address": "85/F, Macau Yat Yuen Centre, 525 Hennessy Road",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 806,
+        "dislikes": 18,
+        "neutral": 38
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "98ac7efe-ed73-4284-a0fa-c9eca22d2524",
+      "name": "Wan的Japanese",
+      "address": "58/F, Soundwill Plaza II - Midtown, 1-29 Tang Lung Street",
+      "mealType": [
+        "causeway bay",
+        "wine",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 774,
+        "dislikes": 27,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c0a97a5-1e28-4105-be1e-9d6cfbfd7c6b",
+      "name": "Akagai",
+      "address": "5/F, Sugar+, 25-31 Sugar Street",
+      "mealType": [
+        "Taiwan",
+        "Hot Pot",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "988fcf99-3a1d-4f31-9329-10673d650d07",
+      "name": "flower",
+      "address": "84/F, L'hart, 487-489 Lockhart Road",
+      "mealType": [
+        "Japanese",
+        "teppanyaki",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 440,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f54e4b67-3ba6-465e-84d4-6e3e57305413",
+      "name": "蔥爆牛肉",
+      "address": "Shop 308, 3/F, Golden Dragon Building, 41-51 Tang Lung Street",
+      "mealType": [
+        "roast meat",
+        "korean bbq",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 741,
+        "dislikes": 13,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "640e0c88-bd10-4faa-87f5-c8d16475f3ee",
+      "name": "潮陽梅膏骨 EXPRESS",
+      "address": "42/F, Causeway Bay Plaza 2, 463-483 Lockhart Road",
+      "mealType": [
+        "Taiwan",
+        "causeway bay",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 292,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "415eec8a-c514-4297-b716-93fd9be1a8e9",
+      "name": "伯爵茶白桃布拉塔芝士沙律 牛肉漢堡",
+      "address": "4/F, Way On Commercial Building, 500 Jaffe Road",
+      "mealType": [
+        "Guangdong",
+        "causeway bay",
+        "steam hotpot"
+      ],
+      "sentiment": {
+        "likes": 346,
+        "dislikes": 14,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80251731-d94b-4283-8d0b-8df15ba7f69f",
+      "name": "紅火龍優格果昔 10-inch",
+      "address": "Shop F, 3/F, Po Wing Building, 73 Lee Garden Road",
+      "mealType": [
+        "cake",
+        "Western",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 280,
+        "dislikes": 5,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3cb3cf6f-12bb-4f09-a92f-54f314923b37",
+      "name": "Nom 22/F",
+      "address": "Shop 1-9, 12/F, Dandenong Mansion, 379-389 Jaffe Road",
+      "mealType": [
+        "Japanese",
+        "Hot Pot",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 330,
+        "dislikes": 4,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "63a732b0-830a-4f94-a653-88a2c51a9ee4",
+      "name": "Pot 鴨血 沙翁",
+      "address": "33/F, L'Hart, 487-489 Lockhart Road",
+      "mealType": [
+        "skewer",
+        "Thai",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 419,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fba55609-75e0-4c0f-b30b-a7671a6fe11c",
+      "name": "蝶豆花茉莉豆乳凍",
+      "address": "Shop B, 9/F, Top View Mansion, 10 Canal Road West",
+      "mealType": [
+        "Western",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7046e11d-0fb4-4e8c-ac84-ab232b8a113e",
+      "name": "them!",
+      "address": "Shop 3-2, 9/F, Siu On Plaza, 482 Jaffe Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 538,
+        "dislikes": 15,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5446b198-1729-4465-b85e-19608d0fa2cc",
+      "name": "祥發茶餐小廚 1908",
+      "address": "43/F, Sugar+, 25-31 Sugar Street",
+      "mealType": [
+        "causeway bay",
+        "sushi sashimi",
+        "teppanyaki"
+      ],
+      "sentiment": {
+        "likes": 479,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9309f9d4-8a92-494e-a96c-82884841dd57",
+      "name": "top-notch",
+      "address": "9/F, Perfect Commercial Building, 28 Sharp Street West",
+      "mealType": [
+        "All Day Breakfast",
+        "causeway bay",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 470,
+        "dislikes": 3,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed06e52f-fe3c-4d99-8d13-a39ff6716287",
+      "name": "滷水三寶 Bouche",
+      "address": "Shop L2-14, 12/F, World Trade Centre, 280 Gloucester Road",
+      "mealType": [
+        "causeway bay",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 170,
+        "dislikes": 8,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ec78bfc2-1c6d-4570-a1fb-024a0d64a008",
+      "name": "off",
+      "address": "Shop 815, 8/F, Causeway Place, 2-10 Great George Street",
+      "mealType": [
+        "causeway bay",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 1423,
+        "dislikes": 60,
+        "neutral": 170
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f661edfa-91bb-46ba-9e7d-b4938795e5f5",
+      "name": "Herbs Crema",
+      "address": "Shop B, G/F, Haywood Mansion, 57 Paterson Street",
+      "mealType": [
+        "causeway bay",
+        "Japanese",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 536,
+        "dislikes": 25,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08c4c3fa-302f-4d24-9548-a1f130c5ebd6",
+      "name": "Pici",
+      "address": "Shop 1180, 11/F, Bartlock Centre, 3 Yiu Wa Street",
+      "mealType": [
+        "causeway bay",
+        "Coffee Shop",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 291,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de410e84-dedc-48b1-857c-0c0c02b79d51",
+      "name": "adorned M3-002",
+      "address": "Shop 124-129, 12/F, Tower 535, 535 Jaffe Road",
+      "mealType": [
+        "causeway bay",
+        "Japanese",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 588,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "16ec260d-e31f-4b77-b45e-277531b9bd87",
+      "name": "蜜餞雞翼",
+      "address": "8/F, 99 Jardine's Bazaar",
+      "mealType": [
+        "causeway bay",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 258,
+        "dislikes": 10,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c6f1610-b5c3-40e7-89d8-ba8a3f3dbb36",
+      "name": "香芒糯米糍 route Hikiniku 自家製黑蒜拉麵 滑蛋豬扒丼",
+      "address": "Shop H17, G/F, Fashion Walk, 9 Kingston Street",
+      "mealType": [
+        "Singaporean",
+        "singaporean",
+        "causeway bay"
+      ],
+      "sentiment": {
+        "likes": 662,
+        "dislikes": 66,
+        "neutral": 76
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Causeway Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

@@ -138,7 +138,8 @@ class AgentCoreRuntimeClient:
         pool_config: Optional[Any] = None,
         execution_config: Optional[Any] = None,
         jwt_token: Optional[str] = None,
-        authentication_manager: Optional[Any] = None
+        authentication_manager: Optional[Any] = None,
+        user_id: Optional[str] = None
     ):
         """
         Initialize AgentCore Runtime client with JWT authentication and performance optimizations.
@@ -156,6 +157,7 @@ class AgentCoreRuntimeClient:
             execution_config: Parallel execution configuration
             jwt_token: JWT token for authentication
             authentication_manager: Authentication manager for token management
+            user_id: User ID for AgentCore Runtime User ID header (defaults to 'agentcore-client')
         """
         self.region = region
         self.retry_config = retry_config or RetryConfig()
@@ -165,6 +167,7 @@ class AgentCoreRuntimeClient:
         # JWT Authentication
         self.jwt_token = jwt_token
         self.authentication_manager = authentication_manager
+        self.user_id = user_id or 'agentcore-client'  # Default to generic user ID if not provided
         
         # AgentCore HTTP endpoint configuration
         self.agent_base_url = f"https://bedrock-agentcore.{region}.amazonaws.com"
@@ -250,13 +253,18 @@ class AgentCoreRuntimeClient:
         Raises:
             AuthenticationError: If token cannot be obtained
         """
+        logger.debug(f"🔐 _get_jwt_token called - auth_manager: {self.authentication_manager is not None}, jwt_token: {self.jwt_token is not None}")
+        
         if self.authentication_manager:
             # Use authentication manager for automatic token refresh
+            logger.debug("🔐 Using authentication manager for token")
             return await self.authentication_manager.get_valid_token()
         elif self.jwt_token:
             # Use provided JWT token
+            logger.debug(f"🔐 Using provided JWT token: {self.jwt_token[:20]}...")
             return self.jwt_token
         else:
+            logger.error("🔐 No JWT token or authentication manager available")
             raise AuthenticationError("No JWT token or authentication manager provided")
     
     def _get_http_session(self):
@@ -438,12 +446,12 @@ class AgentCoreRuntimeClient:
             # Construct AgentCore endpoint URL
             agent_endpoint = f"{self.agent_base_url}/runtimes/{encoded_agent_arn}/invocations?qualifier=DEFAULT"
             
-            # Prepare headers
+            # Prepare headers with MCP protocol support
             headers = {
                 'Authorization': f'Bearer {jwt_token}',
-                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': 'agentcore-client',
+                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': self.user_id,
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json, text/event-stream'  # MCP requires both content types
             }
             
             # Prepare payload
@@ -627,7 +635,7 @@ class AgentCoreRuntimeClient:
             # Prepare headers
             headers = {
                 'Authorization': f'Bearer {jwt_token}',
-                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': 'agentcore-client',
+                'X-Amzn-Bedrock-AgentCore-Runtime-User-Id': self.user_id,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }

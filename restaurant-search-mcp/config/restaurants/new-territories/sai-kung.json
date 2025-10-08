@@ -1,0 +1,2118 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T20:15:03.354Z",
+    "version": "1.0.0",
+    "district": "Sai Kung",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:06.064Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "96a13669-2b55-48d5-84ea-a1e6b92c903c",
+      "name": "封門柳 回鍋肉",
+      "address": "Shop A2, LG/F, WM Hotel Hong Kong, Vignette Collection, 28 Wai Man Road",
+      "mealType": [
+        "sai kung",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 596,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9b00a82-f5ac-49d3-9f7f-15b49fc700b3",
+      "name": "827 鵝肝多士 回鍋肉",
+      "address": "Shop 8 and 2, G/F, Siu Yat Building, Sai Kung Hoi Pong Square",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 378,
+        "dislikes": 11,
+        "neutral": 64
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb2cbf43-4bb8-49df-b2d0-95480d7f41dc",
+      "name": "by ac5 prime",
+      "address": "Shop 7, G/F, Ko Fu Building, 58 Fuk Man Road",
+      "mealType": [
+        "Western",
+        "ice cream yogurt",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 196,
+        "dislikes": 2,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cc7975fb-9a1b-4198-8f41-e64e59f7e033",
+      "name": "冰梅醬燒骨 Memory",
+      "address": "G/F, 90 See Cheung Street",
+      "mealType": [
+        "sai kung",
+        "Seafood",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 290,
+        "dislikes": 19,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fc93704a-536a-42de-9681-95ac11619245",
+      "name": "cooks founded",
+      "address": "G/F, 46 See Cheung Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 146,
+        "dislikes": 12,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef2283f5-f799-4af8-9f13-c067eb95f834",
+      "name": "三文治 火鳥",
+      "address": "G/F, 82 See Cheung Street",
+      "mealType": [
+        "Coffee Shop",
+        "sai kung",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1b50e6fe-656c-4695-8d76-e9bd1857303b",
+      "name": "Dai 86-87",
+      "address": "G/F, 82 See Cheung Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 30,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a6e7ed1-cf44-495e-b02f-f3aee98b55e6",
+      "name": "德國咸豬手",
+      "address": "G/F, 93 See Cheung Street",
+      "mealType": [
+        "Coffee Shop",
+        "sai kung",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 164,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1345fe32-fb27-428b-b7fd-f28dea5db18d",
+      "name": "Restoran founded",
+      "address": "G/F, 8 See Cheung Street",
+      "mealType": [
+        "All Day Breakfast",
+        "sai kung",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "58a5acc7-5fc2-4bb3-b52a-15205815be67",
+      "name": "Horizon which traditional",
+      "address": "Shop B, G/F, 2 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "Japanese",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 11,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a31a3bf6-586d-45cd-a177-f7581d7413a6",
+      "name": "蒜香烤生蠔",
+      "address": "G/F, 11 See Cheung Street",
+      "mealType": [
+        "Pet Friendly",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a2865486-d9d5-46e9-8b4f-50fac73f8662",
+      "name": "2017 基記's",
+      "address": "Shop 25, Ko Fu Building, Fuk Man Road",
+      "mealType": [
+        "sai kung",
+        "Singaporean",
+        "malaysian"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 13,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb35b6c4-e364-4a20-a357-b3dd0029f767",
+      "name": "steaks",
+      "address": "LG/F, WM Hotel Hong Kong, Vignette Collection, 28 Wai Man Road",
+      "mealType": [
+        "International",
+        "Buffet",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 8,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "239ba42a-7737-45ac-b9c4-7853834f79cf",
+      "name": "艇仔粉",
+      "address": "G/F, 4A Po Tung Road",
+      "mealType": [
+        "sai kung",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "51d5f5dd-4fd1-4253-8c08-4a2d6e2dfbde",
+      "name": "Food 雞粥 feelings 櫻花蝦 Mixed",
+      "address": "Shop 6-9, G/F, Kam Po Court, 2 Sai Kung Hoi Pong Square",
+      "mealType": [
+        "sai kung",
+        "hong kong style",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 254,
+        "dislikes": 47,
+        "neutral": 84
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fcac4f8a-2cc3-45c0-b24c-1b89a0bed08c",
+      "name": "newly mix (D‧PARK) 大盛居酒屋's",
+      "address": "G/F, 81-12 Sai Kung Tai Street",
+      "mealType": [
+        "sai kung",
+        "Seafood",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 174,
+        "dislikes": 11,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "af8eb02f-06bb-4240-9635-c4682f3b3af9",
+      "name": "Sake try",
+      "address": "G/F, 47 Wan King Path",
+      "mealType": [
+        "Bar",
+        "Western",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 99,
+        "dislikes": 21,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c98022c-7812-4628-80bd-53371882d557",
+      "name": "Kitchen's Taiwanese Truffle",
+      "address": "Shop 7A, Po Toi O Pier, Clear Water Bay",
+      "mealType": [
+        "Guangdong",
+        "Seafood",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 110,
+        "dislikes": 23,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "10320d11-d7fe-4bf2-b83b-504cf8f5d567",
+      "name": "咖央西多士 10-12 five",
+      "address": "Shop 42, Ko Fu Building, 58-72 Fuk Man Road",
+      "mealType": [
+        "bbq",
+        "pizza",
+        "Takeaway"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13401fa0-6769-44e7-9f8e-61548177546c",
+      "name": "Queen 沙嗲雞肉三串 5C 味源車仔麵",
+      "address": "G/F, 3 Po Toi O, Clear Water Bay",
+      "mealType": [
+        "Seafood",
+        "guangdong",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3b0d7b6a-e38c-472b-bc2f-d055412fd540",
+      "name": "Dough 免翁牛柳 可樂士多",
+      "address": "Shop 71, G/F, Ko Fu Building Block A, 58 Fuk Man Road",
+      "mealType": [
+        "Fast Food",
+        "sai kung",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 58,
+        "dislikes": 18,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60fa2896-6f4d-4d13-81f5-977afa2f2f0d",
+      "name": "Karaoke pair",
+      "address": "G/F, 58 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "dessert",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 148,
+        "dislikes": 49,
+        "neutral": 49
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ce61825d-0b73-4dc7-ae66-df8ca7eab7f4",
+      "name": "Sol 豆沙鍋餅",
+      "address": "G/F, 4 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "Coffee Shop",
+        "All Day Breakfast",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 59,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "706beee7-c371-4828-ac53-ed51b83a350a",
+      "name": "diverse 海膽炒飯 UFUFU choice",
+      "address": "G/F, 74 Wan King Path",
+      "mealType": [
+        "Mediterranean",
+        "Pet Friendly",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2ce46d0e-f4cb-4da1-bbd8-1ae8ff1caaaa",
+      "name": "Fung Road(Near",
+      "address": "G/F, 01 See Cheung Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3b184024-425e-4e0c-8eec-635b121326a3",
+      "name": "teppanyaki Asia 最沙律",
+      "address": "Shop B, G/F, 7 Po Toi O",
+      "mealType": [
+        "Seafood",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 137,
+        "dislikes": 21,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "50309fb1-e62c-4ea4-b0d5-d6a760a816e4",
+      "name": "Kaneko 烏冬 tasteful queue",
+      "address": "Shop 6 & 1-10, G/F, Siu Yat Building, 1 Sai Kung Hoi Pong Square",
+      "mealType": [
+        "Seafood",
+        "sai kung",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 73,
+        "neutral": 53
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bbf5a417-5bd1-446f-a417-06bb4484aece",
+      "name": "here sunshine 秘製豬頸肉 To",
+      "address": "G/F, 64-91 Man Nin Street",
+      "mealType": [
+        "Seafood",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 182,
+        "dislikes": 100,
+        "neutral": 99
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bef3317-0cea-499c-8302-fe12810502a6",
+      "name": "Calamari",
+      "address": "Shop 30, Ko Fu Building, 58-72 Fuk Man Road",
+      "mealType": [
+        "Thai",
+        "sai kung",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 11,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5388075b-1dd5-43eb-b9ce-b3130bcc68f6",
+      "name": "created hand-cut",
+      "address": "G/F, 12 See Cheung Street",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "95c068b6-d76e-492f-b3e6-1f713cc9b7a6",
+      "name": "Middle grills",
+      "address": "G/F, 800 Tseng Tau Village, Shap Sze Heung",
+      "mealType": [
+        "French",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6f0802a3-1bb4-44fd-b9b1-d9fcb4984a6f",
+      "name": "steaks",
+      "address": "G/F, 74 Sai Kung Main Street",
+      "mealType": [
+        "Hong Kong Style",
+        "congee",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 1,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c3e278ac-6a82-461b-be53-823dc4de9e95",
+      "name": "Beans full",
+      "address": "Shop A, G/F, 11 Po Tung Road",
+      "mealType": [
+        "sai kung",
+        "Sweets",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b9a5577d-8eaf-4284-844b-ebb0cb33f3f5",
+      "name": "starters Crispy",
+      "address": "G/F & Cockloft, 22 Wan King Path",
+      "mealType": [
+        "sai kung",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "78d17f14-b823-4c9b-b087-2fac0d4c5917",
+      "name": "Beach飯 雞油飯 Anping Road(Near CUISINE",
+      "address": "Shop 3, G/F, Retail Block, Mount Pavilia, 663 Clear Water Bay Road",
+      "mealType": [
+        "british",
+        "wine",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9de20e54-4627-4ca7-b0c6-2e95123d5d9f",
+      "name": "牛小排 冷盤 秘製肉丸 Sweetheart",
+      "address": "G/F, 61A Po Tung Road",
+      "mealType": [
+        "Seafood",
+        "sai kung",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de088d3c-6bc7-42ed-aa57-e2c51a6ac3d6",
+      "name": "塔香鹹酥雞 American Grill 白酒煮蜆 across",
+      "address": "G/F, 571 Man Nin Street",
+      "mealType": [
+        "pizza",
+        "sai kung",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f048cfd0-c863-476c-bc1e-7e024941290c",
+      "name": "提拉米蘇 Plaza five Amenities",
+      "address": "G/F, 1E Po Tung Road",
+      "mealType": [
+        "Curry",
+        "malaysian",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa610bd4-53af-44fe-aa5c-17425c719e65",
+      "name": "Chong 大閘蟹 pizza",
+      "address": "Shop 0, G/F, Ko Fu Building, 58-72 Fuk Man Road",
+      "mealType": [
+        "ice cream yogurt",
+        "taiwanese drink",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "998b6180-9477-4bf2-9594-7e9a54bdfdd6",
+      "name": "milk” rooftop Chau",
+      "address": "G/F, 30 Po Tung Road",
+      "mealType": [
+        "Western",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 21,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed8ca6c0-a0be-49d5-98bd-2005e07ab780",
+      "name": "Boil's 菠蘿拔絲",
+      "address": "G/F, 79 Wan King Path",
+      "mealType": [
+        "sai kung",
+        "Western",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "11dd3d56-3463-4b27-b30d-3657a23b816a",
+      "name": "瑞士雞翼 龍華脆皮燒乳鴿",
+      "address": "Shop 11, G/F, Sai Kung Building, 42-56 King Man Street",
+      "mealType": [
+        "Vietnamese",
+        "noodles rice noodles",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 7,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7e6795a1-d597-4fa2-b3be-4642f5dbffb0",
+      "name": "萃一tasteful 牛腩河",
+      "address": "G/F, 3465 Po Tung Road",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 157,
+        "dislikes": 33,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f458dfbc-3a83-42ed-bd45-5241a3b2922b",
+      "name": "D9",
+      "address": "G/F, 86 Yi Chun Street",
+      "mealType": [
+        "hong kong style",
+        "sai kung",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e98e81cc-b5cd-4e21-a0d0-fdd67e96b84e",
+      "name": "stylish",
+      "address": "G/F, 18 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "sai kung",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac61caf1-2b85-4cdf-8f72-89dd5d2c853c",
+      "name": "線朱古力 Also",
+      "address": "Lion's Nature Education Centre, Tsiu Hang,",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "37245d33-7915-4fbc-87a6-d1a84e49477d",
+      "name": "seasonal home\"",
+      "address": "G/F, 85 Yi Chun Street",
+      "mealType": [
+        "chicken hot pot",
+        "Stir Fry",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d5f87afc-1b4e-4b1f-aafc-9715368b0851",
+      "name": "lighting carefully 黑松露什菌意大利飯 mixes",
+      "address": "G/F, 383 Pak Sha Wan",
+      "mealType": [
+        "Seafood",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "163790f6-dad5-432f-b649-ed8df1c177c1",
+      "name": "B 齒頰留香脆蘿蔔腸 first",
+      "address": "G/F, 5 Sha Ha Village, Tai Mong Tsai Road",
+      "mealType": [
+        "bbq",
+        "sai kung",
+        "BBQ Ground"
+      ],
+      "sentiment": {
+        "likes": 59,
+        "dislikes": 21,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8bcb6b11-4d78-4301-905d-cc7cf15775a3",
+      "name": "hair",
+      "address": "G/F, 008 Man Nin Street",
+      "mealType": [
+        "sai kung",
+        "hong kong style",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "abed9186-f694-4361-95bc-4db0ba9b2498",
+      "name": "五花肉 Chocolate",
+      "address": "G/F, 5 Tai Po Tsai Village, Clear Water Bay Road",
+      "mealType": [
+        "sai kung",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7a27d3eb-bcbf-43df-aa3f-a75e7ae09594",
+      "name": "featuring",
+      "address": "Shop B3, LG/F, WM Hotel, 28 Wai Man Road",
+      "mealType": [
+        "Indonesian",
+        "indonesian",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5bdc0ced-df1c-43a5-93a6-a1f32ea1cc46",
+      "name": "Sem",
+      "address": "G/F, 08 Man Nin Street",
+      "mealType": [
+        "sai kung",
+        "skewer",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 4,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4ee1a00d-eeed-4259-9efd-4769dee694c0",
+      "name": "Cafe 椰奶蟹棗",
+      "address": "G/F, 13 Man Nin Street",
+      "mealType": [
+        "bakery",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8f266223-cb46-4696-ac79-6371366ef7a3",
+      "name": "Clay teng",
+      "address": "G/F, 9 Yim Tin Tsai Village",
+      "mealType": [
+        "hakka",
+        "Hakka",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f5fe7d8f-f30d-4e3e-a7b5-cd442656122a",
+      "name": "Ribs brand-new Monster 燒鴨",
+      "address": "G/F, 46 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 95,
+        "dislikes": 61,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3eb96a58-f2a7-4c8a-9eb7-da7163169e96",
+      "name": "steak",
+      "address": "G/F, 56 See Cheung Street",
+      "mealType": [
+        "sai kung",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9ff8237-ec6a-4d83-859f-1b8ed5462de0",
+      "name": "Beijing Buff Wu way",
+      "address": "G/F, 58-34 Sai Kung Hoi Pong Street",
+      "mealType": [
+        "Stir Fry",
+        "Guangdong",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 38,
+        "dislikes": 56,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44243573-8902-4869-8210-e69c529e4302",
+      "name": "玉米片 MW kitchen",
+      "address": "Shop 8, G/F, 66 Yi Chun Street",
+      "mealType": [
+        "sai kung",
+        "International",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6f0fb60a-95ef-4185-ad32-3f6a5c255009",
+      "name": "RICE beef",
+      "address": "Shop 44, G/F, Ko Shing Building, 9 King Man Street",
+      "mealType": [
+        "International",
+        "sai kung"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sai Kung",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

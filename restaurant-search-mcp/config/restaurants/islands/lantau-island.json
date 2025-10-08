@@ -1,0 +1,2097 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T21:50:44.596Z",
+    "version": "1.0.0",
+    "district": "Lantau Island",
+    "locationCategory": "Islands",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.124Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "41a6b1b4-a1d9-4752-bd71-562f7f647744",
+      "name": "Sauerkraut Tsuru",
+      "address": "Ngan Kwong Wan Road, Mui Wo",
+      "mealType": [
+        "Western",
+        "lantau island",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 3,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "049a5141-bffd-4b1b-ba6e-c1ce4f5b9225",
+      "name": "beetroot Presentation Masala 杏汁豬肺湯",
+      "address": "3/F, Disney Explorers Lodge, Hong Kong Disneyland",
+      "mealType": [
+        "International",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 2,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3008cfde-a9dd-416f-ad49-a6e43ed5d822",
+      "name": "curries 極上魚生丼 underground",
+      "address": "Mystic Point, Hong Kong Disneyland",
+      "mealType": [
+        "International",
+        "lantau island",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 6,
+        "neutral": 55
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fcfd6427-a52c-4a6d-92a8-26cbe496f748",
+      "name": "桔仔話梅冰 吉祥套餐",
+      "address": "2/F, Hong Kong Disneyland Hotel",
+      "mealType": [
+        "Western",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 114,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d8f6c259-ac33-4548-82ec-494d7f9494be",
+      "name": "Italy's ZipZip Wooo",
+      "address": "1/F, Hong Kong Disneyland Hotel",
+      "mealType": [
+        "lantau island",
+        "Buffet",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 145,
+        "dislikes": 7,
+        "neutral": 61
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9509593a-ac6f-495e-a42a-b225d8c74764",
+      "name": "cocktail 黑松露忌廉魚柳焗飯 Neapolitan U26 overgrown Crème 飲品",
+      "address": "Main Street USA, Hong Kong Disneyland",
+      "mealType": [
+        "Western",
+        "lantau island",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 31,
+        "neutral": 109
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4a7780f-6707-4738-9a3c-2fd154736f5e",
+      "name": "Kingdom New's",
+      "address": "Tomorrowland, Hong Kong Disneyland Park",
+      "mealType": [
+        "lantau island",
+        "Fast Food",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 98,
+        "dislikes": 15,
+        "neutral": 106
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fda78c36-caf8-4ee5-953a-59e716a89f48",
+      "name": "六本·虎居Yakitori Sharpener",
+      "address": "Hong Kong Disneyland Hotel, Lantau Island",
+      "mealType": [
+        "Dim Sum",
+        "lantau island",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 136,
+        "dislikes": 11,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6c25764c-9b63-451d-b734-b8442297c8ee",
+      "name": "Soho Squids KAKURA牛胸腹肉",
+      "address": "Fantasyland, Hong Kong Disneyland",
+      "mealType": [
+        "International",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 11,
+        "neutral": 95
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "854dbcc9-4574-48f6-bb16-2147e706dc49",
+      "name": "Donburi SIGNATURE",
+      "address": "Main Street USA, Hong Kong Disneyland",
+      "mealType": [
+        "chinese buns",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 6,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0bffcbe0-7601-46fa-8914-3a90ee0f841f",
+      "name": "Woo 芝士蛋捲 TAK",
+      "address": "World of Frozen, Hong Kong Disneyland Park, Lantau Island",
+      "mealType": [
+        "Western",
+        "Vegetarian",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea78403a-1924-43e3-b644-07237a2a45b4",
+      "name": "dons quite",
+      "address": "Shop 953-218, Main Street USA, Hong Kong Disneyland",
+      "mealType": [
+        "International",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f91df5f-5e4a-459c-bce4-1c099067ea35",
+      "name": "illustrations markets",
+      "address": "1/F, Disney Explorers Lodge, Hong Kong Disneyland",
+      "mealType": [
+        "Buffet",
+        "country food",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f730d4b9-9ea4-4207-9f91-9f6fcaaf007b",
+      "name": "Wing launches 赤鬼海老天反卷",
+      "address": "Po Lin Monastery, Ngong Ping Road, Ngong Ping",
+      "mealType": [
+        "Vegetarian",
+        "lantau island",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 6,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fc4ac315-beed-4b24-872e-51ce067d1bd3",
+      "name": "classic Melted karaoke",
+      "address": "Main Street, U.S.A., Hong Kong Disneyland Park",
+      "mealType": [
+        "Western",
+        "lantau island",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 1,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "361535e2-ee1e-4fbd-828d-74e064dca8df",
+      "name": "Indoor A5鹿兒島和牛他他",
+      "address": "Shop 23, G/F, Scenic Crest, 18A Mui Wo Ferry Pier Road",
+      "mealType": [
+        "Pet Friendly",
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "69faa0a0-9b4d-4ffc-a4d3-45c5858c8c8d",
+      "name": "乳豬三寶飯 67A carts",
+      "address": "Mui Wo Cooked Food Centre,",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "Dai Pai Dong"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 9,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b508c47c-df21-4238-a18b-f07a08e187c2",
+      "name": "經典榛子香蕉班戟 portobello",
+      "address": "Shop 15, G/F, Lucky Court, 16 Mui Wo Ferry Pier Road",
+      "mealType": [
+        "lantau island",
+        "Western",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e5dda319-8408-47ae-9f65-043fa4f1a79f",
+      "name": "12 On 新森林為一間以焗飯麵為招牌菜的西餐廳，款式眾多，另外亦有小菜及拉麵供選擇。",
+      "address": "4/F, Disney Explorers Lodge, Hong Kong Disneyland",
+      "mealType": [
+        "lantau island",
+        "cake",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 0,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be0706ca-225a-4b87-b22d-09514fe43217",
+      "name": "炒粉絲 BASAO enjoyed",
+      "address": "2/F, Disney’s Hollywood Hotel, Hong Kong Disneyland Resort",
+      "mealType": [
+        "Family Friendly",
+        "lantau island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b9e8ba47-ce3a-40eb-93af-19bec93c80d5",
+      "name": "Special (salt) Tiramisù Kong-style",
+      "address": "香港迪士尼樂園幻想世界區",
+      "mealType": [
+        "Western",
+        "lantau island",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 0,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c2286971-69a3-4620-bc68-baf4d8f002d0",
+      "name": "By accepting high-grade",
+      "address": "Adventureland, Hong Kong Disneyland Park",
+      "mealType": [
+        "lantau island",
+        "Guangdong",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b343b978-1019-43f3-bf4b-5af6236532cc",
+      "name": "Chen",
+      "address": "G/F, 92F Mui Wo Chung Hau Street",
+      "mealType": [
+        "lantau island",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 3,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "582edbc5-e4d2-4f29-9016-c830d1279a69",
+      "name": "salute 北非沙卡蔬卡配意大利香草麵包",
+      "address": "G/F, 03 Chung Hau Street, Mui Wo",
+      "mealType": [
+        "Western",
+        "lantau island",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 8,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "673b3b63-f036-44f6-a095-51c2a6076f7d",
+      "name": "Tiffany Hungary 美國安格斯牛板腱扒",
+      "address": "Hong Kong Disneyland Park Main Street, U.S.A.",
+      "mealType": [
+        "lantau island",
+        "hong kong style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "800d7ab7-4a6e-4915-bd30-e4488bba15be",
+      "name": "Afternoon 513",
+      "address": "1/F, Mui Wo Centre, 3 Ngan Wan Road, Mui Wo",
+      "mealType": [
+        "lantau island",
+        "Italian",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be05ffe5-1795-4976-8d03-0e375f1def08",
+      "name": "黃金地瓜條",
+      "address": "2/F, Disney’s Hollywood Hotel, Hong Kong Disneyland Resort",
+      "mealType": [
+        "lantau island",
+        "International",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "69dc2639-a32c-4e8b-b021-5969b7f47b76",
+      "name": "highest 香煎蝦配意大利烏魚子",
+      "address": "2/F, Silvermine Beach Resort, D.D.2 Lot 648, Silvermine Bay, Mui Wo",
+      "mealType": [
+        "International",
+        "lantau island",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 9,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "511cca21-79d4-4d57-bbe1-fdfa8ea002eb",
+      "name": "紫菜肉鬆小貝 Culinary",
+      "address": "Shop A, 3/F, Grandview Mansion, 11 Mui Wo Ferry Pier Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 5,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0caca54-31b5-4b40-98ea-3f9b7b00ce5d",
+      "name": "house-blended 海膽壽司",
+      "address": "Tomorrowland, Hong Kong Disneyland Park",
+      "mealType": [
+        "Fast Food",
+        "Hong Kong Style",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 6,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "99410bde-1f00-4deb-9126-8eb5283251e1",
+      "name": "28 Arabica Ivan 月見日本 泰式東北小食拼盤",
+      "address": "55 Tong Fuk Village",
+      "mealType": [
+        "hamburger",
+        "International",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f047de93-cdc5-4bf4-83f8-43770d36cfde",
+      "name": "甜辣炸雞",
+      "address": "G/F, 58-99 Tong Fuk Village, Tong Fuk",
+      "mealType": [
+        "Hong Kong Style",
+        "lantau island",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e8edbf5-6297-4d6e-a790-5eea62797cdd",
+      "name": "destination",
+      "address": "昂坪昂坪路寶蓮寺",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 5,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c37b0c3-fbd9-445e-a831-e0b133760912",
+      "name": "雲吞",
+      "address": "Shop 8A, 8/F, Silver Centre Building, 10 Mui Wo Ferry Pier Road",
+      "mealType": [
+        "hamburger",
+        "meatless menu",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7b87791-24d7-4049-b346-68d6f8afd1c0",
+      "name": "Philharmonic's 椰菜木耳鮮肉餃",
+      "address": "7/F, 70 Mui Wo Rural Committee Road, Mui Wo",
+      "mealType": [
+        "hong kong style",
+        "lantau island",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "89648707-6125-41e4-91e0-53a12cd029c9",
+      "name": "energy 壽司凍肉專門店's",
+      "address": "Shop 1, 9/F, Mui Wo Centre, 3 Ngan Wan Road, Mui Wo, Lantau Island",
+      "mealType": [
+        "Coffee Shop",
+        "bakery",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d42a78e4-d0dc-4e80-9147-6d4883775a19",
+      "name": "HANA majestic 椰青沙冰",
+      "address": "ToyStoryLand, Hong Kong Disneyland",
+      "mealType": [
+        "Western",
+        "pizza",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de9de0c2-a1dd-4afc-bee9-6a0351e6509f",
+      "name": "高湯杞子浸菜苗 Josh",
+      "address": "8/F, Hong Kong Disneyland Hotel, Lantau Island",
+      "mealType": [
+        "lantau island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "30d643b6-167c-44ff-90ba-e2fb14792db3",
+      "name": "852 薑蔥炒蟹",
+      "address": "Shop D, 2/F, Grandview Mansion, 11 Mui Wo Ferry Pier Road, Mui Wo",
+      "mealType": [
+        "lantau island",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "20b8a4cf-ebfa-46e3-87c0-f9da73baa8d3",
+      "name": "Bun PROSCIUTTO Kurobuta",
+      "address": "Shop 80-18, Mui Wo Cooked Food Market, Mui Wo Ferry Pier Road, Mui Wo",
+      "mealType": [
+        "Hong Kong Style",
+        "Dai Pai Dong",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9a1c0059-7784-4e22-a52b-6cc5b4c55216",
+      "name": "鯛清湯 peaceful Palace's 菠蘿沙冰 mimc cost",
+      "address": "Hong Kong Disneyland Hotel",
+      "mealType": [
+        "lantau island",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "72421968-b4fa-433a-9e2b-21d63d0e9066",
+      "name": "unlimited 43牛乳桃膠芋圓 layer",
+      "address": "Shop C2, Mui Wo Cooked Food Market, Mui Wo Ferry Pier Road, Mui Wo",
+      "mealType": [
+        "hong kong style",
+        "Cooked Food Center",
+        "Dai Pai Dong"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0cc985b5-7b5d-40cc-a2e8-789efcbee149",
+      "name": "響鈴 Ltd Now",
+      "address": "Wild Appetite at Grizzly Gulch, Hong Kong Disneyland",
+      "mealType": [
+        "lantau island",
+        "Snack Shop & Deli",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5910beb0-6392-47b6-9e1d-82fd14adf099",
+      "name": "可麗餅 和牛三文治 Cua 重慶雞煲 炸雞籃",
+      "address": "Pui O Beach",
+      "mealType": [
+        "lantau island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1c60ecfe-cd50-4d4e-9674-4ede1ed01adb",
+      "name": "焙茶拿鐵 Tempt Uncle 松茸燉湯 Sumito Ozen belts LINGUINE",
+      "address": "Hong Kong Disneyland Park Tomorrowland",
+      "mealType": [
+        "hong kong style",
+        "lantau island",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8c774aee-71dd-4a31-b9f7-c937c2eee222",
+      "name": "Maryland 泰北咖哩全蛋麵",
+      "address": "Main Street USA, Hong Kong Disneyland, Hong Kong",
+      "mealType": [
+        "American",
+        "Coffee Shop",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24c8f1a5-6221-4400-b3de-c141015acc4b",
+      "name": "Grandview Katsugyu",
+      "address": "Shop 09, G/F, Mui Wo Centre, 3 Ngan Wan Road",
+      "mealType": [
+        "Thai",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed8ec903-4858-4e8f-9dd6-01fc86cab805",
+      "name": "蜆肉扁意粉 北京片皮鴨",
+      "address": "Shop C, 10/F, Grandview Mansion, 11 Mui Wo Ferry Pier Road",
+      "mealType": [
+        "Mediterranean",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "da60f162-1451-469a-a7f7-c7b0f373ccec",
+      "name": "燒三文魚手工意粉 chicken enhance 48 Nestled",
+      "address": "G/F, 07 Cheung Sha Lower Village",
+      "mealType": [
+        "salad",
+        "portuguese",
+        "Portuguese"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36bb9ebc-5224-40dc-8625-5926da64f716",
+      "name": "five 芒果大合奏 Bouillabaisse 脆脆平安包",
+      "address": "G/F, 15 Rural Committee Road, Mui Wo",
+      "mealType": [
+        "chinese bbq",
+        "Snack Shop & Deli",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "adc68fd1-15c1-49a9-99e1-29732bb50114",
+      "name": "rooms Century garlic Mazu",
+      "address": "Shop C5, Mui Wo Cooked Food Market, Mui Wo Ferry Pier Road",
+      "mealType": [
+        "lantau island",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c0679a4d-15b5-4124-8e51-d81ad170bd2e",
+      "name": "香蒜蔥花廣島蠔",
+      "address": "G/F, 69C Ngong Ping Estate",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 1,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "883d4ef0-5ee0-46ef-85d9-51e3f941b2b0",
+      "name": "1830 CHAU",
+      "address": "Shop F, 3/F, Seaview Building, 1 Ngan Wan Road, Mui Wo",
+      "mealType": [
+        "Turkish",
+        "Indian",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dded01ed-5d78-42e3-8aed-bef5acbb10a1",
+      "name": "M3-002 黑松露芝士忌廉汁通粉",
+      "address": "Shop 8, 8/F, Ngong Ping Village",
+      "mealType": [
+        "sushi sashimi",
+        "lantau island",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "02b71f40-b480-45e0-a9a4-956f2feaed13",
+      "name": "part ICHIJUISSAI 頂級安格斯肉眼配薯角 Street)",
+      "address": "86 Tung Wan Tou Road",
+      "mealType": [
+        "lantau island",
+        "Mediterranean"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5066f95a-5f71-4c6e-870b-f645653b2732",
+      "name": "松坂壽司麵食鐵板燒Matsuzaka Potluck",
+      "address": "Hong Kong Disneyland Hotel",
+      "mealType": [
+        "lantau island",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9177f4bd-eb4f-4585-b409-27b8128a6dcc",
+      "name": "marbled",
+      "address": "G/F, 03 Islands Nature Heritage Trail, Mui Wo",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "lantau island"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "558da585-e636-4b9d-9556-2609c209d724",
+      "name": "松露蘑菇湯 overlooking barrels",
+      "address": "9 Chung Hou Road, Mui Wo",
+      "mealType": [
+        "lantau island",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 6,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "781f300e-0ddd-4919-92f8-044ca4e02886",
+      "name": "Candela",
+      "address": "Shop 605, 6/F, Mui Wo Centre, 3 Ngan Wan Road, Silver Mine Bay, Mui Wo",
+      "mealType": [
+        "American",
+        "Fast Food",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "10433007-76be-4fac-91e6-18418a9d4ca0",
+      "name": "Fortune Friends",
+      "address": "Adventureland, Hong Kong Disneyland Park",
+      "mealType": [
+        "International",
+        "Vegetarian",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

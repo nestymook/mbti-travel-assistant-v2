@@ -1,0 +1,2121 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T22:41:46.244Z",
+    "version": "1.0.0",
+    "district": "Cheung Chau",
+    "locationCategory": "Islands",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.927Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "b6649c5c-9d0e-413c-92a0-a3f182498788",
+      "name": "特色菌菇湯 Lebanese sunset mai",
+      "address": "Shop 82, Cooked Food Market, 3/F, Cheung Chau Municipal Services Building, 2 Tai Hing Tai Road",
+      "mealType": [
+        "hong kong style",
+        "cheung chau",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 194,
+        "dislikes": 13,
+        "neutral": 47
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b6b75314-e806-4579-94d5-5c56062c74fd",
+      "name": "Tree 清湯蘿蔔牛腩麵 Shrimp",
+      "address": "G/F, 5 Tung Wan Road",
+      "mealType": [
+        "Western",
+        "cheung chau",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 2,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0a48ac84-cb60-4e4f-b18e-cbfb206d3e65",
+      "name": "experimentation 鮑魚辣椒炒肉 Kwok",
+      "address": "G/F, 79 San Hing Street",
+      "mealType": [
+        "Taiwan",
+        "cheung chau",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 8,
+        "neutral": 54
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2efc74ff-516e-48ba-93d7-c89f8480cf45",
+      "name": "traditional 牛三寶河粉 Point的Vietnamese",
+      "address": "Shop C, 3/F, 13 Pak She Praya Road",
+      "mealType": [
+        "Seafood",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 98,
+        "dislikes": 16,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59fb118f-8b31-45a0-a0c0-216389e1027b",
+      "name": "大判燒!黑毛和牛西冷 JunG39",
+      "address": "G/F, 15 Chung Hok Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 144,
+        "dislikes": 4,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "540de5ad-0c76-4e85-a422-63dfd2677cad",
+      "name": "Restaurant’s mochi Power",
+      "address": "G/F, 61 Tai San Praya Road",
+      "mealType": [
+        "wonton dumpling",
+        "Hong Kong Style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 4,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "893dda80-25f3-4caa-8bb3-fd6ad5b0a3c6",
+      "name": "鮨鮪居酒屋",
+      "address": "G/F, 48 Chung Hing Sun Street",
+      "mealType": [
+        "Coffee Shop",
+        "hamburger",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 141,
+        "dislikes": 2,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb3c8c40-087d-4a8e-b42c-0ebfea1e6cfd",
+      "name": "Abroad' Spice instead unparalleled",
+      "address": "G/F, 34 San Hing Street",
+      "mealType": [
+        "skewer",
+        "hong kong style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c09ba46-2a2d-43b8-b8aa-c8a2b34dff70",
+      "name": "蓮香咖啡",
+      "address": "G/F, 97 San Hing Street",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 2,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6fe9a72b-90ba-4900-85d0-8db26fbbd1b0",
+      "name": "Tianfu Shing’s",
+      "address": "4/F, Front Portion, 49 Pak She Street",
+      "mealType": [
+        "cheung chau",
+        "Coffee Shop",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4af6af7-0b98-4907-add4-136a93ce66e5",
+      "name": "鹽燒雞皮",
+      "address": "G/F, 75 San Hing Street",
+      "mealType": [
+        "dessert",
+        "cheung chau",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2ee19bbb-8416-4d91-a4d3-c45322cea2b2",
+      "name": "TamJai true” Silvermine",
+      "address": "G/F, 0A Pak She Fifth Lane",
+      "mealType": [
+        "Coffee Shop",
+        "International",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 75,
+        "dislikes": 0,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d47adb72-3f46-4728-8048-7075c2a7a165",
+      "name": "tested Dara 街頭雞肉串燒 街頭生牛肉湯粉",
+      "address": "G/F, 17C Pak She Praya Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 163,
+        "dislikes": 16,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ee3bd394-955d-4ae9-9995-448f0e42a59c",
+      "name": "擁抱星塵 Nikkei",
+      "address": "G/F, 42 San Hing Praya Street",
+      "mealType": [
+        "cheung chau",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 61,
+        "dislikes": 1,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "094e9367-7d79-4520-b199-d10803c6339c",
+      "name": "9-27 醬油生菜",
+      "address": "G/F, 45 Tsan Tuen Road",
+      "mealType": [
+        "Coffee Shop",
+        "cheung chau",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 2,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b1530f27-df4a-4dca-9eca-e156d01d6713",
+      "name": "Head's 米線．紅薯粉 Frozen",
+      "address": "G/F, 31 Shing Cheong Lane",
+      "mealType": [
+        "taiwan",
+        "hong kong style",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f0a41a8-719e-4711-91cd-271dbed2379c",
+      "name": "Boiled",
+      "address": "G/F, 28 San Hing Street",
+      "mealType": [
+        "cheung chau",
+        "Sweets",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 220,
+        "dislikes": 65,
+        "neutral": 95
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "09dec860-a1b2-4ec7-a100-75358336ea13",
+      "name": "黃 Tsui Victor 鹽燒三文魚飯 紅燒脆皮乳鴿",
+      "address": "G/F, 94AB Tai San Street",
+      "mealType": [
+        "International",
+        "cheung chau",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1b262596-1b8c-4acc-9134-5ffea2c8c933",
+      "name": "黃金原味皮蛋",
+      "address": "G/F, 865 San Hing Back Street",
+      "mealType": [
+        "cake",
+        "cheung chau",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3300a005-2e0a-49db-80d6-18563d1a7bba",
+      "name": "香酥排骨便當",
+      "address": "G/F, 49 San Hing Street",
+      "mealType": [
+        "Western",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22908aa6-f11c-4e19-b70f-e67707042a44",
+      "name": "會安烤乳豬",
+      "address": "G/F, 03B Tai San Praya Road",
+      "mealType": [
+        "Hong Kong Style",
+        "cheung chau",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 5,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2bb5aa06-8cca-4746-bc14-f9b56630c12d",
+      "name": "Chui cake aquarium 江户前玉子燒",
+      "address": "G/F, 60B Pak She Praya Road",
+      "mealType": [
+        "Seafood",
+        "Hong Kong Style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 40,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3ebdac1-33ac-4858-b051-ec3dbec6bdaa",
+      "name": "焗火焰雪山 Sister 香蒜蔥花廣島蠔",
+      "address": "G/F, 86 San Hing Street",
+      "mealType": [
+        "cheung chau",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7e049fc-f884-4fcb-8d69-3b74522edbb9",
+      "name": "REGAL national 鮮肉馬蹄小包 海南鴛鴦燒麵包",
+      "address": "G/F, 39A Pak She Praya Road",
+      "mealType": [
+        "cheung chau",
+        "dessert",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 17,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cecf5bd8-0693-42fb-bfc9-46354c945fee",
+      "name": "GRILLED restaurant",
+      "address": "G/F, 2 Kin San Lane",
+      "mealType": [
+        "Taiwan",
+        "dessert",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4abe4a78-e136-4327-b678-0f1b7b6797d2",
+      "name": "Marume 香脆肉桂條 boisterous",
+      "address": "3/F, Block A, Sea View House, 9 Tai Hing Tai Road",
+      "mealType": [
+        "cheung chau",
+        "dessert",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 109,
+        "dislikes": 8,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6bda8592-9ea2-4488-ba7f-1062bb6cbf97",
+      "name": "Prefecture",
+      "address": "G/F, 69 San Hing Praya Street",
+      "mealType": [
+        "Curry",
+        "cheung chau",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 4,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c0eafbe8-7516-408f-8ac4-29aa5ed5c23f",
+      "name": "G18-G22 嚮和風料理",
+      "address": "G/F, 49 Kin Seng Avenue",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 43,
+        "neutral": 50
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94c20c65-98e5-402e-aa68-6cdfe8feda7d",
+      "name": "鮨山 Sushi king",
+      "address": "G/F, 7-04 Tai Hing Tai Road",
+      "mealType": [
+        "Seafood",
+        "cheung chau",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a0d43b58-0713-4da5-bd68-6b16d978b443",
+      "name": "Cóm 椰菜木耳鮮肉餃 滷肉",
+      "address": "G/F, 18D Pak She Praya Road",
+      "mealType": [
+        "hong kong style",
+        "cheung chau",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 32,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b64401e-ffe8-4965-bbc0-f5ea98728f7a",
+      "name": "커피화전 淨清湯牛腩",
+      "address": "G/F, Hing Lung Back Street",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "df744c39-f9f5-4dc1-818b-4fc4df02eb3a",
+      "name": "gods",
+      "address": "G/F, 99 San Hing Street",
+      "mealType": [
+        "Japanese",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e437ba4a-4f69-49fc-847e-4fc684a93f85",
+      "name": "Indian bustle Sexy",
+      "address": "G/F, 13 San Hing Street",
+      "mealType": [
+        "Western",
+        "cheung chau",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 3,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d2eece17-a2b9-4257-a6f3-020906f329a9",
+      "name": "Indulge Garden",
+      "address": "G/F, 520 Tai San Back Street",
+      "mealType": [
+        "Western",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de7900be-f236-438f-9ad4-f34949121aa5",
+      "name": "黑松露 Rolls popular 香蒜蘑菇 layer Recipe",
+      "address": "G/F, 26 Hak Pai Road",
+      "mealType": [
+        "cheung chau",
+        "wine",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c2f2e8b4-9284-4014-a16c-efa61a231564",
+      "name": "twenty-five",
+      "address": "Shop 3, Cheung Chau Cooked Food Market, 2 Tai Hing Tai Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc2a80a0-0221-4bbd-81f8-a5b488f405a6",
+      "name": "素葷美食 南丫酒家 Lamma",
+      "address": "G/F, 46 San Hing Praya Street",
+      "mealType": [
+        "cheung chau",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1bf5c59-020d-4390-8e98-429b9f06c1ec",
+      "name": "Bad cartoon types superb 生煎包專門店 1998 Instinct",
+      "address": "G/F 45, Kin San Lane",
+      "mealType": [
+        "cheung chau",
+        "Western",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5952697-b487-4bfb-9f90-d07fda3a391e",
+      "name": "D Gujing",
+      "address": "G/F, 973 Tai San Back Street",
+      "mealType": [
+        "Izakaya",
+        "udon",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "54e4249a-28c5-49e6-a035-47a02fce8060",
+      "name": "白鱔滑雞煲仔飯 醬油蟹",
+      "address": "G/F, 98 Tai San Street",
+      "mealType": [
+        "cheung chau",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be0374a8-8ad5-411a-bb78-8cfc8483bf30",
+      "name": "吃三千",
+      "address": "Warwick Hotel Cheung Chau",
+      "mealType": [
+        "cheung chau",
+        "Stir Fry",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c61c630a-d812-41ee-985d-69ead612ec68",
+      "name": "American-style",
+      "address": "新興街",
+      "mealType": [
+        "Hong Kong Style",
+        "Snack Shop & Deli",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bcdf38b5-263a-4105-ab73-d24d91bc996a",
+      "name": "Pub gluten",
+      "address": "G/F, 9 Kin San Lane",
+      "mealType": [
+        "singaporean",
+        "Singaporean",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "430278e2-14d7-4475-a902-149da8ad215a",
+      "name": "炸兩 213 succulent 紅肉火龍果 龍捲風沙律",
+      "address": "G/F, 85 Tung Wan Road",
+      "mealType": [
+        "german",
+        "cheung chau",
+        "German"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 5,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "09ba4909-b843-4ae6-b9fc-18d811ab57d0",
+      "name": "(蔡氏大廈)",
+      "address": "G/F, 8 Kin San Lane",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "770dc28c-951c-4431-8432-55371aa79be9",
+      "name": "buttered Mongolia cap",
+      "address": "G/F, 10A Pak She Praya Road",
+      "mealType": [
+        "Stir Fry",
+        "cheung chau",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 8,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "601ffd9f-ec78-4935-a836-59077142e40e",
+      "name": "hours Peak addition",
+      "address": "0-1/F, Eastern Commercial Plaza, 80 Tung Wan Road",
+      "mealType": [
+        "cheung chau",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b81c02f2-dd9f-4b07-94f6-df3e89f28713",
+      "name": "underestimated chain 瑞士芝士安格斯 芝士雪糕",
+      "address": "G/F, 49A Pak She Praya Road",
+      "mealType": [
+        "cheung chau",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 1,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1eea44fc-c181-4663-83c4-e7b6780aa920",
+      "name": "nouvelle Passion 白松露蟹肉沙律 kebab",
+      "address": "G/F, 6A Pak She Praya Road",
+      "mealType": [
+        "Guangdong",
+        "Seafood",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 13,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd6a89c4-9922-4cef-984d-12558411001c",
+      "name": "ginger JUST'er 芝心海皇千絲春卷",
+      "address": "G/F, 01 San Hing Street",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ad3a2f8-ece2-4a28-b573-85825c41ee27",
+      "name": "overall",
+      "address": "Shop 50 & 51, Cooked Food Market, 1/F, Cheung Chau Municipal Services Building, 2 Tai Hing Tai Road",
+      "mealType": [
+        "Hong Kong Style",
+        "congee",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f1784dd-fbc6-4341-9a8a-c2b3974a7d73",
+      "name": "goose launched 新鮮魷魚鬚 粟米濃湯",
+      "address": "3/F, 087 Tai San Praya Road",
+      "mealType": [
+        "hong kong style",
+        "Takeaway",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "99d1bf25-dbd4-44c7-9a91-fad7aa3b2b1d",
+      "name": "香煎帶子蕎麥薄餅 900°C 潮州炒飯",
+      "address": "G/F, 755 San Hing Back Street",
+      "mealType": [
+        "cheung chau",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 4,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22b1a9e0-4957-4245-b6da-fae2ab3aac7e",
+      "name": "Turkey 仁記's tableware",
+      "address": "G/F, 56 Praya Street",
+      "mealType": [
+        "Snack Shop & Deli",
+        "cheung chau",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb466fba-471c-40f5-8f99-a98df448e7b4",
+      "name": "Xiangshu 芒果西米露 standing",
+      "address": "G/F, 0 San Hing Praya Street",
+      "mealType": [
+        "bbq",
+        "Thai",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0cb641ad-1284-4c94-ae58-3d5738b19294",
+      "name": "雞湯烏冬 pickled",
+      "address": "G/F, 72 Tai San Street",
+      "mealType": [
+        "cheung chau",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3e4db68e-740b-4ef5-a16d-5ac48966eb42",
+      "name": "tables 港式菠蘿酸種包",
+      "address": "G/F, 116 Tai San Praya Road",
+      "mealType": [
+        "dessert",
+        "hong kong style",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9421b6f1-337d-4fd8-aac8-c75c0a2f3e0c",
+      "name": "within",
+      "address": "Shop 4, 3/F, Sea View House, 7-12 Tai Hing Tai Road",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5dd678f6-3857-45f5-99f2-192d8976ff01",
+      "name": "Diners Pa kofta originate work-weary",
+      "address": "24 Pak She Street",
+      "mealType": [
+        "bakery",
+        "hong kong style",
+        "cheung chau"
+      ],
+      "sentiment": {
+        "likes": 48,
+        "dislikes": 1,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "df125643-a65a-4b1f-812b-772a69fce044",
+      "name": "Sorbet",
+      "address": "Shop 7, 2/F, Cheung Chau Cooked Food Market, 2 Praya Street",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Chueng Chau",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

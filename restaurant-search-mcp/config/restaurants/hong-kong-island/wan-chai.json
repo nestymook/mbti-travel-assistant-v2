@@ -1,0 +1,7739 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T18:27:27.750Z",
+    "version": "1.0.0",
+    "district": "Wan Chai",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 225,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.781Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "9ab89180-22be-44b8-b471-b78e316dc8cf",
+      "name": "Savoury",
+      "address": "3/F, KONNECT, 303 Jaffe Road",
+      "mealType": [
+        "Hot Pot",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 256,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22f0d640-463d-4269-be1a-95e8e0fe41f8",
+      "name": "level Cats' architectural",
+      "address": "6/F, Wai Cheong Building, 5-9A Gresson Street",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 1006,
+        "dislikes": 28,
+        "neutral": 57
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e3b6cb07-86e7-47fc-871d-def1a9fc40a4",
+      "name": "Alaska simmer",
+      "address": "6/F, 851 Hennessy Road",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 438,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d6b04b4c-7ccd-417b-880e-8d396a4d317a",
+      "name": "滷水鵝肉拼盤 海鮮日式茶碗蒸 demonstrate",
+      "address": "2/F, 88 Swatow Street",
+      "mealType": [
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 540,
+        "dislikes": 14,
+        "neutral": 64
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0e7ceec2-fead-4f10-a237-b2ce4655999d",
+      "name": "The",
+      "address": "6/F, 90 Ship Street",
+      "mealType": [
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 753,
+        "dislikes": 9,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "93fdef1b-a7a1-4076-be03-bd942ee00625",
+      "name": "前菜",
+      "address": "Shop 4, 3/F, 2 Landale Street",
+      "mealType": [
+        "French",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 962,
+        "dislikes": 42,
+        "neutral": 84
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "98ad12cf-50d3-4365-9aee-33781ef48bd6",
+      "name": "清酒生蠔 蒜香牛油酒煮蜆",
+      "address": "Shop 8D, 8/F, Newman House, 35-45 Johnston Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "sweet soup"
+      ],
+      "sentiment": {
+        "likes": 367,
+        "dislikes": 4,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c0a3fea-7eac-4ca7-aead-9a43e7382849",
+      "name": "tank 橙花蝦球",
+      "address": "Shop 904, 9/F, Wing Tak Building, 15 Canal Road West",
+      "mealType": [
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 358,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a4562955-ac67-43a0-9612-366708ff3e1b",
+      "name": "Patagonia Through supporting",
+      "address": "Shop 2C, 2/F, Sun Hey Mansion, 68 Hennessy Road",
+      "mealType": [
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 439,
+        "dislikes": 8,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9d416b35-c315-4e6f-b478-bbdd552a3f7a",
+      "name": "喇沙 British flavoursome locally",
+      "address": "Shop 967-421, 3/F, Hopewell Centre, 183 Queen's Road East",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 411,
+        "dislikes": 19,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b3dd64b8-cd21-423f-8aa9-794f23c7070f",
+      "name": "經典雞肉 Master's",
+      "address": "6/F, 939 Hennessy Road",
+      "mealType": [
+        "Spanish",
+        "spanish",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 378,
+        "dislikes": 26,
+        "neutral": 87
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "67c77a35-300b-4529-ab36-f543ed42ec49",
+      "name": "千層海膽飯 Kako's",
+      "address": "Shop 287, 2/F, Lee Tung Avenue, 200 Queen's Road East",
+      "mealType": [
+        "Japanese",
+        "udon",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 372,
+        "dislikes": 32,
+        "neutral": 55
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c116756d-64eb-431d-8d5e-720867d2bef3",
+      "name": "architecture",
+      "address": "3/F, Chun Fai Building, 1-11 Spring Garden Lane",
+      "mealType": [
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1061,
+        "dislikes": 24,
+        "neutral": 87
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f5ed866-4003-4995-98cc-d9eeb2ddb8d5",
+      "name": "brisket 拔道腩雞飯 生薑檸檬吞拿魚",
+      "address": "Shop C, 2/F, 55 Johnston Road",
+      "mealType": [
+        "Taiwan",
+        "noodles rice noodles",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 537,
+        "dislikes": 39,
+        "neutral": 47
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0f87fd82-9808-410e-a0de-0adfe5469c76",
+      "name": "特色海景餐廳 Combining Sour",
+      "address": "3/F, Hing Wong Court, 21-23 Tai Wong Street East",
+      "mealType": [
+        "Curry",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 448,
+        "dislikes": 11,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b19b501d-ed93-4312-9244-a29d2049bf5b",
+      "name": "芝心蝦多士 特上海宝丼",
+      "address": "Shop 398, 104A, 105A & 106-108, 1/F, Sun Hung Kai Centre, 30 Harbour Road",
+      "mealType": [
+        "Korean",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 813,
+        "dislikes": 9,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "895e4fad-1027-4f80-bb05-bf7388215ac6",
+      "name": "秘製麻辣煮花螺 嚐喜大不同特色餐廳小廚 overlooks",
+      "address": "8/F, 45 Wan Chai Road",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 828,
+        "dislikes": 15,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2fc40757-3535-4c06-9e02-6db474c68bbd",
+      "name": "Boho Shunde",
+      "address": "0/F, Wan Chai Commercial Centre, 194-204 Johnston Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 280,
+        "dislikes": 26,
+        "neutral": 67
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6a0488e9-0580-439c-9c9b-257c4f702553",
+      "name": "venues Your",
+      "address": "Shop A, 1/F, Times Tower, 391-407 Jaffe Road",
+      "mealType": [
+        "Izakaya",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 335,
+        "dislikes": 5,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e9e8435-e025-43bb-97af-9e88c057db7f",
+      "name": "乜蟹都有丼 黑芝麻白玉芝士蛋糕",
+      "address": "Shop B, 3/F, Hang Tak Building, 1 Electric Street",
+      "mealType": [
+        "French"
+      ],
+      "sentiment": {
+        "likes": 396,
+        "dislikes": 16,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "69227a5e-cf62-4a8d-9e69-3fde5560ec15",
+      "name": "柚香叉燒菜飯 Turkey",
+      "address": "2/F, 93 Wan Chai Road",
+      "mealType": [
+        "Private Kitchen",
+        "Seafood",
+        "fine dried seafood"
+      ],
+      "sentiment": {
+        "likes": 511,
+        "dislikes": 7,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5992e703-12f6-4094-8520-be3a52fd733c",
+      "name": "recommending",
+      "address": "2/F, 48 Tai Wong Street East",
+      "mealType": [
+        "Western",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 697,
+        "dislikes": 25,
+        "neutral": 131
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a4eb7035-f0d6-408c-8fcf-d6173f12ae66",
+      "name": "Halfway Sorbet",
+      "address": "3/F, 14 Stone Nullah Lane",
+      "mealType": [
+        "Thai",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 375,
+        "dislikes": 29,
+        "neutral": 87
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7ff3296d-0c3f-4747-a9a8-bfd273332842",
+      "name": "平安包 momo",
+      "address": "2/F, 9 Wan Chai Road",
+      "mealType": [
+        "Vegetarian",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 481,
+        "dislikes": 23,
+        "neutral": 91
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "51b877bd-0e3e-4f65-b615-53e799f3cc6b",
+      "name": "頂立海 play Canton 蘆筍豚肉卷 107",
+      "address": "07/F, 773 JOHNSTON, 206-212 Johnston Road",
+      "mealType": [
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 266,
+        "dislikes": 12,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca1dc453-7bbb-4c7a-a2cb-040ffacc471f",
+      "name": "Lavender Mongkok",
+      "address": "1/F, 5 Tin Lok Lane",
+      "mealType": [
+        "Singaporean",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "723062f0-f8f3-4fbc-9be1-c2ee6991a471",
+      "name": "lovers! 芒果糯米糍 Sharpener Muglan 布甸撻 Hiroshima",
+      "address": "Shop 306, 3/F, Dandenong Mansion, 379-389 Jaffe Road",
+      "mealType": [
+        "Stir Fry",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 492,
+        "dislikes": 30,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a441556-f8aa-4113-962a-2b823404bfbe",
+      "name": "almost",
+      "address": "2/F, Heng Shan Centre, 141-145 Queen’s Road East",
+      "mealType": [
+        "Japanese",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 194,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9a5e3a2-71dd-4126-a5f6-d3cae9b730f9",
+      "name": "Make since",
+      "address": "8/F, Bayfield Building, 99 Hennessy Road",
+      "mealType": [
+        "Western",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 311,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "61a18b9a-f658-4111-927d-231292f6ee2e",
+      "name": "exude 大牌檔Good 軟殼蟹意粉 Hwajeon \"The shabu",
+      "address": "Shop 9, 2/F, Fortis Tower, 117-119 Jaffe Road",
+      "mealType": [
+        "Chiu Chow",
+        "chiu chow",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 328,
+        "dislikes": 8,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2cc2e372-b49d-4b4a-8b56-3f4fae748b10",
+      "name": "Unnie炸雞翼 牛三寶河粉 Kibbeh",
+      "address": "Shop 16, 1/F, Wah To Building, 22-30 Cross Lane",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 258,
+        "dislikes": 6,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e32785d1-afa5-48fd-b6b2-1d1c9c39259c",
+      "name": "cups",
+      "address": "7/F, The Wharney Guang Dong Hotel Hong Kong, 57-73 Lockhart Road",
+      "mealType": [
+        "Guangdong",
+        "Seafood",
+        "hunan"
+      ],
+      "sentiment": {
+        "likes": 213,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "380d161a-75df-41e9-9c11-744ef286ed7b",
+      "name": "華田飄雪 McCafe's Mon potato",
+      "address": "3/F, On Hing Mansion, 2-4 Tai Wong Street East",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 157,
+        "dislikes": 7,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71a337e1-2808-47c2-a8cb-5129848fe4b5",
+      "name": "Bestow L Vegelink",
+      "address": "43/F, QRE Plaza, 202 Queen's Road East",
+      "mealType": [
+        "Seafood",
+        "International",
+        "salad"
+      ],
+      "sentiment": {
+        "likes": 911,
+        "dislikes": 6,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38dc099b-d395-4f92-83c8-ebe5f23fdc7b",
+      "name": "香煎鵝肝配焦糖洋蔥吐司 time forefront",
+      "address": "6/F, Fortune Building, 150-158 Lockhart Road",
+      "mealType": [
+        "Coffee Shop",
+        "Pet Friendly",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 230,
+        "dislikes": 8,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9cc52792-cbca-45dd-88bc-556e1b9fe088",
+      "name": "wasabi",
+      "address": "4/F & 5/F, 128 Lockhart Road",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 620,
+        "dislikes": 6,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "16fe23aa-7ae6-4838-a733-8700d915ade6",
+      "name": "stall barbecue",
+      "address": "Shop E, 2/F, De Fenwick, 42-50 Lockhart Road",
+      "mealType": [
+        "hamburger",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 1126,
+        "dislikes": 24,
+        "neutral": 100
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4ff3d520-c11c-444b-a9a2-b4e40ec69de3",
+      "name": "黑朱古力流心布丁梳乎厘 servings neighborhood Banpo 蚵仔大腸麵線",
+      "address": "3/F, 33 Spring Garden Lane",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 361,
+        "dislikes": 35,
+        "neutral": 88
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7012d628-7070-473c-a3ec-ff5c64cd473c",
+      "name": "Asia TOO Sushi's ocean",
+      "address": "Shop 4, 4/F, GARDENEast serviced apartments, 222 Queen's Road East",
+      "mealType": [
+        "noodles rice noodles",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 311,
+        "dislikes": 8,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2458e762-7bac-4d59-bc64-713bbd91e212",
+      "name": "point Walt's 雪花肥牛",
+      "address": "20/F, QRE Plaza, 202 Queen's Road East",
+      "mealType": [
+        "Seafood",
+        "Oyster Bar",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 274,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a47eb3e3-0540-4e5f-b0ca-629381a4d1f9",
+      "name": "Hualien 潮汕牛骨湯底",
+      "address": "7/F, 9-8 Swatow Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 447,
+        "dislikes": 16,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "67709a14-6005-405c-8f0f-ebbbac55e742",
+      "name": "越式撈米粉",
+      "address": "2/F, 60 Amoy Street",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 269,
+        "dislikes": 16,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c0151d70-d253-4de4-a8a4-e2dd1b9f5d04",
+      "name": "BELLAVISTA casts",
+      "address": "8/F, 92 Hennessy Road",
+      "mealType": [
+        "singaporean",
+        "noodles rice noodles",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 290,
+        "dislikes": 17,
+        "neutral": 63
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "399b9e64-114c-4f53-bca1-d8eec8708208",
+      "name": "Muntmtplaza的JapaneseSushi/SashimiFamily 脆鯇魚片",
+      "address": "Shop B, 1/F, YF life Tower, 33 Lockhart Road",
+      "mealType": [
+        "roast meat",
+        "Japanese",
+        "bbq"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "662aa899-699d-45ef-84c3-d6a1d3bdc3b3",
+      "name": "IM 士多啤梨大黃醬窩夫配自選雪糕 chili",
+      "address": "Shop B, 9/F, Nam Hoy Building, 154 Wan Chai Road",
+      "mealType": [
+        "Japanese",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 114,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f477043-885a-4272-a715-64e510542636",
+      "name": "restaurant guo 炸蟹餅",
+      "address": "Shop 8, 7/F, Wah Yan Court, 2-3 Triangle Street",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 360,
+        "dislikes": 26,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a15f5f1d-a59d-4813-8bc9-fb44781aa9c9",
+      "name": "鹽燒白鱔煲仔飯",
+      "address": "B8/F, The Charterhouse Causeway Bay Hotel, 209-210 Wan Chai Road",
+      "mealType": [
+        "International",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 174,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3c87849-7e63-4ca4-a940-0e44c075f7a6",
+      "name": "wonder fast",
+      "address": "11/F, Yee Sik Mansion, 30 Swatow Street",
+      "mealType": [
+        "skewer",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 163,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1901d7ed-a94d-4ead-9b8e-4faeae5f72c2",
+      "name": "自家製免治雞肉棒 Knafeh Da",
+      "address": "2/F, 47 Tai Wong Street East",
+      "mealType": [
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 203,
+        "dislikes": 16,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b2244201-5e7c-4ff8-9634-944e7ce92a61",
+      "name": "Elephant",
+      "address": "6/F, 6 Ship Street",
+      "mealType": [
+        "spanish",
+        "Spanish"
+      ],
+      "sentiment": {
+        "likes": 87,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0393e124-bdcc-4bcd-a720-22a3fe5d0f1f",
+      "name": "杉玉薯仔沙律 MUM’s 小章魚五花肉 海南雞飯配蘇東魚丸雞湯 Graham venues aesthetics",
+      "address": "12/F, 020 Lockhart Road",
+      "mealType": [
+        "skewer",
+        "Hot Pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 3,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80d599f8-b70a-42e3-88f2-1845e17f14a1",
+      "name": "免治牛肉薯仔沙律 TONG",
+      "address": "5/F, Gloucester Luk Kwok Hong Kong, 72 Gloucester Road",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 176,
+        "dislikes": 6,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de4ea6fa-b61b-4bb2-9782-43599045031b",
+      "name": "Ku Shaanxi high-quality Natural Kee",
+      "address": "Shop A & B, 11/F, The Johnston, 74-80 Johnston Road",
+      "mealType": [
+        "noodles rice noodles",
+        "Taiwan",
+        "taiwanese drink"
+      ],
+      "sentiment": {
+        "likes": 170,
+        "dislikes": 8,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9d796f7b-7525-4c48-a557-43e36d01d8c1",
+      "name": "Nine 火焰橙酒可麗餅",
+      "address": "Shop E, 7/F, Kam Sing Mansion, 151-153 Jaffe Road",
+      "mealType": [
+        "Coffee Shop",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 235,
+        "dislikes": 15,
+        "neutral": 60
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "45f82ed4-80d1-4e7f-b10a-14b22b4bfa45",
+      "name": "羊腩煲 Toffee 日本料理 $60",
+      "address": "Shop C, 1/F, Wah Fat Mansion, 405-419 Lockhart Road",
+      "mealType": [
+        "Korean",
+        "korean fried chicken"
+      ],
+      "sentiment": {
+        "likes": 279,
+        "dislikes": 16,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c67abf1-9dec-43da-9f5e-e1f87ed32809",
+      "name": "tailor-made bouche looking Outdark",
+      "address": "2/F, David House, 37-39 Lockhart Road",
+      "mealType": [
+        "Curry",
+        "certified halal food",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 319,
+        "dislikes": 7,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f2cf68b9-a0dd-4fbd-baa4-fbd7782997a7",
+      "name": "God African",
+      "address": "Shop 4&2, 2/F, Keen Hung Commercial Building, 80 Queen's Road East",
+      "mealType": [
+        "Coffee Shop",
+        "bakery",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 225,
+        "dislikes": 7,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a21c4045-a16d-40dc-9439-029b61cc9403",
+      "name": "HOME 咖啡骨",
+      "address": "Shop 5, 6/F, Fasteem Building, 307-311 Jaffe Road",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 7,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "43376eca-f977-49c1-b69f-dba8415566dc",
+      "name": "Tokio",
+      "address": "Shop A, 2/F, Winland Square, 318 Hennessy Road",
+      "mealType": [
+        "omakase",
+        "Japanese",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 141,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3fdea54-cf63-4a1b-9863-07b286a585fd",
+      "name": "Namaste",
+      "address": "2/F, QRE Plaza, 202 Queen's Road East",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "robatayaki"
+      ],
+      "sentiment": {
+        "likes": 253,
+        "dislikes": 6,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d20a279a-7cc5-41f4-af4c-a134341a90e9",
+      "name": "軟殼蟹黑松露忌廉汁意粉 required",
+      "address": "3/F, 73 Swatow Street",
+      "mealType": [
+        "Japanese",
+        "Curry",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 403,
+        "dislikes": 34,
+        "neutral": 124
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b63ead4f-46d8-4fb3-a478-5e42d9913f25",
+      "name": "半肥不瘦蜜餞叉燒 cooperate",
+      "address": "Shop 9&10, 4/F, Pao Yip Building, Ship Street",
+      "mealType": [
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 4,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2df3d921-0b9e-418f-87fb-4c3af1548b76",
+      "name": "滑蛋吉列豬扒飯 described 紅油抄手",
+      "address": "3/F, Kui Chi Mansion, 100-102 Queen's Road East",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 342,
+        "dislikes": 4,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbae7d0e-e4fb-4b1a-b826-b81ec8aa9a1b",
+      "name": "Chiu",
+      "address": "Mezzanine Floor, Grand Hyatt Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "Buffet",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 495,
+        "dislikes": 69,
+        "neutral": 150
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5fc8f9d8-b5dd-4f94-89a6-0f191fba5af9",
+      "name": "preparation",
+      "address": "Shop A, 1/F, Yee Hong Building, 212-214 Wan Chai Road",
+      "mealType": [
+        "Shanxi (Jin)",
+        "shanxi jin",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 207,
+        "dislikes": 11,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b38633c5-27d7-4d4a-ace8-e6c5fe4fb2e5",
+      "name": "Chicago 全蛋雞蛋糕 如魚得水",
+      "address": "2/F, 15 Johnston Road",
+      "mealType": [
+        "Stir Fry",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 437,
+        "dislikes": 36,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ebbe27de-2f16-43c7-89ea-a9306e5cecb2",
+      "name": "Daokeaw Spiga",
+      "address": "0/F, Kui Chi Mansion, 100-102 Queen's Road East",
+      "mealType": [
+        "dessert",
+        "Western",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 451,
+        "dislikes": 14,
+        "neutral": 62
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "36cfb1a3-1f5d-4669-bc8b-a7317ad401a5",
+      "name": "巴馬臣芝士薯條",
+      "address": "Shop B, 6/F, Pinnacle Building, 9 Ship Street",
+      "mealType": [
+        "International"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13572984-7b0b-44fa-99c7-d6b58cc0c23c",
+      "name": "A2 365.co",
+      "address": "1/F, The Emperor Hotel, 373 Queen's Road East",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 281,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "70b60a3f-95d6-4f19-bd01-495168cddd92",
+      "name": "chefs",
+      "address": "Shop D, 4/F, 7-17 Amoy Street",
+      "mealType": [
+        "Vegetarian",
+        "soup",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 2,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "25bc47b2-bd1a-4e41-b63d-17fb9158cec3",
+      "name": "four 南丫海景民豐海鮮酒家Lamma Lower",
+      "address": "76/F, Hopewell Centre, 183 Queen's Road East",
+      "mealType": [
+        "Buffet",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 264,
+        "dislikes": 40,
+        "neutral": 104
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "28fe49d9-551c-4853-90bb-4be92520d25f",
+      "name": "cooked Exclusive",
+      "address": "79/F, QRE Plaza, 202 Queen's Road East",
+      "mealType": [
+        "shanghai",
+        "Beijing",
+        "beijing"
+      ],
+      "sentiment": {
+        "likes": 392,
+        "dislikes": 35,
+        "neutral": 47
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ea1fc913-6b02-4fda-ae46-8172421452f6",
+      "name": "Canteen 薯餅",
+      "address": "6/F, 1-2 Swatow Street",
+      "mealType": [
+        "American"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f16e7d35-c32c-4086-84ea-f6140c426768",
+      "name": "Bun",
+      "address": "1/F, 76 St. Francis Yard",
+      "mealType": [
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 248,
+        "dislikes": 11,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "41518c4b-1207-4afb-84ba-ca7a41407691",
+      "name": "蔥油豬扒煎蛋飯 豪華海鮮茶漬飯 精選意大利前菜",
+      "address": "Shop B, 1/F, 8 Star Street",
+      "mealType": [
+        "Italian",
+        "Brunch",
+        "Family Friendly"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c06a6984-f5c0-4770-958e-b3398e3bfdc3",
+      "name": "黑芝麻凍撞奶 喜鳳冰室 mora tempura became",
+      "address": "Shop 9-8, 6/F, Block C & D, Kwong Sang Hong Building, 6 Heard Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 176,
+        "dislikes": 16,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be492a0f-6fb1-4551-932b-8e64819e2ae5",
+      "name": "daring coffees",
+      "address": "9/F, Grand Hyatt Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "Fine Dining",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 148,
+        "dislikes": 9,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "691a2a87-a73d-41e9-94fb-3618e035a578",
+      "name": "roasted",
+      "address": "3/F, The St. Regis Hong Kong, 1 Harbour Drive",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 129,
+        "dislikes": 5,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "075a7cbc-8f90-4ab0-b6ba-07f3ed430d65",
+      "name": "doughs 布蕾醬焦糖脆脆雪糕牛角窩夫",
+      "address": "8/F, Gloucester Luk Kwok Hong Kong, 72 Gloucester Road",
+      "mealType": [
+        "Buffet",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 367,
+        "dislikes": 28,
+        "neutral": 65
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f2a3655-d3c9-4a4b-91f2-831db11f3abf",
+      "name": "Brick",
+      "address": "Shop A-B, 2/F, 211 Johnston Road",
+      "mealType": [
+        "noodles rice noodles",
+        "Yunnan",
+        "yunnan"
+      ],
+      "sentiment": {
+        "likes": 100,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3344262d-76d3-461c-8ca2-8486332dbc80",
+      "name": "Poutine Benny",
+      "address": "1/F, 75 Amoy Street",
+      "mealType": [
+        "taiwan",
+        "Taiwan",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 200,
+        "dislikes": 7,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aeffce36-8393-4b3a-8cfe-d276855bc25d",
+      "name": "Dionysus 星巴克咖啡STARBUCKS parties",
+      "address": "3/F, 4 Star Street",
+      "mealType": [
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 122,
+        "dislikes": 4,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "edcf66d2-f25f-4ae2-9d43-1676e291b12c",
+      "name": "Simple",
+      "address": "LG1/F, Empire Hotel Hong Kong - Wan Chai, 33 Hennessy Road",
+      "mealType": [
+        "Malaysian",
+        "malaysian"
+      ],
+      "sentiment": {
+        "likes": 166,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "796fa400-f188-49dc-b613-b7b0d8cb7639",
+      "name": "豬膶麵",
+      "address": "7/F, Cheong Ip Building, 354 Hennessy Road",
+      "mealType": [
+        "chinese bbq",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0cfea00f-dec2-49b2-844e-ffa2ea8f1afe",
+      "name": "焦糖香蕉班戟",
+      "address": "2/F, Chuang's Enterprises Building, 382 Lockhart Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Taiwan",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7e599faa-e9db-4112-94d2-42bd7811576b",
+      "name": "dates AIA",
+      "address": "Shop 8, 5/F, Po Chi Court, 15 Ship Street",
+      "mealType": [
+        "Steak House",
+        "wine",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 7,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e57e9569-e43d-46e2-ab97-51dbb2810b20",
+      "name": "Q版菠蘿包口味雞蛋仔 Mercury 美國黑安格斯牛肉 ThaiMum",
+      "address": "4/F, Renaissance Harbour View Hotel Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "Western",
+        "Bar",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 7,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "753f2ab9-19c9-4284-8101-85f1e3247490",
+      "name": "海南雞飯",
+      "address": "Shop 2-44, 2/F, Tonnochy Towers, 254-272 Jaffe Road",
+      "mealType": [
+        "Vegetarian",
+        "dessert",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "859ea0f1-a629-4ba6-83c1-60447c68c852",
+      "name": "twenty-five SOUP Délifrance's",
+      "address": "Shop A, 1/F, Wing Shing Building, 7 Cross Lane",
+      "mealType": [
+        "Steak House",
+        "Western",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 146,
+        "dislikes": 6,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "499047d4-21b2-4523-9cf7-dec7f4446f3f",
+      "name": "hoo travelers Petrus (新禧大樓) Canal",
+      "address": "Shop 89, 7/F, Brim 28, Causeway Centre, 28 Harbour Road",
+      "mealType": [
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 118,
+        "dislikes": 12,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0568e67-e4a7-49d0-9f0a-27ae08119efc",
+      "name": "shipped",
+      "address": "Shop 2, B/F, 18 Ship Street",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "robatayaki"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa501bfb-1dfd-440c-8606-c0d7139ef5e2",
+      "name": "Louise",
+      "address": "Shop 3, 1/F, J Senses, 60 Johnston Road",
+      "mealType": [
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 6,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e9d079f-f2c9-45cd-8c5c-6a7d2abc4c02",
+      "name": "咖哩角 It's waffles",
+      "address": "7/F, The St. Regis Hong Kong, 1 Harbour Drive",
+      "mealType": [
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 134,
+        "dislikes": 12,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4f3e42ee-dc94-4927-b6cf-32dfed6f30e8",
+      "name": "wonder",
+      "address": "6/F, The St. Regis Hong Kong, 1 Harbour Drive",
+      "mealType": [
+        "French",
+        "Fine Dining"
+      ],
+      "sentiment": {
+        "likes": 109,
+        "dislikes": 8,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bdd81f04-cfda-47aa-b03e-9f8ba0b01243",
+      "name": "reunion KOBAKO Carrot View",
+      "address": "1/F, 57 Morrison Hill Road",
+      "mealType": [
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 4,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8db8848-cf10-4aa4-a11e-6babb4a3e4e3",
+      "name": "portions Plaza 玫瑰凍鴿",
+      "address": "Shop 1, 3/F, Rialto Building, 2 Landale Street",
+      "mealType": [
+        "bbq",
+        "Japanese",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 96,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "26ca7c90-2014-446d-8b38-b11674859172",
+      "name": "叻沙 ex-head 野生生猛龍蝦 香芒糯米糍",
+      "address": "Shop 2, 8/F, 2 Landale Street",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "chinese bbq"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 8,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dd43b468-897c-430a-9dc6-59a83ae76073",
+      "name": "HOT",
+      "address": "Shop A, 1/F, YF Life Tower, 33 Lockhart Road",
+      "mealType": [
+        "Western",
+        "Steak House",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c27f819c-0221-40da-a218-3035eb88fbf0",
+      "name": "PACIFIC beyond",
+      "address": "Shop D, 2/F, Sun Hey Mansion, 68-76 Hennessy Road",
+      "mealType": [
+        "Hong Kong Style",
+        "chinese bbq",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 9,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad9918d9-ca91-4e43-833c-8485f2c2ed99",
+      "name": "清真牛肉餅",
+      "address": "Shop A, 1/F, New Sun House, 6-7 Sun Street",
+      "mealType": [
+        "wine",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3469a2be-603a-40af-9b8a-30a0f848851b",
+      "name": "combines",
+      "address": "Shop A1, 3/F, Mountain View Mansion, 4 Swatow Street",
+      "mealType": [
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 81,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "572bd3c4-6c9c-48f7-a38f-c300845c842d",
+      "name": "North lighthearted Udon",
+      "address": "7/F, Grand Hyatt Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "Steak House",
+        "Fine Dining",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 229,
+        "dislikes": 22,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1a8fa3d3-d423-416f-90d8-dd2a0be924e1",
+      "name": "鰹魚半敲燒 Days",
+      "address": "7/F, Great Eagle Centre, 23 Harbour Road",
+      "mealType": [
+        "Stir Fry",
+        "chinese bbq",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a2eca5e4-6d6f-4d04-b821-bf432ff26d55",
+      "name": "birthplace 豚肉 香辣蒜片欖油大蝦意粉",
+      "address": "Shop 8B, 8/F, Guardian House, 32 Oi Kwan Road",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 12,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d48ab447-e1e5-459e-8359-2d58f5efbd08",
+      "name": "Africa 3.3 烏魚子元貝手作麵",
+      "address": "Shop B&C, 1/F, The Hennessy, 256 Hennessy Road",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 76,
+        "dislikes": 9,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e12e32ea-7fd8-494a-9783-a046a58e0060",
+      "name": "couple 36 rooted",
+      "address": "Shop A & B, 6/F, 216-218 Hennessy Road",
+      "mealType": [
+        "Stir Fry",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 188,
+        "dislikes": 10,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "85bf4665-f922-4c38-a53d-b87e32a6defe",
+      "name": "Portuguesa Trang",
+      "address": "6/F, 64 Tai Wong Street East",
+      "mealType": [
+        "taiwan",
+        "taiwanese drink",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 4,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ceb354be-f9b0-451d-893b-403209b81e7e",
+      "name": "include DINELAND Ohlalagout (THE appeared",
+      "address": "Shop 62 & 65, 6/F, Lee Tung Avenue, 200 Queen’s Road East",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "British"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 4,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e0b6092-e342-48a0-a157-6a7d557354ca",
+      "name": "selects",
+      "address": "Shop A&B, 1/F, 2-12 Moon Street",
+      "mealType": [
+        "All Day Breakfast",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 170,
+        "dislikes": 5,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a43df969-f862-4e80-a471-7fa623033d42",
+      "name": "bus",
+      "address": "Shop 8A-3, 2/F, Sun Hung Kai Centre, 30 Harbour Road",
+      "mealType": [
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 114,
+        "dislikes": 3,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1d762480-3258-457d-9f59-02c85007df9e",
+      "name": "Series 云手工火鍋店",
+      "address": "9/F, Wan Chai Ferry Pier",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 156,
+        "dislikes": 18,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b1f25443-5263-4d35-86e9-42bf2462d262",
+      "name": "แผนที่ร้าน Candela order side Rogan",
+      "address": "Shop 7255-1711, 17, Hopewell Centre, 183 Queen's Road East",
+      "mealType": [
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 1,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca7214af-a481-458d-a42b-184d8ee04dfe",
+      "name": "滑蛋豬扒丼 hall 心動榛子梳乎厘 Fuji",
+      "address": "Shop 135&126A, 1/F, Lee Tung Avenue, 200 Queen's Road East",
+      "mealType": [
+        "Coffee Shop",
+        "ice cream yogurt",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 334,
+        "dislikes": 12,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0993acf6-ba22-4c25-8802-ff4f4b809361",
+      "name": "鯛清湯 parts",
+      "address": "5/F, W Square, 314-324 Hennessy Road",
+      "mealType": [
+        "guangdong",
+        "Seafood",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 16,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "12273cce-1ed1-4f07-a26e-6f499b92cd50",
+      "name": "梁慶記 10-12",
+      "address": "Shop A1, 2/F, Wing Hing Building, 12 Spring Garden Lane",
+      "mealType": [
+        "Japanese",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 129,
+        "dislikes": 5,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b9caeced-223b-4563-ab04-bc99c362bb32",
+      "name": "Flourish Carré cocktail",
+      "address": "Shop B&C, 1/F, Wai Sun Building, 392-402 Jaffe Road",
+      "mealType": [
+        "skewer",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "74eb2e51-479b-4881-8865-ccc05064c335",
+      "name": "墨魚滑紫菜大蝦 Gratinee",
+      "address": "5/F, 147 Hennessy Road",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 167,
+        "dislikes": 1,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "589ad9ad-776c-4ac8-9974-65aa6ef0e7d9",
+      "name": "getting 肉多多火鍋",
+      "address": "6/F, Chung Wui Mansion, 110 Wan Chai Road",
+      "mealType": [
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 228,
+        "dislikes": 73,
+        "neutral": 111
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dce65c47-0e8d-4aa9-8275-cb6dd31d9374",
+      "name": "北京烤片 新鮮菜苗帶子餃 Zagin",
+      "address": "3/F, Wan Chai Commercial Centre, 194-204 Johnston Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 5,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4bbc10ae-8542-448e-9c9f-e0e6d3da8677",
+      "name": "Ragu ale",
+      "address": "2/F, Tai Wong Building, 3 Tai Wong Street East",
+      "mealType": [
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 90,
+        "dislikes": 6,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8914cd33-1b0f-4b55-8b5c-10cf298617f4",
+      "name": "海南雞飯拼喇沙 冰鎮芥辣墨魚片",
+      "address": "4/F, Novotel Century Hong Kong, 238 Jaffe Road",
+      "mealType": [
+        "Buffet",
+        "Seafood",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 285,
+        "dislikes": 42,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ead2170f-8c9a-4bb3-9139-8ce23933c773",
+      "name": "normal Home",
+      "address": "Shop A, 4/F, 14 Gresson Street",
+      "mealType": [
+        "French"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 8,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "191dfb80-de29-455e-b8f0-3a159fe77fd0",
+      "name": "VS",
+      "address": "8/F, Kwan Chart Tower, 6 Tonnochy Road",
+      "mealType": [
+        "Stir Fry",
+        "Private Kitchen",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8b3d3338-77a3-40cd-bc5a-a69fdadba035",
+      "name": "神虎精選 Kappo's",
+      "address": "5/F, The Harbourview, 4 Harbour Road",
+      "mealType": [
+        "Western",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 228,
+        "dislikes": 41,
+        "neutral": 59
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3a508c45-254a-49fa-a043-6ca40562b31c",
+      "name": "南瓜湯 鰯魚伴明太子 tropical 8A",
+      "address": "Shop 4, 5/F, Brim 28, Causeway Centre, 28 Harbour Road",
+      "mealType": [
+        "Brunch",
+        "Belgian",
+        "belgian"
+      ],
+      "sentiment": {
+        "likes": 128,
+        "dislikes": 9,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac992020-c0de-483c-a045-6463cc57288d",
+      "name": "Fine",
+      "address": "3/F, AKI Hong Kong –MGallery, 239 Jaffe Road",
+      "mealType": [
+        "French"
+      ],
+      "sentiment": {
+        "likes": 81,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b0ee25a0-b014-43b2-812f-4b71e0103b6e",
+      "name": "Hill Chow",
+      "address": "Shop B, 9/F, Linway Court, 69-71 Stone Nullah Lane",
+      "mealType": [
+        "guangdong",
+        "Stir Fry",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 95,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbd17ed4-3b59-406e-852a-9733815b5e90",
+      "name": "tell",
+      "address": "Shop B, 8/F, Tai Wong Building, 3 Tai Wong Street East",
+      "mealType": [
+        "Chinese",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 118,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2ad1ede7-e797-464b-89ee-eb6473480987",
+      "name": "蒲燒鰻魚飯",
+      "address": "61/F, QRE Plaza, 202 Queen's Road East",
+      "mealType": [
+        "skewer",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 134,
+        "dislikes": 8,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a484cbb9-cccf-43f3-981d-09aad657ff36",
+      "name": "roll Cochrane",
+      "address": "Shop A, 7/F, Newman House, 35-45 Johnston Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 96,
+        "dislikes": 6,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb92cb08-06b1-4c07-850a-a6ac4fc51d1c",
+      "name": "Peking Cha 湖南土菜 Shangri-La 1862",
+      "address": "2/F, 28 Queen's Road East",
+      "mealType": [
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 122,
+        "dislikes": 2,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d154af16-9af8-46c3-8b08-ecc7d35e326d",
+      "name": "mixed",
+      "address": "Shop B&C, 1/F, Luen Fat Mansion, 36-42 Johnston Road",
+      "mealType": [
+        "hong kong style",
+        "Guangdong",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 48,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dd8c9a65-9473-498a-b383-a6c6a93106a1",
+      "name": "case",
+      "address": "7/F, Wui Fu Building, 10-12 Stone Nullah Lane",
+      "mealType": [
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 110,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3981c73b-8165-48e9-a661-3f3f4224762a",
+      "name": "shell",
+      "address": "Shop 7, 1/F, Tonnochy Towers, 272 Jaffe Road",
+      "mealType": [
+        "noodles rice noodles",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1b4c835-7d3f-41b2-a71f-994392035fb9",
+      "name": "mouth",
+      "address": "1/F, China Overseas Building, 138 Lockhart Road",
+      "mealType": [
+        "zhejiang",
+        "Jiang-Zhe"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "95a07872-ed1c-49a8-8aee-1515cf7a5bee",
+      "name": "Salisterra Fruit",
+      "address": "Lobby, Grand Hyatt Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "Buffet",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 275,
+        "dislikes": 38,
+        "neutral": 67
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d2c121c0-f088-499b-a9bc-668755baf2e2",
+      "name": "twin-sides",
+      "address": "8/F, 86 Stone Nullah Lane",
+      "mealType": [
+        "salad",
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 84,
+        "dislikes": 3,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9e983e5d-0ed8-4a32-81c4-5d021bdb3fa6",
+      "name": "Vegelink",
+      "address": "Shop B3, 2/F, Block B, Kwong Sang Hong Building, 6 Heard Street",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 7,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "818afb18-9c5d-41e9-a8c2-5523f87eb599",
+      "name": "HarbourDen top tough",
+      "address": "4/F, Bayfield Building, 99 Hennessy Road",
+      "mealType": [
+        "noodles rice noodles",
+        "Hot Pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 266,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c98c6500-4677-4139-9a3e-802600bbeb01",
+      "name": "‘San",
+      "address": "Shop 13-16, 1/F, Great Eagle Centre, 23 Harbour Road",
+      "mealType": [
+        "kaiseki",
+        "omakase",
+        "teppanyaki"
+      ],
+      "sentiment": {
+        "likes": 46,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "537fdbd1-937d-4021-ae1a-1a85a707e8a4",
+      "name": "清湯蘿蔔牛寶麵",
+      "address": "Shop 2A, 2/F, Mountain View Mansion, 1 Amoy Street",
+      "mealType": [
+        "Japanese",
+        "omakase"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24f5b6ed-f3b9-4066-b3b8-154f2b742fb9",
+      "name": "燒豬頸肉 A5",
+      "address": "3/F, Block B, Kwong Sang Hong Building, 6 Heard Street",
+      "mealType": [
+        "Private Kitchen",
+        "Hong Kong Style",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 193,
+        "dislikes": 6,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac4b98cb-bf5f-45da-bb6d-89040b41b4ca",
+      "name": "海景山水豆花 Greens “Maruha",
+      "address": "6/F, Sunshine Plaza, 353 Lockhart Road",
+      "mealType": [
+        "Seafood",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 6,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "23df0e79-6aa8-40d5-bb18-6d99fc87d2d5",
+      "name": "FOOK Westside",
+      "address": "3/F, Antung Building, 6-16 Tai Wong Street East",
+      "mealType": [
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 226,
+        "dislikes": 7,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eb6ac2fa-84ab-4ea1-9bd3-368fa12e6bc4",
+      "name": "PeakThe Kaleido",
+      "address": "Shop 9, 2/F, 303 Jaffe Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "14136a90-c9b4-4964-bf25-a74d85fa2f7e",
+      "name": "Curry",
+      "address": "Shop C, 3/F, 1-3 Moon Street",
+      "mealType": [
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 97,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7f9fb934-e13d-4d20-9799-243859cdaa6d",
+      "name": "厚切吉列豬扒蛋包飯 云手工火鍋店 新加坡大蝦喇沙摻摻",
+      "address": "Shop B, 0/F, Ming Fung Building, 128-150 Wan Chai Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fa3a80e2-8d6f-476e-87e1-f0e64e89a01d",
+      "name": "pork Peninsula",
+      "address": "Shop B, 11/F, Kam Sing Mansion, 151-161 Jaffe Road",
+      "mealType": [
+        "Western",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bfbff7ca-c180-4d0b-90e8-1ff444058f13",
+      "name": "high-value Castle 豬頸肉沙律",
+      "address": "0/F The Broadway, 54-62 Lockhart Road",
+      "mealType": [
+        "shanghai",
+        "chinese buns",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 11,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0ff99373-ceb3-4cba-b184-40fae5a6d8c7",
+      "name": "BOTTLE Alaska",
+      "address": "Shop 7A-3, 2/F, Sun Hung Kai Centre, 30 Harbour Road",
+      "mealType": [
+        "Japanese",
+        "Yoshoku",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 140,
+        "dislikes": 0,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3396e451-3ec8-408c-97cf-6742d897485f",
+      "name": "Delights",
+      "address": "7/F, 49 Ship Street",
+      "mealType": [
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 99,
+        "dislikes": 12,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b18f6bd8-920d-4ef2-b204-71fb2d8f05e4",
+      "name": "appearances 丸目BLACK 1935",
+      "address": "4/F, Kwan Chart Tower, 6 Tonnochy Road",
+      "mealType": [
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 182,
+        "dislikes": 8,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2438f0f0-039a-4e94-9e0f-89d41381f240",
+      "name": "specialties",
+      "address": "Shop A, 1/F, Hong Kong Building, 137-147 Lockhart Road",
+      "mealType": [
+        "taiwan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "25af1661-7b36-4042-b6cb-10103bbfd76f",
+      "name": "family-style 自家製黑蒜拉麵",
+      "address": "2/F, The Fleming, 41 Fleming Road",
+      "mealType": [
+        "Western",
+        "Italian",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 7,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bcc72ef4-4223-4220-9488-9e61b140b8c3",
+      "name": "中拖羅 continue Of",
+      "address": "5/F, Novotel Century Hong Kong, 238 Jaffe Road",
+      "mealType": [
+        "Italian",
+        "Family Friendly"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 10,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "35b6f118-b7fc-4c4a-b083-d50a2e8f27c6",
+      "name": "Teppan",
+      "address": "Shop 63, 6/F, Lee Tung Avenue, 200 Queen’s Road East",
+      "mealType": [
+        "Japanese",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "99932bed-6ada-41ec-9821-521bf16ab3ac",
+      "name": "原隻美式燒春雞配黑松露薯蓉 time",
+      "address": "G/F, 726 Lockhart Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 5,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b811a85c-188d-4b2d-9bf7-7db6ade95785",
+      "name": "彩羽壽司sushi 西班牙特濃朱古力咖啡 Yoghurt 品樂食店Bun",
+      "address": "Shop A, 2/F, Moonful Court, 17 Moon Street",
+      "mealType": [
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9063b7df-69bf-489c-a18c-d3b660ea19e5",
+      "name": "449-455 sour Bear whimsical ft Motorino",
+      "address": "2/F, David House, 37-39 Lockhart Road",
+      "mealType": [
+        "Mexican",
+        "mexican"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ded99763-6df8-4ede-8591-816418325680",
+      "name": "招牌原條豬軟骨拉麵 romantic ethnic",
+      "address": "13/F, The Heritage Woo Cheong Pawn Shop, 60-66 Johnston Road",
+      "mealType": [
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c9bb2e6-e88c-43bc-81a0-cf61b6980d7c",
+      "name": "Creme",
+      "address": "6/F, 4 Kwong Ming Street",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 10,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de764d95-f813-46d0-aa4b-6de3be0acc2f",
+      "name": "share 招牌熊拉麵",
+      "address": "Shop 948, 2/F, Tai Yau Plaza, 181 Johnston Road",
+      "mealType": [
+        "Stir Fry",
+        "Hunan",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 12,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "601f0e90-7622-4f6a-8454-976429f3d7a6",
+      "name": "curated ranging",
+      "address": "5/F, HKCEC, 1 Harbour Road",
+      "mealType": [
+        "International",
+        "Buffet",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 194,
+        "dislikes": 20,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "996a098e-c0c5-46b1-b231-09eedb766ca4",
+      "name": "鹽焗手撕雞 辣架傻豬豬豬頸肉泰式肉碎日本蛋包飯 gastronomic",
+      "address": "1-0/F, KONNECT, 303 Jaffe Road",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0ae89be7-0c9c-47c1-bdfe-5f3c53470399",
+      "name": "Chau Lou",
+      "address": "8/F, 55 Queen's Road East",
+      "mealType": [
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "92a04d14-262d-4329-9df7-37db487584eb",
+      "name": "Brûlée",
+      "address": "Shop A, 2/F, Wealthy Mansion, 7 Tai Wong Street East",
+      "mealType": [
+        "Singaporean",
+        "singaporean",
+        "Malaysian"
+      ],
+      "sentiment": {
+        "likes": 73,
+        "dislikes": 11,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "add4536a-11da-403d-b2ec-b1c711e006ed",
+      "name": "self-service",
+      "address": "2/F, Wu Chung House, 213 Queen's Road East",
+      "mealType": [
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 3,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9d92fd1-7683-4bc4-ab81-720edf995591",
+      "name": "山水清湯腩's",
+      "address": "1/F, On Hing Mansion, 3 Ming Yan Lane",
+      "mealType": [
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 75,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0b543d1c-23a9-4b1a-8445-022ec2dcd0ab",
+      "name": "4 patrons n",
+      "address": "Shop E, 7/F, 28-34 Johnston Road",
+      "mealType": [
+        "korean bbq",
+        "roast meat",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 5,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b2f30a7b-e7ac-4e36-b316-96284195b19f",
+      "name": "regular",
+      "address": "2/F, Cheung Hong Mansion, 1-3 Thomson Road",
+      "mealType": [
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08f3a2de-092c-4012-8c7e-b4764ff6c171",
+      "name": "燈影牛肉 炸兩 studied",
+      "address": "5/F, 580-549 Queen's Road East",
+      "mealType": [
+        "sandwich",
+        "Takeaway",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a6c2bc41-ed6f-471b-9eb4-857023f74904",
+      "name": "minestrone 特上海宝丼",
+      "address": "Shop 455, 8/F, & Shop 704, 7/F, Hopewell Centre, 183 Queen's Road East",
+      "mealType": [
+        "soup",
+        "wonton dumpling",
+        "beijing"
+      ],
+      "sentiment": {
+        "likes": 188,
+        "dislikes": 9,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "40995717-4bea-4039-b4ab-f95634197e4c",
+      "name": "典型巴黎小酒館的優雅氛圍，主打法國菜系，款式精緻。 地中海海鮮意粉配龍蝦汁",
+      "address": "Room A-D, 2/F, Harvard House, 105-111 Thomson Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Vegetarian",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 4,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ad3d3aa0-bd92-414d-b6ec-787753f192a4",
+      "name": "角酪卷",
+      "address": "8/F, Koon Mei Building, 127 Lockhart Road",
+      "mealType": [
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 2,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13a55c5a-c209-445b-b42b-80fdbca9932f",
+      "name": "美式豬肋骨配香辣菠蘿莎莎醬",
+      "address": "Shop D, 3/F, Lee Cheong Building, 1 On Lok Lane",
+      "mealType": [
+        "Western",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 56,
+        "dislikes": 11,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b79d8b3a-78e1-4cfb-8054-ed2611e965d6",
+      "name": "Aloo",
+      "address": "4/F, 4 King Sing Street",
+      "mealType": [
+        "Coffee Shop",
+        "Vegetarian",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0e29194b-351b-44a1-8475-2016d9f960e9",
+      "name": "Alonzo's 海鮮茶碗蒸",
+      "address": "Shop A, 1/F, Kam Sing Mansion, 151-161 Jaffe Road",
+      "mealType": [
+        "sushi sashimi",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b91112ec-6673-4f47-b2f9-6c29101457ea",
+      "name": "deep-fried 餐前小食 portion 270",
+      "address": "1/F, 535-040 Queen's Road East",
+      "mealType": [
+        "Japanese",
+        "teppanyaki",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d17bada-e6db-4fea-8deb-3804ced07085",
+      "name": "米奇煎薄餅 convivial radish",
+      "address": "0/F, Woo Cheong Pawn Shop, 60-66 Johnston Road",
+      "mealType": [
+        "Italian",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cfe29156-94bc-48b1-8aed-3ef59dcca706",
+      "name": "澳洲M9和牛牛丸",
+      "address": "Shop A, 2/F, 3 Tak Yan Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Chiu Chow",
+        "chiu chow"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 4,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "998bbcff-3fcf-4baa-bfb8-b729da536aa5",
+      "name": "Wayfinders’ city's",
+      "address": "Shop 68, 1/F, J Senses, 18 Ship Street",
+      "mealType": [
+        "Japanese",
+        "omakase",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 1,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "03c2acd3-cc17-4e02-8c83-9034973f1ffd",
+      "name": "(AIRSIDE) Coca vibrant murals",
+      "address": "2/F, The Hari Hong Kong, 330 Lockhart Road",
+      "mealType": [
+        "Brunch",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 4,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d637a25c-cb30-4ec8-a9d7-2c3f95fac09d",
+      "name": "Commune Cookery’ Ben",
+      "address": "2/F, 95 Queen's Road East",
+      "mealType": [
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c1831a5-8fb6-4f10-ae26-462785515843",
+      "name": "31A Dome 擔擔味噌茄子",
+      "address": "6/F, 3-45 Moon Street",
+      "mealType": [
+        "Greek",
+        "Mediterranean",
+        "greek"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 7,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9954d081-b672-40f3-a195-7e41d6182592",
+      "name": "donburis Unnie炸雞翼",
+      "address": "4/F, 3-67 Tai Wong Street East",
+      "mealType": [
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 4,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7af6ef84-e466-4ea7-882f-56a97be01e3b",
+      "name": "expensive",
+      "address": "3/F, Kam Fung Commercial Building, 2-4 Tin Lok Lane",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3b0bd677-5d1c-4410-ad9f-c3394f95e53f",
+      "name": "response 櫻式粉紅下午茶套餐",
+      "address": "5/F, 281 Jaffe Road",
+      "mealType": [
+        "Coffee Shop",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "06fe931d-bb00-4dda-91ca-bc5c7d9e8179",
+      "name": "潮汕牛肉 長腳蟹",
+      "address": "0/F-0/F, ZJ 300, 300-306 Lockhart Road",
+      "mealType": [
+        "zhejiang",
+        "Stir Fry",
+        "Jiang-Zhe"
+      ],
+      "sentiment": {
+        "likes": 96,
+        "dislikes": 3,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "64c8217d-8e4a-4780-a38f-48e7ff87ebba",
+      "name": "tataki",
+      "address": "Shop 6, 1/F&2/F, Golden Star Building, 20-24 Lockhart Road",
+      "mealType": [
+        "Seafood",
+        "zhejiang",
+        "Jiang-Zhe"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "731711ab-51e8-4410-81c3-7f2c95e3a67c",
+      "name": "LAPA 娘惹濃厚叻沙",
+      "address": "Shop 506-939, 1/F, Sun Hung Kai Centre, 30 Harbour Road",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "39f15604-f2a1-4bbf-b3a0-f3a825c4ed07",
+      "name": "sirloin YAMA 半熟煮玉子",
+      "address": "B/F, Hennessy Court, 333-335 Hennessy Road",
+      "mealType": [
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a8f454e1-71f6-4dba-a9f4-d8fdcdeff8b8",
+      "name": "片皮鴨",
+      "address": "Shop 1, 12/F, Rialto Building, 2 Landale Street",
+      "mealType": [
+        "Curry",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 9,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d1d16a8-cb19-4e25-a6e0-4ee3a997f5a8",
+      "name": "冬蔭大蝦意大利麵 紫薯芋泥肉鬆吐司",
+      "address": "3/F, 42 Luen Fat Street",
+      "mealType": [
+        "Korean",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a36e239c-e31e-4e13-9239-19aaf371da75",
+      "name": "booth",
+      "address": "Shop D, E, F, 13/F, 2-12 Moon Street",
+      "mealType": [
+        "Steak House",
+        "peruvian",
+        "Peruvian"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80cfe6e6-8747-4732-9f63-5959adaeacc7",
+      "name": "tables Yuan sauce",
+      "address": "16/F, Kin Lee Building, 142 Jaffe Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 221,
+        "dislikes": 19,
+        "neutral": 55
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7407aa1f-0c33-414b-a806-4ac8a9535f7e",
+      "name": "蠔汁叉燒豬仔包",
+      "address": "Shop 284-502, 1/F, Tai Yau Plaza, 181 Johnston Road",
+      "mealType": [
+        "bakery",
+        "Coffee Shop",
+        "salad"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 7,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "801380c7-ce21-435d-9d6e-bd75d473bf4e",
+      "name": "BENKEI non-vegan 全蛋雞蛋糕 焗豬扒飯 Katie",
+      "address": "3/F, 22 Queen's Road East",
+      "mealType": [
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 49,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "87375b52-1126-40c8-8b3a-fa886c264c76",
+      "name": "fast 韓國烤肉芝加哥",
+      "address": "11/F, 6 Luard Road",
+      "mealType": [
+        "hong kong style",
+        "Nostalgic",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 186,
+        "dislikes": 96,
+        "neutral": 97
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b0f37018-c160-4e4a-a37f-217e0da4040e",
+      "name": "Athenian give",
+      "address": "Shop 8, 8/F, 15 Swatow Street",
+      "mealType": [
+        "wine",
+        "philippines",
+        "Philippines"
+      ],
+      "sentiment": {
+        "likes": 129,
+        "dislikes": 5,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5376879b-9d61-4a6d-a319-fb24cfaa1e47",
+      "name": "19A 掌櫃秘製羊膝 金沙軟殼蟹吐司",
+      "address": "33/F, Shun Ho Building, 1 Sun Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "62f3d678-5b75-46f8-9355-1a9498f13c79",
+      "name": "time-honoured Factory's 至極雞白湯拉麵",
+      "address": "24/F, 725 Hennessy Road",
+      "mealType": [
+        "Steak House",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5100200e-209c-4b8d-b473-1855db5f1ed0",
+      "name": "自家製酸種菠蘿包配奶茶雪糕",
+      "address": "Shop E, 2/F, Wai Sun Building, 392-402 Jaffe Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5c103b2-979d-4ee3-9a35-e62385e33aa1",
+      "name": "招牌三色蛋包飯 Eastern 迷你蛋撻 Dome egg 九町屋Machiya's 酒釀丸子",
+      "address": "3/F & 4/F, Hay Wah Building, 71-85 Hennessy Road",
+      "mealType": [
+        "Hot Pot",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 6,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cf8e4492-43f5-4010-be6f-669092cc28b6",
+      "name": "venues 海寶丼",
+      "address": "5/F, Renaissance Harbour View Hotel Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "shanghai hairy crab",
+        "chinese buns",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 123,
+        "dislikes": 8,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13494ce7-a0d7-4825-9561-1995ac7a2070",
+      "name": "Ａrelaxed",
+      "address": "Shop 22, 2/F, Yue On Building, 146-148 Lockhart Road",
+      "mealType": [
+        "Western",
+        "hong kong style",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6596abc9-8a72-4511-8c19-c88bec0922d5",
+      "name": "families 포차 appealing",
+      "address": "2/F, OfficePlus@WanChai, 303 Hennessy Road",
+      "mealType": [
+        "Dim Sum",
+        "Stir Fry",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 239,
+        "dislikes": 26,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a918b9f-d8ed-46f2-8ec8-30293942a101",
+      "name": "手切生牛肉他他 Good 開心果醬格仔餅 Eggenberg",
+      "address": "36/F, 869 Hennessy Road",
+      "mealType": [
+        "wine",
+        "Private Kitchen",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 86,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e511fc8-ec0c-4b3d-bfa9-c2e658bf53fd",
+      "name": "Gump” Los",
+      "address": "Shop B, 1/F, 3 King Sing Street",
+      "mealType": [
+        "Thai",
+        "wine",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38ad4412-e419-482c-bb23-4e818b94a46b",
+      "name": "Archivist 貓員外精釀酒館RICHKAT 伯爵茶戚風蛋糕",
+      "address": "1/F, Chinachem Johnston Plaza, 178-188 Johnston Road",
+      "mealType": [
+        "Stir Fry",
+        "zhejiang",
+        "Jiang-Zhe"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 21,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac67c93c-8a38-4f35-a971-4f76b38d7403",
+      "name": "re-create stage",
+      "address": "Shop 1-7, 1/F, Tonnochy Towers, 272 Jaffe Road",
+      "mealType": [
+        "sandwich",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 24,
+        "neutral": 59
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5fcaae62-47e6-4a41-85c1-c1bf7da34b6d",
+      "name": "鯛魚濃湯海鮮石鍋 dance Tou",
+      "address": "4/F, THE PHOENIX, 23 Luard Road",
+      "mealType": [
+        "Chiu Chow",
+        "chiu chow"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "70587376-1e35-45d2-85b6-db9f6453a4e0",
+      "name": "shipped types 西班牙特濃朱古力咖啡",
+      "address": "2/F, 02-81 Wing Fung Street",
+      "mealType": [
+        "Vietnamese",
+        "Pet Friendly"
+      ],
+      "sentiment": {
+        "likes": 67,
+        "dislikes": 8,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "58b9b273-909a-4e88-998c-c82b933d5ae0",
+      "name": "gimmick",
+      "address": "5/F, The Hari Hong Kong, 330 Lockhart Road",
+      "mealType": [
+        "Brunch",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 2,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "50f7d274-43e4-4c76-b701-d49d4a961be7",
+      "name": "Q1 Sautéed",
+      "address": "6/F, Lucky Centre, 165-171 Wan Chai Road",
+      "mealType": [
+        "Seafood",
+        "hong kong style",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 123,
+        "dislikes": 18,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8af00ba4-3ef0-40a3-ac47-c56fe4f00e4b",
+      "name": "markets’ kebab 越南春卷",
+      "address": "6-3/F, Grand Hyatt Hong Kong, 1 Harbour Road",
+      "mealType": [
+        "guangdong",
+        "No Shark Fin",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 3,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "90ed76a2-71ec-40ba-8b29-aee9a13dddaa",
+      "name": "卡邦尼意粉配溫泉蛋",
+      "address": "1/F, 947 Gloucester Road",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 32,
+        "dislikes": 5,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "eb841cf6-b35d-44aa-ab6c-2ca532249fe2",
+      "name": "kuroge 雞蠔肉 Bisque",
+      "address": "2/F, Spring Garden Mansion, 41 Spring Garden Lane",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "Nostalgic"
+      ],
+      "sentiment": {
+        "likes": 331,
+        "dislikes": 141,
+        "neutral": 198
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f5092766-0be4-4584-9c00-15ff41c28149",
+      "name": "Thành",
+      "address": "5/F, 3-8 St. Francis Street",
+      "mealType": [
+        "middle eastern",
+        "Middle Eastern"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 2,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2d4db008-5bbc-4b1d-9290-2355abe09972",
+      "name": "barbecue",
+      "address": "Shop CF 4-13, 2/F, Cooked Food Centre, Lockhart Road Municipal Services Building, 225 Hennessy Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Cooked Food Center",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 88,
+        "dislikes": 13,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "539e2dcf-e388-4f43-aa36-3a88ac831151",
+      "name": "FOR everything focus",
+      "address": "11/F, 360 Wan Chai Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 61,
+        "dislikes": 8,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8c822011-1bf1-48af-a521-afa2d59d7e54",
+      "name": "Plaza ATUM 叉燒炒滑蛋飯 Musicbox",
+      "address": "12/F, Wing Hing Building, 6 Spring Garden Lane",
+      "mealType": [
+        "hong kong style",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 14,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a335b434-bbe5-4cda-aec7-2f454b4cd266",
+      "name": "姬松茸雪梨養生湯",
+      "address": "Shop 9, 33/F, Dominion Centre, 43-59 Queen's Road East",
+      "mealType": [
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c1df704f-6c2d-4269-b345-a5fd79e49b23",
+      "name": "半半炸雞 日式蒸氣海鮮刺身",
+      "address": "Shop B, 13/F, Fook Wo Building, 10-20 Tai Wo Street",
+      "mealType": [
+        "Western",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 76,
+        "dislikes": 2,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7293329e-0880-4071-9fcd-55c0807d00f5",
+      "name": "liver",
+      "address": "Shop G79, G12 & F12A, B/F, Lee Tung Avenue, 200 Queen’s Road East",
+      "mealType": [
+        "cake",
+        "Coffee Shop",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 187,
+        "dislikes": 7,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4208645a-1e47-4670-8848-cfe14b947fc5",
+      "name": "Kleftico Chubby",
+      "address": "3/F, 67 Johnston Road",
+      "mealType": [
+        "American",
+        "hamburger",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 187,
+        "dislikes": 43,
+        "neutral": 124
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wan Chai",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

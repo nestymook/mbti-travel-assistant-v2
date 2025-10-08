@@ -1,0 +1,2057 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-25T03:32:02.227Z",
+    "version": "1.0.0",
+    "district": "Tsim Sha Tsui",
+    "locationCategory": "Kowloon",
+    "recordCount": 58,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.404Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "501fabef-1b20-4814-b2ff-a2a08e446545",
+      "name": "cultivation BUTTER",
+      "address": "Shop A-C, 8/F, Passkon Court, 79-81 Kimberley Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 173,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f830ab6-a01e-4bd4-98c1-a550348b12ef",
+      "name": "鵝肝多士 芝麻糊",
+      "address": "Shop C, 0/F, China Insurance Building, 48 Cameron Road",
+      "mealType": [
+        "skewer",
+        "Japanese",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 855,
+        "dislikes": 6,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "926cca44-c320-4da8-9a27-0cded5114458",
+      "name": "杜拜朱古力咖啡 Nestled VITELLO",
+      "address": "9/F, Astoria Building, 24-38 Ashley Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 510,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b7f13468-49aa-4b34-b651-1fe8796e3d97",
+      "name": "THAI 清湯蘿蔔牛腩麵",
+      "address": "6/F, Attitude on Granville, 20-22 Granville Road",
+      "mealType": [
+        "International",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 1063,
+        "dislikes": 17,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "82f4f800-865c-4534-9595-36d199b73a27",
+      "name": "Originating 沙拉唐揚炸雞",
+      "address": "Shop R726, R/F, Civic Square, Metal Zone, ELEMENTS, 1 Austin Road West",
+      "mealType": [
+        "Indian",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 246,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "183ed67e-58c5-472a-a962-794d72d34381",
+      "name": "Butter's 清蒸海東升斑",
+      "address": "Shop A, 11/F, Kar Lock Building, 7 Lock Road",
+      "mealType": [
+        "Thai",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 805,
+        "dislikes": 16,
+        "neutral": 64
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "278380d6-05b6-43f7-8061-77753fae98d5",
+      "name": "蝦多士 Culture",
+      "address": "Shop 309, 1/F, Albion Plaza, 2-6 Granville Road",
+      "mealType": [
+        "Taiwan",
+        "Hot Pot",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 884,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a6eeb7ca-f7c9-4ad8-85c9-67fd36e6f402",
+      "name": "Lento Lookout 豬什 dozen KUROMON",
+      "address": "Shop 9830-6, 2/F, Gateway Arcade, Harbour City, 3-27 Canton Road",
+      "mealType": [
+        "taiwan",
+        "tsim sha tsui",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 604,
+        "dislikes": 18,
+        "neutral": 58
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5166fc7c-eb8c-460a-aa91-bd8ae7d01acc",
+      "name": "火焰左口魚邊牛油果沙律 look gluten Rêveri",
+      "address": "Shop 6 & 0, G/F, 8 Minden Avenue",
+      "mealType": [
+        "Izakaya",
+        "sushi sashimi",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 1047,
+        "dislikes": 38,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef4e5c67-38b0-48f2-abd7-394764a4e991",
+      "name": "innovate 002 customers Laksa",
+      "address": "Shop L228, 4/F, The ONE, 100 Nathan Road",
+      "mealType": [
+        "cake",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1393,
+        "dislikes": 161,
+        "neutral": 169
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "105808cb-73c9-4f6d-9d07-faea38530b57",
+      "name": "Luk 橫浜 B58",
+      "address": "Shop G193, 7/F, Gateway Arcade, Harbour City, 3-27 Canton Road",
+      "mealType": [
+        "tsim sha tsui",
+        "All Day Breakfast",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 798,
+        "dislikes": 4,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "135b66a4-c99f-422b-8b55-9c37e835629d",
+      "name": "Kagoshima Bak kebab 蜜餞雞翼",
+      "address": "Shop A2-A7, 1/F, 13 Hillwood Road",
+      "mealType": [
+        "Seafood",
+        "Western",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 1521,
+        "dislikes": 37,
+        "neutral": 58
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c64b9ccd-01db-44ba-9253-029b6414e3a0",
+      "name": "Starbucks 海鮮沙律盒子吐司",
+      "address": "4/F, Yi Serviced Apartments, 10-12 Chatham Court",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 55,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f364053f-2388-436d-a3cf-3410a184f8ee",
+      "name": "海鮮的人仕 Park expression",
+      "address": "Shop 4A, G/F & B/F, BCC Building, 25-31 Carnarvon Road",
+      "mealType": [
+        "Thai",
+        "tsim sha tsui",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 1030,
+        "dislikes": 35,
+        "neutral": 60
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "55041bad-764a-4710-ba03-1536b6988657",
+      "name": "YAKEDO delighting barrels price-friendly Midtown",
+      "address": "7/F, MW Plaza, 40 Kimberley Road",
+      "mealType": [
+        "wine",
+        "Bar",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 818,
+        "dislikes": 8,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2bae9c5d-cd4d-4855-9164-be1afa2c6dd6",
+      "name": "Hare as",
+      "address": "8/F, Kam Ma Building, 16 Cameron Road",
+      "mealType": [
+        "chicken hot pot",
+        "Hot Pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 1124,
+        "dislikes": 9,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1651c4bd-8a0a-447f-9671-8d6d1c08ae8c",
+      "name": "meeting Nha 拖肥糖布甸 四川涼皮",
+      "address": "G/F, 11-11 Kimberley Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 31,
+        "neutral": 70
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a1d48ccd-3997-4bdd-a5fe-05977b7fe539",
+      "name": "regional 回家",
+      "address": "Shop A, 1/F, Brilliant Court, 78 Kimberley Road",
+      "mealType": [
+        "Western",
+        "tsim sha tsui",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 2,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cf02a6a0-41e6-4099-8ece-4c53c136f0ac",
+      "name": "KUNO vibrant 幸運黃金石小食亭Lucky",
+      "address": "Shop B, 3/F, Brilliant Court, 78 Kimberley Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 436,
+        "dislikes": 10,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ec0af2bb-9567-4ea6-93ba-32628a1824ff",
+      "name": "芝士菠菜焗生蠔",
+      "address": "Shop 6-6 & 45-46, G/F, Wing On Plaza, 62 Mody Road",
+      "mealType": [
+        "tsim sha tsui",
+        "certified halal food",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 138,
+        "dislikes": 5,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f1e91117-a663-4831-9e8e-6a078d628494",
+      "name": "Operated 滷蛋",
+      "address": "99/F, The Lamma Tower, 12-12A Hau Fook Street",
+      "mealType": [
+        "tsim sha tsui",
+        "korean fried chicken",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 861,
+        "dislikes": 29,
+        "neutral": 94
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9a17e2a-04e2-463c-8b42-738dd9e7ec45",
+      "name": "specializes MSG-free 炸兩",
+      "address": "Shop 6-2, UG/F, South Seas Centre, 75 Mody Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 523,
+        "dislikes": 9,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d92e139-f78f-4258-bc0b-0a42dd71d9af",
+      "name": "紅燒牛腩刀削麵",
+      "address": "Shop 7, G/F, Everglory Centre, 1B Kimberly Street",
+      "mealType": [
+        "tsim sha tsui",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 398,
+        "dislikes": 27,
+        "neutral": 58
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "beae2f6d-b5da-4620-958d-83f3a0aef857",
+      "name": "Mess",
+      "address": "Shop G86-G04, G18-G22, 3/F, Empire Centre, 68 Mody Road",
+      "mealType": [
+        "meatless menu",
+        "middle eastern",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 38,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c76e3f38-813c-4f2a-a1da-deffc92f3a86",
+      "name": "Kee's",
+      "address": "06/F, H3, 8 Hau Fook Street",
+      "mealType": [
+        "korean fried chicken",
+        "Korean",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 1207,
+        "dislikes": 23,
+        "neutral": 73
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1adf49b0-8f62-4773-844b-6dff849412a1",
+      "name": "鴛鴦湯圓 金卷食品 but",
+      "address": "3/F, Golden Glory Mansion, 16 Carnarvon Road",
+      "mealType": [
+        "tsim sha tsui",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 779,
+        "dislikes": 8,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2a87c091-644b-4c59-84a5-aeb44ee40421",
+      "name": "麻糬紅豆抹茶雪糕牛角窩夫 灌湯小籠包",
+      "address": "Shop 4304, 3/F, Gateway Arcade, Harbour City, 3-27 Canton Road",
+      "mealType": [
+        "Thai",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 877,
+        "dislikes": 30,
+        "neutral": 97
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "85c4f21e-764a-484a-bb90-ee6ad2f34e7c",
+      "name": "蒜蓉忌廉三文魚扒",
+      "address": "Shop 19, LG/F, Hilton Towers, 96 Granville Road",
+      "mealType": [
+        "Japanese",
+        "tsim sha tsui",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 602,
+        "dislikes": 10,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ebaafbaf-25e7-4b73-88f5-59e22d9f3b70",
+      "name": "薑蔥生煎鹽香雞 gluten gratin",
+      "address": "3/F, The Humphreys, 6-6A Humphreys Avenue",
+      "mealType": [
+        "tsim sha tsui",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1859,
+        "dislikes": 57,
+        "neutral": 71
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9312c12-274e-4998-ae5b-97f8bb03ae93",
+      "name": "services 芝士蝦春卷 Bolognese Shi 甜辣無骨炸雞 bottles",
+      "address": "Shop 12-17, G/F, Kiu Fung Mansion, 83-89 Kimberley Road",
+      "mealType": [
+        "Seafood",
+        "wine",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1257,
+        "dislikes": 50,
+        "neutral": 100
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "525b3e21-6c8e-4e71-9adf-26462121e866",
+      "name": "Jeju shark",
+      "address": "3/F, Golden Gate Commercial Building, 136-138 Austin Road",
+      "mealType": [
+        "pizza",
+        "Western",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 1021,
+        "dislikes": 12,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "05fcbb3f-bef1-43da-a75d-581459248c99",
+      "name": "Ocarina Machiya",
+      "address": "Shop 941-448, 1/F, Houston Centre, 63 Mody Road",
+      "mealType": [
+        "tsim sha tsui",
+        "singaporean",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 665,
+        "dislikes": 160,
+        "neutral": 334
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4d9f4fd7-8b67-4bd4-8f17-3eb0eb5f6cdf",
+      "name": "椒鹽瀨尿蝦",
+      "address": "4/F, Kam Lung Commercial Centre, 2 Hart Avenue",
+      "mealType": [
+        "tsim sha tsui",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 518,
+        "dislikes": 8,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34101181-c197-4978-81e7-ace8902522dc",
+      "name": "makgeolli 土茯苓陳皮老鴨湯 Puffs",
+      "address": "Shop G641, G/F, Gateway Arcade, Harbour City, 3-27 Canton Road",
+      "mealType": [
+        "American",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 925,
+        "dislikes": 86,
+        "neutral": 283
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6ca859be-6dba-43a2-bf52-a4a56f9d2fb6",
+      "name": "Shoppe's 檳城福建蝦麵 黃金蝦",
+      "address": "6/F, Prince Tower, 12A Peking Road",
+      "mealType": [
+        "Curry",
+        "certified halal food",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 478,
+        "dislikes": 0,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f28209e1-9e18-4629-bb3c-c5be52ddbd25",
+      "name": "慢煮24小時龍蝦湯 紫砂功夫燉湯 Inspired providing",
+      "address": "4/F, Universal Mansion Phase 2, 2 Observatory Count",
+      "mealType": [
+        "steam hotpot",
+        "Guangdong",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 657,
+        "dislikes": 30,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9a79f7a-cb3f-4198-827b-d7c0e01ba0a8",
+      "name": "腩肉卡邦尼 醬油鮑魚",
+      "address": "5/F, Po Cheong Commercial Building, 29 Prat Avenue",
+      "mealType": [
+        "tsim sha tsui",
+        "Izakaya",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 300,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5b42e71e-6c06-4689-81ee-9bd651af2637",
+      "name": "lifestyle Herb Pure Operated",
+      "address": "Shop B794, B1/F, K11 Musea, Victoria Dockside, 18 Salisbury Road",
+      "mealType": [
+        "Singaporean",
+        "tsim sha tsui",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 605,
+        "dislikes": 34,
+        "neutral": 101
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "30103207-8d2a-46cf-9f9a-ae1e5bfcb966",
+      "name": "JEJU GLOBE",
+      "address": "3/F, 0 Knutsford Terrace",
+      "mealType": [
+        "tsim sha tsui",
+        "skewer",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 314,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e70d76bb-5ff4-44f5-b726-82c7982f42e7",
+      "name": "nature-inspired Desserts English 凱撒雞肉沙律",
+      "address": "2/F, Golden Dragon Centre, 38-40 Cameron Road",
+      "mealType": [
+        "skewer",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 323,
+        "dislikes": 10,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "538f2805-3a3d-4d6f-bfbc-47bcee9eddc1",
+      "name": "prepared View 大腕菜花",
+      "address": "Shop 2863, 3/F, Gateway Arcade, Harbour City, 3-27 Canton Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 751,
+        "dislikes": 19,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f9460fe-5037-4e96-9852-60440ce84980",
+      "name": "‘salpicao’",
+      "address": "Shop L094, 4/F, The ONE, 100 Nathan Road",
+      "mealType": [
+        "tsim sha tsui",
+        "French",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1217,
+        "dislikes": 53,
+        "neutral": 108
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6400fd96-91eb-49a4-93a6-2bd153b6ea3a",
+      "name": "adopt ABC BREWING 嫩雞肉明太子茶漬飯",
+      "address": "Shop UG62, UG/F, Empire Centre, 68 Mody Road",
+      "mealType": [
+        "korean bbq",
+        "Korean",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 9,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b624b1f2-cdde-4322-bb8b-fd8407350b7a",
+      "name": "乾炒泰國金邊粉 committed Issho",
+      "address": "Shop A, 8/F, 22-26 Hillwood Road",
+      "mealType": [
+        "Lebanon",
+        "wine",
+        "lebanon"
+      ],
+      "sentiment": {
+        "likes": 115,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fc90bc27-bb83-40fc-bcac-768c50a0395e",
+      "name": "忌廉蘑菇湯 香蔥碎吞拿魚腩配脆米餅 滑蛋吉列豬扒飯 casual",
+      "address": "Shop 13, G/F, The Leader Commercial Building, 54-56 Hillwood Road",
+      "mealType": [
+        "tsim sha tsui",
+        "korean fried chicken",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 828,
+        "dislikes": 11,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "99c94fe6-55fd-42ae-aa45-0bc953510051",
+      "name": "worldwide midnight",
+      "address": "Shop 24, G/F, 8 Observatory Road",
+      "mealType": [
+        "mexican",
+        "Mexican",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 917,
+        "dislikes": 21,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb78107a-8bf8-4f7c-ae1a-a099f8c078dc",
+      "name": "嘉義綠豆冰沙 珍珠奶茶",
+      "address": "8/F, H5, 5 Hau Fook Street",
+      "mealType": [
+        "tsim sha tsui",
+        "Italian",
+        "French"
+      ],
+      "sentiment": {
+        "likes": 1316,
+        "dislikes": 26,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "61ee997a-d0e8-485f-bb96-cf359ac8e06e",
+      "name": "endless Renowned BTS",
+      "address": "5/F, The Toy House, 100 Canton Road",
+      "mealType": [
+        "tsim sha tsui",
+        "Japanese",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 110,
+        "dislikes": 10,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22cf0ff0-bd2f-4808-937c-d3bdae6ee252",
+      "name": "Lonely 日本黑毛和牛A4赤身 抹茶富士山",
+      "address": "8/F, 3 Knutsford Terrace",
+      "mealType": [
+        "sushi sashimi",
+        "tsim sha tsui",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 642,
+        "dislikes": 17,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2556840b-d0e3-47a7-8848-04df43a35d78",
+      "name": "exudes Brûlée decor recipe",
+      "address": "Shop 9671B, 1/F, Water Zone, ELEMENTS, 1 Austin Road West",
+      "mealType": [
+        "Korean",
+        "tsim sha tsui",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 439,
+        "dislikes": 4,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b60205b4-0713-4fd6-a3c7-2e927e4329a3",
+      "name": "bar's",
+      "address": "5/F, Attitude on Granville Hotel, 20 Granville Road",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 759,
+        "dislikes": 3,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4288c682-faa9-4045-8de6-5ac7575cbbe5",
+      "name": "do 素卷 Espuma",
+      "address": "Shop 2, 1/F, Hilton Towers, 96 Granville Road",
+      "mealType": [
+        "roast meat",
+        "Japanese",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 673,
+        "dislikes": 7,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c5f532a-ad68-4d0f-a3fd-ff4f05e3b7d3",
+      "name": "และรีวิวร้าน 牛肉鍋",
+      "address": "6/F, Chinachem Cameron Centre, 42 Cameron Road",
+      "mealType": [
+        "tsim sha tsui",
+        "sushi sashimi",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 1383,
+        "dislikes": 49,
+        "neutral": 82
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2df5890c-9139-4482-92d1-82aede26f83d",
+      "name": "boxed Brain Place's adopts Tropicana",
+      "address": "Shop 4365A, 1/F, Water Zone, ELEMENTS, 1 Austin Road West",
+      "mealType": [
+        "Singaporean",
+        "singaporean",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 590,
+        "dislikes": 47,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8af1dd4-1730-4812-a842-8804691e425d",
+      "name": "紙鷂雞皮 Alabama BOOM experienced great",
+      "address": "25/F-25/F, The Lamma Tower, 12-12A Hau Fook Street",
+      "mealType": [
+        "sushi sashimi",
+        "Japanese",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 1133,
+        "dislikes": 35,
+        "neutral": 66
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b4e5551a-f899-430a-8552-b7f00e46aace",
+      "name": "特餐 Dow Brunch",
+      "address": "3/F-5/F, Kok Pah Mansion, 58-60 Cameron Road",
+      "mealType": [
+        "Japanese",
+        "tsim sha tsui",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 1029,
+        "dislikes": 55,
+        "neutral": 43
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8a604c6e-d2e0-44ac-90a0-808e702cb5d2",
+      "name": "Private",
+      "address": "Shop L040, 5/F, The ONE, 100 Nathan Road",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "tsim sha tsui"
+      ],
+      "sentiment": {
+        "likes": 808,
+        "dislikes": 15,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7abd39c1-feab-41e7-a03a-c0bcd5fa7c8b",
+      "name": "私房麻辣牛三寶 Queensway",
+      "address": "02/F, The ONE, 100 Nathan Road",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "teppanyaki"
+      ],
+      "sentiment": {
+        "likes": 467,
+        "dislikes": 15,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Tsim Sha Tsui",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

@@ -26,13 +26,6 @@ agents:
       project_name: bedrock-agentcore-restaurant_search_result_reasoning_agent-builder
       execution_role: arn:aws:iam::209803798463:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-86b9d22e10
       source_bucket: bedrock-agentcore-codebuild-sources-209803798463-us-east-1
-    memory:
-      mode: STM_AND_LTM
-      memory_id: restaurant_search_result_reasoning_agent_mem-Qx7aMVDx42
-      memory_arn: null
-      memory_name: restaurant_search_result_reasoning_agent_memory
-      event_expiry_days: 30
-      first_invoke_memory_check_done: false
     authorizer_configuration:
       customJWTAuthorizer:
         allowedClients:

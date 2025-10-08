@@ -1,0 +1,2130 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T22:09:53.338Z",
+    "version": "1.0.0",
+    "district": "Lamma Island",
+    "locationCategory": "Islands",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.071Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "036ccacd-8277-498f-acd1-bb6b33d52def",
+      "name": "Pot di mixologist",
+      "address": "G/F, 38 Yung Shue Wan Main Street",
+      "mealType": [
+        "Western",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 144,
+        "dislikes": 19,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a716f447-2dc4-427b-adb0-05b47dfb94f8",
+      "name": "Bites 爐邊蛋 Australian",
+      "address": "Shop C, 3/F, 21 Yung Shue Wan Back Street",
+      "mealType": [
+        "Coffee Shop",
+        "cake",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 12,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3ba04fb-e288-473a-a2f1-e7a7aed716de",
+      "name": "Village paired",
+      "address": "G/F, 15A Yung Shue Wan Main Street",
+      "mealType": [
+        "Coffee Shop",
+        "lamma island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5f9b6801-1ab2-410c-8b27-47d7ec5d59ad",
+      "name": "Cut enhance celebrities",
+      "address": "G/F, 84-06 First Street, Sok Kwu Wan",
+      "mealType": [
+        "Stir Fry",
+        "No Shark Fin",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 33,
+        "neutral": 48
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d01517a1-7424-43df-b552-01572d91a401",
+      "name": "Bannichi 大早餐",
+      "address": "G/F, 66 Yung Shue Wan Main Street",
+      "mealType": [
+        "British",
+        "lamma island",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb00b4df-99ff-441f-b6dc-ffcea9c57b15",
+      "name": "Marina",
+      "address": "76 Yung Shue Wan Back Street",
+      "mealType": [
+        "lamma island",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8dc01ff7-0fcc-4788-afc8-faafdae3a762",
+      "name": "Tanner influences sets 粟米濃湯",
+      "address": "G/F, 1-13 First Street, Sok Kwu Wan",
+      "mealType": [
+        "Seafood",
+        "lamma island",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bfd643df-2ce2-4f0c-831f-cf059bb5cf8f",
+      "name": "白鱔片 Ding",
+      "address": "Shop 5, 2/F, First Street, Sok Kwu Wan",
+      "mealType": [
+        "skewer",
+        "bbq",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d25de85a-bb4d-481b-8c4a-bfd930f10195",
+      "name": "samosa 牛沙瓜 有機蔬菜籃",
+      "address": "G/F, 11 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "mexican",
+        "Family Friendly"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc30f623-971b-4f39-a0ba-a865d246217c",
+      "name": "辣子雞 地中海海鮮意粉配龍蝦汁 花丸軒秘製餃子",
+      "address": "G/F, 13 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e2a4ee54-7968-416b-8ba5-bdae8ecfbf5f",
+      "name": "SUSHIRO的餐廳地址、電話、食評、相片及餐牌，餐廳位於 Lyndhurst 經典雞肉 酒釀丸子",
+      "address": "G/F, DD82, Lot 583 Sok Kwu Wan",
+      "mealType": [
+        "Dim Sum",
+        "Seafood",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 6,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bf59adf7-5d27-45ea-a24c-e79d14e4bd77",
+      "name": "personal carbonated",
+      "address": "0 Mo Tat Wan",
+      "mealType": [
+        "Western",
+        "lamma island",
+        "Mediterranean"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 4,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7288b922-777a-4a04-bd76-52c3fa0b1b75",
+      "name": "innovate Also",
+      "address": "G/F, 33 Yung Shue Wan Main Street",
+      "mealType": [
+        "Mediterranean",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba7c0c27-f4cb-4dd0-9f0b-ea00702d7a5f",
+      "name": "老蘭嫩牛四併 Daokeaw 伯爵茶傳統班戟 GUN",
+      "address": "G/F, 41 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 15,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80ba5207-053a-4923-b879-53926461990d",
+      "name": "八府巡按套餐",
+      "address": "G/F, Yung Shue Wan Back Street",
+      "mealType": [
+        "Hong Kong Style",
+        "lamma island",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 0,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "887c7eb2-7883-44e2-bca4-55c024a72a5c",
+      "name": "焙茶朱古力 escape 街頭生牛肉湯粉 BURGER",
+      "address": "G/F, 8 Yung Shue Wan Back Street",
+      "mealType": [
+        "lamma island",
+        "Curry",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8103ea6e-e66c-49a8-b546-4b3a1185bd36",
+      "name": "flowers Life Tea's air Disneyland 蒜蓉欖角燒蟶子",
+      "address": "Lot 597, G/F, Sok Kwu Wan,",
+      "mealType": [
+        "Dim Sum",
+        "guangdong",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f21bb7fc-74f2-4cfe-970e-eae499036adf",
+      "name": "Main Brûlée Moonlit",
+      "address": "G/F, 25 Yung Shue Wan Main Street",
+      "mealType": [
+        "Italian",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "00b0c90a-0bb1-4d6a-8a78-bd9ac1c475da",
+      "name": "sandwich",
+      "address": "Hung Sing Yeh Beach",
+      "mealType": [
+        "Hong Kong Style",
+        "lamma island",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "17cb796b-dfe4-4296-8402-fd7c8e809889",
+      "name": "rigorously",
+      "address": "G/F, 34 Sok Kwu Wan first street",
+      "mealType": [
+        "Guangdong",
+        "lamma island",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "93be9c55-e12e-4b1a-bdde-76c17b502500",
+      "name": "紫薯奶",
+      "address": "Shop 61, G/F, First Street, Sok Kwu Wan",
+      "mealType": [
+        "Dim Sum",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe01cef1-3f1d-4d37-9720-554ad150899a",
+      "name": "紫菜肉鬆小方 太史戈渣 style” vast 虎蝦海鮮混亂杯麵 流心海鹽焦糖朱古力糯米糍",
+      "address": "G/F, 2A-B Yung Shue Wan Main Street",
+      "mealType": [
+        "Indian",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "657604dc-2fa1-4332-9756-118d28da39b5",
+      "name": "伊比利亞橡果豬 :",
+      "address": "3/F, Block B, 51 Yung Shue Wan Main Street",
+      "mealType": [
+        "Thai",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a2b9aa77-7358-448b-8188-0c947045d217",
+      "name": "炸魚薯條 Hikiniku",
+      "address": "G/F, 53 Yung Shue Wan Main Street",
+      "mealType": [
+        "pizza",
+        "lamma island",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5aa8c0c1-f1c0-489b-a952-455726b60c2e",
+      "name": "忌廉腐乳醬北海道帶子闊條麵 Tubetti newspapers Hua",
+      "address": "G/F, 8-9 First Street, Sok Kwu Wan",
+      "mealType": [
+        "Seafood",
+        "Dim Sum",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d47567a-08fb-4168-bd6d-e0df248a29b8",
+      "name": "仁記's Drop Wagui ten 紅燒脆皮乳鴿 Ajillo great wine",
+      "address": "G/F, 06 Hung Shing Ye Beach, Yung Shue Wan",
+      "mealType": [
+        "Pet Friendly",
+        "bbq",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 6,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ff7d8336-a030-4423-a7d0-89e2180acea0",
+      "name": "海膽吞拿魚壽司 黑丼",
+      "address": "G/F, 44 Yung Shue Wan Main Street",
+      "mealType": [
+        "Hong Kong Style",
+        "sweet soup",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "35591862-ccf7-49a3-b056-e44aa12a4b95",
+      "name": "resto",
+      "address": "G/F, 75A Yung Shue Wan Main Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "788ec12b-c372-47f7-a837-92ff11ac0835",
+      "name": "好正 produce Noodles 吉列魚柳 CAFE's",
+      "address": "G/F, 64 Yung Shue Wan Main Street",
+      "mealType": [
+        "sri lankan",
+        "Western",
+        "Sri Lankan"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5a1cb38-889e-43a9-aa77-b62da7b38822",
+      "name": "respect 伯爵茶麻糬班戟 super variety",
+      "address": "G/F, 80 Tai Wan Nam",
+      "mealType": [
+        "lamma island",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bd55bd88-4358-4ea9-832c-4a1b4835fff5",
+      "name": "equipment 寶蓮寺小食亭's",
+      "address": "G/F, 6A-0B First Street, Sok Kwu Wan",
+      "mealType": [
+        "guangdong",
+        "Seafood",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "80db4504-62ea-4cd7-a50b-4e3cc4b08a7d",
+      "name": "韓式雞蛋卷 skewers",
+      "address": "G/F, 857B Yung Shue Wan Main Street",
+      "mealType": [
+        "Coffee Shop",
+        "lamma island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44465b0a-0b33-4197-8483-22fe09ff0348",
+      "name": "oyster 103 DYNASTY Senses",
+      "address": "6, Yung Shue Wan, Tai Wan To",
+      "mealType": [
+        "hong kong style",
+        "lamma island",
+        "Sweets"
+      ],
+      "sentiment": {
+        "likes": 208,
+        "dislikes": 56,
+        "neutral": 130
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "07e848de-62a7-4d78-b3ad-799d2a522cc4",
+      "name": "Bold",
+      "address": "G/F, 07 Yung Shue Wan Main Street",
+      "mealType": [
+        "International",
+        "bakery",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f4e6dd11-772b-4c04-8f28-af755d5726e9",
+      "name": "美祿恐龍 PARADISE 牛肉麵 BELLY gimbap 京香餃Home",
+      "address": "G/F, 5 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "Guangdong",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 30,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0f5d1d7f-bb3c-4d0d-be92-6a9115fb40a2",
+      "name": "Cô Bad Bird drunken",
+      "address": "G/F, 12 Yung Shue Wan Back Street",
+      "mealType": [
+        "lamma island",
+        "turkish",
+        "Turkish"
+      ],
+      "sentiment": {
+        "likes": 79,
+        "dislikes": 7,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "33390b1e-9429-44b4-a62b-c7eaf234c4bf",
+      "name": "Bites Russian 焚YAKEDO",
+      "address": "G/F, 56 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "Vegetarian",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 6,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a9e19115-ffc7-4a1e-8c31-9e36e4b0094b",
+      "name": "grace major Spanish",
+      "address": "G/F, 18A Yung Shue Wan Main Street",
+      "mealType": [
+        "Western",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "006c5fac-07a2-4475-a4d0-35cc4438415e",
+      "name": "菜主題餐廳，旨在將各種似乎雲壤之別的食材和文化放在一起，擦撞出新滋味，賦予專屬NAM",
+      "address": "G/F, 08 First Street, Sok Kwu Wan",
+      "mealType": [
+        "hong kong style",
+        "Snack Shop & Deli",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "39ecc65a-902d-4c32-b9b5-b678309d70e1",
+      "name": "建榮特色桑拿菜火鍋店",
+      "address": "G/F, 37 Yung Shue Wan Main Street",
+      "mealType": [
+        "Brunch",
+        "Coffee Shop",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42c252be-80ca-45d0-b0cd-0d4dcfa8468f",
+      "name": "Aioli box”",
+      "address": "G/F, 60 Yung Shue Wan Main Street",
+      "mealType": [
+        "lamma island",
+        "spanish",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e5ffee3b-4301-4b67-b789-9ad3221b18e9",
+      "name": "meet-up 多汁淫蝦 Mutekiya venues 誠心為客人帶來精巧而細緻的體驗。\n我們的咖啡空間由100呎-8500呎的多個功能廳組成，可容納8至60人的講座、音樂表演藝術展覽、私人派對、商務會議、學術交流、企業培訓、手工藝展咖啡聚餐的好去處",
+      "address": "G/F, 13 First Street, Sok Kwu Wan",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 23,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1eb0218-be27-4835-ad58-d2da4cc5dff6",
+      "name": "南丫公館Lamma syrup Diner是一間結合加拿大式及美式傳統美食的餐廳，致力為客人製作精美而令人愉悅的傳統美式菜餚，同時提供多款創意素食、生酮和無麩質食物等多元化菜單選擇。餐廳內所有招牌菜式、醬汁和酸菜都是自家研製，配以新鮮及優質的食材精心烹調一系列菜式。\n招牌菜式包括熱騰騰的薯粒鑊仔、自家製薯餅、自家醃製 décor",
+      "address": "86 Tai Wan To, Yung Shue Wan",
+      "mealType": [
+        "hong kong style",
+        "guangdong",
+        "sweet soup"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dc5d9a0f-f6d9-44e9-bce6-12bb06c8e27b",
+      "name": "her",
+      "address": "G/F, 64 Yung Shue Wan Main Street",
+      "mealType": [
+        "hong kong style",
+        "Snack Shop & Deli",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "558cc4d5-6b22-4972-b988-47ac94804b22",
+      "name": "冰鎮黃金咖喱魷魚 新派Fusion西班牙餐酒館主打具亞洲元素的Fusion stir-fried",
+      "address": "G/F, 97 First Street, Sok Kwu Wan",
+      "mealType": [
+        "lamma island",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "54acae9e-033f-45f4-835c-f0535eadbe2a",
+      "name": "coast dumplings stage",
+      "address": "G/F, 12 Sha Po New Village",
+      "mealType": [
+        "American",
+        "Bar",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f0a97da1-1465-48d1-8a85-224982c87a74",
+      "name": "Nan",
+      "address": "Address not available",
+      "mealType": [
+        "Unknown"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "incomplete",
+        "version": "1.0.0",
+        "qualityScore": 45
+      }
+    },
+    {
+      "id": "caba2bf6-a1d9-4787-bfac-404975cd790b",
+      "name": "焙茶黑芝麻飲 天婦羅盛合 Small",
+      "address": "G/F, 58 First Street, Sok Kwu Wan",
+      "mealType": [
+        "Guangdong",
+        "lamma island",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b376fe3a-d68f-4596-9455-cc679bcd2928",
+      "name": "Puri 招牌西多士 six",
+      "address": "G/F, 93C Tai Wan San Tsuen, Yung Shu Wan",
+      "mealType": [
+        "hong kong style",
+        "lamma island",
+        "Tea House"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "404d59c3-a128-4515-a834-d85fd829e4a1",
+      "name": "蕃喜工房 He 酸菜烤魚 Mody",
+      "address": "G/F, 06 Yung Shue Wan Main Street",
+      "mealType": [
+        "noodles rice noodles",
+        "sushi sashimi",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb072526-7a5c-480a-b89d-26b91f736fdd",
+      "name": "DOP",
+      "address": "243 Hung Shing Yeh Beach, Yung Shue Wan",
+      "mealType": [
+        "singaporean",
+        "Malaysian",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22c28b56-0582-4411-9f9d-dd0782cc1196",
+      "name": "fountain",
+      "address": "G/F, 86 Yung Shue Wan Back Street",
+      "mealType": [
+        "lamma island",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24de571d-efef-4342-9bdc-df47cbdca879",
+      "name": "Lyndhurst well-seasoned GYU Pantry",
+      "address": "G/F, 22 Yung Shue Wan Main Street",
+      "mealType": [
+        "Snack Shop & Deli",
+        "lamma island",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "81b23eed-f519-464c-a23b-a08b49e6c7b0",
+      "name": "花甲粉 burnt",
+      "address": "G/F, 90A Sha Po Old Village",
+      "mealType": [
+        "pizza",
+        "turkish",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "22ccde68-77ce-42e1-ba7b-a24ef30100c9",
+      "name": "form Yiouvetsi Watson",
+      "address": "G/F, 30 Yung Shue Wan Main Street",
+      "mealType": [
+        "Western",
+        "Bar",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44f4420d-ad75-4095-9951-418c8c8bf6c0",
+      "name": "香辣牛肉麵 grocery 「麺心國もと」香港店為品牌第一家分店，大部分食材均由日本直送到港，也貫徹總店對食材物盡其用零浪費的宗旨，由湯底、麵條、配料以至調味等，每個細節均一絲不苟，依足總店做法，務求做到一樣原汁原味。",
+      "address": "G/F, 94 Yung Shue Wan Main Street",
+      "mealType": [
+        "Bar",
+        "Western",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1fbd9d2a-8c12-4181-b2bb-675e28c99bd8",
+      "name": "Burnt",
+      "address": "洪聖爺灣",
+      "mealType": [
+        "lamma island",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7096ae3f-446d-4f84-a6d5-24ca03984735",
+      "name": "skewers 脆米紙薄餅",
+      "address": "Shop 33, G/F, Yung Shue Wan Back Street",
+      "mealType": [
+        "lamma island",
+        "Curry",
+        "Indian"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e20c92c6-73c9-4a1d-b6b2-c771e738af36",
+      "name": "comfy thicknesses",
+      "address": "98 Lo So Shing Vallage, Sok Kwu Wan",
+      "mealType": [
+        "Hong Kong Style",
+        "lamma island",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cc94af56-9257-4dc3-8fc6-1530c1f394a7",
+      "name": "煙燻五花肉",
+      "address": "Hung Shing Ye Beach",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "lamma island"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Lamma Island",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RestaurantDataS3Access",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::restaurant-data-209803798463-us-east-1",
+                "arn:aws:s3:::restaurant-data-209803798463-us-east-1/*",
+                "arn:aws:s3:::openrice-restaurant-data-209803798463-us-east-1",
+                "arn:aws:s3:::openrice-restaurant-data-209803798463-us-east-1/*"
+            ]
+        }
+    ]
+}

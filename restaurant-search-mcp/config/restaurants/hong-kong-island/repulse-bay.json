@@ -1,0 +1,1027 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T19:39:17.162Z",
+    "version": "1.0.0",
+    "district": "Repulse Bay",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 29,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.623Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "9d9cbc46-4865-452c-ad0b-2dfaf2d05201",
+      "name": "湯麵 Billow",
+      "address": "G/F, 625 Repulse Bay Road",
+      "mealType": [
+        "repulse bay",
+        "Western",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 186,
+        "dislikes": 11,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c9fe515f-efaa-40be-aab7-62092cf61b6c",
+      "name": "紫蘇拌飯 breakfast",
+      "address": "Shop 461-303, G/F, The Repulse Bay, 109 Repulse Bay Road",
+      "mealType": [
+        "bakery",
+        "Western",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 42,
+        "dislikes": 1,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b8ecf38a-f734-47c4-9e40-4646b1af255b",
+      "name": "Y Chefs",
+      "address": "Shop 528, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "skewer",
+        "repulse bay",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 4,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "568b2ab4-ad23-481e-8432-39a587ec1f45",
+      "name": "(Mei",
+      "address": "Shop 822B, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "wine",
+        "Italian",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9467c347-d137-478b-9958-73297b267a53",
+      "name": "ox",
+      "address": "Shop 507-604, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "Seafood",
+        "wine",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 9,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5122242b-fc2c-48dc-9cba-990e2c039e44",
+      "name": "香脆炸蝦餅",
+      "address": "Shop 269, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "salad",
+        "repulse bay",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 22,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2a559b46-7dbc-4d57-a9f7-43910173cc5c",
+      "name": "20-24 An",
+      "address": "G/F, The Arcade, 109 Repulse Bay Road",
+      "mealType": [
+        "salad",
+        "repulse bay",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 45,
+        "dislikes": 6,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "97b76fd9-ccb8-457a-a7e4-cc2da4d095f4",
+      "name": "Korean 辣菜脯 pan-Asian",
+      "address": "Shop 506, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 31,
+        "dislikes": 4,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6d6b91aa-eca4-4bfc-a84e-9c6fa7a78209",
+      "name": "菜館",
+      "address": "Shop 612, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 8,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47afcebd-bb20-43cc-ac07-1c136de94252",
+      "name": "chickens Impossible™",
+      "address": "G/F, 51 Beach Road",
+      "mealType": [
+        "salad",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1e419ce7-5cbd-4bf7-a404-a6f147b892cd",
+      "name": "hotpot protein",
+      "address": "Shop 249, G/F, 109 Repulse Bay Road",
+      "mealType": [
+        "Japanese",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6195a61b-9798-4200-9308-d7bd994cffe7",
+      "name": "Susanna's Hei spot on description",
+      "address": "Shop A, G/F, 33 Beach Road",
+      "mealType": [
+        "repulse bay",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1feba7fa-3e3a-4f00-a6c4-c38c54bd249e",
+      "name": "經典不可能",
+      "address": "Shop 504A, 1/F, 109 Repulse Bay Road",
+      "mealType": [
+        "Mediterranean",
+        "Japanese",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2c891c89-bf3a-4c2e-a712-5bbb77ecadf9",
+      "name": "public 美式炸魚薯條",
+      "address": "Shop 540, L2/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7efa48e6-8a55-4572-a9e6-f7906b508e49",
+      "name": "Pan's",
+      "address": "Shop 927, L2/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "repulse bay",
+        "Western",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c902f9f4-f48a-4a26-83cc-bcf4e5f002a3",
+      "name": "Mall",
+      "address": "Hong Kong Parkview Club House, 88 Tai Tam Reservoir Road",
+      "mealType": [
+        "repulse bay",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c2ae3d72-7144-4907-bec9-b7192a4105fb",
+      "name": "炸雞 Booking",
+      "address": "Hong Kong Parkview Club House, 88 Tai Tam Reservoir Road",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d17ee6f9-a0cd-48f6-a71d-5e9469909e74",
+      "name": "Kachimushi 牛柳 Seasons",
+      "address": "G/F, 23 Beach Road",
+      "mealType": [
+        "Club House",
+        "Hong Kong Style",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "44eb0e66-422e-4be6-a721-978ab8feeb47",
+      "name": "lasagna",
+      "address": "Address not available",
+      "mealType": [
+        "Unknown"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "incomplete",
+        "version": "1.0.0",
+        "qualityScore": 45
+      }
+    },
+    {
+      "id": "b9f895b3-d461-42e0-a8b2-4f2b3e1eb8d8",
+      "name": "Tuk",
+      "address": "South Bay Road(Near South Bay Beach)",
+      "mealType": [
+        "Western",
+        "ice cream yogurt",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cee585bf-0709-4f58-be3f-87d4cd6e6a99",
+      "name": "Pork 打冷's CF",
+      "address": "Shop 573, 1/F, The Pulse, 26-30 Beach Road",
+      "mealType": [
+        "Western",
+        "repulse bay",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8fd70085-e2f1-43f6-ad89-e0a86fe30c30",
+      "name": "球 Lounge's featuring",
+      "address": "Shop 425, L1/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "repulse bay",
+        "bbq",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "69cc4ee2-973e-4460-9e7f-c5fe4fc4c979",
+      "name": "Fu 128 or BREAD 湯 澳洲牛牛丸",
+      "address": "Middle Bay Beach, South Bay Road",
+      "mealType": [
+        "Pet Friendly",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "150d95cc-a178-491a-adee-582743fc81b7",
+      "name": "reservation specialty",
+      "address": "Shop B, G/F, 33 Beach Road",
+      "mealType": [
+        "Snack Shop & Deli",
+        "repulse bay",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "adb0c0bd-72ce-4afe-adaf-5a431b4db732",
+      "name": "specializes 2006",
+      "address": "Hong Kong Parkview Club House, 88 Tai Tam Reservoir Road",
+      "mealType": [
+        "Western",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "4cc8c49a-e9bb-449a-a059-b98b7cefa4fb",
+      "name": "拉麵 Saizeriya",
+      "address": "Hong Kong Parkview Club House, 88 Tai Tam Reservoir Road",
+      "mealType": [
+        "Club House",
+        "International",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "0bb35d4a-a853-4b65-9db5-46f623729ac1",
+      "name": "樂Momoku's",
+      "address": "Lobby, Hong Kong Parkview Club House, 88 Tai Tam Reservoir Road",
+      "mealType": [
+        "repulse bay",
+        "teppanyaki",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 0,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 90
+      }
+    },
+    {
+      "id": "a803de05-768b-4949-b7fd-b78e1376bf08",
+      "name": "60 WeChat",
+      "address": "Shop 402-504, 3/F, The Pulse, 28 Beach Road",
+      "mealType": [
+        "Bar",
+        "Fine Dining",
+        "repulse bay"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bd469ee3-d7f3-4c79-b344-4499b53a998b",
+      "name": "玫瑰金蝦餃 Man泰國 axis but",
+      "address": "Shop 529-404, 3/F, The Pulse, 26-30 Beach Road",
+      "mealType": [
+        "repulse bay",
+        "Japanese",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 1,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Repulse Bay",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

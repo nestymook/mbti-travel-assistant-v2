@@ -1,0 +1,623 @@
+{
+  "name": "Kowloon",
+  "category": "Kowloon",
+  "priority": 2,
+  "districts": [
+    {
+      "name": "Tsim Sha Tsui",
+      "priority": 2,
+      "maxPages": 80,
+      "rateLimit": {
+        "requestsPerMinute": 20,
+        "burstLimit": 3,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 8,
+        "saveProgressEvery": 4
+      },
+      "districtId": 2008
+    },
+    {
+      "name": "Mong Kok",
+      "priority": 2,
+      "maxPages": 80,
+      "rateLimit": {
+        "requestsPerMinute": 20,
+        "burstLimit": 3,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 8,
+        "saveProgressEvery": 4
+      },
+      "districtId": 2010
+    },
+    {
+      "name": "Kowloon Tong",
+      "priority": 3,
+      "maxPages": 40,
+      "rateLimit": {
+        "requestsPerMinute": 18,
+        "burstLimit": 2,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2002
+    },
+    {
+      "name": "Yau Ma Tei",
+      "priority": 3,
+      "maxPages": 40,
+      "rateLimit": {
+        "requestsPerMinute": 18,
+        "burstLimit": 2,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2011
+    },
+    {
+      "name": "Hung Hom",
+      "priority": 3,
+      "maxPages": 40,
+      "rateLimit": {
+        "requestsPerMinute": 18,
+        "burstLimit": 2,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2015
+    },
+    {
+      "name": "Jordan",
+      "priority": 3,
+      "maxPages": 40,
+      "rateLimit": {
+        "requestsPerMinute": 18,
+        "burstLimit": 2,
+        "backoffMultiplier": 2,
+        "maxRetries": 5
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2028
+    },
+    {
+      "name": "Kowloon City",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2001
+    },
+    {
+      "name": "Kowloon Bay",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2003
+    },
+    {
+      "name": "To Kwa Wan",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2004
+    },
+    {
+      "name": "Tai Kwok Tsui",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2005
+    },
+    {
+      "name": "Ngau Tau Kok",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2006
+    },
+    {
+      "name": "Shek Kip Mei",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2007
+    },
+    {
+      "name": "Ho Man Tin",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2009
+    },
+    {
+      "name": "Yau Tong",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2012
+    },
+    {
+      "name": "Cheung Sha Wan",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2013
+    },
+    {
+      "name": "Lai Chee Kok",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2016
+    },
+    {
+      "name": "Sham Shui Po",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2019
+    },
+    {
+      "name": "Wong Tai Sin",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2020
+    },
+    {
+      "name": "Tsz Wan Shan",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2021
+    },
+    {
+      "name": "San Po Kong",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2022
+    },
+    {
+      "name": "Lam Tin",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2024
+    },
+    {
+      "name": "Lei Yue Mun",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2025
+    },
+    {
+      "name": "Kwun Tong",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2026
+    },
+    {
+      "name": "Diamond Hill",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2027
+    },
+    {
+      "name": "Prince Edward",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2029
+    },
+    {
+      "name": "Lok Fu",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2030
+    },
+    {
+      "name": "Mei Fu",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2031
+    },
+    {
+      "name": "Choi Hung",
+      "priority": 4,
+      "maxPages": 20,
+      "rateLimit": {
+        "requestsPerMinute": 15,
+        "burstLimit": 2,
+        "backoffMultiplier": 2.5,
+        "maxRetries": 3
+      },
+      "crawlingHours": {
+        "start": "09:00",
+        "end": "23:00",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "checkpoints": {
+        "enabled": true,
+        "intervalPages": 5,
+        "saveProgressEvery": 2
+      },
+      "districtId": 2032
+    }
+  ]
+}

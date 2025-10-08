@@ -1,0 +1,712 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T18:53:51.076Z",
+    "version": "1.0.0",
+    "district": "Stanley",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 20,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.732Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "e9f8055d-4eac-4567-a07c-574ed0ef8d5f",
+      "name": "焗薄餅 好味醬烤骨 潮州打冷's",
+      "address": "G/F, U-C Court, 25 Stanley Market Road",
+      "mealType": [
+        "Coffee Shop",
+        "bakery",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 247,
+        "dislikes": 17,
+        "neutral": 64
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5bbcbfc1-5243-4288-9a1d-b1d9084c5e11",
+      "name": "Yogurt Out",
+      "address": "G/F, 59-22 Stanley Main Street",
+      "mealType": [
+        "International",
+        "All Day Breakfast",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 8,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f1b7e765-3fee-4376-a69c-97cfbb8ecf6b",
+      "name": "Bamei comfy G05 creative 香蕉琥珀合桃 provide",
+      "address": "Shop 398, 3/F, Stanley Plaza, 23 Carmel Road",
+      "mealType": [
+        "Pet Friendly",
+        "wine",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4f83ab91-74c7-48d4-9336-5415223a6a5f",
+      "name": "ceramist 果豬 flavour 拼盤 experience",
+      "address": "Shop G20B, G/F, Stanley Plaza, 23 Carmel Road",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "stanley"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ecba47eb-d8cf-4a8a-b270-52cbac3d5b1e",
+      "name": "Alley sandwiches 花生麥米粥 social",
+      "address": "Shop A7, G/F, Sea and Sky Court, 92 Stanley Main Street",
+      "mealType": [
+        "Thai",
+        "stanley"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1df42709-9802-4bd5-a0b4-c6849da4f69c",
+      "name": "Lighthouse",
+      "address": "G/F, 983 Stanley Main Street",
+      "mealType": [
+        "Western",
+        "stanley",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ac9e2326-01bd-465c-89d1-088ff771aaa7",
+      "name": "PARKSIDE@NINA",
+      "address": "Shop 776, 4/F, Stanley Plaza, 23 Carmel Road",
+      "mealType": [
+        "dessert",
+        "stanley",
+        "ice cream yogurt"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 16,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "df4a81ab-1665-4e50-b9ed-27c3b97c4bff",
+      "name": "vibe 意粉 Hotpot",
+      "address": "Shop B9, G/F, 26 Stanley Main Street",
+      "mealType": [
+        "Spanish",
+        "wine",
+        "spanish"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4cf928cf-f932-428c-be21-5523d755be52",
+      "name": "Caffe",
+      "address": "Shop 14 A9, G/F, Sea and Sky Court, 92 Stanley Main Street",
+      "mealType": [
+        "stanley",
+        "wine",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 7,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc0f20d5-e725-465c-96f6-48b4a77639e4",
+      "name": "Teahouse 醉檸茶",
+      "address": "Shop A & B, G/F, Princeton Court, 118 Stanley Main Street",
+      "mealType": [
+        "French",
+        "stanley"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59a75f4d-8369-4e6a-99cc-78256943e498",
+      "name": "Wada Alley",
+      "address": "G/F, 3 Stanley Market Road",
+      "mealType": [
+        "hong kong style",
+        "stanley",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 14,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "872f0be0-a432-4836-a86a-d966548b0b4e",
+      "name": "vibrant",
+      "address": "Shop 978, 3/F, Stanley Plaza, 23 Carmel Road, Stanley",
+      "mealType": [
+        "guangdong",
+        "stanley",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e64e20c-0054-46bf-89ac-6c067b844c54",
+      "name": "蟹肉 setting deep-fried 雲耳椰菜魚鍋",
+      "address": "G/F, 07-18 Stanley Main Street",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "431e31f7-0f89-4c2f-9c74-132768fc3a86",
+      "name": "Tsukiji Sweet",
+      "address": "Near the dam, Tai Tam Tuk Village, Tai Tam Road, Stanley",
+      "mealType": [
+        "bbq",
+        "stanley",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6cda0162-a87e-454e-ac83-90c418ddf9d1",
+      "name": "86-87 Crabmeat 椒鹽瀨尿蝦 thousands Pun 古法牛肉球",
+      "address": "Shop G88, G/F, Stanley Plaza, 23 Carmel Road",
+      "mealType": [
+        "noodles rice noodles",
+        "stanley",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d26bec84-d13d-4d74-bb9f-c4754a4f73a4",
+      "name": "MoMo 厚燒玉子 Seafood 麻辣鴨血 麻痺雞 Town 無骨海南雞飯 Sichuan-style cold parties",
+      "address": "Shop G95&G03, G/F, Stanley Plaza, 23 Carmel Road, Stanley",
+      "mealType": [
+        "hamburger",
+        "American",
+        "stanley"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 4,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d9169a83-dcdc-49ee-840a-1d767835b163",
+      "name": "M star",
+      "address": "Shop A-D & G, G/F, 10-12 Stanley Main Street",
+      "mealType": [
+        "hong kong style",
+        "Coffee Shop",
+        "stanley"
+      ],
+      "sentiment": {
+        "likes": 5,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75ecf136-1924-4b6f-a174-a4781270aebb",
+      "name": "豆腐沙律 濃蝦汁湯烏冬",
+      "address": "G/F, 994 Stanley Main Street, Stanley, Stanley",
+      "mealType": [
+        "stanley",
+        "Western",
+        "bakery"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbf83b3f-cb8f-4766-802f-af6083593028",
+      "name": "Road。主要菜式包括 金門 into By Yuen's M 清燉山藥菌菇湯麵 Häagen-Dazs's Thai's balls Family",
+      "address": "Shop E, G/F, 11 Stanley New Street, Stanley",
+      "mealType": [
+        "stanley",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 2,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0853e412-f0c2-4a40-8cc0-4156d24884da",
+      "name": "double-stewed",
+      "address": "Shop 2, G/F, Waterfront Mall Mart, 20 Stanley Market Road, Stanley",
+      "mealType": [
+        "Snack Shop & Deli",
+        "stanley",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 3,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Stanley",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

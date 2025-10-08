@@ -1,0 +1,5581 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T19:06:40.749Z",
+    "version": "1.0.0",
+    "district": "North Point",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 160,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:57.544Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "3f637468-83fc-4677-804a-47221660cc7c",
+      "name": "日本螢光魷魚 Joe",
+      "address": "Shop 362-625, 1/F, Marble Garden, 33 Marble Road",
+      "mealType": [
+        "hong kong style",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 1065,
+        "dislikes": 13,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5afc0291-8a2f-4983-9999-659a15a1ad3d",
+      "name": "nightly Michi",
+      "address": "Shop 72, G/F, AIA Tower, 183 Electric Road, Fortress Hill",
+      "mealType": [
+        "Coffee Shop",
+        "north point",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 284,
+        "dislikes": 2,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "981fe049-6049-4b56-922d-dabbb5a9042a",
+      "name": "噌蝦濃湯拉麵 橫浜拉麵",
+      "address": "Shop 832, 8/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "north point",
+        "korean bbq",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 615,
+        "dislikes": 21,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb67816e-2214-48c8-86e9-a1103127e11b",
+      "name": "Musea Cruise",
+      "address": "Shop D, 3/F, Seabright Plaza, 9-23 Shell Street",
+      "mealType": [
+        "sushi sashimi",
+        "north point",
+        "Yoshoku"
+      ],
+      "sentiment": {
+        "likes": 209,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b68a46bc-2b48-4e0f-a671-3b51c132ff99",
+      "name": "running Kitchen",
+      "address": "Shop 95-33, 9/F, AIA Tower, 183 Electric Road, Fortress Hill",
+      "mealType": [
+        "noodles rice noodles",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 328,
+        "dislikes": 16,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7c17646e-fcbd-422c-976a-b61595ce2ff9",
+      "name": "Emmer 酥炸鯪魚球",
+      "address": "Shop 387, 3/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Italian",
+        "Steak House",
+        "American"
+      ],
+      "sentiment": {
+        "likes": 293,
+        "dislikes": 8,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "83d7af8a-d42f-429c-969c-ec738c523f98",
+      "name": "named",
+      "address": "Shop 7, G/F, King Man Court, 19 Fort Street",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 161,
+        "dislikes": 7,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5b2b89a7-2c06-4646-9632-69684e6c8b28",
+      "name": "reflect couple 煎釀鯪魚 餃子",
+      "address": "72/F, West Tower, Hyatt Centric Victoria Harbour Hong Kong, 1 North Point Estate Lane",
+      "mealType": [
+        "wine",
+        "north point",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 294,
+        "dislikes": 7,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f90fbbc1-7300-4976-8d4e-92931a7733b9",
+      "name": "letter",
+      "address": "Shop 35, 3/F, Tung Fat Building, 25A Kam Ping Street",
+      "mealType": [
+        "north point",
+        "pizza",
+        "All Day Breakfast"
+      ],
+      "sentiment": {
+        "likes": 502,
+        "dislikes": 11,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8c35cd57-dfeb-4fe5-a415-0eb7ea227c50",
+      "name": "白酒蜆肉意粉",
+      "address": "Shop 9, G/F, TRP Commercial Centre, 18 Tanner Road",
+      "mealType": [
+        "north point",
+        "taiwan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 244,
+        "dislikes": 1,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f68099c0-8800-411d-be9c-531e4c88079f",
+      "name": "Four act 居酒屋 Tak",
+      "address": "Shop 304, 3/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "singaporean",
+        "north point",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 225,
+        "dislikes": 19,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4b625cc1-25fb-49bf-8b5d-49bef9da50f0",
+      "name": "Basmati",
+      "address": "Shop 4A, 4/F, Nam Fung Court, Harbour Heights, 1 Fook Yum Road, Fortress Hill",
+      "mealType": [
+        "Korean",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "732b8bc5-3684-4ce3-be21-af0a769ff27a",
+      "name": "Megan's",
+      "address": "Shop 6, G/F, Majestic Apartments, 301-319 King's Road",
+      "mealType": [
+        "Chiu Chow",
+        "chinese bbq",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d9fdc20b-40b1-406a-8a16-e3f5343f535c",
+      "name": "25-31 Eggenberg GUYS's",
+      "address": "3/F, King Man Court, 19 Fort Street",
+      "mealType": [
+        "argentinian",
+        "Steak House",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 158,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e21c61c6-12c2-4632-9a55-266b9ccce5e4",
+      "name": "complemented",
+      "address": "Shop 56&56A, 5/F, Maylun Apartments, 442-456 King's Road",
+      "mealType": [
+        "hong kong style",
+        "north point",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 99,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3680b576-1926-427e-be7a-2118f87dfbef",
+      "name": "Founded",
+      "address": "Shop 59, 5/F, Victor Court, 14-18 Wang On Road, Fortress Hill",
+      "mealType": [
+        "International",
+        "food stall noodles",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 278,
+        "dislikes": 11,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a63c4c32-82d2-45f8-9801-ab2367c841d9",
+      "name": "arrowroot Executive",
+      "address": "Shop 84, 8/F, Wellborne Commercial Centre, 8 Java Road",
+      "mealType": [
+        "north point",
+        "omakase",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c327713-a76f-44e9-aa40-a626bce80a61",
+      "name": "sizzling naan Upper",
+      "address": "2/F, Mary Court, 376-380 King's Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 269,
+        "dislikes": 8,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2368f6a1-70de-4d1c-89f0-79e07f729470",
+      "name": "手切安格斯肥牛 即炸魚片頭 painting Wood",
+      "address": "Shop C, G/F, 14 Tsat Tsz Mui Road",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "Dai Pai Dong"
+      ],
+      "sentiment": {
+        "likes": 87,
+        "dislikes": 9,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dd51abdc-c7fc-47dc-8336-ecfe1d99f996",
+      "name": "椒鹽百福豆腐 skewers Milan 莓莓角酪 Pancakes 海鮮丼 Shell",
+      "address": "Shop 102, 1/F, Conwell Mansion, 114 Wharf Road",
+      "mealType": [
+        "chicken hot pot",
+        "Hot Pot",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 416,
+        "dislikes": 4,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3388460b-0619-46c0-9742-a226ec37f9f6",
+      "name": "蟹肉紫菜塔可餅 Lollipops",
+      "address": "Shop 5, 2/F, China United Centre, 28 Marble Road",
+      "mealType": [
+        "skewer",
+        "Japanese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 92,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "46265a9e-da7a-49fd-b829-39d2c2a78794",
+      "name": "OYSTER",
+      "address": "Shop C＆D, 3/F, Wah Hoi Mansion, 258 Electric Road, Fortress Hill",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 162,
+        "dislikes": 5,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb5a48f7-d8e1-4c37-aac9-72ab0e9344d1",
+      "name": "千層海膽飯 shores",
+      "address": "1/F, 207 Electric Road, Fortress Hill",
+      "mealType": [
+        "singaporean",
+        "north point",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 121,
+        "dislikes": 5,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a6b5d2e5-4178-4fde-a166-2fae6b5f1dfa",
+      "name": "Brunch",
+      "address": "Shop 9-12, 1/F, AIA Tower, 183 Electric Road, Fortress Hill",
+      "mealType": [
+        "All Day Breakfast",
+        "north point",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 224,
+        "dislikes": 8,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "72e2e7ed-5b10-4e9b-af6f-3b0aa9fe7770",
+      "name": "costumes 白丸元味 Chinese-Japanese",
+      "address": "9/F, Harbour Grand Hong Kong, 23 Oil Street",
+      "mealType": [
+        "north point",
+        "Buffet",
+        "certified halal food"
+      ],
+      "sentiment": {
+        "likes": 283,
+        "dislikes": 60,
+        "neutral": 69
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1f32da62-78b9-4d30-bd9c-dae4c3e5235e",
+      "name": "Alhambra 炸響鈴 touch Tradizionale 喇沙小籠包",
+      "address": "24/F, Harbour Grand Hong Kong, 23 Oil Street",
+      "mealType": [
+        "north point",
+        "wine",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 202,
+        "dislikes": 24,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "72feaa2f-bdef-43f9-ac11-71a3e977b797",
+      "name": "茶碗蒸 minestrone",
+      "address": "Shop 3A, 3/F, Kiu Wah Building, 188-194 Java Road",
+      "mealType": [
+        "salad",
+        "organic food",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 98,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9155a48a-758d-4ea5-874a-28b4c6251445",
+      "name": "parfait TUNG",
+      "address": "Shop 14, G/F, Kin Ga Building, 99 King's Road",
+      "mealType": [
+        "Hong Kong Style",
+        "north point",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 100,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0787f449-73b9-400b-9d07-083527d70fa1",
+      "name": "雞肝 脆皮水潺",
+      "address": "Shop 12&22-13, Princess Mansion, 165-175 King's Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 12,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "90c4d199-4809-4802-832f-8dd5280f42fd",
+      "name": "正宗印度菜 ingredients Missy",
+      "address": "Shop G8, G/F, Fortune Building, 26 Kam Ping Street",
+      "mealType": [
+        "Hong Kong Style",
+        "north point",
+        "chinese buns"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6f1479d4-45ff-4f4d-aa5d-21a78d7b85ae",
+      "name": "check 招牌炸雞翼",
+      "address": "Shop 203, 2/F, Victor Court, 14-28 Wang On Road, Fortress Hill",
+      "mealType": [
+        "hong kong style",
+        "north point",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 164,
+        "dislikes": 11,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7d959c6-a897-43e0-b4c3-8d80ffcb017a",
+      "name": "黑椒和牛酥",
+      "address": "3/F, King Man Court, 19A Fort Street",
+      "mealType": [
+        "pizza",
+        "Italian",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ee3a81f9-875f-4c4b-9b2b-77a463b9bdfc",
+      "name": "Villa 206B Gallery's toppings",
+      "address": "Shop 206B, 2/F, Tung Po Building, 483-497 King's Road",
+      "mealType": [
+        "north point",
+        "bakery",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 82,
+        "dislikes": 2,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fba6f3f2-6d4d-4c25-82cb-e7932e863566",
+      "name": "Chueca Sister gardens 蝴蝶粉 Inspired",
+      "address": "Shop 106, 1/F, Harbour North Phase 1, 1 North Point Estate Lane",
+      "mealType": [
+        "Steak House",
+        "north point",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8e04847-2656-4e03-a85b-5aa539329dd5",
+      "name": "PeakShop 2&3",
+      "address": "Shop 11, G/F, Ming Yuen Court, 2-6 Ming Yuen Western Street",
+      "mealType": [
+        "Korean",
+        "north point",
+        "korean fried chicken"
+      ],
+      "sentiment": {
+        "likes": 119,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e007f9b-882e-47f1-a1c6-241ca6680c37",
+      "name": "orchestrates",
+      "address": "Shop 13A, 1/F, Yuen Tung Building, 193 Tsat Tsz Mui Road",
+      "mealType": [
+        "north point",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 5,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "261e41c2-ef37-4fe1-9ae0-a310d34046e4",
+      "name": "AVOCADO",
+      "address": "Shop 39&32, G/F, Harbour North Phase 1, 1 North Point Estate Lane",
+      "mealType": [
+        "north point",
+        "Pet Friendly",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 381,
+        "dislikes": 10,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f8581d3c-8b4b-4b87-838f-d11d7b3aa9eb",
+      "name": "Concerto",
+      "address": "Shop 99-43, G/F, Island Place, 500 King's Road",
+      "mealType": [
+        "Japanese",
+        "Izakaya",
+        "udon"
+      ],
+      "sentiment": {
+        "likes": 215,
+        "dislikes": 16,
+        "neutral": 20
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0899d3bb-59d9-40a8-89c3-47b3f6ad2b7c",
+      "name": "privilege chemical baked",
+      "address": "13/F, Harbour Grand Hong Kong, 23 Oil Street",
+      "mealType": [
+        "Guangdong",
+        "guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 132,
+        "dislikes": 5,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dad358a1-bb81-4439-8761-070b93868c2b",
+      "name": "AOZORA tantalising",
+      "address": "Shop 54A, G/F, Block B, Tung Fat Building, 26 Kam Ping Street",
+      "mealType": [
+        "north point",
+        "Western",
+        "sandwich"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 12,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0feda002-a11a-4ea0-a5c9-3e2a7e33b707",
+      "name": "芝麻鹽焗雞",
+      "address": "Shop D, G/F, Java Commercial Centre, 124-132 Java Road",
+      "mealType": [
+        "Japanese",
+        "north point",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 72,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1de042b6-689f-42bf-b0fd-b6fd6c4454b1",
+      "name": "街頭魚糕串串 ingredient",
+      "address": "Shop I-2, G/F, Lei Do Building, 7 Fuk Yuen Street",
+      "mealType": [
+        "Sweets",
+        "Hong Kong Style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 347,
+        "dislikes": 16,
+        "neutral": 54
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "927fde1b-eb3b-4b87-920e-a102212f7778",
+      "name": "shrimps",
+      "address": "3/F, Hotel Alexandra, 32 City Garden Road",
+      "mealType": [
+        "north point",
+        "Buffet",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 135,
+        "dislikes": 32,
+        "neutral": 40
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b66c2996-0080-4315-89dc-7a98163e5882",
+      "name": "羅宋湯",
+      "address": "Shop 5, G/F, Fortuna Building, 38 Kam Ping Street",
+      "mealType": [
+        "International",
+        "Coffee Shop",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 69,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c5c66ae8-27a2-4e9f-9a46-8cd599f06bf7",
+      "name": "CRÈME Neck stewed",
+      "address": "2/F, Fairview Court, 7 Tsat Tsz Mui Road",
+      "mealType": [
+        "north point",
+        "Indian",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 337,
+        "dislikes": 15,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef175c36-0573-4da7-be8e-285bbc28244b",
+      "name": "鹵水鵝片 五福臨門 sushi",
+      "address": "Shop 326, 3/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Taiwan",
+        "noodles rice noodles",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 108,
+        "dislikes": 11,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4028d733-cdd4-45e2-92df-9e27cd6dfec5",
+      "name": "goong Court attracting",
+      "address": "Shop 2A, G/F, Seaview Building, 6-8 Wharf Road",
+      "mealType": [
+        "Korean",
+        "north point",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 83,
+        "dislikes": 3,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "547ac461-2b70-4619-aaa5-1c7bbba17540",
+      "name": "響鈴 三秒腐皮 Head's 西班牙巴斯克焦香芝士蛋糕",
+      "address": "Shop 92, UG/F, Healthy Village Phase II, 668 King's Road",
+      "mealType": [
+        "north point",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 174,
+        "dislikes": 15,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2771ed71-bd5e-41b0-9932-a8d606b5388b",
+      "name": "Yiouvetsi 焙茶朱古力 咸梅西瓜沙冰 Chaat",
+      "address": "Shop C8&C3, WORFU FOOD COURT, Shop B50-51, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "singaporean",
+        "north point",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 1,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "84c3e3b6-2072-41cc-8eda-8abaa1c11f0b",
+      "name": "always 油雞例牌 Aroy",
+      "address": "8/F, Ming Fai Building, 20-36 Wharf Road",
+      "mealType": [
+        "north point",
+        "Korean",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 111,
+        "dislikes": 5,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1454786c-b856-45e9-b693-77abbcb02e52",
+      "name": "Head",
+      "address": "Shop G94, G/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "north point",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 96,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5bb2aac4-ae21-49a8-a9d0-7f6dbc5eb905",
+      "name": "串茄焗豬扒飯",
+      "address": "3/F, Kingsfield Centre, 18 Shell Street",
+      "mealType": [
+        "Korean",
+        "north point",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 87,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c956b7e-1d94-47f6-80ff-0b462b3fb493",
+      "name": "take",
+      "address": "13/F, May Ka Mansion, 21-23 Fort Street",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 136,
+        "dislikes": 9,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4306e421-a0e5-4f9b-9916-896c5cfd7197",
+      "name": "芒果乳酪",
+      "address": "Shop 9, G/F, Everwin Building, 406-408 King's Road",
+      "mealType": [
+        "congee",
+        "hong kong style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 40,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fc14b2bb-0c0c-4d20-b1e3-89004f472aad",
+      "name": "班戟 Koji 牛肉寶盒 鴛鴦餐",
+      "address": "Shop NP-80-105, YATA Supermarket, B1/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "roast meat",
+        "north point",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 156,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0156725b-3bfa-4c81-81a6-c54149e410a7",
+      "name": "Brasserie 甜辣無骨炸雞 吉列豬扒",
+      "address": "Shop 3-5, 1/F, The Consonance, 23 Jupiter Street",
+      "mealType": [
+        "north point",
+        "Family Friendly",
+        "Philippines"
+      ],
+      "sentiment": {
+        "likes": 68,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca721dce-1907-4a72-97c8-1db708746c8d",
+      "name": "vibrant excellent A5和牛",
+      "address": "Shop C-D, 1/F, Tung Po Building, 483-497 King's Road",
+      "mealType": [
+        "north point",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 82,
+        "dislikes": 18,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6fd523f6-1b02-43e1-9481-d3ba0533768a",
+      "name": "Head's 脆蝦棒 day",
+      "address": "2/F, KP Tower, 93 King's Road",
+      "mealType": [
+        "north point",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6fb1fe4a-687f-4eb9-b400-731e64581f6c",
+      "name": "Sho",
+      "address": "Shop B76-36, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "yunnan",
+        "noodles rice noodles",
+        "Yunnan"
+      ],
+      "sentiment": {
+        "likes": 101,
+        "dislikes": 10,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0a9587c4-4c92-46f5-919d-35d6a2e0eb8a",
+      "name": "蘑菇湯 雞蛋羹 Shan",
+      "address": "2/F, Tung Fat Building, 43A Kam Ping Street",
+      "mealType": [
+        "International",
+        "north point",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 87,
+        "dislikes": 15,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24f3f0b6-054b-4305-b0bb-f1205578c52a",
+      "name": "日式生炸乳鴿 Lippo cake",
+      "address": "Shop 4, 2/F, Gain Yu Building, 96 Wharf Road",
+      "mealType": [
+        "chiu chow",
+        "north point",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 210,
+        "dislikes": 17,
+        "neutral": 29
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "29075b81-3dd4-45e5-984c-97ad03fab047",
+      "name": "干貝蟹白湯拉麵",
+      "address": "G/F, 358 Electric Road, Fortress Hill",
+      "mealType": [
+        "Italian",
+        "north point",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 8,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8ee78e58-ae67-4a46-b178-da9a31c4cf47",
+      "name": "明太子",
+      "address": "1/F, Java Commercial Centre, 132 Java Road",
+      "mealType": [
+        "noodles rice noodles",
+        "hong kong style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8198ac07-9da7-47dc-8e30-83c1014dbde6",
+      "name": "cabinet 金莎朱古力",
+      "address": "3/F, Kwai Hung Holdings Centre, 89 King's Road, Fortress Hill",
+      "mealType": [
+        "Coffee Shop",
+        "north point",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9576a724-b112-45bb-b39e-a100afaf2efb",
+      "name": "Asador-inspired",
+      "address": "Shop G22, G/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Taiwan",
+        "north point",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 137,
+        "dislikes": 13,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6831febc-fc02-4a5d-bfb7-11c2c708d5ba",
+      "name": "famous",
+      "address": "Shop B05 & B58, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "Japanese",
+        "roast meat",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 30,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d48ede52-6ea0-43ed-8022-41f6cb812879",
+      "name": "Zero eggs",
+      "address": "Shop G1-G7, G/F, Harbour North Phase 3, 133 Java Road",
+      "mealType": [
+        "north point",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 133,
+        "dislikes": 8,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0ab30e4b-0dc1-417a-b2bd-d0c5ca8e78da",
+      "name": "fast-food 肉鬆馬拉糕",
+      "address": "Shop L99, LG/F, Fitfort, 560 King's Road",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 10,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34a4a4ad-dd6c-41ec-af45-f7456993c23b",
+      "name": "Pawn",
+      "address": "Shop A, G/F, Tung Bo Building, 483-497 King's Road",
+      "mealType": [
+        "wonton dumpling",
+        "north point",
+        "Shanghai"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71a7b30b-f4a8-48bf-a920-170d7df3e30a",
+      "name": "Cart",
+      "address": "Shop 51-36, G/F, Novum Point, 3 Marble Road",
+      "mealType": [
+        "north point",
+        "Chinese"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 6,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e02b3e21-9758-486f-810f-3a3b5fab9740",
+      "name": "肉眼牛扒 basket 咖喱魷魚",
+      "address": "G/F & 8/F, Goldfield Mansion, 62-68 Java Road",
+      "mealType": [
+        "Nostalgic",
+        "shunde",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 157,
+        "dislikes": 22,
+        "neutral": 54
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fbdff1bc-9761-42a9-8298-82e9fc0ca2ca",
+      "name": "TamJai patrons style; promote",
+      "address": "Shop B21, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "Vegetarian"
+      ],
+      "sentiment": {
+        "likes": 65,
+        "dislikes": 0,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b8395b0-f03b-4369-9535-0f9a1166bf0f",
+      "name": "slightly 招牌泰式蟹肉炒飯 Apple in:joi",
+      "address": "Shop 9, G/F, 7 Fort Street",
+      "mealType": [
+        "north point",
+        "International",
+        "Steak House"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "29f31cba-8b2e-4f61-8d50-30a8b798d78a",
+      "name": "布甸撻 焗龍蝦芝士通心粉",
+      "address": "Shopp 915, G/F, Island Place, 500 King's Road,",
+      "mealType": [
+        "Coffee Shop",
+        "eastern europe",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 12,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2e87dedc-863e-4e6b-9943-7178c6d62756",
+      "name": "Sa",
+      "address": "Shop 15, 1/F, Block 3, City Garden, 233 Electric Road, Fortress Hill",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 50,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9fe6cc4f-a7d1-49d1-abb5-8da8f0a53ac9",
+      "name": "House",
+      "address": "G/F, Block A, Tung Fat Building, 21 Kam Ping Street",
+      "mealType": [
+        "north point",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1f18b5d2-5aeb-4d3b-9f4a-71af5f0a42d4",
+      "name": "薄切鹽燒牛舌",
+      "address": "Shop 22, G/F, Wang Fai Mansion, 2-12 Wang On Road, Fortress Hill",
+      "mealType": [
+        "Takeaway",
+        "taiwan",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 46,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7e48f0ee-535e-4aa2-928c-31b1ae361882",
+      "name": "Edamame Woo",
+      "address": "Shop 953, 1/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Japanese",
+        "ramen",
+        "Curry"
+      ],
+      "sentiment": {
+        "likes": 93,
+        "dislikes": 13,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d1979c25-a32f-47d2-b242-c3552f31d024",
+      "name": "don",
+      "address": "Shop 101, G/F, 61D, Tsat Tsz Mui Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 6,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2306c27a-486a-4d4b-995a-7353b3dbebbf",
+      "name": "brands audio family's 好正",
+      "address": "Shop 8-2, G/F, Harbour East, 218 Electric Road, Fortress Hill",
+      "mealType": [
+        "Brunch",
+        "belgian",
+        "Belgian"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "96ac226e-e11e-4ea6-8248-e3958ce2a12b",
+      "name": "anglerfish mushroom",
+      "address": "Shop G96, G/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "north point",
+        "Steak House",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "63bdec3a-2d81-49c5-9c20-2fd271d61677",
+      "name": "life 抹茶芝士蛋糕 米線 海鮮薄餅",
+      "address": "Shop B8, B/F, The Wharf, 33 North Point Road",
+      "mealType": [
+        "Dai Pai Dong",
+        "Stir Fry",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8cc5d8a5-afae-4433-97dd-95818850ce18",
+      "name": "Wing Xiao",
+      "address": "Shop 76, 3/F, AIA Tower, 183 Electric Road, Fortress Hill",
+      "mealType": [
+        "robatayaki",
+        "Izakaya",
+        "skewer"
+      ],
+      "sentiment": {
+        "likes": 47,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3b52330b-2acd-4d50-86ea-63cf075d0a14",
+      "name": "example Nestling 優格蓋茶",
+      "address": "3/F, West Tower, Hyatt Centric Victoria Harbour, 1 North Point Estate Lane",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4cac2674-018f-43aa-8975-3a4cc8f00431",
+      "name": "demand buns",
+      "address": "Shop 703, 7/F, Po Wing Building, 1A Merlin Street, Fortress Hill",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9771438f-e21d-4e23-89ae-a0d98b722213",
+      "name": "one-person savouring",
+      "address": "Shop D, 3/F, Rialto Mansion, 177-191A King's Road, Fortress Hill",
+      "mealType": [
+        "north point",
+        "Singaporean",
+        "singaporean"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8672927e-6ba3-4ed1-92de-6ee40859db9a",
+      "name": "功夫湯",
+      "address": "Shop A, 2/F, Golden Castle Mansion, 5-13 Fortress Hill Road",
+      "mealType": [
+        "Coffee Shop",
+        "Mexican",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 43,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7b65e9f8-38a5-4a01-9979-55b591e743b9",
+      "name": "ceramics FRANCIS",
+      "address": "Shop 308, 3/F, City Garden Shopping Arcade Block 10, Electric Road",
+      "mealType": [
+        "Curry",
+        "Indian",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a72e8ce1-9746-41ff-8234-313af207cfc3",
+      "name": "黯然銷魂叉燒 龍蝦刺身 everyone",
+      "address": "Shop 1-5, G/F, Wah Hing Mansion, 449-455 King's Road",
+      "mealType": [
+        "north point",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 4,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "05d0eaf1-897b-400d-87fb-34adc070160a",
+      "name": "賽旁蟹",
+      "address": "Shop 9, G/F, Wang Fai Mansion, 2-12 Wang On Road",
+      "mealType": [
+        "wonton dumpling",
+        "Guangdong",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 42,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5e8b18be-9338-4a1d-8f0e-3e57ad51e9bc",
+      "name": "everyone",
+      "address": "Shop 498-519, 2/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "north point",
+        "pizza",
+        "Italian"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59154606-1ceb-41f9-8714-6bc23c3a9b24",
+      "name": "星野抹茶巴斯克配豆腐忌廉",
+      "address": "Shop 6&4, 3/F, Island Lodge, 21-23 Kam Hong Street",
+      "mealType": [
+        "north point",
+        "salad",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 11,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f7c86548-88a4-4211-b23b-99c8d5a42c8d",
+      "name": "海老虎",
+      "address": "Shop 92-00, 2/F, Wai Lai Mansion, 5-7 Kam Hong Street",
+      "mealType": [
+        "north point",
+        "Taiwan",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "606d36b4-a935-4fbe-8752-7a7874728b55",
+      "name": "青醬雞肉扁意粉",
+      "address": "Shop A, 1/F, Block A, Tung Fat Building, 23 Kam Ping Street",
+      "mealType": [
+        "north point",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "19f415df-4878-4621-8554-ea4d719d4c0d",
+      "name": "Ruth's",
+      "address": "Shop C4, 6/F, Seabright Plaza, 9-23 Shell Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ddd1705e-3a5b-4f3a-b549-e351958a7d36",
+      "name": "merges & farm",
+      "address": "Shop B8, B/F, 100-104 Tsat Tsz Mui Road",
+      "mealType": [
+        "Japanese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ebb1701f-583d-47d1-98b9-47cad103edd2",
+      "name": "community vibrant",
+      "address": "12/F, 85 Java Road",
+      "mealType": [
+        "Hong Kong Style",
+        "north point",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 15,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71e81636-d437-400c-ae6e-196dc5b8977e",
+      "name": "philosophy",
+      "address": "Shop 42-19, 3/F, Kiu Kwan Mansion, 395 King's Road",
+      "mealType": [
+        "all you can eat",
+        "Hot Pot",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 81,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Central",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ebe40602-4a2b-45b8-9a3d-36e6e86649aa",
+      "name": "macae hustle 原條牛舌芯 anybody",
+      "address": "G/F, 8A Tsat Tsz Mui Road",
+      "mealType": [
+        "chiu chow",
+        "north point",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 63,
+        "dislikes": 4,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7e450f65-29d9-43d4-b768-63f5883a42fa",
+      "name": "Koku origami",
+      "address": "Shop 4, 3/F, Victor Court, 18 Wang On Road, Fortress Hill",
+      "mealType": [
+        "malaysian",
+        "north point",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5e9768b3-2bad-49d5-b304-725a6fd7a2c8",
+      "name": "imports",
+      "address": "G/F, 894 Electric Road",
+      "mealType": [
+        "north point",
+        "Hong Kong Style",
+        "Takeaway"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a64b08b8-14fd-4531-a5c1-eba350ef0038",
+      "name": "large gourmands Luck",
+      "address": "Shop 1 & 3, 2/F, Block 1-3, Maximall City Garden, 233 Electric Road, Fortress Hill",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "jingchuanhu"
+      ],
+      "sentiment": {
+        "likes": 199,
+        "dislikes": 3,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "15559e54-b868-475f-a646-ee7b3c70a3bf",
+      "name": "杣‧YASHIMA",
+      "address": "Shop 101, WORFU FOOD COURT, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "noodles rice noodles",
+        "Chinese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 44,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "21441ac0-7a8e-41de-854a-c9584cd2c983",
+      "name": "旋風薯條",
+      "address": "2/F, 61 North Point Road",
+      "mealType": [
+        "Hunan",
+        "jingchuanhu",
+        "Jingchuanhu"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 2,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c492b623-8f97-4268-84f1-dac3df5ed5aa",
+      "name": "energetic",
+      "address": "G/F, 6 Tsat Tsz Mui Road",
+      "mealType": [
+        "yunnan",
+        "Yunnan",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 80,
+        "dislikes": 26,
+        "neutral": 39
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "444e1c2f-d35f-4e22-ab6c-a19b466bcbf4",
+      "name": "(Tak",
+      "address": "Shop 103, 1/F, Scala Mansion, 25-31 Tsat Tsz Mui Road",
+      "mealType": [
+        "hong kong style",
+        "north point",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4e4def52-8ab6-435b-8c61-cba7c8c470a1",
+      "name": "Master Johan",
+      "address": "Shop 82-92, 8/F, Ka Wai Building, 146-166 Java Road",
+      "mealType": [
+        "hunan",
+        "north point",
+        "Hunan"
+      ],
+      "sentiment": {
+        "likes": 37,
+        "dislikes": 5,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38d011c3-b13c-4607-84da-a3a01802bbfa",
+      "name": "原味",
+      "address": "Shop 8, 1/F, Victor Court, 18 Wang On Road, Fortress Hill",
+      "mealType": [
+        "udon",
+        "Izakaya",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "7bf3de95-7351-45db-933a-b46d173d411b",
+      "name": "蒜蓉生蠔",
+      "address": "Shop 101, G/F, Chung Nam Mansion, 163 King's Road",
+      "mealType": [
+        "ramen",
+        "Japanese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 39,
+        "dislikes": 10,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca283cbc-8dc9-4d65-93ae-962851e91f74",
+      "name": "ocean",
+      "address": "B/F, Ngan Fai Building, 86-88 Wharf Road",
+      "mealType": [
+        "hunan",
+        "Hunan",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9c2c14f8-019a-47c7-ba36-5ef027bf56c7",
+      "name": "cusines metres",
+      "address": "Shop P5G8B, G/F, Harbour North Phase 3, 133 Java Road",
+      "mealType": [
+        "north point",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 20,
+        "dislikes": 3,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "03bf661d-3de8-4935-869d-3d1343a9883d",
+      "name": "hungry 火鍋店",
+      "address": "Shop 213, 2/F, Harbour North Phase 1, 1 North Point Estate Lane",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 11,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b52e89f0-bf6a-448c-925d-0538c8adef67",
+      "name": "Moon Kappo's 50",
+      "address": "Shop B, 2/F, Po Wing Building, 6-16 Shell Street, Fortress Hill",
+      "mealType": [
+        "Chinese",
+        "noodles rice noodles",
+        "bbq"
+      ],
+      "sentiment": {
+        "likes": 21,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "311a79ac-52f1-48f1-8587-691211a98a67",
+      "name": "330 費城牛排芝士堡",
+      "address": "1/F, Block B, Tung Fat Building, 33A Kam Ping Street",
+      "mealType": [
+        "Japanese",
+        "skewer",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "1cd59e23-2ce1-42aa-8401-6b6b3463d74e",
+      "name": "African",
+      "address": "Shop G, 1/F, Po Wing Building, 6-16 Shell Street",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 26,
+        "dislikes": 2,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "dc93b933-8eb2-4752-aaa6-3a0cac468318",
+      "name": "和牛餃子 Vission 86",
+      "address": "Room 587, 8/F, Foo Yet Kai Commercial Centre, 56 Java Road",
+      "mealType": [
+        "north point",
+        "Vegetarian",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 64,
+        "dislikes": 4,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "afc2374d-aafc-44e1-9c4b-c3341619671f",
+      "name": "帶子三文魚籽意大利麵",
+      "address": "4/F, Java Road Municipal Services Building, 99 Java Road",
+      "mealType": [
+        "Hong Kong Style",
+        "congee",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 3,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5116c883-98f1-4358-aed3-bc8054c26481",
+      "name": "true Chart",
+      "address": "3/F, Harbour Grand Hong Kong, 23 Oil Street",
+      "mealType": [
+        "wine",
+        "north point",
+        "Bar"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 0,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cf5861bb-94d5-4dae-a846-57c7fc2de646",
+      "name": "captures SOMM",
+      "address": "Shop 091-517, 2/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Japanese",
+        "roast meat",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 11,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e89373dd-bc2d-4001-8172-ec3d1c892db3",
+      "name": "implementing Telephone",
+      "address": "5/F, Harbour Plaza North Point, 665 King's Road",
+      "mealType": [
+        "International",
+        "certified halal food",
+        "Buffet"
+      ],
+      "sentiment": {
+        "likes": 62,
+        "dislikes": 30,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "46d65bf2-7193-4520-87cf-4b266073f4ee",
+      "name": "commands 吉祥",
+      "address": "Shop G07-G12, G/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Cake Shop",
+        "cake",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6dda0a66-03fd-4f8c-b8f5-e1d91c5bd8d6",
+      "name": "79 吞拿魚 叉燒菜飯 Jin",
+      "address": "Shop G48, G/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Vietnamese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 1,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71060b16-a8b9-4286-9b5b-2396ed56ceb4",
+      "name": "Smash'd's",
+      "address": "G/F, 15 Java Road",
+      "mealType": [
+        "hong kong style",
+        "north point",
+        "Snack Shop & Deli"
+      ],
+      "sentiment": {
+        "likes": 126,
+        "dislikes": 5,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "db6ed61f-c04c-4172-86f9-4712a0000cc2",
+      "name": "blends chocolates Musea)",
+      "address": "Shop 71-00, 1/F, Block 14, City Garden Shopping Arcade, 233 Electric Road, Fortress Hill",
+      "mealType": [
+        "Upper floor Cafe",
+        "north point",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 105,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "964ac05a-10c6-49be-b4d6-81249692074e",
+      "name": "4 Autumn",
+      "address": "Shop B, G/F, Chu Kee Building, 433-437 King's Road",
+      "mealType": [
+        "Korean",
+        "noodles rice noodles",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 10,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ebdaee91-206d-4b58-9961-fd2e072cf59e",
+      "name": "international Head",
+      "address": "Shop A, 1/F, 6-8 Fort Street",
+      "mealType": [
+        "Stir Fry",
+        "guangdong",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 7,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3fca1f24-8122-4324-95a6-d04dafdffbe6",
+      "name": "top Mong Bun",
+      "address": "Shop 2, 2/F, Fu Lee Loy Shopping Centre, 9-27 King Wah Road",
+      "mealType": [
+        "north point",
+        "Coffee Shop",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8bc5efe0-5e19-4a8e-a0b0-3afb89c1d5f4",
+      "name": "CHUTNEY Torihana 鯛沾麵",
+      "address": "Shop 5, 6/F, Victor Court, 14-28 Wang On Road, Fortress Hill",
+      "mealType": [
+        "Western",
+        "north point",
+        "Mediterranean"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 2,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b6b98359-3b8d-4444-b240-f952f689c89a",
+      "name": "does",
+      "address": "Shop H, B/F, Po Wing Building, 1A Merlin Street",
+      "mealType": [
+        "bakery",
+        "Coffee Shop",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4c4aa00-b777-4e94-891e-e8f079d3395d",
+      "name": "principles: everyone!",
+      "address": "Shop E, 9/F, King's Lodge, 4-8 Boat Street",
+      "mealType": [
+        "Western",
+        "north point",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 33,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d39b666-35a7-406a-8e33-6c1dbbe78765",
+      "name": "杜拜朱古力咖啡",
+      "address": "Shop A, 1/F, 298 Electric Road, Fortress Hill",
+      "mealType": [
+        "north point",
+        "snake soup",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 70,
+        "dislikes": 1,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3cbdd506-d984-4f91-9c6a-926d4c2845ca",
+      "name": "象拔蚌刺身 pot; respect Mediterranean interior",
+      "address": "Shop 101, 1/F, Southern Building, 257-273 King´s Road",
+      "mealType": [
+        "Seafood",
+        "noodles rice noodles",
+        "northeastern"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a5425231-9262-4564-b95e-b038067d3748",
+      "name": "tikka addictive-free 野菌腸 cake",
+      "address": "5/F, Kiu Kwan Mansion, 395 King's Road",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 71,
+        "dislikes": 8,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e828e757-a592-4770-b215-64aa46bc5355",
+      "name": "Abroad' 竹蔗茅根 established promote",
+      "address": "7/F, Olympia Plaza, 255 King's Road",
+      "mealType": [
+        "north point",
+        "Seafood",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 77,
+        "dislikes": 22,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c7b5f0a3-aaca-4f76-a574-ae46ae737245",
+      "name": "Chen ladies",
+      "address": "Shop G49-61, G/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "Stir Fry",
+        "Chinese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 136,
+        "dislikes": 3,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f91609c3-4b79-40e2-81ec-392a7d86fa6d",
+      "name": "越風拼盤 not Mak's other",
+      "address": "East Passenger Ferry Pier",
+      "mealType": [
+        "north point",
+        "Buffet",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 2,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e9a4b3ba-8347-44e5-9ea9-61ddf39817f1",
+      "name": "nearly",
+      "address": "1/F, 58A Kam Ping Street",
+      "mealType": [
+        "Japanese",
+        "dessert",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a1594bc6-dccf-475a-8f1e-9676f3024a98",
+      "name": "森林 早餐",
+      "address": "Shop C1, WORFU FOOD COURT, Shop B50-51, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "Hong Kong Style",
+        "food stall noodles",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 23,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5a673f63-7dd7-468c-8dbf-71e9cfab9e22",
+      "name": "large",
+      "address": "Shop A7, WORFU FOOD COURT, Shop B50-51, B/F, WORFU, 21-53 Wharf Road",
+      "mealType": [
+        "chiu chow",
+        "north point",
+        "Chiu Chow"
+      ],
+      "sentiment": {
+        "likes": 12,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a703e92f-ff7e-40e2-a24a-b618669cb128",
+      "name": "distilleries",
+      "address": "Shop UG87, UG/F, Fitfort, 560 King's Road",
+      "mealType": [
+        "Western",
+        "north point",
+        "sandwich"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 3,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d4314776-d5df-460d-ad12-7e29d1b2f081",
+      "name": "Divino 芒果熱情果蛋糕 VIET",
+      "address": "Shop NP-51-001, YATA Supermarket, B1/F, Harbour North Phase 2, 123 Java Road",
+      "mealType": [
+        "Coffee Shop",
+        "Japanese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 16,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6e0534e6-daa5-4f7a-9c44-14d18e368464",
+      "name": "龍蝦海膽醬 Hilton",
+      "address": "Shop 8, 1/F & 1/F, Harbour East, 218 Electric Road, Fortress Hill",
+      "mealType": [
+        "American",
+        "hamburger",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 6,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fae1d6c5-9565-4c53-a849-a05bf050881c",
+      "name": "outdoor Potluck",
+      "address": "Shop B, 3/F, 116-122 Tsat Tsz Mui Road",
+      "mealType": [
+        "north point",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 34,
+        "dislikes": 8,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "83949cbb-8baf-411e-a538-240c320cef43",
+      "name": "Cream STEAK",
+      "address": "Shop 3, 11/F, Yen Po Court, 78-82 Wharf Road",
+      "mealType": [
+        "Takeaway",
+        "Japanese",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0802dad7-5b15-413a-83c7-811b8f42da13",
+      "name": "陳皮鴨湯 unwinding elongating",
+      "address": "7/F, Harbour Plaza North Point, 665 King's Road",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 13,
+        "dislikes": 5,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fa1ae7d3-c555-4f0d-8036-2cc2fc5d9427",
+      "name": "明太子玉子燒 Michelin-starred",
+      "address": "Shop 8-7, 9/F, TRP Commercial Centre, 18 Tanner Road",
+      "mealType": [
+        "Hong Kong Style",
+        "chicken hot pot",
+        "Dim Sum"
+      ],
+      "sentiment": {
+        "likes": 116,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94a9307c-b69f-4876-9b75-88454ea8d627",
+      "name": "lanterns 安格斯沾麵",
+      "address": "Shop 13, 8/F, Braemar Hill Shopping Centre, 45 Braemar Hill Road, North Point",
+      "mealType": [
+        "bakery",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "39f09998-8b3a-4acc-be56-3b57501e3cf3",
+      "name": "下龍灣墨魚餅 Sepoy toast Sichuan",
+      "address": "12/F, 5 Ming Yuen Western Street",
+      "mealType": [
+        "Chinese",
+        "north point",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 18,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa086fd9-f2f8-4c1e-ac67-415ec8c0d4d5",
+      "name": "餐廳's",
+      "address": "B/F, Model Housing Estate, 774 King's Road",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 60,
+        "dislikes": 1,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fd5b2918-458e-46f5-8910-7e200116b487",
+      "name": "FIKA value 鰻魚丼 士多啤梨奶昔 ten 鹽焗手撕雞 retaining 鵝肝 nouvelle",
+      "address": "Shop B, 12/F, Tung Po Building, 483-497 King's Road, North Point",
+      "mealType": [
+        "Vietnamese",
+        "north point",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 6,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "29747e23-4c05-4f1e-97ef-7bfeffbe204c",
+      "name": "Veggie",
+      "address": "6/F, 714-704 Tsat Tsz Mui Road, North Point",
+      "mealType": [
+        "Korean",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 29,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9f30e89e-2c82-4847-940c-e8fd3f32f655",
+      "name": "脆皮雞 咖哩角 certificates",
+      "address": "Shop B81, B/F, Island Place, 500 King's Road, North Point",
+      "mealType": [
+        "Japanese",
+        "north point",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 58,
+        "dislikes": 6,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "60566dc0-31c3-45f3-8c7d-d9c35e9773ff",
+      "name": "烏龍",
+      "address": "Shop CF2, 2/F, Java Road Municipal Services Building, 99 Java Road",
+      "mealType": [
+        "Chinese",
+        "Dai Pai Dong",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 2,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "472ff968-3cfb-41e4-9fbb-efb99bc539e4",
+      "name": "香辣雞翼 Yakitori 闊條麵 Alabama Palm Marume 蒲燒鰻魚飯 Kurobuta Sha Poland oils",
+      "address": "Shop G60, G/F, Fitfort, 560 King's Road, North Point",
+      "mealType": [
+        "International",
+        "north point",
+        "Fast Food"
+      ],
+      "sentiment": {
+        "likes": 17,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "c8247c2c-b71f-4193-802b-4fdd8e17fbd6",
+      "name": "19 Kikanbo 天婦羅炸蝦卷壽司 Karui",
+      "address": "Shop 2A, 2/F, Tanner Court, 60 Tanner Road,, North Point",
+      "mealType": [
+        "All Day Breakfast",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 9,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08e2b107-858f-43a0-ac68-6b2da88507d4",
+      "name": "Sha decorating",
+      "address": "6/F, The Tanner Hill, 8 Tanner Road",
+      "mealType": [
+        "guangdong",
+        "Guangdong",
+        "north point"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 6,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08de01f5-af96-4926-8ecc-2f0e7232bdbb",
+      "name": "G02-G04 RICE's",
+      "address": "Shop L30 & L32, 3/F, FitFort, 560 King's Road, North Point",
+      "mealType": [
+        "north point",
+        "noodles rice noodles",
+        "yunnan"
+      ],
+      "sentiment": {
+        "likes": 25,
+        "dislikes": 4,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "54b9e841-07bd-45a6-99d7-b0f536282ab8",
+      "name": "Wan 手沖咖啡",
+      "address": "11/F, Fu Bong Mansion, 106-110 Tsat Tsz Mui Road, North Point",
+      "mealType": [
+        "north point",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 4,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "262bf8a5-1c11-4a9a-85a5-3787bfab72dc",
+      "name": "Market 湖南土菜 扎肉湯檬",
+      "address": "13/F, 4 Shu Kuk Street, North Point",
+      "mealType": [
+        "north point",
+        "Sweets",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 14,
+        "dislikes": 4,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "01b3f7c1-c27b-49ff-8dc0-317a9a1e2058",
+      "name": "now",
+      "address": "Shop A5, 15/F, Wah Hoi Mansion, 254-280 Electric Road, Fortress Hill, North Point",
+      "mealType": [
+        "north point",
+        "noodles rice noodles",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 8,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "North Point",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

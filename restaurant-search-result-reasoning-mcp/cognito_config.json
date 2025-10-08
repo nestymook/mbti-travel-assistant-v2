@@ -17,7 +17,7 @@
     "password_updated": true
   },
   "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_KePRX24Bn/.well-known/openid-configuration",
-  "setup_timestamp": "us-east-1",
+  "setup_timestamp": "2025-10-04T12:00:00Z",
   "custom_domain": {
     "domain_prefix": "mbti-travel-oidc-334662794",
     "domain_url": "https://mbti-travel-oidc-334662794.auth.us-east-1.amazoncognito.com",

@@ -59,7 +59,7 @@ class JWTAuthenticator:
             response = self.cognito_client.admin_initiate_auth(
                 UserPoolId=self.user_pool_id,
                 ClientId=self.client_id,
-                AuthFlow='ADMIN_NO_SRP_AUTH',
+                AuthFlow='USER_PASSWORD_AUTH',
                 AuthParameters={
                     'USERNAME': username,
                     'PASSWORD': password,
@@ -106,6 +106,10 @@ class DeployedAgentTester:
         logger.info(f"Initialized tester for agent: {self.agent_id}")
         logger.info(f"AgentCore endpoint: {self.agent_endpoint}")
         logger.info(f"Agent ID: {self.agent_id}")
+        
+        # Initialize error handler for circuit breaker management
+        self.error_handler = None
+        self._init_error_handler()
     
     def load_cognito_config(self) -> Dict[str, Any]:
         """Load Cognito configuration."""
@@ -120,6 +124,53 @@ class DeployedAgentTester:
         except Exception as e:
             logger.error(f"Failed to load Cognito config: {e}")
             return {}
+    
+    def _init_error_handler(self):
+        """Initialize error handler for circuit breaker management."""
+        try:
+            # Import the error handler
+            import sys
+            import os
+            sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+            
+            from services.agentcore_error_handler import AgentCoreErrorHandler
+            from config.agentcore_config import AgentCoreConfig
+            
+            # Create a basic config for error handling
+            config = AgentCoreConfig()
+            self.error_handler = AgentCoreErrorHandler(config)
+            logger.info("✅ Error handler initialized for circuit breaker management")
+            
+        except Exception as e:
+            logger.warning(f"Could not initialize error handler: {e}")
+            self.error_handler = None
+    
+    def reset_circuit_breakers(self):
+        """Reset all circuit breakers to clear any OPEN states."""
+        if not self.error_handler:
+            logger.warning("⚠️ Error handler not available - cannot reset circuit breakers")
+            return False
+        
+        try:
+            # Reset circuit breakers for known agent ARNs
+            agent_arns = [
+                f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_result_reasoning_agent-MSns5D6SLE",
+                f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/restaurant_search_agent-ABCDEFGHIJ",
+                f"arn:aws:bedrock-agentcore:us-east-1:209803798463:runtime/{self.agent_id}"
+            ]
+            
+            reset_count = 0
+            for arn in agent_arns:
+                if self.error_handler.reset_circuit_breaker(arn):
+                    reset_count += 1
+                    logger.info(f"🔄 Reset circuit breaker for: {arn}")
+            
+            logger.info(f"✅ Reset {reset_count} circuit breakers")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to reset circuit breakers: {e}")
+            return False
     
     def calculate_secret_hash(self, username: str, client_id: str, client_secret: str) -> str:
         """Calculate SECRET_HASH for Cognito authentication."""
@@ -202,6 +253,9 @@ class DeployedAgentTester:
         """Force a fresh JWT token by removing the existing file and re-authenticating."""
         logger.info("🔄 Forcing JWT token refresh...")
         
+        # Clear any cached token in memory
+        self.jwt_token = None
+        
         # Remove existing token file if it exists
         if self.jwt_token_file.exists():
             try:
@@ -211,7 +265,7 @@ class DeployedAgentTester:
                 logger.warning(f"Could not remove existing token file: {e}")
         
         # Get fresh token
-        return self.get_jwt_token()
+        return self.get_jwt_token(force_refresh=True)
 
     def validate_jwt_token(self, token: str) -> bool:
         """Validate if JWT token is properly formatted and not expired."""
@@ -255,29 +309,42 @@ class DeployedAgentTester:
             logger.warning(f"JWT token validation failed: {e}")
             return False
 
-    def get_jwt_token(self) -> Optional[str]:
+    def get_jwt_token(self, force_refresh: bool = False) -> Optional[str]:
         """Get a valid JWT token for authentication with per-request handling."""
         logger.info("🔐 Starting JWT token authentication process...")
         
-        # Step 1: Try to load from file first (if exists)
-        if self.jwt_token_file.exists():
+        # If we have a cached token and not forcing refresh, validate it first
+        if not force_refresh and self.jwt_token:
+            if self.validate_jwt_token(self.jwt_token):
+                logger.info("✅ Using cached JWT token (still valid)")
+                return self.jwt_token
+            else:
+                logger.warning("⚠️ Cached JWT token is invalid or expired")
+                self.jwt_token = None
+        
+        # Step 1: Try to load from file first (if exists and not forcing refresh)
+        if not force_refresh and self.jwt_token_file.exists():
             logger.info("📄 Found existing JWT token file, attempting to use it...")
             token = self.jwt_token_file.read_text().strip()
             
             if self.validate_jwt_token(token):
                 logger.info("✅ JWT token from file is valid")
+                self.jwt_token = token
                 return token
             else:
                 logger.warning("⚠️ JWT token from file is invalid or expired")
         else:
-            logger.info("📄 No existing JWT token file found")
+            if force_refresh:
+                logger.info("🔄 Force refresh requested - skipping file check")
+            else:
+                logger.info("📄 No existing JWT token file found")
         
-        # Step 2: If file doesn't exist or token is invalid, authenticate with Cognito
+        # Step 2: If file doesn't exist, token is invalid, or forcing refresh, authenticate with Cognito
         if not self.cognito_config:
             logger.error("❌ No Cognito configuration available")
             sys.exit(1)
         
-        logger.info("🔐 Attempting Cognito authentication...")
+        logger.info("🔐 Attempting fresh Cognito authentication...")
         print("\n" + "="*60)
         print("🔐 JWT Authentication Required")
         print("="*60)
@@ -289,11 +356,12 @@ class DeployedAgentTester:
         token = self.authenticate_with_cognito(username=self.default_username)
         
         if token:
-            # Step 3: Save the new token to file (overwrite)
+            # Step 3: Save the new token to file (overwrite) and cache it
             try:
                 self.jwt_token_file.parent.mkdir(parents=True, exist_ok=True)
                 self.jwt_token_file.write_text(token)
                 logger.info(f"✅ Fresh JWT token saved to {self.jwt_token_file}")
+                self.jwt_token = token  # Cache the token
             except Exception as e:
                 logger.warning(f"Could not save token: {e}")
             
@@ -317,7 +385,7 @@ class DeployedAgentTester:
             Dictionary containing the agent response
         """
         try:
-            # Get JWT token
+            # Get JWT token (use cached if valid, otherwise get fresh)
             jwt_token = self.get_jwt_token()
             if not jwt_token:
                 return {
@@ -569,6 +637,29 @@ class DeployedAgentTester:
         """Run comprehensive tests of the deployed agent."""
         logger.info("🚀 Starting comprehensive tests of deployed MBTI Travel Planner Agent...")
         start_time = time.time()
+        
+        # Pre-test setup: Force fresh JWT token and reset circuit breakers
+        logger.info("🔧 Pre-test setup...")
+        
+        # Step 1: Force fresh JWT token generation
+        logger.info("🔄 Forcing fresh JWT token generation...")
+        fresh_token = self.force_token_refresh()
+        if not fresh_token:
+            logger.error("❌ Failed to obtain fresh JWT token")
+            return {
+                'test_results': {'setup_failed': True},
+                'error': 'Failed to obtain fresh JWT token',
+                'timestamp': datetime.utcnow().isoformat()
+            }
+        logger.info("✅ Fresh JWT token obtained successfully")
+        
+        # Step 2: Reset circuit breakers
+        logger.info("🔄 Resetting circuit breakers...")
+        self.reset_circuit_breakers()
+        
+        # Wait a moment for systems to stabilize
+        logger.info("⏳ Waiting for systems to stabilize...")
+        time.sleep(2)
         
         # Test results
         test_results = {

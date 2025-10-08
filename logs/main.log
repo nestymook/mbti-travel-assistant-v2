@@ -34,3 +34,7 @@
 {"timestamp": "2025-10-07 01:58:19,203", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Log level: INFO, File logging: True, JSON logging: True}
 {"timestamp": "2025-10-07 02:48:14,055", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Logging service initialized for mbti_travel_planner}
 {"timestamp": "2025-10-07 02:48:14,056", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Log level: INFO, File logging: True, JSON logging: True}
+{"timestamp": "2025-10-09 02:32:56,326", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Logging service initialized for mbti_travel_planner}
+{"timestamp": "2025-10-09 02:32:56,326", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Log level: INFO, File logging: True, JSON logging: True}
+{"timestamp": "2025-10-09 03:03:26,461", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Logging service initialized for mbti_travel_planner}
+{"timestamp": "2025-10-09 03:03:26,465", "level": "INFO", "logger": "mbti_travel_planner.main", "message": Log level: INFO, File logging: True, JSON logging: True}

@@ -558,7 +558,7 @@ class AgentCoreMonitoringService:
         """
         success = response is not None and error is None
         response_time_ms = response.execution_time_ms if response else 0
-        output_size = len(response.output_text) if response else 0
+        output_size = len(response.response_text) if response else 0
         error_type = type(error).__name__ if error else None
         error_message = str(error) if error else None
         
@@ -745,7 +745,7 @@ class AgentCoreMonitoringService:
             response_time_ms = (time.time() - start_time) * 1000
             
             # Determine health status based on response and timing
-            if response and response.output_text:
+            if response and response.response_text:
                 if response_time_ms < 5000:  # Less than 5 seconds
                     status = "healthy"
                 elif response_time_ms < 15000:  # Less than 15 seconds
@@ -753,7 +753,7 @@ class AgentCoreMonitoringService:
                 else:
                     status = "unhealthy"
                 error_message = None
-                test_output = response.output_text[:200] if response.output_text else None
+                test_output = response.response_text[:200] if response.response_text else None
             else:
                 status = "unhealthy"
                 error_message = "Empty or invalid response from agent"

@@ -1,0 +1,2252 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T21:10:07.515Z",
+    "version": "1.0.0",
+    "district": "Mong Kok",
+    "locationCategory": "Kowloon",
+    "recordCount": 64,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-26T03:21:58.282Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "24a86c61-069b-4289-affc-5f2c8bdc932c",
+      "name": "年糕人蔘雞湯 木蘭Muglan's",
+      "address": "Shop 114 ＆111, 1/F, THE FOREST, 17 Nelson Street",
+      "mealType": [
+        "korean bbq",
+        "korean fried chicken",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 35,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2670f8bc-c91e-4acb-a146-c4aa06d9c84d",
+      "name": "雞叉燒味玉雞白湯拉麵",
+      "address": "Rooftop, 218 Shanghai Street",
+      "mealType": [
+        "mong kok",
+        "Western",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 786,
+        "dislikes": 55,
+        "neutral": 129
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42ecaac8-6156-47da-8a97-831e97571417",
+      "name": "油炸鬼 照燒魷魚筒",
+      "address": "Shop 3, G/F, 3 Kwong Wa Street",
+      "mealType": [
+        "mong kok",
+        "Coffee Shop",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 666,
+        "dislikes": 9,
+        "neutral": 79
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f37e0261-13d3-4729-acc7-5468529a4916",
+      "name": "7-12",
+      "address": "Shop 89A, G/F, Tsui Yuen Mansion Phase 1, 31-39 Waterlood Road",
+      "mealType": [
+        "mong kok",
+        "Izakaya",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 424,
+        "dislikes": 7,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cc63c53b-05ff-40e5-a2ef-25ad262e16f5",
+      "name": "resto But nori",
+      "address": "Room 14-51, 25/F, Golden Era Plaza, 39 Sai Yee Street",
+      "mealType": [
+        "Italian",
+        "Western",
+        "Upper floor Cafe"
+      ],
+      "sentiment": {
+        "likes": 1411,
+        "dislikes": 75,
+        "neutral": 74
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "71d5fe1a-af9a-482e-9afb-53cae5f2d9d8",
+      "name": "expensive 烤乳豬 玫瑰露恐龍 泰皇咖哩炒海鮮 Common",
+      "address": "Shop 871-838, 4/F, MOKO, 193 Prince Edward Road West",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 607,
+        "dislikes": 25,
+        "neutral": 94
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4ba8859b-5f9f-4324-969b-259d428dbc2a",
+      "name": "CITIC",
+      "address": "2/F, Hanway Commercial Centre, 36 Dundas Street",
+      "mealType": [
+        "mong kok",
+        "Upper floor Cafe",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 728,
+        "dislikes": 4,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7e2077b-fa51-4770-b98f-a2398a2f5ea3",
+      "name": "Watson Nha",
+      "address": "G/F, 65 Tung Choi Street",
+      "mealType": [
+        "All Day Breakfast",
+        "mong kok",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 685,
+        "dislikes": 13,
+        "neutral": 41
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5148e24b-fb33-4115-b905-92124c0b7e83",
+      "name": "CARAMEL alike da managed",
+      "address": "05/F, Mongkok City Centre, 74-84 Sai Yeung Choi Street South",
+      "mealType": [
+        "wine",
+        "pizza",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 460,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e2cca9b8-a2e9-4bab-94c5-d6b13a88f561",
+      "name": "continue Honeycomb décor vintage",
+      "address": "G/F, 40 Tung Choi Street",
+      "mealType": [
+        "mong kok",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 1412,
+        "dislikes": 47,
+        "neutral": 57
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3c4d8e15-9976-4926-8124-4795b2f5869f",
+      "name": "醬燒美國豬仔骨",
+      "address": "Shop 27-98, 4/F, Pakpolee Commercial Centre, 1A-1K Sai Yeung Choi Street South",
+      "mealType": [
+        "Bar",
+        "International",
+        "wine"
+      ],
+      "sentiment": {
+        "likes": 1044,
+        "dislikes": 26,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "75212100-892a-43c6-9767-99591ce2476d",
+      "name": "黑松露忌廉魚柳焗飯 wonder",
+      "address": "9/F, 389 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "Seafood",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 864,
+        "dislikes": 30,
+        "neutral": 66
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "09ee2c85-b139-4262-af44-ae1deb8b752a",
+      "name": "Baguette 伯爵茶忌廉日式梳乎厘班戟 招牌炒飯",
+      "address": "49/F, CTMA Centre, 1N Sai Yeung Choi Street South",
+      "mealType": [
+        "mong kok",
+        "korean fried chicken",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 1639,
+        "dislikes": 78,
+        "neutral": 176
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "95625cb2-c889-4363-9179-35905e992e09",
+      "name": "黑松露什菇墨西哥薄餅 Lady",
+      "address": "G/F, 259 Portland Street",
+      "mealType": [
+        "Chinese",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 648,
+        "dislikes": 4,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0761f984-8270-4c45-b392-56e932da1faf",
+      "name": "Aioli",
+      "address": "G/F, 48 Tung Choi Street",
+      "mealType": [
+        "Japanese",
+        "mong kok",
+        "ramen"
+      ],
+      "sentiment": {
+        "likes": 633,
+        "dislikes": 16,
+        "neutral": 79
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "026805e4-cdb5-4512-8c5e-f7e5dc19905c",
+      "name": "Ragu",
+      "address": "74/F, Dundas Square, 43H Dundas Street",
+      "mealType": [
+        "Upper floor Cafe",
+        "Western",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 1176,
+        "dislikes": 35,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4a69456f-86c2-4d01-ae4b-0eeab96b6065",
+      "name": "Kenbo too",
+      "address": "Shop 21, G/F, Hung Wai Building, 3-5 Fa Yuen Street",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 593,
+        "dislikes": 11,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b81ad432-dde1-45bb-b017-f03f999a2e48",
+      "name": "culture",
+      "address": "4/F, Fee Tat Commercial Centre, 613 Nathan Road",
+      "mealType": [
+        "Korean",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 1509,
+        "dislikes": 34,
+        "neutral": 94
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cebe36da-b5dd-4c5e-8ba7-1318807d2f1b",
+      "name": "Tonton 豚肉 certificates Truffle rabbit Shandong",
+      "address": "Shop 919-108, 1/F, THE FOREST, 17 Nelson Street",
+      "mealType": [
+        "Curry",
+        "mong kok",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 1138,
+        "dislikes": 85,
+        "neutral": 167
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e817769e-e458-42d3-afe8-4cb73fb568b0",
+      "name": "真卡邦尼意粉 阿一豬扒酸辣米線 東洋卷 Kong's GYU",
+      "address": "Shop 956, 5/F, T.O.P This is Our Place, 700 Nathan Road",
+      "mealType": [
+        "Seafood",
+        "mong kok",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1124,
+        "dislikes": 39,
+        "neutral": 90
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e51a6f9e-f1b1-4cf9-b62c-369ef427e898",
+      "name": "手工黑啤龍蝦湯 Yukkuri",
+      "address": "0/F, Chong Hing Square, 601 Nathan Road",
+      "mealType": [
+        "taiwan",
+        "mong kok",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 568,
+        "dislikes": 11,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9422c4ae-d5f3-471d-a919-cd40855912d0",
+      "name": "audio urban",
+      "address": "8/F, Chong Hing Square, 601 Nathan Road",
+      "mealType": [
+        "roast meat",
+        "mong kok",
+        "taiwan"
+      ],
+      "sentiment": {
+        "likes": 988,
+        "dislikes": 39,
+        "neutral": 37
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f33acdb8-a83d-4d9d-a0a1-f4d38737935d",
+      "name": "象拔蚌刺身",
+      "address": "39/F, 858 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "French",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 1166,
+        "dislikes": 58,
+        "neutral": 87
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d0e5ce3f-714e-413d-b8da-5914ec8f22f0",
+      "name": "炒腸粉加蛋",
+      "address": "Shop 16, G/F, Ngai Hing Mansion, 74-76 Hak Po Street",
+      "mealType": [
+        "Japanese",
+        "skewer",
+        "sushi sashimi"
+      ],
+      "sentiment": {
+        "likes": 1321,
+        "dislikes": 30,
+        "neutral": 46
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "168361a7-59cd-4a23-8241-d8de76fcbf26",
+      "name": "\"Cheung 香蔥碎吞拿魚腩配脆米餅 滿滿石燒牛扒",
+      "address": "Shop 28, G/F, Tsui Yuen Mansion Phase 2, 2-20 Kwong Wa Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Vietnamese",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 403,
+        "dislikes": 11,
+        "neutral": 35
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a885bb89-2af2-4726-8901-11389f0c0fc3",
+      "name": "yolk",
+      "address": "Shop 31, G/F, Kwong Fai Mansion, 13 Kwong Wa Street",
+      "mealType": [
+        "ramen",
+        "Celebrity Shop",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 472,
+        "dislikes": 21,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2fbb876e-06c3-44e0-b849-b2829a3159b3",
+      "name": "自家製日本免治雞棒配日本雞蛋 辣子雞 Eight",
+      "address": "2/F, King Wah Centre, 628 Nathan Road",
+      "mealType": [
+        "guangdong",
+        "mong kok",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 89,
+        "dislikes": 1,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9d3c8dab-c685-4c4f-bab6-b793e2a00bad",
+      "name": "BKK 西班牙無激素豬頸肉 黃金蝦球 「弄堂」是上海話小巷之意。店取此名意謂住家小菜、小店風味和地方細小。主廚胡太年逾六十，入廚四十多年，最拿手上海家常菜，全店是女兒班。招牌菜有菜肉餛飩、烤麩、紅燒肉、八寶辣醬和燻魚。",
+      "address": "Shop G48, G/F, 618 Shanghai Street",
+      "mealType": [
+        "Malaysian",
+        "malaysian",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 468,
+        "dislikes": 22,
+        "neutral": 88
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "3d483a1d-534b-4407-b264-9f256f29c52a",
+      "name": "Taro",
+      "address": "02/F, King Wah Centre, 628 Nathan Road",
+      "mealType": [
+        "Hot Pot",
+        "Taiwan",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 775,
+        "dislikes": 6,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f94b8da5-f880-47da-9e03-1c7eb15537d4",
+      "name": "after-dinner 芝士蝦春卷 Kwun \"Seafood",
+      "address": "G/F, 253 Sai Yeung Choi Street South",
+      "mealType": [
+        "mong kok",
+        "Vietnamese",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 347,
+        "dislikes": 3,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d3664961-2af3-4964-bae6-ad99a5fcbca4",
+      "name": "draught",
+      "address": "5/F, Prosperity Building, 61 Tung Choi Street",
+      "mealType": [
+        "mong kok",
+        "mongolia",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 117,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "db0f7bd7-4481-4bb7-8276-6b330e9f4dec",
+      "name": "明太子雞翼 刺身帶子豆腐鯛魚湯 cuisines both travelled genuine",
+      "address": "41/F, Ladder Dundas, 575 Nathan Road",
+      "mealType": [
+        "Western",
+        "mong kok",
+        "Upper floor Cafe"
+      ],
+      "sentiment": {
+        "likes": 710,
+        "dislikes": 66,
+        "neutral": 91
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d5c0e0c-41ef-44ab-82aa-0ab8a7dcf032",
+      "name": "leaving choicesThe fashionable merges",
+      "address": "Shop 411&005, 2/F, Grand Plaza, 625 & 639 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "shanghai",
+        "Guangdong"
+      ],
+      "sentiment": {
+        "likes": 701,
+        "dislikes": 36,
+        "neutral": 123
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "47b8dca0-349a-411a-9a41-ec3871b520bc",
+      "name": "AHI 42°C 焦糖蘋果雙層芝士蛋糕 至尊天九牛腩頭",
+      "address": "Shop 964-108, 4/F, T.O.P This is Our Place, 700 Nathan Road",
+      "mealType": [
+        "Seafood",
+        "Western",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 605,
+        "dislikes": 46,
+        "neutral": 84
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca1fe305-5b0f-428b-ad7c-9c336af4047f",
+      "name": "movie’s Aloo reconnect parties",
+      "address": "6/F, 727 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 941,
+        "dislikes": 22,
+        "neutral": 58
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "02b19790-4230-43c9-93a9-4643b638e9b0",
+      "name": "貝羅菇漢堡 simmers",
+      "address": "08/F, CTMA Centre, 1N Sai Yeung Choi Street South",
+      "mealType": [
+        "korean bbq",
+        "Korean",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 856,
+        "dislikes": 66,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b68448e8-4d86-4ed1-8a52-296e1c768c50",
+      "name": "Tokyolima",
+      "address": "Shop 4B, G/F, Hung Fai Building, 43P-43S Dundas Street",
+      "mealType": [
+        "taiwanese drink",
+        "taiwan",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 481,
+        "dislikes": 7,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8aee6805-5038-4404-88d7-d2b816910f75",
+      "name": "Dong Chi Mandarin Emmer",
+      "address": "G/F, 369 Portland Street",
+      "mealType": [
+        "mong kok",
+        "skewer",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 501,
+        "dislikes": 3,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6001ddbc-66ee-49d7-b1c5-c197176c871b",
+      "name": "斑蘭椰啡 Scotch",
+      "address": "Shop G78, G/F, THE FOREST, 17 Nelson Street",
+      "mealType": [
+        "Coffee Shop",
+        "Western",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 351,
+        "dislikes": 4,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe317025-a7b9-4b10-8c41-19c7f5c6c118",
+      "name": "minutes 薄荷朱古力",
+      "address": "G/F, 745 Nathan Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Guangdong",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 332,
+        "dislikes": 9,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a18b4772-722a-48ea-b3fb-84a365c075c8",
+      "name": "another level 石狩西京魚湯 Shiok Hainanese",
+      "address": "Shop 3A, 0B, 1C, G/F, Golden Era Plaza, 39 Sai Yee Street",
+      "mealType": [
+        "Dim Sum",
+        "guangdong",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 662,
+        "dislikes": 13,
+        "neutral": 28
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ca6f2777-2eb5-4cb9-af9d-ac950d520db9",
+      "name": "Y 四品牛魔御膳",
+      "address": "Shop E, 2/F, Hung Cheung Building, 1-3 Yin Chong Street",
+      "mealType": [
+        "noodles rice noodles",
+        "Nostalgic",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 218,
+        "dislikes": 5,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb3b83d7-75dc-432a-a67c-f560bd378312",
+      "name": "British Shao Basmati 炸燒賣",
+      "address": "Shop 443, 8/F, Gala Place, 56 Dundas Street",
+      "mealType": [
+        "Hong Kong Style",
+        "mong kok",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 1031,
+        "dislikes": 18,
+        "neutral": 44
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "07b579f7-7e6a-4ca6-8518-43e4866be012",
+      "name": "methods 八爪魚沙律 Member",
+      "address": "Shop 516, 5/F, T.O.P This is Our Place, 700 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "Korean",
+        "korean bbq"
+      ],
+      "sentiment": {
+        "likes": 730,
+        "dislikes": 18,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "63934b6d-a1ca-4f34-a7d8-899ad54301a3",
+      "name": "Cavatelli 449-455 oysters hotpot chic",
+      "address": "9/F, The Lamma City, 761 Nathan Road",
+      "mealType": [
+        "hong kong style",
+        "mong kok",
+        "chicken hot pot"
+      ],
+      "sentiment": {
+        "likes": 1058,
+        "dislikes": 25,
+        "neutral": 54
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "38f50446-1d28-444e-a56c-d6813caa14a5",
+      "name": "75%朱古力咖啡 泰式炒金邊粉",
+      "address": "G/F, 49 Tung Choi Street",
+      "mealType": [
+        "ramen",
+        "mong kok",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 278,
+        "dislikes": 17,
+        "neutral": 34
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8325d058-2cbc-4e2b-88c2-caa6c7127cc4",
+      "name": "Sky726",
+      "address": "Shop 1, 3/F, THE FOREST, 17 Nelson Street",
+      "mealType": [
+        "Coffee Shop",
+        "mong kok",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 309,
+        "dislikes": 9,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "23f6bb3b-bf1a-4bfe-b392-369b8db23d3c",
+      "name": "J.moon scallion",
+      "address": "Shop B, 4/F, 562 Nathan Road",
+      "mealType": [
+        "mong kok",
+        "ramen",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 403,
+        "dislikes": 10,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9e33b099-7239-48e4-a733-3f71a7de5709",
+      "name": "Tokyo",
+      "address": "Shop B, 2/F, Portland Street Court, 124-128 Portland Street",
+      "mealType": [
+        "hong kong style",
+        "mong kok",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 198,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b5029dfa-9dbf-4800-8f69-efa79468c607",
+      "name": "family-style Wood",
+      "address": "96/F, 616 Nathan Road",
+      "mealType": [
+        "Korean",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 671,
+        "dislikes": 36,
+        "neutral": 75
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b2ebcefd-44ed-4a17-abb5-a0357b5f1303",
+      "name": "Room's",
+      "address": "Shop 6, 5/F, Paradise Square, 3 Kwong Wa Street",
+      "mealType": [
+        "salad",
+        "Japanese",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 466,
+        "dislikes": 24,
+        "neutral": 30
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "de83eeb1-a3b6-4066-9651-d41570f45a42",
+      "name": "came 金湯酸菜魚 MALACCA",
+      "address": "Shop 0, 1/F, Hung Fai Building, 2Q-2Z Tung Choi Street",
+      "mealType": [
+        "mong kok",
+        "Sweets",
+        "sweet soup"
+      ],
+      "sentiment": {
+        "likes": 306,
+        "dislikes": 19,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "73a4a11c-8aec-478e-b4ed-eb13511cd708",
+      "name": "澳洲M9和牛牛丸 well-spent Nutella香蕉班戟 鐵板牛骨髓五花肉配意粉 Nadagogo",
+      "address": "Room B, 7/F, Witty Commercial Building, 1A-1L Tung Choi Street",
+      "mealType": [
+        "mong kok",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 625,
+        "dislikes": 37,
+        "neutral": 83
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a3cb5304-8edf-4d0b-b629-44055db5d253",
+      "name": "蜜汁叉燒滑蛋飯 Cookery China 雞蛋羮",
+      "address": "G/F, 321 Shanghai Street",
+      "mealType": [
+        "mong kok",
+        "Hong Kong Style",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 553,
+        "dislikes": 10,
+        "neutral": 8
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5bbd0e9b-8262-43a8-933c-6ff84fecd12f",
+      "name": "scallops 免治牛肉薯仔沙律 星洲海鮮炒貴刁 Arcadia",
+      "address": "8/F, 4W-3X Sai Yeung Choi Street South",
+      "mealType": [
+        "mong kok",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 376,
+        "dislikes": 15,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba8b6521-d189-450f-9d9c-5fd9c4d2a3f1",
+      "name": "Steam More",
+      "address": "9/F, King Wah Centre, 628 Nathan Road",
+      "mealType": [
+        "Hot Pot",
+        "mong kok",
+        "all you can eat"
+      ],
+      "sentiment": {
+        "likes": 482,
+        "dislikes": 7,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "8673c598-5dfa-4373-bcfb-50be2d7f8fc5",
+      "name": "Offer Chuan shallots entrées 鯛魚濃湯海鮮石鍋",
+      "address": "88/F, CTMA Centre, 1N Sai Yeung Choi Street South",
+      "mealType": [
+        "Guangdong",
+        "mong kok",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 517,
+        "dislikes": 14,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "24becec2-f669-49c4-8a52-e1749829578b",
+      "name": "oyster HomeFood 飛天炒芥蘭",
+      "address": "12/F, Legent Court, 33B Yin Chong Street",
+      "mealType": [
+        "mong kok",
+        "Western",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 188,
+        "dislikes": 8,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6ff4187b-f817-4244-9741-ab8d21d98f89",
+      "name": "Miyazaki 榛子朱古力",
+      "address": "Shop A&B, B/F, Hollywood Plaza, 610 Nathan Road",
+      "mealType": [
+        "taiwan",
+        "Hot Pot",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 869,
+        "dislikes": 14,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f32c645d-90fe-4762-a77c-df18db90f8ac",
+      "name": "Sixes 越式脆蝦腸粉 Forrest’s",
+      "address": "Shop F, 11/F, 33 Nelson Street",
+      "mealType": [
+        "mong kok",
+        "Chinese",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 761,
+        "dislikes": 20,
+        "neutral": 52
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "658826af-7701-4c3b-9a57-e2e5e23b9250",
+      "name": "豬耳 馬拉盞炒通菜 芝士雞煲 金鶴雞白湯拉麵",
+      "address": "2/F, Fee Tat Commercial Centre, 613 Nathan Road",
+      "mealType": [
+        "Izakaya",
+        "Japanese",
+        "mong kok"
+      ],
+      "sentiment": {
+        "likes": 585,
+        "dislikes": 14,
+        "neutral": 23
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "67859e69-1242-44fc-93ad-e0edefd8b2a4",
+      "name": "Garden” 檸檬蛋白配青檸雪葩 Eatery",
+      "address": "G/F, 372 Portland Street",
+      "mealType": [
+        "mong kok",
+        "Vietnamese"
+      ],
+      "sentiment": {
+        "likes": 216,
+        "dislikes": 1,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "13a3c5b1-1f0c-4993-8a1e-4bce90a9136d",
+      "name": "Chinese tram",
+      "address": "Shop A, 7/F, Yue Wong Building, 33 Soy Street",
+      "mealType": [
+        "Snack Shop & Deli",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 198,
+        "dislikes": 3,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9043904d-d050-44df-b7d1-c512a67269ec",
+      "name": "multidisciplinary SUPPA beverage",
+      "address": "Shop 055-506, 5/F, Pakpolee Commercial Centre, 1A-1K Sai Yeung Choi Street South",
+      "mealType": [
+        "Seafood",
+        "guangdong",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 689,
+        "dislikes": 21,
+        "neutral": 15
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Mong Kok",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

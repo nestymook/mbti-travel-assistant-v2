@@ -1,0 +1,669 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T18:16:31.235Z",
+    "version": "1.0.0",
+    "district": "Wong Chuk Hang",
+    "locationCategory": "Hong Kong Island",
+    "recordCount": 19,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.833Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "577d4532-afd0-4368-9a7b-a218428bc52a",
+      "name": "short",
+      "address": "3/F, The Fullerton Ocean Park Hotel Hong Kong, 3 Ocean Drive",
+      "mealType": [
+        "certified halal food",
+        "wong chuk hang",
+        "Seafood"
+      ],
+      "sentiment": {
+        "likes": 41,
+        "dislikes": 2,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e26e9175-c2c5-487e-8f38-fa487b47c1ab",
+      "name": "Shokudo Kita series",
+      "address": "Shop 346-107, 2/F, THE SOUTHSIDE, 11 Heung Yip Road",
+      "mealType": [
+        "Japanese",
+        "wong chuk hang",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 104,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "94f37fbf-0ff6-4a4d-9170-8b4102ed0176",
+      "name": "好記點心小廚",
+      "address": "Shop LG06, LG/F, THE SOUTHSIDE, 11 Heung Yip Road",
+      "mealType": [
+        "Western",
+        "wong chuk hang",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 113,
+        "dislikes": 6,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "f4845548-ff3a-4518-98d8-764dbdd15581",
+      "name": "floor bentos",
+      "address": "Shop 741-603, 2/F, THE SOUTHSIDE, 11 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "Korean",
+        "wong chuk hang",
+        "roast meat"
+      ],
+      "sentiment": {
+        "likes": 151,
+        "dislikes": 4,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ef384cab-b8da-4f20-adad-00afc461c53a",
+      "name": "思家菜's 冬甩",
+      "address": "8/F, The Fullerton Ocean Park Hotel Hong Kong, 3 Ocean Drive",
+      "mealType": [
+        "Western",
+        "certified halal food",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 8,
+        "neutral": 17
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "85a77ce2-b6a5-48d9-b903-badde3be664e",
+      "name": "lulu Whisk 黑豚肩燒丼 188 recommended 椒鹽豆腐",
+      "address": "G/F (Portion C) at Club Wing, Hong Kong Ocean Park Marriott Hotel, Ocean Park, 180 Wong Chuk Hang Road, Wong Chuk Hang",
+      "mealType": [
+        "wong chuk hang",
+        "No Shark Fin",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 8,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4b0d4229-dcae-4031-b360-6907e004b160",
+      "name": "Zhang",
+      "address": "Shop 9, G/F, M Place, 54 Wong Chuk Hang Road",
+      "mealType": [
+        "Western",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 66,
+        "dislikes": 5,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4c249c1-e82b-40fe-b848-3d398e1880e0",
+      "name": "Salted",
+      "address": "P1/F, Nina Hotel Island South, 55 Wong Chuk Hang Road, Wong Chuk Hang",
+      "mealType": [
+        "wong chuk hang",
+        "International",
+        "certified halal food"
+      ],
+      "sentiment": {
+        "likes": 127,
+        "dislikes": 0,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "989798b7-d4f1-4a83-a40c-f8ed616e3056",
+      "name": "手打檸檬茶 來到香港",
+      "address": "2/F, The Fullerton Ocean Park Hotel Hong Kong, 3 Ocean Drive",
+      "mealType": [
+        "singaporean",
+        "wong chuk hang",
+        "Singaporean"
+      ],
+      "sentiment": {
+        "likes": 15,
+        "dislikes": 4,
+        "neutral": 7
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2a8ca7dd-1a5c-4ad2-9d4f-98b2c904b81c",
+      "name": "fix",
+      "address": "Shop LG40, LG/F, THE SOUTHSIDE, 11 Heung Yip Road",
+      "mealType": [
+        "wong chuk hang",
+        "Steak House",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 61,
+        "dislikes": 5,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d7f42bee-c250-48a6-887c-5e42940fbfe8",
+      "name": "Kiosk",
+      "address": "G/F, Marina Wing, Hong Kong Ocean Park Marriott Hotel, 180 Wong Chuk Hang Road, Wong Chuk Hang",
+      "mealType": [
+        "Buffet",
+        "International",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 112,
+        "dislikes": 13,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e2f0f566-6377-4dac-8cba-3bdce8263195",
+      "name": "記粉麵 mix",
+      "address": "Shop LG74, LG/F, THE SOUTHSIDE, 11 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "hamburger",
+        "American",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "690389da-816b-4442-8b93-53115138a598",
+      "name": "Thirty 豆乳",
+      "address": "6/F, The Fullerton Ocean Park Hotel Hong Kong, 3 Ocean Drive, Wong Chuk Hang",
+      "mealType": [
+        "wong chuk hang",
+        "Coffee Shop",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 27,
+        "dislikes": 0,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fb35f877-b2f9-4d99-9dbe-1bb3641e96fb",
+      "name": "Ovaltine",
+      "address": "Grand Aquarium, Aqua City, The Waterfront, Ocean Park, Wong Chuk Hang",
+      "mealType": [
+        "No Shark Fin",
+        "International",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 19,
+        "neutral": 42
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ddda656a-bf0a-45c1-aebf-5b7b97c1507d",
+      "name": "Herbs grills 廣島蠔意粉",
+      "address": "Shop 185, 2/F, THE SOUTHSIDE, 11 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "wong chuk hang",
+        "Korean",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 74,
+        "dislikes": 6,
+        "neutral": 5
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6a6da200-47a9-43e2-b547-92d69e36df37",
+      "name": "nana's will Grove Female",
+      "address": "Suite 5419-1504, 15/F, 41 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "wong chuk hang",
+        "salad",
+        "african"
+      ],
+      "sentiment": {
+        "likes": 51,
+        "dislikes": 2,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "33e366cf-5721-4753-a9b3-db1936df280f",
+      "name": "Using 柚子蕨餅芭菲",
+      "address": "Shop 376, 3/F, THE SOUTHSIDE, 11 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "zhejiang",
+        "wong chuk hang",
+        "Stir Fry"
+      ],
+      "sentiment": {
+        "likes": 36,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc10b6eb-b614-4613-b676-f3bfbaca3bf8",
+      "name": "水煮牛肉 seaside",
+      "address": "Shop 359, 2/F, THE SOUTHSIDE, 11 Heung Yip Road, Wong Chuk Hang",
+      "mealType": [
+        "Thai",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 24,
+        "dislikes": 0,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cdead93f-7b56-46ea-b842-44cdc45a341c",
+      "name": "朱古力蛋糕 Mix 麵包",
+      "address": "Shop 185, 1/F, Metro South Tower 2, 43 Wong Chuk Hang Road, Wong Chuk Hang",
+      "mealType": [
+        "shanghai",
+        "wong chuk hang"
+      ],
+      "sentiment": {
+        "likes": 19,
+        "dislikes": 1,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Wong Chuk Hang",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,2120 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T20:49:12.010Z",
+    "version": "1.0.0",
+    "district": "Sham Shui Po",
+    "locationCategory": "Kowloon",
+    "recordCount": 60,
+    "fileSize": 0,
+    "sanitizedAt": "2025-09-28T22:05:05.928Z",
+    "sanitizationVersion": "1.0.0"
+  },
+  "restaurants": [
+    {
+      "id": "8cfef308-99ac-4ac9-8492-b7211d59f226",
+      "name": "Loop",
+      "address": "G/F, 800 Ki Lung Street",
+      "mealType": [
+        "Hong Kong Style",
+        "sham shui po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 443,
+        "dislikes": 4,
+        "neutral": 16
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "484146e3-83e2-4ac2-9f10-78ccef42f339",
+      "name": "feel 龍蝦湯",
+      "address": "G/F, 18 Apliu Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 238,
+        "dislikes": 1,
+        "neutral": 25
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2b3460c2-5fd0-4fd9-b9e0-e17a9822273f",
+      "name": "House's",
+      "address": "G/F, 727 Ki Lung Street",
+      "mealType": [
+        "sham shui po",
+        "wonton dumpling",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 553,
+        "dislikes": 8,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "62a399e8-3664-4b35-9d5f-f5144a805ea8",
+      "name": "nice",
+      "address": "G/F, 98D Castle Peak Road",
+      "mealType": [
+        "Hong Kong Style",
+        "sham shui po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 717,
+        "dislikes": 31,
+        "neutral": 61
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb68afcb-910c-44c7-a241-5a2949268555",
+      "name": "wine Cherry",
+      "address": "G/F, 374 Tai Nan Street",
+      "mealType": [
+        "organic food",
+        "American",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 386,
+        "dislikes": 6,
+        "neutral": 14
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0d45ba64-7077-462b-a49e-1b40e225b09e",
+      "name": "刺身 23 鰻魚飯",
+      "address": "G/F, 199 Fuk Wing Street",
+      "mealType": [
+        "shanghai",
+        "Stir Fry",
+        "Shanghai"
+      ],
+      "sentiment": {
+        "likes": 222,
+        "dislikes": 8,
+        "neutral": 18
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "491eba40-60d1-42c6-bd10-6c08a609ef9b",
+      "name": "辛辣拉麵",
+      "address": "G/F, 746-323 Apliu Street",
+      "mealType": [
+        "Coffee Shop",
+        "All Day Breakfast",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 321,
+        "dislikes": 15,
+        "neutral": 75
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6fc0b29a-f7da-473f-9b72-c143532dca0c",
+      "name": "highly fusion 上海麵",
+      "address": "G/F, 137 Yu Chau Street",
+      "mealType": [
+        "Hong Kong Style",
+        "hong kong style",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 161,
+        "dislikes": 6,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e4704e10-6c5d-4263-b7f2-b2e3c3f09e17",
+      "name": "鵪鶉蛋燒賣",
+      "address": "Shop 4, G/F, Fuk Lung Building, 191-199 Fuk Wah Street",
+      "mealType": [
+        "Vegetarian",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 453,
+        "dislikes": 9,
+        "neutral": 56
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "77d285e5-a0fc-44b1-b959-71204d8905fa",
+      "name": "Roast head 潮式炸蠔餅",
+      "address": "G/F, 91 Wong Chuk Street",
+      "mealType": [
+        "Chinese",
+        "bbq",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 215,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "42515d4c-b421-43e2-b760-a3041ffdfbff",
+      "name": "Enjoy 1 stylishly Pancake",
+      "address": "G/F, 086 Yu Chau Street",
+      "mealType": [
+        "Japanese",
+        "Western",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 298,
+        "dislikes": 3,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5b56ed1f-e7e5-4e7d-9d40-94e8be5eb65e",
+      "name": "(1) Mixian",
+      "address": "G/F, 447 Yu Chau Street",
+      "mealType": [
+        "sham shui po",
+        "hong kong style",
+        "Hong Kong Style"
+      ],
+      "sentiment": {
+        "likes": 158,
+        "dislikes": 3,
+        "neutral": 4
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "52aa4594-62f0-410a-a43c-f28175a918e4",
+      "name": "European 惠顧",
+      "address": "Shop L3-177-128, 2/F, V Walk, 28 Sham Mong Road",
+      "mealType": [
+        "Chinese",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 218,
+        "dislikes": 3,
+        "neutral": 12
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "59def3c4-5cad-4345-90cf-0d83735b655f",
+      "name": "寶河",
+      "address": "G/F, 400 Ki Lung Street",
+      "mealType": [
+        "sham shui po",
+        "Coffee Shop",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 232,
+        "dislikes": 5,
+        "neutral": 22
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4f6a593e-4b80-4f62-b776-d410e6caa91b",
+      "name": "Silver Yuen's",
+      "address": "Shop 581C, 6/F, Dragon Centre, 37K Yen Chow Street",
+      "mealType": [
+        "Steak House",
+        "sham shui po",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 241,
+        "dislikes": 24,
+        "neutral": 27
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ec7332bb-6850-46ad-979b-8b8e458df3cf",
+      "name": "Fish steakhouse",
+      "address": "Shop B, G/F, Wah Shing Building, 19 Castle Peak Road",
+      "mealType": [
+        "teppanyaki",
+        "sham shui po",
+        "Japanese"
+      ],
+      "sentiment": {
+        "likes": 111,
+        "dislikes": 2,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ed0ae4a4-909f-4a34-9f6b-678ad5612807",
+      "name": "至尊 part",
+      "address": "G/F, 464 Fuk Wing Street",
+      "mealType": [
+        "wine",
+        "Steak House",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 130,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "08e923b7-e659-4cc9-a1f6-12a4515be59b",
+      "name": "冰室Wah",
+      "address": "G/F, 993 Lai Chi Kok Road",
+      "mealType": [
+        "herbal tea",
+        "hong kong style",
+        "dessert"
+      ],
+      "sentiment": {
+        "likes": 380,
+        "dislikes": 7,
+        "neutral": 61
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "be0c6df9-cb05-4dd7-9939-784ad5687455",
+      "name": "meatballs Brisket",
+      "address": "G/F, 147 Ki Lung Street",
+      "mealType": [
+        "sandwich",
+        "sham shui po",
+        "Izakaya"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 6,
+        "neutral": 51
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a9312af7-a5ae-4753-8e0f-0b39f7a26701",
+      "name": "5B",
+      "address": "G/F, 5A Maple Street",
+      "mealType": [
+        "sham shui po",
+        "Pet Friendly",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 179,
+        "dislikes": 16,
+        "neutral": 32
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "358eac3a-e0f5-4b5e-93fb-a499dfcbcdb6",
+      "name": "紅豆窩夫",
+      "address": "G/F, 445C Kiu Kiang Street",
+      "mealType": [
+        "Western",
+        "Bar",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 106,
+        "dislikes": 4,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "76da4f58-b76e-4110-a37c-5a032d7f7829",
+      "name": "20-24 Pepperonis",
+      "address": "Shop F50-92, 8/F, Dragon Centre, 37K Yen Chow Street",
+      "mealType": [
+        "korean fried chicken",
+        "Food Court",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 124,
+        "dislikes": 5,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "951af226-7e12-40c1-b59d-c805dbab9b40",
+      "name": "Alva",
+      "address": "G/F, 440-622 Fuk Wing Street",
+      "mealType": [
+        "Western",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 176,
+        "dislikes": 39,
+        "neutral": 55
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "fe74111a-b75c-44e2-a007-245cbfbf3666",
+      "name": "Vietnam soft-shell 彼得包 around",
+      "address": "G/F, Wing Point House, 161 Fuk Wing Street",
+      "mealType": [
+        "Steak House",
+        "sham shui po",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 314,
+        "dislikes": 20,
+        "neutral": 24
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5707a4ec-02ee-483b-941e-0207e2d7e3c0",
+      "name": "Bagus.Bagus Butlery dim",
+      "address": "G/F, 468A Fuk Wa Street",
+      "mealType": [
+        "korean fried chicken",
+        "sham shui po",
+        "Korean"
+      ],
+      "sentiment": {
+        "likes": 169,
+        "dislikes": 11,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4bda7d33-77d7-498d-89cc-53b7ce4277c1",
+      "name": "levels services",
+      "address": "G/F, 41B Kweilin Street",
+      "mealType": [
+        "Japanese",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 14,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0f99ad1e-3e20-4e7a-a797-ef230a15cc2e",
+      "name": "Lobby",
+      "address": "G/F, 49 Fuk Wing Street",
+      "mealType": [
+        "sham shui po",
+        "Thai"
+      ],
+      "sentiment": {
+        "likes": 85,
+        "dislikes": 3,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "0cf93578-d25a-42e7-aa32-84b3ad83a681",
+      "name": "Beijing cuisines",
+      "address": "G/F, 841 Tai Nan Street",
+      "mealType": [
+        "Hong Kong Style",
+        "noodles rice noodles",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 194,
+        "dislikes": 11,
+        "neutral": 62
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6459fe10-3875-4070-8736-5d6996c3cb8e",
+      "name": "格拼盤",
+      "address": "Shop B-C, G/F, 1 Shek Kip Mei Street",
+      "mealType": [
+        "sham shui po",
+        "Nostalgic",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 243,
+        "dislikes": 23,
+        "neutral": 84
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "e340169c-2afc-4790-a493-9bdfd95e5853",
+      "name": "艇仔糯米飯 利時窩夫",
+      "address": "G/F, 178 Tai Nan Street",
+      "mealType": [
+        "sham shui po",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 187,
+        "dislikes": 15,
+        "neutral": 59
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9854858d-0276-4f65-b4f7-b972ead3f6a2",
+      "name": "OHANA Years",
+      "address": "G/F, 166 Ki Lung Street",
+      "mealType": [
+        "sham shui po",
+        "Western",
+        "Coffee Shop"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 12,
+        "neutral": 26
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bb84dc1f-9e85-4768-a466-99da0eca5d9b",
+      "name": "3 éclair seating theme",
+      "address": "G/F, 301 Yu Chau Street",
+      "mealType": [
+        "Pet Friendly",
+        "Coffee Shop",
+        "International"
+      ],
+      "sentiment": {
+        "likes": 102,
+        "dislikes": 2,
+        "neutral": 6
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "585fbe0d-6b8d-4b6b-bcfe-7310775a4c6a",
+      "name": "CUISINE",
+      "address": "G/F, 12 Castle Peak Road",
+      "mealType": [
+        "Hong Kong Style",
+        "Stir Fry",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 267,
+        "dislikes": 19,
+        "neutral": 31
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "d427282e-d253-4663-996c-27e6a28e7c10",
+      "name": "海陸雙拼 modern",
+      "address": "G/F, 448 Fuk Wing Street",
+      "mealType": [
+        "Vietnamese",
+        "noodles rice noodles",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 188,
+        "dislikes": 4,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4ec58f55-5dec-4d0e-b7ab-e41e1e80e875",
+      "name": "Thai's 招牌九宮格拼盤",
+      "address": "G/F, 5K Wong Chuk Street",
+      "mealType": [
+        "American",
+        "Pet Friendly",
+        "hamburger"
+      ],
+      "sentiment": {
+        "likes": 111,
+        "dislikes": 1,
+        "neutral": 2
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "57c61710-bcc0-4be6-8d7b-26709dac1e8d",
+      "name": "advanced",
+      "address": "G/F, 707 Fuk Wing Street",
+      "mealType": [
+        "Chinese",
+        "Guangdong",
+        "herbal cuisine"
+      ],
+      "sentiment": {
+        "likes": 141,
+        "dislikes": 9,
+        "neutral": 36
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5ce2ed5f-aa47-4f9c-ae96-705d7ebd77f2",
+      "name": "seafood Teahouse 紅酒 小籠包",
+      "address": "G/F, 89 Fuk Wa Street",
+      "mealType": [
+        "sushi sashimi",
+        "Seafood",
+        "Hot Pot"
+      ],
+      "sentiment": {
+        "likes": 96,
+        "dislikes": 1,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "5b2ac3e2-2e7e-4336-95dd-e71f748e39b3",
+      "name": "LG04&07",
+      "address": "Shop 5F20-79, Food Court, 8/F, Dragon Centre, 37K Yen Chow Street",
+      "mealType": [
+        "Korean",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 78,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc497a50-bb7a-4c17-a6a7-7c0a5d3f53ce",
+      "name": "香辣海鮮意粉 蒜香醬油炸雞餐 406",
+      "address": "Shop 0-3, G/F, Kin Man Building, 66 Castle Peak Road",
+      "mealType": [
+        "Japanese",
+        "sushi sashimi",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 304,
+        "dislikes": 8,
+        "neutral": 13
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "aa319a1c-bc09-48a7-8b06-8090dd891433",
+      "name": "Services customers 豬油撈飯 81",
+      "address": "G/F, 719 Pei Ho Street",
+      "mealType": [
+        "hong kong style",
+        "sweet soup",
+        "Sweets"
+      ],
+      "sentiment": {
+        "likes": 542,
+        "dislikes": 31,
+        "neutral": 134
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Not specified",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "034063b2-e40e-48b8-899a-f7d8080e7e00",
+      "name": "Courtyard 套餐 和牛肩胛肉 D9",
+      "address": "G/F, 829 Fuk Wing Street",
+      "mealType": [
+        "sham shui po",
+        "Hong Kong Style",
+        "food stall noodles"
+      ],
+      "sentiment": {
+        "likes": 422,
+        "dislikes": 39,
+        "neutral": 106
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b5effbf9-5064-42c7-87d1-44381579deaa",
+      "name": "Fu(I) duck 招牌鍋貼 The",
+      "address": "G/F, 504 Ki Lung Street",
+      "mealType": [
+        "indonesian",
+        "sham shui po",
+        "Indonesian"
+      ],
+      "sentiment": {
+        "likes": 53,
+        "dislikes": 0,
+        "neutral": 0
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "749090f9-f816-4fa9-8f5e-aa2c67eb9f82",
+      "name": "tropical Laing",
+      "address": "G/F, 95 Fuk Wa Street",
+      "mealType": [
+        "sham shui po",
+        "Western"
+      ],
+      "sentiment": {
+        "likes": 268,
+        "dislikes": 24,
+        "neutral": 69
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "539abe7a-9781-4cd7-834a-e5343164b638",
+      "name": "wine 南瓜 Palace's",
+      "address": "G/F, 995 Ki Lung Street",
+      "mealType": [
+        "taiwan",
+        "dessert",
+        "Taiwan"
+      ],
+      "sentiment": {
+        "likes": 175,
+        "dislikes": 15,
+        "neutral": 45
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba0aa7fe-5413-486b-a1aa-99b8b3a33584",
+      "name": "風沙雞 蟹肉和牛漢堡扒",
+      "address": "G/F, 9C Wong Chuk Street",
+      "mealType": [
+        "hong kong style",
+        "Coffee Shop",
+        "salad"
+      ],
+      "sentiment": {
+        "likes": 120,
+        "dislikes": 5,
+        "neutral": 21
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34cd83bc-4843-402b-b29b-4f8667c73821",
+      "name": "home Saturday",
+      "address": "Shop 3, G/F, High One Grand, 188 Fuk Wing Street",
+      "mealType": [
+        "Western",
+        "Coffee Shop",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "b2945c76-863a-40f7-8a71-cce8168ed6f2",
+      "name": "under Nho juicy 784",
+      "address": "G/F, Furama Building, 9-15 Castle Peak Road",
+      "mealType": [
+        "wine",
+        "skewer",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 131,
+        "dislikes": 3,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "6ada2410-051c-4c18-b5bf-946f37e09995",
+      "name": "recipe",
+      "address": "G/F, 819-352 Kiu Kiang Street",
+      "mealType": [
+        "hong kong style",
+        "Hong Kong Style",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 156,
+        "dislikes": 22,
+        "neutral": 70
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$101-200",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "4b3dae25-4861-4782-a47b-d94cf15c4ed0",
+      "name": "牛肉 芝士玉子燒",
+      "address": "G/F, 011 Yu Chau Street",
+      "mealType": [
+        "Steak House",
+        "sham shui po",
+        "pizza"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 10,
+        "neutral": 9
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "bc68a772-0aa5-4cbc-be0c-8d3e9e2bcb4e",
+      "name": "Thailand 28 KEE",
+      "address": "G/F, 86-07 Shek Kip Mei Street",
+      "mealType": [
+        "Dai Pai Dong",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 153,
+        "dislikes": 49,
+        "neutral": 72
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "a824f610-f7d3-481b-9a6e-57562843d66c",
+      "name": "Kiu 酥皮焗田螺",
+      "address": "Shop 545, 3/F, Dragon Centre, 37K Yen Chow Street",
+      "mealType": [
+        "sham shui po",
+        "Chinese",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 52,
+        "dislikes": 0,
+        "neutral": 1
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9a027ce0-ffc3-4c9f-aa3e-ea11ec289718",
+      "name": "Kome Fukui",
+      "address": "G/F, 822 Yu Chau Street",
+      "mealType": [
+        "Thai",
+        "Vietnamese",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 46,
+        "dislikes": 2,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "cb8b70ae-a35c-4a2c-b5b4-6512aefd125d",
+      "name": "麻辣鴨血 VTC",
+      "address": "Shop L8-68, 2/F, V Walk, 28 Sham Mong Road",
+      "mealType": [
+        "Korean",
+        "Japanese",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 54,
+        "dislikes": 8,
+        "neutral": 3
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "ba769d40-36a5-461f-95f0-410929d9f51c",
+      "name": "燒 yellow 美顏",
+      "address": "G/F, 786 Pei Ho Street",
+      "mealType": [
+        "bakery",
+        "Hong Kong Style",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 28,
+        "dislikes": 7,
+        "neutral": 11
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "34ca8e4a-5da5-4b6f-a354-ce671bea9c33",
+      "name": "ACADEMÏCS's 雜扒",
+      "address": "G/F, 757 Lai Chi Kok Road",
+      "mealType": [
+        "ramen",
+        "Japanese",
+        "sham shui po"
+      ],
+      "sentiment": {
+        "likes": 91,
+        "dislikes": 1,
+        "neutral": 19
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "23701501-b31e-4002-8185-755ea684ccbe",
+      "name": "魚湯泡飯",
+      "address": "G/F, 206 Ki Lung Street",
+      "mealType": [
+        "sham shui po",
+        "hong kong style",
+        "wonton dumpling"
+      ],
+      "sentiment": {
+        "likes": 57,
+        "dislikes": 0,
+        "neutral": 10
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$201-400",
+      "operatingHours": {
+        "Mon - Fri": [
+          "07:30 - 20:00"
+        ],
+        "Sat - Sun": [
+          "07:30 - 20:00"
+        ],
+        "Public Holiday": [
+          "07:30 - 20:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "9625aefa-056e-45a6-8570-f8e1489867ce",
+      "name": "Pork Shell Kwong 忌廉龍蝦湯",
+      "address": "G/F, 46 & 66 Fuk Wing Street / Shop D, G/F, 165-167 Pei Ho Street",
+      "mealType": [
+        "hong kong style",
+        "sham shui po",
+        "noodles rice noodles"
+      ],
+      "sentiment": {
+        "likes": 779,
+        "dislikes": 107,
+        "neutral": 326
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$51-100",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "098412c9-9058-4cc7-ad26-d30b7609e6a1",
+      "name": "bake E",
+      "address": "G/F, 481 Yu Chau Street",
+      "mealType": [
+        "Malaysian",
+        "sham shui po",
+        "malaysian"
+      ],
+      "sentiment": {
+        "likes": 158,
+        "dislikes": 15,
+        "neutral": 57
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "$401-800",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "2eff7efe-8f01-4d3f-b8ca-4128ea9f84eb",
+      "name": "Building) According",
+      "address": "G/F, Tung Lo Court, 140 Tai Po Road",
+      "mealType": [
+        "Guangdong",
+        "Stir Fry",
+        "guangdong"
+      ],
+      "sentiment": {
+        "likes": 107,
+        "dislikes": 8,
+        "neutral": 33
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Above $801",
+      "operatingHours": {
+        "Mon - Fri": [
+          "06:30 - 17:00"
+        ],
+        "Sat - Sun": [
+          "06:30 - 17:00"
+        ],
+        "Public Holiday": [
+          "06:30 - 17:00"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    },
+    {
+      "id": "617541f6-397a-4ebe-b2b3-12654c108e8f",
+      "name": "Sommelier Queen Tian Yik Reservoir",
+      "address": "G/F, 7-91 Fuk Wing Street",
+      "mealType": [
+        "Hong Kong Style",
+        "sham shui po",
+        "hong kong style"
+      ],
+      "sentiment": {
+        "likes": 247,
+        "dislikes": 61,
+        "neutral": 124
+      },
+      "locationCategory": "Hong Kong Island",
+      "district": "Sham Shui Po",
+      "priceRange": "Below $50",
+      "operatingHours": {
+        "Mon - Fri": [
+          "11:30 - 15:30",
+          "18:00 - 22:30"
+        ],
+        "Sat - Sun": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ],
+        "Public Holiday": [
+          "11:30 - 17:30",
+          "18:00 - 22:30"
+        ]
+      },
+      "metadata": {
+        "dataQuality": "complete",
+        "version": "1.0.0",
+        "qualityScore": 100
+      }
+    }
+  ]
+}
