@@ -17,9 +17,13 @@ import asyncio
 import json
 import logging
 import time
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, TYPE_CHECKING
 from dataclasses import dataclass
 from datetime import datetime
+
+# Type hints only imports to avoid circular dependency
+if TYPE_CHECKING:
+    from .tool_registry import ToolRegistry, ToolMetadata
 
 # Import comprehensive error handling
 from .agentcore_error_handler import (
@@ -103,7 +107,8 @@ class RestaurantReasoningTool:
         self, 
         runtime_client: AgentCoreRuntimeClient,
         reasoning_agent_arn: str,
-        auth_manager: Optional[AuthenticationManager] = None
+        auth_manager: Optional[AuthenticationManager] = None,
+        tool_registry: Optional['ToolRegistry'] = None
     ):
         """
         Initialize restaurant reasoning tool.
@@ -112,10 +117,12 @@ class RestaurantReasoningTool:
             runtime_client: AgentCore Runtime client
             reasoning_agent_arn: ARN of the restaurant reasoning agent
             auth_manager: Authentication manager (optional)
+            tool_registry: Tool registry for orchestration integration (optional)
         """
         self.runtime_client = runtime_client
         self.reasoning_agent_arn = reasoning_agent_arn
         self.auth_manager = auth_manager
+        self.tool_registry = tool_registry
         
         # Initialize monitoring middleware
         self.monitoring_middleware = get_monitoring_middleware()
@@ -124,6 +131,14 @@ class RestaurantReasoningTool:
         self.call_count = 0
         self.error_count = 0
         self.total_response_time = 0.0
+        
+        # Tool metadata for orchestration
+        self.tool_id = "restaurant_reasoning_tool"
+        self.tool_metadata = self._create_tool_metadata()
+        
+        # Register with orchestration engine if registry provided
+        if self.tool_registry:
+            self._register_with_orchestration()
         
         logger.info(f"Restaurant reasoning tool initialized with agent: {reasoning_agent_arn}")
     
@@ -595,13 +610,162 @@ class RestaurantReasoningTool:
             if self.call_count > 0 else 0
         )
         
-        return {
+        metrics = {
             "total_calls": self.call_count,
             "total_errors": self.error_count,
             "error_rate": self.error_count / max(self.call_count, 1),
             "average_response_time_ms": avg_response_time,
             "agent_arn": self.reasoning_agent_arn
         }
+        
+        # Update orchestration registry if available
+        if self.tool_registry:
+            self.tool_registry.update_tool_performance_metrics(self.tool_id, metrics)
+        
+        return metrics
+    
+    def _create_tool_metadata(self) -> 'ToolMetadata':
+        """Create tool metadata for orchestration registration."""
+        from .tool_registry import ToolMetadata, ToolCapability, ToolType, PerformanceCharacteristics, ResourceRequirements
+        
+        capabilities = [
+            ToolCapability(
+                name="recommend_restaurants",
+                description="Generate intelligent restaurant recommendations based on sentiment analysis",
+                required_parameters=["restaurants"],
+                optional_parameters=["ranking_method"],
+                use_cases=["restaurant ranking", "sentiment-based recommendations"]
+            ),
+            ToolCapability(
+                name="mbti_recommendations",
+                description="Generate MBTI personality-based restaurant recommendations",
+                required_parameters=["restaurants", "mbti_type", "preferences"],
+                optional_parameters=["ranking_method"],
+                use_cases=["personality-based recommendations", "MBTI travel planning"]
+            ),
+            ToolCapability(
+                name="sentiment_analysis",
+                description="Analyze restaurant sentiment data and provide statistical insights",
+                required_parameters=["restaurants"],
+                optional_parameters=["ranking_method"],
+                use_cases=["sentiment analysis", "restaurant data analysis"]
+            )
+        ]
+        
+        performance_chars = PerformanceCharacteristics(
+            average_response_time_ms=3000.0,
+            success_rate=0.92,
+            throughput_requests_per_minute=20,
+            resource_requirements=ResourceRequirements(
+                cpu_cores=1.0,
+                memory_mb=512,
+                network_bandwidth_mbps=5.0,
+                storage_mb=100
+            )
+        )
+        
+        return ToolMetadata(
+            id=self.tool_id,
+            name="Restaurant Reasoning Tool",
+            description="Advanced restaurant reasoning tool with MBTI personality analysis and sentiment-based recommendations",
+            tool_type=ToolType.RESTAURANT_REASONING,
+            capabilities=capabilities,
+            version="2.0.0",
+            mcp_server_url=None,  # Direct AgentCore integration
+            mcp_tool_name="restaurant_reasoning",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "restaurants": {
+                        "type": "array",
+                        "items": {"type": "object"},
+                        "description": "List of restaurant objects with sentiment data"
+                    },
+                    "mbti_type": {
+                        "type": "string",
+                        "pattern": "^[EINT][EINT][TFPJ][TFPJ]$",
+                        "description": "MBTI personality type (e.g., ENFP, INTJ)"
+                    },
+                    "preferences": {
+                        "type": "object",
+                        "description": "User preferences dictionary"
+                    },
+                    "ranking_method": {
+                        "type": "string",
+                        "enum": ["sentiment_likes", "combined_sentiment"],
+                        "description": "Method for ranking restaurants"
+                    }
+                }
+            },
+            output_schema={
+                "type": "object",
+                "properties": {
+                    "recommendations": {
+                        "type": "array",
+                        "items": {"type": "object"},
+                        "description": "List of recommended restaurants with rankings"
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Explanation of the recommendation logic"
+                    },
+                    "confidence_score": {
+                        "type": "number",
+                        "description": "Confidence score for the recommendations"
+                    },
+                    "mbti_analysis": {
+                        "type": "object",
+                        "description": "MBTI-specific analysis and insights"
+                    }
+                }
+            },
+            performance_characteristics=performance_chars,
+            health_check_endpoint=None,
+            health_check_interval_seconds=90,
+            tags={"restaurant", "reasoning", "mbti", "sentiment", "recommendations", "agentcore"},
+            category="restaurant_services"
+        )
+    
+    def _register_with_orchestration(self) -> None:
+        """Register this tool with the orchestration engine."""
+        try:
+            self.tool_registry.register_tool(self.tool_metadata, self)
+            logger.info(f"Restaurant reasoning tool registered with orchestration engine: {self.tool_id}")
+        except Exception as e:
+            logger.error(f"Failed to register restaurant reasoning tool with orchestration: {e}")
+    
+    async def health_check(self) -> Dict[str, Any]:
+        """Perform health check for orchestration monitoring."""
+        try:
+            # Test basic connectivity with a minimal sentiment analysis
+            test_restaurants = [
+                {
+                    "name": "Test Restaurant",
+                    "sentiment": {"likes": 10, "dislikes": 2, "neutral": 3}
+                }
+            ]
+            
+            test_result = await self.analyze_restaurant_sentiment(
+                restaurants=test_restaurants,
+                ranking_method="sentiment_likes",
+                user_id="health_check",
+                session_id="health_check"
+            )
+            
+            return {
+                "healthy": test_result.success,
+                "response_time_ms": test_result.execution_time_ms,
+                "error": test_result.error_message,
+                "agent_arn": self.reasoning_agent_arn,
+                "last_check": datetime.utcnow().isoformat()
+            }
+        except Exception as e:
+            return {
+                "healthy": False,
+                "error": str(e),
+                "agent_arn": self.reasoning_agent_arn,
+                "last_check": datetime.utcnow().isoformat()
+            }
     
     # Backward compatibility methods that return JSON strings
     def recommend_restaurants_tool(

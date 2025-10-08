@@ -17,9 +17,13 @@ import asyncio
 import json
 import logging
 import time
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, TYPE_CHECKING
 from dataclasses import dataclass
 from datetime import datetime
+
+# Type hints only imports to avoid circular dependency
+if TYPE_CHECKING:
+    from .tool_registry import ToolRegistry, ToolMetadata
 
 # Import comprehensive error handling
 from .agentcore_error_handler import (
@@ -103,7 +107,8 @@ class RestaurantSearchTool:
         self, 
         runtime_client: AgentCoreRuntimeClient,
         search_agent_arn: str,
-        auth_manager: Optional[AuthenticationManager] = None
+        auth_manager: Optional[AuthenticationManager] = None,
+        tool_registry: Optional['ToolRegistry'] = None
     ):
         """
         Initialize restaurant search tool.
@@ -112,10 +117,12 @@ class RestaurantSearchTool:
             runtime_client: AgentCore Runtime client
             search_agent_arn: ARN of the restaurant search agent
             auth_manager: Authentication manager (optional)
+            tool_registry: Tool registry for orchestration integration (optional)
         """
         self.runtime_client = runtime_client
         self.search_agent_arn = search_agent_arn
         self.auth_manager = auth_manager
+        self.tool_registry = tool_registry
         
         # Initialize monitoring middleware
         self.monitoring_middleware = get_monitoring_middleware()
@@ -124,6 +131,14 @@ class RestaurantSearchTool:
         self.call_count = 0
         self.error_count = 0
         self.total_response_time = 0.0
+        
+        # Tool metadata for orchestration
+        self.tool_id = "restaurant_search_tool"
+        self.tool_metadata = self._create_tool_metadata()
+        
+        # Register with orchestration engine if registry provided
+        if self.tool_registry:
+            self._register_with_orchestration()
         
         logger.info(f"Restaurant search tool initialized with agent: {search_agent_arn}")
         logger.info("Monitoring and observability features enabled")
@@ -665,13 +680,141 @@ class RestaurantSearchTool:
             if self.call_count > 0 else 0
         )
         
-        return {
+        metrics = {
             "total_calls": self.call_count,
             "total_errors": self.error_count,
             "error_rate": self.error_count / max(self.call_count, 1),
             "average_response_time_ms": avg_response_time,
             "agent_arn": self.search_agent_arn
         }
+        
+        # Update orchestration registry if available
+        if self.tool_registry:
+            self.tool_registry.update_tool_performance_metrics(self.tool_id, metrics)
+        
+        return metrics
+    
+    def _create_tool_metadata(self) -> 'ToolMetadata':
+        """Create tool metadata for orchestration registration."""
+        from .tool_registry import ToolMetadata, ToolCapability, ToolType, PerformanceCharacteristics, ResourceRequirements
+        
+        capabilities = [
+            ToolCapability(
+                name="search_by_district",
+                description="Search restaurants by district/location",
+                required_parameters=["districts"],
+                optional_parameters=["meal_types"],
+                use_cases=["location-based restaurant discovery", "district filtering"]
+            ),
+            ToolCapability(
+                name="search_by_meal_type", 
+                description="Search restaurants by meal type (breakfast, lunch, dinner)",
+                required_parameters=["meal_types"],
+                optional_parameters=["districts"],
+                use_cases=["meal-specific restaurant search", "time-based filtering"]
+            ),
+            ToolCapability(
+                name="combined_search",
+                description="Search restaurants using combined district and meal type filters",
+                required_parameters=[],
+                optional_parameters=["districts", "meal_types"],
+                use_cases=["multi-criteria search", "flexible filtering"]
+            )
+        ]
+        
+        performance_chars = PerformanceCharacteristics(
+            average_response_time_ms=2000.0,
+            success_rate=0.95,
+            throughput_requests_per_minute=30,
+            resource_requirements=ResourceRequirements(
+                cpu_cores=0.5,
+                memory_mb=256,
+                network_bandwidth_mbps=5.0,
+                storage_mb=50
+            )
+        )
+        
+        return ToolMetadata(
+            id=self.tool_id,
+            name="Restaurant Search Tool",
+            description="Comprehensive restaurant search tool using AgentCore with district and meal type filtering",
+            tool_type=ToolType.RESTAURANT_SEARCH,
+            capabilities=capabilities,
+            version="2.0.0",
+            mcp_server_url=None,  # Direct AgentCore integration
+            mcp_tool_name="restaurant_search",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "districts": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "List of district names to search"
+                    },
+                    "meal_types": {
+                        "type": "array", 
+                        "items": {"type": "string", "enum": ["breakfast", "lunch", "dinner"]},
+                        "description": "List of meal types to filter by"
+                    }
+                }
+            },
+            output_schema={
+                "type": "object",
+                "properties": {
+                    "restaurants": {
+                        "type": "array",
+                        "items": {"type": "object"},
+                        "description": "List of matching restaurants"
+                    },
+                    "total_count": {
+                        "type": "integer",
+                        "description": "Total number of restaurants found"
+                    },
+                    "search_metadata": {
+                        "type": "object",
+                        "description": "Search execution metadata"
+                    }
+                }
+            },
+            performance_characteristics=performance_chars,
+            health_check_endpoint=None,
+            health_check_interval_seconds=60,
+            tags={"restaurant", "search", "agentcore", "location", "meal_type"},
+            category="restaurant_services"
+        )
+    
+    def _register_with_orchestration(self) -> None:
+        """Register this tool with the orchestration engine."""
+        try:
+            self.tool_registry.register_tool(self.tool_metadata, self)
+            logger.info(f"Restaurant search tool registered with orchestration engine: {self.tool_id}")
+        except Exception as e:
+            logger.error(f"Failed to register restaurant search tool with orchestration: {e}")
+    
+    async def health_check(self) -> Dict[str, Any]:
+        """Perform health check for orchestration monitoring."""
+        try:
+            # Test basic connectivity with a minimal search
+            test_result = await self.search_restaurants_by_district(
+                districts=["Central district"],
+                user_id="health_check",
+                session_id="health_check"
+            )
+            
+            return {
+                "healthy": test_result.success,
+                "response_time_ms": test_result.execution_time_ms,
+                "error": test_result.error_message,
+                "agent_arn": self.search_agent_arn,
+                "last_check": datetime.utcnow().isoformat()
+            }
+        except Exception as e:
+            return {
+                "healthy": False,
+                "error": str(e),
+                "agent_arn": self.search_agent_arn,
+                "last_check": datetime.utcnow().isoformat()
+            }
     
     # Backward compatibility methods that return JSON strings
     def search_restaurants_by_district_tool(self, districts: List[str]) -> str:

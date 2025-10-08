@@ -40,6 +40,12 @@ from services.agentcore_monitoring_service import AgentCoreMonitoringService
 from services.agentcore_health_check_service import AgentCoreHealthCheckService
 from config.agentcore_environment_config import get_agentcore_config
 
+# Import orchestration engine and related components
+from services.tool_orchestration_engine import ToolOrchestrationEngine, OrchestrationConfig
+from services.orchestration_types import UserContext, RequestType
+from services.orchestration_middleware import OrchestrationMiddleware, MiddlewareConfig
+from services.backward_compatibility import BackwardCompatibilityManager, CompatibilityConfig, CompatibilityMode
+
 # Initialize comprehensive logging and monitoring
 current_environment = os.getenv('ENVIRONMENT', 'production')
 log_level = os.getenv('LOG_LEVEL', 'INFO')
@@ -73,6 +79,12 @@ agentcore_client = None
 auth_manager = None
 error_handler = AgentCoreErrorHandler("mbti_travel_planner_agent")
 
+# Initialize orchestration engine and middleware
+orchestration_engine = None
+orchestration_middleware = None
+compatibility_manager = None
+ORCHESTRATION_AVAILABLE = False
+
 # AgentCore service availability
 AGENTCORE_AVAILABLE = False
 
@@ -83,6 +95,110 @@ health_check_service.start_background_checks()
 logger.info(f"MBTI Travel Planner Agent initializing in {current_environment} environment")
 logger.info(f"Logging level: {log_level}, Performance monitoring enabled: {monitoring_service.enable_performance_tracking}")
 logger.info(f"Health checks enabled: {health_check_service.enable_background_checks}")
+
+def initialize_orchestration_engine():
+    """Initialize the tool orchestration engine for intelligent tool selection."""
+    global orchestration_engine, orchestration_middleware, compatibility_manager, ORCHESTRATION_AVAILABLE
+    
+    try:
+        # Load orchestration configuration
+        config_path = os.path.join(os.path.dirname(__file__), 'config', 'orchestration_config.yaml')
+        
+        if os.path.exists(config_path):
+            orchestration_config = OrchestrationConfig.from_yaml(config_path)
+            logger.info(f"Loaded orchestration configuration from {config_path}")
+        else:
+            # Use default configuration
+            orchestration_config = OrchestrationConfig()
+            logger.info("Using default orchestration configuration")
+        
+        # Initialize orchestration engine
+        orchestration_engine = ToolOrchestrationEngine(
+            config=orchestration_config,
+            environment=current_environment,
+            config_path=config_path if os.path.exists(config_path) else None
+        )
+        
+        # Initialize orchestration middleware
+        middleware_config = MiddlewareConfig(
+            enable_orchestration=True,
+            enable_fallback_to_direct=True,
+            enable_request_logging=orchestration_config.enable_metrics_collection,
+            enable_performance_tracking=orchestration_config.enable_metrics_collection,
+            orchestration_timeout_seconds=orchestration_config.step_timeout_seconds,
+            fallback_timeout_seconds=30
+        )
+        
+        orchestration_middleware = OrchestrationMiddleware(
+            orchestration_engine=orchestration_engine,
+            monitoring_service=monitoring_service,
+            config=middleware_config
+        )
+        
+        # Initialize backward compatibility manager
+        compatibility_config = CompatibilityConfig(
+            mode=CompatibilityMode.HYBRID,  # Start with hybrid mode for gradual rollout
+            enable_feature_flags=True,
+            enable_migration_tracking=True,
+            enable_compatibility_metrics=True,
+            orchestration_adoption_percentage=float(os.getenv('ORCHESTRATION_ADOPTION_PERCENTAGE', '50.0'))
+        )
+        
+        compatibility_manager = BackwardCompatibilityManager(
+            config=compatibility_config,
+            monitoring_service=monitoring_service,
+            environment=current_environment
+        )
+        
+        logger.info("Tool orchestration engine, middleware, and compatibility manager initialized successfully")
+        logger.info(f"Orchestration features - Intent analysis: {orchestration_config.enable_context_analysis}")
+        logger.info(f"Performance monitoring: {orchestration_config.enable_metrics_collection}")
+        logger.info(f"Circuit breaker: {orchestration_config.enable_circuit_breaker}")
+        logger.info(f"Middleware - Fallback enabled: {middleware_config.enable_fallback_to_direct}")
+        logger.info(f"Compatibility - Mode: {compatibility_config.mode.value}, Adoption: {compatibility_config.orchestration_adoption_percentage}%")
+        
+        # Log successful initialization
+        try:
+            monitoring_service.log_performance_metric(
+                operation="initialize_orchestration_engine",
+                duration=0.1,
+                success=True,
+                additional_data={
+                    "environment": current_environment,
+                    "config_path": config_path,
+                    "intent_analysis_enabled": orchestration_config.enable_context_analysis,
+                    "metrics_collection_enabled": orchestration_config.enable_metrics_collection,
+                    "circuit_breaker_enabled": orchestration_config.enable_circuit_breaker,
+                    "middleware_enabled": True,
+                    "fallback_enabled": middleware_config.enable_fallback_to_direct
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log orchestration initialization metrics: {metric_error}")
+        
+        ORCHESTRATION_AVAILABLE = True
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to initialize orchestration engine: {e}")
+        logger.error(f"Error type: {type(e).__name__}")
+        
+        # Log initialization failure
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="initialize_orchestration_engine",
+                context={
+                    "environment": current_environment,
+                    "error_type": type(e).__name__,
+                    "error_message": str(e)
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log orchestration initialization error: {metric_error}")
+        
+        ORCHESTRATION_AVAILABLE = False
+        return False
 
 def initialize_agentcore_client():
     """Initialize AgentCore Runtime client for agent communication."""
@@ -225,6 +341,9 @@ async def test_agentcore_connectivity():
 # Initialize AgentCore client on startup
 initialize_agentcore_client()
 
+# Initialize orchestration engine
+initialize_orchestration_engine()
+
 # Test AgentCore connectivity asynchronously (will be done during first request)
 # We can't run async code at module level, so we'll test during first invocation
 
@@ -259,9 +378,20 @@ def create_agentcore_tools() -> List:
             auth_manager=auth_manager
         )
         
-        # Combine all tools
-        tools.extend(search_tools)
-        tools.extend(reasoning_tools)
+        # Store original tools for compatibility processing
+        original_search_tools = search_tools
+        original_reasoning_tools = reasoning_tools
+        
+        # Register tools with orchestration engine if available
+        if ORCHESTRATION_AVAILABLE and orchestration_engine:
+            register_tools_with_orchestration(search_tools + reasoning_tools)
+        
+        # Create compatible tools that support both legacy and orchestration approaches
+        if ORCHESTRATION_AVAILABLE and compatibility_manager:
+            tools = create_compatible_tools(search_tools + reasoning_tools)
+        else:
+            # Use original tools if orchestration not available
+            tools = search_tools + reasoning_tools
         
         logger.info(f"Created {len(tools)} AgentCore tools")
         
@@ -274,7 +404,8 @@ def create_agentcore_tools() -> List:
                 "tools_count": len(tools),
                 "environment": current_environment,
                 "search_agent_arn": agentcore_config.agentcore.restaurant_search_agent_arn,
-                "reasoning_agent_arn": agentcore_config.agentcore.restaurant_reasoning_agent_arn
+                "reasoning_agent_arn": agentcore_config.agentcore.restaurant_reasoning_agent_arn,
+                "orchestration_available": ORCHESTRATION_AVAILABLE
             }
         )
         
@@ -302,6 +433,273 @@ def create_agentcore_tools() -> List:
         )
         
         return []
+
+def register_tools_with_orchestration(tools: List):
+    """Register tools with the orchestration engine for intelligent selection."""
+    if not ORCHESTRATION_AVAILABLE or not orchestration_engine:
+        logger.warning("Orchestration engine not available for tool registration")
+        return
+    
+    try:
+        from services.tool_registry import ToolMetadata, ToolCapability
+        
+        for tool in tools:
+            # Extract tool metadata for registration
+            tool_name = getattr(tool, 'name', tool.__class__.__name__)
+            tool_id = f"{tool_name.lower().replace(' ', '_')}_{id(tool)}"
+            
+            # Determine capabilities based on tool type and methods
+            capabilities = []
+            
+            if hasattr(tool, 'search_restaurants_by_district'):
+                capabilities.append(ToolCapability(
+                    name="search_by_district",
+                    description="Search restaurants by district/location",
+                    required_parameters=["districts"],
+                    optional_parameters=["meal_types"],
+                    output_format="json",
+                    use_cases=["location_based_search", "district_filtering"]
+                ))
+            
+            if hasattr(tool, 'search_restaurants_by_meal_type'):
+                capabilities.append(ToolCapability(
+                    name="search_by_meal_type",
+                    description="Search restaurants by meal type",
+                    required_parameters=["meal_types"],
+                    optional_parameters=["districts"],
+                    output_format="json",
+                    use_cases=["meal_based_search", "time_filtering"]
+                ))
+            
+            if hasattr(tool, 'search_restaurants_combined'):
+                capabilities.append(ToolCapability(
+                    name="combined_search",
+                    description="Combined restaurant search with multiple criteria",
+                    required_parameters=[],
+                    optional_parameters=["districts", "meal_types"],
+                    output_format="json",
+                    use_cases=["flexible_search", "multi_criteria_filtering"]
+                ))
+            
+            if hasattr(tool, 'recommend_restaurants'):
+                capabilities.append(ToolCapability(
+                    name="recommend_restaurants",
+                    description="Recommend restaurants from provided data",
+                    required_parameters=["restaurants"],
+                    optional_parameters=["ranking_method"],
+                    output_format="json",
+                    use_cases=["recommendation", "ranking", "sentiment_analysis"]
+                ))
+            
+            if hasattr(tool, 'analyze_restaurant_sentiment'):
+                capabilities.append(ToolCapability(
+                    name="analyze_sentiment",
+                    description="Analyze restaurant sentiment data",
+                    required_parameters=["restaurants"],
+                    optional_parameters=[],
+                    output_format="json",
+                    use_cases=["sentiment_analysis", "data_analysis"]
+                ))
+            
+            # Create tool metadata
+            tool_metadata = ToolMetadata(
+                id=tool_id,
+                name=tool_name,
+                description=f"AgentCore tool for {tool_name}",
+                capabilities=capabilities,
+                input_schema={},  # Will be populated from tool inspection
+                output_schema={},  # Will be populated from tool inspection
+                performance_characteristics=None,  # Will be learned over time
+                health_check_endpoint=None  # AgentCore tools use runtime health checks
+            )
+            
+            # Register with orchestration engine
+            orchestration_engine.tool_registry.register_tool(tool_metadata, tool)
+            
+            logger.debug(f"Registered tool with orchestration engine: {tool_name}")
+        
+        logger.info(f"Successfully registered {len(tools)} tools with orchestration engine")
+        
+        # Log successful registration
+        monitoring_service.log_performance_metric(
+            operation="register_tools_with_orchestration",
+            duration=0.1,
+            success=True,
+            additional_data={
+                "tools_registered": len(tools),
+                "environment": current_environment
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Failed to register tools with orchestration engine: {e}")
+        
+        # Log registration failure
+        monitoring_service.log_error(
+            error=e,
+            operation="register_tools_with_orchestration",
+            context={
+                "environment": current_environment,
+                "tools_count": len(tools),
+                "error_type": type(e).__name__
+            }
+        )
+
+def create_compatible_tools(original_tools: List) -> List:
+    """Create compatible tools that support both legacy and orchestration approaches."""
+    if not ORCHESTRATION_AVAILABLE or not compatibility_manager or not orchestration_middleware:
+        logger.warning("Orchestration or compatibility manager not available, returning original tools")
+        return original_tools
+    
+    compatible_tools = []
+    
+    try:
+        for tool in original_tools:
+            # Determine tool type based on tool methods
+            tool_type = "unknown"
+            
+            if hasattr(tool, 'search_restaurants_by_district') or hasattr(tool, 'search_restaurants_combined'):
+                tool_type = "search"
+            elif hasattr(tool, 'recommend_restaurants') or hasattr(tool, 'analyze_restaurant_sentiment'):
+                tool_type = "reasoning"
+            
+            # Create compatible tool wrapper
+            compatible_tool = compatibility_manager.create_compatible_tool(
+                legacy_tool=tool,
+                orchestration_middleware=orchestration_middleware,
+                tool_type=tool_type
+            )
+            
+            compatible_tools.append(compatible_tool)
+            
+            logger.debug(f"Created compatible tool for {tool_type}: {getattr(tool, 'name', tool.__class__.__name__)}")
+        
+        logger.info(f"Created {len(compatible_tools)} compatible tools with backward compatibility")
+        
+        # Log compatible tool creation
+        monitoring_service.log_performance_metric(
+            operation="create_compatible_tools",
+            duration=0.1,
+            success=True,
+            additional_data={
+                "tools_count": len(compatible_tools),
+                "environment": current_environment,
+                "compatibility_mode": compatibility_manager.config.mode.value if compatibility_manager else "unknown",
+                "orchestration_available": ORCHESTRATION_AVAILABLE
+            }
+        )
+        
+        return compatible_tools
+        
+    except Exception as e:
+        logger.error(f"Failed to create compatible tools: {e}")
+        
+        # Log compatible tool creation failure
+        monitoring_service.log_error(
+            error=e,
+            operation="create_compatible_tools",
+            context={
+                "environment": current_environment,
+                "tools_count": len(original_tools),
+                "error_type": type(e).__name__
+            }
+        )
+        
+        # Return original tools as fallback
+        return original_tools
+
+async def process_with_orchestration(user_message: str, payload: Dict[str, Any]) -> Any:
+    """Process user request using orchestration engine with intelligent tool selection."""
+    try:
+        # Extract user context from payload if available
+        user_context = None
+        session_id = payload.get("sessionId")
+        user_id = payload.get("userId") 
+        
+        if session_id or user_id:
+            user_context = UserContext(
+                user_id=user_id,
+                session_id=session_id,
+                conversation_history=[],  # Could be populated from session storage
+                mbti_type=None,  # Could be extracted from user profile
+                location_context=None  # Could be extracted from request
+            )
+        
+        # Route request through orchestration middleware
+        orchestration_result = await orchestration_middleware.route_request(
+            request_text=user_message,
+            user_context=user_context,
+            correlation_id=None,  # Will be auto-generated
+            direct_tool_fallback=lambda text, context: agent(text)
+        )
+        
+        # Convert orchestration result to agent response format
+        if orchestration_result.get('success', False):
+            # Format orchestrated response
+            results = orchestration_result.get('results', [])
+            
+            if results:
+                # Combine results from multiple tools if needed
+                combined_content = []
+                
+                for result in results:
+                    if isinstance(result, dict) and 'result' in result:
+                        tool_result = result['result']
+                        if isinstance(tool_result, str):
+                            combined_content.append(tool_result)
+                        elif isinstance(tool_result, dict):
+                            # Format structured data
+                            combined_content.append(f"Tool result: {json.dumps(tool_result, indent=2)}")
+                
+                if combined_content:
+                    response_text = "\n\n".join(combined_content)
+                else:
+                    response_text = "I've processed your request using intelligent tool orchestration, but no specific results were returned."
+                
+                # Add orchestration metadata to response
+                metadata = orchestration_result.get('metadata', {})
+                if metadata.get('intelligent_selection'):
+                    response_text += f"\n\n*This response was generated using intelligent tool orchestration with {len(orchestration_result.get('tools_used', []))} optimally selected tools.*"
+            else:
+                response_text = "I've processed your request, but no results were available from the orchestrated tools."
+            
+            # Create agent-compatible response
+            class OrchestrationResponse:
+                def __init__(self, content):
+                    self.message = {
+                        "role": "assistant",
+                        "content": [{"text": content}]
+                    }
+            
+            return OrchestrationResponse(response_text)
+        
+        else:
+            # Orchestration failed, the middleware should have already tried fallback
+            error_message = orchestration_result.get('error', 'Unknown orchestration error')
+            logger.warning(f"Orchestration processing failed: {error_message}")
+            
+            # Fallback to direct agent processing
+            return agent(user_message)
+    
+    except Exception as e:
+        logger.error(f"Orchestration processing error: {e}")
+        
+        # Log orchestration processing error
+        try:
+            monitoring_service.log_error(
+                error=e,
+                operation="process_with_orchestration",
+                context={
+                    "environment": current_environment,
+                    "message_length": len(user_message),
+                    "error_type": type(e).__name__
+                }
+            )
+        except Exception as metric_error:
+            logger.warning(f"Failed to log orchestration processing error: {metric_error}")
+        
+        # Fallback to direct agent processing
+        return agent(user_message)
 
 
 # Create agent with all AgentCore tools
@@ -471,9 +869,27 @@ if AGENT_AVAILABLE:
 else:
     logger.warning("⚠️ Agent initialization failed - service will run with limited functionality")
 
+def get_orchestration_status() -> Dict[str, Any]:
+    """Get current orchestration and compatibility status."""
+    status = {
+        "orchestration_available": ORCHESTRATION_AVAILABLE,
+        "agentcore_available": AGENTCORE_AVAILABLE,
+        "agent_available": AGENT_AVAILABLE,
+        "environment": current_environment
+    }
+    
+    if ORCHESTRATION_AVAILABLE and compatibility_manager:
+        status["compatibility_stats"] = compatibility_manager.get_compatibility_stats()
+        status["orchestration_enabled"] = orchestration_middleware.is_enabled() if orchestration_middleware else False
+    
+    if orchestration_middleware:
+        status["middleware_stats"] = orchestration_middleware.get_middleware_stats()
+    
+    return status
+
 
 @app.entrypoint
-def invoke(payload): 
+async def invoke(payload): 
     """
     MBTI Travel Planner Agent entrypoint with Nova Pro model and AgentCore integration.
     
@@ -684,8 +1100,12 @@ User query:
                 }
             }
         
-        # Process with the agent (Nova Pro + AgentCore tools)
-        result = agent(user_message)
+        # Process with orchestration if available, otherwise use agent directly
+        if ORCHESTRATION_AVAILABLE and orchestration_engine:
+            result = await process_with_orchestration(user_message, payload)
+        else:
+            # Fallback to direct agent processing
+            result = agent(user_message)
         
         # Calculate total processing time
         duration = time.time() - start_time

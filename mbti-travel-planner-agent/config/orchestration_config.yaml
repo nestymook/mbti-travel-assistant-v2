@@ -1,0 +1,182 @@
+# Tool Orchestration Configuration
+# This file configures the intelligent tool orchestration system for the MBTI Travel Planner Agent
+
+orchestration:
+  # Intent Analysis Configuration
+  intent_analysis:
+    confidence_threshold: 0.8
+    enable_context_analysis: true
+    nlp_model: "intent-classifier-v1"
+    parameter_extraction:
+      enabled: true
+      timeout_seconds: 5
+  
+  # Tool Selection Configuration
+  tool_selection:
+    ranking_algorithm: "weighted_performance"
+    performance_weight: 0.4
+    health_weight: 0.3
+    capability_weight: 0.3
+    max_fallback_tools: 2
+    selection_timeout_seconds: 10
+  
+  # Workflow Engine Configuration
+  workflow_engine:
+    max_concurrent_workflows: 50
+    step_timeout_seconds: 30
+    execution_strategy: "sequential"  # sequential, parallel, conditional
+    retry_policy:
+      max_retries: 3
+      backoff_multiplier: 2.0
+      max_backoff_seconds: 60
+      retry_on_errors: ["timeout", "connection_error", "service_unavailable"]
+  
+  # Performance Monitoring Configuration
+  performance_monitoring:
+    enable_metrics_collection: true
+    health_check_interval_seconds: 30
+    performance_window_seconds: 300
+    metrics_retention_hours: 24
+    alert_thresholds:
+      error_rate: 0.1
+      response_time_ms: 10000
+      success_rate: 0.9
+  
+  # Error Handling Configuration
+  error_handling:
+    enable_circuit_breaker: true
+    circuit_breaker:
+      failure_threshold: 5
+      recovery_timeout_seconds: 60
+      half_open_max_calls: 3
+    graceful_degradation: true
+    fallback_strategies:
+      - "alternative_tool"
+      - "cached_response"
+      - "partial_results"
+
+# Tool Configuration
+tools:
+  restaurant_search:
+    priority: 1
+    enabled: true
+    capabilities:
+      - "search_by_district"
+      - "search_by_meal_type"
+      - "combined_search"
+    health_check:
+      endpoint: "/health"
+      interval_seconds: 60
+      timeout_seconds: 15
+    performance:
+      expected_response_time_ms: 2000
+      max_response_time_ms: 10000
+      expected_success_rate: 0.98
+    circuit_breaker:
+      enabled: true
+      failure_threshold: 5
+      recovery_timeout_seconds: 60
+  
+  restaurant_reasoning:
+    priority: 1
+    enabled: true
+    capabilities:
+      - "recommend_restaurants"
+      - "analyze_sentiment"
+      - "mbti_personalization"
+    health_check:
+      endpoint: "/health"
+      interval_seconds: 60
+      timeout_seconds: 20
+    performance:
+      expected_response_time_ms: 3000
+      max_response_time_ms: 15000
+      expected_success_rate: 0.96
+    circuit_breaker:
+      enabled: true
+      failure_threshold: 5
+      recovery_timeout_seconds: 60
+
+# Environment-specific overrides
+environments:
+  development:
+    orchestration:
+      performance_monitoring:
+        enable_metrics_collection: true
+        health_check_interval_seconds: 60
+      error_handling:
+        circuit_breaker:
+          failure_threshold: 10  # More lenient in development
+    tools:
+      restaurant_search:
+        health_check:
+          interval_seconds: 120
+      restaurant_reasoning:
+        health_check:
+          interval_seconds: 120
+  
+  staging:
+    orchestration:
+      workflow_engine:
+        max_concurrent_workflows: 25
+      performance_monitoring:
+        health_check_interval_seconds: 45
+    tools:
+      restaurant_search:
+        performance:
+          expected_response_time_ms: 3000
+      restaurant_reasoning:
+        performance:
+          expected_response_time_ms: 4000
+  
+  production:
+    orchestration:
+      workflow_engine:
+        max_concurrent_workflows: 100
+        step_timeout_seconds: 45
+      performance_monitoring:
+        health_check_interval_seconds: 30
+        alert_thresholds:
+          error_rate: 0.05
+          response_time_ms: 8000
+          success_rate: 0.95
+      error_handling:
+        circuit_breaker:
+          failure_threshold: 3  # More strict in production
+    tools:
+      restaurant_search:
+        health_check:
+          interval_seconds: 30
+        circuit_breaker:
+          failure_threshold: 3
+      restaurant_reasoning:
+        health_check:
+          interval_seconds: 30
+        circuit_breaker:
+          failure_threshold: 3
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  structured_logging: true
+  correlation_tracking: true
+  performance_logging: true
+  error_logging: true
+  log_destinations:
+    - "console"
+    - "file"
+    - "agentcore_monitoring"
+
+# Integration Configuration
+integrations:
+  agentcore_monitoring:
+    enabled: true
+    detailed_logging: true
+    performance_tracking: true
+    health_checks: true
+  
+  existing_services:
+    logging_service: true
+    health_check_service: true
+    error_handler: true
+    authentication_manager: true
